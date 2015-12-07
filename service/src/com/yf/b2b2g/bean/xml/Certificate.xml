@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Certificate">
+  
+  <typeAlias alias="Certificate" type="com.yf.b2b2g.bean.Certificate"/>
+  <resultMap id="resultCertificateMap" class="Certificate">
+  <result property="empid" column="C_EMPID" />
+  <result property="certname" column="C_CERTNAME" />
+  <result property="certtype" column="C_CERTTYPE" />
+  <result property="certnum" column="C_CERTNUM" />
+  <result property="validdate" column="C_VALIDDATE" />
+  </resultMap>
+
+  <select id="findAllCertificateByEmpid"  resultMap="resultCertificateMap"  parameterClass="long">  
+    select * from T_CERTIFICATE  WHERE C_EMPID=#value#
+  </select>   
+  
+   <select id="countCertificateBySql"  resultClass="int"  parameterClass="java.util.Map">		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CERTIFICATE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>	   
+   </select>
+  
+   <delete id="deleteCertificateByEmpid" parameterClass="long" >
+     DELETE T_CERTIFICATE WHERE C_EMPID=#value#
+   </delete>
+   <insert id="createCertificate">
+   INSERT INTO T_CERTIFICATE (C_EMPID,C_CERTNAME,C_CERTTYPE,C_CERTNUM,C_VALIDDATE)
+   VALUES(#empid#,#certname#,#certtype#,#certnum#,#validdate#)
+   </insert>
+  
+  
+   
+ 
+</sqlMap>
+ 
+ 

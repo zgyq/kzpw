@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 航班延误证明
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Airdelayprove createAirdelayprove(Airdelayprove airdelayprove) throws SQLException;
+	
+	/**
+	 * 删除 航班延误证明
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAirdelayprove(long id);
+	
+	
+	/**
+	 * 修改 航班延误证明
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAirdelayprove(Airdelayprove airdelayprove);
+
+		
+	/**
+	 * 修改 航班延误证明但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAirdelayproveIgnoreNull(Airdelayprove airdelayprove);
+		
+	
+	/**
+	 * 查找 航班延误证明
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirdelayprove(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 航班延误证明
+	 * @param id
+	 * @return
+	 */
+	public Airdelayprove findAirdelayprove(long id);
+	
+	
+	/** 
+	 * 查找 航班延误证明
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAirdelayproveForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找航班延误证明
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirdelayproveBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 航班延误证明
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAirdelayproveBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAirdelayproveBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IAirdelayproveComponent airdelayproveComponent;
+	  
+ 	
+ 	public IAirdelayproveComponent getAirdelayproveComponent() {
+		return airdelayproveComponent;
+	}
+	public void setAirdelayproveComponent(IAirdelayproveComponent  airdelayproveComponent) {
+		this.airdelayproveComponent = airdelayproveComponent;
+	}
+	/**
+	 * 创建 航班延误证明
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Airdelayprove createAirdelayprove(Airdelayprove airdelayprove) throws SQLException{
+	
+		return airdelayproveComponent.createAirdelayprove(airdelayprove);
+	}
+	/**
+	 * 删除 航班延误证明
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAirdelayprove(long id){
+	
+		return airdelayproveComponent.deleteAirdelayprove(id);
+	}
+	
+	
+	/**
+	 * 修改 航班延误证明
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAirdelayprove(Airdelayprove airdelayprove){
+		return airdelayproveComponent.updateAirdelayprove(airdelayprove);
+	
+	}
+
+		
+	/**
+	 * 修改 航班延误证明但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAirdelayproveIgnoreNull(Airdelayprove airdelayprove){
+			return airdelayproveComponent.updateAirdelayproveIgnoreNull(airdelayprove);
+	
+	}
+	
+	/**
+	 * 查找 航班延误证明
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirdelayprove(String where, String orderby,int limit,int offset){
+		return airdelayproveComponent.findAllAirdelayprove(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 航班延误证明
+	 * @param id
+	 * @return
+	 */
+	public Airdelayprove findAirdelayprove(long id){
+		return airdelayproveComponent.findAirdelayprove(id);
+	}
+	
+	/** 
+	 * 查找 航班延误证明
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAirdelayproveForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return airdelayproveComponent.findAllAirdelayprove(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找航班延误证明
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirdelayproveBySql(String sql,int limit,int offset){
+		return airdelayproveComponent.findAllAirdelayprove(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 航班延误证明
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAirdelayproveBySql(String sql){
+		return airdelayproveComponent.excuteAirdelayproveBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAirdelayproveBySql(String sql){
+		return airdelayproveComponent.countAirdelayproveBySql(sql);
+	}
+	
+	
+

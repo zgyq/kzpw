@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+
+
+
+
+
+	<bean id="trainManager"
+		class="com.yf.system.base.train.TrainManager">
+		<property name="dataSource">
+			<ref bean="myDataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+	<bean id="trainComponentProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<bean
+				class="com.yf.system.base.train.TrainComponent">
+				<property name="trainManager" ref="trainManager" />
+			</bean>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="create*">PROPAGATION_REQUIRED</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="excute*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	
+	<bean id="trainpassengerManager" class="com.yf.system.base.trainpassenger.TrainpassengerManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean> 
+  <bean id="trainpassengerComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.trainpassenger.TrainpassengerComponent">
+	        <property name="trainpassengerManager" ref="trainpassengerManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  
+  
+  <bean id="trainroomManager" class="com.yf.system.base.trainroom.TrainroomManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="trainroomComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.trainroom.TrainroomComponent">
+	        <property name="trainroomManager" ref="trainroomManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+
+  <bean id="traincityManager" class="com.yf.system.base.traincity.TraincityManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="traincityComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.traincity.TraincityComponent">
+	        <property name="traincityManager" ref="traincityManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+
+<bean id="trainfareManager" class="com.yf.system.base.trainfare.TrainfareManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="trainfareComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.trainfare.TrainfareComponent">
+	        <property name="trainfareManager" ref="trainfareManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  <bean id="traininfoManager" class="com.yf.system.base.traininfo.TraininfoManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="traininfoComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.traininfo.TraininfoComponent">
+	        <property name="traininfoManager" ref="traininfoManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  <bean id="trainschManager" class="com.yf.system.base.trainsch.TrainschManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="trainschComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.trainsch.TrainschComponent">
+	        <property name="trainschManager" ref="trainschManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ <bean id="trainseatManager" class="com.yf.system.base.trainseat.TrainseatManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="trainseatComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.trainseat.TrainseatComponent">
+	        <property name="trainseatManager" ref="trainseatManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ <bean id="trainstationManager" class="com.yf.system.base.trainstation.TrainstationManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="trainstationComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.trainstation.TrainstationComponent">
+	        <property name="trainstationManager" ref="trainstationManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ 
+	<bean id="trainService"
+		class="com.yf.system.base.service.TrainService"
+		scope="singleton">
+		<!-- <property name="cache" value="true" /> -->
+		<property name="trainComponent" ref="trainComponentProxy" />
+		<property name="trainpassengerComponent" ref="trainpassengerComponentProxy"/>
+		<property name="trainroomComponent" ref="trainroomComponentProxy"/>	
+		<property name="traincityComponent" ref="traincityComponentProxy"/>	
+		<property name="trainfareComponent" ref="trainfareComponentProxy"/>	
+		<property name="traininfoComponent" ref="traininfoComponentProxy"/>
+		<property name="trainschComponent" ref="trainschComponentProxy"/>
+		<property name="trainseatComponent" ref="trainseatComponentProxy"/>	
+		<property name="trainstationComponent" ref="trainstationComponentProxy"/>
+	</bean>
+
+	<bean name="/ITrainService"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<property name="service" ref="trainService" />
+		<property name="serviceInterface"
+			value="com.yf.system.base.service.ITrainService" />
+	</bean>
+
+
+
+</beans>

@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 火车票城市
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Traincity createTraincity(Traincity traincity) throws SQLException;
+	
+	/**
+	 * 删除 火车票城市
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTraincity(long id);
+	
+	
+	/**
+	 * 修改 火车票城市
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTraincity(Traincity traincity);
+
+		
+	/**
+	 * 修改 火车票城市但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTraincityIgnoreNull(Traincity traincity);
+		
+	
+	/**
+	 * 查找 火车票城市
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTraincity(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 火车票城市
+	 * @param id
+	 * @return
+	 */
+	public Traincity findTraincity(long id);
+	
+	
+	/** 
+	 * 查找 火车票城市
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTraincityForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找火车票城市
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTraincityBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 火车票城市
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTraincityBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTraincityBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITraincityComponent traincityComponent;
+	  
+ 	
+ 	public ITraincityComponent getTraincityComponent() {
+		return traincityComponent;
+	}
+	public void setTraincityComponent(ITraincityComponent  traincityComponent) {
+		this.traincityComponent = traincityComponent;
+	}
+	/**
+	 * 创建 火车票城市
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Traincity createTraincity(Traincity traincity) throws SQLException{
+	
+		return traincityComponent.createTraincity(traincity);
+	}
+	/**
+	 * 删除 火车票城市
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTraincity(long id){
+	
+		return traincityComponent.deleteTraincity(id);
+	}
+	
+	
+	/**
+	 * 修改 火车票城市
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTraincity(Traincity traincity){
+		return traincityComponent.updateTraincity(traincity);
+	
+	}
+
+		
+	/**
+	 * 修改 火车票城市但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTraincityIgnoreNull(Traincity traincity){
+			return traincityComponent.updateTraincityIgnoreNull(traincity);
+	
+	}
+	
+	/**
+	 * 查找 火车票城市
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTraincity(String where, String orderby,int limit,int offset){
+		return traincityComponent.findAllTraincity(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 火车票城市
+	 * @param id
+	 * @return
+	 */
+	public Traincity findTraincity(long id){
+		return traincityComponent.findTraincity(id);
+	}
+	
+	/** 
+	 * 查找 火车票城市
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTraincityForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return traincityComponent.findAllTraincity(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找火车票城市
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTraincityBySql(String sql,int limit,int offset){
+		return traincityComponent.findAllTraincity(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 火车票城市
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTraincityBySql(String sql){
+		return traincityComponent.excuteTraincityBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTraincityBySql(String sql){
+		return traincityComponent.countTraincityBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,31 @@
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "xwork-1.0.dtd">
+<xwork>
+	<include file="webwork-default.xml" />
+	<!-- Configuration for the default package. -->
+	<package name="default" extends="webwork-default">
+		<interceptors>
+		
+			<interceptor name="upload"
+				class="com.yf.website.web.interceptor.FileUploadInterceptor" />
+			<interceptor name="authen"
+				class="com.yf.website.web.interceptor.AuthenInterceptor" />
+			<interceptor-stack name="validationStack">
+				<interceptor-ref name="validation" />
+				<interceptor-ref name="component" />
+				<interceptor-ref name="authen" />
+				
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="validationStack" />
+		<global-results>
+			<result name="input" type="dispatcher">/index.jsp</result>
+			<result name="error" type="dispatcher">/error.jsp</result>
+		</global-results>
+	</package>
+	<include file="xwork_member.xml" />
+	<include file="xwork_hotel.xml" />
+	<include file="xwork_domesticticket.xml" />
+    <include file="xwork_international.xml" />
+
+
+</xwork>

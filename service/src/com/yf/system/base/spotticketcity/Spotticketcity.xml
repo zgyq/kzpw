@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Spotticketcity">
+  
+  <typeAlias alias="Spotticketcity" type="com.yf.system.base.spotticketcity.Spotticketcity"/>
+  
+
+  <resultMap id="resultSpotticketcityMap" class="Spotticketcity">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="outid" column="C_OUTID"/>
+  
+     <result property="parentid" column="C_PARENTID"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="parentidstr" column="C_PARENTIDSTR"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="pinyin" column="C_PINYIN"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllSpotticketcity"  resultMap="resultSpotticketcityMap"  parameterClass="java.util.Map">
+  
+    select * from T_SPOTTICKETCITY
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSpotticketcityBySql"  resultMap="resultSpotticketcityMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSpotticketcityBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSpotticketcityBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SPOTTICKETCITY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSpotticketcity" parameterClass="long" resultClass="Spotticketcity">
+    select 
+    	ID as id,
+	  			C_OUTID as outid,
+	  			C_PARENTID as parentid,
+	  			C_TYPE as type,
+	  			C_PARENTIDSTR as parentidstr,
+	  			C_NAME as name,
+	  			C_PINYIN as pinyin,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state 
+     from T_SPOTTICKETCITY
+    where ID = #id#
+  </select>
+   
+  <insert id="createSpotticketcity" parameterClass="Spotticketcity">
+    insert into T_SPOTTICKETCITY ( 
+    	ID,
+	  			C_OUTID,
+	  			C_PARENTID,
+	  			C_TYPE,
+	  			C_PARENTIDSTR,
+	  			C_NAME,
+	  			C_PINYIN,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#outid#,
+	  					
+	  						#parentid#,
+	  					
+							#type:DECIMAL#,
+						
+	  						#parentidstr#,
+	  					
+	  						#name#,
+	  					
+	  						#pinyin#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSpotticketcity" parameterClass="long">
+    delete from T_SPOTTICKETCITY
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSpotticketcity" parameterClass="Spotticketcity">
+    update T_SPOTTICKETCITY 
+    set 
+    	C_OUTID = #outid#,
+	  					C_PARENTID = #parentid#,
+	  					C_TYPE = #type:DECIMAL#,
+						C_PARENTIDSTR = #parentidstr#,
+	  					C_NAME = #name#,
+	  					C_PINYIN = #pinyin#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 投诉建议表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Tousu createTousu(Tousu tousu) throws SQLException;
+	
+	/**
+	 * 删除 投诉建议表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTousu(long id);
+	
+	
+	/**
+	 * 修改 投诉建议表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTousu(Tousu tousu);
+
+		
+	/**
+	 * 修改 投诉建议表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTousuIgnoreNull(Tousu tousu);
+		
+	
+	/**
+	 * 查找 投诉建议表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTousu(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 投诉建议表
+	 * @param id
+	 * @return
+	 */
+	public Tousu findTousu(long id);
+	
+	
+	/** 
+	 * 查找 投诉建议表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTousuForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找投诉建议表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTousuBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 投诉建议表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTousuBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTousuBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITousuComponent tousuComponent;
+	  
+ 	
+ 	public ITousuComponent getTousuComponent() {
+		return tousuComponent;
+	}
+	public void setTousuComponent(ITousuComponent  tousuComponent) {
+		this.tousuComponent = tousuComponent;
+	}
+	/**
+	 * 创建 投诉建议表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Tousu createTousu(Tousu tousu) throws SQLException{
+	
+		return tousuComponent.createTousu(tousu);
+	}
+	/**
+	 * 删除 投诉建议表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTousu(long id){
+	
+		return tousuComponent.deleteTousu(id);
+	}
+	
+	
+	/**
+	 * 修改 投诉建议表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTousu(Tousu tousu){
+		return tousuComponent.updateTousu(tousu);
+	
+	}
+
+		
+	/**
+	 * 修改 投诉建议表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTousuIgnoreNull(Tousu tousu){
+			return tousuComponent.updateTousuIgnoreNull(tousu);
+	
+	}
+	
+	/**
+	 * 查找 投诉建议表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTousu(String where, String orderby,int limit,int offset){
+		return tousuComponent.findAllTousu(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 投诉建议表
+	 * @param id
+	 * @return
+	 */
+	public Tousu findTousu(long id){
+		return tousuComponent.findTousu(id);
+	}
+	
+	/** 
+	 * 查找 投诉建议表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTousuForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return tousuComponent.findAllTousu(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找投诉建议表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTousuBySql(String sql,int limit,int offset){
+		return tousuComponent.findAllTousu(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 投诉建议表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTousuBySql(String sql){
+		return tousuComponent.excuteTousuBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTousuBySql(String sql){
+		return tousuComponent.countTousuBySql(sql);
+	}
+	
+	
+

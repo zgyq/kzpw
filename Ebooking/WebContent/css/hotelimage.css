@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.zoomdiv{ left:859px; height:400px; width:400px;}
+.list-h li{ float:left;}
+#spec-n5{ margin:0 auto; width:205px; height:46px; padding-top:6px; overflow:hidden;}
+#spec-left{ background:url(images/left2.gif) no-repeat; width:10px; height:40px; float:left; cursor:pointer;}
+#spec-right{background:url(images/right2.gif) no-repeat; width:10px; height:40px; float:left;cursor:pointer ;}
+#spec-list{ width:180px; float:left; overflow:hidden; margin:0 2px; display:inline;}
+#spec-list ul li{ float:left; margin-right:0px; display:inline; width:60px;}
+#spec-list ul li img{ padding:2px ; border:1px solid #ccc; width:54px; height:40px;}

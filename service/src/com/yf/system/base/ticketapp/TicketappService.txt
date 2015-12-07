@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 特价申请表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Ticketapp createTicketapp(Ticketapp ticketapp) throws SQLException;
+	
+	/**
+	 * 删除 特价申请表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTicketapp(long id);
+	
+	
+	/**
+	 * 修改 特价申请表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTicketapp(Ticketapp ticketapp);
+
+		
+	/**
+	 * 修改 特价申请表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTicketappIgnoreNull(Ticketapp ticketapp);
+		
+	
+	/**
+	 * 查找 特价申请表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTicketapp(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 特价申请表
+	 * @param id
+	 * @return
+	 */
+	public Ticketapp findTicketapp(long id);
+	
+	
+	/** 
+	 * 查找 特价申请表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTicketappForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找特价申请表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTicketappBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 特价申请表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTicketappBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTicketappBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITicketappComponent ticketappComponent;
+	  
+ 	
+ 	public ITicketappComponent getTicketappComponent() {
+		return ticketappComponent;
+	}
+	public void setTicketappComponent(ITicketappComponent  ticketappComponent) {
+		this.ticketappComponent = ticketappComponent;
+	}
+	/**
+	 * 创建 特价申请表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Ticketapp createTicketapp(Ticketapp ticketapp) throws SQLException{
+	
+		return ticketappComponent.createTicketapp(ticketapp);
+	}
+	/**
+	 * 删除 特价申请表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTicketapp(long id){
+	
+		return ticketappComponent.deleteTicketapp(id);
+	}
+	
+	
+	/**
+	 * 修改 特价申请表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTicketapp(Ticketapp ticketapp){
+		return ticketappComponent.updateTicketapp(ticketapp);
+	
+	}
+
+		
+	/**
+	 * 修改 特价申请表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTicketappIgnoreNull(Ticketapp ticketapp){
+			return ticketappComponent.updateTicketappIgnoreNull(ticketapp);
+	
+	}
+	
+	/**
+	 * 查找 特价申请表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTicketapp(String where, String orderby,int limit,int offset){
+		return ticketappComponent.findAllTicketapp(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 特价申请表
+	 * @param id
+	 * @return
+	 */
+	public Ticketapp findTicketapp(long id){
+		return ticketappComponent.findTicketapp(id);
+	}
+	
+	/** 
+	 * 查找 特价申请表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTicketappForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return ticketappComponent.findAllTicketapp(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找特价申请表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTicketappBySql(String sql,int limit,int offset){
+		return ticketappComponent.findAllTicketapp(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 特价申请表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTicketappBySql(String sql){
+		return ticketappComponent.excuteTicketappBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTicketappBySql(String sql){
+		return ticketappComponent.countTicketappBySql(sql);
+	}
+	
+	
+

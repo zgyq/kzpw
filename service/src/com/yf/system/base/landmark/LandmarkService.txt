@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 地标
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Landmark createLandmark(Landmark landmark) throws SQLException;
+	
+	/**
+	 * 删除 地标
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteLandmark(long id);
+	
+	
+	/**
+	 * 修改 地标
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateLandmark(Landmark landmark);
+
+		
+	/**
+	 * 修改 地标但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateLandmarkIgnoreNull(Landmark landmark);
+		
+	
+	/**
+	 * 查找 地标
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllLandmark(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 地标
+	 * @param id
+	 * @return
+	 */
+	public Landmark findLandmark(long id);
+	
+	/**
+	 * 查找 地标 by language
+	 * @param id
+	 * @return
+	 */
+	public Landmark findLandmarkbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 地标
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllLandmarkForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找地标
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllLandmarkBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 地标
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteLandmarkBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countLandmarkBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ILandmarkComponent landmarkComponent;
+	  
+ 	
+ 	public ILandmarkComponent getLandmarkComponent() {
+		return landmarkComponent;
+	}
+	public void setLandmarkComponent(ILandmarkComponent  landmarkComponent) {
+		this.landmarkComponent = landmarkComponent;
+	}
+	/**
+	 * 创建 地标
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Landmark createLandmark(Landmark landmark) throws SQLException{
+	
+		return landmarkComponent.createLandmark(landmark);
+	}
+	/**
+	 * 删除 地标
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteLandmark(long id){
+	
+		return landmarkComponent.deleteLandmark(id);
+	}
+	
+	
+	/**
+	 * 修改 地标
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateLandmark(Landmark landmark){
+		return landmarkComponent.updateLandmark(landmark);
+	
+	}
+
+		
+	/**
+	 * 修改 地标但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateLandmarkIgnoreNull(Landmark landmark){
+			return landmarkComponent.updateLandmarkIgnoreNull(landmark);
+	
+	}
+	
+	/**
+	 * 查找 地标
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllLandmark(String where, String orderby,int limit,int offset){
+		return landmarkComponent.findAllLandmark(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 地标
+	 * @param id
+	 * @return
+	 */
+	public Landmark findLandmark(long id){
+		return landmarkComponent.findLandmark(id);
+	}
+	
+	/**
+	 * 查找 地标
+	 * @param id
+	 * @return
+	 */
+	public Landmark findLandmarkbylanguage(long id,Integer language){
+		return landmarkComponent.findLandmarkbylanguage(id,language);
+	}
+	/** 
+	 * 查找 地标
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllLandmarkForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return landmarkComponent.findAllLandmark(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找地标
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllLandmarkBySql(String sql,int limit,int offset){
+		return landmarkComponent.findAllLandmark(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 地标
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteLandmarkBySql(String sql){
+		return landmarkComponent.excuteLandmarkBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countLandmarkBySql(String sql){
+		return landmarkComponent.countLandmarkBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Trainpassenger">
+  
+  <typeAlias alias="Trainpassenger" type="com.yf.system.base.trainpassenger.Trainpassenger"/>
+  
+
+  <resultMap id="resultTrainpassengerMap" class="Trainpassenger">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderid" column="C_ORDERID"/> 
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="idtype" column="C_IDTYPE"/>
+     
+     <result property="bxprice" column="C_BXPRICE"/>
+     
+      <result property="price" column="C_PRICE"/>
+      
+      <result property="state" column="C_STATE"/>
+      
+      <result property="chupiaoprice" column="C_CHUPIAOPRICE"/>
+      
+      <result property="chupiaotype" column="C_CHUPIAOTYPE"/>
+      
+       <result property="yudingtype" column="C_YUDINGTYPE"/>
+  
+     <result property="idnumber" column="C_IDNUMBER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+     <result property="idtypeval" column="C_IDTYPEVAL"/>
+   
+  </resultMap>
+  
+  <select id="findAllTrainpassenger"  resultMap="resultTrainpassengerMap"  parameterClass="java.util.Map">
+  
+    select * ,(SELECT C_IDVAL FROM T_IDCARD WHERE C_IDKEY=C_IDTYPE) AS C_IDTYPEVAL from T_TRAINPASSENGER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTrainpassengerBySql"  resultMap="resultTrainpassengerMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTrainpassengerBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTrainpassengerBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRAINPASSENGER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTrainpassenger" parameterClass="long" resultClass="Trainpassenger">
+    select 
+    	ID as id,
+	  			C_ORDERID as orderid,
+	  			C_NAME as name,
+	  			C_PRICE as price,
+	  			C_BXPRICE as bxprice,
+	  			C_STATE as state,
+	  			C_CHUPIAOPRICE as chupiaoprice,
+	  			C_CHUPIAOTYPE as chupiaotype,
+	  			C_YUDINGTYPE as yudingtype,
+	  			C_IDTYPE as idtype,
+	  			C_IDNUMBER as idnumber,
+	  			C_CREATETIME as createtime ,
+	  			(SELECT C_IDVAL FROM T_IDCARD WHERE C_IDKEY=C_IDTYPE) AS idtypeval
+     from T_TRAINPASSENGER
+    where ID = #id#
+  </select>
+   
+  <insert id="createTrainpassenger" parameterClass="Trainpassenger">
+    insert into T_TRAINPASSENGER ( 
+    	ID,
+    	        C_ORDERID,
+	  			C_NAME,
+	  			C_BXPRICE,
+	  			C_PRICE,
+	  			C_STATE,
+	  			C_IDTYPE,
+	  			C_YUDINGTYPE,
+	  			C_CHUPIAOTYPE,
+	  			C_CHUPIAOPRICE,
+	  			C_IDNUMBER,
+	  			C_CREATETIME 
+    )
+    values (
+    	
+	  						#id#,
+						   
+						   #orderid#,
+						   
+	  						#name#,
+	  						
+	  						#bxprice#,
+	  						
+	  						#price#,
+	  						
+	  						#state#,
+	  					
+							#idtype#,
+							
+							#yudingtype#,
+							
+							#chupiaotype#,
+							
+							#chupiaoprice#,
+						
+	  						#idnumber#,
+	  					
+	  						#createtime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTrainpassenger" parameterClass="long">
+    delete from T_TRAINPASSENGER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTrainpassenger" parameterClass="Trainpassenger">
+    update T_TRAINPASSENGER 
+    set 
+    	C_ORDERID = #orderid#,
+						C_NAME = #name#,
+						C_BXPRICE = #bxprice#,
+						C_PRICE = #price#,
+						C_STATE = #state#,
+	  					C_IDTYPE = #idtype#,
+	  					C_YUDINGTYPE = #yudingtype#,
+	  					C_CHUPIAOTYPE = #chupiaotype#,
+	  					C_CHUPIAOPRICE = #chupiaoprice#,
+						C_IDNUMBER = #idnumber#,
+	  					C_CREATETIME = #createtime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

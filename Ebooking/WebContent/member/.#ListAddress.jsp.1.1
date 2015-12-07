@@ -1,0 +1,67 @@
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib uri="webwork" prefix="ww"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${compname}-常用配送地址</title>
+
+<ww:head name="login" jsURL="citycontrol" />
+</head>
+
+<body>
+<div id="container">
+  <div class="center"><ww:include page="../top.jsp"/></div>
+    <!--includ top 直接替换掉整个DIV-->
+</div>    
+<!----------header over---------->
+<div id="member">
+      <jsp:include flush="true" page="../member/left.jsp?ty=member" ></jsp:include>
+   
+   <div class="right mt10 r">
+       <div>
+          <ul>
+            <li class="mation fff">会员信息</li>
+            <li class="mation_info"><font class="mation_left f"><b>注册时间</b></font><span class="f mr25">会员注册时间为：2011年10月11日</span>      <font class="f90 f">普通会员</font> <span class="r mation_right">&nbsp;</span>    </li>
+          </ul>
+       </div>
+       <div class="mt7 box">
+        <div class="title">
+               <font class="black low f mr15">常用配送地址</font>
+               <font class="r mr25">欢迎加入${compname}，我们将为您提供最优质的服务，服务咨询热线：${tel}。</font>
+               <div class="c"></div>
+        </div>
+        <div class="information">
+         <div>&nbsp;</div>
+         <table width="86%" border="1" cellspacing="0" cellpadding="0"  class="centerall" >
+              <tr>
+                <td  class="hadow hl24" align="right" width="20"><input name="" type="radio" value="" /></td>
+                <td width="80">陈星星</td>
+                <td>北京市石景山玉泉大厦805</td>
+                <td><a href="login!toEditAddress.jspx?AddressID=188">修改</a>&nbsp;<a href="#">删除</a></td>
+              </tr>
+              <tr>
+                <td  class="hadow hl24" align="right"><input name="" type="radio" value="" /></td>
+                <td>陈星星</td>
+                <td>北京市石景山玉泉大厦805</td>
+                <td>修改&nbsp;删除</td>
+              </tr>
+              <tr>
+                <td  class="hadow hl24" align="right"><input name="" type="radio" value="" /></td>
+                <td>陈星星</td>
+                <td>北京市石景山玉泉大厦805</td>
+                <td>修改&nbsp;删除</td>
+              </tr>
+            </table>
+            <div>&nbsp;</div>
+        </div>
+       </div> 
+      
+       
+   </div>
+
+</div>
+
+<ww:include page="../footer.jsp"/>  
+</body>
+</html>

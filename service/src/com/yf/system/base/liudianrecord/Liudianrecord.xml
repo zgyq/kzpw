@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Liudianrecord">
+  
+  <typeAlias alias="Liudianrecord" type="com.yf.system.base.liudianrecord.Liudianrecord"/>
+  
+
+  <resultMap id="resultLiudianrecordMap" class="Liudianrecord">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="fandianstart" column="C_FANDIANSTART"/>
+  
+     <result property="fandianend" column="C_FANDIANEND"/>
+  
+     <result property="liudian" column="C_LIUDIAN"/>
+     
+     <result property="agentid" column="C_AGENTID"/>
+     
+     <result property="typeid" column="C_TYPEID"/>
+   
+  </resultMap>
+  
+  <select id="findAllLiudianrecord"  resultMap="resultLiudianrecordMap"  parameterClass="java.util.Map">
+  
+    select * from T_LIUDIANRECORD
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllLiudianrecordBySql"  resultMap="resultLiudianrecordMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteLiudianrecordBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countLiudianrecordBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_LIUDIANRECORD
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findLiudianrecord" parameterClass="long" resultClass="Liudianrecord">
+    select 
+    	ID as id,
+	  			C_FANDIANSTART as fandianstart,
+	  			C_FANDIANEND as fandianend,
+	  			C_LIUDIAN as liudian,
+	  			C_TYPEID as typeid 
+     from T_LIUDIANRECORD
+    where ID = #id#
+  </select>
+   
+  <insert id="createLiudianrecord" parameterClass="Liudianrecord">
+    insert into T_LIUDIANRECORD ( 
+    	ID,
+	  			C_FANDIANSTART,
+	  			C_FANDIANEND,
+	  			C_LIUDIAN,
+	  			C_AGENTID,
+	  			C_TYPEID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#fandianstart:DECIMAL#,
+						
+							#fandianend:DECIMAL#,
+						
+  							#liudian:DECIMAL#,
+  							
+  							#agentid#,
+  							#typeid#
+  							
+  							
+  							
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteLiudianrecord" parameterClass="long">
+    delete from T_LIUDIANRECORD
+    where ID = #id#
+  </delete>
+	
+  <update id="updateLiudianrecord" parameterClass="Liudianrecord">
+    update T_LIUDIANRECORD 
+    set 
+    	C_FANDIANSTART = #fandianstart:DECIMAL#,
+						C_FANDIANEND = #fandianend:DECIMAL#,
+						C_LIUDIAN = #liudian:DECIMAL#,
+						C_AGENTID=#agentid#,
+						C_TYPEID=#typeid#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

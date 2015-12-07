@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Comlimit">
+
+	<typeAlias alias="Comlimit" type="com.yf.b2b2g.bean.Comlimit" />
+	<resultMap id="resultComlimitMap" class="Comlimit">
+		<result property="comid" column="C_COMID" />
+		<result property="rightid" column="C_RIGHTID" />
+	</resultMap>
+
+	<select id="findAllComlimitByComid" resultMap="resultComlimitMap"
+		parameterClass="long">
+		SELECT * FROM T_B2GCOMLIMIT WHERE C_ROLEID =#value#
+	</select>
+
+
+	<delete id="deleteComlimitByComid" parameterClass="long">
+		DELETE T_B2GCOMLIMIT WHERE C_COMID=#value#
+	</delete>
+	
+	 <insert id="createComlimit" parameterClass="Comlimit">
+	   INSERT INTO T_B2GCOMLIMIT(C_COMID,C_RIGHTID)
+	   VALUES(#comid#,#rightid#);
+	 </insert>
+
+
+
+
+</sqlMap>
+
+

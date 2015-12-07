@@ -1,0 +1,55 @@
+/* m-mn info*/
+
+.m-mn{}
+.m-mn div.info{border: 1px solid #d8d8d8;}
+.m-mn div p.log{height: 30px;line-height: 30px;padding-left: 20px;border-bottom: 1px solid #d8d8d8;}
+.m-mn div p.log span{margin-right: 30px;font-size:12px;color: #434343;}
+.m-mn div p.log span i{padding-left:5px;color: #ff6600;}
+.m-mn div.user{border-bottom: 1px solid #d8d8d8;}
+.m-mn div.user div{float: left;padding:0 15px;line-height:55px;}
+.m-mn div.user div span{padding:0 8px;font-size:18px;color: #434343;}
+.m-mn div.user div i,del{padding:0 5px;color: #f60;font-size:18px;color: #f57403;}
+.m-mn div.user div.name,.m-mn div.user div.m1{min-width:120px;_width:150px;border-right: 1px solid #d8d8d8;}
+.m-mn div.panel{position:relative;height: 60px;padding-left: 16px;}
+.m-mn div.panel .btn{float:left;width:300px;height:27px;line-height:27px;text-align:center;}
+.m-mn div.panel .btn a{display:inline-block;border:1px solid #afafaf;margin:15px 10px 0 0;width:80px;background-color: #f3f3f3;color: #6b6b6b;cursor: pointer;}
+.m-mn div.panel .btn a.pay{border:1px solid #d66500;background-color:#f57403;color: #fff;}
+
+.m-mn div.panel div.detail{position:absolute;top:21px;left:320px;overflow: hidden;}
+.m-mn div.panel div.detail a{line-height:15px;padding:0 15px;margin-left:-1px;font-size:12px;color: #1c7dc7;border-left:1px solid #1c7dc7;}
+.m-mn div.panel div.detail a:hover{text-decoration: underline;}
+
+/* m-mn order */
+
+.m-mn div.order{position:relative;height:60px;margin-top:20px;border: 1px solid #d8d8d8;background: url(../img/order-bg.jpg) no-repeat;}
+.m-mn div.order div{position:absolute;top:10px;width:117px;height:40px;background: url(../img/ip1.png) no-repeat 9999px 9999px;}
+.m-mn div.order div.gn{left:120px;background-position: 0 -135px;}
+.m-mn div.order div.gnpnr{left:257px;background-position: 0 -90px;}
+.m-mn div.order div.gj{left:394px;background-position: 0 -45px;}
+.m-mn div.order div.gjrt{left:531px;background-position: 0 0;}
+
+/* m-mn center*/
+.m-mn div.center{height: 70px;margin-top: 20px;}
+.m-mn div.center div{position:relative;float:left;display:block;height:70px;line-height:70px;width:100px;padding-left:45px;margin-right:5px;text-align:center;background-color: #f5f5f5;}
+.m-mn div.center div a{color: #434343;font-size:14px;}
+.m-mn div.center div a:hover{color:#1c7dc7}
+.m-mn div.center div i{position:absolute;left:20px;top: 17px;background: url(../img/ip1.png) no-repeat;}
+.m-mn div.center div.c1 i{ background-position: 0 -180px; width: 35px; height: 35px; } 
+.m-mn div.center div.c2 i{ background-position: 0 -220px; width: 35px; height: 35px; } 
+.m-mn div.center div.c3 i{ background-position: 0 -260px; width: 35px; height: 35px; } 
+.m-mn div.center div.c4 i{ background-position: 0 -300px; width: 35px; height: 35px; } 
+.m-mn div.center div.c5 i{ background-position: 0 -340px; width: 35px; height: 35px; } 
+.m-mn div.center div.c5{width: 130px;float:left;margin-right:0;}
+
+/* m-mn notice */
+
+.m-mn div.notice{margin-top: 20px;border: 1px solid #d8d8d8;}
+.m-mn div.notice h3.head{position:relative;height: 42px;line-height: 42px;padding-left:40px;color: #434343;font-size: 1.2em;background-color: #f4f4f4;}
+.m-mn div.notice h3.head i{position:absolute;left:10px;top:10px;background: url(../img/ip1.png) no-repeat;background-position: 0 -380px; width: 25px; height: 20px;}
+.m-mn div.notice ul{padding: 15px;}
+.m-mn div.notice ul li{width:350px;height:30px;line-height:30px;padding-left:5px;}
+.m-mn div.notice ul li span{color: red;}
+.m-mn div.notice ul li a{margin-left: 5px;}
+
+
+

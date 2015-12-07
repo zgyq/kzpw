@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Trainfare">
+  
+  <typeAlias alias="Trainfare" type="com.yf.system.base.trainfare.Trainfare"/>
+  
+
+  <resultMap id="resultTrainfareMap" class="Trainfare">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="train_no" column="C_TRAIN_NO"/>
+  
+     <result property="start_station_name" column="C_START_STATION_NAME"/>
+  
+     <result property="stop_station_name" column="C_STOP_STATION_NAME"/>
+  
+     <result property="seat_type" column="C_SEAT_TYPE"/>
+  
+     <result property="seat_name" column="C_SEAT_NAME"/>
+  
+     <result property="bed_level" column="C_BED_LEVEL"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="mem" column="C_MEM"/>
+  
+     <result property="back1" column="C_BACK1"/>
+  
+     <result property="back2" column="C_BACK2"/>
+  
+     <result property="back3" column="C_BACK3"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllTrainfare"  resultMap="resultTrainfareMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRAINFARE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTrainfareBySql"  resultMap="resultTrainfareMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTrainfareBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTrainfareBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRAINFARE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTrainfare" parameterClass="long" resultClass="Trainfare">
+    select 
+    	ID as id,
+	  			C_TRAIN_NO as train_no,
+	  			C_START_STATION_NAME as start_station_name,
+	  			C_STOP_STATION_NAME as stop_station_name,
+	  			C_SEAT_TYPE as seat_type,
+	  			C_SEAT_NAME as seat_name,
+	  			C_BED_LEVEL as bed_level,
+	  			C_PRICE as price,
+	  			C_MEM as mem,
+	  			C_BACK1 as back1,
+	  			C_BACK2 as back2,
+	  			C_BACK3 as back3,
+	  			C_STATE as state 
+     from T_TRAINFARE
+    where ID = #id#
+  </select>
+   
+  <insert id="createTrainfare" parameterClass="Trainfare">
+    insert into T_TRAINFARE ( 
+    	ID,
+	  			C_TRAIN_NO,
+	  			C_START_STATION_NAME,
+	  			C_STOP_STATION_NAME,
+	  			C_SEAT_TYPE,
+	  			C_SEAT_NAME,
+	  			C_BED_LEVEL,
+	  			C_PRICE,
+	  			C_MEM,
+	  			C_BACK1,
+	  			C_BACK2,
+	  			C_BACK3,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#train_no#,
+	  					
+	  						#start_station_name#,
+	  					
+	  						#stop_station_name#,
+	  					
+	  						#seat_type#,
+	  					
+	  						#seat_name#,
+	  					
+	  						#bed_level#,
+	  					
+	  						#price#,
+	  					
+	  						#mem#,
+	  					
+	  						#back1#,
+	  					
+	  						#back2#,
+	  					
+	  						#back3#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTrainfare" parameterClass="long">
+    delete from T_TRAINFARE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTrainfare" parameterClass="Trainfare">
+    update T_TRAINFARE 
+    set 
+    	C_TRAIN_NO = #train_no#,
+	  					C_START_STATION_NAME = #start_station_name#,
+	  					C_STOP_STATION_NAME = #stop_station_name#,
+	  					C_SEAT_TYPE = #seat_type#,
+	  					C_SEAT_NAME = #seat_name#,
+	  					C_BED_LEVEL = #bed_level#,
+	  					C_PRICE = #price#,
+	  					C_MEM = #mem#,
+	  					C_BACK1 = #back1#,
+	  					C_BACK2 = #back2#,
+	  					C_BACK3 = #back3#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

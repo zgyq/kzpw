@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<link href="css/Common1.css" rel="stylesheet" type="text/css" />
+<style>
+html {overflow: scroll;overflow-x: hidden;overflow-x: auto !important;}
+</style>
+</head>
+<script type="text/javascript" src="css/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {	
+
+	//Show Banner
+	$(".main_image .desc").show(); //Show Banner
+	$(".main_image .block").animate({ opacity: 0.80 }, 1 ); //Set Opacity
+
+	//Click and Hover events for thumbnail list
+	$(".image_thumb ul li:first").addClass('active'); 
+	$(".image_thumb ul li").click(function(){ 
+		//Set Variables
+		var imgAlt = $(this).find('img').attr("alt"); //Get Alt Tag of Image
+		var imgTitle = $(this).find('a').attr("href"); //Get Main Image URL
+		var imgDesc = $(this).find('.block').html(); 	//Get HTML of block
+		var imgDescHeight = $(".main_image").find('.block').height();	//Calculate height of block	
+		
+		if ($(this).is(".active")) {  //If it's already active, then...
+			return false; // Don't click through
+		} else {
+			//Animate the Teaser				
+			$(".main_image .block").animate({ opacity: 0, marginBottom: -imgDescHeight }, 250 , function() {
+				$(".main_image .block").html(imgDesc).animate({ opacity: 0.80,	marginBottom: "0" }, 250 );
+				$(".main_image img").attr({ src: imgTitle , alt: imgAlt});
+			});
+		}
+		
+		$(".image_thumb ul li").removeClass('active'); //Remove class of 'active' on all lists
+		$(this).addClass('active');  //add class of 'active' on this list only
+		return false;
+		
+	}) .hover(function(){
+		$(this).addClass('hover');
+		}, function() {
+		$(this).removeClass('hover');
+	});
+			
+	//Toggle Teaser
+	$("a.collapse").click(function(){
+		$(".main_image .block").slideToggle();
+		$("a.collapse").toggleClass("show");
+	});
+	
+});//Close Function
+</script>
+<body class="main_body">
+
+<a name="top" id="top"></a>
+<div class="level2_top_title">
+&nbsp;&nbsp;<img src="images/title_ico_01.gif" width="6" height="10" /> 帮助中心 &gt; 信用卡大额支付退款</div>
+
+<div class="help-bk1">
+<div class="help-bk3">
+  <p>&nbsp;</p>
+  <p class="cp-size6">信用卡大额支付退款常见问题汇总</p>
+  <p>&nbsp;</p>
+  <p><span class="cp-size3">问：信用卡大额支付如何退款？</span>
+    </li>
+      </ol>
+  </p>
+  <p>答：和普通支付的退款流程一样是原路来原路回，直接退回到原支付的信用卡上 。</p>
+  <p>&nbsp;</p>
+  <p><span class="cp-size3">问：信用卡大额支付退款需要多长时间？</span>
+    </li>
+    </ol>
+</p>
+    <p>答：支付宝3--5个工作日内提交到银行进行入帐到信用卡上，每个银行的结算时间不一样，一般不超过7个工作日。</p>
+    <p>&nbsp;</p>
+    <p><span class="cp-size3">问：我的退款怎么几天了还没有到账？</span>
+      </li>
+      </ol>
+</p>
+    <p>答：如果钱在平台未退出去的话在平台能查询到，如果钱不在平台就在支付宝与银行交付的流程中，需要等待。有具体订单可以把交易号报给支付宝（057188158090）进行查询，退款走到哪一步了，还需要多久。</p>
+    <p>&nbsp;</p>
+    <p><span class="cp-size3">问：支付宝信用卡大额支付限制金额？</span>
+      </li>
+      </ol>
+</p>
+    <p>答：</p>
+    <p><img width="624" height="348" src="images/help-detk_clip_image002.jpg" /></p>
+    <p>&nbsp;</p>
+    <p><span class="cp-size3">问：采购支付界面流程？</span>
+      </li>
+      </ol>
+</p>
+    <p>答：信用卡大额支付：</p>
+    <p><img width="553" height="189" src="images/help-detk_clip_image0021.jpg" /></p>
+    <p>&nbsp;</p>
+    <p>快钱余额支付：<br />
+      </p>
+    <p><img width="553" height="123" src="images/help-detk_clip_image002_0000.jpg" /></p>
+    <p><br />
+    </p>
+    <p>点击确认支付后跳到:<br />
+      </p>
+    <p><img width="553" height="278" src="images/help-detk_clip_image004.jpg" /></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>快钱退款流程和支付宝退款流程一样，唯一不同的是：<br />
+    </p>
+    <p>快钱不存在平台代退，如果供应商或者提成方账户余额不足，就算在平台点了“同意退款”也不能退成功，必须通知余额不足的那一方充值后再点退款。</p>
+    <div class="help-bk4"><a href="#top">&#710; 回到顶部</a></div>
+</div>
+</div>
+
+</body>
+</html>

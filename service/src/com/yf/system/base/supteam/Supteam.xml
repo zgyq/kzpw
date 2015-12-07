@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Supteam">
+  
+  <typeAlias alias="Supteam" type="com.yf.system.base.supteam.Supteam"/>
+  
+
+  <resultMap id="resultSupteamMap" class="Supteam">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="teamid" column="C_TEAMID"/>
+  
+     <result property="supplierid" column="C_SUPPLIERID"/>
+  
+     <result property="distributorid" column="C_DISTRIBUTORID"/>
+  
+     <result property="offer" column="C_OFFER"/>
+  
+     <result property="status" column="C_STATUS"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+     
+    <result property="createtime" column="C_CREATETIME"/>
+  </resultMap>
+  
+  <select id="findAllSupteam"  resultMap="resultSupteamMap"  parameterClass="java.util.Map">
+  
+    select * from T_SUPTEAM
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSupteamBySql"  resultMap="resultSupteamMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSupteamBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSupteamBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SUPTEAM
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSupteam" parameterClass="long" resultClass="Supteam">
+    select 
+    	ID as id,
+	  			C_TEAMID as teamid,
+	  			C_SUPPLIERID as supplierid,
+	  			C_DISTRIBUTORID as distributorid,
+	  			C_OFFER as offer,
+	  			C_STATUS as status,
+	  			C_CREATETIME as createtime,
+	  			C_COMMENT as comment 
+	  			
+     from T_SUPTEAM
+    where ID = #id#
+  </select>
+   
+  <insert id="createSupteam" parameterClass="Supteam">
+    insert into T_SUPTEAM ( 
+    	ID,
+	  			C_TEAMID,
+	  			C_SUPPLIERID,
+	  			C_DISTRIBUTORID,
+	  			C_OFFER,
+	  			C_STATUS,
+	  			C_CREATETIME,
+	  			C_COMMENT 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#teamid:DECIMAL#,
+						
+							#supplierid:DECIMAL#,
+						
+							#distributorid:DECIMAL#,
+						
+	  						#offer#,
+	  					
+							#status:DECIMAL#,
+							
+							#createtime#,
+						
+	  						#comment#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSupteam" parameterClass="long">
+    delete from T_SUPTEAM
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSupteam" parameterClass="Supteam">
+    update T_SUPTEAM 
+    set 
+    	C_TEAMID = #teamid:DECIMAL#,
+						C_SUPPLIERID = #supplierid:DECIMAL#,
+						C_DISTRIBUTORID = #distributorid:DECIMAL#,
+						C_OFFER = #offer#,
+						C_CREATETIME = #createtime#,
+	  					C_STATUS = #status:DECIMAL#,
+						C_COMMENT = #comment#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

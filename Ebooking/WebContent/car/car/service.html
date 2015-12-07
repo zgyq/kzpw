@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>上海世贸汽车销售服务有限公司</title>
+<script type="text/javascript" src="js/html5.js"></script>
+<link rel="stylesheet" type="text/css" href="style/base.css">
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/iepng.js"></script>
+<script type="text/javascript">
+   EvPNG.fix('div, ul, img, li, input, a, p, span');
+</script>
+<![endif]-->
+</head>
+
+<body>
+<!--头部开始-->
+<header>
+	<nav class="header_top">
+    	<p class="h_top_tel">销售热线<span>021-31169888*1</span></p>
+        <ul class="h_top_link"><li><a href="#">经销商介绍</a></li><li class="fast_link"><a href="#">快速链接</a></li></ul>
+    </nav>
+    <div class="logo">
+    	<a href="#"><img src="images/logo.png" width="117" height="60" /></a>
+        <h1>上海世贸汽车销售服务有限公司</h1>
+    </div>
+    <nav class="navigation">
+    	<a href="#">首页</a>
+        <a href="#">产品与配件</a>
+        <a href="#">尊享服务</a>
+        <a href="#">新闻及活动</a>
+        <a href="#">二手车</a>
+        <a href="#" class="cur br0">关于我们</a>
+    </nav>
+</header>
+<!--头部结束-->
+<div class="content" style="padding-bottom:40px;">
+	<div class="honour_enjoy_top">
+    	<a href="#">金融服务</a>
+        <a href="#">贵宾引荐 </a>
+        <a href="#">英式尊享</a>
+        <a href="#">道路救援</a>
+        <a href="#" class="cur">预约试驾</a>
+    </div>
+    <div class="service_info">
+    	<h3>零利率金融服务</h3>
+        <p>首付30%购车，即可尊享24期零利率月供，轻松驾驭极致奢华。</p>
+    </div>
+    <div class="service_content">
+    	<p>即日起选购2013款全新捷豹XJ/XF 2.0L及3.0L车型，加入“捷豹零利率尊贷领享计划”，首付30%，即可尊享24期月供零利率，轻松驾驭极致奢华。</p>
+        <h3>查看具体金融服务方案：</h3>
+        <div class="service1">
+        	<div class="servicel1_select">
+            	<label>请选择车型<span>*</span></label>
+                <select class="order_select1" onchange="ChangeCarCode(this.value);">
+                	<option value="XF">XF</option>
+                	<option value="XJ">XJ</option>
+                </select>
+              <div id="CarHtml"></div>
+              <!--
+                <select name="XF" class="order_select4" id="carcode" onchange="GetPriceByCarCode();">
+                	
+                	<option class="XF" value="1">XF 2.0L i4 Ti 风华版</option>
+                	<option class="XF" value="2">XF 2.0L i4 Ti 豪华版</option>
+                	<option class="XF" value="3">XF 2.0L i4 Ti 奢华版</option>
+                	<option class="XF" value="4">XF 3.0L V6 S/C 风华版</option>
+                	<option class="XF" value="5">XF 3.0L V6 S/C 豪华版</option>
+                	<option class="XF" value="6">XF 3.0L V6 S/C 奢华版</option>
+                	<option value="7">XJ 2.0L i4 Ti 典雅商务版</option>
+                	<option value="8">XJ 2.0L i4 Ti 全景商务版</option>
+                	<option value="9">XJ 3.0L V6 S/C 全景商务版</option>
+                	<option value="10">XJ 3.0L V6 S/C 旗舰商务版</option>
+                	<option value="11">XJ 3.0L V6 S/C 旗舰商务版 四驱</option>
+                </select>
+            -->
+            </div>
+            <div class="servicel1_select">
+            	<label>请选择银行<span>*</span></label>
+                <select class="order_select5" id="bankcode" onchange="GetPriceByCarCode();">
+                	<option value="1">－－平安银行－－</option>
+                	<option value="2">－－民生银行－－</option>
+                	<option value="3">－－中信银行－－</option>
+                	<option value="4">－－中国银行－－</option>
+                </select>
+            </div>
+            <div class="servicel1_select">
+            	<label>首付款比例<span>*</span></label>
+                <select class="order_select5" id="pricecode" onchange="GetPriceByCarCode();">
+                	<option value="30">－－30%－－</option>
+                	<option value="40">－－40%－－</option>
+                	<option value="50">－－50%－－</option>
+                	
+                </select>
+            </div>
+        </div>
+        <h3 style="margin:19px 0 26px;">计算结果：</h3>
+        <div class="result clearfix">
+        	<span>市场指导价</span><input type="text" id="sczdj" disabled="disabled" />
+        </div>
+        <div class="result clearfix">
+        	<span>首付金额</span><input type="text" id="sfje" disabled="disabled"  />
+        </div>
+        <div class="result clearfix">
+        	<span>贷款金额</span><input type="text" id="dkje" disabled="disabled"  />
+        </div>
+        <div class="result clearfix">
+        	<span>贷款期限</span><input type="text" id="dkqx" disabled="disabled"  />
+        </div>
+        <div class="result clearfix">
+        	<span>月付款金额</span><input type="text" id="ygje" disabled="disabled"  />
+        </div>
+        <div class="result clearfix">
+        	<span>客户利息</span><input type="text" id="khlx" disabled="disabled"  />
+        </div>
+        <p style="margin:45px 0 10px;">*根据合作银行不同，还款金额略有差异。详情请垂询当地经销商。</p>
+        <p>*本活动最终解释权归捷豹中国所有。</p>
+    </div>
+</div>
+<!--底部开始-->
+<footer>
+	<nav><a href="#" class="bl0">预约试驾</a><a href="#">联系我们</a><a href="#">隐私政策</a><a href="#">条件与条款</a><a href="#" class="br0">网站地图</a></nav>
+    <div class="line"></div>
+    <p class="name">上海世贸汽车销售服务有限公司</p>
+    <p>上海市普陀区红柳路235号近南大路口&nbsp;&nbsp;经销商电话：021-31169888*1&nbsp;&nbsp;电子邮箱：wanglei@shwta.c</p>
+    <p class="bei">沪ICP11001621</p>
+    <p>ICP record</p>
+</footer>
+<!--底部结束-->
+</body>
+</html>
+<script type="text/javascript">
+Array.prototype.remove = function(s) {
+	for (var i = 0; i < this.length; i++) {
+		if (s == this[i])
+			this.splice(i, 1);
+	}
+}
+function Map() {
+	/** 存放键的数组(遍历用到) */
+	this.keys = new Array();
+	/** 存放数据 */
+	this.data = new Object();
+	
+	/**
+	 * 放入一个键值对
+	 * @param {String} key
+	 * @param {Object} value
+	 */
+	this.put = function(key, value) {
+		if(this.data[key] == null){
+			this.keys.push(key);
+		}
+		this.data[key] = value;
+	};
+	
+	/**
+	 * 获取某键对应的值
+	 * @param {String} key
+	 * @return {Object} value
+	 */
+	this.get = function(key) {
+		return this.data[key];
+	};
+	
+	/**
+	 * 删除一个键值对
+	 * @param {String} key
+	 */
+	this.remove = function(key) {
+		this.keys.remove(key);
+		this.data[key] = null;
+	};
+	
+	/**
+	 * 遍历Map,执行处理函数
+	 * 
+	 * @param {Function} 回调函数 function(key,value,index){..}
+	 */
+	this.each = function(fn){
+		if(typeof fn != 'function'){
+			return;
+		}
+		var len = this.keys.length;
+		for(var i=0;i<len;i++){
+			var k = this.keys[i];
+			fn(k,this.data[k],i);
+		}
+	};
+	
+	/**
+	 * 获取键值数组(类似Java的entrySet())
+	 * @return 键值对象{key,value}的数组
+	 */
+	this.entrys = function() {
+		var len = this.keys.length;
+		var entrys = new Array(len);
+		for (var i = 0; i < len; i++) {
+			entrys[i] = {
+				key : this.keys[i],
+				value : this.data[i]
+			};
+		}
+		return entrys;
+	};
+	
+	/**
+	 * 判断Map是否为空
+	 */
+	this.isEmpty = function() {
+		return this.keys.length == 0;
+	};
+	
+	/**
+	 * 获取键值对数量
+	 */
+	this.size = function(){
+		return this.keys.length;
+	};
+	
+	/**
+	 * 重写toString 
+	 */
+	this.toString = function(){
+		var s = "{";
+		for(var i=0;i<this.keys.length;i++,s+=','){
+			var k = this.keys[i];
+			s += k+"="+this.data[k];
+		}
+		s+="}";
+		return s;
+	};
+}
+
+var maxmonth =24;//多少月数
+
+
+function GetPriceByCarCode(){
+
+var carcode=$("#carcode").val();
+var bankcode=$("#bankcode").val();
+var pricecode=$("#pricecode").val();
+//alert("carcode:"+carcode+",bankcode:"+bankcode+",pricecode:"+pricecode);
+
+if(carcode=='-1'){
+//alert("请选择车型!");
+}
+if(bankcode=='-1'){
+//alert("请选择银行!");
+}
+if(pricecode=='-1'){
+//alert("请选择首付比例!");
+}
+if(carcode!='-1'&&bankcode!='-1'&&pricecode!='-1'){
+var carprice=carmap.get(carcode);//指导价
+//alert("指导价:"+carprice);
+var shoufubi=pricecode;//首付比例
+//alert("首付比例:"+shoufubi);
+
+var shoufuprice=carprice*shoufubi/100;
+//alert("首付:"+shoufuprice);
+
+var daikuanprice=carprice-shoufuprice;//需要贷款的钱
+//alert("贷款:"+daikuanprice);
+
+var huilv=bankmap.get(bankcode);//获取银行贷款的利息  目前都为0
+//alert("贷款利息比例:"+huilv);
+var huilvprice=daikuanprice*huilv/100;//得到贷款钱的利息
+
+//alert("贷款的利息:"+huilvprice);
+
+var eachmonthprice=(huilvprice+daikuanprice)/maxmonth;//每个月要还的钱
+
+eachmonthprice=Math.round(eachmonthprice*100)/100
+//alert("每个月还钱:"+eachmonthprice);
+
+//以下为对页面赋值显示
+$("#sczdj").val(carprice);//显示市场指导价
+$("#sfje").val(shoufuprice);//显示首付金额
+$("#dkje").val(daikuanprice);//显示贷款金额
+$("#dkqx").val(maxmonth+"个月");//显示贷款期限
+$("#ygje").val(eachmonthprice);//显示月付款
+$("#khlx").val(huilvprice);//显示贷款利息
+
+}else{
+//alert("carcode:"+carcode+",bankcode:"+bankcode+",pricecode:"+pricecode);
+}
+//alert(carmap.get("11"));
+}
+
+function ChangeCarCode(code){
+
+var carHTML="";
+
+carHTML+="<select name='XF' class='order_select4' id='carcode' onchange='GetPriceByCarCode();'>";
+if(code=='XF'){
+//$("#XJDIV").hide();
+//$("#XFDIV").show();
+//$(".XJ").hide();
+//$(".XF").show();
+
+carHTML+="<option value='1'>XF 2.0L i4 Ti 风华版</option>";
+carHTML+="<option value='2'>XF 2.0L i4 Ti 豪华版</option>";
+carHTML+="<option value='3'>XF 2.0L i4 Ti 奢华版</option>";
+carHTML+="<option value='4'>XF 3.0L V6 S/C 风华版</option>";
+carHTML+="<option value='5'>XF 3.0L V6 S/C 豪华版</option>";
+carHTML+="<option value='6'>XF 3.0L V6 S/C 奢华版</option>";
+
+}
+if(code=='XJ'){
+//$("#XFDIV").hide();
+//$("#XJDIV").show();
+//$(".XF").hide();
+//$(".XJ").show();
+carHTML+="<option value='7'>XJ 2.0L i4 Ti 典雅商务版</option>";
+carHTML+="<option value='8'>XJ 2.0L i4 Ti 全景商务版</option>";
+carHTML+="<option value='9'>XJ 3.0L V6 S/C 全景商务版</option>";
+carHTML+="<option value='10'>XJ 3.0L V6 S/C 旗舰商务版</option>";
+carHTML+="<option value='11'>XJ 3.0L V6 S/C 旗舰商务版 四驱</option>";
+}
+carHTML+="</select>";
+
+//alert(carHTML);
+$("#CarHtml").html(carHTML);
+GetPriceByCarCode();
+}
+
+var carmap = new Map(); //汽车指导价map
+carmap.put('1','550000');
+carmap.put('2','610000');
+carmap.put('3','680000');
+carmap.put('4','638000');
+carmap.put('5','698000');
+carmap.put('6','768000');
+carmap.put('7','898000');
+carmap.put('8','998000');
+carmap.put('9','1098000');
+carmap.put('10','1298000');
+carmap.put('11','1328000');
+//汽车指导价map赋值结束
+
+var bankmap = new Map(); //银行汇率map
+bankmap.put('1','0');
+bankmap.put('2','0');
+bankmap.put('3','0');
+bankmap.put('4','0'); 
+//银行汇率map赋值结束
+
+ChangeCarCode("XF");//第一次加载
+</script>

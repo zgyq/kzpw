@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Information">
+  
+  <typeAlias alias="Information" type="com.yf.system.base.information.Information"/>
+  
+
+  <resultMap id="resultInformationMap" class="Information">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="parentid" column="C_PARENTID"/>
+  
+     <result property="parentstr" column="C_PARENTSTR"/>
+     
+    <result property="isweb" column="C_ISWEB"/>
+  </resultMap>
+  
+  <select id="findAllInformation"  resultMap="resultInformationMap"  parameterClass="java.util.Map">
+  
+    select * from T_INFORMATION
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllInformationBySql"  resultMap="resultInformationMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteInformationBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countInformationBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_INFORMATION
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findInformation" parameterClass="long" resultClass="Information">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_CREATETIME as createtime,
+	  			C_MEMBERID as memberid,
+	  			C_STATE as state,
+	  			C_PARENTID as parentid,
+	  			C_ISWEB as isweb,
+	  			C_PARENTSTR as parentstr 
+     from T_INFORMATION
+    where ID = #id#
+  </select>
+   
+  <insert id="createInformation" parameterClass="Information">
+    insert into T_INFORMATION ( 
+    	ID,
+	  			C_NAME,
+	  			C_CREATETIME,
+	  			C_MEMBERID,
+	  			C_STATE,
+	  			C_PARENTID,
+	  			C_ISWEB,
+	  			C_PARENTSTR 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#createtime#,
+	  					
+							#memberid:DECIMAL#,
+						
+							#state:DECIMAL#,
+						
+							#parentid:DECIMAL#,
+							
+							#isweb:DECIMAL#,
+						
+	  						#parentstr#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteInformation" parameterClass="long">
+    delete from T_INFORMATION
+    where ID = #id#
+  </delete>
+	
+  <update id="updateInformation" parameterClass="Information">
+    update T_INFORMATION 
+    set 
+    	C_NAME = #name#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MEMBERID = #memberid:DECIMAL#,
+						C_STATE = #state:DECIMAL#,
+						C_PARENTID = #parentid:DECIMAL#,
+						C_ISWEB = #isweb:DECIMAL#,
+						C_PARENTSTR = #parentstr#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

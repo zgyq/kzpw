@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Trainseat">
+  
+  <typeAlias alias="Trainseat" type="com.yf.system.base.trainseat.Trainseat"/>
+  
+
+  <resultMap id="resultTrainseatMap" class="Trainseat">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="seat_code" column="C_SEAT_CODE"/>
+  
+     <result property="seat_name" column="C_SEAT_NAME"/>
+  
+     <result property="code_12306" column="C_CODE_12306"/>
+  
+     <result property="mem" column="C_MEM"/>
+  
+     <result property="back1" column="C_BACK1"/>
+  
+     <result property="back2" column="C_BACK2"/>
+  
+     <result property="back3" column="C_BACK3"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllTrainseat"  resultMap="resultTrainseatMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRAINSEAT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTrainseatBySql"  resultMap="resultTrainseatMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTrainseatBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTrainseatBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRAINSEAT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTrainseat" parameterClass="long" resultClass="Trainseat">
+    select 
+    	ID as id,
+	  			C_SEAT_CODE as seat_code,
+	  			C_SEAT_NAME as seat_name,
+	  			C_CODE_12306 as code_12306,
+	  			C_MEM as mem,
+	  			C_BACK1 as back1,
+	  			C_BACK2 as back2,
+	  			C_BACK3 as back3,
+	  			C_STATE as state 
+     from T_TRAINSEAT
+    where ID = #id#
+  </select>
+   
+  <insert id="createTrainseat" parameterClass="Trainseat">
+    insert into T_TRAINSEAT ( 
+    	ID,
+	  			C_SEAT_CODE,
+	  			C_SEAT_NAME,
+	  			C_CODE_12306,
+	  			C_MEM,
+	  			C_BACK1,
+	  			C_BACK2,
+	  			C_BACK3,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#seat_code#,
+	  					
+	  						#seat_name#,
+	  					
+	  						#code_12306#,
+	  					
+	  						#mem#,
+	  					
+	  						#back1#,
+	  					
+	  						#back2#,
+	  					
+	  						#back3#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTrainseat" parameterClass="long">
+    delete from T_TRAINSEAT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTrainseat" parameterClass="Trainseat">
+    update T_TRAINSEAT 
+    set 
+    	C_SEAT_CODE = #seat_code#,
+	  					C_SEAT_NAME = #seat_name#,
+	  					C_CODE_12306 = #code_12306#,
+	  					C_MEM = #mem#,
+	  					C_BACK1 = #back1#,
+	  					C_BACK2 = #back2#,
+	  					C_BACK3 = #back3#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

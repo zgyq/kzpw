@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+<settings
+cacheModelsEnabled="true"
+enhancementEnabled="true"
+lazyLoadingEnabled="true"
+errorTracingEnabled="true"
+maxRequests="32"
+maxSessions="10"
+maxTransactions="5"
+useStatementNamespaces="false"
+/>
+<sqlMap resource="com/yf/system/base/agentroleref/Agentroleref.xml"/>
+<sqlMap resource="com/yf/system/base/airbaseprice/Airbaseprice.xml"/>
+<sqlMap resource="com/yf/system/base/aircompany/Aircompany.xml"/>
+<sqlMap resource="com/yf/system/base/airfee/Airfee.xml"/>
+<sqlMap resource="com/yf/system/base/airflight/Airflight.xml"/>
+<sqlMap resource="com/yf/system/base/backpoint/Backpoint.xml"/>
+<sqlMap resource="com/yf/system/base/cabin/Cabin.xml"/>
+<sqlMap resource="com/yf/system/base/cityairport/Cityairport.xml"/>
+<!--加盟商  
+<sqlMap resource="com/yf/system/base/busssiness/Bussiness.xml"/>-->
+<sqlMap resource="com/yf/system/base/customeragent/Customeragent.xml"/>
+<!--  
+<sqlMap resource="com/yf/system/base/customeraircard/Customeraircard.xml"/>
+-->
+
+<sqlMap resource="com/yf/system/base/customercredit/Customercredit.xml"/>
+<sqlMap resource="com/yf/system/base/customerpassenger/Customerpassenger.xml"/>
+<sqlMap resource="com/yf/system/base/customeruser/Customeruser.xml"/>
+<sqlMap resource="com/yf/system/base/flightstop/Flightstop.xml"/>
+<sqlMap resource="com/yf/system/base/noterecorder/Noterecorder.xml"/>
+<sqlMap resource="com/yf/system/base/segmentinfo/Segmentinfo.xml"/>
+<sqlMap resource="com/yf/system/base/passenger/Passenger.xml"/>
+<sqlMap resource="com/yf/system/base/orderinfo/Orderinfo.xml"/>
+<sqlMap resource="com/yf/system/base/orderinforc/Orderinforc.xml"/>
+<sqlMap resource="com/yf/system/base/paymentrecorder/Paymentrecorder.xml"/>
+<sqlMap resource="com/yf/system/base/policyperiod/Policyperiod.xml"/>
+<sqlMap resource="com/yf/system/base/spzrate/Spzrate.xml"/>
+<sqlMap resource="com/yf/system/base/sysmessage/Sysmessage.xml"/>
+<sqlMap resource="com/yf/system/base/sysroleright/Sysroleright.xml"/>
+<sqlMap resource="com/yf/system/base/systemaction/Systemaction.xml"/>
+<sqlMap resource="com/yf/system/base/systemright/Systemright.xml"/>
+<sqlMap resource="com/yf/system/base/systemrole/Systemrole.xml"/>
+<sqlMap resource="com/yf/system/base/telephone/Telephone.xml"/>
+<sqlMap resource="com/yf/system/base/template/Template.xml"/>
+<sqlMap resource="com/yf/system/base/zrate/Zrate.xml"/>
+<sqlMap resource="com/yf/system/base/flightmodel/Flightmodel.xml"/>
+<sqlMap resource="com/yf/system/base/sysconfig/Sysconfig.xml"/>
+<sqlMap resource="com/yf/system/base/infocontent/Infocontent.xml"/>
+<sqlMap resource="com/yf/system/base/infotype/Infotype.xml"/>
+<sqlMap resource="com/yf/system/base/specialprice/Specialprice.xml"/>
+<sqlMap resource="com/yf/system/base/exchrecord/Exchrecord.xml"/>
+<sqlMap resource="com/yf/system/base/prizeinfo/Prizeinfo.xml"/>
+<sqlMap resource="com/yf/system/base/prizetype/Prizetype.xml"/>
+<sqlMap resource="com/yf/system/base/fairport/Fairport.xml"/>
+<sqlMap resource="com/yf/system/base/fairway/Fairway.xml"/>
+<sqlMap resource="com/yf/system/base/fcity/Fcity.xml"/>
+<sqlMap resource="com/yf/system/base/fcountry/Fcountry.xml"/>
+<sqlMap resource="com/yf/system/base/fdeliverassign/Fdeliverassign.xml"/>
+<sqlMap resource="com/yf/system/base/fflight/Fflight.xml"/>
+<sqlMap resource="com/yf/system/base/fguest/Fguest.xml"/>
+<sqlMap resource="com/yf/system/base/forderdelrec/Forderdelrec.xml"/>
+<sqlMap resource="com/yf/system/base/forderinfo/Forderinfo.xml"/>
+<sqlMap resource="com/yf/system/base/fsendticketcity/Fsendticketcity.xml"/>
+<sqlMap resource="com/yf/system/base/department/Department.xml"/>
+<sqlMap resource="com/yf/system/base/filecabindir/Filecabindir.xml"/>
+<sqlMap resource="com/yf/system/base/filecabinfile/Filecabinfile.xml"/>
+<sqlMap resource="com/yf/system/base/traderecord/Traderecord.xml"/>
+<sqlMap resource="com/yf/system/base/intermanager/Intermanager.xml"/>
+<sqlMap resource="com/yf/system/base/ymsend/Ymsend.xml"/>
+<sqlMap resource="com/yf/system/base/ymreceive/Ymreceive.xml"/>
+<sqlMap resource="com/yf/system/base/advertisement/Advertisement.xml"/>
+<sqlMap resource="com/yf/system/base/eterminfo/Eterminfo.xml"/>
+<sqlMap resource="com/yf/system/base/cpzrate/Cpzrate.xml"/>
+<sqlMap resource="com/yf/system/base/teamapply/Teamapply.xml"/>
+<sqlMap resource="com/yf/system/base/supteam/Supteam.xml"/>
+<sqlMap resource="com/yf/system/base/kweifabu/Kweifabu.xml"/>
+<sqlMap resource="com/yf/system/base/kweisq/Kweisq.xml"/>
+<sqlMap resource="com/yf/system/base/jinribaobiao/Jinribaobiao.xml"/>
+<sqlMap resource="com/yf/system/base/tuipiao/Tuipiao.xml"/>
+<sqlMap resource="com/yf/system/base/sellreport/Sellreport.xml"/>
+<sqlMap resource="com/yf/system/base/optrecord/Optrecord.xml"/>
+<sqlMap resource="com/yf/system/base/scang/Scang.xml"/>
+<sqlMap resource="com/yf/system/base/rperformance/Rperformance.xml"/>
+<sqlMap resource="com/yf/system/base/rsector/Rsector.xml"/>
+<sqlMap resource="com/yf/system/base/biguser/Biguser.xml"/>
+<sqlMap resource="com/yf/system/base/biguserprice/Biguserprice.xml"/>
+<sqlMap resource="com/yf/system/base/repay/Repay.xml"/>
+<sqlMap resource="com/yf/system/base/perworkload/Perworkload.xml"/>
+<sqlMap resource="com/yf/system/base/rdepartment/Rdepartment.xml"/>
+<sqlMap resource="com/yf/system/base/rgroupcustomers/Rgroupcustomers.xml"/>
+<sqlMap resource="com/yf/system/base/rzhixiao/Rzhixiao.xml"/>
+<sqlMap resource="com/yf/system/base/adcooperate/Adcooperate.xml"/>
+<sqlMap resource="com/yf/system/base/tousu/Tousu.xml"/>
+<!-- 
+<sqlMap resource="com/yf/system/base/wanlixing/Wanlixing.xml"/>
+ -->
+<sqlMap resource="com/yf/system/base/importmureport/Importmureport.xml"/>
+<sqlMap resource="com/yf/system/base/miscellaneous/Miscellaneous.xml"/>
+<sqlMap resource="com/yf/system/base/ticketnumber/Ticketnumber.xml"/>
+<sqlMap resource="com/yf/system/base/tickettype/Tickettype.xml"/>
+<sqlMap resource="com/yf/system/base/travelskyreport/Travelskyreport.xml"/>
+<sqlMap resource="com/yf/system/base/qqinfo/Qqinfo.xml"/>
+<sqlMap resource="com/yf/system/base/qqtype/Qqtype.xml"/>
+<sqlMap resource="com/yf/system/base/gerenguazhanfrec/Gerenguazhanfrec.xml"/>
+<sqlMap resource="com/yf/system/base/insuranceinfo/Insuranceinfo.xml"/>
+<sqlMap resource="com/yf/system/base/qmessage/Qmessage.xml"/>
+<sqlMap resource="com/yf/system/base/creditcard/Creditcard.xml"/>
+<sqlMap resource="com/yf/system/base/passengerrepayrc/Passengerrepayrc.xml"/>
+<sqlMap resource="com/yf/system/base/chaininfo/Chaininfo.xml"/>
+<sqlMap resource="com/yf/system/base/city/City.xml"/>
+<sqlMap resource="com/yf/system/base/dcampaign/Dcampaign.xml"/>
+<sqlMap resource="com/yf/system/base/guest/Guest.xml"/>
+<sqlMap resource="com/yf/system/base/hotel/Hotel.xml"/>
+<sqlMap resource="com/yf/system/base/hotelcontract/Hotelcontract.xml"/>
+<sqlMap resource="com/yf/system/base/hotelimage/Hotelimage.xml"/>
+<sqlMap resource="com/yf/system/base/hotellandmark/Hotellandmark.xml"/>
+<sqlMap resource="com/yf/system/base/hotellinkman/Hotellinkman.xml"/>
+<sqlMap resource="com/yf/system/base/hotelorder/Hotelorder.xml"/>
+<sqlMap resource="com/yf/system/base/hotelorderrc/Hotelorderrc.xml"/>
+<sqlMap resource="com/yf/system/base/hotelprice/Hotelprice.xml"/>
+<sqlMap resource="com/yf/system/base/hotelspec/Hotelspec.xml"/>
+<sqlMap resource="com/yf/system/base/hotelfan/Hotelfan.xml"/>
+
+<sqlMap resource="com/yf/system/base/roomtype/Roomtype.xml"/>
+<sqlMap resource="com/yf/system/base/landmark/Landmark.xml"/>
+<sqlMap resource="com/yf/system/base/province/Province.xml"/>
+<sqlMap resource="com/yf/system/base/region/Region.xml"/>
+<sqlMap resource="com/yf/system/base/roomstateback/Roomstateback.xml"/>
+<sqlMap resource="com/yf/system/base/roomstate/Roomstate.xml"/>
+
+<sqlMap resource="com/yf/system/base/conferencehall/Conferencehall.xml"/>
+<sqlMap resource="com/yf/system/base/conferencehotel/Conferencehotel.xml"/>
+<sqlMap resource="com/yf/system/base/tickctspa/Tickctspa.xml"/>
+<sqlMap resource="com/yf/system/base/scenicspot/Scenicspot.xml"/>
+<sqlMap resource="com/yf/system/base/tripnode/Tripnode.xml"/>
+<sqlMap resource="com/yf/system/base/tripline/Tripline.xml"/>
+<sqlMap resource="com/yf/system/base/triprange/Triprange.xml"/>
+<sqlMap resource="com/yf/system/base/triporder/Triporder.xml"/>
+<sqlMap resource="com/yf/system/base/triporderrc/Triporderrc.xml"/>
+<sqlMap resource="com/yf/system/base/triplinetype/Triplinetype.xml"/>
+<sqlMap resource="com/yf/system/base/triplinesource/Triplinesource.xml"/>
+<sqlMap resource="com/yf/system/base/triprangescenicspot/Triprangescenicspot.xml"/>
+<sqlMap resource="com/yf/system/base/liudianrecord/Liudianrecord.xml"/>
+<sqlMap resource="com/yf/system/base/liudianrefinfo/Liudianrefinfo.xml"/>
+ <sqlMap resource="com/yf/system/base/settlementtype/Settlementtype.xml"/>
+ <sqlMap resource="com/yf/system/base/rebaterule/Rebaterule.xml"/>
+ <sqlMap resource="com/yf/system/base/vmoneyrecord/Vmoneyrecord.xml"/>
+<sqlMap resource="com/yf/system/base/customerintegralrecord/Customerintegralrecord.xml"/>
+<sqlMap resource="com/yf/system/base/integral/Integral.xml"/>
+
+<sqlMap resource="com/yf/system/base/carstore/Carstore.xml"/>
+<sqlMap resource="com/yf/system/base/cars/Cars.xml"/>
+<sqlMap resource="com/yf/system/base/carimages/Carimages.xml"/>
+<sqlMap resource="com/yf/system/base/carorder/Carorder.xml"/>
+<sqlMap resource="com/yf/system/base/carbrand/Carbrand.xml"/>
+<sqlMap resource="com/yf/system/base/carsregion/Carsregion.xml"/>
+<sqlMap resource="com/yf/system/base/carinfo/Carinfo.xml"/>
+<sqlMap resource="com/yf/system/base/hotelstar/Hotelstar.xml"/>
+<sqlMap resource="com/yf/system/base/userintegral/Userintegral.xml"/>
+<sqlMap resource="com/yf/system/base/rebaterecord/Rebaterecord.xml"/>
+<sqlMap resource="com/yf/system/base/lowestprice/Lowestprice.xml"/>
+
+<sqlMap resource="com/yf/system/base/hotelpass/Hotelpass.xml"/>
+
+
+<sqlMap resource="com/yf/system/base/giftcatalog/Giftcatalog.xml"/>
+
+ <sqlMap resource="com/yf/system/base/redeem/Redeem.xml"/>
+ <sqlMap resource="com/yf/system/base/gift/Gift.xml"/>
+ <!-- 手机QQ币充值 -->
+ <sqlMap resource="com/yf/system/base/recharge/Recharge.xml"/>
+ <sqlMap resource="com/yf/system/base/qmoneyrecharge/Qmoneyrecharge.xml"/>
+ <!-- 手机QQ币充值结束 -->
+ <sqlMap resource="com/yf/system/base/ticketapp/Ticketapp.xml"/>
+ <!-- 国际酒店用 -->
+<sqlMap resource="com/yf/system/base/country/Country.xml"/>
+<sqlMap resource="com/yf/system/base/incity/Incity.xml"/>
+
+<!-- 火车票 -->
+<sqlMap resource="com/yf/system/base/train/Train.xml"/>
+<sqlMap resource="com/yf/system/base/trainpassenger/Trainpassenger.xml"/>
+<sqlMap resource="com/yf/system/base/trainroom/Trainroom.xml"/>
+<sqlMap resource="com/yf/system/base/traincity/Traincity.xml"/>
+
+
+<sqlMap resource="com/yf/system/base/trainstation/Trainstation.xml"/>
+<sqlMap resource="com/yf/system/base/traininfo/Traininfo.xml"/>
+<sqlMap resource="com/yf/system/base/trainsch/Trainsch.xml"/>
+<sqlMap resource="com/yf/system/base/trainfare/Trainfare.xml"/>
+<sqlMap resource="com/yf/system/base/trainseat/Trainseat.xml"/>
+
+<!-- 火车票结束 -->
+<!-- 分销商域名logo维护 -->
+<sqlMap resource="com/yf/system/base/dnsmaintenance/Dnsmaintenance.xml"/>
+<!-- 分销商域名logo维护结束 -->
+<!-- 外部账号维护开始 -->
+<sqlMap resource="com/yf/system/base/eaccount/Eaccount.xml"/>
+<!-- 外部账号维护结束 -->
+<!-- 新增帮助中心开始 -->
+<sqlMap resource="com/yf/system/base/helpcenter/Helpcenter.xml"/>
+<sqlMap resource="com/yf/system/base/helpcenterinfo/Helpcenterinfo.xml"/>
+<sqlMap resource="com/yf/system/base/information/Information.xml"/>
+<sqlMap resource="com/yf/system/base/informationinfo/Informationinfo.xml"/>
+<!-- 新增帮助中心结束 cxx更新 -->
+<!-- 包机开始 -->
+<sqlMap resource="com/yf/system/base/planeservice/Planeservice.xml"/>
+<sqlMap resource="com/yf/system/base/charterorder/Charterorder.xml"/>
+<!-- 包机结束 -->
+
+<!-- 保险服务公司信息 -->
+<sqlMap resource="com/yf/system/base/insurcomputer/Insurcomputer.xml"/>
+<!-- 保险单表 -->
+<sqlMap resource="com/yf/system/base/insurorder/Insurorder.xml"/>
+<!-- 被保人信息表 -->
+<sqlMap resource="com/yf/system/base/insuruser/Insuruser.xml"/>
+<!--  -->
+
+<!-- 地址 -->
+<sqlMap resource="com/yf/system/base/useraddress/Useraddress.xml"/>
+<!--  -->
+<!-- 酒店星级 -->
+ <sqlMap resource="com/yf/system/base/hotelstart/Hotelstart.xml"/>
+ <!--  -->
+ <!-- 酒店数据提供商 -->
+   <sqlMap resource="com/yf/system/base/dataprovide/Dataprovide.xml"/>
+ <!--  -->
+ <!-- 星级返点记录 -->
+ <sqlMap resource="com/yf/system/base/starrecord/Starrecord.xml"/>
+ <!--  -->
+ <!-- 星级返点设置关联 -->
+<sqlMap resource="com/yf/system/base/starreinfo/Starreinfo.xml"/>
+<!--  -->
+<!-- 星级结算分类 -->
+<sqlMap resource="com/yf/system/base/starsettlementtype/Starsettlementtype.xml"/>
+<!--  -->
+<!-- 短信用户组 -->
+<sqlMap resource="com/yf/system/base/messgroup/Messgroup.xml"/>
+<!--  -->
+<!-- 模板 -->
+<sqlMap resource="com/yf/system/base/templet/Templet.xml"/>
+<!--B2G企业添加于员工  -->
+<sqlMap resource="com/yf/b2b2g/bean/xml/Company.xml"/>
+<sqlMap resource="com/yf/b2b2g/bean/xml/Employee.xml"/>
+<sqlMap resource="com/yf/b2b2g/bean/xml/Role.xml"/>
+<sqlMap resource="com/yf/b2b2g/bean/xml/Userrole.xml"/>
+<sqlMap resource="com/yf/b2b2g/bean/xml/Department.xml"/>
+<sqlMap resource="com/yf/b2b2g/bean/xml/Rolelimit.xml"/>
+<sqlMap resource="com/yf/b2b2g/bean/xml/Comlimit.xml"/>
+
+<sqlMap resource="com/yf/system/base/agentvalue/Agentvalue.xml"/>
+<!-- 限制舱位 -->
+<sqlMap resource="com/yf/system/base/limitcabin/Limitcabin.xml"/>
+
+<!-- 登录信息 -->
+<sqlMap resource="com/yf/system/base/logindesc/Logindesc.xml"/>
+
+<sqlMap resource="com/yf/system/base/airdelayprove/Airdelayprove.xml"/>
+
+<sqlMap resource="com/yf/system/base/changpass/Changpass.xml"/>
+
+<sqlMap resource="com/yf/system/base/huodonguser/Huodonguser.xml"/>
+
+<!-- 景点和门票 -->
+<sqlMap resource="com/yf/system/base/spotmes/Spotmes.xml"/>
+<sqlMap resource="com/yf/system/base/spotticket/Spotticket.xml"/>
+<sqlMap resource="com/yf/system/base/spotcity/Spotcity.xml"/>
+<sqlMap resource="com/yf/system/base/spotorder/Spotorder.xml"/>
+<sqlMap resource="com/yf/system/base/spotticketcity/Spotticketcity.xml"/>
+<!-- 线路 -->
+<sqlMap resource="com/yf/system/base/spotline/Spotline.xml"/>
+<sqlMap resource="com/yf/system/base/spotlineimg/Spotlineimg.xml"/>
+<sqlMap resource="com/yf/system/base/spotlineinfo/Spotlineinfo.xml"/>
+<sqlMap resource="com/yf/system/base/spotlineprice/Spotlineprice.xml"/>
+<sqlMap resource="com/yf/system/base/spotlineorder/Spotlineorder.xml"/>
+<sqlMap resource="com/yf/system/base/spotlineuser/Spotlineuser.xml"/>
+<!-- 团购 -->
+<sqlMap resource="com/yf/system/base/buying/Buying.xml"/>
+<sqlMap resource="com/yf/system/base/buyingimg/Buyingimg.xml"/>
+<!-- 行程单 -->
+<sqlMap resource="com/yf/system/base/xcdno/Xcdno.xml"/>
+<sqlMap resource="com/yf/system/base/xcdnoinfo/Xcdnoinfo.xml"/>
+<sqlMap resource="com/yf/system/base/xcdorder/Xcdorder.xml"/>
+<!-- 配送 -->
+<sqlMap resource="com/yf/system/base/peisong/Peisong.xml"/>
+<!-- newqq维护 -->
+<sqlMap resource="com/yf/system/base/qqtypenew/Qqtypenew.xml"/>
+<sqlMap resource="com/yf/system/base/qqinfonew/Qqinfonew.xml"/>
+
+<!-- 套现 -->
+<sqlMap resource="com/yf/system/base/txuserinfo/Txuserinfo.xml"/>
+<sqlMap resource="com/yf/system/base/txorder/Txorder.xml"/>
+
+<!-- 签证 -->
+<sqlMap resource="com/yf/system/base/qzguojia/Qzguojia.xml"/>
+<sqlMap resource="com/yf/system/base/qzchanpin/Qzchanpin.xml"/>
+<sqlMap resource="com/yf/system/base/qzchanpininfo/Qzchanpininfo.xml"/>
+
+<sqlMap resource="com/yf/system/base/zhefan/Zhefan.xml"/>
+
+<sqlMap resource="com/yf/system/base/nfdprice/Nfdprice.xml"/>
+
+<!-- 提现 -->
+<sqlMap resource="com/yf/system/base/withbank/Withbank.xml"/>
+
+<sqlMap resource="com/yf/system/base/ymuser/Ymuser.xml"/>
+
+<sqlMap resource="com/yf/system/base/ympay/Ympay.xml"/>
+
+<!-- 航班基础信息 -->
+<sqlMap resource="com/yf/system/base/airliencabin/Airliencabin.xml"/>
+<sqlMap resource="com/yf/system/base/airlien/Airlien.xml"/>
+
+</sqlMapConfig>

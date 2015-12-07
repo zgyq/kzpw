@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <RegisterCustomer>尊敬的用户@CustomerName@@Gender@您好，感谢您成为七星票务会员，我们将竭诚为您服务。客服电话：4000175778</RegisterCustomer>
+  <RegisterMobile>尊敬的用户@CustomerName@@Gender@您好，您的会员登录帐号为您的手机号，密码为：@LoginPwd@，感谢您成为七星票务会员，我们将竭诚为您服务，客服电话：4000175778</RegisterMobile>
+  <SelectLoginName>尊敬的用户@CustomerName@您好，您的会员密码为：@LoginPwd@，账号为:@LogUserName@,如有疑问，请与客服联系，电话：4000175778</SelectLoginName>
+  <TOrderSuccess>@CustomerName@您好：您购买的@startcityto@-@endcityto@@type@提交成功，订单号为：@OrderId@，正在受理中，稍后与您联系，请保持手机畅通，谢谢！客服电话：4000175778</TOrderSuccess>
+  <HOrderInform>您好，您购买的@Time@入住的，“@HotelName@”“@HotelRomm@”已确认，酒店地址：@HotelAddress@电话：@HotelPhone@。如行程有变，请及时与客服联系，电话：4000175778</HOrderInform>
+  <CancelHotelOrder>@CustomerName@您好：您购买的@reserve_date@,@hotel_name@,间夜数:@room_type_rmdy@，已取消。希望下次为您服务！客服电话：4000175778</CancelHotelOrder>
+  <PaymentHotelOrder>您好，您购买的@Time@入住的，“@HotelName@”“@HotelRomm@”已确认，酒店地址：@HotelAddress@电话：@HotelPhone@。请及时到个人中心付款,如行程有变，请及时与客服联系，电话：4000175778 </PaymentHotelOrder>
+  <HOrderSuccess>@CustomerName@您好：您购买的@reserve_date@,@hotel_name@,间夜数:@room_type_rmdy@订单生成成功。订单号为：@OrderId@，正在受理中，稍后与您联系，请保持手机畅通，谢谢！客服电话：4000175778</HOrderSuccess>
+  <AOrderInform>您好，您购买的@aircompanyto@航班@airlineto@  @startcityto@-@endcityto@。@startcityloginto@航站楼，起飞时间：@starttimeto@，到达@endtimeto@，电子客票已出票。请持有效身份证件到机场办理手续。如有疑问，请与客服联系，电话：4000175778</AOrderInform>
+  <AOrderInformback>您好，您购买的@aircompanyto@航班@airlineto@  @startcityto@-@endcityto@。@startcityloginto@航站楼，起飞时间：@starttimeto@，到达@endtimeto@，返程@aircompanyback@航班@airlineback@  @startcityback@-@endcityback@。@startcityloginback@航站楼，起飞时间：@starttimeback@，到达@endtimeback@，电子客票已出票。请持有效身份证件到机场办理手续。如有疑问，请与客服联系，电话：4000175778</AOrderInformback>
+  <CancelTicketOrder>@CustomerName@您好：您购买的@Flight_Date@,@Flight_Num@,@Flight_Segment@，已取消。希望下次为您服务！客服电话：4000175778</CancelTicketOrder>
+  <TOrderInform>您好，您购买的@tripdate@的(@tripname@)已成功，如有疑问，请与客服联系，电话：4000175778</TOrderInform>
+</Config>

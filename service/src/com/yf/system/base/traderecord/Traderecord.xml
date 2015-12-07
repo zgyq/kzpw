@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Traderecord">
+  
+  <typeAlias alias="Traderecord" type="com.yf.system.base.traderecord.Traderecord"/>
+  
+
+  <resultMap id="resultTraderecordMap" class="Traderecord">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="ordercode" column="C_ORDERCODE"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="totalfee" column="C_TOTALFEE"/>
+  
+     <result property="paytype" column="C_PAYTYPE"/>
+  
+     <result property="payname" column="C_PAYNAME"/>
+  
+     <result property="retcode" column="C_RETCODE"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="goodsname" column="C_GOODSNAME"/>
+  
+     <result property="goodsdesc" column="C_GOODSDESC"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="bankcode" column="C_BANKCODE"/>
+  
+     <result property="paymothed" column="C_PAYMOTHED"/>
+   
+  </resultMap>
+  
+  <select id="findAllTraderecord"  resultMap="resultTraderecordMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRADERECORD
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTraderecordBySql"  resultMap="resultTraderecordMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTraderecordBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTraderecordBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRADERECORD
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTraderecord" parameterClass="long" resultClass="Traderecord">
+    select 
+    	ID as id,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_ORDERCODE as ordercode,
+	  			C_STATE as state,
+	  			C_TOTALFEE as totalfee,
+	  			C_PAYTYPE as paytype,
+	  			C_PAYNAME as payname,
+	  			C_RETCODE as retcode,
+	  			C_DESCRIPTION as description,
+	  			C_CODE as code,
+	  			C_GOODSNAME as goodsname,
+	  			C_GOODSDESC as goodsdesc,
+	  			C_TYPE as type,
+	  			C_BANKCODE as bankcode,
+	  			C_PAYMOTHED as paymothed 
+     from T_TRADERECORD
+    where ID = #id#
+  </select>
+   
+  <insert id="createTraderecord" parameterClass="Traderecord">
+    insert into T_TRADERECORD ( 
+    	ID,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_ORDERCODE,
+	  			C_STATE,
+	  			C_TOTALFEE,
+	  			C_PAYTYPE,
+	  			C_PAYNAME,
+	  			C_RETCODE,
+	  			C_DESCRIPTION,
+	  			C_CODE,
+	  			C_GOODSNAME,
+	  			C_GOODSDESC,
+	  			C_TYPE,
+	  			C_BANKCODE,
+	  			C_PAYMOTHED 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+	  						#ordercode#,
+	  					
+							#state:DECIMAL#,
+						
+							#totalfee#,
+						
+							#paytype:DECIMAL#,
+						
+	  						#payname#,
+	  					
+	  						#retcode#,
+	  					
+	  						#description#,
+	  					
+	  						#code#,
+	  					
+	  						#goodsname#,
+	  					
+	  						#goodsdesc#,
+	  					
+							#type:DECIMAL#,
+						
+	  						#bankcode#,
+	  					
+	  						#paymothed#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTraderecord" parameterClass="long">
+    delete from T_TRADERECORD
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTraderecord" parameterClass="Traderecord">
+    update T_TRADERECORD 
+    set 
+    	C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_ORDERCODE = #ordercode#,
+	  					C_STATE = #state:DECIMAL#,
+						C_TOTALFEE = #totalfee#,
+						C_PAYTYPE = #paytype:DECIMAL#,
+						C_PAYNAME = #payname#,
+	  					C_RETCODE = #retcode#,
+	  					C_DESCRIPTION = #description#,
+	  					C_CODE = #code#,
+	  					C_GOODSNAME = #goodsname#,
+	  					C_GOODSDESC = #goodsdesc#,
+	  					C_TYPE = #type:DECIMAL#,
+						C_BANKCODE = #bankcode#,
+	  					C_PAYMOTHED = #paymothed#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 K位特价申请表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Kweisq createKweisq(Kweisq kweisq) throws SQLException;
+	
+	/**
+	 * 删除 K位特价申请表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteKweisq(long id);
+	
+	
+	/**
+	 * 修改 K位特价申请表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateKweisq(Kweisq kweisq);
+
+		
+	/**
+	 * 修改 K位特价申请表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateKweisqIgnoreNull(Kweisq kweisq);
+		
+	
+	/**
+	 * 查找 K位特价申请表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllKweisq(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 K位特价申请表
+	 * @param id
+	 * @return
+	 */
+	public Kweisq findKweisq(long id);
+	
+	
+	/** 
+	 * 查找 K位特价申请表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllKweisqForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找K位特价申请表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllKweisqBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql K位特价申请表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteKweisqBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countKweisqBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IKweisqComponent kweisqComponent;
+	  
+ 	
+ 	public IKweisqComponent getKweisqComponent() {
+		return kweisqComponent;
+	}
+	public void setKweisqComponent(IKweisqComponent  kweisqComponent) {
+		this.kweisqComponent = kweisqComponent;
+	}
+	/**
+	 * 创建 K位特价申请表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Kweisq createKweisq(Kweisq kweisq) throws SQLException{
+	
+		return kweisqComponent.createKweisq(kweisq);
+	}
+	/**
+	 * 删除 K位特价申请表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteKweisq(long id){
+	
+		return kweisqComponent.deleteKweisq(id);
+	}
+	
+	
+	/**
+	 * 修改 K位特价申请表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateKweisq(Kweisq kweisq){
+		return kweisqComponent.updateKweisq(kweisq);
+	
+	}
+
+		
+	/**
+	 * 修改 K位特价申请表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateKweisqIgnoreNull(Kweisq kweisq){
+			return kweisqComponent.updateKweisqIgnoreNull(kweisq);
+	
+	}
+	
+	/**
+	 * 查找 K位特价申请表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllKweisq(String where, String orderby,int limit,int offset){
+		return kweisqComponent.findAllKweisq(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 K位特价申请表
+	 * @param id
+	 * @return
+	 */
+	public Kweisq findKweisq(long id){
+		return kweisqComponent.findKweisq(id);
+	}
+	
+	/** 
+	 * 查找 K位特价申请表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllKweisqForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return kweisqComponent.findAllKweisq(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找K位特价申请表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllKweisqBySql(String sql,int limit,int offset){
+		return kweisqComponent.findAllKweisq(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql K位特价申请表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteKweisqBySql(String sql){
+		return kweisqComponent.excuteKweisqBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countKweisqBySql(String sql){
+		return kweisqComponent.countKweisqBySql(sql);
+	}
+	
+	
+

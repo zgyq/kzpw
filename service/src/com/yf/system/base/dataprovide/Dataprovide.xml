@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Dataprovide">
+  
+  <typeAlias alias="Dataprovide" type="com.yf.system.base.dataprovide.Dataprovide"/>
+  
+
+  <resultMap id="resultDataprovideMap" class="Dataprovide">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="dataprovidecode" column="C_DATAPROVIDECODE"/>
+  
+     <result property="dataprovidename" column="C_DATAPROVIDENAME"/>
+  
+     <result property="dataproviceename" column="C_DATAPROVICEENAME"/>
+  
+     <result property="dataprovicecname" column="C_DATAPROVICECNAME"/>
+  
+     <result property="linkmanname" column="C_LINKMANNAME"/>
+  
+     <result property="linkmanphone" column="C_LINKMANPHONE"/>
+  
+     <result property="username" column="C_USERNAME"/>
+  
+     <result property="password" column="C_PASSWORD"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createmanid" column="C_CREATEMANID"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="remark" column="C_REMARK"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+   
+  </resultMap>
+  
+  <select id="findAllDataprovide"  resultMap="resultDataprovideMap"  parameterClass="java.util.Map">
+  
+    select * from T_DATAPROVIDE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllDataprovideBySql"  resultMap="resultDataprovideMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteDataprovideBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countDataprovideBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_DATAPROVIDE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findDataprovide" parameterClass="long" resultClass="Dataprovide">
+    select 
+    	ID as id,
+	  			C_DATAPROVIDECODE as dataprovidecode,
+	  			C_DATAPROVIDENAME as dataprovidename,
+	  			C_DATAPROVICEENAME as dataproviceename,
+	  			C_DATAPROVICECNAME as dataprovicecname,
+	  			C_LINKMANNAME as linkmanname,
+	  			C_LINKMANPHONE as linkmanphone,
+	  			C_USERNAME as username,
+	  			C_PASSWORD as password,
+	  			C_CREATETIME as createtime,
+	  			C_CREATEMANID as createmanid,
+	  			C_STATE as state,
+	  			C_REMARK as remark,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3 
+     from T_DATAPROVIDE
+    where ID = #id#
+  </select>
+   
+  <insert id="createDataprovide" parameterClass="Dataprovide">
+    insert into T_DATAPROVIDE ( 
+    	ID,
+	  			C_DATAPROVIDECODE,
+	  			C_DATAPROVIDENAME,
+	  			C_DATAPROVICEENAME,
+	  			C_DATAPROVICECNAME,
+	  			C_LINKMANNAME,
+	  			C_LINKMANPHONE,
+	  			C_USERNAME,
+	  			C_PASSWORD,
+	  			C_CREATETIME,
+	  			C_CREATEMANID,
+	  			C_STATE,
+	  			C_REMARK,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#dataprovidecode#,
+	  					
+	  						#dataprovidename#,
+	  					
+	  						#dataproviceename#,
+	  					
+	  						#dataprovicecname#,
+	  					
+	  						#linkmanname#,
+	  					
+	  						#linkmanphone#,
+	  					
+	  						#username#,
+	  					
+	  						#password#,
+	  					
+	  						#createtime#,
+	  					
+							#createmanid:DECIMAL#,
+						
+							#state:DECIMAL#,
+						
+	  						#remark#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteDataprovide" parameterClass="long">
+    delete from T_DATAPROVIDE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateDataprovide" parameterClass="Dataprovide">
+    update T_DATAPROVIDE 
+    set 
+    	C_DATAPROVIDECODE = #dataprovidecode#,
+	  					C_DATAPROVIDENAME = #dataprovidename#,
+	  					C_DATAPROVICEENAME = #dataproviceename#,
+	  					C_DATAPROVICECNAME = #dataprovicecname#,
+	  					C_LINKMANNAME = #linkmanname#,
+	  					C_LINKMANPHONE = #linkmanphone#,
+	  					C_USERNAME = #username#,
+	  					C_PASSWORD = #password#,
+	  					C_CREATETIME = #createtime#,
+	  					C_CREATEMANID = #createmanid:DECIMAL#,
+						C_STATE = #state:DECIMAL#,
+						C_REMARK = #remark#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

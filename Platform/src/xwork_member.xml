@@ -1,0 +1,2038 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+
+
+	<package name="member" extends="default">
+	<action name="eaccount" class="com.yf.system.back.action.EaccountAction">
+      <result name="success" type="dispatcher">
+        <param name="location">system/eaccount.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">system/eaccount_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">system/eaccount_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">eaccount.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    
+    <action name="rebaterecord" class="com.yf.system.back.action.RebaterecordAction">
+    <result name="success">
+        <param name="location">member/vmoneyrecharge.jsp</param>
+    </result>
+    <result name="record">
+        <param name="location">member/vmoneyrecord.jsp</param>
+    </result>
+    <result name="vmoneyrechargeorder">
+        <param name="location">member/vmoneyrechargeorder.jsp</param>
+    </result>
+    
+    </action>
+	
+	<action name="userintegral" class="com.yf.system.back.action.UserintegralAction">	
+      <result name="success" type="dispatcher">
+        <param name="location">member/userintegral.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">member/userintegral_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">member/userintegral_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">userintegral.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>   
+		<action name="login"
+			class="com.yf.system.back.action.LoginAction">
+			<!--  原为：
+			<result name="success" type="dispatcher">
+				<param name="location">/telpopup.jsp</param>
+			</result>
+			-->
+			
+			<result name="tobaoxian" type="dispatcher">
+				<param name="location">member/baoxian.jsp</param>
+			</result>
+			
+			<result name="toshowsysmessage" type="dispatcher">
+				<param name="location">main_cx/news.jsp</param>
+			</result>
+			
+			<result name="tokefu" type="dispatcher">
+				<param name="location">main_cx/kefu/kefu.jsp</param>
+			</result>
+			<result name="toagentshow" type="dispatcher">
+				<param name="location">wel_yplm/agentinfo.jsp</param>
+			</result>
+			<result name="toordershow" type="dispatcher">
+				<param name="location">wel_yplm/ordershow.jsp</param>
+			</result>
+			<result name="toregfenxiao" type="dispatcher">
+				<param name="location">login/zyfx5/zhucefenxiao.jsp</param>
+			</result>
+			<result name="toreggongying" type="dispatcher">
+				<param name="location">login/zyfx5/zhucegongying.jsp</param>
+			</result>
+			<result name="tohezuo" type="dispatcher">
+				<param name="location">login/zn/hezuo.jsp</param>
+			</result>
+			<result name="about" type="dispatcher">
+				<param name="location">login/zn/about.jsp</param>
+			</result>
+			<result name="togonggao" type="dispatcher">
+				<param name="location">login/zn/gonggao.jsp</param>
+			</result>
+			<result name="toShowMesInfo" type="dispatcher">
+				<param name="location">b2bticket/show.jsp</param>
+			</result>
+			<result name="togonggaoinfo" type="dispatcher">
+				<param name="location">wel_yplm/gonggaoinfo.jsp</param>
+			</result>
+			<result name="toShowMesInfo_xc" type="dispatcher">
+				<param name="location">main_xc2/sysmessageinfo.jsp</param>
+			</result>
+			
+			<result name="contact" type="dispatcher">
+				<param name="location">login/zn/contact.jsp</param>
+			</result>
+			<result name="article" type="dispatcher">
+				<param name="location">login/zn/reg.jsp</param>
+			</result>
+			
+			
+			<result name="towelcome_xc" type="dispatcher">
+				<param name="location">main_xc2/welcome.jsp</param>
+			</result>
+			<result name="towelcome_cx" type="dispatcher">
+				<param name="location">main_cx/welcome.jsp</param>
+			</result>
+			
+			<result name="tosendsms" type="dispatcher">
+				<param name="location">b2bticket/sendSMS.jsp</param>
+			</result>
+			<result name="toindex" type="dispatcher">
+		<param name="location">login/crsys_bjhzht/index.jsp</param>
+				<!-- <param name="location">login/su/index.jsp</param> -->
+			</result>
+			<result name="toairport" type="dispatcher">
+				<param name="location">airport.jsp</param>
+			</result>
+			<result name="toweather" type="dispatcher">
+				<param name="location">weather.jsp</param>
+			</result>
+			
+			<!-- 现为： （by：）-->
+			<result name="success" type="dispatcher">
+			<param name="location">main_cx.jsp</param>
+				<!-- <param name="location">main.jsp</param>多窗口模式 -->
+				<!-- <param name="location">main_cx.jsp</param> -->
+				<!-- <param name="location">main_tulue.jsp</param> -->
+				<!-- <param name="location">main_tulue.jsp</param> -->
+				<!-- <param name="location">main_qx.jsp</param> -->
+				<!-- <param name="location">main_qx.jsp</param> -->
+				<!-- <param name="location">main_juren.jsp</param> -->
+			</result>
+			<result name="login_tx" type="dispatcher">
+			<param name="location">main_tx.jsp</param>
+			</result>
+			<result name="toeditpassword" type="dispatcher">
+				<param name="location">editpassword.jsp</param>
+			</result>
+			<result name="toeditpaypwd" type="dispatcher">
+				<param name="location">editpaypwd.jsp</param>
+			</result>
+			<result name="tosysmessage" type="dispatcher">
+				<param name="location">sysmessage.jsp</param>
+			</result>
+			
+			<result name="edituser" type="dispatcher">
+				<param name="location">member/member.jsp</param>
+			</result>
+			<result name="loginindex" type="dispatcher">
+				<param name="location">loginindex.jsp</param>
+			</result>
+			<result name="forword" type="dispatcher">
+				<param name="location">/${forword}</param>
+			</result>
+			<result name="totop" type="dispatcher">
+				<param name="location">top.jsp</param>
+			</result>
+			<result name="forwordoa" type="dispatcher">
+				<param name="location">/${forwordoa}</param>
+			</result>
+			<result name="welcome" type="dispatcher">
+				<param name="location">welcome.jsp</param>
+			</result>
+			<result name="welcome2" type="dispatcher">
+				<param name="location">welcome2.jsp</param>
+			</result>
+			<result name="welcomemail" type="dispatcher">
+				<param name="location">/welcome.jsp?type=mail</param>
+			</result>
+			<result name="userlogin" type="dispatcher">
+				<param name="location">/userlogin.jsp</param>
+			</result>
+			<result name="agentindex" type="dispatcher">
+				<param name="location">/agentlogin.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="agentroleref"
+			class="com.yf.system.back.action.AgentrolerefAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/agentroleref.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/agentroleref_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/agentroleref_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">agentroleref.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="customeragent"
+			class="com.yf.system.back.action.CustomeragentAction">
+			
+			
+			<result name="addrequestCustomeragent_gongying" type="dispatcher">
+				<param name="location">login/zyfx5/zhucegongying.jsp</param>
+			</result>
+			<result name="addrequestCustomeragent_fenxiao" type="dispatcher">
+				<param name="location">login/zyfx5/zhucefenxiao.jsp</param>
+			</result>
+			<result name="ShowAgentinfo" type="dispatcher">
+				<param name="location">member/ShowAgentinfo.jsp</param>
+			</result>
+			
+			<!-- 显示添加企业列表 -->
+			<result name="toaddgcompany" type="dispatcher">
+				<param name="location">member/gcompanyedit.jsp</param>
+			</result>
+			<result name="toshowcomputer" type="dispatcher">
+				<param name="location">member/showtp.jsp</param>
+			</result>
+			<result name="toshowGcompany" type="dispatcher">
+				<param name="location">member/gcompanylist.jsp</param>
+			</result>	
+			<result name="tofenxiao" type="dispatcher">
+				<param name="location">member/agentlist.jsp</param>
+			</result>
+			<result name="success" type="dispatcher">
+				<param name="location">member/customeragent.jsp</param>
+			</result>
+			<result name="toagentrequest" type="dispatcher">
+				<param name="location">login/angentRegist/zhuce.jsp</param>
+			</result>
+			<result name="toreg" type="dispatcher">
+				<param name="location">login/zn/reg.jsp</param>
+			</result>
+			<result name="agentrequestlist" type="dispatcher">
+				<param name="location">member/agentrequestlist.jsp</param>
+			</result>
+			<result name="agentrequestinfo" type="dispatcher">
+				<param name="location">member/agentrequestinfo.jsp</param>
+			</result>
+			<result name="showyjzc" type="dispatcher">
+				<param name="location">member/addyjzc.jsp</param>
+			</result>
+			<result name="biguser" type="dispatcher">
+				<param name="location">
+					member/bigcustomeragent.jsp
+				</param>
+			</result>
+			<result name="torequestsuccss" type="dispatcher">
+				<param name="location">requestsuccess.jsp</param>
+			</result>
+			<result name="torequestCustomeragent" type="dispatcher">
+				<param name="location">
+					member/customeragentrequest.jsp
+				</param>
+			</result>
+			<result name="checkbig" type="dispatcher">
+				<param name="location">
+					customeragent!tobiguser.action
+				</param>
+			</result>
+			<result name="toaddbiuser" type="dispatcher">
+				<param name="location">member/addUsers_big.jsp</param>
+			</result>
+
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/customeragent_edit.jsp
+				</param>
+			</result>
+			<result name="toshezhi" type="dispatcher">
+				<param name="location">price/biguser_edit.jsp</param>
+			</result>
+			<result name="toprice" type="dispatcher">
+				<param name="location">price/biguser.jsp</param>
+			</result>
+			<result name="toaddbiguser" type="dispatcher">
+				<param name="location">
+					member/bigcustomeragent_edit.jsp
+				</param>
+			</result>
+			<result name="supplyEdit" type="dispatcher">
+				<param name="location">
+					member/customeragent_supply_edit.jsp
+				</param>
+			</result>
+			<result name="distrEdit" type="dispatcher">
+				<param name="location">
+					member/customeragent_distribution_edit.jsp
+				</param>
+			</result>
+			<result name="tocheck" type="redirect">
+				<param name="location">
+					customeragent!tocheck.action
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/customeragent_check.jsp
+				</param>
+			</result>
+			<result name="tohuoche" type="dispatcher">
+				<param name="location">
+					huoche/huoche.jsp
+				</param>
+			</result>
+			<result name="list" type="redirect">
+				<param name="location">customeragent.action</param>
+			</result>
+			<result name="biglist" type="redirect">
+				<param name="location">
+					customeragent!tobiguser.action
+				</param>
+			</result>
+			<result name="forward" type="dispatcher">
+				<param name="location">/${forward}</param>
+			</result>
+			<result name="toyucunkuanview" type="dispatcher">
+			   <param name="location">
+					member/yucunkuan_view.jsp
+				</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		
+		<!-- 反馈信息表 -->
+		<action name="tousu"
+			class="com.yf.system.back.action.TousuAction">
+		<result name="getreturnmessage" type="dispatcher">
+				<param name="location">/telpopup.jsp</param>
+		</result>
+		<result name="showfklist" type="dispatcher">
+				<param name="location">/member/newshowfankui.jsp</param>
+		</result>
+		<result name="searchfk" type="dispatcher">
+				<param name="location">/member/newfankui.jsp</param>
+		</result>
+		
+		<interceptor-ref name="model-driven" />
+		<interceptor-ref name="params" />
+		<interceptor-ref name="validationStack" />
+		</action>
+		
+		
+		<action name="customercredit"
+			class="com.yf.system.back.action.CustomercreditAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/customercredit.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/customercredit_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/customercredit_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">customercredit.action</param>
+			</result>
+			<result name="list2" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="customerpassenger"
+			class="com.yf.system.back.action.CustomerpassengerAction">
+			<result name="success" type="dispatcher">
+				<param name="location">
+					member/customerpassenger.jsp
+				</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/customerpassenger_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/customerpassenger_check.jsp
+				</param>
+			</result>
+			<result name="list" type="redirect">
+				<param name="location">customerpassenger.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+
+
+		<action name="customeruser"
+			class="com.yf.system.back.action.CustomeruserAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/member.jsp</param>
+			</result>
+			<result name="tobiguser" type="dispatcher">
+				<param name="location">member/biguserlist.jsp</param>
+			</result>
+			<result name="tomembers" type="dispatcher">
+				<param name="location">
+					login!getMemberByOrder.action
+				</param>
+			</result>
+			<result name="tobiguserlist" type="dispatcher">
+				<param name="location">
+					customeruser!tobiguser.action
+				</param>
+			</result>
+			<result name="aduser" type="dispatcher">
+				<param name="location">
+					customeruser!touser.action
+				</param>
+			</result>
+			<result name="addbiguser" type="dispatcher">
+				<param name="location">
+					customeruser!tobiguser.action
+				</param>
+			</result>
+			<result name="toeditbiuser" type="dispatcher">
+				<param name="location">member/addUsers_big.jsp</param>
+			</result>
+			<result name="biguser" type="dispatcher">
+				<param name="location">
+					customeragent!toaddbiuser.action
+				</param>
+			</result>
+			<result name="chongzhi" type="dispatcher">
+				<param name="location">
+					customeruser!toSupplyUsersList.action
+				</param>
+			</result>
+			<result name="addfenxs" type="dispatcher">
+				<param name="location">
+					customeruser!toDistrUsersList.action
+				</param>
+			</result>
+			<result name="forward" type="dispatcher">
+				<param name="location">/${forward}</param>
+			</result>
+			<result name="toaddrole" type="dispatcher">
+				<param name="location">member/fenpei.jsp</param>
+			</result>
+			<result name="tograntrole" type="dispatcher">
+				<param name="location">member/grantuserrole.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/customeruser_edit.jsp
+				</param>
+			</result>
+			<result name="tojoinBiguser" type="dispatcher">
+				<param name="location">
+					member/b2cusertobiguser.jsp
+				</param>
+			</result>
+
+			<result name="touser" type="dispatcher">
+				<param name="location">member/customer_Users.jsp</param>
+			</result>
+
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/customeruser_check.jsp
+				</param>
+			</result>
+			<result name="test" type="dispatcher">
+				<param name="location">submain.jsp</param>
+			</result>
+			<result name="upok" type="dispatcher">
+				<param name="location">member/logo.jsp</param>
+			</result>
+			<result name="nouplogo" type="dispatcher">
+				<param name="location">shibai.jsp</param>
+			</result>
+			<result name="tob2c" type="dispatcher">
+				<param name="location">member/b2cmember.jsp</param>
+			</result>
+			<result name="tologo" type="dispatcher">
+				<param name="location">member/logo.jsp</param>
+			</result>
+			<result name="list" type="redirect">
+				<param name="location">customeruser.action</param>
+			</result>
+			<result name="fenpei" type="dispatcher">
+				<param name="location">
+					customeruser!tofenpei.action
+				</param>
+			</result>
+			<result name="tochakan" type="dispatcher">
+				<param name="location">
+					member/customeruser_chakan.jsp
+				</param>
+			</result>
+			<result name="operationUsersList" type="dispatcher">
+				<param name="location">
+					member/customer_operationUsers.jsp
+				</param>
+			</result>
+			<result name="supplyUsersList" type="dispatcher">
+				<param name="location">
+					member/customer_supplyUsers.jsp
+				</param>
+			</result>
+			<result name="distrUsersList" type="dispatcher">
+				<param name="location">
+					member/customer_distrUsersList.jsp
+				</param>
+			</result>
+
+			<result name="yunyslist" type="dispatcher">
+				<param name="location">member/b2cmember.jsp</param>
+			</result>
+
+			<result name="addUsers" type="dispatcher">
+				<param name="location">
+					member/customer_operationUsers_edit.jsp
+				</param>
+			</result>
+
+			<result name="userList" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<result name="addUsersyys" type="dispatcher">
+				<param name="location">member/addUsers_yys.jsp</param>
+			</result>
+			<result name="editusers" type="dispatcher">
+				<param name="location">
+					customeruser!touser.action
+				</param>
+			</result>
+			<result name="tomyuser" type="dispatcher">
+				<param name="location">member/addmyuser.jsp</param>
+			</result>
+			<result name="addemployee" type="dispatcher">
+				<param name="location">member/addemployee.jsp</param>
+			</result>
+			<result name="addUsersgys" type="dispatcher">
+				<param name="location">member/addUsers_gys.jsp</param>
+			</result>
+			<result name="customercredit" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<result name="telephone" type="dispatcher">
+				<param name="location">${forward}</param>
+			</result>
+			<result name="customeraircard" type="dispatcher">
+				<param name="location">${forward}</param>
+			</result>
+			<interceptor-ref name="upload" />
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		
+		
+	<action name="gift" class="com.yf.system.back.action.GiftAction">
+      <result name="success" type="dispatcher">
+        <param name="location">member/gift.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">member/gift_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">member/gift_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">gift.action</param>
+      </result>
+      <interceptor-ref name="upload" />
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="giftcatalog" class="com.yf.system.back.action.GiftcatalogAction">
+      <result name="success" type="dispatcher">
+        <param name="location">member/giftcatalog.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">member/giftcatalog_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">member/giftcatalog_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">giftcatalog.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+     <action name="redeem" class="com.yf.system.back.action.RedeemAction">
+      <result name="success" type="dispatcher">
+        <param name="location">member/redeem.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">member/redeem_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">member/redeem_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">redeem.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+		
+		
+		<action name="sysroleright"
+			class="com.yf.system.back.action.SysrolerightAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/sysroleright.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/sysroleright_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/sysroleright_check.jsp
+				</param>
+			</result>
+			<result name="list" type="redirect">
+				<param name="location">sysroleright.action</param>
+			</result>
+			<result name="tofuquan" type="dispatcher">
+				<param name="location">member/systemfuquan.jsp</param>
+			</result>
+			<result name="fuquan" type="dispatcher">
+				<param name="location">
+					sysroleright!tofuquan.action
+				</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="systemaction"
+			class="com.yf.system.back.action.SystemactionAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/systemaction.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/systemaction_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/systemaction_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">systemaction.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="systemright"
+			class="com.yf.system.back.action.SystemrightAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/systemright.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/systemright_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/systemright_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">systemright.action</param>
+			</result>
+			<result name="deparTree" type="dispatcher">
+				<param name="location">member/sysright_tree.jsp</param>
+			</result>
+			<result name="tofuquan" type="dispatcher">
+				<param name="location">member/systemfuquan.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="systemrole"
+			class="com.yf.system.back.action.SystemroleAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/systemrole.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/systemrole_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/systemrole_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">systemrole.action</param>
+			</result>
+			<result name="tofuquan" type="dispatcher">
+				<param name="location">member/systemfuquan.jsp</param>
+			</result>
+
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="telephone"
+			class="com.yf.system.back.action.TelephoneAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/telephone.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">member/telephone_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/telephone_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">telephone.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="sysconfig"
+			class="com.yf.system.back.action.SysconfigAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/sysconfig.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">member/sysconfig_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/sysconfig_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">sysconfig.action</param>
+			</result>
+			<result name="editaddress" type="dispatcher">
+				<param name="location">member/editaddress.jsp</param>
+			</result>
+			<result name="toedittravelcars" type="dispatcher">
+				<param name="location">member/edittravelcars.jsp</param>
+			</result>
+			<result name="editchartflight" type="dispatcher">
+				<param name="location">
+					member/editchartflight.jsp
+				</param>
+			</result>
+			<result name="edittravelcars" type="dispatcher">
+				<param name="location">member/edittravelcars.jsp</param>
+			</result>
+			<result name="toedittravelindex" type="dispatcher">
+				<param name="location">
+					member/edittravelindex.jsp
+				</param>
+			</result>
+			<result name="edittravelindex" type="dispatcher">
+				<param name="location">
+					member/edittravelindex.jsp
+				</param>
+			</result>
+			<result name="toedittravelgngj" type="dispatcher">
+				<param name="location">member/edittravelgngj.jsp</param>
+			</result>
+			<result name="edittravelgngj" type="dispatcher">
+				<param name="location">member/edittravelgngj.jsp</param>
+			</result>
+
+			<result name="qqservice" type="dispatcher">
+				<param name="location">member/qqservice.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="infocontent"
+			class="com.yf.system.back.action.InfocontentAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/infocontent.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/infocontent_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/infocontent_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">infocontent.action</param>
+			</result>
+			<result name="helplistinfo" type="dispatcher">
+				<param name="location">member/helpcenter.jsp</param>
+			</result>
+			<result name="helptoadd" type="dispatcher">
+				<param name="location">
+					member/helpcenter_edit.jsp
+				</param>
+			</result>
+
+			<result name="helpaddok" type="dispatcher">
+				<param name="location">
+					infocontent!helplist.action
+				</param>
+			</result>
+            <!-- 加盟商登录查帮助中心 -->
+            <result name="searchhelpcenter" type="dispatcher">
+				<param name="location">
+					member/newhelpcenter.jsp
+				</param>
+		   </result>
+		   <!-- 查看帮助中心的详细信息 -->
+		    <result name="helpcount" type="dispatcher">
+				<param name="location">
+					member/newhelpedit.jsp
+				</param>
+		   </result>
+			<result name="helptoedit" type="dispatcher">
+				<param name="location">
+					member/helpcenter_edit.jsp
+				</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="infotype"
+			class="com.yf.system.back.action.InfotypeAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/infotype.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">member/infotype_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">member/infotype_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">infotype.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="exchrecord"
+			class="com.yf.system.back.action.ExchrecordAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/exchrecord.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/exchrecord_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/exchrecord_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">exchrecord.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="prizeinfo"
+			class="com.yf.system.back.action.PrizeinfoAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/prizeinfo.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">member/prizeinfo_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/prizeinfo_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">prizeinfo.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="prizetype"
+			class="com.yf.system.back.action.PrizetypeAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/prizetype.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">member/prizetype_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/prizetype_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">prizetype.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="vaidate"
+			class="com.yf.system.back.action.ValidateAction">
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="ymsend"
+			class="com.yf.system.back.action.YmsendAction">
+			
+			<result name="forward" type="redirect">
+	        <param name="location">${forward}</param>
+	      </result>
+	      	<result name="toorder" type="dispatcher">
+				<param name="location">b2bticketorder.action</param>
+			</result>
+			<result name="success" type="dispatcher">
+				<param name="location">member/ymsend.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">member/ymsend_edit.jsp</param>
+			</result>
+			<result name="tosend" type="dispatcher">
+				<param name="location">member/ymsend_tosend.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">member/ymsend_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">ymsend.action</param>
+			</result>
+			<result name="sendsuccess" type="dispatcher">
+				<param name="location">ymsend.action</param>
+			</result>
+			<result name="senderror" type="dispatcher">
+				<param name="location">ymsend.action</param>
+			</result>
+			<result name="listcustomerpassenger" type="dispatcher">
+				<param name="location">member/ymsend_edit.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="ymreceive"
+			class="com.yf.system.back.action.YmreceiveAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/ymreceive.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">member/ymreceive_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/ymreceive_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">ymreceive.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="advertisement"
+			class="com.yf.system.back.action.AdvertisementAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/advertisement.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/advertisement_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/advertisement_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">advertisement.action</param>
+			</result>
+			<interceptor-ref name="upload" />
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="department"
+			class="com.yf.system.back.action.DepartmentAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/department.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/department_edit.jsp
+				</param>
+			</result>
+			<result name="tobig" type="dispatcher">
+				<param name="location">member/bigdepartment.jsp</param>
+			</result>
+			<result name="bigedit" type="dispatcher">
+				<param name="location">
+					member/bigdepartment_edit.jsp
+				</param>
+			</result>
+			<result name="biglist" type="dispatcher">
+				<param name="location">
+					member/bigdepartmentlist.jsp
+				</param>
+			</result>
+			<result name="addbig" type="dispatcher">
+				<param name="location">department!tobig.action</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/department_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">department.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="eterminfo"
+			class="com.yf.system.back.action.EterminfoAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/eterminfo.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">member/eterminfo_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/eterminfo_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">eterminfo.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="optrecord"
+			class="com.yf.system.back.action.OptrecordAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/optrecord.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">member/optrecord_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/optrecord_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">optrecord.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="biguser"
+			class="com.yf.system.back.action.BiguserAction">
+			<result name="success" type="dispatcher">
+				<param name="location">price/biguser.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">price/biguser_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">price/biguser_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">
+					customeragent!tobiguser.action
+				</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<!--  
+		使用时请打开。
+		<action name="biguserprice"
+			class="com.yf.system.back.action.BiguserpriceAction">
+			<result name="success" type="dispatcher">
+				<param name="location">price/biguserprice.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					price/biguserprice_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					price/biguserprice_check.jsp
+				</param>
+			</result>
+			<result name="tuifeilist" type="dispatcher">
+				<param name="location">price/mytuifeiorder.jsp</param>
+			</result>
+			<result name="tomyorder" type="dispatcher">
+				<param name="location">price/myorder.jsp</param>
+			</result>
+			<result name="tozafei" type="dispatcher">
+				<param name="location">price/myzafei.jsp</param>
+			</result>
+			<result name="haikuan" type="redirect">
+				<param name="location">
+					customeragent!toprice.action
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">price/myorder.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="repay"
+			class="com.yf.system.back.action.RepayAction">
+			<result name="success" type="dispatcher">
+				<param name="location">price/repay.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">price/repay_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">price/repay_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">repay.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="wanlixing"
+			class="com.yf.system.back.action.WanlixingAction">
+			<result name="success" type="dispatcher">
+				<param name="location">tousu/wanlixing.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">tousu/wanlixing_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">tousu/wanlixing_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">wanlixing.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		
+		<action name="tousu"
+			class="com.yf.system.back.action.TousuAction">
+			<result name="success" type="dispatcher">
+				<param name="location">tousu/tousu.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">tousu/tousu_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">tousu/tousu_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">tousu.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="adcooperate"
+			class="com.yf.system.back.action.AdcooperateAction">
+			<result name="success" type="dispatcher">
+				<param name="location">tousu/adcooperate.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					tousu/adcooperate_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					tousu/adcooperate_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">adcooperate.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		-->
+		
+		
+		<action name="importmureport"
+			class="com.yf.system.back.action.ImportmureportAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/importmureport.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/importmureport_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/importmureport_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">importmureport.action</param>
+			</result>
+			<result name="compresult" type="dispatcher">
+				<param name="location">member/compresult.jsp</param>
+			</result>
+
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="miscellaneous"
+			class="com.yf.system.back.action.MiscellaneousAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/miscellaneous.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/miscellaneous_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/miscellaneous_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">miscellaneous.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="ticketnumber"
+			class="com.yf.system.back.action.TicketnumberAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/ticketnumber.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/ticketnumber_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/ticketnumber_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">ticketnumber.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="tickettype"
+			class="com.yf.system.back.action.TickettypeAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/tickettype.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/tickettype_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/tickettype_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">tickettype.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="travelskyreport"
+			class="com.yf.system.back.action.TravelskyreportAction">
+			<result name="success" type="dispatcher">
+				<param name="location">
+					member/travelskyreport.jsp
+				</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/travelskyreport_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					member/travelskyreport_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">travelskyreport.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="qqinfo"
+			class="com.yf.system.back.action.QqinfoAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/qqinfo.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">member/qqinfo_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">member/qqinfo_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">qqinfo.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="qqtype"
+			class="com.yf.system.back.action.QqtypeAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/qqtype.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">member/qqtype_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">member/qqtype_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">qqtype.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="liudianinfo" class="com.yf.system.back.action.LiudianrefinfoAction">
+		<result name="edittypeid" type="dispatcher">
+        <param name="location">customeragent!toLastCompanyLiudian.action</param>
+      </result>
+      <result name="success" type="dispatcher">
+        <param name="location">liudianinfo!toadd.action</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">member/liudianrefinfo_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">member/liudianrefinfo_edit.jsp</param>
+      </result>
+       <result name="listbussiness" type="dispatcher">
+        <param name="location">member/allbussiness.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">liudianinfo.action</param>
+      </result>
+       <result name="forword" type="dispatcher">
+	         <param name="location">/${forword}</param>
+	       </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    
+    <action name="settlementtype" class="com.yf.system.back.action.SettlementtypeAction">
+      <result name="success" type="dispatcher">
+        <param name="location">member/settlementtype.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">member/settlementtype_edit.jsp</param>
+      </result>
+       <result name="toaddb2c" type="dispatcher">
+        <param name="location">member/settlementtype_editb2c.jsp</param>
+      </result>
+      
+      <result name="view" type="dispatcher">
+        <param name="location">member/settlementtype_view.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">settlementtype.action</param>
+      </result>
+       <result name="forword" type="dispatcher">
+	         <param name="location">/${forword}</param>
+	   </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+		<action name="insuranceinfo"
+			class="com.yf.system.back.action.InsuranceinfoAction">
+			<result name="success" type="dispatcher">
+				<param name="location">member/insuranceinfo.jsp</param>
+			</result>
+
+			<result name="toaddinsurance" type="dispatcher">
+				<param name="location">
+					member/insuranceinfo_edit.jsp
+				</param>
+			</result>
+
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					member/insuranceinfo_edit.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">insuranceinfo.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+	<action name="qmessage" class="com.yf.system.back.action.QmessageAction">
+      <result name="success" type="dispatcher">
+        <param name="location">air/qmessage.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">qmessage.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="rebaterule" class="com.yf.system.back.action.RebateruleAction">
+      <result name="success" type="dispatcher">
+        <param name="location">member/rebaterule.jsp</param>
+      </result>
+       <result name="edit" type="dispatcher">
+        <param name="location">member/rebaterule_edit.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">rebaterule.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+   <action name="customerintegralrecord" class="com.yf.system.back.action.CustomerintegralrecordAction">
+    <result name="success" type="dispatcher">
+      <param name="location">member/customerintegralrecord.jsp</param>
+    </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="integral" class="com.yf.system.back.action.IntegralAction">
+    <result name="success" type="dispatcher">
+      <param name="location">member/integral_edit.jsp</param>
+    </result>
+     <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+     <action name="vmoneyrecord" class="com.yf.system.back.action.VmoneyrecordAction">
+      <result name="success" type="dispatcher">
+        <param name="location">member/vmoneyrecord.jsp</param>
+      </result>
+       <result name="edit" type="dispatcher">
+        <param name="location">member/rebaterule_edit.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">rebaterule.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <!--  
+    欧非充值：
+    需要时请打开-->
+     <action name="ofcard" class="com.yf.system.back.action.OFCardAction">
+      <result name="toorderbytype" type="redirect">
+        <param name="location">/${forword}</param>
+      </result>
+       <result name="toyouxiRecharge" type="dispatcher">
+        <param name="location">youxi/index.jsp</param>
+      </result>
+       <result name="toshuidianrecharge" type="dispatcher">
+        <param name="location">youxi/shuidian.jsp</param>
+      </result>
+      <result name="success" type="dispatcher">
+        <param name="location">recharge/mobile_recharge.jsp</param>
+      </result>
+      <result name="toqmoneyrecharge" type="dispatcher">
+        <param name="location">recharge/qmoney_recharge.jsp</param>
+      </result>
+       <result name="edit" type="dispatcher">
+        <param name="location">member/rebaterule_edit.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">rebaterule.action</param>
+      </result>
+      <result name="rechargesuccess" type="dispatcher">
+        <param name="location">recharge/rechargesuccess.jsp</param>
+      </result>
+      <result name="qmoneyrecharrecord" type="dispatcher">
+        <param name="location">recharge/qqrecharge.jsp</param>
+      </result>
+      <result name="recharrecord" type="dispatcher">
+        <param name="location">recharge/phonerecharge.jsp</param>
+      </result>
+      <result name="rechargefaile" type="dispatcher">
+        <param name="location">recharge/rechargefaile.jsp</param>
+      </result>
+      
+      <result name="towebrepy" type="dispatcher">
+		<param name="location">recharge/rechargepay.jsp</param>
+	  </result>
+      
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+     <action name="dnsmaintenance" class="com.yf.system.back.action.DnsmaintenanceAction">
+     <interceptor-ref name="upload"></interceptor-ref>
+      <result name="success" type="dispatcher">
+        <param name="location">dnsmaintenance/dnsmainlist.jsp</param>
+      </result>      
+      <result name="edit" type="dispatcher">
+        <param name="location">dnsmaintenance/editdns.jsp</param>
+      </result> 
+      <result name="tob2g" type="dispatcher">
+        <param name="location">dnsmaintenance/updateb2gimages.jsp</param>
+      </result>
+       <result name="tob2gup" type="dispatcher">
+        <param name="location">dnsmaintenance!tob2g.action</param>
+      </result>
+      <result name="nouplogo" type="dispatcher">
+        <param name="location">uploadmessage.jsp</param>
+      </result>
+         
+      <result name="tob2clogo" type="dispatcher">
+        <param name="location">dnsmaintenance/b2clogo.jsp</param>
+      </result>
+       <result name="tob2cindex" type="dispatcher">
+        <param name="location">dnsmaintenance/b2c_index.jsp</param>
+      </result>  
+      
+      <result name="toairindex" type="dispatcher">
+        <param name="location">dnsmaintenance/b2c_air_index.jsp</param>
+      </result>  
+      <result name="toairlist" type="dispatcher">
+        <param name="location">dnsmaintenance/b2c_air_list.jsp</param>
+      </result> 
+      <result name="toairorder" type="dispatcher">
+        <param name="location">dnsmaintenance/b2c_air_order.jsp</param>
+      </result> 
+      <result name="tologin" type="dispatcher">
+        <param name="location">dnsmaintenance/b2c_login.jsp</param>
+      </result> 
+       <result name="took" type="dispatcher">
+        <param name="location">dnsmaintenance/b2c_ok.jsp</param>
+      </result> 	
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+   <!-- 帮助中心开始 -->
+   <action name="helpcenter" class="com.yf.system.back.action.HelpcenterAction">
+      <result name="success" type="dispatcher">
+        <param name="location">help/helpcenter.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">help/helpcenter_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">help/helpcenter_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">helpcenter.action</param>
+      </result>
+      <interceptor-ref name="upload" />
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="helpcenterinfo" class="com.yf.system.back.action.HelpcenterinfoAction">
+      <result name="success" type="dispatcher">
+        <param name="location">help/helpcenterinfo.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">help/helpcenterinfo_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">help/helpcenterinfo_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">helpcenterinfo.action</param>
+      </result>
+      <interceptor-ref name="upload" />
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="information" class="com.yf.system.back.action.InformationAction">
+      <result name="success" type="dispatcher">
+        <param name="location">help/information.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">help/information_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">help/information_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">information.action</param>
+      </result>
+      <interceptor-ref name="upload" />
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="informationinfo" class="com.yf.system.back.action.InformationinfoAction">
+      <result name="success" type="dispatcher">
+        <param name="location">help/informationinfo.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">help/informationinfo_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">help/informationinfo_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">informationinfo.action</param>
+      </result>
+      <interceptor-ref name="upload" />
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+   <!-- 帮助中心结束 -->
+   <action name="planeservice" class="com.yf.system.back.action.PlaneserviceAction">
+      <result name="success" type="dispatcher">
+        <param name="location">planserver/planeservice.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">planserver/planeservice_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">planserver/planeservice_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">planeservice.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+   <!-- 包机服务开始 -->
+   
+   <!-- 包机结束 -->
+
+   
+   <!-- dizhi -->
+    <action name="useraddress" class="com.yf.system.back.action.UseraddressAction">
+      <result name="success" type="dispatcher">
+        <param name="location">address/useraddress.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">address/useraddress_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">address/useraddress_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">useraddress.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <!--  -->
+
+ <!-- 电子保险赵晓晓 -->
+   
+   <action name="insurance" class="com.yf.system.back.action.NewInsuranceAction">
+    <result name="success" type="dispatcher">
+        <param name="location">insurance/insuruser.jsp</param>
+      </result>
+      <result name="toservicepass" type="dispatcher">
+        <param name="location">insurance/insuruser_pass.jsp</param>
+      </result>
+       <result name="toservice" type="dispatcher">
+          <param name="location">insurance/newaddinsurance.jsp</param>
+       </result>
+       <result name="addinsur" type="dispatcher">
+           <param name="location">insurance/addinsurance.jsp</param>
+       </result>
+       <result name="createOrderAply" type="dispatcher">
+           <param name="location">/insurance/insurancelist.jsp</param>
+       </result>
+       <result name="OrderApply" type="dispatcher">
+           <param name="location">/insurance/newapplysuccess.jsp</param>
+       </result>
+        <result name="Applyerror" type="dispatcher">
+           <param name="location">/insurance/addinsurance.jsp</param>
+       </result>
+       <result name="ordermanager" type="dispatcher">
+           <param name="location">/insurance/insurancelist.jsp</param>
+       </result>
+        <result name="toOrderlist" type="dispatcher">
+           <param name="location">/insurance/newinsurancelist.jsp</param>
+       </result>
+       <result name="serviceorder" type="dispatcher">
+           <param name="location">/insurance/searchservice.jsp</param>
+       </result>
+        <result name="orderdetail" type="dispatcher">
+           <param name="location">/insurance/orderdetail.jsp</param>
+       </result>
+        <result name="payinsurance" type="dispatcher">
+           <param name="location">/applysuccess.jsp</param>
+       </result>
+       <result name="cancelOrder" type="dispatcher">
+           <param name="location">/insurance/insurancelist.jsp</param>
+       </result>
+       <result name="paysuccess" type="dispatcher">
+           <param name="location">/insurance/insurancelist.jsp</param>
+       </result>
+       <result name="buyInsurance" type="dispatcher">
+           <param name="location">/insurance/newaddinsurance.jsp</param>
+       </result>
+       
+       <result name="payInsurOrder" type="dispatcher">
+           <param name="location">/pay.jsp</param>
+       </result>
+       <result name="toInsurancelist" type="dispatcher">
+           <param name="location">/insurance/searchservice.jsp</param>
+       </result>
+       <result name="selectOrder" type="dispatcher">
+           <param name="location">/insurance/newinsurancelist.jsp</param>
+       </result>
+        <result name="selectInsurance" type="dispatcher">
+           <param name="location">/insurance/searchservice.jsp</param>
+       </result>
+       <result name="getInsuranceByid" type="dispatcher">
+           <param name="location">/insurance/orderdetail.jsp</param>
+       </result>
+      <interceptor-ref name="upload" />
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+   </action>
+   
+   
+   <action name="messgroup" class="com.yf.system.back.action.MessgroupAction">
+      <result name="success" type="dispatcher">
+        <param name="location">member/messgroup.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">member/messgroup_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">member/messgroup_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">messgroup.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="templet" class="com.yf.system.back.action.TempletAction">
+      <result name="success" type="dispatcher">
+        <param name="location">member/templet.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">member/templet_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">member/templet_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">templet.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="agentvalue" class="com.yf.system.back.action.AgentvalueAction">
+      <result name="success" type="dispatcher">
+        <param name="location">angentvalue/agentvalue.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">angentvalue/agentvalue_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">angentvalue/agentvalue_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">agentvalue.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    
+    <action name="logindesc" class="com.yf.system.back.action.LogindescAction">
+      <result name="success" type="dispatcher">
+        <param name="location">logindesc/logindesc.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">logindesc/logindesc_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">logindesc_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">logindesc.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    
+    <action name="airdelayprove" class="com.yf.system.back.action.AirdelayproveAction">
+      <result name="success" type="dispatcher">
+        <param name="location">airdelayprove/airdelayprove.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">airdelayprove/airdelayprove_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">airdelayprove/airdelayprove_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">airdelayprove.action</param>
+      </result>
+      <interceptor-ref name="upload" />
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="huodonguser" class="com.yf.system.back.action.HuodonguserAction">
+      <result name="success" type="dispatcher">
+        <param name="location">huodong/huodonguser.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">huodong/huodonguser_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">huodong/huodonguser_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">huodonguser.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="qqtypenew" class="com.yf.system.back.action.QqtypenewAction">
+      <result name="success" type="dispatcher">
+        <param name="location">qqnew/qqtypenew.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">qqnew/qqtypenew_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">qqnew/qqtypenew_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">qqtypenew.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="qqinfonew" class="com.yf.system.back.action.QqinfonewAction">
+      <result name="success" type="dispatcher">
+        <param name="location">qqnew/qqinfonew.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">qqnew/qqinfonew_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">qqnew/qqinfonew_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">qqinfonew.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="txuserinfo" class="com.yf.system.back.action.TxuserinfoAction">
+      <result name="success" type="dispatcher">
+        <param name="location">tx/txuserinfo.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">tx/txuserinfo_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">tx/txuserinfo_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">txuserinfo.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="txorder" class="com.yf.system.back.action.TxorderAction">
+      <result name="success" type="dispatcher">
+        <param name="location">tx/txorder.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">tx/txorder_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">tx/txorder_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">txorder.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    
+     <action name="withbank" class="com.yf.system.back.action.WithbankAction">
+      <result name="success" type="dispatcher">
+        <param name="location">withbank/withbank.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">withbank/withbank_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">withbank/withbank_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">withbank.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="ymuser" class="com.yf.system.back.action.YmuserAction">
+      <result name="success" type="dispatcher">
+        <param name="location">ymuser/ymuser.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">ymuser/ymuser_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">ymuser/ymuser_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">ymuser.action</param>
+      </result>
+      <result name="torecharge" type="dispatcher">
+        <param name="location">ymuser/vmoney_recharge.jsp</param>
+      </result>
+      
+      
+      
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+     <action name="ympay" class="com.yf.system.back.action.YmpayAction">
+      <result name="success" type="dispatcher">
+        <param name="location">ymuser/ympay.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">ymuser/ympay_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">ymuser/ympay_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">ympay.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+	</package>
+</xwork>

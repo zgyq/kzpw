@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 登录信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Logindesc createLogindesc(Logindesc logindesc) throws SQLException;
+	
+	/**
+	 * 删除 登录信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteLogindesc(long id);
+	
+	
+	/**
+	 * 修改 登录信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateLogindesc(Logindesc logindesc);
+
+		
+	/**
+	 * 修改 登录信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateLogindescIgnoreNull(Logindesc logindesc);
+		
+	
+	/**
+	 * 查找 登录信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllLogindesc(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 登录信息
+	 * @param id
+	 * @return
+	 */
+	public Logindesc findLogindesc(long id);
+	
+	
+	/** 
+	 * 查找 登录信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllLogindescForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找登录信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllLogindescBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 登录信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteLogindescBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countLogindescBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ILogindescComponent logindescComponent;
+	  
+ 	
+ 	public ILogindescComponent getLogindescComponent() {
+		return logindescComponent;
+	}
+	public void setLogindescComponent(ILogindescComponent  logindescComponent) {
+		this.logindescComponent = logindescComponent;
+	}
+	/**
+	 * 创建 登录信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Logindesc createLogindesc(Logindesc logindesc) throws SQLException{
+	
+		return logindescComponent.createLogindesc(logindesc);
+	}
+	/**
+	 * 删除 登录信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteLogindesc(long id){
+	
+		return logindescComponent.deleteLogindesc(id);
+	}
+	
+	
+	/**
+	 * 修改 登录信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateLogindesc(Logindesc logindesc){
+		return logindescComponent.updateLogindesc(logindesc);
+	
+	}
+
+		
+	/**
+	 * 修改 登录信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateLogindescIgnoreNull(Logindesc logindesc){
+			return logindescComponent.updateLogindescIgnoreNull(logindesc);
+	
+	}
+	
+	/**
+	 * 查找 登录信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllLogindesc(String where, String orderby,int limit,int offset){
+		return logindescComponent.findAllLogindesc(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 登录信息
+	 * @param id
+	 * @return
+	 */
+	public Logindesc findLogindesc(long id){
+		return logindescComponent.findLogindesc(id);
+	}
+	
+	/** 
+	 * 查找 登录信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllLogindescForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return logindescComponent.findAllLogindesc(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找登录信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllLogindescBySql(String sql,int limit,int offset){
+		return logindescComponent.findAllLogindesc(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 登录信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteLogindescBySql(String sql){
+		return logindescComponent.excuteLogindescBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countLogindescBySql(String sql){
+		return logindescComponent.countLogindescBySql(sql);
+	}
+	
+	
+

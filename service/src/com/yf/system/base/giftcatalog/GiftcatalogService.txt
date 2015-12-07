@@ -1,0 +1,220 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 礼品目录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Giftcatalog createGiftcatalog(Giftcatalog giftcatalog) throws SQLException;
+	
+	/**
+	 * 删除 礼品目录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteGiftcatalog(long id);
+	
+	
+	/**
+	 * 修改 礼品目录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateGiftcatalog(Giftcatalog giftcatalog);
+
+		
+	/**
+	 * 修改 礼品目录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateGiftcatalogIgnoreNull(Giftcatalog giftcatalog);
+		
+	
+	/**
+	 * 查找 礼品目录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllGiftcatalog(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 礼品目录
+	 * @param id
+	 * @return
+	 */
+	public Giftcatalog findGiftcatalog(long id);
+	
+	/**
+	 * 查找 礼品目录 by language
+	 * @param id
+	 * @return
+	 */
+	public Giftcatalog findGiftcatalogbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 礼品目录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllGiftcatalogForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找礼品目录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllGiftcatalogBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 礼品目录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteGiftcatalogBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countGiftcatalogBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IGiftcatalogComponent giftcatalogComponent;
+	  
+ 	
+ 	public IGiftcatalogComponent getGiftcatalogComponent() {
+		return giftcatalogComponent;
+	}
+	public void setGiftcatalogComponent(IGiftcatalogComponent  giftcatalogComponent) {
+		this.giftcatalogComponent = giftcatalogComponent;
+	}
+	/**
+	 * 创建 礼品目录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Giftcatalog createGiftcatalog(Giftcatalog giftcatalog) throws SQLException{
+	
+		return giftcatalogComponent.createGiftcatalog(giftcatalog);
+	}
+	/**
+	 * 删除 礼品目录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteGiftcatalog(long id){
+	
+		return giftcatalogComponent.deleteGiftcatalog(id);
+	}
+	
+	
+	/**
+	 * 修改 礼品目录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateGiftcatalog(Giftcatalog giftcatalog){
+		return giftcatalogComponent.updateGiftcatalog(giftcatalog);
+	
+	}
+
+		
+	/**
+	 * 修改 礼品目录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateGiftcatalogIgnoreNull(Giftcatalog giftcatalog){
+			return giftcatalogComponent.updateGiftcatalogIgnoreNull(giftcatalog);
+	
+	}
+	
+	/**
+	 * 查找 礼品目录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllGiftcatalog(String where, String orderby,int limit,int offset){
+		return giftcatalogComponent.findAllGiftcatalog(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 礼品目录
+	 * @param id
+	 * @return
+	 */
+	public Giftcatalog findGiftcatalog(long id){
+		return giftcatalogComponent.findGiftcatalog(id);
+	}
+	
+	/**
+	 * 查找 礼品目录
+	 * @param id
+	 * @return
+	 */
+	public Giftcatalog findGiftcatalogbylanguage(long id,Integer language){
+		return giftcatalogComponent.findGiftcatalogbylanguage(id,language);
+	}
+	/** 
+	 * 查找 礼品目录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllGiftcatalogForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return giftcatalogComponent.findAllGiftcatalog(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找礼品目录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllGiftcatalogBySql(String sql,int limit,int offset){
+		return giftcatalogComponent.findAllGiftcatalog(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 礼品目录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteGiftcatalogBySql(String sql){
+		return giftcatalogComponent.excuteGiftcatalogBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countGiftcatalogBySql(String sql){
+		return giftcatalogComponent.countGiftcatalogBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Ymreceive">
+  
+  <typeAlias alias="Ymreceive" type="com.yf.system.base.ymreceive.Ymreceive"/>
+  
+
+  <resultMap id="resultYmreceiveMap" class="Ymreceive">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="phone" column="C_PHONE"/>
+  
+     <result property="content" column="C_CONTENT"/>
+  
+     <result property="sendtime" column="C_SENDTIME"/>
+  
+     <result property="systemtime" column="C_SYSTEMTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllYmreceive"  resultMap="resultYmreceiveMap"  parameterClass="java.util.Map">
+  
+    select * from T_YMRECEIVE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllYmreceiveBySql"  resultMap="resultYmreceiveMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteYmreceiveBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countYmreceiveBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_YMRECEIVE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findYmreceive" parameterClass="long" resultClass="Ymreceive">
+    select 
+    	ID as id,
+	  			C_PHONE as phone,
+	  			C_CONTENT as content,
+	  			C_SENDTIME as sendtime,
+	  			C_SYSTEMTIME as systemtime 
+     from T_YMRECEIVE
+    where ID = #id#
+  </select>
+   
+  <insert id="createYmreceive" parameterClass="Ymreceive">
+    insert into T_YMRECEIVE ( 
+    	ID,
+	  			C_PHONE,
+	  			C_CONTENT,
+	  			C_SENDTIME,
+	  			C_SYSTEMTIME 
+    )
+    values (
+    	
+							#id:DECIMAL#,
+						
+	  						#phone#,
+	  					
+	  						#content#,
+	  					
+	  						#sendtime#,
+	  					
+	  						#systemtime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteYmreceive" parameterClass="long">
+    delete from T_YMRECEIVE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateYmreceive" parameterClass="Ymreceive">
+    update T_YMRECEIVE 
+    set 
+    	C_PHONE = #phone#,
+	  					C_CONTENT = #content#,
+	  					C_SENDTIME = #sendtime#,
+	  					C_SYSTEMTIME = #systemtime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

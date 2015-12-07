@@ -1,0 +1,33 @@
+	.cui_hd,.cui_nav{width:1000px;}
+	.base_hd,#cui_bd,.col1,.etcinfo{width:980px;}
+	.base_nav,#cui_nav{min-width:1000px;}
+	.pic_wflowh294{width:640px;}
+	.pic_banner{width:380px;}
+	.bd_left{width:660px;}
+	.bd_right{margin-left:680px;_margin-left:677px;}
+	/*vac*/
+	.vac_item{width:134px;margin-left:10px;}
+	.vac_item_main{width:226px;margin-left:0;}
+	.vac_item img{margin-left:-26px;}
+	.vac_item_main img{margin-left:-137px;}
+	/*price*/
+	.flight_list .c_price{font-size:16px;margin-top:0;*background-position:-79px -18px;}
+	.vac_item .c_price{*background-position:-79px -53px;}
+	/*hotel list*/
+	.hotel_item{width:223px;}
+	/*flight*/
+	.flight_list dl{width:114px;}
+	/*bottom cityname*/
+	.cityname{width:963px;}
+	.cityname a{margin-right:5px;}
+	/*ads bottome*/
+	.ads_bottom{overflow:hidden;padding-bottom:0;margin-bottom:20px;}
+	.info{width:288px;}
+	/*likes*/
+	/*likes*/
+	.c_history{width:180px;padding-right:6px;}
+	.c_history dd a{width:150px;}
+	.c_likes{margin-left:197px;_margin-left:194px;}
+	.c_likes_in{width:407px;}
+	.c_likes_item{width:106px;margin-right:10px;}
+	.c_customer_prev, .c_customer_prev_un{right:432px;} 

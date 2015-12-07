@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+#member{ width:950px; margin:0 auto; margin-top:3px;}
+
+#member .left{ width:188px; border:1px solid #9ABACA; background:#E0F1FB; float:left; padding-top:3px;}
+#member .left_top{background:url(../images/bj_left.gif); width:161px; margin:0 auto; margin-top:5px; padding-left:10px;}
+#member .gongneng{}
+#member .gongneng ul{}
+#member .gongneng ul li{ width:154px; border:1px solid #C3E1F3; border-top:none; background:url(../images/bj_gongneng.gif); padding-left:15px; margin:0 auto; height:28px; line-height:28px;}
+#member .gongneng ul li a{color:#075EBE; font-size:12px;}
+#member .gongneng ul li a:hover{color:#075EBE; font-size:12px; text-decoration:underline}
+
+#member .right{width:752px; float:right; padding-top:3px;}
+#member .right_top{margin-left:50px; background:url(../images/dingdan_jiao.gif); width:130px; height:27px; line-height:27px; text-align:center; z-index:}
+#member .right_top_1{background:url(../images/bj_wiu.gif) repeat-x; height:31px; margin-top:-1px; z-index:1;}
+#member .fenye{width:720px; line-height:30px; height:30px; background:#EDEBEB; border:1px solid #DDDEDF; margin:0 auto;margin-top:10px; text-align:center}
+#member .kongfang{ height:30px; line-height:30px; background:url(../images/bj_wul.gif); padding-left:20px; margin-top:10px;}
+#member .cuowei{background:url(../images/bj_cuowei.gif); line-height:26px; padding-left:20px; border-left:1px solid #cccccc; border-right:1px solid #cccccc; margin-top:1px;}
+#member .jifen{background:url(../images/bj_jihua.gif); height:30px; line-height:30px; padding-left:60px;}
+#member .jifen1{ line-height:30px;}
+#member .jifen1 ul{}
+#member .jifen1 ul li{ padding-left:60px; padding-right:30px;}

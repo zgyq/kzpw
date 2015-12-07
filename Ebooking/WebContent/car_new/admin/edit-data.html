@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../css/init.css" />
+<link rel="stylesheet" type="text/css" href="../css/vipCenter.css" />
+<script type="text/javascript" src="../js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		//这部分是设置那一个vipMenu显示的部分
+		$(".vipMenu li:eq(1)").addClass("vipMenuClick")
+		$(".vipMenu h3").click(function(){
+			$(this).parent().toggleClass("vipMenuClick");
+		})
+	})
+</script>
+</head>
+<body>
+<!--vipHeader-->
+<div class="vipHeader vipCenter">
+	<p><a href="#">返回官网首页</a><a href="#">车友俱乐部</a><span><a>会员中心</a></span></p>
+</div>
+<!--vipHeader end-->
+<!--你现在的位置-->
+<div class="currentLocation"><p class="vipCenter">你的位置：<a href="#">首页</a>><a href="#">投资者关系</a></p></div>
+<!--你现在的位置 end-->
+<!--vipContent-->
+<div class="vipContent">
+	<div style="background:url(images/vipContentBg.jpg) repeat-x top center;" class="vipContentBg">
+    <div class="vipCenter">
+        <div class="vipContentLeft">
+        	<div class="vipName">
+            	<p class="vipNameTitle"><span>merisa</span>你好！</p>
+                <p class="youDo">待处理事项:<i>3</i></p>
+            </div>
+            <img src="images/vipHelloBottom_bg.png" height="4" width="220" class="vipHelloImg" />
+            <ul class="vipMenu">
+            	<li>
+                	<h3>定制我的页面</h3>
+                    <div>
+                    	<a href="#">我的页面</a>
+                        <a href="#">定制页面</a>
+                    </div>
+                </li>
+                <li>
+                	<h3>会员信息</h3>
+                    <div>
+                    	<a href="#">我的资料</a>
+                        <a href="#"  class="vipMenuaFocus">编辑资料</a>
+                        <a href="#">修改密码</a>
+                        <a href="#">简历与留言<span><i>1</i></span></a>
+                    </div>
+                </li>
+                <li><a href="#">系统消息</a></li>
+                <li>
+                	<h3>预约信息</h3>
+                    <div>
+                    	<a href="#">预约试驾</a>
+                        <a href="#">预约服务</a>
+                        <a href="#">预约活动</a>
+                    </div>
+                </li>
+                <li>
+                	<h3>在线订车</h3>
+                    <div>
+                    	<a href="#">订单信息</a>
+                    </div>
+                </li>
+                <li><a href="#">我的CLUB</a></li>
+                <li><a href="#">意见反馈</a></li>
+            </ul>
+            <img src="images/vipMenuBottom_bg.png" height="5" width="200" class="vipMenuImg" />
+            <ul class="vipContentTips">
+            	<li><a href="#"><img src="images/dingche.png" height="23" width="22" />我关注的车型</a></li>
+                <li><a href="#"><img src="images/wangdian.png" height="23" width="22" />在线咨询</a></li>
+            </ul>
+            <img src="images/vipHelloBottom_bg.png" height="4" width="220" class="vipHelloImg" />
+        </div>
+        <div class="vipContentRight">
+        	<div class="vipContentRightBg">
+            	<div class="member">
+                	<p class="memberTips">会员资料</p>
+                    <ul class="membership">
+                    	<li class="membershipFocus"><a href="#">基本资料</a></li>
+                        <li><a href="#">详细资料</a></li>
+                    </ul>
+                    <P class="greetings">亲爱的<span>妮妮称</span>，填写真实的信息方便你正确收到我们发出各种优惠及活动信息</P>
+                    <dl class="vipwelcomePage">
+                        <dt>昵称：</dt>
+                        <dd><input type="text" class="memberText" /></dd>
+                        <div class="clearBox"></div>
+                        <dt>姓名：</dt>
+                        <dd><input type="text" class="memberText" /></dd>
+                        <div class="clearBox"></div>
+                        <dt>称谓：</dt>
+                        <dd><span><input type="radio" name="sex" />男</span><span><input type="radio" name="sex" />女</span></dd>
+                        <div class="clearBox"></div>
+                        <dt>生日：</dt>
+                        <dd><select><option>1980</option><option>1981</option></select><select style="width:70px;"><option>01</option><option>03</option></select><select style="width:70px;"><option>01</option><option>02</option></select></dd>
+                        <div class="clearBox"></div>
+                        <dt>所在省市：</dt>
+                        <dd><select><option>省</option><option>河北省</option></select><select><option>市</option><option>北京市</option></select><select style="width:98px;"><option>区</option><option>海淀区</option></select></dd>
+                        <div class="clearBox"></div>
+                        <dt>具体地址：</dt>
+                        <dd><input type="text" class="memberTextDa"  /></dd>
+                        <div class="clearBox"></div>
+                        <dt>常用电话：</dt>
+                        <dd><input type="text" class="memberText" /></dd>
+                        <div class="clearBox"></div>
+                        <dt>电子邮箱：</dt>
+                        <dd><input type="text" class="memberText" /></dd>
+                        <div class="clearBox"></div>
+                    </dl>
+                    <P class="bianjiMore"><a href="#">保存</a></P>
+                </div>   
+            </div>
+            <img src="images/vipContentRightBottom.png" height="10" width="700" class="vipContentRightImg" />
+        </div>
+        <div class="clearBox"></div>
+    </div>
+    </div>
+</div>
+<!--vipContent end-->
+</body>
+</html>

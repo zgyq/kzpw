@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 接口管理
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Intermanager createIntermanager(Intermanager intermanager) throws SQLException;
+	
+	/**
+	 * 删除 接口管理
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteIntermanager(long id);
+	
+	
+	/**
+	 * 修改 接口管理
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateIntermanager(Intermanager intermanager);
+
+		
+	/**
+	 * 修改 接口管理但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateIntermanagerIgnoreNull(Intermanager intermanager);
+		
+	
+	/**
+	 * 查找 接口管理
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllIntermanager(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 接口管理
+	 * @param id
+	 * @return
+	 */
+	public Intermanager findIntermanager(long id);
+	
+	
+	/** 
+	 * 查找 接口管理
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllIntermanagerForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找接口管理
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllIntermanagerBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 接口管理
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteIntermanagerBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countIntermanagerBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IIntermanagerComponent intermanagerComponent;
+	  
+ 	
+ 	public IIntermanagerComponent getIntermanagerComponent() {
+		return intermanagerComponent;
+	}
+	public void setIntermanagerComponent(IIntermanagerComponent  intermanagerComponent) {
+		this.intermanagerComponent = intermanagerComponent;
+	}
+	/**
+	 * 创建 接口管理
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Intermanager createIntermanager(Intermanager intermanager) throws SQLException{
+	
+		return intermanagerComponent.createIntermanager(intermanager);
+	}
+	/**
+	 * 删除 接口管理
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteIntermanager(long id){
+	
+		return intermanagerComponent.deleteIntermanager(id);
+	}
+	
+	
+	/**
+	 * 修改 接口管理
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateIntermanager(Intermanager intermanager){
+		return intermanagerComponent.updateIntermanager(intermanager);
+	
+	}
+
+		
+	/**
+	 * 修改 接口管理但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateIntermanagerIgnoreNull(Intermanager intermanager){
+			return intermanagerComponent.updateIntermanagerIgnoreNull(intermanager);
+	
+	}
+	
+	/**
+	 * 查找 接口管理
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllIntermanager(String where, String orderby,int limit,int offset){
+		return intermanagerComponent.findAllIntermanager(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 接口管理
+	 * @param id
+	 * @return
+	 */
+	public Intermanager findIntermanager(long id){
+		return intermanagerComponent.findIntermanager(id);
+	}
+	
+	/** 
+	 * 查找 接口管理
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllIntermanagerForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return intermanagerComponent.findAllIntermanager(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找接口管理
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllIntermanagerBySql(String sql,int limit,int offset){
+		return intermanagerComponent.findAllIntermanager(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 接口管理
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteIntermanagerBySql(String sql){
+		return intermanagerComponent.excuteIntermanagerBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countIntermanagerBySql(String sql){
+		return intermanagerComponent.countIntermanagerBySql(sql);
+	}
+	
+	
+

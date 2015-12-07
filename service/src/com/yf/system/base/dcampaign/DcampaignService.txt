@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 电子优惠卷活动
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Dcampaign createDcampaign(Dcampaign dcampaign) throws SQLException;
+	
+	/**
+	 * 删除 电子优惠卷活动
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteDcampaign(long id);
+	
+	
+	/**
+	 * 修改 电子优惠卷活动
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateDcampaign(Dcampaign dcampaign);
+
+		
+	/**
+	 * 修改 电子优惠卷活动但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateDcampaignIgnoreNull(Dcampaign dcampaign);
+		
+	
+	/**
+	 * 查找 电子优惠卷活动
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllDcampaign(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 电子优惠卷活动
+	 * @param id
+	 * @return
+	 */
+	public Dcampaign findDcampaign(long id);
+	
+	
+	/** 
+	 * 查找 电子优惠卷活动
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllDcampaignForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找电子优惠卷活动
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllDcampaignBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 电子优惠卷活动
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteDcampaignBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countDcampaignBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IDcampaignComponent dcampaignComponent;
+	  
+ 	
+ 	public IDcampaignComponent getDcampaignComponent() {
+		return dcampaignComponent;
+	}
+	public void setDcampaignComponent(IDcampaignComponent  dcampaignComponent) {
+		this.dcampaignComponent = dcampaignComponent;
+	}
+	/**
+	 * 创建 电子优惠卷活动
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Dcampaign createDcampaign(Dcampaign dcampaign) throws SQLException{
+	
+		return dcampaignComponent.createDcampaign(dcampaign);
+	}
+	/**
+	 * 删除 电子优惠卷活动
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteDcampaign(long id){
+	
+		return dcampaignComponent.deleteDcampaign(id);
+	}
+	
+	
+	/**
+	 * 修改 电子优惠卷活动
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateDcampaign(Dcampaign dcampaign){
+		return dcampaignComponent.updateDcampaign(dcampaign);
+	
+	}
+
+		
+	/**
+	 * 修改 电子优惠卷活动但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateDcampaignIgnoreNull(Dcampaign dcampaign){
+			return dcampaignComponent.updateDcampaignIgnoreNull(dcampaign);
+	
+	}
+	
+	/**
+	 * 查找 电子优惠卷活动
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllDcampaign(String where, String orderby,int limit,int offset){
+		return dcampaignComponent.findAllDcampaign(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 电子优惠卷活动
+	 * @param id
+	 * @return
+	 */
+	public Dcampaign findDcampaign(long id){
+		return dcampaignComponent.findDcampaign(id);
+	}
+	
+	/** 
+	 * 查找 电子优惠卷活动
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllDcampaignForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return dcampaignComponent.findAllDcampaign(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找电子优惠卷活动
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllDcampaignBySql(String sql,int limit,int offset){
+		return dcampaignComponent.findAllDcampaign(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 电子优惠卷活动
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteDcampaignBySql(String sql){
+		return dcampaignComponent.excuteDcampaignBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countDcampaignBySql(String sql){
+		return dcampaignComponent.countDcampaignBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,40 @@
+<!doctype html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<style type="text/css">
+.green{
+    position:relative;
+}
+.class {
+    position:absolute;top:5;;color:#666;left:200px;width:500px;height:auto;display:none;border:1px solid #ccc;background:#fff; padding-top:8px; padding-bottom:8px;
+}
+</style>
+
+<body>
+<table width="100%" height="700" border="0" align="center" cellpadding="0" cellspacing="0"  style="border:1px solid #E4E4E4">
+    <tr>
+        <td align="center">
+            <span class="green"><img alt="" src="images/banner/111.jpg"></span>
+            <p class="class">PHP114网站是PHP行业的信息交流平台</br>,涵盖了PHP教程,PHP在线学习,PHP资讯</br>
+            ,PHP问答,PHP百科,PHP开源系统及网页制作,SEO优化,</br>
+            网站运营,资源下载等.为大家提供广泛的交流平台</p>
+        </td>   
+    </tr>
+    <tr>
+        <td align="center">
+            <span class="green"><img alt="" src="images/banner/111.jpg"></span>
+            <p class="class">PHP教程、PHP资料和PHP问答</p>
+        </td>   
+    </tr>
+   
+</table>              
+</body>
+<script type="text/javascript">
+    $(".green").click(function(){
+        $("p.class").hide();
+            $(this).siblings("p.class").css({"display":"block"});
+    })
+</script>
+</html>

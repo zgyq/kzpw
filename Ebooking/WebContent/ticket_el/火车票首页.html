@@ -1,0 +1,907 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>火车票首页</title>
+<link href="css/001.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/hcsy.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/index.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/tab.js"></script>
+</head>
+
+<body>
+<div class="header">
+	<div class="top1 wrap">
+		<div class="logo"><a href="#"><img src="images/logo.jpg" height="120" /></a></div>
+		<div class="top_r">
+			<div class="hot_phone">400-8888-999</div>
+			<div class="t_link">
+				<a href="#" class="wap">手机版</a>|
+				<a href="#">收藏本站</a>|
+				<a href="#">在线客服</a>|
+				<a href="#">帮助</a>|
+				<a href="#">积分广场</a>|
+				<a href="#">礼品卡</a>|
+				<a href="#">English</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="nav">
+		<div class="wrap">
+			<div class="navmain">
+				<ul>
+					<li><a href="#" class="now">首页</a></li>
+					<li><a href="#">国内酒店</a></li>
+					<li><a href="#">预订机票</a></li>
+					<li><a href="#" class="now">火车票</a></li>
+				</ul>
+				<ul class="clear"></ul>
+			</div>
+			<div class="m_c">			
+				<a href="#" class="dbg">我的账户</a>
+				<a href="#">免费注册</a>
+				<a href="#" class="dbg">登陆</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<!--end header -->
+<div class="huochebanner">
+	<div class="wrap">
+		<div class="mainbox">
+			<div class="hotel_home_warp">           
+				<div class="block-content trainIndex_box_shadow trainIndex_shadow">
+					<div id="changeTrainSearchCity" class="changeIcon" style="display: block;"></div>
+					<div class="search-title"><h1 class="fl"><span class="titimg fl"></span><span class="sp1">国内火车票</span></h1></div>
+					<div id="search_info" class="search_info clearfix">
+						<ul>
+							<li>
+								<label for="trainRadio1">
+									<span style="display: block; float: left; margin-right: 8px;">车票类型</span>
+									<input type="radio" class="input04" checked="checked" id="trainRadio1" />
+									<span class="sp_input04">单程</span>
+								</label>
+							</li>
+						</ul>
+						<dl class="list" id="leaveCity">
+							<dt class="list_tit"><span class="tips1">出发城市</span></dt>
+							<dd>
+								<input type="text" maxlength="20" id="txtLeaveCity" name="fromStation" class="input06"  holder="中文/拼音/首字母" nulltips="请输入出发城市名称" value="中文/拼音/首字母" autocomplete="off"/>
+							</dd>
+						</dl>
+						<dl class="list" id="arriveCity">
+							<dt class="list_tit">到达城市</dt>
+							<dd>
+								<input type="text" maxlength="20" id="txtArriveCity" name="fromStation" class="input06" holder="中文/拼音/首字母" nulltips="请输入到达城市名称" value="中文/拼音/首字母" autocomplete="off"/>
+							</dd>
+						</dl>
+						<dl class="list" id="leaveDate">
+							<dt class="list_tit">出发日期</dt>
+							<dd>
+								<input type="text" style="ime-mode: disabled; color:#333333;" id="txtLeaveDate" name="txtLeaveDate" readonly="readonly" class="input06" nulltips="请选择出发日期" holder="时间/日期" value="时间/日期" autocomplete="off"/>
+							</dd>
+						</dl>
+						<dl class="list" id="onlyGCD">
+							<dd class="dtd">
+								<label><input id="checkGcd" class="chk fl" type="checkbox" /><span class="fl fsize14" style="padding-left: 4px;">只要GC高铁/D动车</span></label>
+							</dd>
+						</dl>
+						<dl class="list">
+							<dd class="dtd">
+								<input id="trainSearchSubmit" class="submitSearch btn01" type="button" value="搜 索" style="display: inline-block;">
+							</dd>
+						</dl>
+					</div>
+				</div>
+					</div>
+		</div>
+	</div>
+</div>
+<!--end banner -->
+<div class="contmain wrap mt20">
+	<div class="huoche_l">
+		<link href="css/huochetool.css" rel="stylesheet" type="text/css" media="all" />
+		<div class="traintoolbox">
+			<div class="borderGray fl">
+				<div class="borderBlue">
+					<span class="titimg fl"></span>
+					<h2 class="fl">
+						火车票工具箱</h2>
+				</div>
+			</div>
+			<div class="traintool">
+				<div class="padlr45">
+					<a><span class="myorder"></span>
+						<p>
+							我的订单</p>
+					</a><a target="_blank" href="http://www.ly.com/tianqi/"><span class="weather"></span>
+						<p>
+							天气预报</p>
+					</a><a target="_blank" href="http://www.17u.com/train/TrainTicketSale.html" style="margin-right: 0;">
+						<span class="outlets"></span>
+						<p>
+							代售点查询</p>
+					</a>
+				</div>
+				<div class="trainsearch">
+					<p class="tbtit mt10 fl">
+						时刻表查询</p>
+					<ul class="mt10 fl">
+						<li class="mr20 fl">
+							<label for="trainsearch1">
+								<input id="trainsearch1" type="radio" name="SearchType" checked="checked" />站站时刻表</label></li><li
+									class="mr20 fl">
+									<label for="trainsearch2">
+										<input id="trainsearch2" type="radio" name="SearchType" />车站时刻表</label></li><li class="fl">
+											<label for="trainsearch3">
+												<input id="trainsearch3" type="radio" name="SearchType" />车次时刻表</label></li></ul>
+					<div class="trainsearchdiv">
+						<span id="fromcitySpan" class="searchspan">
+							<input id="fromcityInt" type="text" class="inputcity" maxlength="20" holder="城市名"
+								nulltips="请输入出发城市名称" value="城市名" /></span><span class="swap"></span><span id="tocitySpan"
+									class="searchspan">
+									<input id="tocityInt" class="inputcity" type="text" maxlength="20" holder="城市名" nulltips="请输入到达城市名称"
+										value="城市名" /></span><input id="cityBtn" class="searchbtn" type="button" value="搜索" /></div>
+					
+					
+				</div>
+			</div>
+		</div>
+		<div class="ad"><a href="#"><img src="images/huoche_ad_1.jpg" width="390" height="200" /></a></div>
+	</div>
+	<div class="huoche_r">		
+		<link href='css/shike.css' rel="stylesheet" type="text/css" />
+		<div class="toptarinline box-shadow">
+          <div class="top"> <span class="topimg fl"></span>
+            <h2 class="fl"> 热门火车线路</h2>
+            <ul class="SwapTab">
+              <li class="on">北京</li>
+              <li class="">上海</li>
+              <li class="">广州</li>
+              <li class="">杭州</li>
+              <li class="">南京</li>
+            </ul>
+            <a class="fr" target="_blank" href="http://www.17u.com/train/trainstation-introduce.html" style="line-height: 22px;"> 更多<font style="font-family: \5B8B\4F53;">&gt;&gt;</font></a> </div>
+          <div class="tab-content">
+		  <div class="beijing">
+            <div class="type01 mtop">
+              <ul>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-beijing-guangzhou-1-1.html" target="_blank" title="北京 → 广州火车时刻表">北京 → 广州</a><span><font>¥251</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-beijing-shenyang-1-1.html" target="_blank" title="北京 → 沈阳火车时刻表">北京 → 沈阳</a><span><font>¥86</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-beijing-tianjin-1-1.html" target="_blank" title="北京 → 天津火车时刻表">北京 → 天津</a><span><font>¥8.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-beijing-wuhan-1-1.html" target="_blank" title="北京 → 武汉火车时刻表">北京 → 武汉</a><span><font>¥148.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-beijing-shijiazhuang-1-1.html" target="_blank" title="北京 → 石家庄火车时刻表">北京 → 石家庄</a><span><font>¥41.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-beijing-zhengzhou-1-1.html" target="_blank" title="北京 → 郑州火车时刻表">北京 → 郑州</a><span><font>¥93</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-beijing-hefei-1-1.html" target="_blank" title="北京 → 合肥火车时刻表">北京 → 合肥</a><span><font>¥138.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-beijing-changchun-1-1.html" target="_blank" title="北京 → 长春火车时刻表">北京 → 长春</a><span><font>¥128.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-beijing-lanzhou-1-1.html" target="_blank" title="北京 → 兰州火车时刻表">北京 → 兰州</a><span><font>¥189.5</font>起</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="shanghai hidden">
+            <div class="type01 mtop">
+              <ul>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-shanghai-hangzhou-1-1.html" target="_blank" title="上海 → 杭州火车时刻表">上海 → 杭州</a><span><font>¥24.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-shanghai-chengdu-1-1.html" target="_blank" title="上海 → 成都火车时刻表">上海 → 成都</a><span><font>¥254.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-shanghai-xian-1-1.html" target="_blank" title="上海 → 西安火车时刻表">上海 → 西安</a><span><font>¥180.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-shanghai-zhengzhou-1-1.html" target="_blank" title="上海 → 郑州火车时刻表">上海 → 郑州</a><span><font>¥128.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-shanghai-guangzhou-1-1.html" target="_blank" title="上海 → 广州火车时刻表">上海 → 广州</a><span><font>¥201</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-shanghai-changsha-1-1.html" target="_blank" title="上海 → 长沙火车时刻表">上海 → 长沙</a><span><font>¥148.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-shanghai-xuzhou-1-1.html" target="_blank" title="上海 → 徐州火车时刻表">上海 → 徐州</a><span><font>¥80</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-shanghai-hefei-1-1.html" target="_blank" title="上海 → 合肥火车时刻表">上海 → 合肥</a><span><font>¥44.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-shanghai-haerbin-1-1.html" target="_blank" title="上海 → 哈尔滨火车时刻表">上海 → 哈尔滨</a><span><font>¥273.5</font>起</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="guangzhou hidden">
+            <div class="type01 mtop">
+              <ul>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-guangzhou-changsha-1-1.html" target="_blank" title="广州 → 长沙火车时刻表">广州 → 长沙</a><span><font>¥56</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-guangzhou-kunming-1-1.html" target="_blank" title="广州 → 昆明火车时刻表">广州 → 昆明</a><span><font>¥192</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-guangzhou-zhengzhou-1-1.html" target="_blank" title="广州 → 郑州火车时刻表">广州 → 郑州</a><span><font>¥192</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-guangzhou-xiamen-1-1.html" target="_blank" title="广州 → 厦门火车时刻表">广州 → 厦门</a><span><font>¥102</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-guangzhou-chengdu-1-1.html" target="_blank" title="广州 → 成都火车时刻表">广州 → 成都</a><span><font>¥224</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-guangzhou-haikou-1-1.html" target="_blank" title="广州 → 海口火车时刻表">广州 → 海口</a><span><font>¥139</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-guangzhou-nanchang-1-1.html" target="_blank" title="广州 → 南昌火车时刻表">广州 → 南昌</a><span><font>¥124</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-guangzhou-xian-1-1.html" target="_blank" title="广州 → 西安火车时刻表">广州 → 西安</a><span><font>¥236</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-guangzhou-shanghai-1-1.html" target="_blank" title="广州 → 上海火车时刻表">广州 → 上海</a><span><font>¥201</font>起</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="hangzhou hidden">
+            <div class="type01 mtop">
+              <ul>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-hangzhou-xiamen-1-1.html" target="_blank" title="杭州 → 厦门火车时刻表">杭州 → 厦门</a><span><font>¥148.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-hangzhou-fuzhou-1-1.html" target="_blank" title="杭州 → 福州火车时刻表">杭州 → 福州</a><span><font>¥105</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-hangzhou-jinan-1-1.html" target="_blank" title="杭州 → 济南火车时刻表">杭州 → 济南</a><span><font>¥124.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-hangzhou-tianjin-1-1.html" target="_blank" title="杭州 → 天津火车时刻表">杭州 → 天津</a><span><font>¥156.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-hangzhou-jiaxing-1-1.html" target="_blank" title="杭州 → 嘉兴火车时刻表">杭州 → 嘉兴</a><span><font>¥13.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-hangzhou-xuzhou-1-1.html" target="_blank" title="杭州 → 徐州火车时刻表">杭州 → 徐州</a><span><font>¥90</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-hangzhou-qufu-1-1.html" target="_blank" title="杭州 → 曲阜火车时刻表">杭州 → 曲阜</a><span><font>¥330.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-hangzhou-wenzhou-1-1.html" target="_blank" title="杭州 → 温州火车时刻表">杭州 → 温州</a><span><font>¥31.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-hangzhou-tianjin-1-1.html" target="_blank" title="杭州 → 天津火车时刻表">杭州 → 天津</a><span><font>¥156.5</font>起</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="nanjing hidden">
+            <div class="type01 mtop">
+              <ul>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-nanjing-shanghai-1-1.html" target="_blank" title="南京 → 上海火车时刻表">南京 → 上海</a><span><font>¥23.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-nanjing-zhengzhou-1-1.html" target="_blank" title="南京 → 郑州火车时刻表">南京 → 郑州</a><span><font>¥82</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-nanjing-xuzhou-1-1.html" target="_blank" title="南京 → 徐州火车时刻表">南京 → 徐州</a><span><font>¥45.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-nanjing-wuhan-1-1.html" target="_blank" title="南京 → 武汉火车时刻表">南京 → 武汉</a><span><font>¥83</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-nanjing-hefei-1-1.html" target="_blank" title="南京 → 合肥火车时刻表">南京 → 合肥</a><span><font>¥20.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-nanjing-jinan-1-1.html" target="_blank" title="南京 → 济南火车时刻表">南京 → 济南</a><span><font>¥80</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-nanjing-hangzhou-1-1.html" target="_blank" title="南京 → 杭州火车时刻表">南京 → 杭州</a><span><font>¥54.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-nanjing-suzhou-1-1.html" target="_blank" title="南京 → 苏州火车时刻表">南京 → 苏州</a><span><font>¥16.5</font>起</span></li>
+                <li><a href="http://www.17u.cn/huochepiao/train/trainsearch-nanjing-ningbo-1-1.html" target="_blank" title="南京 → 宁波火车时刻表">南京 → 宁波</a><span><font>¥91</font>起</span></li>
+              </ul>
+            </div>
+          </div>
+		  </div>
+        </div>
+		<script type="text/javascript"> 
+		//TAB切换
+		function SwapTab(name,title,content,Sub,cur){
+		  $(name+' '+title).click(function(){
+			  $(this).addClass(cur).siblings().removeClass(cur);
+			  $(content+" > "+Sub).eq($(name+' '+title).index(this)).show().siblings().hide();
+		  });
+		}
+		$(function(){
+			new SwapTab(".SwapTab","li",".tab-content","div","on");//排行TAB
+		})
+		</script>
+		
+		<!-- 特价机票 start -->
+			<div class="templateBox special_air f_m_top" id="tab">
+			  <div class="templateTitle templateBorbot">
+				<h1 class="templateTitleH f_size16">近期特价机票</h1>
+				<ul id="tab_top">
+				  <li cityId="53" class="btnSee cur" id="tab_top01"><span>北京</span></li>
+				  <li cityId="321" class="btnNone" id="tab_top02"><span>上海</span></li>
+				  <li cityId="80" class="btnNone" id="tab_top03"><span>广州</span></li>
+				  <li cityId="91" class="btnNone" id="tab_top04"><span>深圳</span></li>
+				  <li cityId="394" class="btnNone" id="tab_top05"><span>重庆</span></li>
+				  <li cityId="324" class="btnNone" id="tab_top06"><span>成都</span></li>
+				  <li cityId="383" class="btnNone" id="tab_top07"><span>杭州</span></li>
+				  <li cityId="224" class="btnNone" id="tab_top08"><span>南京</span></li>
+				</ul>
+			  </div>
+			  <div class="templateMain f_p_a tabCon" style="height:210px;">
+				  <div class="cur">
+					<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+					  <tr>
+						<td width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">北京<em class="arrows">→</em>上海</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">北京<em class="arrows">→</em>上海</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">北京<em class="arrows">→</em>上海</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">北京<em class="arrows">→</em>上海</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">北京<em class="arrows">→</em>上海</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+						  
+						<td align="right" width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">北京<em class="arrows">→</em>上海</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">北京<em class="arrows">→</em>上海</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">北京<em class="arrows">→</em>上海</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">北京<em class="arrows">→</em>上海</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">北京<em class="arrows">→</em>上海</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+					  </tr>
+					</table>
+				  </div>
+				  <div>
+				  	<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+					  <tr>
+						<td width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">上海<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">上海<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">上海<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">上海<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+						  
+						<td align="right" width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">上海<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">上海<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">上海<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到上海特价机票">上海<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+					  </tr>
+					</table>
+				  </div>
+				  <div>
+				  	<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+					  <tr>
+						<td width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到广州特价机票">广州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到广州特价机票">广州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到广州特价机票">广州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到广州特价机票">广州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+						  
+						<td align="right" width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到广州特价机票">广州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到广州特价机票">广州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到广州特价机票">广州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到广州特价机票">广州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+					  </tr>
+					</table>
+				  </div>
+				  <div>
+				  	<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+					  <tr>
+						<td width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到深圳特价机票">深圳<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到深圳特价机票">深圳<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到深圳特价机票">深圳<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到深圳特价机票">深圳<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+						  
+						<td align="right" width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到深圳特价机票">深圳<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到深圳特价机票">深圳<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到深圳特价机票">深圳<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到深圳特价机票">深圳<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+					  </tr>
+					</table>
+				  </div>
+				  <div>
+				  	<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+					  <tr>
+						<td width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到重庆特价机票">重庆<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到重庆特价机票">重庆<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到重庆特价机票">重庆<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到重庆特价机票">重庆<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+						  
+						<td align="right" width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到重庆特价机票">重庆<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到重庆特价机票">重庆<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到重庆特价机票">重庆<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到重庆特价机票">重庆<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+					  </tr>
+					</table>
+				  </div>
+				  <div>
+				  	<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+					  <tr>
+						<td width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到成都特价机票">成都<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到成都特价机票">成都<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到成都特价机票">成都<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到成都特价机票">成都<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+						  
+						<td align="right" width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到成都特价机票">成都<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到成都特价机票">成都<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到成都特价机票">成都<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到成都特价机票">成都<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+					  </tr>
+					</table>
+				  </div>
+				  <div>
+				  	<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+					  <tr>
+						<td width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到杭州特价机票">杭州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到杭州特价机票">杭州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到杭州特价机票">杭州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到杭州特价机票">杭州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+						  
+						<td align="right" width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到杭州特价机票">杭州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到杭州特价机票">杭州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到杭州特价机票">杭州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到杭州特价机票">杭州<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+					  </tr>
+					</table>
+				  </div>
+				  <div>
+				  	<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+					  <tr>
+						<td width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到南京特价机票">南京<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到南京特价机票">南京<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到南京特价机票">南京<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到南京特价机票">南京<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+						  
+						<td align="right" width="400">
+						<table width="100%" border="0" cellspacing="0"  cellpadding="0">
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到南京特价机票">南京<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到南京特价机票">南京<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到南京特价机票">南京<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							<tr>
+							  <td class="ts_tips" width="110"><a  href="#" title="北京到南京特价机票">南京<em class="arrows">→</em>北京</a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>270</strong> <em class="gray">06.30</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.25</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.27</em></a></td>
+							  <td><a class="tips"  href="#">&yen;<strong>320</strong> <em class="gray">06.28</em></a></td>
+							</tr>
+							
+						  </table>						  
+						  </td>
+					  </tr>
+					</table>
+				  </div>				
+			  </div>
+			</div>
+			<!-- 特价机票 end -->
+	</div>
+	<div class="clear"></div>
+	<div class="ad mt20"><a href="#"><img src="images/huoche_ad_2.png" width="1200" height="84" /></a></div>
+</div>
+<!--cont -->
+<div class="footer mt20">
+	<div class="foot1"><img src="images/btn1.png" width="1200" height="40" /></div>
+	<div class="foot_link wrap">
+		<a href="#">关于我们</a>
+		<a href="#">公司地图</a>
+		<a href="#">联系我们</a>
+		<a href="#">服务说明</a>
+		<a href="#">免费注册</a>
+		<a href="#">网站导航</a>
+		<a href="#">隐私条款</a>
+		<a href="#">支付方式</a>
+	</div>
+	<div class="foot2">
+		<ul>
+			<li>Copyright© 2014-2020, tuyui.com. All rights reserved.</li>
+		</ul>
+	</div>
+	<div class="foot3">
+		<a href="#"><img src="images/icp1.jpg" width="90" height="34" /></a>
+		<a href="#"><img src="images/icp2.jpg" width="90" height="34" /></a>
+		<a href="#"><img src="images/icp3.jpg" width="90" height="34" /></a>
+		<a href="#"><img src="images/icp4.jpg" width="90" height="34" /></a>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: "微软雅黑";
+}
+a{color:#2577e3;}
+img{border:0px;}
+a:link {text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
+ul, p, dl, dt, dd, li, img, div, p, table {padding:0px; margin:0px;}
+li{list-style-position:outside; list-style-type:none;}
+h1, h2, h3, h4, h5{ padding:0px; margin:0px; font-weight:normal;}
+h2 { font-size:18px;}
+h5 { font-size:14px; line-height:21px;}
+.clearit { clear:both; width:0px; height:0px; overflow:hidden; zoom:1;}
+.space { height:10px; overflow:hidden;}
+img { vertical-align:top;}
+.quanbu{
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+.p1{
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    float: left;
+    margin-left: 50px;
+	display:inline-block;
+	background:url(../img/h2-icon.gif) no-repeat left center; 
+	text-indent:20px;
+	color:#2577e3;
+}
+.neirong{
+    width: 90%;
+    overflow: auto;
+    margin: 0 auto;
+    background-color: #f3f4f3;
+    padding-bottom: 30px;
+}
+.li1{
+    color: #fb9c3a;
+    float: left;
+    margin-right: 10px;
+    font-size: 13px;
+}
+.li2{
+    color: #cccaca; float: left;
+    margin-right: 10px;
+    font-size: 13px;
+}
+.ul1{
+    
+    float: right;
+    margin: 15px 25px 0 0;
+
+}
+
+
+.top{
+    width: 100%;
+    margin-top: 5px;
+    overflow: auto;
+}
+.line{
+    clear: both;
+    width: 97%;
+    border-bottom:2px solid #e9e7e2;
+    margin: 15px auto;
+}
+.zhongbu{
+    font-size: 13px;
+
+}
+.zb1{
+    margin-top: 20px;
+    margin-left: 60px;
+}
+.zb2{
+    margin-top: 20px;
+    margin-left: 47px;
+}
+.btn{
+    width: 45px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+.btn3{
+    width: 45px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.btn1{
+    width: 55px;
+    height: 30px;
+    background-color: #fffae9;
+    border: 2px solid #fc802d;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+.input1{
+    width: 110px;
+    height: 23px;
+    margin-left: 20px;
+    color: #b3b5bc;
+    font-size: 12px;
+}
+
+.zhanghao{
+    height: 23px;
+    width: 200px;
+    margin-left: 20px;
+}
+.xiala{
+    width: 60px;
+    height: 25px;
+    margin-left: 15px;
+}
+.xiala2{
+    width: 130px;
+    height: 25px;
+    margin-left: 16px;
+
+}
+.btns{
+    width: 75px;
+    margin-left: 20px;
+    height: 25px;
+}
+
+.show-price{ border:1px solid #044fb1;border-radius:5px; background:#2577e3; color:#fff; padding:3px; font-size:12px;}
+.submit{ border:1px solid #fb680c;border-radius:5px; background:#ff7a3f; color:#fff; padding:8px 30px; font-size:16px; font-weight:bold}

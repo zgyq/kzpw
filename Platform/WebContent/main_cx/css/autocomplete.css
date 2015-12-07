@@ -1,0 +1,61 @@
+.nav_l{background:url(../img/nav_bj.gif) no-repeat; color:#FFF; width:90px; height:25px; display:block; margin:0 auto; cursor: pointer;}
+.box_nei{border:1px solid #999999; position:absolute; width:300px; top:-2px; left:0px; z-index:1099; padding-left:5px;background:#FFFFFF;}
+.piny{line-height:26px;}
+.hr{border-top:1px dashed #999999; height:0px;line-height:0;  margin-left:-2px; margin-right:3px; list-style:none; }
+.nav-a_z{ margin-top:4px; height:18px;}
+.nav-a_z ul{ margin:0 ; padding:0; list-style:none; line-height:18px; height:18px;}
+.nav-a_z ul li{ width:40px; float:left; margin-right:8px; border:1px solid #999999; line-height:18px; height:18px; text-align:center; border-bottom:none; color:#3779FF;}
+.list_chengshi{}
+.list_chengshi ul{ list-style:none;}
+.list_chengshi ul li{ float:left; width:60px; text-align:center; line-height:24px; }
+.hr1{border-top:1px solid #999999; height:0px;line-height:0;   margin-left:-2px; margin-right:3px; z-index:11 ;list-style:none;}	
+
+
+#city .mt5{ margin-top:5px;}
+
+#city .city-navon{border:1px solid #999; border-bottom:none;  background:#efefef;}
+
+#city .city-navon a{font-weight:bold;border: none;}
+#city .city-navon a:hover{ border: none; background: #fff}
+
+#city .city-nav{border:1px solid #999; border-bottom:none;}
+
+#city .cityon a{width:65px; display:block; margin-right:3px; margin-top:4px; padding-left:5px; text-align:left; overflow:hidden; background:#fff; border:1px solid #fff;}
+
+#city .cityon a:hover{ width:65px; display:block; margin-right:3px; padding-left:5px; text-align:left; overflow:hidden; border:1px solid #f48000;}
+
+#drm ul li,#da ul li,#dg ul li,#dk ul li,#dp ul li,#dx ul li{ float:left;}
+
+
+
+
+#getplatform 
+{
+    margin-top:-1px;z-index:2;
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; VISIBILITY: hidden; BORDER-LEFT: #999999 1px solid; CURSOR: pointer;  BORDER-BOTTOM: #999999 1px solid; LIST-STYLE-TYPE: none; POSITION: absolute; BACKGROUND-COLOR: #cbdee7
+}
+.hint {
+	PADDING-LEFT: 6px; FONT-SIZE: 12px; BACKGROUND: #ffffff; COLOR: #999999; BORDER-BOTTOM: #ccc 1px dashed;z-index:1000;
+}
+.mover {
+	BORDER-TOP: #808080 1px dotted; PADDING-LEFT: 6px; FONT-SIZE: 12px; BACKGROUND: #ffe6a6; CURSOR: pointer;  LINE-HEIGHT: 120%; BORDER-BOTTOM: #808080 1px dotted
+}
+.mout {
+	BORDER-TOP: #ffffff 1px solid; PADDING-LEFT: 6px; FONT-SIZE: 12px; BACKGROUND: #ffffff;  LINE-HEIGHT: 120%; BORDER-BOTTOM: #ffffff 1px solid
+}
+.selected {
+	BORDER-TOP: #999 1px dotted; PADDING-LEFT: 6px; FONT-SIZE: 12px; BACKGROUND: #ffe6a6;  LINE-HEIGHT: 120%; BORDER-BOTTOM: #999 1px dotted
+}
+.tdleft {
+	PADDING-LEFT: 6px; FONT-SIZE: 12px
+}
+.tdright {
+	PADDING-RIGHT: 4px
+}
+#getplatform  td{
+	cursor:pointer;
+	line-height:20px;	
+}
+#getplatform  td label{
+	cursor:pointer;	
+}

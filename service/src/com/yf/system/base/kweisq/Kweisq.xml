@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Kweisq">
+  
+  <typeAlias alias="Kweisq" type="com.yf.system.base.kweisq.Kweisq"/>
+  
+
+  <resultMap id="resultKweisqMap" class="Kweisq">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="angenid" column="C_ANGENID"/>
+  
+     <result property="distributorid" column="C_DISTRIBUTORID"/>
+  
+     <result property="peoplenumber" column="C_PEOPLENUMBER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="username" column="C_USERNAME"/>
+  
+     <result property="mobile" column="C_MOBILE"/>
+  
+     <result property="postbox" column="C_POSTBOX"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+  
+     <result property="status" column="C_STATUS"/>
+  
+     <result property="kweiid" column="C_KWEIID"/>
+  
+     <result property="updatetime" column="C_UPDATETIME"/>
+  
+     <result property="updateuser" column="C_UPDATEUSER"/>
+     
+      <result property="chengren" column="C_CHENGREN"/>
+      
+     <result property="ertong" column="C_ERTONG"/>
+       
+     <result property="yinger" column="C_YINGER"/>
+   
+  </resultMap>
+  
+  <select id="findAllKweisq"  resultMap="resultKweisqMap"  parameterClass="java.util.Map">
+  
+    select * from T_KWEISQ
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllKweisqBySql"  resultMap="resultKweisqMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteKweisqBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countKweisqBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_KWEISQ
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findKweisq" parameterClass="long" resultClass="Kweisq">
+    select 
+    	ID as id,
+	  			C_ANGENID as angenid,
+	  			C_DISTRIBUTORID as distributorid,
+	  			C_PEOPLENUMBER as peoplenumber,
+	  			C_CREATETIME as createtime,
+	  			C_CREATEUSER as createuser,
+	  			C_USERNAME as username,
+	  			C_MOBILE as mobile,
+	  			C_POSTBOX as postbox,
+	  			C_COMMENT as comment,
+	  			C_STATUS as status,
+	  			C_CHENGREN as chengren,
+	  			C_ERTONG as ertong,
+	  			C_YINGER as yinger,
+	  			C_KWEIID as kweiid,
+	  			C_UPDATETIME as updatetime,
+	  			C_UPDATEUSER as updateuser 
+     from T_KWEISQ
+    where ID = #id#
+  </select>
+   
+  <insert id="createKweisq" parameterClass="Kweisq">
+    insert into T_KWEISQ ( 
+    	ID,
+	  			C_ANGENID,
+	  			C_DISTRIBUTORID,
+	  			C_PEOPLENUMBER,
+	  			C_CREATETIME,
+	  			C_CREATEUSER,
+	  			C_USERNAME,
+	  			C_MOBILE,
+	  			C_POSTBOX,
+	  			C_COMMENT,
+	  			C_STATUS,
+	  			C_CHENGREN,
+	  			C_ERTONG,
+	  			C_YINGER,
+	  			C_KWEIID,
+	  			C_UPDATETIME,
+	  			C_UPDATEUSER 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#angenid:DECIMAL#,
+						
+							#distributorid:DECIMAL#,
+						
+							#peoplenumber:DECIMAL#,
+						
+	  						#createtime#,
+	  					
+	  						#createuser#,
+	  					
+	  						#username#,
+	  					
+	  						#mobile#,
+	  					
+	  						#postbox#,
+	  					
+	  						#comment#,
+	  					
+							#status:DECIMAL#,
+							
+							#chengren:DECIMAL#,
+							
+							#ertong:DECIMAL#,
+							
+							#yinger:DECIMAL#,
+						
+							#kweiid:DECIMAL#,
+						
+	  						#updatetime#,
+	  					
+	  						#updateuser#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteKweisq" parameterClass="long">
+    delete from T_KWEISQ
+    where ID = #id#
+  </delete>
+	
+  <update id="updateKweisq" parameterClass="Kweisq">
+    update T_KWEISQ 
+    set 
+    	C_ANGENID = #angenid:DECIMAL#,
+						C_DISTRIBUTORID = #distributorid:DECIMAL#,
+						C_PEOPLENUMBER = #peoplenumber:DECIMAL#,
+						C_CREATETIME = #createtime#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_USERNAME = #username#,
+	  					C_MOBILE = #mobile#,
+	  					C_POSTBOX = #postbox#,
+	  					C_COMMENT = #comment#,
+	  					C_STATUS = #status:DECIMAL#,
+	  					C_CHENGREN = #chengren:DECIMAL#,
+	  					C_ERTONG = #ertong:DECIMAL#,
+	  					C_YINGER = #yinger:DECIMAL#,
+						C_KWEIID = #kweiid:DECIMAL#,
+						C_UPDATETIME = #updatetime#,
+	  					C_UPDATEUSER = #updateuser#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

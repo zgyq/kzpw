@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 虚拟账户充值记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Vmoneyrecord createVmoneyrecord(Vmoneyrecord vmoneyrecord) throws SQLException;
+	
+	/**
+	 * 删除 虚拟账户充值记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteVmoneyrecord(long id);
+	
+	
+	/**
+	 * 修改 虚拟账户充值记录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateVmoneyrecord(Vmoneyrecord vmoneyrecord);
+
+		
+	/**
+	 * 修改 虚拟账户充值记录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateVmoneyrecordIgnoreNull(Vmoneyrecord vmoneyrecord);
+		
+	
+	/**
+	 * 查找 虚拟账户充值记录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllVmoneyrecord(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 虚拟账户充值记录
+	 * @param id
+	 * @return
+	 */
+	public Vmoneyrecord findVmoneyrecord(long id);
+	
+	
+	/** 
+	 * 查找 虚拟账户充值记录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllVmoneyrecordForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找虚拟账户充值记录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllVmoneyrecordBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 虚拟账户充值记录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteVmoneyrecordBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countVmoneyrecordBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IVmoneyrecordComponent vmoneyrecordComponent;
+	  
+ 	
+ 	public IVmoneyrecordComponent getVmoneyrecordComponent() {
+		return vmoneyrecordComponent;
+	}
+	public void setVmoneyrecordComponent(IVmoneyrecordComponent  vmoneyrecordComponent) {
+		this.vmoneyrecordComponent = vmoneyrecordComponent;
+	}
+	/**
+	 * 创建 虚拟账户充值记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Vmoneyrecord createVmoneyrecord(Vmoneyrecord vmoneyrecord) throws SQLException{
+	
+		return vmoneyrecordComponent.createVmoneyrecord(vmoneyrecord);
+	}
+	/**
+	 * 删除 虚拟账户充值记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteVmoneyrecord(long id){
+	
+		return vmoneyrecordComponent.deleteVmoneyrecord(id);
+	}
+	
+	
+	/**
+	 * 修改 虚拟账户充值记录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateVmoneyrecord(Vmoneyrecord vmoneyrecord){
+		return vmoneyrecordComponent.updateVmoneyrecord(vmoneyrecord);
+	
+	}
+
+		
+	/**
+	 * 修改 虚拟账户充值记录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateVmoneyrecordIgnoreNull(Vmoneyrecord vmoneyrecord){
+			return vmoneyrecordComponent.updateVmoneyrecordIgnoreNull(vmoneyrecord);
+	
+	}
+	
+	/**
+	 * 查找 虚拟账户充值记录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllVmoneyrecord(String where, String orderby,int limit,int offset){
+		return vmoneyrecordComponent.findAllVmoneyrecord(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 虚拟账户充值记录
+	 * @param id
+	 * @return
+	 */
+	public Vmoneyrecord findVmoneyrecord(long id){
+		return vmoneyrecordComponent.findVmoneyrecord(id);
+	}
+	
+	/** 
+	 * 查找 虚拟账户充值记录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllVmoneyrecordForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return vmoneyrecordComponent.findAllVmoneyrecord(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找虚拟账户充值记录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllVmoneyrecordBySql(String sql,int limit,int offset){
+		return vmoneyrecordComponent.findAllVmoneyrecord(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 虚拟账户充值记录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteVmoneyrecordBySql(String sql){
+		return vmoneyrecordComponent.excuteVmoneyrecordBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countVmoneyrecordBySql(String sql){
+		return vmoneyrecordComponent.countVmoneyrecordBySql(sql);
+	}
+	
+	
+

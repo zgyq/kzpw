@@ -1,0 +1,239 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="http://cx.soku5.net:8085/scripts/lhgdialog/skins/idialog.css" rel="stylesheet" id="lhgdialoglink"><title>
+	晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台
+</title><link href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/global.css" rel="stylesheet" type="text/css"><link href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/main.css" rel="stylesheet" type="text/css"><link href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/font-awesome.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/jquery-1.4.1.min.js"></script>
+    <script src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/sideleft.js"></script>
+    <script src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/menu.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/lhgdialog.js"></script>
+    <script type="text/javascript" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/layout.js"></script>
+    <script type="text/javascript" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/popup_layer.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //检测IE
+            if ('undefined' == typeof (document.body.style.maxHeight)) {
+                alert("您的浏览器版本太低了，请升级您的浏览器版本！");
+                return false;
+            }
+            loadTopMenuTree(true);
+            loadMenuTree(false, 24);
+            new PopupLayer({ trigger: "#ele1", popupBlk: "#blk1", closeBtn: "#close1" });
+            //弹窗公告
+            showdialog();
+        });
+        function showdialog() {
+
+            var content = "<div style='padding:5px'><br/><br/>" + $("#divNoticeContent").html()+"</div>";
+            $.dialog({
+                title: '消息公告',
+                lock: true,
+                content: content,
+                button: [
+                    {
+                        name: '关闭窗口'
+                    }
+                ],
+                width: '630px',
+                height: 400,
+                padding: '0px 0px',
+                max: false,
+                min: false
+            });
+        }
+    </script>
+</head>
+<body style=""><div class="" style="left: 0px; top: 0px; visibility: hidden; position: absolute;"><table class="ui_border"><tbody><tr><td class="ui_lt"></td><td class="ui_t"></td><td class="ui_rt"></td></tr><tr><td class="ui_l"></td><td class="ui_c"><div class="ui_inner"><table class="ui_dialog"><tbody><tr><td colspan="2"><div class="ui_title_bar"><div class="ui_title" unselectable="on" style="cursor: move;"></div><div class="ui_title_buttons"><a class="ui_min" href="javascript:void(0);" title="最小化" style="display: inline-block;"><b class="ui_min_b"></b></a><a class="ui_max" href="javascript:void(0);" title="最大化" style="display: inline-block;"><b class="ui_max_b"></b></a><a class="ui_res" href="javascript:void(0);" title="还原"><b class="ui_res_b"></b><b class="ui_res_t"></b></a><a class="ui_close" href="javascript:void(0);" title="关闭(esc键)" style="display: inline-block;">×</a></div></div></td></tr><tr><td class="ui_icon" style="display: none;"></td><td class="ui_main" valign="top" style="width: auto; height: auto;"><div class="ui_content" style="padding: 10px;"></div></td></tr><tr><td colspan="2"><div class="ui_buttons" style="display: none;"></div></td></tr></tbody></table></div></td><td class="ui_r"></td></tr><tr><td class="ui_lb"></td><td class="ui_b"></td><td class="ui_rb" style="cursor: se-resize;"></td></tr></tbody></table></div><div class="" style="left: 0px; top: 0px; visibility: hidden; position: absolute;"><table class="ui_border"><tbody><tr><td class="ui_lt"></td><td class="ui_t"></td><td class="ui_rt"></td></tr><tr><td class="ui_l"></td><td class="ui_c"><div class="ui_inner"><table class="ui_dialog"><tbody><tr><td colspan="2"><div class="ui_title_bar"><div class="ui_title" unselectable="on" style="cursor: move;"></div><div class="ui_title_buttons"><a class="ui_min" href="javascript:void(0);" title="最小化" style="display: none;"><b class="ui_min_b"></b></a><a class="ui_max" href="javascript:void(0);" title="最大化" style="display: none;"><b class="ui_max_b"></b></a><a class="ui_res" href="javascript:void(0);" title="还原"><b class="ui_res_b"></b><b class="ui_res_t"></b></a><a class="ui_close" href="javascript:void(0);" title="关闭(esc键)" style="display: inline-block;">×</a></div></div></td></tr><tr><td class="ui_icon" style="display: none;"></td><td class="ui_main" valign="top" style="width: 630px; height: 400px;"><div class="ui_content" style="padding: 0px;"></div></td></tr><tr><td colspan="2"><div class="ui_buttons"></div></td></tr></tbody></table></div></td><td class="ui_r"></td></tr><tr><td class="ui_lb"></td><td class="ui_b"></td><td class="ui_rb" style="cursor: se-resize;"></td></tr></tbody></table></div>
+    <form name="form1" method="post" action="http://cx.soku5.net:8085/index.aspx" id="form1">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJOTkwMzQzMjI2D2QWAgIDD2QWBAIBDxYCHgtfIUl0ZW1Db3VudAIDFgZmD2QWBmYPFQES5Zu95YaF5py656Wo5a6i5pyNZAIBDxYCHwACAxYGZg9kFgJmDxUCCTE3NDk4OTE3NQkxNzQ5ODkxNzVkAgEPZBYCZg8VAgkxNzQ5ODkxNzUJMTc0OTg5MTc1ZAICD2QWAmYPFQIJMTc0OTg5MTc1CTE3NDk4OTE3NWQCAg8VAgo4OjAwLTE4OjAwDDAxMC03ODYxMzg4OGQCAQ9kFgZmDxUBEuWbveWGhemFkuW6l+WuouacjWQCAQ8WAh8AAgMWBmYPZBYCZg8VAgkxNzQ5ODkxNzUJMTc0OTg5MTc1ZAIBD2QWAmYPFQIJMTc0OTg5MTc1CTE3NDk4OTE3NWQCAg9kFgJmDxUCCTE3NDk4OTE3NQkxNzQ5ODkxNzVkAgIPFQIKODowMC0xODowMAwwMTAtNzg2MTM4ODhkAgIPZBYGZg8VAQzml4XmuLjmma/ngrlkAgEPFgIfAAIDFgZmD2QWAmYPFQIJMTc0OTg5MTc1CTE3NDk4OTE3NWQCAQ9kFgJmDxUCCTE3NDk4OTE3NQkxNzQ5ODkxNzVkAgIPZBYCZg8VAgkxNzQ5ODkxNzUJMTc0OTg5MTc1ZAICDxUCCjg6MDAtMTg6MDAMMDEwLTc4NjEzODg4ZAICDxYCHglpbm5lcmh0bWwFmxE8Yj48Zm9udCBzaXplPSc0cHgnPuWFs+S6juilv+mDqOiIquepuuWkquWOn+i/m+WHuua4r+iIquePrei9rOiHszwvZm9udD48L2I+PGJyLz48YnIvPjxwIHN0eWxlPSJjb2xvcjojMzMzMzMzZm9udC1mYW1pbHk65a6L5L2TZm9udC1zaXplOjEycHhmb250LXN0eWxlOm5vcm1hbGZvbnQtd2VpZ2h0Om5vcm1hbHRleHQtYWxpZ246c3RhcnR0ZXh0LWluZGVudDowcHgiPg0KCTxzcGFuIHN0eWxlPSJmb250LXNpemU6MTRweCI+5ZCE6ZSA5ZSu5Y2V5L2N77yaPC9zcGFuPjxiciAvPg0KPHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToxNHB4Ij48L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToxNHB4Ij4mbmJzcCZuYnNwJm5ic3AmbmJzcCZuYnNwJm5ic3A8c3BhbiBjbGFzcz0iQXBwbGUtY29udmVydGVkLXNwYWNlIj4mbmJzcDwvc3Bhbj48L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToxNHB4Ij7oh6oyMDE05bm0MDHmnIgwMeaXpe+8iOWQq++8iei1t++8jOWkquWOn+atpuWuv+acuuWcuuWwhuato+W8j+WQr+eUqFQx6Iiq56uZ5qW844CC5bGK5pe26KW/6YOo6Iiq56m65omA5pyJ5aSq5Y6f6L+b5Ye65riv6Iiq54+t56Wo5Yqh5Y+K5LmY5py6562J55u45YWz5Lia5Yqh5bCG57uf5LiA6L2s6IezVDHoiKrnq5nmpbzov5DokKXjgILor7fpgJrnn6Xml4XlrqLoh7PlsJHmj5DliY0y5bCP5pe26Iez5py65Zy65Yqe55CG5LmY5py65omL57ut77yM5Lul5YWN6K+v5py644CCPC9zcGFuPjxiciAvPg0KPHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToxNHB4Ij48L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToxNHB4Ij4mbmJzcCZuYnNwJm5ic3AmbmJzcCZuYnNwJm5ic3A8c3BhbiBjbGFzcz0iQXBwbGUtY29udmVydGVkLXNwYWNlIj4mbmJzcDwvc3Bhbj48L3NwYW4+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToxNHB4Ij7or7flkITkuIDnur/plIDllK7ljZXkvY3lgZrlpb3ml4XlrqLnmoTpgJrnn6Xop6Pph4rlt6XkvZzjgII8L3NwYW4+PGJyIC8+DQo8c3BhbiBzdHlsZT0iZm9udC1zaXplOjE0cHgiPjwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1zaXplOjE0cHgiPiZuYnNwJm5ic3AmbmJzcCAmbmJzcCZuYnNwPHNwYW4gY2xhc3M9IkFwcGxlLWNvbnZlcnRlZC1zcGFjZSI+Jm5ic3A8L3NwYW4+PC9zcGFuPjxzcGFuIHN0eWxlPSJmb250LXNpemU6MTRweCI+54m55q2k6YCa5ZGKPC9zcGFuPg0KPC9wPg0KPHNwYW4gc3R5bGU9ImNvbG9yOiMzMzMzMzNmb250LWZhbWlseTrlrovkvZNmb250LXN0eWxlOm5vcm1hbGZvbnQtd2VpZ2h0Om5vcm1hbGxpbmUtaGVpZ2h0OjI0cHhmb250LXNpemU6MTRweCI+PC9zcGFuPg0KPHAgc3R5bGU9ImNvbG9yOiMzMzMzMzNmb250LWZhbWlseTrlrovkvZNmb250LXNpemU6MTJweGZvbnQtc3R5bGU6bm9ybWFsZm9udC13ZWlnaHQ6bm9ybWFsdGV4dC1hbGlnbjpzdGFydHRleHQtaW5kZW50OjBweCI+DQoJPHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToxNHB4Ij4mbmJzcDwvc3Bhbj4NCjwvcD4NCjxzcGFuIHN0eWxlPSJjb2xvcjojMzMzMzMzZm9udC1mYW1pbHk65a6L5L2TZm9udC1zdHlsZTpub3JtYWxmb250LXdlaWdodDpub3JtYWxsaW5lLWhlaWdodDoyNHB4Zm9udC1zaXplOjE0cHgiPjwvc3Bhbj4NCjxwIHN0eWxlPSJjb2xvcjojMzMzMzMzZm9udC1mYW1pbHk65a6L5L2TZm9udC1zaXplOjEycHhmb250LXN0eWxlOm5vcm1hbGZvbnQtd2VpZ2h0Om5vcm1hbHRleHQtYWxpZ246c3RhcnR0ZXh0LWluZGVudDowcHgiPg0KCTxzcGFuIHN0eWxlPSJmb250LXNpemU6MTRweCI+Jm5ic3A8L3NwYW4+DQo8L3A+DQo8c3BhbiBzdHlsZT0iY29sb3I6IzMzMzMzM2ZvbnQtZmFtaWx5OuWui+S9k2ZvbnQtc3R5bGU6bm9ybWFsZm9udC13ZWlnaHQ6bm9ybWFsbGluZS1oZWlnaHQ6MjRweGZvbnQtc2l6ZToxNHB4Ij48L3NwYW4+DQo8cCBzdHlsZT0iY29sb3I6IzMzMzMzM2ZvbnQtZmFtaWx5OuWui+S9k2ZvbnQtc2l6ZToxMnB4Zm9udC1zdHlsZTpub3JtYWxmb250LXdlaWdodDpub3JtYWx0ZXh0LWluZGVudDowcHgiIGFsaWduPSJyaWdodCI+DQoJPHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToxNHB4Ij7opb/pg6joiKrnqbrluILlnLrplIDllK7pg6g8L3NwYW4+PGJyIC8+DQo8c3BhbiBzdHlsZT0iZm9udC1zaXplOjE0cHgiPjwvc3Bhbj48c3BhbiBzdHlsZT0iZm9udC1zaXplOjE0cHgiPjIwMTPlubQxMuaciDI05pelPC9zcGFuPg0KPC9wPg0KPGJyIC8+ZGQSA95+Hk/LOfKZ/aGxr2wZDW2BFc2Mhw4oJVHbeq9dPQ==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAgKQ/cO6AwLVgtzVCdlv/fen1938yc4WTbtXM6BaFHgy7hU68wDg4IFqd0LZ">
+</div>
+    <div class="g-doc f-cb">
+        <div class="g-top">
+            <div class="g-topbar">
+                <div class="m-top f-w">
+                </div>
+            </div>
+            <div class="g-mid f-w f-cb">
+                <div class="logo f-fl">
+                    <a href="http://cx.soku5.net:8085/index.aspx" target="mainframe"><img src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/201409282026207123.png"></a>
+                </div>
+                <div class="conpanyinfo f-fr">
+                    <p style="margin-top: 10px">
+                        欢迎使用本平台，<b>晨轩商旅网</b>!&nbsp;&nbsp;登录帐号：admin&nbsp;<a href="http://cx.soku5.net:8085/manager/User_edit.aspx?url=../welcome.aspx" style="color: #1c7dc7; font-weight: normal;
+                            text-decoration: underline" target="mainframe">修改密码</a></p>
+                </div>
+                <div class="contact f-fr">
+                    <p class="f-fwb">
+                        催单出票:<span>021-56351230</span>退改签：<span>021-56351230</span>投诉建议：<span>021-56351230</span><span id="ele1" class="kf f-fwn tigger">客服中心</span> &nbsp;<a id="lbtnlogout" href="javascript:__doPostBack('lbtnlogout','')" style="font-size: 14; color: #1c7dc7; font-weight: normal; text-decoration: underline">退出</a></p>
+                    
+                </div>
+            </div>
+            <!-- end mid -->
+            <div class="g-nav" id="topmenu">
+                <div class="m-nav f-w">
+                    <ul class="f-cb f-nav" id="f-nav"><li><a href="http://cx.soku5.net:8085/welcome.aspx" target="mainframe">首页</a></li><li><i class="f-a"></i><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" onclick="loadMenuTree(true,24)" alt="24">国内机票</a></li><li><i class="f-a"></i><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" onclick="loadMenuTree(true,25)" alt="25">酒店预订</a></li><li><i class="f-a"></i><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" onclick="loadMenuTree(true,26)" alt="26">景点门票</a></li><li><i class="f-a"></i><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" onclick="loadMenuTree(true,30)" alt="30">航空保险</a></li><li><i class="f-a"></i><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" onclick="loadMenuTree(true,13)" alt="13">客户管理</a></li><li><i class="f-a"></i><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" onclick="loadMenuTree(true,23)" alt="23">系统设置</a></li><li><i class="f-a"></i><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" onclick="loadMenuTree(true,27)" alt="27">管理中心</a></li></ul>
+                </div>
+                
+            <div class="dropmenu" id="dropmenu_24"><div class="f-w f-cb"><div><a pid="24" id="sub_28" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">机票预订中心</a><a pid="24" id="sub_32" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">订单管理</a><a pid="24" id="sub_75" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">行程单管理</a><a pid="24" id="sub_56" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">政策管理</a><a pid="24" id="sub_31" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">机票产品管理</a><a pid="24" id="sub_33" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">报表管理</a><a pid="24" id="sub_82" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">常用工具</a></div></div></div><div class="dropmenu" id="dropmenu_25"><div class="f-w f-cb"><div><a pid="25" id="sub_34" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">预定管理</a><a pid="25" id="sub_35" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">订单管理</a><a pid="25" id="sub_36" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">数据维护</a><a pid="25" id="sub_37" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">交易费设置</a></div></div></div><div class="dropmenu" id="dropmenu_26"><div class="f-w f-cb"><div><a pid="26" id="sub_38" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">预订管理</a><a pid="26" id="sub_39" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">订单管理</a><a pid="26" id="sub_40" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">线路维护</a></div></div></div><div class="dropmenu" id="dropmenu_30"><div class="f-w f-cb"><div><a pid="30" id="sub_87" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">购买保险</a><a pid="30" id="sub_85" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">保险产品管理</a></div></div></div><div class="dropmenu" id="dropmenu_13"><div class="f-w f-cb"><div><a pid="13" id="sub_78" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">同行采购管理</a><a pid="13" id="sub_20" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">企业客户管理</a><a pid="13" id="sub_9" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">加盟商管理</a><a pid="13" id="sub_52" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">OEM账户管理</a><a pid="13" id="sub_14" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">供应商管理</a><a pid="13" id="sub_4" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">员工管理</a><a pid="13" id="sub_49" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">QQ客服管理</a></div></div></div><div class="dropmenu" id="dropmenu_23"><div class="f-w f-cb"><div><a pid="23" id="sub_2" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">后台设置</a><a pid="23" id="sub_62" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">短信管理</a><a pid="23" id="sub_92" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">收款帐号设置</a></div></div></div><div class="dropmenu" id="dropmenu_27"><div class="f-w f-cb"><div><a pid="27" id="sub_42" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">账号管理</a><a pid="27" id="sub_54" href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm">消息公告管理</a></div></div></div></div>
+        </div>
+        <div class="g-bd f-main f-cb">
+            <div class="main-container">
+                <iframe id="mainframe" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+                    width: 100%; height: 100%;" name="mainframe" frameborder="0" scrolling="yes" onload="iFrameHeight();" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/ticketsearch.htm" height="749"></iframe>
+            </div>
+            <div class="g-sd">
+                <div class="m-sd"><span class="f-com gn"></span><h3 id="h3_28" class="bg"><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" class="">机票预订中心</a><span class="side-d"></span></h3><ul class="f-cb-nav"><li class="open" style="display: list-item;"><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/ticketsearch.htm" target="mainframe" class="checkin">国内机票查询<span></span></a><a href="http://cx.soku5.net:8085/ticket/importpnr.aspx" target="mainframe" class="">PNR导入</a><a href="http://cx.soku5.net:8085/ticket/groupticket.aspx" target="mainframe" class="">团队订单申请</a><a href="http://cx.soku5.net:8085/ticket/customerpassenger/customerpassenger_list.aspx" target="mainframe" class="">常旅客管理</a></li><li class="open" style="display: list-item;"></li></ul><span class="f-com b4"></span><h3 id="h3_32"><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" class="">订单管理</a><span class="f-side"></span></h3><ul class="f-cb-nav"><li style=""><a href="http://cx.soku5.net:8085/ticket/orders/order_list.aspx" target="mainframe" class="">全部订单</a><a href="http://cx.soku5.net:8085/ticket/orders/order_list.aspx?status=1" target="mainframe" class="">未支付订单</a><a href="http://cx.soku5.net:8085/ticket/orders/order_list.aspx?status=2" target="mainframe" class="">待出票订单</a><a href="http://cx.soku5.net:8085/ticket/orders/order_list.aspx?status=3" target="mainframe" class="">已出票订单</a><a href="http://cx.soku5.net:8085/ticket/orders/order_list.aspx?status=16" target="mainframe" class="">暂不能出票订单</a><a href="http://cx.soku5.net:8085/ticket/orders/order_list.aspx?status=10" target="mainframe" class="">已取消订单</a><a href="http://cx.soku5.net:8085/ticket/orders/refundorder_list.aspx" target="mainframe" class="">退废票订单管理</a><a href="http://cx.soku5.net:8085/ticket/orders/changeflightorder_list.aspx" target="mainframe" class="">升舱改期订单管理</a></li><li style=""></li></ul><span class="f-com b2"></span><h3 id="h3_75"><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" class="">行程单管理</a><span class="f-side"></span></h3><ul class="f-cb-nav"><li style=""><a href="http://cx.soku5.net:8085/ticket/invoice/invoice_list.aspx" target="mainframe" class="">行程单管理</a></li><li style=""></li></ul><span class="f-com gn"></span><h3 id="h3_56"><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" class="">政策管理</a><span class="f-side"></span></h3><ul class="f-cb-nav"><li style=""><a href="http://cx.soku5.net:8085/agents/policys_list.aspx?t=0" target="mainframe" class="">普通政策列表</a><a href="http://cx.soku5.net:8085/agents/policys_edit.aspx?t=0" target="mainframe" class="">普通政策添加</a><a href="http://cx.soku5.net:8085/agents/policys_list.aspx?t=1" target="mainframe" class="">特殊政策列表</a><a href="http://cx.soku5.net:8085/agents/policys_edit.aspx?t=1" target="mainframe" class="">特殊政策添加</a></li><li style=""></li></ul><span class="f-com b7"></span><h3 id="h3_31"><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" class="">机票产品管理</a><span class="f-side"></span></h3><ul class="f-cb-nav"><li style=""><a href="http://cx.soku5.net:8085/ticket/basedata/cityairport_list.aspx" target="mainframe" class="">机场城市管理</a><a href="http://cx.soku5.net:8085/ticket/basedata/aircompany_list.aspx" target="mainframe" class="">航空公司管理</a><a href="http://cx.soku5.net:8085/ticket/basedata/cabin_list.aspx" target="mainframe" class="">舱位管理</a></li><li style=""></li></ul><span class="f-com bb"></span><h3 id="h3_33"><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" class="">报表管理</a><span class="f-side"></span></h3><ul class="f-cb-nav"><li style=""><a href="http://cx.soku5.net:8085/ticket/reports/ticket_report.aspx" target="mainframe" class="">运营报表</a><a href="http://cx.soku5.net:8085/ticket/reports/buyagentticket_report.aspx?date=current" target="mainframe" class="">当日采购报表</a><a href="http://cx.soku5.net:8085/ticket/reports/refundticket_report.aspx?date=current&type=1" target="mainframe" class="">当日废票</a><a href="http://cx.soku5.net:8085/ticket/reports/refundticket_report.aspx?date=current&type=2" target="mainframe" class="">当日退票</a><a href="http://cx.soku5.net:8085/ticket/reports/buyagentticket_report.aspx" target="mainframe" class="">采购出票报表</a><a href="http://cx.soku5.net:8085/ticket/reports/refundticket_report.aspx" target="mainframe" class="">退废票报表</a></li><li style=""></li></ul><span class="f-com b6"></span><h3 id="h3_82"><a href="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台.htm" class="">常用工具</a><span class="f-side"></span></h3><ul class="f-cb-nav"><li style=""><a href="http://cx.soku5.net:8085/manager/notice_view.aspx" target="mainframe" class="">消息公告</a><a href="http://cx.soku5.net:8085/ticket/tuip.aspx" target="mainframe" class="">退改签规定</a></li><li style=""></li></ul></div>
+            </div>
+        </div>
+      
+        <div id="divNoticeContent" style="display:none"><b><font size="4px">关于西部航空太原进出港航班转至</font></b><br><br><p style="color:#333333font-family:宋体font-size:12pxfont-style:normalfont-weight:normaltext-align:starttext-indent:0px">
+	<span style="font-size:14px">各销售单位：</span><br>
+<span style="font-size:14px"></span><span style="font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Apple-converted-space">&nbsp;</span></span><span style="font-size:14px">自2014年01月01日（含）起，太原武宿机场将正式启用T1航站楼。届时西部航空所有太原进出港航班票务及乘机等相关业务将统一转至T1航站楼运营。请通知旅客至少提前2小时至机场办理乘机手续，以免误机。</span><br>
+<span style="font-size:14px"></span><span style="font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Apple-converted-space">&nbsp;</span></span><span style="font-size:14px">请各一线销售单位做好旅客的通知解释工作。</span><br>
+<span style="font-size:14px"></span><span style="font-size:14px">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<span class="Apple-converted-space">&nbsp;</span></span><span style="font-size:14px">特此通告</span>
+</p>
+<span style="color:#333333font-family:宋体font-style:normalfont-weight:normalline-height:24pxfont-size:14px"></span>
+<p style="color:#333333font-family:宋体font-size:12pxfont-style:normalfont-weight:normaltext-align:starttext-indent:0px">
+	<span style="font-size:14px">&nbsp;</span>
+</p>
+<span style="color:#333333font-family:宋体font-style:normalfont-weight:normalline-height:24pxfont-size:14px"></span>
+<p style="color:#333333font-family:宋体font-size:12pxfont-style:normalfont-weight:normaltext-align:starttext-indent:0px">
+	<span style="font-size:14px">&nbsp;</span>
+</p>
+<span style="color:#333333font-family:宋体font-style:normalfont-weight:normalline-height:24pxfont-size:14px"></span>
+<p style="color:#333333font-family:宋体font-size:12pxfont-style:normalfont-weight:normaltext-indent:0px" align="right">
+	<span style="font-size:14px">西部航空市场销售部</span><br>
+<span style="font-size:14px"></span><span style="font-size:14px">2013年12月24日</span>
+</p>
+<br></div>
+        <div class="g-ft">
+            <div class="mn f-w">
+                <p>
+                    <span class="cr">Copyright © 2002-2014 版权所有</span> <span class="fw">24小时服务热线：<strong>400-0098-021</strong>
+                       |晨轩商旅网</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+<div class="popupLayer" style="position: absolute; z-index: 2; width: 300px; height: 447px; display: none;"><div id="blk1" class="blk" style="opacity: 1;">
+                        <div class="head">
+                            <div class="head-right">
+                            </div>
+                        </div>
+                        <div class="main">
+                            <h2>
+                                客服中心</h2>
+                            <a href="javascript:void(0)" id="close1" class="closeBtn">关闭</a>
+                            <ul>
+                                <li>
+                                    <table width="200">
+                                        
+                                                <tbody><tr style="height: 30px">
+                                                    <td colspan="3">
+                                                        <b>
+                                                            国内机票客服</b>
+                                                    </td>
+                                                </tr>
+                                                <tr style="height: 30px">
+                                                    
+                                                        <td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=174989175&site=qq&menu=yes"><img border="0" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/pa" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
+                                                    
+                                                        <td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=174989175&site=qq&menu=yes"><img border="0" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/pa" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
+                                                    
+                                                        <td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=174989175&site=qq&menu=yes"><img border="0" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/pa" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
+                                                    
+                                                </tr>
+                                                <tr style="height: 30px">
+                                                    <td colspan="3">
+                                                        工作时间：8:00-18:00</td>
+                                                </tr>
+                                                <tr style="height: 30px">
+                                                    <td colspan="3">
+                                                        电话：010-78613888</td>
+                                                </tr>
+                                            
+                                                <tr style="height: 30px">
+                                                    <td colspan="3">
+                                                        <b>
+                                                            国内酒店客服</b>
+                                                    </td>
+                                                </tr>
+                                                <tr style="height: 30px">
+                                                    
+                                                        <td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=174989175&site=qq&menu=yes"><img border="0" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/pa" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
+                                                    
+                                                        <td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=174989175&site=qq&menu=yes"><img border="0" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/pa" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
+                                                    
+                                                        <td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=174989175&site=qq&menu=yes"><img border="0" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/pa" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
+                                                    
+                                                </tr>
+                                                <tr style="height: 30px">
+                                                    <td colspan="3">
+                                                        工作时间：8:00-18:00</td>
+                                                </tr>
+                                                <tr style="height: 30px">
+                                                    <td colspan="3">
+                                                        电话：010-78613888</td>
+                                                </tr>
+                                            
+                                                <tr style="height: 30px">
+                                                    <td colspan="3">
+                                                        <b>
+                                                            旅游景点</b>
+                                                    </td>
+                                                </tr>
+                                                <tr style="height: 30px">
+                                                    
+                                                        <td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=174989175&site=qq&menu=yes"><img border="0" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/pa" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
+                                                    
+                                                        <td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=174989175&site=qq&menu=yes"><img border="0" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/pa" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
+                                                    
+                                                        <td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=174989175&site=qq&menu=yes"><img border="0" src="./晨轩商旅网-机票B2B分销，酒店B2B分销，景点门票预订平台_files/pa" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
+                                                    
+                                                </tr>
+                                                <tr style="height: 30px">
+                                                    <td colspan="3">
+                                                        工作时间：8:00-18:00</td>
+                                                </tr>
+                                                <tr style="height: 30px">
+                                                    <td colspan="3">
+                                                        电话：010-78613888</td>
+                                                </tr>
+                                            
+                                    </tbody></table>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="foot">
+                            <div class="foot-right">
+                            </div>
+                        </div>
+                    </div><iframe border="0" frameborder="0" style="position: absolute; z-index: -1; left: 0px; top: 0px; opacity: 0; width: 300px; height: 447px;"></iframe></div></body></html>

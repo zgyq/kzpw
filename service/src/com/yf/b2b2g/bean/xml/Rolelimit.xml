@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Rolelimit">
+
+	<typeAlias alias="Rolelimit" type="com.yf.b2b2g.bean.Rolelimit" />
+	<resultMap id="resultRolelimitMap" class="Rolelimit">
+		<result property="roleid" column="C_ROLEID" />
+		<result property="limitid" column="C_LIMITID" />
+	</resultMap>
+
+	<select id="findAllRolelimitByRoleid" resultMap="resultRolelimitMap"
+		parameterClass="long">
+		SELECT * FROM T_B2GROLELIMIT WHERE C_ROLEID =#value#
+	</select>
+
+
+	<delete id="deleteRolelimitByRoleid" parameterClass="long">
+		DELETE T_B2GROLELIMIT WHERE C_ROLEID=#value#
+	</delete>
+	
+	<delete id="deleteRolelimitByComlimit" parameterClass="java.util.Map">
+	DELETE T_B2GROLELIMIT WHERE C_ROLEID IN(
+	  SELECT C_ROLEID FROM T_B2GUSERROLE WHERE C_EMPID IN 
+		(SELECT ID FROM T_EMPLOYEE WHERE C_COMID=$comid$)
+	 ) AND C_LIMITID NOT IN ($limistr$);
+	</delete>
+	<delete id="deleteRolelimitByComid" parameterClass="long">
+		DELETE T_B2GROLELIMIT WHERE C_ROLEID 
+		IN 
+		(SELECT C_ROLEID FROM T_B2GUSERROLE WHERE C_EMPID IN 
+		(SELECT ID FROM T_EMPLOYEE WHERE C_COMID=#value#)
+		 )
+	</delete>
+	
+	 <insert id="createRolelimit" parameterClass="Rolelimit">
+	   INSERT INTO T_B2GROLELIMIT(C_ROLEID,C_LIMITID)
+	   VALUES(#roleid#,#limitid#);
+	 </insert>
+
+
+
+
+</sqlMap>
+
+

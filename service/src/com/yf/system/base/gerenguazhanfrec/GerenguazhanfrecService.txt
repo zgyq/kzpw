@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 个人挂账记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Gerenguazhanfrec createGerenguazhanfrec(Gerenguazhanfrec gerenguazhanfrec) throws SQLException;
+	
+	/**
+	 * 删除 个人挂账记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteGerenguazhanfrec(long id);
+	
+	
+	/**
+	 * 修改 个人挂账记录表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateGerenguazhanfrec(Gerenguazhanfrec gerenguazhanfrec);
+
+		
+	/**
+	 * 修改 个人挂账记录表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateGerenguazhanfrecIgnoreNull(Gerenguazhanfrec gerenguazhanfrec);
+		
+	
+	/**
+	 * 查找 个人挂账记录表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllGerenguazhanfrec(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 个人挂账记录表
+	 * @param id
+	 * @return
+	 */
+	public Gerenguazhanfrec findGerenguazhanfrec(long id);
+	
+	
+	/** 
+	 * 查找 个人挂账记录表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllGerenguazhanfrecForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找个人挂账记录表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllGerenguazhanfrecBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 个人挂账记录表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteGerenguazhanfrecBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countGerenguazhanfrecBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IGerenguazhanfrecComponent gerenguazhanfrecComponent;
+	  
+ 	
+ 	public IGerenguazhanfrecComponent getGerenguazhanfrecComponent() {
+		return gerenguazhanfrecComponent;
+	}
+	public void setGerenguazhanfrecComponent(IGerenguazhanfrecComponent  gerenguazhanfrecComponent) {
+		this.gerenguazhanfrecComponent = gerenguazhanfrecComponent;
+	}
+	/**
+	 * 创建 个人挂账记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Gerenguazhanfrec createGerenguazhanfrec(Gerenguazhanfrec gerenguazhanfrec) throws SQLException{
+	
+		return gerenguazhanfrecComponent.createGerenguazhanfrec(gerenguazhanfrec);
+	}
+	/**
+	 * 删除 个人挂账记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteGerenguazhanfrec(long id){
+	
+		return gerenguazhanfrecComponent.deleteGerenguazhanfrec(id);
+	}
+	
+	
+	/**
+	 * 修改 个人挂账记录表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateGerenguazhanfrec(Gerenguazhanfrec gerenguazhanfrec){
+		return gerenguazhanfrecComponent.updateGerenguazhanfrec(gerenguazhanfrec);
+	
+	}
+
+		
+	/**
+	 * 修改 个人挂账记录表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateGerenguazhanfrecIgnoreNull(Gerenguazhanfrec gerenguazhanfrec){
+			return gerenguazhanfrecComponent.updateGerenguazhanfrecIgnoreNull(gerenguazhanfrec);
+	
+	}
+	
+	/**
+	 * 查找 个人挂账记录表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllGerenguazhanfrec(String where, String orderby,int limit,int offset){
+		return gerenguazhanfrecComponent.findAllGerenguazhanfrec(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 个人挂账记录表
+	 * @param id
+	 * @return
+	 */
+	public Gerenguazhanfrec findGerenguazhanfrec(long id){
+		return gerenguazhanfrecComponent.findGerenguazhanfrec(id);
+	}
+	
+	/** 
+	 * 查找 个人挂账记录表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllGerenguazhanfrecForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return gerenguazhanfrecComponent.findAllGerenguazhanfrec(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找个人挂账记录表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllGerenguazhanfrecBySql(String sql,int limit,int offset){
+		return gerenguazhanfrecComponent.findAllGerenguazhanfrec(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 个人挂账记录表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteGerenguazhanfrecBySql(String sql){
+		return gerenguazhanfrecComponent.excuteGerenguazhanfrecBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countGerenguazhanfrecBySql(String sql){
+		return gerenguazhanfrecComponent.countGerenguazhanfrecBySql(sql);
+	}
+	
+	
+

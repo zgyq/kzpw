@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Advertisement">
+  
+  <typeAlias alias="Advertisement" type="com.yf.system.base.advertisement.Advertisement"/>
+  
+
+  <resultMap id="resultAdvertisementMap" class="Advertisement">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="picsrc" column="C_PICSRC"/>
+  
+     <result property="urlsrc" column="C_URLSRC"/>
+  
+     <result property="sort" column="C_SORT"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+   
+  </resultMap>
+  
+  <select id="findAllAdvertisement"  resultMap="resultAdvertisementMap"  parameterClass="java.util.Map">
+  
+    select * from T_ADVERTISEMENT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllAdvertisementBySql"  resultMap="resultAdvertisementMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteAdvertisementBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countAdvertisementBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_ADVERTISEMENT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findAdvertisement" parameterClass="long" resultClass="Advertisement">
+    select 
+    	ID as id,
+	  			C_PICSRC as picsrc,
+	  			C_URLSRC as urlsrc,
+	  			C_SORT as sort,
+	  			C_TYPE as type,
+	  			C_DESCRIPTION as description 
+     from T_ADVERTISEMENT
+    where ID = #id#
+  </select>
+   
+  <insert id="createAdvertisement" parameterClass="Advertisement">
+    insert into T_ADVERTISEMENT ( 
+    	ID,
+	  			C_PICSRC,
+	  			C_URLSRC,
+	  			C_SORT,
+	  			C_TYPE,
+	  			C_DESCRIPTION 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#picsrc#,
+	  					
+	  						#urlsrc#,
+	  					
+							#sort:DECIMAL#,
+						
+							#type:DECIMAL#,
+						
+	  						#description#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteAdvertisement" parameterClass="long">
+    delete from T_ADVERTISEMENT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateAdvertisement" parameterClass="Advertisement">
+    update T_ADVERTISEMENT 
+    set 
+    	C_PICSRC = #picsrc#,
+	  					C_URLSRC = #urlsrc#,
+	  					C_SORT = #sort:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_DESCRIPTION = #description#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

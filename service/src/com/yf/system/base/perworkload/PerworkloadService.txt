@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 人均工作量统计
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Perworkload createPerworkload(Perworkload perworkload) throws SQLException;
+	
+	/**
+	 * 删除 人均工作量统计
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deletePerworkload(long id);
+	
+	
+	/**
+	 * 修改 人均工作量统计
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updatePerworkload(Perworkload perworkload);
+
+		
+	/**
+	 * 修改 人均工作量统计但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updatePerworkloadIgnoreNull(Perworkload perworkload);
+		
+	
+	/**
+	 * 查找 人均工作量统计
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPerworkload(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 人均工作量统计
+	 * @param id
+	 * @return
+	 */
+	public Perworkload findPerworkload(long id);
+	
+	
+	/** 
+	 * 查找 人均工作量统计
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllPerworkloadForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找人均工作量统计
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPerworkloadBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 人均工作量统计
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excutePerworkloadBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countPerworkloadBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IPerworkloadComponent perworkloadComponent;
+	  
+ 	
+ 	public IPerworkloadComponent getPerworkloadComponent() {
+		return perworkloadComponent;
+	}
+	public void setPerworkloadComponent(IPerworkloadComponent  perworkloadComponent) {
+		this.perworkloadComponent = perworkloadComponent;
+	}
+	/**
+	 * 创建 人均工作量统计
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Perworkload createPerworkload(Perworkload perworkload) throws SQLException{
+	
+		return perworkloadComponent.createPerworkload(perworkload);
+	}
+	/**
+	 * 删除 人均工作量统计
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deletePerworkload(long id){
+	
+		return perworkloadComponent.deletePerworkload(id);
+	}
+	
+	
+	/**
+	 * 修改 人均工作量统计
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updatePerworkload(Perworkload perworkload){
+		return perworkloadComponent.updatePerworkload(perworkload);
+	
+	}
+
+		
+	/**
+	 * 修改 人均工作量统计但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updatePerworkloadIgnoreNull(Perworkload perworkload){
+			return perworkloadComponent.updatePerworkloadIgnoreNull(perworkload);
+	
+	}
+	
+	/**
+	 * 查找 人均工作量统计
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPerworkload(String where, String orderby,int limit,int offset){
+		return perworkloadComponent.findAllPerworkload(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 人均工作量统计
+	 * @param id
+	 * @return
+	 */
+	public Perworkload findPerworkload(long id){
+		return perworkloadComponent.findPerworkload(id);
+	}
+	
+	/** 
+	 * 查找 人均工作量统计
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllPerworkloadForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return perworkloadComponent.findAllPerworkload(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找人均工作量统计
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPerworkloadBySql(String sql,int limit,int offset){
+		return perworkloadComponent.findAllPerworkload(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 人均工作量统计
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excutePerworkloadBySql(String sql){
+		return perworkloadComponent.excutePerworkloadBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countPerworkloadBySql(String sql){
+		return perworkloadComponent.countPerworkloadBySql(sql);
+	}
+	
+	
+

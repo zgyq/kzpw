@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<link href="css/Common1.css" rel="stylesheet" type="text/css" />
+<style>
+html {overflow: scroll;overflow-x: hidden;overflow-x: auto !important;}
+</style>
+</head>
+<script type="text/javascript" src="css/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {	
+
+	//Show Banner
+	$(".main_image .desc").show(); //Show Banner
+	$(".main_image .block").animate({ opacity: 0.80 }, 1 ); //Set Opacity
+
+	//Click and Hover events for thumbnail list
+	$(".image_thumb ul li:first").addClass('active'); 
+	$(".image_thumb ul li").click(function(){ 
+		//Set Variables
+		var imgAlt = $(this).find('img').attr("alt"); //Get Alt Tag of Image
+		var imgTitle = $(this).find('a').attr("href"); //Get Main Image URL
+		var imgDesc = $(this).find('.block').html(); 	//Get HTML of block
+		var imgDescHeight = $(".main_image").find('.block').height();	//Calculate height of block	
+		
+		if ($(this).is(".active")) {  //If it's already active, then...
+			return false; // Don't click through
+		} else {
+			//Animate the Teaser				
+			$(".main_image .block").animate({ opacity: 0, marginBottom: -imgDescHeight }, 250 , function() {
+				$(".main_image .block").html(imgDesc).animate({ opacity: 0.80,	marginBottom: "0" }, 250 );
+				$(".main_image img").attr({ src: imgTitle , alt: imgAlt});
+			});
+		}
+		
+		$(".image_thumb ul li").removeClass('active'); //Remove class of 'active' on all lists
+		$(this).addClass('active');  //add class of 'active' on this list only
+		return false;
+		
+	}) .hover(function(){
+		$(this).addClass('hover');
+		}, function() {
+		$(this).removeClass('hover');
+	});
+			
+	//Toggle Teaser
+	$("a.collapse").click(function(){
+		$(".main_image .block").slideToggle();
+		$("a.collapse").toggleClass("show");
+	});
+	
+});//Close Function
+</script>
+<body class="main_body">
+
+<a name="top" id="top"></a>
+<div class="level2_top_title">
+&nbsp;&nbsp;<img src="images/title_ico_01.gif" width="6" height="10" /> 帮助中心 &gt; 特价查询预订</div>
+
+<div class="help-bk1">
+<div class="help-bk3">
+  <p>&nbsp;</p>
+  <p class="cp-size6">特价查询预订常见问题汇总</p>
+  <p>&nbsp;</p>
+  <p><span class="cp-size3">问：“获取特价”是什么意思？</span>
+    </li>
+      </ol>
+  </p>
+  <p>答：客户在使用网站查询航班的时候点击这个按钮系统可以实时自动PAT获取该舱位当前价格。</p>
+  <p>&nbsp;</p>
+  <p><span class="cp-size3">问：若点击了“获取特价”后没有价格怎么办？</span>
+    </li>
+    </ol>
+</p>
+    <p>答：这说明该舱位现在PAT是没有运价的，不能出票，请客户换另一个舱位，有价格才能出票。</p>
+    <p>&nbsp;</p>
+    <p><span class="cp-size3">问：为什么特价舱位总是获取不到价格？</span>
+      </li>
+      </ol>
+</p>
+    <p>答：航空公司特价舱位的价格总是随着航空公司的营运情况在调整变化的，我们“获取特价”的按钮就是让客户实时的获取当前价格，有价格的舱位是能出票的。</p>
+    <div class="help-bk4"><a href="#top">&#710; 回到顶部</a></div>
+</div>
+</div>
+
+</body>
+</html>

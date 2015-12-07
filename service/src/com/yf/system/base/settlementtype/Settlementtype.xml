@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Settlementtype">
+  
+  <typeAlias alias="Settlementtype" type="com.yf.system.base.settlementtype.Settlementtype"/>
+  
+
+  <resultMap id="resultSettlementtypeMap" class="Settlementtype">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="typename" column="C_TYPENAME"/>
+  
+     <result property="liudianid" column="C_LIUDIANID"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+     
+     <result property="agentid" column="C_AGENTID"/>
+   
+  </resultMap>
+  
+  <select id="findAllSettlementtype"  resultMap="resultSettlementtypeMap"  parameterClass="java.util.Map">
+  
+    select * from T_SETTLEMENTTYPE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSettlementtypeBySql"  resultMap="resultSettlementtypeMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSettlementtypeBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSettlementtypeBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SETTLEMENTTYPE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSettlementtype" parameterClass="long" resultClass="Settlementtype">
+    select 
+    	ID as id,
+	  			C_TYPENAME as typename,
+	  			C_LIUDIANID as liudianid,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_AGENTID as agentid 
+     from T_SETTLEMENTTYPE
+    where ID = #id#
+  </select>
+   
+  <insert id="createSettlementtype" parameterClass="Settlementtype">
+    insert into T_SETTLEMENTTYPE ( 
+    	ID,
+	  			C_TYPENAME,
+	  			C_LIUDIANID,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_AGENTID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#typename#,
+	  					
+							#liudianid:DECIMAL#,
+						
+							#createuser:DECIMAL#,
+						
+	  						#createtime#,
+	  						
+	  						#agentid:DECIMAL#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSettlementtype" parameterClass="long">
+    delete from T_SETTLEMENTTYPE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSettlementtype" parameterClass="Settlementtype">
+    update T_SETTLEMENTTYPE 
+    set 
+    	C_TYPENAME = #typename#,
+	  					C_LIUDIANID = #liudianid:DECIMAL#,
+						C_CREATEUSER = #createuser:DECIMAL#,
+						C_CREATETIME = #createtime#,
+						C_AGENTID=#agentid:DECIMAL#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,69 @@
+#focus_box {
+            position: relative;
+            margin: 0 auto;
+            zoom: 1;
+            width: 100%;
+            height: 495px;
+            overflow: hidden;
+        }
+ 
+        #focus_box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+ 
+        #focus_btn {
+            bottom: 0;
+            height: 32px;
+            left: 50%;
+            margin-left: 10px;
+            position: absolute;
+            text-align: right;
+            width: 465px;
+            z-index: 1000;
+        }
+ 
+        #focus_pic {
+            position: absolute;
+        }
+ 
+        #focus_pic li {
+            position: absolute;
+            left: 0;
+        }
+ 
+        #focus_pic li img {
+            border: none;
+            float: left;
+        }
+ 
+        #focus_btn li {
+            background: none repeat scroll 0 0 #8B8B8B;
+            border-radius: 8px 8px 8px 8px;
+            cursor: pointer;
+            display: inline-block;
+            height: 16px;
+            margin: 0 9px;
+            overflow: hidden;
+            width: 16px;
+            text-align: right;
+        }
+ 
+        #focus_btn li.on {
+            background: #f60;
+            color: #fff;
+        }
+ 
+        #focus_box1 {
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            zoom: 1;
+        }
+ 
+        #focus_box1 ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }

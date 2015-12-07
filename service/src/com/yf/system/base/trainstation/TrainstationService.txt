@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 火车站信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Trainstation createTrainstation(Trainstation trainstation) throws SQLException;
+	
+	/**
+	 * 删除 火车站信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTrainstation(long id);
+	
+	
+	/**
+	 * 修改 火车站信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTrainstation(Trainstation trainstation);
+
+		
+	/**
+	 * 修改 火车站信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTrainstationIgnoreNull(Trainstation trainstation);
+		
+	
+	/**
+	 * 查找 火车站信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTrainstation(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 火车站信息
+	 * @param id
+	 * @return
+	 */
+	public Trainstation findTrainstation(long id);
+	
+	
+	/** 
+	 * 查找 火车站信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTrainstationForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找火车站信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTrainstationBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 火车站信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTrainstationBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTrainstationBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITrainstationComponent trainstationComponent;
+	  
+ 	
+ 	public ITrainstationComponent getTrainstationComponent() {
+		return trainstationComponent;
+	}
+	public void setTrainstationComponent(ITrainstationComponent  trainstationComponent) {
+		this.trainstationComponent = trainstationComponent;
+	}
+	/**
+	 * 创建 火车站信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Trainstation createTrainstation(Trainstation trainstation) throws SQLException{
+	
+		return trainstationComponent.createTrainstation(trainstation);
+	}
+	/**
+	 * 删除 火车站信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTrainstation(long id){
+	
+		return trainstationComponent.deleteTrainstation(id);
+	}
+	
+	
+	/**
+	 * 修改 火车站信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTrainstation(Trainstation trainstation){
+		return trainstationComponent.updateTrainstation(trainstation);
+	
+	}
+
+		
+	/**
+	 * 修改 火车站信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTrainstationIgnoreNull(Trainstation trainstation){
+			return trainstationComponent.updateTrainstationIgnoreNull(trainstation);
+	
+	}
+	
+	/**
+	 * 查找 火车站信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTrainstation(String where, String orderby,int limit,int offset){
+		return trainstationComponent.findAllTrainstation(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 火车站信息
+	 * @param id
+	 * @return
+	 */
+	public Trainstation findTrainstation(long id){
+		return trainstationComponent.findTrainstation(id);
+	}
+	
+	/** 
+	 * 查找 火车站信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTrainstationForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return trainstationComponent.findAllTrainstation(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找火车站信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTrainstationBySql(String sql,int limit,int offset){
+		return trainstationComponent.findAllTrainstation(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 火车站信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTrainstationBySql(String sql){
+		return trainstationComponent.excuteTrainstationBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTrainstationBySql(String sql){
+		return trainstationComponent.countTrainstationBySql(sql);
+	}
+	
+	
+

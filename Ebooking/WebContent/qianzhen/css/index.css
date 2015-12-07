@@ -1,0 +1,159 @@
+.main {
+    width: 980px;
+    margin: 0 auto;    
+}
+#A4F42S{
+    width:978px;
+    height:299px;
+}
+
+.hot_visa {
+    background: #FFF;
+    border: 1px solid #E6E6E6;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+.hot_visa .more {
+    text-align: right;
+}
+.hot_title {
+    font-size: 18px;
+    line-height: 30px;
+    color: #638421;
+}
+.hot_title .iconfont {
+    font-size: 22px;
+    line-height: 30px;
+    color: #638421;
+}
+
+
+/* 热门国家 */
+.hot_country {
+    background-color: #FFF;
+    border: 1px solid #E6E6E6;
+    margin-top: 20px;
+    padding: 15px 20px;
+}
+.hot_country ul {
+    padding: 0 20px;
+}
+.country_title {
+    font-size: 18px;
+    line-height: 30px;
+    color: #638421;
+}
+.country_title .iconfont {
+    font-size: 22px;
+    line-height: 30px;
+    color: #638421;
+}
+.hot_country_box {
+    padding: 10px 0;    
+}
+.country {
+    position: relative;
+}
+.country img {
+    height: 36px;
+    width: 36px;
+    vertical-align: middle;
+}
+.country a {
+    float: left;
+    width: 113px;
+    padding: 5px 10px;
+    border: 1px solid #FFF;
+    font-size: 16px;
+    line-height: 36px;
+    text-decoration: none;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    
+}
+.country a:hover {
+    background-color: #FAFFF2;
+    border: 1px solid #8EC73B;
+    color: #539022;
+}
+.left {
+    background: #FFF;
+    border: 1px solid #E6E6E6;
+    float: left;
+    padding: 20px 30px;
+    width: 658px;
+}
+.right {
+    background: #FFF;
+    border: 1px solid #E6E6E6;
+    float: left;
+    width: 240px;
+    margin-left: 18px;
+}
+.hot_left {
+    float: left;
+    width: 222px;
+    padding-right: 20px;
+}
+.hot_left p {
+    font-size: 15px;
+}
+.hot_right {
+    float: left;
+    width: 675px;
+    border-left: 1px solid #E6E6E6;
+    padding-left: 20px;
+    
+}
+/* 所有包裹 */
+.all_wrap {
+    background-color: #FFF;
+    border: 1px solid #E6E6E6;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+.all_wrap .more {
+    text-align: right;
+}
+.show_ask {
+    width: 285px;
+    float: left;
+    padding: 0 20px;
+}
+.ask_title {
+    font-size: 18px;
+    line-height: 30px;
+    color: #638421;
+}
+.ask_title .iconfont {
+    font-size: 22px;
+    line-height: 30px;
+    color: #638421;
+}
+.ask_list ul {
+    padding: 5px 0;
+}
+.show_news {
+    
+    border-right: 1px solid #E6E6E6;
+    float: left;
+    padding: 0 20px;
+}
+.news_title {
+    font-size: 18px;
+    line-height: 30px;
+    color: #638421;
+}
+.news_title .iconfont {
+    font-size: 22px;
+    line-height: 30px;
+    color: #638421;
+}
+.news_list {
+    padding-top: 10px;
+}
+.news_list ul li {
+    padding-bottom: 5px;
+}

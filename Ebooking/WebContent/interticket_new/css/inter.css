@@ -1,0 +1,85 @@
+@charset "gb2312";
+/* CSS Document */
+body{margin:0px; padding:0px; font-size:12px; font-family:"ËÎÌå"; color:#36322f; font-size:12px; line-height:21px; background:#fff;}
+a{color:#2577e3;}
+img{border:0px;}
+a:link {text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
+ul, p, dl, dt, dd, li, img, div, p, table {padding:0px; margin:0px;}
+li{list-style-position:outside; list-style-type:none;}
+h1, h2, h3, h4, h5{ padding:0px; margin:0px; font-weight:normal;}
+h2 { font-size:18px;}
+h5 { font-size:14px; line-height:21px;}
+.clearit { clear:both; width:0px; height:0px; overflow:hidden; zoom:1;}
+.space { height:10px; overflow:hidden;}
+img { vertical-align:top;}
+
+
+
+/*ËÑË÷¿òÑùÊ½*/
+
+.box{ margin:30px auto 0; width:91%; overflow:hidden}
+
+.search-form{ background:#f5f5f5; height:100%; overflow:auto; padding:10px}
+.sail{ float:left; width:80px;}
+.sail-con{ float:left;}
+.Ordinary-search div,.senior-search div{ float:left; padding-right:20px}
+.Ordinary-search div input{ width:100px; }
+.senior-search div select{ width:107px}
+.senior-search{ padding-top:15px}
+.search-btn a.senior{ line-height:25px; padding-left:20px; text-decoration:underline}
+.ticket-type{ background:url(../img2/ticket-type.png) no-repeat left center; text-indent:20px; font-size:16px; font-weight:bold; color:#373636; margin:20px 0;}
+
+.ticket-type font{ font-size:14px; color:#908f8f}
+.inter-resu .inter-tit{height:40px; background:#5598f6; border-bottom:1px solid #1068bf;line-height:40px; color:#fff; padding-left:50px}
+.inter-resu .inter-tit td{ width:10%;}
+.inter-con{ border-bottom:1px solid #bbb; margin:15px 0; padding:10px 0; height:100%; overflow:auto}
+.inter-con-a{ height:100%; overflow:auto}
+.inter-con-1{ float:left; width:25%}
+.flight-img{ float:left; margin-right:10px}
+.flight{ float:left}
+.inter-con-2{ float:left; text-align:center; width:35%}
+.inter-con-2 font{ display:block; margin-top:5px; font-size:12px}
+.inter-con-2 b{ font-size:24px;}
+.inter-con-2 .start{ float:left; margin-right:10px}
+.inter-con-2 .icon1{ float:left;margin-right:10px}
+.inter-con-2 .arrival{ float:left}
+.inter-con-3{ float:left; line-height:40px; width:15%}
+.inter-con-3 font img{ vertical-align:middle; padding-right:5px}
+.inter-con-3 font{ margin-right:5px; font-size:12px}
+.inter-con-4{ float:right; line-height:40px; padding-right:50px}
+.inter-con-4 a{ font-size:12px; font-weight:bold}
+.inter-con-b{ background:#f1f1f1; height:100%; overflow:auto; border-bottom:1px dotted #dfdfdf;padding:10px 0; line-height:20px; }
+.inter-b{ float:left; width:20%}
+.inter-con-5,.inter-con-6,.inter-con-7,.inter-con-8,.inter-con-9,.inter-con-10,.inter-con-11{ float:left; margin-right:10px}
+.inter-con-5{ width:10%; text-align:center}
+.inter-con-6{ width:20%; text-align:center}
+.inter-con-7{ width:20%; text-align:center;}
+.inter-con-8{ width:20%; text-align:right}
+.inter-con-8 b{ font-size:24px; color:#ce1d02}
+.inter-con-9{ width:23%; text-align:right}
+.inter-con-9 font{ padding-left:5px; line-height:25px; color:#ce1d02}
+
+.inter-con-c{ height:100%; overflow:auto; margin-top:10px}
+.inter-con-10{ width:72%; text-align:right}
+.inter-con-11{ width:23%; text-align:right}
+.inter-con-11 a{ font-weight:bold; font-size:12px;}
+
+
+.flight-detail{ height:100%; overflow:auto; margin:10px 0; padding:10px 0 10px 30px;}
+
+.flight-detail-start img{ position:absolute; height:24px; width:25px}
+.flight-detail-start p{ position:relative; padding-left:35px; margin:5px 0}
+.flight-detail-start p span{ display:inline-block; width:60px}
+.flight-detail-start p .start-space{ width:120px}
+.flight-detail-start p .fly-time{ width:300px; text-align:center}
+.flight-detail-midd { border-bottom: 1px dashed #06c;height: 14px;margin: 20px 0 30px;position: relative;width: 580px;}
+.section-stop{  background: url(../img2/section-stop.jpg) no-repeat left center; height: 28px;line-height: 28px;margin: 0 auto;text-align: center;width: 430px;}
+
+.section-stop b{ color:#ce1d02; font-size:13px}
+
+.inst-box{ width:400px; overflow:auto; border:1px solid #dfdfdf; background:#fff; position:absolute; left:550px; margin-top:20px; padding:10px 0 10px 10px; z-index:999}
+
+.inst-box td{ height:30px; border-bottom:1px solid #dfdfdf; text-indent:5px}
+.inst-box td.bg{ background:#f1eded; width:35%}

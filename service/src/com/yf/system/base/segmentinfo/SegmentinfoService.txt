@@ -1,0 +1,220 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 行程表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Segmentinfo createSegmentinfo(Segmentinfo segmentinfo) throws SQLException;
+	
+	/**
+	 * 删除 行程表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSegmentinfo(long id);
+	
+	
+	/**
+	 * 修改 行程表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSegmentinfo(Segmentinfo segmentinfo);
+
+		
+	/**
+	 * 修改 行程表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSegmentinfoIgnoreNull(Segmentinfo segmentinfo);
+		
+	
+	/**
+	 * 查找 行程表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSegmentinfo(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 行程表
+	 * @param id
+	 * @return
+	 */
+	public Segmentinfo findSegmentinfo(long id);
+	
+	/**
+	 * 查找 行程表 by language
+	 * @param id
+	 * @return
+	 */
+	public Segmentinfo findSegmentinfobylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 行程表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSegmentinfoForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找行程表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSegmentinfoBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 行程表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSegmentinfoBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSegmentinfoBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISegmentinfoComponent segmentinfoComponent;
+	  
+ 	
+ 	public ISegmentinfoComponent getSegmentinfoComponent() {
+		return segmentinfoComponent;
+	}
+	public void setSegmentinfoComponent(ISegmentinfoComponent  segmentinfoComponent) {
+		this.segmentinfoComponent = segmentinfoComponent;
+	}
+	/**
+	 * 创建 行程表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Segmentinfo createSegmentinfo(Segmentinfo segmentinfo) throws SQLException{
+	
+		return segmentinfoComponent.createSegmentinfo(segmentinfo);
+	}
+	/**
+	 * 删除 行程表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSegmentinfo(long id){
+	
+		return segmentinfoComponent.deleteSegmentinfo(id);
+	}
+	
+	
+	/**
+	 * 修改 行程表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSegmentinfo(Segmentinfo segmentinfo){
+		return segmentinfoComponent.updateSegmentinfo(segmentinfo);
+	
+	}
+
+		
+	/**
+	 * 修改 行程表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSegmentinfoIgnoreNull(Segmentinfo segmentinfo){
+			return segmentinfoComponent.updateSegmentinfoIgnoreNull(segmentinfo);
+	
+	}
+	
+	/**
+	 * 查找 行程表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSegmentinfo(String where, String orderby,int limit,int offset){
+		return segmentinfoComponent.findAllSegmentinfo(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 行程表
+	 * @param id
+	 * @return
+	 */
+	public Segmentinfo findSegmentinfo(long id){
+		return segmentinfoComponent.findSegmentinfo(id);
+	}
+	
+	/**
+	 * 查找 行程表
+	 * @param id
+	 * @return
+	 */
+	public Segmentinfo findSegmentinfobylanguage(long id,Integer language){
+		return segmentinfoComponent.findSegmentinfobylanguage(id,language);
+	}
+	/** 
+	 * 查找 行程表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSegmentinfoForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return segmentinfoComponent.findAllSegmentinfo(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找行程表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSegmentinfoBySql(String sql,int limit,int offset){
+		return segmentinfoComponent.findAllSegmentinfo(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 行程表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSegmentinfoBySql(String sql){
+		return segmentinfoComponent.excuteSegmentinfoBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSegmentinfoBySql(String sql){
+		return segmentinfoComponent.countSegmentinfoBySql(sql);
+	}
+	
+	
+

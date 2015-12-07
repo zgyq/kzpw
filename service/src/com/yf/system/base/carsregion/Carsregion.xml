@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Carsregion">
+  
+  <typeAlias alias="Carsregion" type="com.yf.system.base.carsregion.Carsregion"/>
+  
+
+  <resultMap id="resultCarsregionMap" class="Carsregion">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="cityid" column="C_CITYID"/>
+  
+     <result property="provincecode" column="C_PROVINCECODE"/>
+  
+     <result property="createuserid" column="C_CREATEUSERID"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+   
+  </resultMap>
+  
+  <select id="findAllCarsregion"  resultMap="resultCarsregionMap"  parameterClass="java.util.Map">
+  
+    select * from T_CARSREGION
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCarsregionBySql"  resultMap="resultCarsregionMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCarsregionBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCarsregionBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CARSREGION
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCarsregion" parameterClass="long" resultClass="Carsregion">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_CITYID as cityid,
+	  			C_PROVINCECODE as provincecode,
+	  			C_CREATEUSERID as createuserid,
+	  			C_PRICE as price,
+	  			C_COMMENT as comment 
+     from T_CARSREGION
+    where ID = #id#
+  </select>
+   
+  <insert id="createCarsregion" parameterClass="Carsregion">
+    insert into T_CARSREGION ( 
+    	ID,
+	  			C_NAME,
+	  			C_CITYID,
+	  			C_PROVINCECODE,
+	  			C_CREATEUSERID,
+	  			C_PRICE,
+	  			C_COMMENT 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+							#cityid:DECIMAL#,
+						
+	  						#provincecode#,
+	  					
+							#createuserid:DECIMAL#,
+						
+	  						#price#,
+	  					
+	  						#comment#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCarsregion" parameterClass="long">
+    delete from T_CARSREGION
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCarsregion" parameterClass="Carsregion">
+    update T_CARSREGION 
+    set 
+    	C_NAME = #name#,
+	  					C_CITYID = #cityid:DECIMAL#,
+						C_PROVINCECODE = #provincecode#,
+	  					C_CREATEUSERID = #createuserid:DECIMAL#,
+						C_PRICE = #price#,
+	  					C_COMMENT = #comment#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

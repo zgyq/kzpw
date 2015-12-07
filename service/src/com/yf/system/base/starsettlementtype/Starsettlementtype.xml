@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Starsettlementtype">
+  
+  <typeAlias alias="Starsettlementtype" type="com.yf.system.base.starsettlementtype.Starsettlementtype"/>
+  
+
+  <resultMap id="resultStarsettlementtypeMap" class="Starsettlementtype">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="typename" column="C_TYPENAME"/>
+  
+     <result property="sliudianid" column="C_SLIUDIANID"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="sagentid" column="C_SAGENTID"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+   
+  </resultMap>
+  
+  <select id="findAllStarsettlementtype"  resultMap="resultStarsettlementtypeMap"  parameterClass="java.util.Map">
+  
+    select * from T_STARSETTLEMENTTYPE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllStarsettlementtypeBySql"  resultMap="resultStarsettlementtypeMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteStarsettlementtypeBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countStarsettlementtypeBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_STARSETTLEMENTTYPE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findStarsettlementtype" parameterClass="long" resultClass="Starsettlementtype">
+    select 
+    	ID as id,
+	  			C_TYPENAME as typename,
+	  			C_SLIUDIANID as sliudianid,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_SAGENTID as sagentid,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3 
+     from T_STARSETTLEMENTTYPE
+    where ID = #id#
+  </select>
+   
+  <insert id="createStarsettlementtype" parameterClass="Starsettlementtype">
+    insert into T_STARSETTLEMENTTYPE ( 
+    	ID,
+	  			C_TYPENAME,
+	  			C_SLIUDIANID,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_SAGENTID,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#typename#,
+	  					
+							#sliudianid:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+							#sagentid:DECIMAL#,
+						
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteStarsettlementtype" parameterClass="long">
+    delete from T_STARSETTLEMENTTYPE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateStarsettlementtype" parameterClass="Starsettlementtype">
+    update T_STARSETTLEMENTTYPE 
+    set 
+    	C_TYPENAME = #typename#,
+	  					C_SLIUDIANID = #sliudianid:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_SAGENTID = #sagentid:DECIMAL#,
+						C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

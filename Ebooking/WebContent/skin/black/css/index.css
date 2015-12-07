@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+.searchtop,.ico,.more,.ico_lis,.ico_lst,.bot_left,.ico_ques,.notes,.ico_good,.nuber{ background:url(../images/ico_index.png) no-repeat} 
+
+#main{ width:1004px; margin:0 auto;}
+#search{ background:url(../images/bj_searh.gif) no-repeat; width:554px; height:272px;  padding-left:55px; padding-top:20px; color:#fff; margin-left:20px; display:inline}
+#search .searchtop{ width:215px; height:39px; text-align:center; color:#000;line-height:39px; background-position:0 0;  }
+#search .seatchtop input{ height:39px; line-height:39px;}
+#search .ulli{ height:30px; line-height:30px;}
+#search .choose{ padding-left:20px; line-height:38px; height:38px;}
+#search .choose input{height:38px; line-height:38px;}
+#search .guild{ line-height:20px; margin-right:15px;}
+#search .but{ padding-top:15px;}
+#ad{ width:323px; height:292px; background:url(../images/bj_ad.gif);}
+#ad .new{ padding:25px 0 0 30px}
+#ad .hot{  width:260px; margin-left:20px; margin-top:15px;}
+#ad .hot h5{ font-size:12px; font-weight:bold;}
+#ad .hot p{ margin-left:20px; line-height:24px; display:inline}
+#ad .ico{ background-position:-100px -47px; padding-left:15px;}
+#ad .more{ height:20px;  background-position:-120px -50px; padding-left:50px; padding-top:1px; display:inline;  margin-top:-10px; overflow:hidden}
+h2{ font-size:24px; line-height:30px;}
+#center{ width:920px; margin:0 auto; }
+#center .line{ height:2px; line-height:2p; overflow:hidden; background:#e7e7e6}
+#center .left{ width:560px; margin-right:20px; }
+#center .ico_lis{ background-position:-180px -48px; padding-left:20px; }
+#center .sense{height:149px; background:#e0e4cb; width:270px; padding:6px 0}
+#center .sensetwo{height:149px; background:#e0e4cb; width:275px; padding:6px 0}
+#center .sense_box{height:155px;  background:#edefe0}
+#center .sense_main{background:#fafbf1; margin:2px 10px 0px 10px; height:107px; padding:12px 0 0 9px; overflow:hidden}
+#center .sense_mar{margin:3px 0 0 20px;}
+
+#center .sensethree{ background:#e0e4cb; width:300px; padding:6px 0; height:123px;}
+#center .sense_boxone{  background:#edefe0;}
+#center .help{background:#fafbf1; margin:2px 10px 0px 10px; height:83px; padding:12px 0 0 9px; overflow:hidden}
+#center .help ul{}
+#center .help ul li{ width:90px; padding-left:20px; }
+#center .sense_marone{margin:3px 0 0 20px;}
+
+#center .right{ width:295px; border-left:6px solid #e7e7e6; height:467px; padding-left:20px;}
+#center .charter{background:#fe7e04; width:100px; height:13px; line-height:13px; font-family: sans-serif}
+#center .ico_lst{background-position:-180px -70px; padding-left:20px;}
+#bot{width:910px; margin:0 auto; margin-top:10px; padding-right:10px;}
+#bot .one{ width:17%; background:#cfcc02; margin-right:1px; text-align:center; height:30px; line-height:30px;}
+#bot .two{ width:17%; background:#4c9dbd; margin-right:1px;text-align:center;height:30px; line-height:30px;}
+#bot .three{ width:32%; background:#494949; margin-right:1px;text-align:center;height:30px; line-height:30px;}
+#bot .four{ width:17%; background:#4c9dbd; margin-right:1px;text-align:center;height:30px; line-height:30px;}
+#bot .five{ width:16%; background:#cfcc02; margin-right:1px;text-align:center;height:30px; line-height:30px;}
+#bot .bot_left{ width:240px; background-position:-220px 0; margin-top:10px; line-height:20px;}
+#bot .bot_left ul{margin:10px 20px 0 20px;}
+#bot .question{ margin:12px 0 10px 30px;}
+#bot .ico_ques{background-position:-180px -92px; padding-left:13px;}
+#bot .ico_no{ padding-left:17px;}
+#bot .notes{background-position:-225px -6px; margin-left:5px; width:205px; padding:5px 0 10px 25px;}
+
+
+#bot .bot_right{ width:655px;margin-top:10px; margin-right:6px;}
+#bot .ico_good{background-position:-100px -70px; padding-left:36px; height:32px;}
+#bot .well{ margin:10px 0 10px 0}
+#bot .good{font-weight:100; line-height:32px;}
+#bot .nuber{ background-position:0 -110px; width:120px; height:27px; line-height:27px; padding-left:40px;}
+#bot .nuber_on{ background:#dd0c94; height:16px; line-height:16px; width:16px; text-align:center; margin-top:5px;}
+#bot .nuber_out{ background:#fefff6; height:16px; line-height:16px; width:16px; text-align:center; margin-top:5px; margin-left:5px;}
+#bot .visa{background:#fefff6; line-height:35px; height:35px; padding-left:20px;}
+#bot .visa_left{width:312px; background:#f6f8e4;padding:4px; height:206px;}
+#bot .visa_right{width:312px; background:#f6f8e4;padding:4px;height:206px; margin-right:3px;}
+#bot .visa_title{margin:10px 20px 2px 20px;}
+#bot .visa_main{padding:0 20px 0 20px; line-height:22px;}

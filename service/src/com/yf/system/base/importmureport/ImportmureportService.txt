@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 东航销售明细导入
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Importmureport createImportmureport(Importmureport importmureport) throws SQLException;
+	
+	/**
+	 * 删除 东航销售明细导入
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteImportmureport(long id);
+	
+	
+	/**
+	 * 修改 东航销售明细导入
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateImportmureport(Importmureport importmureport);
+
+		
+	/**
+	 * 修改 东航销售明细导入但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateImportmureportIgnoreNull(Importmureport importmureport);
+		
+	
+	/**
+	 * 查找 东航销售明细导入
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllImportmureport(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 东航销售明细导入
+	 * @param id
+	 * @return
+	 */
+	public Importmureport findImportmureport(long id);
+	
+	
+	/** 
+	 * 查找 东航销售明细导入
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllImportmureportForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找东航销售明细导入
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllImportmureportBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 东航销售明细导入
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteImportmureportBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countImportmureportBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IImportmureportComponent importmureportComponent;
+	  
+ 	
+ 	public IImportmureportComponent getImportmureportComponent() {
+		return importmureportComponent;
+	}
+	public void setImportmureportComponent(IImportmureportComponent  importmureportComponent) {
+		this.importmureportComponent = importmureportComponent;
+	}
+	/**
+	 * 创建 东航销售明细导入
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Importmureport createImportmureport(Importmureport importmureport) throws SQLException{
+	
+		return importmureportComponent.createImportmureport(importmureport);
+	}
+	/**
+	 * 删除 东航销售明细导入
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteImportmureport(long id){
+	
+		return importmureportComponent.deleteImportmureport(id);
+	}
+	
+	
+	/**
+	 * 修改 东航销售明细导入
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateImportmureport(Importmureport importmureport){
+		return importmureportComponent.updateImportmureport(importmureport);
+	
+	}
+
+		
+	/**
+	 * 修改 东航销售明细导入但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateImportmureportIgnoreNull(Importmureport importmureport){
+			return importmureportComponent.updateImportmureportIgnoreNull(importmureport);
+	
+	}
+	
+	/**
+	 * 查找 东航销售明细导入
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllImportmureport(String where, String orderby,int limit,int offset){
+		return importmureportComponent.findAllImportmureport(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 东航销售明细导入
+	 * @param id
+	 * @return
+	 */
+	public Importmureport findImportmureport(long id){
+		return importmureportComponent.findImportmureport(id);
+	}
+	
+	/** 
+	 * 查找 东航销售明细导入
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllImportmureportForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return importmureportComponent.findAllImportmureport(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找东航销售明细导入
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllImportmureportBySql(String sql,int limit,int offset){
+		return importmureportComponent.findAllImportmureport(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 东航销售明细导入
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteImportmureportBySql(String sql){
+		return importmureportComponent.excuteImportmureportBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countImportmureportBySql(String sql){
+		return importmureportComponent.countImportmureportBySql(sql);
+	}
+	
+	
+

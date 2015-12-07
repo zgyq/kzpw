@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Delivery">
+  
+  <typeAlias alias="Delivery" type="com.yf.b2b2g.bean.Delivery"/>
+  <resultMap id="resultDeliveryMap" class="Delivery">
+  <result property="comid" column="C_COMID" />
+  <result property="receivename" column="C_RECEIVENAME" />
+  <result property="receivetel" column="C_RECEIVETEL" />
+  <result property="delitime" column="C_DELITIME" />
+  <result property="deliaddr" column="C_DELIADDR" />
+  <result property="delipost" column="C_DELIPOST" />
+  </resultMap>
+
+  <select id="findAllDeliveryByComid"  resultMap="resultDeliveryMap"  parameterClass="long">  
+    select * from T_DELIVERY  WHERE C_COMID=#value#
+  </select>   
+  
+   <select id="countDeliveryBySql"  resultClass="int"  parameterClass="java.util.Map">		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_DELIVERY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>	   
+   </select>
+  
+   <delete id="deleteDeliveryByComid" parameterClass="long" >
+     DELETE T_DELIVERY WHERE C_COMID=#value#
+   </delete>
+   <insert id="createDelivery">
+   INSERT INTO T_DELIVERY (C_COMID,C_RECEIVENAME,C_RECEIVETEL,C_DELITIME,C_DELIADDR,C_DELIPOST)
+   VALUES(#comid#,#receivename#,#receivetel#,#delitime#,#deliaddr#,#delipost#)
+   </insert>
+  
+  
+   
+ 
+</sqlMap>
+ 
+ 

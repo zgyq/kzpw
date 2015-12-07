@@ -1,0 +1,159 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0;
+   padding:0;
+   text-decoration:none;
+   list-style:none;
+}
+li ul ol{
+margin:0;
+padding:0;
+list-style-type:none;
+}   
+body { font-size:12px;  
+	   margin:0;
+	   padding:0;
+	   font-family:Tahoma, Geneva, sans-serif;
+}
+img{border:none;
+}
+input{
+vertical-align:middle;
+margin-right:5px;
+}
+a{ color:#000;
+   font-size:12px;
+   text-decoration:none;
+}
+a:hover{color:#f48000; 
+}
+td{ padding-left:5px;}
+.f{ float:left;
+}
+.r{float:right;
+}
+.c{clear:both;
+}
+.box{border:1px solid #CCCCCC;
+}
+.box_h{border:1px solid #A6A6A6;
+}
+.box_c{
+border:2px solid #DBB30D;
+margin-top:10px;
+}
+.he8{ height:8px; line-height:8px;}
+.he1{ height:1px; line-height:1px;}
+.input{ width:126px; border:1px solid #BBBBBB; height:20px; line-height:20px; padding:0 5px 0 5px;}
+.input65{ width:55px; border:1px solid #BBBBBB; height:20px; line-height:20px;  padding:0 5px 0 5px;}
+.xu{height:1px; line-height:1px;}
+.button{ background:url(../images/button_k.gif); width:44px; height:23px; line-height:23px; border:none; color:#BD7800; cursor:pointer;}
+.button10{ background:url(../images/button10.gif); width:141px; height:36px; line-height:36px; border:none; color:#fff; font-weight:bold; font-size:14px; cursor:pointer;}
+
+/* 字体 */
+
+.huang12{color:#F87808;
+         font-size:12px;
+		 font-weight:100;
+}
+.huang12_c{color:#F87808;
+           font-size:12px;
+		   font-weight:bold;
+}
+.huang14_c{color:#F87808;
+           font-size:14px;
+		   font-weight:bold;
+}
+.zi{color:#A80818;
+     font-size:12px;
+}
+.zi_c{color:#A80818;
+      font-weight:bold;
+}
+.zi14_c{color:#A80818;
+        font-size:14px;
+		font-weight:bold;
+}
+.hei_c{color:#000000;
+       font-size:12px;
+	   font-weight:bold;
+}
+.hei14{
+font-size:14px;
+font-weight:bold;
+color:#000000;
+}
+.hui{color:#949494;
+     font-size:12px;
+}
+.bai_c{ 
+color:#FFFFFF; 
+font-weight:bold;
+}
+.bai{ 
+color:#FFFFFF; 
+}
+.bai14_c{ 
+color:#FFFFFF; 
+font-weight:bold;
+font-size:14px;
+}
+.hong{
+color:#FF0000;
+}
+.hong_c{
+color:#C41716;
+font-weight:bold;
+font-size:12px;
+}
+
+
+/* 瀛椾綋鏍峰紡 */		
+#header{
+width:968px;
+}
+/* 澶撮儴鏍峰紡 */
+#footer{
+padding-top:10px;
+width:968px;
+margin:0 auto;
+}  
+#footer .youqing{
+line-height:27px; 
+background:#F07D00;
+padding-left:20px;
+}
+.footer1{
+ text-align:center; 
+ line-height:30px; 
+}
+.footer2{
+text-align:center; 
+line-height:20px; 
+}
+/* 搴曢儴鏍峰紡 */
+
+.nav_p{background:url(../images/nav_p.gif) no-repeat; width:966px; height:43px; line-height:43px; margin-top:5px;}
+.nav_p ul{ padding-left:120px; color:#ffffff; font-size:14px; font-weight:bold;}
+.nav_p ul li{ float:left; width:100px; text-align:center; font-size:14px;}
+.nav_p ul li a{color:#fff; font-size:14px;}
+.nav_p ul li a:hover{color:#fff; font-size:14px; text-decoration: none;}
+.nav_l{background:url(../images/nav_bj.gif) no-repeat; color:#FFF; width:100px; height:43px; margin-top:0px; display:block;font-size:14px; }
+.nav_l a{color:#fff; font-size:14px;}
+.nav_l a:hover{color:#fff; font-size:14px; text-decoration: none;}
+.nav_a{background:url(../images/nava_bj.gif) no-repeat; color:#FFF; width:100px; height:43px; margin-top:0px; display:block; }
+	
+.box_nei{border:1px solid #999999; position:absolute; width:300px; top:23px; left:0px; z-index:1099; padding-left:5px;background:#FFFFFF;}
+.piny{line-height:26px;}
+.hr{border-top:1px dashed #999999; height:0px;line-height:0;  margin-left:-2px; margin-right:3px; list-style:none; }
+.nav-a_z{ margin-top:4px; height:18px;}
+.nav-a_z ul{ margin:0 ; padding:0; list-style:none; line-height:18px; height:18px;}
+.nav-a_z ul li{ width:40px; float:left; margin-right:8px; border:1px solid #999999; line-height:18px; height:18px; text-align:center; border-bottom:none; color:#3779FF;}
+.list_chengshi{}
+.list_chengshi ul{ list-style:none;}
+.list_chengshi ul li{ float:left; width:60px; text-align:center; line-height:24px; }
+.youqing{width: 910px;}
+.youqing ul{}
+.youqing ul li{ width: 130px; float: left; text-align: left; line-height: 26px; color:#AAAAAA}
+.hr1{border-top:1px solid #999999; height:0px;line-height:0;   margin-left:-2px; margin-right:3px; z-index:11 ;list-style:none;}

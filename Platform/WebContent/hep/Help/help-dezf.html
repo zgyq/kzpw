@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<link href="css/Common1.css" rel="stylesheet" type="text/css" />
+<style>
+html {overflow: scroll;overflow-x: hidden;overflow-x: auto !important;}
+</style>
+</head>
+<script type="text/javascript" src="css/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {	
+
+	//Show Banner
+	$(".main_image .desc").show(); //Show Banner
+	$(".main_image .block").animate({ opacity: 0.80 }, 1 ); //Set Opacity
+
+	//Click and Hover events for thumbnail list
+	$(".image_thumb ul li:first").addClass('active'); 
+	$(".image_thumb ul li").click(function(){ 
+		//Set Variables
+		var imgAlt = $(this).find('img').attr("alt"); //Get Alt Tag of Image
+		var imgTitle = $(this).find('a').attr("href"); //Get Main Image URL
+		var imgDesc = $(this).find('.block').html(); 	//Get HTML of block
+		var imgDescHeight = $(".main_image").find('.block').height();	//Calculate height of block	
+		
+		if ($(this).is(".active")) {  //If it's already active, then...
+			return false; // Don't click through
+		} else {
+			//Animate the Teaser				
+			$(".main_image .block").animate({ opacity: 0, marginBottom: -imgDescHeight }, 250 , function() {
+				$(".main_image .block").html(imgDesc).animate({ opacity: 0.80,	marginBottom: "0" }, 250 );
+				$(".main_image img").attr({ src: imgTitle , alt: imgAlt});
+			});
+		}
+		
+		$(".image_thumb ul li").removeClass('active'); //Remove class of 'active' on all lists
+		$(this).addClass('active');  //add class of 'active' on this list only
+		return false;
+		
+	}) .hover(function(){
+		$(this).addClass('hover');
+		}, function() {
+		$(this).removeClass('hover');
+	});
+			
+	//Toggle Teaser
+	$("a.collapse").click(function(){
+		$(".main_image .block").slideToggle();
+		$("a.collapse").toggleClass("show");
+	});
+	
+});//Close Function
+</script>
+<body class="main_body">
+
+<a name="top" id="top"></a>
+<div class="level2_top_title">
+&nbsp;&nbsp;<img src="images/title_ico_01.gif" width="6" height="10" /> 帮助中心 &gt; 信用卡大额支付</div>
+
+<div class="help-bk1">
+<div class="help-bk3">
+  <p>&nbsp;</p>
+  <p class="cp-size6">信用卡大额支付常见问题汇总</p>
+  <p>&nbsp;</p>
+  <p><span class="cp-size3">问：信用卡大额支付收费是怎样的？</span>
+    </li>
+      </ol>
+  </p>
+  <p>答：目前使用信用卡大额支付在平台购买机票不收取手续费。</p>
+  <p>&nbsp;</p>
+  <p><span class="cp-size3">问：信用卡大额支付业务开通哪几家银行？</span>
+    </li>
+    </ol>
+</p>
+    <p>答：目前开通的银行有：交行、广发、光大、中行、兴业、招商银行、中信银行。以后还会陆续开通其他银行。</p>
+    <p>&nbsp;</p>
+    <p><span class="cp-size3">问：使用信用卡支付需要具备哪些条件？</span>
+      </li>
+      </ol>
+</p>
+    <p>答：信用卡需要开通网上银行，并且有足够的额度支付当时的机票款。</p>
+    <p>&nbsp;</p>
+    <p><span class="cp-size3">问：各银行信用卡支付限额是什么样子的？</span>
+      </li>
+      </ol>
+</p>
+    <p>答：</p>
+    <p><img src="images/dm2.jpg" width="652" height="593" /></p>
+    <p>&nbsp;</p>
+    <p><span class="cp-size3">问：信用卡大额支付退款，钱会退到哪里？</span>
+      </li>
+      </ol>
+</p>
+    <p>答：和普通支付的退款流程一样是原路来原路回，直接退回到原支付的信用卡上 。</p>
+    <p>&nbsp;</p>
+    <p><span class="cp-size3">问：信用卡大额支付退款需要多长时间？</span>
+      </li>
+      </ol>
+</p>
+    <p>答：支付宝3--5个工作日内提交到银行进行入帐到信用卡上，每个银行的结算时间不一样，一般不超过7个工作日。</p>
+    <div class="help-bk4"><a href="#top">&#710; 回到顶部</a></div>
+</div>
+</div>
+
+</body>
+</html>

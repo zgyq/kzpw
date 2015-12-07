@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/init.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/RDSub.css" />
+<link rel="stylesheet" href="css/brandWorld2.css" type="text/css" />
+<link rel="stylesheet" href="css/lightbox2.css" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/jquery.slide.js"></script>
+<script type="text/javascript" src="js/RDfunction.js"></script>
+<script type="text/javascript" src="js/sildeBanner.js"></script>
+<script type="text/javascript" src="js/lightbox-2.6.min.js"></script>
+
+
+<script>
+	$(function(){
+		//设置品鉴、参数、亮点、视频的鼠标动画
+		$(".seeForth li a").each(function(index) {
+			//if("此处我需要程序判断这个seeForthFocus在那个位置上返回一个值和index比较")
+			var abc=$(this)
+			$(".seeForth li a").eq(index).hover(function(){
+					$(this).children("span").animate({bottom: 141}, 800);
+					$(this).children("em").animate({bottom: 0}, 800);
+			},function(){
+				//$(this).children("span").animate({height:141},slow)
+					$(abc).children("span").animate({bottom:0},800)
+					$(this).children("em").animate({bottom: -34}, 800);
+			})
+			
+        });
+		
+		//设置亮点的内容部分div向那个方向浮动
+		$(".brandLiangdian li:odd").addClass("bandLDLeft")
+		//设置公共部分的图片滚动
+		/* 用按钮控制图片左右滚动 */
+		$(".hotPic1 .JQ-slide").Slide({
+		effect:"scroolLoop",
+		autoPlay:false,
+		speed:"normal",
+		timer:3000,
+		steps:1
+		});
+		//
+		var kuan=$(".hotPic1 .JQ-slide-content li").width()*$(".hotPic1 .JQ-slide-content li").length+$(".hotPic1 .JQ-slide-content li").length*10;
+		//alert(kuan)
+		$(".hotPic1 .JQ-slide-content").css("width",kuan)
+		
+		//设置亮点的循环出来的li
+		
+	})
+</script>
+</head>
+
+<body>
+<div class="RDpublickheader">
+	<div class="RDheader">
+        <div class="RDcenter">
+            <div class="RDheaderLeft">
+            	<div>
+                    <span>北京</span>
+                        <ul>
+                            <li><a href="#">天津</a></li>
+                            <li><a href="#">上海</a></li>
+                            <li><a href="#">广州</a></li>
+                        </ul>
+                </div>
+            </div>
+            <ul class="RDheaderRight">
+            	<li class="yuyanChange">Language<div><a href="#">中文</a><a href="#">Language</a></div></li>
+                <li><a href="#">活动</a></li>
+                <li><a href="#">资讯</a></li>
+                <li><a href="#">投资者关系</a></li>
+                <li><a href="#">人才招聘</a></li>
+                <li><a href="#">企业与责任</a></li>
+                <li><input type="text" value="瑞风S5" class="searchText" /><input type="submit" value="" class="searchBtn" /></li>
+            </ul>
+        </div>
+    </div>
+    <!--logo RDnav-->
+    <div class="RDheader2">
+        <div class="RDcenter">
+            
+            <a href="#" class="RDlogo"><img src="images/logo.png" width="214" height="28" alt="江淮汽车" /></a>
+            <ul class="RDnav">
+                <li class="RDnavFocus"><a href="#">品牌中心</a></li>
+                <li><a href="#">购车指南</a></li>
+                <li><a href="#">贴心服务</a></li>
+                <li><a href="#">JAC车友俱乐部</a></li>
+            </ul>
+            <div class="clearBox"></div>
+        </div>
+    </div>
+    <!--logo RDnav end-->
+</div>
+<!--你现在的位置-->
+<div class="currentLocation"><p class="RDcenter">你的位置：<a href="#">首页</a>><a href="#">投资者关系</a></p></div>
+<!--你现在的位置 end-->
+<!--xingxiangImages-->
+<div style=" background:rgb(232, 232, 232) url(images/about_jac/about_jac_banner.jpg) no-repeat center;" class="xingxiangImages"></div>
+<!--xingxiangImages-->
+<!--fenleiMore-->
+<div class="fenleiMore">
+	<ul>     
+        <Li><a href="#">领导风采 </a></Li>
+        <Li class="fenleiMoreFocus"><a href="#">国际视野</a></Li>
+        <Li><a href="#">新能源</a></Li>
+        <Li><a href="#">底盘科技</a></Li>
+        <Li><a href="#">动力总成</a></Li>
+        <Li><a href="#">社会责任</a></Li>
+    </ul>
+</div>
+<!--fenleiMore-->
+<!--newsList-->
+<div class="RDcenter RDcenterSubFont">
+	<p class="SaboutJacTitle">国际市场简介</p>
+    <div class="SaboutJacCen">
+    	<div class="SaboutJacC_1">
+        	<p>江淮汽车已出口到南美、欧洲、非洲、亚洲等区域，与全球120多个国家建立了良好的合作关系。在国际市场，江淮汽车已逐步形成了商用车、乘用车比翼齐飞的格局，轻型商用车连续十三年保持中国品牌销量第一，乘用车增速迅猛，不断获得海外客商的好评和推崇，有力提升了江淮汽车和中国汽车产品的品牌形象。
+2013年JAC整车出口58,436辆，同比增长8.78%。2014年1月JAC整车出口8,578辆,2014年1月份出口位居中国汽车行业第六，其中轻卡出口继续保持中国行业第一，乘用车出口位居行业第六。</p><img src="images/about_jac/about_jac_map.jpg" /><div class="clearBox"></div>
+        </div>
+        <!--滚动图片没做-->
+        <div class="SaboutJacC_2">
+           	<h1>海外车展</h1>
+            <div>
+               <div class="hotPic1 hotPic3">
+               <div class="JQ-slide">
+               <div class="JQ-slide-nav"><a class="prev" href="javascript:void(0);">&#8249;</a><a class="next" href="javascript:void(0);">&#8250;</a></div>
+               <div class="wrap">
+                            <ul class="modelsRecommendedList chengyongche JQ-slide-content">
+                                <li><a href="images/about_jac/about_jac_g.jpg" data-lightbox="example-set"><img src="images/about_jac/about_jac_g.jpg"/></a>
+                                <p>沙特利雅得展厅</p></li>
+                                <li><a href="images/about_jac/about_jac_g-02.jpg" data-lightbox="example-set"><img src="images/about_jac/about_jac_g-02.jpg"/></a>
+                                <p>参加黎巴嫩horeca车展</p></li>
+                                <li><a href="images/about_jac/about_jac_g-03.jpg" data-lightbox="example-set"><img src="images/about_jac/about_jac_g-03.jpg"/></a>
+                                <p>巴林上市-JAC in Bahrain</p></li>
+                                <li><a href="images/about_jac/about_jac_g-04.jpg" data-lightbox="example-set"><img src="images/about_jac/about_jac_g-04.jpg"/></a><p>巴西-JAC in Brazil</p></li>
+                            </ul>
+               </div></div></div></div>
+        </div>
+                    
+        <!---->
+        <div class="SaboutJacC_3">
+        <h1><span>国际合资合作</span><a href="#">了解更多</a></h1>
+        	<div class="SaboutJacC_3_1">
+            	<div class="SaboutJacC_3_1txt">
+                	<h2>江淮汽车和SHC公司在巴西正式宣布，将于2014年在巴西合作建立江淮汽车的制造工厂</h2>
+                    <p>2011年8月1日，江淮汽车和SHC公司在巴西正式宣布，将于2014年在巴西合作建立江淮汽车的制造工厂，该工厂投资总额为6亿美元，产能10万辆，将创造3500个直接就业机会和一万个以上的间接就业机会。今年9月，江淮汽车宣布将向在巴西的合作伙伴公司“JAC巴西汽车有限公司”增资，使之成为江淮汽车在巴西从事汽车制造和销售的合资公司。自此，江淮汽车巴西市场由经销商代理合作转变为资本合作。巴西合资工厂将引入江淮汽车最先进的产品技术和管理技术，践行江淮汽车“制造更好的产品，创造更美好的社会”的承诺。<a href="#">更多...</a></p>
+                </div>
+            	<div class="SaboutJacC_3_1_ImgR">
+                	<img src="images/about_jac/about_jac_News.jpg"/>
+                </div>
+                <div class="clearBox"></div>
+            </div>
+            <div class="SaboutJacC_3_2">
+            	<div class="SaboutJacC_3_2_ImgL">
+                <img src="images/about_jac/about_jac_News-02.jpg"/>
+                </div>
+            	<div class="SaboutJacC_3_2txt">
+                	<h2>江淮纳威司达柴油发动机有限公司在京揭牌</h2>
+                    <p>
+                    8月23日，安徽江淮纳威司达柴油发动机有限公司在北京正式揭牌成立，这标志着江淮汽车与纳威司达的合资合作进入了全新的发展阶段。安徽省副省长黄海嵩，美国驻华大使馆公使衔商务参赞蔡瑞德(William Zarit)，国家发改委产业协调司机械装备处处长李刚，省政府副秘书长黄晓武，省国资委主任许崇信，省经信委副主任吴韦人，合肥市委常委、副市长韩冰以及省市经开区有关部门负责人应邀出席并为合资公司揭牌剪彩。江汽集团公司董事长安进与纳威司达卡车与发动机总裁特洛伊•克拉克（Troy Clarke）分别致辞。<a href="#">更多...</a>
+                    </p>
+                </div>
+                <div class="clearBox"></div>
+            </div>
+        </div>
+        
+        <div></div>
+    </div>
+    <div class="clearBox"></div>
+</div>
+<!--newsList end-->
+
+<!--RDfooter-->
+<div class="RDfooter">
+	<div class="RDfooter1">
+    	<div class="RDcenter">
+        	<a href="javascript:void(0);" class="yincangBtn"><img src="images/jia.png" height="16" width="25" /></a>
+            <div class="RDfooterFuWu">
+                <img src="images/julebu.png" height="45" width="175" />
+                <dl>
+                    <dt>24小时贵宾服务热线</dt>
+                    <dd>4008-889933　乘用车</dd>
+                    <dd>4008-009933　轻卡</dd>
+                    <dd>4008-003366　星锐</dd>
+                    <dd>4008-006633　重卡</dd>
+                    <dd>4000-277771　瑞铃</dd>
+                    <dd>4008-878576　瑞驰</dd>
+                </dl>
+            </div>
+            <dl>
+                <dt>品牌中心</dt>
+                <dd><a href="#">和悦</a></dd>
+                <dd><a href="#">帅铃</a></dd>
+                <dd><a href="#">骏铃</a></dd>
+                <dd><a href="#">好运</a></dd>
+                <dd><a href="#">格尔发</a></dd>
+                <dd><a href="#">锐捷特</a></dd>
+                <dd><a href="#">江淮底盘</a></dd>
+            </dl>
+            <dl>
+                <dt>购车指南</dt>
+                <dd><a href="#">个性化定制</a></dd>
+                <dd><a href="#">车型对比</a></dd>
+                <dd><a href="#">预约试驾</a></dd>
+                <dd><a href="#">价格试算</a></dd>
+                <dd><a href="#">购车流程</a></dd>
+                <dd><a href="#">金融服务</a></dd>
+                <dd><a href="#">贷款计算器</a></dd>
+                <dd><a href="#">查找经销商</a></dd>
+                <dd><a href="#">在线购车</a></dd>
+                <dd><a href="#">最新活动</a></dd>
+            </dl>
+            <dl>
+                <dt>贴心服务</dt>
+                <dd><a href="#">服务承诺</a></dd>
+                <dd><a href="#">服务网点</a></dd>
+                <dd><a href="#">配件供应</a></dd>
+                <dd><a href="#">在线咨询</a></dd>
+            </dl>
+            <dl>
+                <dt>活动</dt>
+                <dd><a href="#">品牌活动</a></dd>
+                <dd><a href="#">促销活动</a></dd>
+                <dd><a href="#">往期活动</a></dd>
+            </dl>
+            <dl>
+                <dt>资讯</dt>
+                <dd><a href="#">企业新闻</a></dd>
+                <dd><a href="#">媒体报道</a></dd>
+                <dd><a href="#">记者专区</a></dd>
+            </dl>
+            <dl>
+                <dt>投资者关系</dt>
+                <dd><a href="#">产销报告</a></dd>
+                <dd><a href="#">临时公告</a></dd>
+                <dd><a href="#">定期报告</a></dd>
+            </dl>
+              <dl>
+                <dt>人才招聘</dt>
+                <dd><a href="#">员工福利</a></dd>
+                <dd><a href="#">校园招聘</a></dd>
+                <dd><a href="#">社会招聘</a></dd>
+                <dd><a href="#">员工风采</a></dd>
+            </dl>
+              <dl>
+                <dt>企业与责任</dt>
+                <dd><a href="#">公司介绍</a></dd>
+                <dd><a href="#">领导风采</a></dd>
+                <dd><a href="#">发展历程</a></dd>
+                <dd><a href="#">新能源</a></dd>
+                <dd><a href="#">底盘科技</a></dd>
+                <dd><a href="#">动力总成</a></dd>
+                <dd><a href="#">社会责任</a></dd>
+            </dl>
+              <dl>
+                <dt>精彩下载</dt>
+                <dd><a href="#">江淮汽车TV</a></dd>
+                <dd><a href="#">精美壁纸</a></dd>
+            </dl>
+            <div class="clearBox"></div>
+        </div>
+    </div>
+    <div class="RDfooter2">
+    	<div class="RDcenter">
+        	<ul>
+            	<li><a href="#">版权信息</a>|</li>
+                <li><a href="#">使用说明</a>|</li>
+                <li><a href="#">联系我们</a>|</li>
+                <li><a href="#">网站地图</a>|</li>
+                <li><a href="#">合作伙伴专区</a></li>
+            </ul>
+            <p>江淮汽车2013版权所有 皖ICP备 05005596</p>
+        </div>
+    </div>
+</div>
+<!--RDfooter end-->
+
+<!--rightFloat-->
+<div class="rightFloat">
+    <a href="" class="gotoTop"><img src="images/goTop.jpg" height="38" width="88" /></a>
+    <p><a href="#">登录</a><a href="#">注册</a></p>
+    <ul>
+        <li><a href="#"><img src="images/zixun.png" height="38" width="38" /><span>在线咨询</span></a></li>
+        <li><a href="#"><img src="images/jiazhao.png" height="38" width="38" /><span>预约试驾</span></a></li>
+        <li><a href="#"><img src="images/dingche.png" height="38" width="38" /><span>在线订车</span></a></li>
+        <li><a href="#"><img src="images/weixiu.png" height="38" width="38" /><span>预约维修</span></a></li>
+        <li><a href="#"><img src="images/wangdian.png"  height="38" width="38" /><span>经销网点查询</span></a></li>
+        <li><a href="#"><img src="images/fuwuwangdian.png" height="38" width="38" /><span>服务网点查询</span></a></li>
+        <li><a href="#"><img src="images/erweima.png" height="38" width="38" /><span>关注微信</span></a></li>
+        <li><a href="#"><img src="images/weibo.png" height="38" width="38" /><span>江淮微博</span></a></li>
+    </ul>
+</div>
+<!--rightFloat end-->
+</body>
+</html>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Spotlineorder">
+  
+  <typeAlias alias="Spotlineorder" type="com.yf.system.base.spotlineorder.Spotlineorder"/>
+  
+
+  <resultMap id="resultSpotlineorderMap" class="Spotlineorder">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="outid" column="C_OUTID"/>
+  
+     <result property="orderno" column="C_ORDERNO"/>
+  
+     <result property="spotlineid" column="C_SPOTLINEID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="provineid" column="C_PROVINEID"/>
+  
+     <result property="cityid" column="C_CITYID"/>
+  
+     <result property="areaid" column="C_AREAID"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="snum" column="C_SNUM"/>
+  
+     <result property="linkname" column="C_LINKNAME"/>
+  
+     <result property="linktel" column="C_LINKTEL"/>
+  
+     <result property="stime" column="C_STIME"/>
+  
+     <result property="linkemail" column="C_LINKEMAIL"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="beizhu" column="C_BEIZHU"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="paystate" column="C_PAYSTATE"/>
+  
+     <result property="stopid" column="C_STOPID"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllSpotlineorder"  resultMap="resultSpotlineorderMap"  parameterClass="java.util.Map">
+  
+    select * from T_SPOTLINEORDER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSpotlineorderBySql"  resultMap="resultSpotlineorderMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSpotlineorderBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSpotlineorderBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SPOTLINEORDER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSpotlineorder" parameterClass="long" resultClass="Spotlineorder">
+    select 
+    	ID as id,
+	  			C_OUTID as outid,
+	  			C_ORDERNO as orderno,
+	  			C_SPOTLINEID as spotlineid,
+	  			C_NAME as name,
+	  			C_PROVINEID as provineid,
+	  			C_CITYID as cityid,
+	  			C_AREAID as areaid,
+	  			C_ADDRESS as address,
+	  			C_SNUM as snum,
+	  			C_LINKNAME as linkname,
+	  			C_LINKTEL as linktel,
+	  			C_STIME as stime,
+	  			C_LINKEMAIL as linkemail,
+	  			C_PRICE as price,
+	  			C_BEIZHU as beizhu,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_MEMBERID as memberid,
+	  			C_PAYSTATE as paystate,
+	  			C_STOPID as stopid,
+	  			C_STATE as state 
+     from T_SPOTLINEORDER
+    where ID = #id#
+  </select>
+   
+  <insert id="createSpotlineorder" parameterClass="Spotlineorder">
+    insert into T_SPOTLINEORDER ( 
+    	ID,
+	  			C_OUTID,
+	  			C_ORDERNO,
+	  			C_SPOTLINEID,
+	  			C_NAME,
+	  			C_PROVINEID,
+	  			C_CITYID,
+	  			C_AREAID,
+	  			C_ADDRESS,
+	  			C_SNUM,
+	  			C_LINKNAME,
+	  			C_LINKTEL,
+	  			C_STIME,
+	  			C_LINKEMAIL,
+	  			C_PRICE,
+	  			C_BEIZHU,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_MEMBERID,
+	  			C_PAYSTATE,
+	  			C_STOPID,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#outid#,
+	  					
+	  						#orderno#,
+	  					
+	  						#spotlineid#,
+	  					
+	  						#name#,
+	  					
+	  						#provineid#,
+	  					
+	  						#cityid#,
+	  					
+	  						#areaid#,
+	  					
+	  						#address#,
+	  					
+	  						#snum#,
+	  					
+	  						#linkname#,
+	  					
+	  						#linktel#,
+	  					
+	  						#stime#,
+	  					
+	  						#linkemail#,
+	  					
+	  						#price#,
+	  					
+	  						#beizhu#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+							#memberid:DECIMAL#,
+						
+							#paystate:DECIMAL#,
+						
+							#stopid:DECIMAL#,
+						
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSpotlineorder" parameterClass="long">
+    delete from T_SPOTLINEORDER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSpotlineorder" parameterClass="Spotlineorder">
+    update T_SPOTLINEORDER 
+    set 
+    	C_OUTID = #outid#,
+	  					C_ORDERNO = #orderno#,
+	  					C_SPOTLINEID = #spotlineid#,
+	  					C_NAME = #name#,
+	  					C_PROVINEID = #provineid#,
+	  					C_CITYID = #cityid#,
+	  					C_AREAID = #areaid#,
+	  					C_ADDRESS = #address#,
+	  					C_SNUM = #snum#,
+	  					C_LINKNAME = #linkname#,
+	  					C_LINKTEL = #linktel#,
+	  					C_STIME = #stime#,
+	  					C_LINKEMAIL = #linkemail#,
+	  					C_PRICE = #price#,
+	  					C_BEIZHU = #beizhu#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MEMBERID = #memberid:DECIMAL#,
+						C_PAYSTATE = #paystate:DECIMAL#,
+						C_STOPID = #stopid:DECIMAL#,
+						C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

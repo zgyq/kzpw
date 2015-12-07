@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Userintegral">
+  
+  <typeAlias alias="Userintegral" type="com.yf.system.base.userintegral.Userintegral"/>
+  
+
+  <resultMap id="resultUserintegralMap" class="Userintegral">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="userid" column="C_USERID"/>
+  
+     <result property="relatedid" column="C_RELATEDID"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="behavior" column="C_BEHAVIOR"/>
+  
+     <result property="sval" column="C_SVAL"/>
+  
+     <result property="eval" column="C_EVAL"/>
+  
+     <result property="val" column="C_VAL"/>
+  
+     <result property="createuserid" column="C_CREATEUSERID"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+   
+  </resultMap>
+  
+  <select id="findAllUserintegral"  resultMap="resultUserintegralMap"  parameterClass="java.util.Map">
+  
+    select * from T_USERINTEGRAL
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllUserintegralBySql"  resultMap="resultUserintegralMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteUserintegralBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countUserintegralBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_USERINTEGRAL
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findUserintegral" parameterClass="long" resultClass="Userintegral">
+    select 
+    	ID as id,
+	  			C_USERID as userid,
+	  			C_RELATEDID as relatedid,
+	  			C_CREATETIME as createtime,
+	  			C_BEHAVIOR as behavior,
+	  			C_SVAL as sval,
+	  			C_EVAL as eval,
+	  			C_VAL as val,
+	  			C_CREATEUSERID as createuserid,
+	  			C_TYPE as type,
+	  			C_COMMENT as comment 
+     from T_USERINTEGRAL
+    where ID = #id#
+  </select>
+   
+  <insert id="createUserintegral" parameterClass="Userintegral">
+    insert into T_USERINTEGRAL ( 
+    	ID,
+	  			C_USERID,
+	  			C_RELATEDID,
+	  			C_CREATETIME,
+	  			C_BEHAVIOR,
+	  			C_SVAL,
+	  			C_EVAL,
+	  			C_VAL,
+	  			C_CREATEUSERID,
+	  			C_TYPE,
+	  			C_COMMENT 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#userid:DECIMAL#,
+						
+							#relatedid:DECIMAL#,
+						
+	  						#createtime#,
+	  					
+	  						#behavior#,
+	  					
+							#sval:DECIMAL#,
+						
+							#eval:DECIMAL#,
+						
+							#val:DECIMAL#,
+						
+							#createuserid:DECIMAL#,
+						
+							#type:DECIMAL#,
+						
+	  						#comment#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteUserintegral" parameterClass="long">
+    delete from T_USERINTEGRAL
+    where ID = #id#
+  </delete>
+	
+  <update id="updateUserintegral" parameterClass="Userintegral">
+    update T_USERINTEGRAL 
+    set 
+    	C_USERID = #userid:DECIMAL#,
+						C_RELATEDID = #relatedid:DECIMAL#,
+						C_CREATETIME = #createtime#,
+	  					C_BEHAVIOR = #behavior#,
+	  					C_SVAL = #sval:DECIMAL#,
+						C_EVAL = #eval:DECIMAL#,
+						C_VAL = #val:DECIMAL#,
+						C_CREATEUSERID = #createuserid:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_COMMENT = #comment#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

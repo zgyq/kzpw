@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Buying">
+  
+  <typeAlias alias="Buying" type="com.yf.system.base.buying.Buying"/>
+  
+
+  <resultMap id="resultBuyingMap" class="Buying">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="outid" column="C_OUTID"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="pid" column="C_PID"/>
+  
+     <result property="cityid" column="C_CITYID"/>
+  
+     <result property="regionid" column="C_REGIONID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="marketprice" column="C_MARKETPRICE"/>
+  
+     <result property="shopprice" column="C_SHOPPRICE"/>
+  
+     <result property="descinfo" column="C_DESCINFO"/>
+  
+     <result property="beizhu" column="C_BEIZHU"/>
+  
+     <result property="tiqiandays" column="C_TIQIANDAYS"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="stime" column="C_STIME"/>
+  
+     <result property="endtime" column="C_ENDTIME"/>
+  
+     <result property="stimeetime" column="C_STIMEETIME"/>
+  
+     <result property="guize" column="C_GUIZE"/>
+  
+     <result property="minnumber" column="C_MINNUMBER"/>
+  
+     <result property="tejia" column="C_TEJIA"/>
+  
+     <result property="title1" column="C_TITLE1"/>
+  
+     <result property="pic1" column="C_PIC1"/>
+  
+     <result property="pic2" column="C_PIC2"/>
+  
+     <result property="text1" column="C_TEXT1"/>
+  
+     <result property="text2" column="C_TEXT2"/>
+  
+     <result property="text3" column="C_TEXT3"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllBuying"  resultMap="resultBuyingMap"  parameterClass="java.util.Map">
+  
+    select * from T_BUYING
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllBuyingBySql"  resultMap="resultBuyingMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteBuyingBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countBuyingBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_BUYING
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findBuying" parameterClass="long" resultClass="Buying">
+    select 
+    	ID as id,
+	  			C_OUTID as outid,
+	  			C_AGENTID as agentid,
+	  			C_PID as pid,
+	  			C_CITYID as cityid,
+	  			C_REGIONID as regionid,
+	  			C_NAME as name,
+	  			C_MARKETPRICE as marketprice,
+	  			C_SHOPPRICE as shopprice,
+	  			C_DESCINFO as descinfo,
+	  			C_BEIZHU as beizhu,
+	  			C_TIQIANDAYS as tiqiandays,
+	  			C_ADDRESS as address,
+	  			C_STIME as stime,
+	  			C_ENDTIME as endtime,
+	  			C_STIMEETIME as stimeetime,
+	  			C_GUIZE as guize,
+	  			C_MINNUMBER as minnumber,
+	  			C_TEJIA as tejia,
+	  			C_TITLE1 as title1,
+	  			C_PIC1 as pic1,
+	  			C_PIC2 as pic2,
+	  			C_TEXT1 as text1,
+	  			C_TEXT2 as text2,
+	  			C_TEXT3 as text3,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_MEMBERID as memberid,
+	  			C_TYPE as type,
+	  			C_STATE as state 
+     from T_BUYING
+    where ID = #id#
+  </select>
+   
+  <insert id="createBuying" parameterClass="Buying">
+    insert into T_BUYING ( 
+    	ID,
+	  			C_OUTID,
+	  			C_AGENTID,
+	  			C_PID,
+	  			C_CITYID,
+	  			C_REGIONID,
+	  			C_NAME,
+	  			C_MARKETPRICE,
+	  			C_SHOPPRICE,
+	  			C_DESCINFO,
+	  			C_BEIZHU,
+	  			C_TIQIANDAYS,
+	  			C_ADDRESS,
+	  			C_STIME,
+	  			C_ENDTIME,
+	  			C_STIMEETIME,
+	  			C_GUIZE,
+	  			C_MINNUMBER,
+	  			C_TEJIA,
+	  			C_TITLE1,
+	  			C_PIC1,
+	  			C_PIC2,
+	  			C_TEXT1,
+	  			C_TEXT2,
+	  			C_TEXT3,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_MEMBERID,
+	  			C_TYPE,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#outid#,
+	  					
+							#agentid:DECIMAL#,
+						
+							#pid:DECIMAL#,
+						
+							#cityid:DECIMAL#,
+						
+							#regionid:DECIMAL#,
+						
+	  						#name#,
+	  					
+	  						#marketprice#,
+	  					
+	  						#shopprice#,
+	  					
+	  						#descinfo#,
+	  					
+	  						#beizhu#,
+	  					
+	  						#tiqiandays#,
+	  					
+	  						#address#,
+	  					
+	  						#stime#,
+	  					
+	  						#endtime#,
+	  					
+	  						#stimeetime#,
+	  					
+	  						#guize#,
+	  					
+	  						#minnumber#,
+	  					
+	  						#tejia#,
+	  					
+	  						#title1#,
+	  					
+	  						#pic1#,
+	  					
+	  						#pic2#,
+	  					
+	  						#text1#,
+	  					
+	  						#text2#,
+	  					
+	  						#text3#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+							#memberid:DECIMAL#,
+						
+							#type:DECIMAL#,
+						
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteBuying" parameterClass="long">
+    delete from T_BUYING
+    where ID = #id#
+  </delete>
+	
+  <update id="updateBuying" parameterClass="Buying">
+    update T_BUYING 
+    set 
+    	C_OUTID = #outid#,
+	  					C_AGENTID = #agentid:DECIMAL#,
+						C_PID = #pid:DECIMAL#,
+						C_CITYID = #cityid:DECIMAL#,
+						C_REGIONID = #regionid:DECIMAL#,
+						C_NAME = #name#,
+	  					C_MARKETPRICE = #marketprice#,
+	  					C_SHOPPRICE = #shopprice#,
+	  					C_DESCINFO = #descinfo#,
+	  					C_BEIZHU = #beizhu#,
+	  					C_TIQIANDAYS = #tiqiandays#,
+	  					C_ADDRESS = #address#,
+	  					C_STIME = #stime#,
+	  					C_ENDTIME = #endtime#,
+	  					C_STIMEETIME = #stimeetime#,
+	  					C_GUIZE = #guize#,
+	  					C_MINNUMBER = #minnumber#,
+	  					C_TEJIA = #tejia#,
+	  					C_TITLE1 = #title1#,
+	  					C_PIC1 = #pic1#,
+	  					C_PIC2 = #pic2#,
+	  					C_TEXT1 = #text1#,
+	  					C_TEXT2 = #text2#,
+	  					C_TEXT3 = #text3#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MEMBERID = #memberid:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

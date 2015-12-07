@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "xwork-1.0.dtd">
+<xwork>
+  <package name="member" extends="default">
+   <action name="index"
+			class="com.yf.website.web.action.IndexAction">
+			<result name="toindex" type="dispatcher">
+				<param name="location">index.jsp</param>
+			</result>
+			<result name="ToMap" type="dispatcher">
+				<param name="location">map1.jsp</param>
+			</result>
+			
+			<result name="tohelpinfoByInfoId" type="dispatcher">
+				<param name="location">help/helpinfo.jsp</param>
+			</result>
+			<result name="toinformationinfoByInfoId" type="dispatcher">
+				<param name="location">information/informationinfo.jsp</param>
+			</result>
+			
+			<result name="toyulan" type="dispatcher">
+				<param name="location">charter/charteryulan.jsp</param>
+			</result>
+			<result name="toService" type="dispatcher">
+				<param name="location">member/Service.jsp</param>
+			</result>
+			
+			<result name="forword" type="redirect">
+				<param name="location">/${forword}</param>
+			</result>
+			<result name="tologin" type="dispatcher">
+				<param name="location">login!toLogin.jspx</param>
+			</result>
+			<result name="tohelp" type="dispatcher">
+				<param name="location">help/help.jsp</param>
+			</result>
+			<result name="toplanserver" type="dispatcher">
+				<param name="location">charter/charter.jsp</param>
+			</result>
+			<result name="toinformation" type="dispatcher">
+				<param name="location">information/information.jsp</param>
+			</result>
+			<result name="forward" type="dispatcher">
+				<param name="location">/${forward}</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+	</action>
+	<action name="vaidate"
+			class="com.yf.website.web.action.ValidateAction">
+			<result name="toindex" type="dispatcher">
+				<param name="location">index.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+	</action>
+	<!--积分-->
+	<action name="point"
+			class="com.yf.website.web.action.PointAction">
+			<result name="exchange" type="dispatcher">
+				<param name="location">member/exchange.jsp</param>
+			</result>
+			<result name="toLogin" type="dispatcher">
+				<param name="location">member/login.jsp</param>
+			</result>
+			<result name="integral" type="dispatcher">
+				<param name="location">member/integral.jsp</param>
+			</result>
+			
+			<result name="pointsmall" type="dispatcher">
+				<param name="location">member/pointsmall.jsp</param>
+			</result>
+			<result name="pointorder" type="dispatcher">
+				<param name="location">member/pointOrder.jsp</param>
+			</result>
+			<result name="points" type="dispatcher">
+				<param name="location">member/pointSuccess.jsp</param>
+			</result>
+			<result name="pointproinfo" type="dispatcher">
+				<param name="location">member/pointProinfo.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+	</action>
+	<!--积分 end-->
+	<action name="login"
+			class="com.yf.website.web.action.LoginAction">
+			
+			<result name="toQuickLogin" type="dispatcher">
+				<param name="location">member/quick_login.jsp</param>
+			</result>
+			
+			<result name="loginout" type="dispatcher">
+				<param name="location">index!toindex.jspx</param>
+			</result>
+			<result name="toOk" type="dispatcher">
+				<param name="location">member/ok.jsp</param>
+			</result>
+			<result name="toCharterOrderInfo" type="dispatcher">
+				<param name="location">member/CharterOrderInfo.jsp</param>
+			</result>
+			
+			
+			<result name="ToTicktOrder" type="dispatcher">
+				<param name="location">login!toTicktOrder.jspx</param>
+			</result>
+			<result name="tocharterlist" type="dispatcher">
+				<param name="location">member/charterlist.jsp</param>
+			</result>
+			
+			<result name="batch" type="dispatcher">
+				<param name="location">login!toPassenger.jspx</param>
+			</result>
+			<result name="DeletePassenger" type="dispatcher">
+				<param name="location">login!toPassenger.jspx</param>
+			</result>
+			<result name="AddPassenger" type="dispatcher">
+				<param name="location">login!toPassenger.jspx</param>
+			</result>
+			<result name="Login" type="dispatcher">
+				<param name="location">login!toMyCenter.jspx</param>
+			</result>
+			<result name="Regsit" type="dispatcher">
+				<param name="location">login!toMyCenter.jspx</param>
+			</result>
+			<result name="EditUser" type="dispatcher">
+				<param name="location">login!toMyCenter.jspx</param>
+			</result>
+			<result name="toChangePassword" type="dispatcher">
+				<param name="location">member/changepassword.jsp</param>
+			</result>
+			<result name="toRegsit" type="dispatcher">
+				<param name="location">member/regsit.jsp</param>
+			</result>
+			<result name="toLogin" type="dispatcher">
+				<param name="location">member/login.jsp</param>
+			</result>
+			<result name="toMyCenter" type="dispatcher">
+				<param name="location">member/MemberCenter.jsp</param>
+			</result>
+			<result name="toPassenger" type="dispatcher">
+				<param name="location">member/PassengerList.jsp</param>
+			</result>
+			<result name="toAddPassenger" type="dispatcher">
+				<param name="location">member/addPassenger.jsp</param>
+			</result>
+			<result name="toTicktOrder" type="dispatcher">
+				<param name="location">member/TicktOrderList.jsp</param>
+			</result>
+			<result name="toTicktOrderInfo" type="dispatcher">
+				<param name="location">member/TicktOrderInfo.jsp</param>
+			</result>
+			<result name="toAddress" type="dispatcher">
+				<param name="location">member/ListAddress.jsp</param>
+			</result>
+			<result name="toAddAddress" type="dispatcher">
+				<param name="location">member/AddAddress.jsp</param>
+			</result>
+			<result name="toForget" type="dispatcher">
+				<param name="location">member/forget.jsp</param>
+			</result>
+			
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+	</action>
+  </package>
+</xwork>
+

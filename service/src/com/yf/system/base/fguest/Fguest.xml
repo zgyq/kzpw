@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Fguest">
+  
+  <typeAlias alias="Fguest" type="com.yf.system.base.fguest.Fguest"/>
+  
+
+  <resultMap id="resultFguestMap" class="Fguest">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="guestname" column="C_GUESTNAME"/>
+  
+     <result property="isstudent" column="C_ISSTUDENT"/>
+  
+     <result property="guestidno" column="C_GUESTIDNO"/>
+  
+     <result property="countrycode" column="C_COUNTRYCODE"/>
+  
+     <result property="guesttype" column="C_GUESTTYPE"/>
+  
+     <result property="gender" column="C_GENDER"/>
+  
+     <result property="birthday" column="C_BIRTHDAY"/>
+  
+     <result property="targetzipcode" column="C_TARGETZIPCODE"/>
+  
+     <result property="targetaddress" column="C_TARGETADDRESS"/>
+  
+     <result property="liveaddress" column="C_LIVEADDRESS"/>
+     
+     <result property="ticketprice" column="C_TICKETPRICE"/>
+     
+     <result property="sairportfee" column="C_SAIRPORTFEE"/>
+     
+     <result property="eairportfee" column="C_EAIRPORTFEE"/>
+     
+     <result property="fuelfee" column="C_FUELFEE"/>
+     
+     <result property="anjianfee" column="C_ANJIANFEE"/>
+     
+     <result property="ticketnumber" column="C_TICKETNUMBER"/>
+     
+     <result property="fetnumber" column="C_FETNUMBER"/>
+     
+     <result property="mobile" column="C_MOBILE"/>
+   
+  </resultMap>
+  
+  <select id="findAllFguest"  resultMap="resultFguestMap"  parameterClass="java.util.Map">
+  
+    select * from T_FGUEST
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllFguestBySql"  resultMap="resultFguestMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteFguestBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countFguestBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_FGUEST
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findFguest" parameterClass="long" resultClass="Fguest">
+    select 
+    	ID as id,
+	  			C_ORDERID as orderid,
+	  			C_GUESTNAME as guestname,
+	  			C_ISSTUDENT as isstudent,
+	  			C_GUESTIDNO as guestidno,
+	  			C_COUNTRYCODE as countrycode,
+	  			C_GUESTTYPE as guesttype,
+	  			C_GENDER as gender,
+	  			C_BIRTHDAY as birthday,
+	  			C_TARGETZIPCODE as targetzipcode,
+	  			C_TARGETADDRESS as targetaddress,
+	  			C_LIVEADDRESS as liveaddress,
+	  			C_TICKETPRICE as ticketprice,
+	  			C_SAIRPORTFEE as sairportfee,
+	  			C_EAIRPORTFEE as eairportfee,
+	  			C_FUELFEE as fuelfee,
+	  			C_ANJIANFEE as anjianfee,
+	  			C_TICKETNUMBER as ticketmuber,
+	  			C_FETNUMBER as fetnumber,
+	  			C_MOBILE as mobile
+	  			 
+     from T_FGUEST
+    where ID = #id#
+  </select>
+   
+  <insert id="createFguest" parameterClass="Fguest">
+    insert into T_FGUEST ( 
+    	ID,
+	  			C_ORDERID,
+	  			C_GUESTNAME,
+	  			C_ISSTUDENT,
+	  			C_GUESTIDNO,
+	  			C_COUNTRYCODE,
+	  			C_GUESTTYPE,
+	  			C_GENDER,
+	  			C_BIRTHDAY,
+	  			C_TARGETZIPCODE,
+	  			C_TARGETADDRESS,
+	  			C_LIVEADDRESS,
+	  			C_TICKETPRICE,
+	  			C_SAIRPORTFEE,
+	  			C_EAIRPORTFEE,
+	  			C_FUELFEE,
+	  			C_ANJIANFEE,
+	  			C_TICKETNUMBER,
+	  			C_FETNUMBER,
+	  			C_MOBILE
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#orderid:DECIMAL#,
+						
+	  						#guestname#,
+	  					
+							#isstudent:DECIMAL#,
+						
+	  						#guestidno#,
+	  					
+	  						#countrycode#,
+	  					
+							#guesttype:DECIMAL#,
+						
+							#gender:DECIMAL#,
+						
+	  						#birthday#,
+	  					
+	  						#targetzipcode#,
+	  					
+	  						#targetaddress#,
+	  					
+	  						#liveaddress#,
+	  						
+	  						#ticketprice:DECIMAL#,
+	  						
+	  						#sairportfee:DECIMAL#,
+	  						
+	  						#eairportfee:DECIMAL#,
+	  						
+	  						#fuelfee:DECIMAL#,
+	  						
+	  						#anjianfee:DECIMAL#,
+	  						
+	  						#ticketnumber#,
+	  						
+	  						#fetnumber#,
+	  						
+	  						#mobile#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteFguest" parameterClass="long">
+    delete from T_FGUEST
+    where ID = #id#
+  </delete>
+	
+  <update id="updateFguest" parameterClass="Fguest">
+    update T_FGUEST 
+    set 
+    	C_ORDERID = #orderid:DECIMAL#,
+						C_GUESTNAME = #guestname#,
+	  					C_ISSTUDENT = #isstudent:DECIMAL#,
+						C_GUESTIDNO = #guestidno#,
+	  					C_COUNTRYCODE = #countrycode#,
+	  					C_GUESTTYPE = #guesttype:DECIMAL#,
+						C_GENDER = #gender:DECIMAL#,
+						C_BIRTHDAY = #birthday#,
+	  					C_TARGETZIPCODE = #targetzipcode#,
+	  					C_TARGETADDRESS = #targetaddress#,
+	  					C_LIVEADDRESS = #liveaddress#,
+	  					C_TICKETPRICE=#ticketprice#,
+	  					C_SAIRPORTFEE=#sairportfee#,
+	  					C_EAIRPORTFEE=#eairportfee#,
+	  					C_FUELFEE=#fuelfee#,
+	  					C_ANJIANFEE=#anjianfee#,
+	  					C_TICKETNUMBER=#ticketnumber#,
+	  					C_FETNUMBER=#fetnumber#,
+	  					C_MOBILE=#mobile#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+.searchtoper,.icoer,.moreer{ background:url(../images/ico_index.png);} 
+
+#main{ width:1004px; margin:0 auto;}
+#search{ background:url(../images/bj_searh.gif) no-repeat; width:554px; height:272px;  padding-left:55px; padding-top:20px; color:#fff; margin-left:30px; display:inline}
+#search .seatchtop{ width:215px; height:39px; text-align:center; color:#000;line-height:39px;  }
+#search .seatchtop input{ height:39px; line-height:39px;}
+#search .ulli{ height:30px; line-height:30px;}
+#search .choose{ padding-left:20px; line-height:38px; height:38px;}
+#search .choose input{height:38px; line-height:38px;}
+#search .guild{ line-height:20px; margin-right:15px;}
+#search .but{ padding-top:15px;}
+#ad{ width:323px; height:292px; background:url(../images/bj_ad.gif);}
+#ad .new{ padding:25px 0 0 30px}
+#ad .hot{  width:260px; margin-left:20px; margin-top:15px;}
+#ad .hot h5{ font-size:12px; font-weight:bold;}
+#ad .hot p{ margin-left:20px; line-height:24px; display:inline}
+#ad .ico{ background-position:-100px -47px; padding-left:15px;}
+#ad .more{ height:20px;  background-position:-120px -50px; padding-left:50px; padding-top:1px; display:inline;  margin-top:-10px; overflow:hidden}
+h2{ font-size:24px; line-height:30px;}

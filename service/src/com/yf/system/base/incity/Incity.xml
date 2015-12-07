@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Incity">
+  
+  <typeAlias alias="Incity" type="com.yf.system.base.incity.Incity"/>
+  
+
+  <resultMap id="resultIncityMap" class="Incity">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+     
+     <result property="zhname" column="C_ZHNAME"/>
+  
+     <result property="desc" column="C_DESC"/>
+  
+     <result property="mregion" column="C_MREGION"/>
+  
+     <result property="nr" column="C_NR"/>
+  
+     <result property="pcrRange" column="C_PCRANGE"/>
+  
+     <result property="latlong" column="C_LATLONG"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="countryid" column="C_COUNTRYID"/>
+   
+  </resultMap>
+  
+  <select id="findAllIncity"  resultMap="resultIncityMap"  parameterClass="java.util.Map">
+  
+    select * from T_INCITY
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllIncityBySql"  resultMap="resultIncityMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteIncityBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countIncityBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_INCITY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findIncity" parameterClass="long" resultClass="Incity">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_ZHNAME as zhname,
+	  			C_DESC as [desc],
+	  			C_MREGION as mregion,
+	  			C_NR as nr,
+	  			C_PCRANGE as pcrRange,
+	  			C_LATLONG as latlong,
+	  			C_CREATETIME as createtime,
+	  			C_TYPE as type,
+	  			C_COUNTRYID as countryid 
+     from T_INCITY
+    where ID = #id#
+  </select>
+   
+  <insert id="createIncity" parameterClass="Incity">
+    insert into T_INCITY ( 
+    	ID,
+	  			C_NAME,
+	  			C_ZHNAME,
+	  			C_DESC,
+	  			C_MREGION,
+	  			C_NR,
+	  			C_PCRANGE,
+	  			C_LATLONG,
+	  			C_CREATETIME,
+	  			C_TYPE,
+	  			C_COUNTRYID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  						
+	  						#zhname#,
+	  					
+	  						#desc#,
+	  					
+	  						#mregion#,
+	  					
+	  						#nr#,
+	  					
+	  						#pcrRange#,
+	  					
+	  						#latlong#,
+	  					
+	  						#createtime#,
+	  					
+							#type:DECIMAL#,
+						
+  							#countryid:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteIncity" parameterClass="long">
+    delete from T_INCITY
+    where ID = #id#
+  </delete>
+	
+  <update id="updateIncity" parameterClass="Incity">
+    update T_INCITY 
+    set 
+    	C_NAME = #name#,
+    					C_ZHNAME = #zhname#,
+	  					C_DESC = #desc#,
+	  					C_MREGION = #mregion#,
+	  					C_NR = #nr#,
+	  					C_PCRANGE = #pcrRange#,
+	  					C_LATLONG = #latlong#,
+	  					C_CREATETIME = #createtime#,
+	  					C_TYPE = #type:DECIMAL#,
+						C_COUNTRYID = #countryid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

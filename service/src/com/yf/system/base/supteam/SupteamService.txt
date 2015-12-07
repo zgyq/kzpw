@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 团队申请报价表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Supteam createSupteam(Supteam supteam) throws SQLException;
+	
+	/**
+	 * 删除 团队申请报价表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSupteam(long id);
+	
+	
+	/**
+	 * 修改 团队申请报价表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSupteam(Supteam supteam);
+
+		
+	/**
+	 * 修改 团队申请报价表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSupteamIgnoreNull(Supteam supteam);
+		
+	
+	/**
+	 * 查找 团队申请报价表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSupteam(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 团队申请报价表
+	 * @param id
+	 * @return
+	 */
+	public Supteam findSupteam(long id);
+	
+	
+	/** 
+	 * 查找 团队申请报价表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSupteamForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找团队申请报价表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSupteamBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 团队申请报价表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSupteamBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSupteamBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISupteamComponent supteamComponent;
+	  
+ 	
+ 	public ISupteamComponent getSupteamComponent() {
+		return supteamComponent;
+	}
+	public void setSupteamComponent(ISupteamComponent  supteamComponent) {
+		this.supteamComponent = supteamComponent;
+	}
+	/**
+	 * 创建 团队申请报价表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Supteam createSupteam(Supteam supteam) throws SQLException{
+	
+		return supteamComponent.createSupteam(supteam);
+	}
+	/**
+	 * 删除 团队申请报价表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSupteam(long id){
+	
+		return supteamComponent.deleteSupteam(id);
+	}
+	
+	
+	/**
+	 * 修改 团队申请报价表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSupteam(Supteam supteam){
+		return supteamComponent.updateSupteam(supteam);
+	
+	}
+
+		
+	/**
+	 * 修改 团队申请报价表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSupteamIgnoreNull(Supteam supteam){
+			return supteamComponent.updateSupteamIgnoreNull(supteam);
+	
+	}
+	
+	/**
+	 * 查找 团队申请报价表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSupteam(String where, String orderby,int limit,int offset){
+		return supteamComponent.findAllSupteam(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 团队申请报价表
+	 * @param id
+	 * @return
+	 */
+	public Supteam findSupteam(long id){
+		return supteamComponent.findSupteam(id);
+	}
+	
+	/** 
+	 * 查找 团队申请报价表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSupteamForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return supteamComponent.findAllSupteam(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找团队申请报价表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSupteamBySql(String sql,int limit,int offset){
+		return supteamComponent.findAllSupteam(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 团队申请报价表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSupteamBySql(String sql){
+		return supteamComponent.excuteSupteamBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSupteamBySql(String sql){
+		return supteamComponent.countSupteamBySql(sql);
+	}
+	
+	
+

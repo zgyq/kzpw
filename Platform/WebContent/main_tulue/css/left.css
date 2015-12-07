@@ -1,0 +1,26 @@
+@charset "gb2312";
+/* CSS Document */
+body{margin:0px; padding:0px; font-size:12px; font-family:"ËÎÌו"; color:#36322f; font-size:12px; line-height:21px; background:#f7f7f7}
+a{color:#2577e3;}
+img{border:0px;}
+a:link {text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
+ul, p, dl, dt, dd, li, img, div, p, table {padding:0px; margin:0px;}
+li{list-style-position:outside; list-style-type:none;}
+h1, h2, h3, h4, h5{ padding:0px; margin:0px; font-weight:normal;}
+h2 { font-size:18px;}
+h5 { font-size:14px; line-height:21px;}
+.clearit { clear:both; width:0px; height:0px; overflow:hidden; zoom:1;}
+.space { height:10px; overflow:hidden;}
+img { vertical-align:top;}
+
+.left{ width:220px;}
+.left li a.btn{ background:url(../img/left-bg.gif) no-repeat; display:inline-block; width:220px; height:45px; font-size:14px; font-weight:bold; text-align:left;text-indent: 20px; line-height:40px; border-top:1px solid #fff; color:#1263ce}
+.left li ul { padding:10px 0; border-bottom:1px solid #a7a9ae; background:#f9f9f9}
+.left li ul li{ text-align:left; text-indent:30px; font-size:12px; color:#4c4c4c; padding-bottom:5px;}
+.left li ul li a{color:#4c4c4c;}
+.opens{ display:inline-block; background:url(../img/open.gif) no-repeat center top; width:8px; height:5px;}
+.closes{ display:inline-block; background:url(../img/close.png) no-repeat center center; width:8px; height:9px;}
+/*.left li ul.close{ display:none}*/
+.left li a .s-icon{ display:inline-block; width:10px; height:10px; background:url(../img/left-nav-icon.gif) no-repeat left center; padding-right:10px;}

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Fcity">
+  
+  <typeAlias alias="Fcity" type="com.yf.system.base.fcity.Fcity"/>
+  
+
+  <resultMap id="resultFcityMap" class="Fcity">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="citycode" column="C_CITYCODE"/>
+  
+     <result property="cityname" column="C_CITYNAME"/>
+  
+     <result property="citynameen" column="C_CITYNAMEEN"/>
+  
+     <result property="countrycode" column="C_COUNTRYCODE"/>
+  
+     <result property="index" column="C_INDEX"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllFcity"  resultMap="resultFcityMap"  parameterClass="java.util.Map">
+  
+    select * from T_FCITY
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllFcityBySql"  resultMap="resultFcityMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteFcityBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countFcityBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_FCITY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findFcity" parameterClass="long" resultClass="Fcity">
+    select 
+    	ID as id,
+	  			C_CITYCODE as citycode,
+	  			C_CITYNAME as cityname,
+	  			C_CITYNAMEEN as citynameen,
+	  			C_COUNTRYCODE as countrycode,
+	  			C_INDEX as index,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_FCITY
+    where ID = #id#
+  </select>
+   
+  <insert id="createFcity" parameterClass="Fcity">
+    insert into T_FCITY ( 
+    	ID,
+	  			C_CITYCODE,
+	  			C_CITYNAME,
+	  			C_CITYNAMEEN,
+	  			C_COUNTRYCODE,
+	  			C_INDEX,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#citycode#,
+	  					
+	  						#cityname#,
+	  					
+	  						#citynameen#,
+	  					
+	  						#countrycode#,
+	  					
+							#index:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteFcity" parameterClass="long">
+    delete from T_FCITY
+    where ID = #id#
+  </delete>
+	
+  <update id="updateFcity" parameterClass="Fcity">
+    update T_FCITY 
+    set 
+    	C_CITYCODE = #citycode#,
+	  					C_CITYNAME = #cityname#,
+	  					C_CITYNAMEEN = #citynameen#,
+	  					C_COUNTRYCODE = #countrycode#,
+	  					C_INDEX = #index:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

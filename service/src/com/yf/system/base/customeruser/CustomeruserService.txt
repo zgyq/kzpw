@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 会员
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Customeruser createCustomeruser(Customeruser customeruser) throws SQLException;
+	
+	/**
+	 * 删除 会员
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCustomeruser(long id);
+	
+	
+	/**
+	 * 修改 会员
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCustomeruser(Customeruser customeruser);
+
+		
+	/**
+	 * 修改 会员但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCustomeruserIgnoreNull(Customeruser customeruser);
+		
+	
+	/**
+	 * 查找 会员
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomeruser(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 会员
+	 * @param id
+	 * @return
+	 */
+	public Customeruser findCustomeruser(long id);
+	
+	
+	/** 
+	 * 查找 会员
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCustomeruserForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找会员
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomeruserBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 会员
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCustomeruserBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCustomeruserBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ICustomeruserComponent customeruserComponent;
+	  
+ 	
+ 	public ICustomeruserComponent getCustomeruserComponent() {
+		return customeruserComponent;
+	}
+	public void setCustomeruserComponent(ICustomeruserComponent  customeruserComponent) {
+		this.customeruserComponent = customeruserComponent;
+	}
+	/**
+	 * 创建 会员
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Customeruser createCustomeruser(Customeruser customeruser) throws SQLException{
+	
+		return customeruserComponent.createCustomeruser(customeruser);
+	}
+	/**
+	 * 删除 会员
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCustomeruser(long id){
+	
+		return customeruserComponent.deleteCustomeruser(id);
+	}
+	
+	
+	/**
+	 * 修改 会员
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCustomeruser(Customeruser customeruser){
+		return customeruserComponent.updateCustomeruser(customeruser);
+	
+	}
+
+		
+	/**
+	 * 修改 会员但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCustomeruserIgnoreNull(Customeruser customeruser){
+			return customeruserComponent.updateCustomeruserIgnoreNull(customeruser);
+	
+	}
+	
+	/**
+	 * 查找 会员
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomeruser(String where, String orderby,int limit,int offset){
+		return customeruserComponent.findAllCustomeruser(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 会员
+	 * @param id
+	 * @return
+	 */
+	public Customeruser findCustomeruser(long id){
+		return customeruserComponent.findCustomeruser(id);
+	}
+	
+	/** 
+	 * 查找 会员
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCustomeruserForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return customeruserComponent.findAllCustomeruser(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找会员
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomeruserBySql(String sql,int limit,int offset){
+		return customeruserComponent.findAllCustomeruser(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 会员
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCustomeruserBySql(String sql){
+		return customeruserComponent.excuteCustomeruserBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCustomeruserBySql(String sql){
+		return customeruserComponent.countCustomeruserBySql(sql);
+	}
+	
+	
+

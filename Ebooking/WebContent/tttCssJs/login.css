@@ -1,0 +1,103 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.titlelogin,.button_login,.loginbot,.left_login,.right_login,.guildone,.guildtwo,.msger,.basic,.ico_basic,.left_list,.order,.ico_order,.ico_help,.kong,.mation,.mation_left,.mation_right,.button_searchmeb,.allmorny,.button_cancel,.ico_add,.ico_del,.ico_on,.firster,.seconder,.phone,.email,.button_first,.button_second,.tipseds,.close,.ico_mall,.ico_mallor{ background:url(../tttimages/member.png) no-repeat;}
+.mation_info,.guild,.guilder,.mation_infoer{background:url(../tttimages/bg_login.png)}
+.button_login{width:92px; height:40px; line-height:40px; text-align:center; background-position:0px -40px; border:none; color:#fff;cursor:pointer;}
+.button_searchmeb{ width:84px; height:24px; line-height:24px; background-position:-280px 0; border:none; cursor:pointer; padding-left:15px;}
+.button_cancel{ width:72px; height:22px; line-height:22px; background-position:-0px -310px; border:none; cursor:pointer; text-align:center ;}
+.button_first{ width:83px; height:28px; line-height:28px; background-position:-100px -340px; border:none; cursor:pointer;}
+.button_second{ width:83px; height:28px; line-height:28px; background-position:0px -340px; border:none; cursor:pointer; margin:10px 0 0 20px;}
+
+#login{ width:1004px; margin:0 auto;}
+
+#login .login_right{ width:300px;}
+#login .gobooking{ height:233px;}
+#login .gobookingone{padding:50px 0 0 30px;}
+#login .gobookingtwo{padding:20px 0 0 30px;}
+#login .gobookingbnt{padding:40px 0 0 100px;}
+#login .gobooktips{padding:0 30px 0 30px;}
+#login .regsiterone{padding:50px 0 0 30px;}
+#login .center_login{ width:600px; }
+
+#login .regsiterbnt{padding:25px 0 0 100px;}
+
+#left{width:260px;}
+#left .titlelogin{width:220px; height:31px; line-height:31px; padding-left:40px;}
+#left .loginer{ padding-left:30px; padding-top:10px; padding-right:27px;}
+#left .bnt{ height:55px; padding-top:10px;  border-top:1px dashed #ccc;}
+#left .loginbot{background-position:0 -90px; height:5px; line-height:5px; overflow:hidden}
+
+#right{width:733px;}
+#right .guild{height:190px;}
+
+#right .left_login{ background-position:-386px 0; background-repeat:repeat-x; width:30px; height:190px; }
+#right .right_login{ background-position:-428px 0; width:30px; height:190px; }
+#right .guildone{ background-position:-435px -205px; height:60px; padding-left:65px; line-height:30px; margin-top:30px; margin-left:20px;}
+#right .guildtwo{ background-position:-435px -265px; height:60px; padding-left:65px; line-height:30px; margin-top:20px; margin-left:20px;}
+
+#regsiter{ width:1004px; margin:0 auto;}
+#regsiter .regsit{ padding:20px 0 0 100px; font-family:'微软雅黑',tahoma; font-size:12px;}
+#regsiter .regsit ul{}
+#regsiter .regsit ul li{ height:50px; line-height:50px;}
+#regsiter .bnt{ padding-left:60px; padding-top:10px;}
+#regsiter .msger{ background-position:0 -380px; width:270px; height:130px;}
+
+#regsiter .cn_center{}
+
+#regsiter .first{ width:300px; padding-top:20px;}
+#regsiter .first ul{ margin-top:15px; padding-left:20px;}
+#regsiter .firster{ width:40px; height:32px; background-position:-160px -210px;}
+#regsiter .second{width:450px;padding-top:20px; padding-left:20px;}
+#regsiter .seconder{ width:40px; height:36px; background-position:-200px -210px;}
+#regsiter .phone{ background-position:-440px -340px; padding-left:55px; margin:10px 0 0 20px; line-height:26px;}
+#regsiter .email{ background-position:-440px -400px; padding-left:55px; margin:30px 0 0 20px; line-height:26px;}
+#regsiter .floatbox{border:1px solid #2397c3; width:280px; line-height:30px; background:#fff; z-index:999; position:absolute; left:380px; top:-190px;}
+#regsiter .floatboxin{border:3px solid #baddfb; line-height:30px; }
+#regsiter .floatboxin ul{ width:250px; margin:0 auto;}
+#regsiter .tipseds{ background-position:-240px -210px; padding-left:30px; margin-left:10px;}
+#regsiter .close{ background-position:-160px -310px; padding:16px 0 0 14px; margin-right:-10px; cursor:pointer;}
+#regsiter .button_first{ width:83px; height:28px; line-height:28px; background-position:-100px -340px; border:none; cursor:pointer;}
+#regsiter .button_second{ width:83px; height:28px; line-height:28px; background-position:0px -340px; border:none; cursor:pointer; margin:10px 0 0 20px;}
+
+
+#member{ width:980px; margin:0 auto;}
+#member .left{ width:179px; } 
+
+#member .right{ width:768px; margin-right:20px; display:inline}
+#member .basic{ height:36px; line-height:34px; background-position:0 -121px;}
+#member .ico_basic{ padding-left:15px; margin-left:15px; background-position:0 -206px; height:32px; display:block; width:20px;}
+#member .left_list{ height:27px; line-height:27px; padding-left:45px; background-position:0 -160px;}
+#member .order{height:36px; line-height:34px; background-position:0 -120px;}
+#member .ico_order{ padding-left:15px; margin-left:15px; background-position:-72px -206px; height:32px; display:block; width:20px;}
+#member .ico_help{ padding-left:15px; margin-left:15px; background-position:-32px -206px; height:32px; display:block; width:20px;}
+#member .ico_mall{ padding-left:15px; margin-left:15px; background-position:-290px -206px; height:32px; display:block; width:20px;}
+#member .ico_mallor{ padding-left:15px; margin-left:15px; background-position:-340px -206px; height:32px; display:block; width:20px;}
+#member .kong{height:7px; line-height:7px;background-position:0 -160px; overflow:hidden;}
+#member .mation{ height:23px; line-height:23px; text-align:center; width:82px; background-position:-25px -245px; margin-left:25px;}
+#member .mation_info{ height:29px; line-height:29px; background-position:0 -220px;}
+#member .mation_infoer{ height:27px; line-height:27px; background-position:0 -221px;}
+#member .mation_left{ background-position:0 -269px; padding-left:40px; padding-right:30px;}
+#member .mation_right{ background-position:-130px -269px; padding-left:31px;}
+#member .data{ line-height:35px; padding-top:20px;}
+#member .save{ height:90px; padding-left:180px;}
+#member .update{ height:40px; padding-top:20px; padding-left:170px;}
+#member .search{ height:35px; padding-top:10px; padding-left:50px;}
+#member .over{ width:96%; margin:0 auto;}
+#member .overmorny{ line-height:38px;width:150px;}
+#member .range{width:96%; margin:0 auto; padding:5px; height:40px;}
+#member .airport{ width:160px; line-height:19px;}
+#member .model{width:110px;line-height:19px;}
+#member .fuel{line-height:38px;width:80px;}
+#member .meal{line-height:38px; width:90px; position:relative;}
+#member .btn{width:80px; padding:7px 0; text-align:center}
+#member .allmornydetail{ text-align:center; height:40px; line-height:40px;}
+#member .allmorny{ line-height:40px; background-position:-120px -208px; padding-left:30px; padding-top:7px; padding-bottom:7px;}
+#member .bntt{ height:50px; padding-top:20px; text-align:center;}
+#member .ico_add{ background-position:-270px -40px; padding-left:12px; }
+#member .ico_del{ background-position:-350px -40px; padding-left:12px; margin-top:5px;}
+#member .ico_on{ background-position:-310px -40px; padding-left:12px;}
+#member .guilder{ background-position:0 -4px;}
+#member .description{ text-indent:2em;}
+#member .ptd5{ padding:5px 20px 5px 20px;}

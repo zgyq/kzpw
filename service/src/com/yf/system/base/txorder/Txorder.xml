@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Txorder">
+  
+  <typeAlias alias="Txorder" type="com.yf.system.base.txorder.Txorder"/>
+  
+
+  <resultMap id="resultTxorderMap" class="Txorder">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderno" column="C_ORDERNO"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="feilv" column="C_FEILV"/>
+  
+     <result property="feilvstr" column="C_FEILVSTR"/>
+  
+     <result property="fenrunstr" column="C_FENRUNSTR"/>
+  
+     <result property="sjprice" column="C_SJPRICE"/>
+  
+     <result property="alipayname" column="C_ALIPAYNAME"/>
+  
+     <result property="beizhu" column="C_BEIZHU"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllTxorder"  resultMap="resultTxorderMap"  parameterClass="java.util.Map">
+  
+    select * from T_TXORDER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTxorderBySql"  resultMap="resultTxorderMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTxorderBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTxorderBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TXORDER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTxorder" parameterClass="long" resultClass="Txorder">
+    select 
+    	ID as id,
+	  			C_ORDERNO as orderno,
+	  			C_PRICE as price,
+	  			C_FEILV as feilv,
+	  			C_FEILVSTR as feilvstr,
+	  			C_FENRUNSTR as fenrunstr,
+	  			C_SJPRICE as sjprice,
+	  			C_ALIPAYNAME as alipayname,
+	  			C_BEIZHU as beizhu,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_MEMBERID as memberid,
+	  			C_TYPE as type,
+	  			C_STATE as state 
+     from T_TXORDER
+    where ID = #id#
+  </select>
+   
+  <insert id="createTxorder" parameterClass="Txorder">
+    insert into T_TXORDER ( 
+    	ID,
+	  			C_ORDERNO,
+	  			C_PRICE,
+	  			C_FEILV,
+	  			C_FEILVSTR,
+	  			C_FENRUNSTR,
+	  			C_SJPRICE,
+	  			C_ALIPAYNAME,
+	  			C_BEIZHU,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_MEMBERID,
+	  			C_TYPE,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#orderno#,
+	  					
+	  						#price#,
+	  					
+	  						#feilv#,
+	  					
+	  						#feilvstr#,
+	  					
+	  						#fenrunstr#,
+	  					
+	  						#sjprice#,
+	  					
+	  						#alipayname#,
+	  					
+	  						#beizhu#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+							#memberid:DECIMAL#,
+						
+							#type:DECIMAL#,
+						
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTxorder" parameterClass="long">
+    delete from T_TXORDER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTxorder" parameterClass="Txorder">
+    update T_TXORDER 
+    set 
+    	C_ORDERNO = #orderno#,
+	  					C_PRICE = #price#,
+	  					C_FEILV = #feilv#,
+	  					C_FEILVSTR = #feilvstr#,
+	  					C_FENRUNSTR = #fenrunstr#,
+	  					C_SJPRICE = #sjprice#,
+	  					C_ALIPAYNAME = #alipayname#,
+	  					C_BEIZHU = #beizhu#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MEMBERID = #memberid:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

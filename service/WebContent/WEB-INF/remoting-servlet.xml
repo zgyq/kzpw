@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	<import resource="MemberService.xml" />
+	<!--这里不去掉的原因为：加盟商添加时用到此service的获得省的方法。-->
+	<import resource="HotelService.xml" />
+	<import resource="AirService.xml" />
+	<import resource="CompanyService.xml" />
+	<import resource="SystemService.xml" />
+	<import resource="TripService.xml"/> 
+
+	<import resource="IhotelService.xml" />
+	<import resource="CarService.xml" />
+	<import resource="TrainService.xml" />
+
+
+	<import resource="InterTicketService.xml" />
+	<bean id="myDataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName"
+			value="net.sourceforge.jtds.jdbc.Driver" />
+
+		<property name="url"
+			value="jdbc:jtds:sqlserver://127.0.0.1:1433/GD_DB" />
+		<property name="username" value="sa" />
+		<property name="password" value="252493618" />
+		<property name="maxActive" value="50" />
+		<property name="maxIdle" value="5" />
+		<property name="maxWait" value="1000" />
+		<property name="minIdle" value="1" />
+		<property name="defaultAutoCommit" value="true" />
+
+	</bean>
+	<bean id="sqlMapClient"
+		class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="dataSource" ref="myDataSource" />
+		<property name="configLocation">
+			<value>WEB-INF/SqlMapConfig.xml</value>
+		</property>
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource">
+			<ref local="myDataSource" />
+		</property>
+	</bean>
+
+</beans>

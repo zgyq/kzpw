@@ -1,0 +1,200 @@
+@charset "gb2312";
+/* CSS Document */
+body{margin:0px; padding:0px; font-size:12px; font-family:"宋体"; color:#36322f; font-size:12px; line-height:21px; background:#fff;}
+a{color:#2577e3;}
+img{border:0px;}
+a:link {text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
+ul, p, dl, dt, dd, li, img, div, p, table {padding:0px; margin:0px;}
+li{list-style-position:outside; list-style-type:none;}
+h1, h2, h3, h4, h5{ padding:0px; margin:0px; font-weight:normal;}
+h2 { font-size:18px;}
+h5 { font-size:14px; line-height:21px;}
+.clearit { clear:both; width:0px; height:0px; overflow:hidden; zoom:1;}
+.space { height:10px; overflow:hidden;}
+img { vertical-align:top;}
+
+
+/*搜索页面样式*/
+.search input{ width:30%}
+.searchs{ margin:0 auto; padding-top:100px; width:795px;}
+.searchs-bg{background:url(../img/srarchs-bg.png) no-repeat; width:795px; height:350px }
+.search-box{ width:355px; padding:10px; text-align:center; float:left}
+.search-box h1{ font-size:16px; text-indent:20px; line-height:40px; color:#fff; text-align:left; margin-bottom:20px;}
+.search-box h1 span{ background:url(../img/train-icon.png) no-repeat left center; width:12px; height:16px; display:inline-block; padding-right:10px;}
+.search-box .types{ padding:7px 0; font-size:14px}
+.search-btn{ margin:10px 0; padding-left:70px;}
+.search-btn span{ display:inline-block; padding-top:23px;}
+.news-box{ float:right; width:383px; padding:10px;}
+.news-box h1{ font-size:16px; text-indent:20px; line-height:40px; color:#fff; text-align:left; margin-bottom:20px;}
+.news-box h1 span{ background:url(../img/news-icon.png) no-repeat left center; width:12px; height:16px; display:inline-block; padding-right:10px;}
+.news-box ul{ height:258px;overflow-y:scroll;overflow-x:hidden}
+.news-box li{ height:35px; line-height:35px; text-align:left; font-size:12px; text-indent:10px; width:370px; overflow:hidden}
+.news-box li a{ color:#333333}
+.news-box li.gray-bg{ background:#ecf0f3}
+
+
+/*搜索结果页面样式*/
+
+.box{ margin:30px auto 0; width:91%; height:100%; overflow:auto; }
+.date{ border:1px solid #cedefc; margin:10px 0}
+.date table tr td{ text-align:center; height:45px;border-right:1px solid #cedefc; padding-top:5px; background:#ecf2fb}
+.date td.td-now{ background:#fff; border-top:2px solid #2577e3; height:43px}
+.date td span{ display:block;}
+.ticket-detail{ height:100%; overflow:auto; margin:20px 0 10px;}
+.ticket-detail .train-num{ font-size:20px; font-weight:bold; margin-bottom:10px}
+.ticket-detail .train-num font{ font-size:14px; }
+.train-chose{ height:35px; float:left}
+.train-chose dl dt{ float:left}
+.train-chose dl .no-limit{ background:#2577e3;text-align:center; height:20px; width:40px; margin:0 10px}
+.train-chose dl .no-limit a{ color:#fff;}
+.train-chose dl dd{ float:left; width:100px}
+.more{ float:left}
+.icon_show{ border-color: #0066CC rgba(0, 0, 0, 0) rgba(0, 0, 0, 0); border-style: solid dashed dashed;border-width: 5px;display: inline-block;height: 0;margin-left: 2px;overflow: hidden;vertical-align: -4px;width: 0; border-right:transparent 5px solid; border-top:#06c 5px solid}
+.icon_hide{border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #0066CC; vertical-align: 1px; border-style:dashed dashed solid;border-width: 5px;display: inline-block;height: 0;margin-left: 2px;overflow: hidden; width:0; border-bottom-color:#06c;}
+.result-show{ height:100%; overflow:auto; position:relative}
+.result-show .show-tit{ height:40px; background:#5598f6; border-bottom:1px solid #1068bf; padding-left:20px; line-height:40px; color:#fff;}
+.result-show .show-con { margin:10px 0; padding:10px 0 10px 20px; border-bottom:1px dashed #dadbdd; height:100%; overflow:auto;}
+.result-show td.trains{ width:15%}
+.result-show td.station{ width:14%}
+.result-show td.start-time{ width:12%}
+.result-show td.run-time{ width:12%}
+.result-show td.prices{ width:24%;}
+.result-show td.prices b{ color:#fd492a; padding-right:70px; font-size:14px}
+.result-show .show-con .orange{ color:#fd492a; font-size:20px; font-weight:bold}
+.result-show td.prices .no-ticket b{ color:#838383}
+span.begin,span.pass,span.end{ display: block; height:18px;vertical-align: middle; text-align:left; margin-bottom:8px; text-indent:20px; line-height:20px; padding:0;}
+span.begin{ background:url(../img/start-station.png) no-repeat left top;}
+span.pass{ background:url(../img/start-station.png) no-repeat left center;}
+span.end{ background:url(../img/start-station.png) no-repeat left bottom;}
+.pass-sation{height:100%; overflow:auto; *margin-top:10px; background:#f7f6f6; width:98%; margin:10px 0;}
+.pass-sation td{ border:1px solid #ebe7e7; padding:3px; border-left:none; text-align:center;}
+.search-result .btn{ padding-left:20px; float:left}
+td.no-ticket-book{ padding:10px; margin:10px 0; width:210px; background:#f4f4f4; color:#fd492a; display:block; position: absolute; top:355px; right:60px;
+*top:375px;}
+
+/*下单页面样式*/
+
+.ticket-info{ height:100%; overflow:auto;}
+.info-con{ padding:10px 0 15px 30px; height:100%; overflow:auto;}
+.ticket-info .info-tit{ height:40px; background:#f5f5f5; margin-bottom:10px; font-size:16px; color:#36322f; text-indent:20px; line-height:45px;}
+.ticket-info .info-tit font{ font-size:12px; color:#969595;}
+.ticket-num{ float:left; width:15%; padding-left:20px}
+.ticket-num strong{ display:block; font-size:28px; padding-bottom:10px}
+.ticket-num font{ display:block; font-size:14px;}
+.ticket-con{ float:left; width:30%}
+.ticket-con li{ line-height:25px; padding-bottom:3px;}
+.ticket-con .title{ font-size:22px; color:#2577e3; font-weight:bold;}
+.ticket-con .title b{ font-size:14px;}
+.new-chose{ float:left; padding-top:80px;}
+.user-info{ height:100%; overflow:hidden}
+.user-info ul.style li{ float:left; width:50%;text-align:center; height:60px; line-height:15px; background:#2577e3; padding-top:15px; cursor:pointer;}
+.user-info ul.style .li-now{ background:#f5f5f5;}
+.user-info ul.style li a{ color:#fff; font-size:20px}
+.user-info ul.style .li-now a{ color:#000;}
+.user-info ul.style li span{ display:block; margin-top:10px; font-size:14px;}
+.user-info .qupiao{ height:100%; overflow:auto; border:1px solid #2577e3; padding:10px}
+.qupiao h2{ background:#f5f5f5; height:40px; color:#535353; line-height:40px; text-indent:10px;}
+.qupiao h2 span{ font-size:12px; color:#bdb9b9}
+.qupiao .user-name{ padding:10px; border-bottom:1px solid #f5f5f5}
+.user-info .qupiao .pas{ height:100%; overflow:auto; padding-top:10px;}
+.pas  ul { height:auto; overflow: hidden; }
+.user-info .pas  ul li{ float:left; text-align:center; height:25px;background:none; }
+.user-info .pass{ padding:10px;}
+.user-info .pass li{ padding-top:5px;}
+.pas  ul .none{ width:30px;}
+.pas  ul .xm{ width:146px;}
+.pas  ul .lx{ width:120px;}
+.pas  ul .zj{ width:120px;}
+.pas  ul .hm{ width:252px;}
+.pass{ background:#eff5fe; padding:0; height:30px; padding-top:10px;}
+.pass .del a{ display:inline-block; background:url(../img/del.gif) no-repeat left top; text-indent:20px; margin-left:10px; color:#2577e3; font-size:12px; width:65px;}
+.pass .del { margin-right:10px; width:60px;}
+.pass .baocun{ width:120px;}
+.pass .baocun a{ color:#2577e3; font-size:12px;}
+.tishi{ padding:10px; color:#2c7dfe}
+.tx{ text-align:center; padding:10px 0 30px 0;}
+.tx img{ cursor:pointer}
+
+.insu{ margin-bottom:20px;}
+.insu-type{ margin:20px 0 10px 10px;}
+.insu-type label{ margin-right:30px; font-size:14px;}
+.checked ul{ height:100%; overflow:auto; margin-left:15px;}
+.user-info .qupiao .checked ul li{ float:left; width:220px; background:url(../img/checked.gif) no-repeat left center; height:20px; text-indent:20px}
+.tiqu-deti{height:100%; overflow:auto; overflow-y:hidden}
+.tiqu-img{ float:left; width:100px; margin-top:20px; padding-left:20px;}
+.tiqu-detail{ float:right; width:85%; padding:30px 0 0 10px;}
+.warn{ background:url(../img/warn.png) left center no-repeat; color:#2577e3; text-indent:20px; margin-top:10px;}
+.insu-info{ margin:20px 0;}
+.fapiao{ text-indent:20px; background:url("../img/ticket-icon.png") no-repeat; margin-top:20px; margin-left:190px;}
+.agree{ margin:20px 0; text-align:center}
+.submit{ cursor:pointer; text-align:center}
+.peisong{position:relative;}
+.peisong .peisong-info{ text-align: left; padding:10px; float:none; height:100%; overflow:auto}
+.peisong .peisong-info input{ width:120px; margin-right:10px;}
+.peisong .peisong-info li{ float:left; width:295px; margin-bottom:10px}
+.peisong .peisong-info li.address{ width:600px}
+
+.erro{width:600px; height:310px;  margin:0 auto; padding-top:70px}
+.dingdan{ width:550px; height:270px;padding:32px 20px 10px 30px; background:url(../img/erro-bg.gif) no-repeat;}
+.tit{text-indent:47px; font-size:16px; font-weight:bold; color:#1643b8; font-family:Verdana, Geneva, sans-serif;background:url(../img/erro-icon.png) left center no-repeat; height:40px; line-height:43px; margin-left:85px;}
+.line3{ border-bottom:1px dotted #4469ca; height:1px; overflow:hidden; margin:15px 20px 0}
+.text{ width:540px; height:220px;}
+.pc{ width:180px; height:220px; background:url(../img/pc.jpg) no-repeat left 35px; float:left;}
+.prompt{ float:right; width:345px; height:100%; overflow:auto; margin-top:25px;}
+.tishis{ font-size:13px; margin:5px 0;}
+.tishis-btn{ margin-top:20px; cursor:pointer;}
+
+/*火车票订单列表查询*/
+
+.search{ background:#f5f5f5;padding:10px; font-size:14px;}
+.search .btn3{ float:left;background:url(../img/search3.png) no-repeat; width:50px; height:30px; cursor:pointer;}
+.search .date{background:#f5f5f5; height:50px; font-size:14px; margin-top:10px;}
+.order-resu{ border: 1px solid #dfdfdf;margin-top:10px; border-right:0; border-bottom:0;}
+.order-resu table td{ width:9%;}
+.order-resu-top{ background:#eae8e8; height:40px; line-height:38px; text-align:center; border-bottom:1px solid #dfdfdf; color:#000; }
+.order-resu-con{line-height:40px; text-align:center; color:#8d8c8c}
+.order-resu table td{ border-right:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;}
+.order-resu table td a{ text-decoration:none;}
+.order-resu table td a:hover{ color:#ee330a;}
+.order-resu .order-resu-con td a.btns:hover{ color:#fff;}
+.order-resu-con tr a.btns{margin:5px; background:#2577e1;display:inline-block; width:70px; height:25px; line-height:27px; color:#fff}
+.message{background:#fff;text-align:left; text-indent:20px;  z-index:999; position:fixed;margin:auto;left:0; right:0; top:0; bottom:0;width:50%; height:700px;*position:fixed;  *left:25%;*right:25%;*top:25%;*bottom:25%}
+.message h2{ height:35px; color:#fff; background:#2577e3; font-size:14px;line-height:37px;*line-height:37px;}
+.message td{ border:0; width:0%}
+.message tr{ text-indent:20px; line-height:30px;}
+.order-resu .order-resu-con .message .me-info td{ border-bottom:1px solid #dfdfdf; border-right:1px solid #dfdfdf}
+.message input{ width:80%; height:20px;}
+.message .save{ margin:20px 0;}
+.message .save-tit{ width:4%; text-align:left}
+.message .save-con{ text-indent:0;}
+.message .save textarea{ height:40px; width:80%}
+.save-btn a{ display:inline-block; background:url(../img/save-btn.gif) no-repeat; width:74px; height:26px;line-height:24px; text-align:center; text-indent:0}
+.order-resu .order-resu-con .message td{ border:0;}
+
+
+
+/*翻页样式*/
+.next-page{float:right; margin-top:20px;}
+.next-page div{ float:left; margin-right:7px;}
+.shouye,.p-page,.n-page,.l-page,.ones{ border:1px solid #cccccc; text-align:center; cursor:pointer;}
+.gongji{ width:50px;}
+.ones{ width:30px; background:#dff3ff; font-weight:bold;}
+.shouye{ width:40px;}
+.p-page{ width:40px;}
+.n-page{ width:40px;}
+.l-page{ width:35px;}
+.fast img{ margin-left:3px;}
+
+
+
+
+
+
+
+
+
+
+
+

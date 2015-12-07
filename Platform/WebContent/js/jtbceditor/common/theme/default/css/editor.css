@@ -1,0 +1,90 @@
+.jtbcEditorDiv {
+	MARGIN: 0px; POSITION: relative; BACKGROUND: #EFEFDE; BORDER: #999999 1px solid
+}
+.jtbcEditorDivPanel {
+	MARGIN: 0px; PADDING: 2px; BORDER-BOTTOM: #999999 1px solid
+}
+.jtbcEditorDivPanel IMG {
+	CURSOR: pointer; PADDING: 2px; BORDER: #EFEFDE 1px solid
+}
+.jtbcEditorDivPanel IMG.jtbcEditorSelected {
+	CURSOR: pointer; PADDING: 2px; BORDER: #316AC5 1px solid; BACKGROUND: #DFF1FF
+}
+.jtbcEditorTextarea {
+	MARGIN: 0px; PADDING: 0px; FONT-SIZE: 12px; BACKGROUND: #FFFFFF; BORDER: 0px; OVERFLOW-Y: scroll; VERTICAL-ALIGN: middle
+}
+.jtbcEditorIframe {
+	MARGIN: 0px; BACKGROUND: #FFFFFF
+}
+.jtbcEditorColorTable {
+	MARGIN: 0px; BACKGROUND: #EFEFDE; BORDER: #999999 1px solid
+}
+.jtbcEditorColorTable TD {
+	FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.jtbcEditorColorTable TD IMG {
+	CURSOR: pointer; BORDER: #999999 1px solid
+}
+.jtbcEditorSmileyTable {
+	MARGIN: 0px; BACKGROUND: #EFEFDE; BORDER: #999999 1px solid
+}
+.jtbcEditorSmileyTable TD {
+	FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.jtbcEditorSmileyTable TD IMG {
+	CURSOR: pointer; MARGIN: 3px; WIDTH: 19px; HEIGHT: 19px
+}
+.jtbcEditorMessageTable {
+	MARGIN: 0px; BACKGROUND: #EFEFDE; BORDER: #999999 1px solid
+}
+.jtbcEditorMessageTable TD {
+	FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.jtbcEditorMessageTable TD.jtbcEditorTD1 {
+	PADDING-TOP: 2px; PADDING-BOTTOM: 2px; TEXT-ALIGN: right
+}
+.jtbcEditorMessageTable TD SPAN {
+	PADDING-LEFT: 30px; PADDING-RIGHT: 30px; COLOR: #333333; FONT-WEIGHT : normal
+}
+.jtbcEditorMessageTable TD INPUT {
+	MARGIN: 0px; PADDING: 0px; VERTICAL-ALIGN: middle
+}
+.jtbcEditorMessageTable TD INPUT.jtbcEditorMessageButton {
+	HEIGHT: 22px; BACKGROUND: #DEDEDE; BORDER: #999999 1px solid
+}
+.jtbcEditorLinkTable {
+	MARGIN: 0px; BACKGROUND: #EFEFDE; BORDER: #999999 1px solid
+}
+.jtbcEditorLinkTable TD {
+	FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.jtbcEditorLinkTable TD.jtbcEditorTD1 {
+	PADDING-TOP: 2px; PADDING-BOTTOM: 2px; TEXT-ALIGN: right
+}
+.jtbcEditorLinkTable TD INPUT {
+	MARGIN: 0px; PADDING: 0px; VERTICAL-ALIGN: middle
+}
+.jtbcEditorLinkTable TD INPUT.jtbcEditorLinkText {
+	WIDTH: 240px; HEIGHT: 16px; PADDING: 2px; BORDER: #999999 1px solid
+}
+.jtbcEditorLinkTable TD INPUT.jtbcEditorLinkButton {
+	HEIGHT: 22px; BACKGROUND: #DEDEDE; BORDER: #999999 1px solid
+}
+.jtbcEditorImageTable {
+	MARGIN: 0px; BACKGROUND: #EFEFDE; BORDER: #999999 1px solid
+}
+.jtbcEditorImageTable TD {
+	FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.jtbcEditorImageTable TD.jtbcEditorTD1 {
+	PADDING-TOP: 2px; PADDING-BOTTOM: 2px; TEXT-ALIGN: right
+}
+.jtbcEditorImageTable TD INPUT {
+	MARGIN: 0px; PADDING: 0px; VERTICAL-ALIGN: middle
+}
+.jtbcEditorImageTable TD INPUT.jtbcEditorImageText {
+	WIDTH: 240px; HEIGHT: 16px; PADDING: 2px; BORDER: #999999 1px solid
+}
+.jtbcEditorImageTable TD INPUT.jtbcEditorImageButton {
+	HEIGHT: 22px; BACKGROUND: #DEDEDE; BORDER: #999999 1px solid
+}

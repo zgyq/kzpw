@@ -1,0 +1,2917 @@
+ 
+ 
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>订单信息表列表</title>
+<link href="../style/base.css" rel="stylesheet" />
+<link href="../style/text.css" rel="stylesheet" />
+<link href="../style/bass.css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" href="../style/base100108.css" />
+<link rel="stylesheet" type="text/css"
+	href="../js/resources/css/ext-all.css" />
+<script src="../js/jquery1.3.2.js"></script>
+<script type="text/javascript" src="../js/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="../js/ext-all.js"></script>
+<script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
+<script src="../js/jquery-ui-all-min-lastest.js" type="text/javascript"></script>
+<script charset="UTF-8" src="../js/dialog.js" type="text/javascript"></script>
+<link href="../style/mapcss.css" rel="stylesheet" type="text/css" />
+<link href="../style/dialog.css" rel="stylesheet" type="text/css" />
+<style> 
+fieldset {
+    padding:10px;
+    margin:5px;
+    width:96%;
+    color:#333; 
+    border:#ccc dashed 1px;
+} 
+legend {
+    color:#114F82;
+    font-weight:800; 
+    background:#fff;
+} 
+ul {
+    list-style-type: none;
+    margin:8px 0 4px 0;
+} 
+li {
+    margin-top:4px;
+}
+</style>
+<script> 
+
+function showpeisong()
+{
+      	$("#divpassenger").dialog({
+		                title:'待配送订单处理',
+		                show: null,
+		                bgiframe: false,
+		                autoOpen: false,
+		                draggable: true,                
+		                resizable: true,
+		                modal: true,
+		                width: 580,
+		                height: 380
+		            });
+		         $("#divpassenger").dialog("open");
+		         $("#divpassenger").html("<table><tr><td>请选择配送员：</td><td><select><option>张三</option><option>李四</option><option>王五</option></select></td><td>&nbsp</td><td>配送地点：</td><td><input type='text' style='width:250px' value='测试送票地址'></td></tr><tr><td align='right'>是否支付：</td><td align='left'>未支付</td><td>&nbsp</td><td align='right'>是否是大客户:</td><td align='left'>是</td></tr><tr><td align='right'>备注说明：</td><td colspan='4' align='left'><textarea rows='12' cols='65'></textarea></td></tr><tr><td colspan='5' align='center'><br /><input type='button' class='button_d font-white' id='btnsearch' value='配送此订单' /></td></tr></table>");
+}
+//退票时，选中所有的乘机人
+function checkallbox()
+{
+    if($('#checkboxflag').val()=="0")
+    {
+       $("input[id*='chkpassenger_']").each(function(i)
+       {
+          $(this).attr("checked",true);
+       }
+       );
+       $('#checkboxflag').val("1");
+    }
+    else
+    {
+        $("input[id*='chkpassenger_']").each(function(i)
+       {
+          $(this).attr("checked",false);
+       }
+       ); 
+       $('#checkboxflag').val("0");
+    }
+}
+ 
+//点击申请退票
+function tuiticket(id)
+{
+ 
+    var passengerids="";
+    var checkfalg="false";
+    var number=0;
+    $("input[id*='chkpassenger_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+             number++;
+          }
+       }
+       );
+      
+     if(number>0)
+     {
+	    checkfalg="true";
+     }
+     else
+     {
+         alert("请至少选中一个要申请退票的乘机人！");
+         checkfalg="false";
+         return false;
+     } 
+     
+     if(checkfalg=="true")
+     {
+       $("input[id*='txtpassid_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+              passengerids+=$(this).val()+",";
+          }
+       }
+       );
+	    if(confirm('您确定要对选中的乘机人进行申请退票操作吗？'))
+	    {
+	   	  var re = /^[0-9]+.?[0-9]*$/;
+	    	if(!re.test($("#txttuifee").val())){
+	    	 alert("请输入数字(例:88.02)");
+	    	 return;   
+	    	}else{
+	    	 
+	       window.location.href='orderinfo!editorderstatus.action?id='+id+'&orderstatus=4&pr=2&passid='+passengerids+'&tui='+$("#txttuifee").val();
+	   }
+	    }
+     }
+    
+}
+//点击申请废票
+function feiticket(id)
+{
+    var passengerids="";
+    var checkfalg="false";
+    var number=0;
+    $("input[id*='chkpassenger_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+             number++;
+          }
+       }
+       );
+      
+     if(number>0)
+     {
+	    checkfalg="true";
+     }
+     else
+     {
+         alert("请至少选中一个要申请废票的乘机人！");
+         checkfalg="false";
+         return false;
+     } 
+     
+     if(checkfalg=="true")
+     {
+       $("input[id*='txtpassid_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+              passengerids+=$(this).val()+",";
+          }
+       }
+       );
+	    if(confirm('您确定要对选中的乘机人进行申请废票操作吗？'))
+	    {
+	       window.location.href='orderinfo!editorderstatus.action?id='+id+'&orderstatus=5&pr=1&passid='+passengerids;
+	    }
+     }
+    
+}
+//点击申请改签
+function gaiticket(id)
+{
+    var passengerids="";
+    var checkfalg="false";
+    var number=0;
+    $("input[id*='chkpassenger_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+             number++;
+          }
+       }
+       );
+      
+     if(number>0)
+     {
+	    checkfalg="true";
+     }
+     else
+     {
+         alert("请至少选中一个要申请改签的乘机人！");
+         checkfalg="false";
+         return false;
+     } 
+     
+     if(checkfalg=="true")
+     {
+       $("input[id*='txtpassid_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+              passengerids+=$(this).val()+",";
+          }
+       }
+       );
+	    if(confirm('您确定要对选中的乘机人进行申请改签操作吗？'))
+	    {
+	       window.location.href='orderinfo!editorderstatus.action?id='+id+'&orderstatus=13&pr=3&passid='+passengerids;
+	    }
+     }
+    
+}
+//点击退票通过
+function shenhetuiticket(id)
+{
+    var passengerids="";
+    var checkfalg="false";
+    var number=0;
+    $("input[id*='chkpassenger_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+             number++;
+          }
+       }
+       );
+      
+     if(number>0)
+     {
+	    checkfalg="true";
+     }
+     else
+     {
+         alert("请至少选中一个要退票的乘机人！");
+         checkfalg="false";
+         return false;
+     } 
+     
+     if(checkfalg=="true")
+     {
+       $("input[id*='txtpassid_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+              passengerids+=$(this).val()+",";
+          }
+       }
+       );
+	    if(confirm('您确定要对选中的乘机人进行退票操作吗？'))
+	    {
+	       window.location.href='orderinfo!editorderstatus.action?id='+id+'&orderstatus=12&pr=2&passid='+passengerids+'&beizhu='+encodeURI($("#beizhu").val())+'&no=2';
+	    }
+     }
+    
+}
+//点击废票通过
+function shenhefeiticket(id)
+{
+    var passengerids="";
+    var checkfalg="false";
+    var number=0;
+    $("input[id*='chkpassenger_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+             number++;
+          }
+       }
+       );
+      
+     if(number>0)
+     {
+	    checkfalg="true";
+     }
+     else
+     {
+         alert("请至少选中一个要废票的乘机人！");
+         checkfalg="false";
+         return false;
+     } 
+     
+     if(checkfalg=="true")
+     {
+       $("input[id*='txtpassid_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+              passengerids+=$(this).val()+",";
+          }
+       }
+       );
+	    if(confirm('您确定要对选中的乘机人进行废票操作吗？'))
+	    {
+	       window.location.href='orderinfo!editorderstatus.action?id='+id+'&orderstatus=11&pr=1&passid='+passengerids+'&beizhu='+encodeURI($("#beizhu").val())+'&no=2';
+	    }
+     }
+    
+}
+//点击改签通过
+function shenhegaiticket(id)
+{
+    var passengerids="";
+    var checkfalg="false";
+    var number=0;
+    $("input[id*='chkpassenger_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+             number++;
+          }
+       }
+       );
+      
+     if(number>0)
+     {
+	    checkfalg="true";
+     }
+     else
+     {
+         alert("请至少选中一个要改签的乘机人！");
+         checkfalg="false";
+         return false;
+     } 
+     
+     if(checkfalg=="true")
+     {
+       $("input[id*='txtpassid_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+              passengerids+=$(this).val()+",";
+          }
+       }
+       );
+	    if(confirm('您确定要对选中的乘机人进行改签操作吗？'))
+	    {
+	       window.location.href='orderinfo!editorderstatus.action?id='+id+'&orderstatus=14&pr=3&passid='+passengerids+'&beizhu='+encodeURI($("#beizhu").val())+'&no=2';
+	    }
+     }
+    
+}
+//点击退票不通过
+function noshenhetuiticket(id)
+{
+    var passengerids="";
+    var checkfalg="false";
+    var number=0;
+    $("input[id*='chkpassenger_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+             number++;
+          }
+       }
+       );
+      
+     if(number>0)
+     {
+	    checkfalg="true";
+     }
+     else
+     {
+         alert("请至少选中一个乘机人！");
+         checkfalg="false";
+         return false;
+     } 
+     
+     if(checkfalg=="true")
+     {
+       $("input[id*='txtpassid_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+              passengerids+=$(this).val()+",";
+          }
+       }
+       );
+	    if(confirm('您确定要对选中的乘机人进行退票不通过操作吗？'))
+	    {
+	  //  alert($("#beizhu").val());
+	       window.location.href='orderinfo!editorderstatus.action?id='+id+'&orderstatus=17&pr=2&passid='+passengerids+'&beizhu='+encodeURI($("#beizhu").val())+'&no=2';
+	    }
+     }
+    
+}
+//点击废票不通过
+function noshenhefeiticket(id)
+{
+    var passengerids="";
+    var checkfalg="false";
+    var number=0;
+    $("input[id*='chkpassenger_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+             number++;
+          }
+       }
+       );
+      
+     if(number>0)
+     {
+	    checkfalg="true";
+     }
+     else
+     {
+         alert("请至少选中一个乘机人！");
+         checkfalg="false";
+         return false;
+     } 
+     
+     if(checkfalg=="true")
+     {
+       $("input[id*='txtpassid_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+              passengerids+=$(this).val()+",";
+          }
+       }
+       );
+	    if(confirm('您确定要对选中的乘机人进行废票不通过操作吗？'))
+	    {
+	       window.location.href='orderinfo!editorderstatus.action?id='+id+'&orderstatus=7&pr=1&passid='+passengerids+'&no=2'+'&beizhu='+encodeURI($("#beizhu").val());
+	    }
+     }
+    
+}
+//点击改签不通过
+function noshenhegaiticket(id)
+{
+    var passengerids="";
+    var checkfalg="false";
+    var number=0;
+    $("input[id*='chkpassenger_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+             number++;
+          }
+       }
+       );
+      
+     if(number>0)
+     {
+	    checkfalg="true";
+     }
+     else
+     {
+         alert("请至少选中一个乘机人！");
+         checkfalg="false";
+         return false;
+     } 
+     
+     if(checkfalg=="true")
+     {
+       $("input[id*='txtpassid_']").each(function(i)
+       {
+          if(document.getElementById("chkpassenger_"+i).checked==true)
+          {
+              passengerids+=$(this).val()+",";
+          }
+       }
+       );
+	    if(confirm('您确定要对选中的乘机人进行改签不通过操作吗？'))
+	    {
+	       window.location.href='orderinfo!editorderstatus.action?id='+id+'&orderstatus=15&pr=3&passid='+passengerids+'&no=2'+'&beizhu='+encodeURI($("#beizhu").val());
+	    }
+     }
+    
+}
+ function hide() {
+               document.getElementById("xie").style.display = "none";
+               document.getElementById("content1").style.display = "none";
+           }
+  function hi() {
+var da =  document.getElementById("da").value;
+//alert("da="+da) 
+var u =document.getElementById("hur").value;
+//alert(u+'&tui='+da);
+	window.location.href=u+'&tui='+da;       
+           }
+ function goEdit2(ur,id)
+{
+	var h = ur.split("pr=");
+	var h1 =h[1];
+if(h1==1){
+				
+ 			$("#divpassenger").dialog({
+		                title:'机票订单费票处理',
+		                show: null,
+		                bgiframe: false,
+		                autoOpen: false,
+		                draggable: true,                
+		                resizable: true,
+		                modal: true,
+		                width: 580,
+		                height: 380
+		            });
+		         $("#divpassenger").dialog("open");
+		         //读取订单乘机人信息
+		         $.ajax({
+		            type:"POST",
+		            url:"orderinfo!getPassengersqList.action",
+		            data:{strTuiOrderID:id,typ:1},
+		            beforeSend:function(){$("#divpassenger").html("正在加载订单信息...");},             
+		            success:function(data){
+		            $("#divpassenger").html(data);           
+		            }            
+		            });
+		   }
+if(h1==2){
+				
+ 			$("#divpassenger").dialog({
+		                title:'机票订单退票处理',
+		                show: null,
+		                bgiframe: false,
+		                autoOpen: false,
+		                draggable: true,                
+		                resizable: true,
+		                modal: true,
+		                width: 580,
+		                height: 380
+		            });
+		         $("#divpassenger").dialog("open");
+		         //读取订单乘机人信息
+		         $.ajax({
+		            type:"POST",
+		            url:"orderinfo!getPassengersqList.action",
+		            data:{strTuiOrderID:id,typ:2},
+		            beforeSend:function(){$("#divpassenger").html("正在加载订单信息...");},             
+		            success:function(data){
+		            $("#divpassenger").html(data);           
+		            }            
+		            });
+		   }
+            if(h1==3){
+				
+ 			$("#divpassenger").dialog({
+		                title:'机票订单退票处理',
+		                show: null,
+		                bgiframe: false,
+		                autoOpen: false,
+		                draggable: true,                
+		                resizable: true,
+		                modal: true,
+		                width: 580,
+		                height: 380
+		            });
+		         $("#divpassenger").dialog("open");
+		         //读取订单乘机人信息
+		         $.ajax({
+		            type:"POST",
+		            url:"orderinfo!getPassengersqList.action",
+		            data:{strTuiOrderID:id,typ:3},
+		            beforeSend:function(){$("#divpassenger").html("正在加载订单信息...");},             
+		            success:function(data){
+		            $("#divpassenger").html(data);           
+		            }            
+		            });
+		   }
+		    if(h1==4){
+				
+ 			$("#divpassenger").dialog({
+		                title:'机票订单PNR分离',
+		                show: null,
+		                bgiframe: false,
+		                autoOpen: false,
+		                draggable: true,                
+		                resizable: true,
+		                modal: true,
+		                width: 700,
+		                height: 450
+		            });
+		         $("#divpassenger").dialog("open");
+		         //读取订单乘机人信息
+		         $.ajax({
+		            type:"POST",
+		            url:"orderinfo!getPassengersqListsep.action",
+		            data:{strTuiOrderID:id,typ:4},
+		            beforeSend:function(){$("#divpassenger").html("正在加载订单信息...");},             
+		            success:function(data){
+		            $("#divpassenger").html(data);           
+		            }            
+		            });
+		   }
+ 
+}
+function goEdit(ur,id)
+{
+document.getElementById("hur").value=ur;
+//alert(id+"..."+ur);
+		var url="orderinfo!seachstate.action?oid="+id;
+		var params = {s_status:2};
+		jQuery.post(url,params, function(data) {
+		
+			if (data != '') {
+				
+				var s, ss;
+				//弹出层填写价格
+				var hu=document.getElementById("hur").value;
+				
+				var h = hu.split("pr=");
+				var h1 =h[1];
+				//
+				
+				
+				ss = data.substr(0, 2); 	
+				//alert(ss);
+				if(ss == 'su'){
+				var dealname=document.getElementById("hidname_"+id).value;
+				alert("该订单已经正在被[["+dealname+"]]处理，您不能再处理了！");
+				}
+				if(ss == 'my'){
+				if(h1==3){//改签
+				
+ 
+				//document.getElementById("d1").style.display="block";
+				//document.getElementById("xie").style.display = "";
+                //document.getElementById("content1").style.display = "";
+			    //document.getElementById("xie").style.filter = "Alpha(Opacity=50)";//透明度
+			    //document.getElementById("content1").innerHTML = "退票手续费:<input type='text' id='da' value='' /> <br /><input onclick='hi()' type='button' value='确定'/> <input onclick='hide()' type='button' value='取消'/>";
+				
+		        $("#divpassenger").dialog({
+		                title:'机票订单改签处理',
+		                show: null,
+		                bgiframe: false,
+		                autoOpen: false,
+		                draggable: true,                
+		                resizable: true,
+		                modal: true,
+		                width: 580,
+		                height: 380
+		            });
+		         $("#divpassenger").dialog("open");
+		         //读取订单乘机人信息
+		         $.ajax({
+		            type:"POST",
+		            url:"orderinfo!getPassengerList.action",
+		            data:{strTuiOrderID:id,typ:3},
+		            beforeSend:function(){$("#divpassenger").html("正在加载订单信息...");},             
+		            success:function(data){
+		            $("#divpassenger").html(data);           
+		            }            
+		            });
+					
+					return;
+			
+				}
+				
+				if(h1==2){
+				
+ 
+				//document.getElementById("d1").style.display="block";
+				//document.getElementById("xie").style.display = "";
+                //document.getElementById("content1").style.display = "";
+			    //document.getElementById("xie").style.filter = "Alpha(Opacity=50)";//透明度
+			    //document.getElementById("content1").innerHTML = "退票手续费:<input type='text' id='da' value='' /> <br /><input onclick='hi()' type='button' value='确定'/> <input onclick='hide()' type='button' value='取消'/>";
+				
+		        $("#divpassenger").dialog({
+		                title:'机票订单退票处理',
+		                show: null,
+		                bgiframe: false,
+		                autoOpen: false,
+		                draggable: true,                
+		                resizable: true,
+		                modal: true,
+		                width: 580,
+		                height: 380
+		            });
+		         $("#divpassenger").dialog("open");
+		         //读取订单乘机人信息
+		         $.ajax({
+		            type:"POST",
+		            url:"orderinfo!getPassengerList.action",
+		            data:{strTuiOrderID:id,typ:2},
+		            beforeSend:function(){$("#divpassenger").html("正在加载订单信息...");},             
+		            success:function(data){
+		            $("#divpassenger").html(data);           
+		            }            
+		            });
+					
+					return;
+			
+				}
+				if(h1==1){//申请废票
+				
+				
+			 $("#divpassenger").dialog({
+		                title:'机票废票处理',
+		                show: null,
+		                bgiframe: false,
+		                autoOpen: false,
+		                draggable: true,                
+		                resizable: true,
+		                modal: true,
+		                width: 580,
+		                height: 380
+		            });
+		         $("#divpassenger").dialog("open");
+		         //读取订单乘机人信息
+		         $.ajax({
+		            type:"POST",
+		            url:"orderinfo!getPassengerList.action",
+		            data:{strTuiOrderID:id,typ:1},
+		            beforeSend:function(){$("#divpassenger").html("正在加载订单信息...");},             
+		            success:function(data){
+		            $("#divpassenger").html(data);           
+		            }            
+		            });
+				 
+				 
+				 return;
+				
+				}
+				//alert("这订单我的"+ur);
+			
+				
+				window.location.href=document.getElementById("hur").value;
+				}
+				if(ss == 'sh'){
+				var sheid = data.split(",");	
+				
+				
+				var uid = sheid[1];
+				//alert(uid);
+				alert("该订单已经正在被其他人处理，您不能再处理了！");
+				
+				
+				}
+				if(ss == 'ko'){
+				//	alert("这订单没人处理");
+				
+				if(h1==2){
+				
+				
+				
+				//document.getElementById("xie").style.display = "";
+                //document.getElementById("content1").style.display = "";
+				
+				 //document.getElementById("xie").style.filter = "Alpha(Opacity=50)";//透明度
+				 //document.getElementById("content1").innerHTML = "退票手续费:<input type='text' id='da' value='' /> <br /><input onclick='hi()' type='button' value='确定'/> <input onclick='hide()' type='button' value='取消'/>";
+				 $("#divpassenger").dialog({
+		                title:'机票订单退票处理',
+		                show: null,
+		                bgiframe: false,
+		                autoOpen: false,
+		                draggable: true,                
+		                resizable: true,
+		                modal: true,
+		                width: 580,
+		                height: 380
+		            });
+		         $("#divpassenger").dialog("open");
+		         //读取订单乘机人信息
+		         $.ajax({
+		            type:"POST",
+		            url:"orderinfo!getPassengerList.action",
+		            data:{strTuiOrderID:id,typ:2},
+		            beforeSend:function(){$("#divpassenger").html("正在加载订单信息...");},             
+		            success:function(data){
+		            $("#divpassenger").html(data);           
+		            }            
+		            });
+				 
+				 
+				 return;
+				
+				}
+				if(h1==1){//申请废票
+				
+				
+			 $("#divpassenger").dialog({
+		                title:'机票废票处理',
+		                show: null,
+		                bgiframe: false,
+		                autoOpen: false,
+		                draggable: true,                
+		                resizable: true,
+		                modal: true,
+		                width: 580,
+		                height: 380
+		            });
+		         $("#divpassenger").dialog("open");
+		         //读取订单乘机人信息
+		         $.ajax({
+		            type:"POST",
+		            url:"orderinfo!getPassengerList.action",
+		            data:{strTuiOrderID:id,typ:1},
+		            beforeSend:function(){$("#divpassenger").html("正在加载订单信息...");},             
+		            success:function(data){
+		            $("#divpassenger").html(data);           
+		            }            
+		            });
+				 
+				 
+				 return;
+				
+				}
+				if(h1==3){//改签
+				
+ 
+				//document.getElementById("d1").style.display="block";
+				//document.getElementById("xie").style.display = "";
+                //document.getElementById("content1").style.display = "";
+			    //document.getElementById("xie").style.filter = "Alpha(Opacity=50)";//透明度
+			    //document.getElementById("content1").innerHTML = "退票手续费:<input type='text' id='da' value='' /> <br /><input onclick='hi()' type='button' value='确定'/> <input onclick='hide()' type='button' value='取消'/>";
+				
+		        $("#divpassenger").dialog({
+		                title:'机票订单改签处理',
+		                show: null,
+		                bgiframe: false,
+		                autoOpen: false,
+		                draggable: true,                
+		                resizable: true,
+		                modal: true,
+		                width: 580,
+		                height: 380
+		            });
+		         $("#divpassenger").dialog("open");
+		         //读取订单乘机人信息
+		         $.ajax({
+		            type:"POST",
+		            url:"orderinfo!getPassengerList.action",
+		            data:{strTuiOrderID:id,typ:3},
+		            beforeSend:function(){$("#divpassenger").html("正在加载订单信息...");},             
+		            success:function(data){
+		            $("#divpassenger").html(data);           
+		            }            
+		            });
+					
+					return;
+			
+				}
+				
+			
+				window.location.href=document.getElementById("hur").value;
+				}
+				
+			}
+		});
+		
+		
+ 
+  // 
+}
+Ext.onReady(function(){
+ 
+	 var selectId ="";
+ 
+	 var menu = new Ext.menu.Menu({
+        id: 'mainMenu',
+		width:'160px',
+        style: {
+            overflow: 'visible'     // For the Combo popup
+        },
+        items: [
+		     
+		    {
+                id:"new",
+				text: '查看',
+				icon:"images/menu/view.gif",
+				handler : function(item){
+					document.form1.action="orderinfo!toshowb2c.action?id="+selectId;
+					document.form1.submit();
+					
+				}
+            }
+			,{  
+				id:"edit",
+				text:"修改",
+				icon:"images/menu/edit.gif",
+				handler : function(item){
+						document.form1.action="orderinfo!toeditb2c.action?id="+selectId;
+						document.form1.submit();
+				}
+            }
+			
+			
+		]
+ 
+		});
+ 
+ 
+ 
+	Ext.get('menutable').on('contextmenu',function(e){
+		
+		if(e.target.parentNode.id)
+		{
+			e.preventDefault();
+			selectId = e.target.parentNode.id;
+			menu.showAt(e.getPoint());
+		}
+	});
+ 
+});
+</script>
+ 
+<script language="javascript"> 
+function copyToClipboard(theField,isalert,id)
+{
+  var obj=document.getElementById(theField);
+  if(obj!=null)
+  {
+    var clipBoardContent=obj.value;
+    obj.select();
+    window.clipboardData.setData("Text",clipBoardContent); 
+    if(isalert!=false)
+      alert("复制成功。现在您可以粘贴（Ctrl+v）到其他地方了。");
+  }
+  else
+  {
+     alert("Error!");
+  }
+}
+function rTPnr()
+    {
+       $.ajax({
+            type:"POST",
+            url:"orderinfo!rtPNRinfo.action",
+            data:{strPNR:$("#txtpnrcode").val()},
+            beforeSend:function(){$("#pnrinfo").html("<img src='images/loadpnr.gif' /><font color='00ff00'><b>正在加载PNR信息.....</b></font>");},             
+            success:function(data){
+            $("#pnrinfo").html(data);           
+            }            
+            });
+       
+    }
+ function sepratePnr()
+ {
+      if($("#txtxuhao").val()=="")
+      {
+          alert("乘机人在黑屏中的序号不能为空，请重新填写！");
+          return false;
+      }
+      
+      $.ajax({
+            type:"POST",
+            url:"orderinfo!sepratePNR.action",
+            data:{strSepPNR:$("#txtpnrcode").val(),strXuNumber:$("#txtxuhao").val(),s_newpassid:$("#hidpassengerid").val(),strTuiOrderID:$("#hidseporderid").val()},
+            beforeSend:function(){$("#pnrinfo").html("<img src='images/loadpnr.gif' /><font color='00ff00'><b>正在分离PNR信息.....</b></font>");},             
+            success:function(data){
+            if(data!="")
+            {
+               alert("PNR分离成功，分离出来的新PNR为："+data);
+            }  
+            $("#pnrinfo").html(data);           
+            }        
+            });
+      $("#divpassenger").dialog("close");
+      document.getElementById("btnsearch").click();
+ }
+ //选中的乘机人id取值
+ function setpassid(id)
+ {
+     if(document.getElementById("chkpassenger_"+id).checked)
+     {
+       $("#hidpassengerid").val($("#txtpassid_"+id).val());
+     }
+     else
+     {
+       $("#hidpassengerid").val(""); 
+     }
+ }
+</script>
+</head>
+<body>
+ 
+<form name="form1" method="post" action="orderinfo!tob2c.action">
+<div id="divpassenger" style="text-align:center;display:none; background-color:#fff;left:0px;">正在加载订单信息...
+</div>
+<div id="member">
+<table width="100%" border="0" cellpadding="0" cellspacing="0"
+	align="center" class="box">
+	<tr>
+		<td width="100%" height="29" class="box-bottom bg"><b
+			class="anse"><span class="font-blue-cu">&nbsp;&nbsp;&nbsp;机票订单查询</span></b></td>
+	</tr>
+	<tr>
+		<td valign="top">
+ 
+ 
+		<table width="100%" border="0" cellpadding="0" cellspacing="0"
+			align="center">
+			<tr>
+				<td valign="top">
+				<table width="100%" border="0" align="center" cellpadding="0"
+					cellspacing="0">
+					<tr>
+						<td valign="top">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td>
+ 
+								<table class="table2" width="100%">
+									<tr>
+										<td width="100%" height="29" colspan="8"
+											background="images/jb.gif"
+											style="border-bottom: 1px solid #99CBED"><span
+											class="font-blue-cu" style="color: #194B66">&nbsp;&nbsp;订单管理-订单查询</span></td>
+									</tr>
+									<tr>
+										<td align="right" style="width: 6%; height: 26px;"
+											nowrap="nowrap">PNR编号</td>
+										<td align="right" style="width: 15%; height: 26px;"><input
+											name="s_pnr" type="text" id="s_pnr" style="width: 138px;"
+											value="" /></td>
+										<td align="right" style="width: 6%; height: 26px;"
+											nowrap="nowrap">订单编号</td>
+										<td align="right" style="width: 15%; height: 26px;"><input
+											name="s_ordernumber" type="text" id="s_ordernumber"
+											value=""
+											style="width: 138px;" /></td>
+										<td align="right" style="width: 9%; height: 26px;"
+											nowrap="nowrap">预订时间&nbsp;</td>
+										<td align="right" style="width: 16%; height: 26px;"><input
+											name="s_bengincreatetime" type="text"
+											value=""
+											id="s_bengincreatetime" onfocus="WdatePicker()"
+											style="width: 138px;" /></td>
+										<td align="right" style="width: 10%; height: 26px;">至</td>
+										<td align="right" style="width: 15%; height: 26px;"><input
+											name="s_endcreatetime" type="text"
+											value=""
+											id="s_endcreatetime" onfocus="WdatePicker()"
+											style="width: 138px;" /></td>
+									</tr>
+									<tr>
+										<td align="right" style="width: 6%" nowrap="nowrap">乘机日期
+										</td>
+										<td align="right" style="width: 15%"><input
+											name="s_beginchengji" type="text" id="s_beginchengji"
+											onfocus="WdatePicker()" style="width: 138px;"
+											value="" /></td>
+										<td style="width: 6%" align="center">至</td>
+										<td align="right" style="width: 15%"><input
+											name="s_endchengji" type="text" id="s_endchengji"
+											onfocus="WdatePicker()" style="width: 138px;"
+											value="" /></td>
+										<td align="right" style="width: 9%" nowrap="nowrap">
+										出票时间&nbsp;</td>
+										<td align="right" style="width: 16%"><input
+											name="s_beginprinttime" type="text" id="s_beginprinttime"
+											onfocus="WdatePicker()" style="width: 138px;"
+											value="" /></td>
+										<td align="right" style="width: 10%">至</td>
+										<td align="right" style="width: 15%"><input
+											name="s_endprinttime" type="text" id="s_endprinttime"
+											value=""
+											onfocus="WdatePicker()" style="width: 138px;" /></td>
+									</tr>
+									<tr>
+										<td align="right" style="width: 6%" nowrap="nowrap">出发城市
+										</td>
+										<td align="right" style="width: 15%"><select
+											name="s_begincity" style="width: 142px;">
+											<option value=""
+												selected="selected">所有城市</option>
+											
+												<option value="AAT"
+													>阿勒泰(AAT)</option>
+											
+												<option value="AKA"
+													>安康(AKA)</option>
+											
+												<option value="AKU"
+													>阿克苏(AKU)</option>
+											
+												<option value="AOG"
+													>鞍山(AOG)</option>
+											
+												<option value="AQG"
+													>安庆(AQG)</option>
+											
+												<option value="BAV"
+													>包头(BAV)</option>
+											
+												<option value="BFU"
+													>蚌埠(BFU)</option>
+											
+												<option value="BHY"
+													>北海(BHY)</option>
+											
+												<option value="BSD"
+													>保山(BSD)</option>
+											
+												<option value="CAN"
+													>广州(CAN)</option>
+											
+												<option value="CGD"
+													>常德(CGD)</option>
+											
+												<option value="CGO"
+													>郑州(CGO)</option>
+											
+												<option value="CGQ"
+													>长春(CGQ)</option>
+											
+												<option value="CHG"
+													>朝阳(CHG)</option>
+											
+												<option value="CHW"
+													>酒泉(CHW)</option>
+											
+												<option value="CIF"
+													>赤峰(CIF)</option>
+											
+												<option value="CIH"
+													>长治(CIH)</option>
+											
+												<option value="CKG"
+													>重庆(CKG)</option>
+											
+												<option value="CSX"
+													>长沙(CSX)</option>
+											
+												<option value="CTU"
+													>成都(CTU)</option>
+											
+												<option value="CZX"
+													>常州(CZX)</option>
+											
+												<option value="DAT"
+													>大同(DAT)</option>
+											
+												<option value="DAX"
+													>达县(DAX)</option>
+											
+												<option value="DDG"
+													>丹东(DDG)</option>
+											
+												<option value="DLC"
+													>大连(DLC)</option>
+											
+												<option value="DLU"
+													>大理(DLU)</option>
+											
+												<option value="DNH"
+													>敦煌(DNH)</option>
+											
+												<option value="DSN"
+													>鄂尔多斯(DSN)</option>
+											
+												<option value="DYG"
+													>张家界(DYG)</option>
+											
+												<option value="ENH"
+													>恩施(ENH)</option>
+											
+												<option value="ENY"
+													>延安(ENY)</option>
+											
+												<option value="FOC"
+													>福州(FOC)</option>
+											
+												<option value="FUG"
+													>阜阳(FUG)</option>
+											
+												<option value="ZCP"
+													>佛山(ZCP)</option>
+											
+												<option value="FYN"
+													>富蕴(FYN)</option>
+											
+												<option value="GHN"
+													>广汉(GHN)</option>
+											
+												<option value="GOQ"
+													>格尔木(GOQ)</option>
+											
+												<option value="HAK"
+													>海口(HAK)</option>
+											
+												<option value="HEK"
+													>黑河(HEK)</option>
+											
+												<option value="HET"
+													>呼和浩特(HET)</option>
+											
+												<option value="HFE"
+													>合肥(HFE)</option>
+											
+												<option value="HGH"
+													>杭州(HGH)</option>
+											
+												<option value="HLD"
+													>海拉尔(HLD)</option>
+											
+												<option value="HLH"
+													>乌兰浩特(HLH)</option>
+											
+												<option value="HMI"
+													>哈密(HMI)</option>
+											
+												<option value="HRB"
+													>哈尔滨(HRB)</option>
+											
+												<option value="HTN"
+													>和田(HTN)</option>
+											
+												<option value="HYN"
+													>黄岩(HYN)</option>
+											
+												<option value="HZG"
+													>汉中(HZG)</option>
+											
+												<option value="INC"
+													>银川(INC)</option>
+											
+												<option value="IQM"
+													>且末(IQM)</option>
+											
+												<option value="IQN"
+													>庆阳(IQN)</option>
+											
+												<option value="JDZ"
+													>景德镇(JDZ)</option>
+											
+												<option value="JGN"
+													>嘉峪关(JGN)</option>
+											
+												<option value="JHG"
+													>西双版纳(JHG)</option>
+											
+												<option value="JIL"
+													>吉林(JIL)</option>
+											
+												<option value="JJN"
+													>晋江(JJN)</option>
+											
+												<option value="JMU"
+													>佳木斯(JMU)</option>
+											
+												<option value="JNZ"
+													>锦州(JNZ)</option>
+											
+												<option value="KCA"
+													>库车(KCA)</option>
+											
+												<option value="KHG"
+													>喀什(KHG)</option>
+											
+												<option value="KHN"
+													>南昌(KHN)</option>
+											
+												<option value="KMG"
+													>昆明(KMG)</option>
+											
+												<option value="KOW"
+													>赣州(KOW)</option>
+											
+												<option value="KRL"
+													>库尔勒(KRL)</option>
+											
+												<option value="KRY"
+													>克拉玛依(KRY)</option>
+											
+												<option value="KWE"
+													>贵阳(KWE)</option>
+											
+												<option value="KWL"
+													>桂林(KWL)</option>
+											
+												<option value="LHW"
+													>兰州(LHW)</option>
+											
+												<option value="LJG"
+													>丽江(LJG)</option>
+											
+												<option value="LUM"
+													>芒市(LUM)</option>
+											
+												<option value="LUZ"
+													>庐山(LUZ)</option>
+											
+												<option value="LXA"
+													>拉萨(LXA)</option>
+											
+												<option value="LYA"
+													>洛阳(LYA)</option>
+											
+												<option value="LYG"
+													>连云港(LYG)</option>
+											
+												<option value="LYI"
+													>临沂(LYI)</option>
+											
+												<option value="LZH"
+													>柳州(LZH)</option>
+											
+												<option value="LZO"
+													>泸州(LZO)</option>
+											
+												<option value="MDG"
+													>牡丹江(MDG)</option>
+											
+												<option value="MXZ"
+													>梅县(MXZ)</option>
+											
+												<option value="NAO"
+													>南充(NAO)</option>
+											
+												<option value="NAY"
+													>北京南苑(NAY)</option>
+											
+												<option value="NDG"
+													>齐齐哈尔(NDG)</option>
+											
+												<option value="NGB"
+													>宁波(NGB)</option>
+											
+												<option value="NKG"
+													>南京(NKG)</option>
+											
+												<option value="NNG"
+													>南宁(NNG)</option>
+											
+												<option value="NNY"
+													>南阳(NNY)</option>
+											
+												<option value="NTG"
+													>南通(NTG)</option>
+											
+												<option value="PEK"
+													>北京(PEK)</option>
+											
+												<option value="PVG"
+													>上海浦东(PVG)</option>
+											
+												<option value="SHA"
+													>上海虹桥(SHA)</option>
+											
+												<option value="SHE"
+													>沈阳(SHE)</option>
+											
+												<option value="SHP"
+													>秦皇岛(SHP)</option>
+											
+												<option value="SHS"
+													>沙市(SHS)</option>
+											
+												<option value="SJW"
+													>石家庄(SJW)</option>
+											
+												<option value="SWA"
+													>汕头(SWA)</option>
+											
+												<option value="SYM"
+													>思茅(SYM)</option>
+											
+												<option value="SYX"
+													>三亚(SYX)</option>
+											
+												<option value="SZV"
+													>苏州(SZV)</option>
+											
+												<option value="SZX"
+													>深圳(SZX)</option>
+											
+												<option value="TAO"
+													>青岛(TAO)</option>
+											
+												<option value="TCG"
+													>塔城(TCG)</option>
+											
+												<option value="TEN"
+													>铜仁(TEN)</option>
+											
+												<option value="TGO"
+													>通辽(TGO)</option>
+											
+												<option value="TNA"
+													>济南(TNA)</option>
+											
+												<option value="TSN"
+													>天津(TSN)</option>
+											
+												<option value="TXN"
+													>黄山(TXN)</option>
+											
+												<option value="TYN"
+													>太原(TYN)</option>
+											
+												<option value="URC"
+													>乌鲁木齐(URC)</option>
+											
+												<option value="UYN"
+													>榆林(UYN)</option>
+											
+												<option value="WEF"
+													>潍坊(WEF)</option>
+											
+												<option value="WEH"
+													>威海(WEH)</option>
+											
+												<option value="WNZ"
+													>温州(WNZ)</option>
+											
+												<option value="WUH"
+													>武汉(WUH)</option>
+											
+												<option value="WUS"
+													>武夷山(WUS)</option>
+											
+												<option value="WUZ"
+													>梧州(WUZ)</option>
+											
+												<option value="WXN"
+													>万县(WXN)</option>
+											
+												<option value="XEN"
+													>兴城(XEN)</option>
+											
+												<option value="XFN"
+													>襄樊(XFN)</option>
+											
+												<option value="XIC"
+													>西昌(XIC)</option>
+											
+												<option value="XIL"
+													>锡林浩特(XIL)</option>
+											
+												<option value="XIN"
+													>兴宁(XIN)</option>
+											
+												<option value="XIY"
+													>西安咸阳(XIY)</option>
+											
+												<option value="XMN"
+													>厦门(XMN)</option>
+											
+												<option value="XNN"
+													>西宁(XNN)</option>
+											
+												<option value="XUZ"
+													>徐州(XUZ)</option>
+											
+												<option value="YBP"
+													>宜宾(YBP)</option>
+											
+												<option value="YIH"
+													>宜昌(YIH)</option>
+											
+												<option value="YIN"
+													>伊宁(YIN)</option>
+											
+												<option value="YIW"
+													>义乌(YIW)</option>
+											
+												<option value="YNJ"
+													>延吉(YNJ)</option>
+											
+												<option value="YNT"
+													>烟台(YNT)</option>
+											
+												<option value="ZAT"
+													>昭通(ZAT)</option>
+											
+												<option value="ZHA"
+													>湛江(ZHA)</option>
+											
+												<option value="ZUH"
+													>珠海(ZUH)</option>
+											
+												<option value="ZYI"
+													>遵义(ZYI)</option>
+											
+												<option value="MIG"
+													>绵阳(MIG)</option>
+											
+												<option value="DOY"
+													>东营(DOY)</option>
+											
+												<option value="YCU"
+													>运城(YCU)</option>
+											
+												<option value="WUA"
+													>乌海(WUA)</option>
+											
+												<option value="JZH"
+													>九寨沟(JZH)</option>
+											
+												<option value="WUX"
+													>无锡(WUX)</option>
+											
+												<option value="YNZ"
+													>盐城(YNZ)</option>
+											
+												<option value="DIG"
+													>迪庆(DIG)</option>
+											
+												<option value="PZI"
+													>攀枝花(PZI)</option>
+											
+												<option value="LNJ"
+													>临沧(LNJ)</option>
+											
+												<option value="NZH"
+													>满州里(NZH)</option>
+											
+												<option value="HSN"
+													>舟山(HSN)</option>
+											
+												<option value="JUZ"
+													>衢州(JUZ)</option>
+											
+												<option value="HDG"
+													>邯郸(HDG)</option>
+											
+												<option value="JGS"
+													>井冈山(JGS)</option>
+											
+												<option value="HJJ"
+													>怀化(HJJ)</option>
+											
+												<option value="ACX"
+													>兴义(ACX)</option>
+											
+												<option value="CNI"
+													>长海(CNI)</option>
+											
+												<option value="JIU"
+													>九江(JIU)</option>
+											
+												<option value="GYS"
+													>广元(GYS)</option>
+											
+												<option value="LCX"
+													>连城(LCX)</option>
+											
+												<option value="AYN"
+													>安阳(AYN)</option>
+											
+												<option value="SHF"
+													>山海关(SHF)</option>
+											
+												<option value="IOB"
+													>鞍山(IOB)</option>
+											
+												<option value="LLF"
+													>永州(LLF)</option>
+											
+												<option value="HNY"
+													>衡阳(HNY)</option>
+											
+												<option value="HUZ"
+													>惠州(HUZ)</option>
+											
+												<option value="JNG"
+													>济宁(JNG)</option>
+											
+												<option value="OHE"
+													>漠河(OHE)</option>
+											
+												<option value="YLN"
+													>依兰(YLN)</option>
+											
+												<option value="AVA"
+													>安顺(AVA)</option>
+											
+												<option value="HZH"
+													>黎平(HZH)</option>
+											
+												<option value="TCZ"
+													>腾冲(TCZ)</option>
+											
+										</select></td>
+										<td align="right" style="width: 6%" nowrap="nowrap">到达城市
+										</td>
+										<td align="right" style="width: 15%"><select
+											name="s_endcity" style="width: 142px;">
+												<option value=""
+												selected="selected">所有城市</option>
+											
+												<option value="AAT"
+													>阿勒泰(AAT)</option>
+											
+												<option value="AKA"
+													>安康(AKA)</option>
+											
+												<option value="AKU"
+													>阿克苏(AKU)</option>
+											
+												<option value="AOG"
+													>鞍山(AOG)</option>
+											
+												<option value="AQG"
+													>安庆(AQG)</option>
+											
+												<option value="BAV"
+													>包头(BAV)</option>
+											
+												<option value="BFU"
+													>蚌埠(BFU)</option>
+											
+												<option value="BHY"
+													>北海(BHY)</option>
+											
+												<option value="BSD"
+													>保山(BSD)</option>
+											
+												<option value="CAN"
+													>广州(CAN)</option>
+											
+												<option value="CGD"
+													>常德(CGD)</option>
+											
+												<option value="CGO"
+													>郑州(CGO)</option>
+											
+												<option value="CGQ"
+													>长春(CGQ)</option>
+											
+												<option value="CHG"
+													>朝阳(CHG)</option>
+											
+												<option value="CHW"
+													>酒泉(CHW)</option>
+											
+												<option value="CIF"
+													>赤峰(CIF)</option>
+											
+												<option value="CIH"
+													>长治(CIH)</option>
+											
+												<option value="CKG"
+													>重庆(CKG)</option>
+											
+												<option value="CSX"
+													>长沙(CSX)</option>
+											
+												<option value="CTU"
+													>成都(CTU)</option>
+											
+												<option value="CZX"
+													>常州(CZX)</option>
+											
+												<option value="DAT"
+													>大同(DAT)</option>
+											
+												<option value="DAX"
+													>达县(DAX)</option>
+											
+												<option value="DDG"
+													>丹东(DDG)</option>
+											
+												<option value="DLC"
+													>大连(DLC)</option>
+											
+												<option value="DLU"
+													>大理(DLU)</option>
+											
+												<option value="DNH"
+													>敦煌(DNH)</option>
+											
+												<option value="DSN"
+													>鄂尔多斯(DSN)</option>
+											
+												<option value="DYG"
+													>张家界(DYG)</option>
+											
+												<option value="ENH"
+													>恩施(ENH)</option>
+											
+												<option value="ENY"
+													>延安(ENY)</option>
+											
+												<option value="FOC"
+													>福州(FOC)</option>
+											
+												<option value="FUG"
+													>阜阳(FUG)</option>
+											
+												<option value="ZCP"
+													>佛山(ZCP)</option>
+											
+												<option value="FYN"
+													>富蕴(FYN)</option>
+											
+												<option value="GHN"
+													>广汉(GHN)</option>
+											
+												<option value="GOQ"
+													>格尔木(GOQ)</option>
+											
+												<option value="HAK"
+													>海口(HAK)</option>
+											
+												<option value="HEK"
+													>黑河(HEK)</option>
+											
+												<option value="HET"
+													>呼和浩特(HET)</option>
+											
+												<option value="HFE"
+													>合肥(HFE)</option>
+											
+												<option value="HGH"
+													>杭州(HGH)</option>
+											
+												<option value="HLD"
+													>海拉尔(HLD)</option>
+											
+												<option value="HLH"
+													>乌兰浩特(HLH)</option>
+											
+												<option value="HMI"
+													>哈密(HMI)</option>
+											
+												<option value="HRB"
+													>哈尔滨(HRB)</option>
+											
+												<option value="HTN"
+													>和田(HTN)</option>
+											
+												<option value="HYN"
+													>黄岩(HYN)</option>
+											
+												<option value="HZG"
+													>汉中(HZG)</option>
+											
+												<option value="INC"
+													>银川(INC)</option>
+											
+												<option value="IQM"
+													>且末(IQM)</option>
+											
+												<option value="IQN"
+													>庆阳(IQN)</option>
+											
+												<option value="JDZ"
+													>景德镇(JDZ)</option>
+											
+												<option value="JGN"
+													>嘉峪关(JGN)</option>
+											
+												<option value="JHG"
+													>西双版纳(JHG)</option>
+											
+												<option value="JIL"
+													>吉林(JIL)</option>
+											
+												<option value="JJN"
+													>晋江(JJN)</option>
+											
+												<option value="JMU"
+													>佳木斯(JMU)</option>
+											
+												<option value="JNZ"
+													>锦州(JNZ)</option>
+											
+												<option value="KCA"
+													>库车(KCA)</option>
+											
+												<option value="KHG"
+													>喀什(KHG)</option>
+											
+												<option value="KHN"
+													>南昌(KHN)</option>
+											
+												<option value="KMG"
+													>昆明(KMG)</option>
+											
+												<option value="KOW"
+													>赣州(KOW)</option>
+											
+												<option value="KRL"
+													>库尔勒(KRL)</option>
+											
+												<option value="KRY"
+													>克拉玛依(KRY)</option>
+											
+												<option value="KWE"
+													>贵阳(KWE)</option>
+											
+												<option value="KWL"
+													>桂林(KWL)</option>
+											
+												<option value="LHW"
+													>兰州(LHW)</option>
+											
+												<option value="LJG"
+													>丽江(LJG)</option>
+											
+												<option value="LUM"
+													>芒市(LUM)</option>
+											
+												<option value="LUZ"
+													>庐山(LUZ)</option>
+											
+												<option value="LXA"
+													>拉萨(LXA)</option>
+											
+												<option value="LYA"
+													>洛阳(LYA)</option>
+											
+												<option value="LYG"
+													>连云港(LYG)</option>
+											
+												<option value="LYI"
+													>临沂(LYI)</option>
+											
+												<option value="LZH"
+													>柳州(LZH)</option>
+											
+												<option value="LZO"
+													>泸州(LZO)</option>
+											
+												<option value="MDG"
+													>牡丹江(MDG)</option>
+											
+												<option value="MXZ"
+													>梅县(MXZ)</option>
+											
+												<option value="NAO"
+													>南充(NAO)</option>
+											
+												<option value="NAY"
+													>北京南苑(NAY)</option>
+											
+												<option value="NDG"
+													>齐齐哈尔(NDG)</option>
+											
+												<option value="NGB"
+													>宁波(NGB)</option>
+											
+												<option value="NKG"
+													>南京(NKG)</option>
+											
+												<option value="NNG"
+													>南宁(NNG)</option>
+											
+												<option value="NNY"
+													>南阳(NNY)</option>
+											
+												<option value="NTG"
+													>南通(NTG)</option>
+											
+												<option value="PEK"
+													>北京(PEK)</option>
+											
+												<option value="PVG"
+													>上海浦东(PVG)</option>
+											
+												<option value="SHA"
+													>上海虹桥(SHA)</option>
+											
+												<option value="SHE"
+													>沈阳(SHE)</option>
+											
+												<option value="SHP"
+													>秦皇岛(SHP)</option>
+											
+												<option value="SHS"
+													>沙市(SHS)</option>
+											
+												<option value="SJW"
+													>石家庄(SJW)</option>
+											
+												<option value="SWA"
+													>汕头(SWA)</option>
+											
+												<option value="SYM"
+													>思茅(SYM)</option>
+											
+												<option value="SYX"
+													>三亚(SYX)</option>
+											
+												<option value="SZV"
+													>苏州(SZV)</option>
+											
+												<option value="SZX"
+													>深圳(SZX)</option>
+											
+												<option value="TAO"
+													>青岛(TAO)</option>
+											
+												<option value="TCG"
+													>塔城(TCG)</option>
+											
+												<option value="TEN"
+													>铜仁(TEN)</option>
+											
+												<option value="TGO"
+													>通辽(TGO)</option>
+											
+												<option value="TNA"
+													>济南(TNA)</option>
+											
+												<option value="TSN"
+													>天津(TSN)</option>
+											
+												<option value="TXN"
+													>黄山(TXN)</option>
+											
+												<option value="TYN"
+													>太原(TYN)</option>
+											
+												<option value="URC"
+													>乌鲁木齐(URC)</option>
+											
+												<option value="UYN"
+													>榆林(UYN)</option>
+											
+												<option value="WEF"
+													>潍坊(WEF)</option>
+											
+												<option value="WEH"
+													>威海(WEH)</option>
+											
+												<option value="WNZ"
+													>温州(WNZ)</option>
+											
+												<option value="WUH"
+													>武汉(WUH)</option>
+											
+												<option value="WUS"
+													>武夷山(WUS)</option>
+											
+												<option value="WUZ"
+													>梧州(WUZ)</option>
+											
+												<option value="WXN"
+													>万县(WXN)</option>
+											
+												<option value="XEN"
+													>兴城(XEN)</option>
+											
+												<option value="XFN"
+													>襄樊(XFN)</option>
+											
+												<option value="XIC"
+													>西昌(XIC)</option>
+											
+												<option value="XIL"
+													>锡林浩特(XIL)</option>
+											
+												<option value="XIN"
+													>兴宁(XIN)</option>
+											
+												<option value="XIY"
+													>西安咸阳(XIY)</option>
+											
+												<option value="XMN"
+													>厦门(XMN)</option>
+											
+												<option value="XNN"
+													>西宁(XNN)</option>
+											
+												<option value="XUZ"
+													>徐州(XUZ)</option>
+											
+												<option value="YBP"
+													>宜宾(YBP)</option>
+											
+												<option value="YIH"
+													>宜昌(YIH)</option>
+											
+												<option value="YIN"
+													>伊宁(YIN)</option>
+											
+												<option value="YIW"
+													>义乌(YIW)</option>
+											
+												<option value="YNJ"
+													>延吉(YNJ)</option>
+											
+												<option value="YNT"
+													>烟台(YNT)</option>
+											
+												<option value="ZAT"
+													>昭通(ZAT)</option>
+											
+												<option value="ZHA"
+													>湛江(ZHA)</option>
+											
+												<option value="ZUH"
+													>珠海(ZUH)</option>
+											
+												<option value="ZYI"
+													>遵义(ZYI)</option>
+											
+												<option value="MIG"
+													>绵阳(MIG)</option>
+											
+												<option value="DOY"
+													>东营(DOY)</option>
+											
+												<option value="YCU"
+													>运城(YCU)</option>
+											
+												<option value="WUA"
+													>乌海(WUA)</option>
+											
+												<option value="JZH"
+													>九寨沟(JZH)</option>
+											
+												<option value="WUX"
+													>无锡(WUX)</option>
+											
+												<option value="YNZ"
+													>盐城(YNZ)</option>
+											
+												<option value="DIG"
+													>迪庆(DIG)</option>
+											
+												<option value="PZI"
+													>攀枝花(PZI)</option>
+											
+												<option value="LNJ"
+													>临沧(LNJ)</option>
+											
+												<option value="NZH"
+													>满州里(NZH)</option>
+											
+												<option value="HSN"
+													>舟山(HSN)</option>
+											
+												<option value="JUZ"
+													>衢州(JUZ)</option>
+											
+												<option value="HDG"
+													>邯郸(HDG)</option>
+											
+												<option value="JGS"
+													>井冈山(JGS)</option>
+											
+												<option value="HJJ"
+													>怀化(HJJ)</option>
+											
+												<option value="ACX"
+													>兴义(ACX)</option>
+											
+												<option value="CNI"
+													>长海(CNI)</option>
+											
+												<option value="JIU"
+													>九江(JIU)</option>
+											
+												<option value="GYS"
+													>广元(GYS)</option>
+											
+												<option value="LCX"
+													>连城(LCX)</option>
+											
+												<option value="AYN"
+													>安阳(AYN)</option>
+											
+												<option value="SHF"
+													>山海关(SHF)</option>
+											
+												<option value="IOB"
+													>鞍山(IOB)</option>
+											
+												<option value="LLF"
+													>永州(LLF)</option>
+											
+												<option value="HNY"
+													>衡阳(HNY)</option>
+											
+												<option value="HUZ"
+													>惠州(HUZ)</option>
+											
+												<option value="JNG"
+													>济宁(JNG)</option>
+											
+												<option value="OHE"
+													>漠河(OHE)</option>
+											
+												<option value="YLN"
+													>依兰(YLN)</option>
+											
+												<option value="AVA"
+													>安顺(AVA)</option>
+											
+												<option value="HZH"
+													>黎平(HZH)</option>
+											
+												<option value="TCZ"
+													>腾冲(TCZ)</option>
+											
+										</select></td>
+										<td align="right" style="width: 10%; height: 26px;">乘机人</td>
+										<td align="right" style="width: 15%; height: 26px;"><input
+											name="s_passengername" type="text" id="s_passengername"
+											style="width: 138px;"
+											value="" /></td>
+										<td align="right" style="width: 6%; height: 26px;">票号</td>
+										<td align="right" style="width: 15%; height: 26px;"><input
+											name="s_passengerfet" type="text" id="s_passengerfet"
+											style="width: 138px;"
+											value="" /></td>
+									</tr>
+									<tr>
+										<td align="right" style="width: 6%; height: 26px;">航班号</td>
+										<td align="right" style="width: 15%; height: 26px;"><input
+											name="s_flightnumber" type="text" id="s_flightnumber"
+											style="width: 138px;"
+											value="" /></td>
+ 
+										<td align="right" style="width: 9%; height: 26px;"
+											nowrap="nowrap">订单状态</td>
+										<td align="right" style="width: 16%; height: 26px;"><select
+											name="s_orderstatus" id="s_orderstatus" style="width: 142px;">
+											<option
+												>所有状态</option>
+											
+											<option value="1"
+												>等待支付</option>
+											<option value="2"
+												>支付成功</option>
+											<option value="3"
+												selected="selected">出票完成</option>
+											<option value="4"
+												>申请退票</option>
+											
+											<option value="5"
+												>申请废票</option>
+											<option value="6"
+												>取消订单</option>
+											<option value="7"
+												>废票不成功</option>
+											<option value="8"
+												>审核失败</option>
+											<option value="9"
+												>废票退款成功</option>
+											<option value="10"
+												>订单关闭</option>
+											<option value="11"
+												>已经废票</option>
+											<option value="12"
+												>已经退票</option>
+											<option value="13"
+												>申请改签</option>
+											<option value="14"
+												>已经改签</option>
+											<option value="15"
+												>改签失败</option>
+											<option value="16"
+												>暂不能出票</option>
+											<option value="17"
+												>退票不成功</option>
+											<option value="18"
+												>退票退款成功</option>
+										</select></td>
+ 
+ 
+ 
+ 
+										
+										<td align="right" style="width: 9%; height: 26px;"></td>
+										<td align="right" style="width: 9%; height: 26px;"></td>
+									</tr>
+									<tr>
+ 
+										<td colspan="10" align="center"><input type="submit"
+											class="button_d font-white" id="btnsearch"
+											value="查询订单" />
+											</td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<table width="99%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td height="40" align="center">
+										<div align="right">
+									
+										<a href="#" onclick="updateItem()"><input
+											type="button" value="修改" class="button_h font-red" /></a>
+									
+											
+										&nbsp;&nbsp;&nbsp;<a href="#" onclick="showItem()"><input
+											type="button" value="查看" class="button_h font-red" /></a></div>
+										</td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="306" valign="top">
+						<table width="100%" border="0" align="center" cellpadding="0"
+							cellspacing="0">
+							<tr>
+								<td width="100%">
+								<table id="menutable" width="99%" border="1" align="center"
+									class="table_color">
+									<tbody>
+										<tr class="tbody_color">
+ 
+											<th class="table_color" width="54" height="25"><input
+												type="checkbox" name="all1" value="1" onclick="selectall1()" />全选</th>
+											<th class="table_color">订单编号</th>
+											<th class="table_color">乘机人</th>
+											<th class="table_color">行程</th>
+											<th class="table_color">航班号</th>
+											<th class="table_color">PNR</th>
+											<th class="table_color">起飞时间/预订时间</th>
+											<!--
+											<th class="table_color">联系人姓名</th>
+											<th class="table_color">PNR</th>
+											
+											
+										
+											<th class="table_color">总价</th>
+											
+											<th class="table_color">票号</th>
+											<th class="table_color">订单类型</th>-->
+											<th class="table_color">支付方式</th>
+											<th class="table_color">订单状态</th>
+											<th class="table_color">支付状态</th>
+												<th class="table_color">处理人</th>
+											<th class="table_color">操作</th>
+											
+										</tr>
+										
+											
+											<tr   id="11907" align="center"
+												onmouseover="currentcolor=this.style.backgroundColor;this.className='colortrin',this.style.fontWeight='';"
+												onmouseout="this.className='colortrout',this.style.fontWeight='';">
+ 
+												<td class="table_color color_b3" ><input type="checkbox" 
+													name="selectid" value="11907" /></td>
+												<td class="table_color color_b3">
+												
+												
+												<a href="javascript: goEdit('orderinfo!toshowb2c.action?id=11907','11907');">A21907</a>
+												
+												
+												</td>
+													
+												<td class="table_color color_b3">aa/geg</td>
+													
+												<td class="table_color color_b3">南京
+												- 北京
+												</td>
+												
+												<td class="table_color color_b3">MU2811</td>
+												<td class="table_color color_b3"><a href="#" onclick="copyToClipboard('txtpnr_11907',true,'11907');return false;"> S9YFC </a><input id='txtpnr_11907' style="display:none" type="text" value=" S9YFC " />(小)<br /><a href="#" onclick="copyToClipboard('txtbigpnr_11907',true,'11907');return false;">ZFMZ7 </a><input id='txtbigpnr_11907' style="display:none" type="text" value="ZFMZ7 " />(大)</td>
+												<td class="table_color color_b3">
+												2010-10-28 09:00:00<br />2010-10-08 14:28:35</td>
+												<!--<td class="table_color color_b3">bianzhif</td>
+												<td class="table_color color_b3"> S9YFC </td>
+												
+												
+												
+											<td class="table_color color_b3">810.00</td>
+												<td class="table_color color_b3">900.00</td>
+												
+												
+												
+												<td class="table_color color_b3">0</td>
+												<td class="table_color color_b3">
+												
+												
+												同行预订
+												
+												
+												
+												</td>-->
+												<td class="table_color color_b3">
+												
+												客户挂账
+												
+												
+												
+												
+												</td>
+												<td class="table_color color_b3">出票完成</td>
+												<td class="table_color color_b3">已支付</td>
+												<td class="table_color color_b3">
+												
+												
+														
+														<img src="../images/Lock.png" border="0" /><br />张鹏<input type="hidden" id='hidname_11907' value='张鹏' />
+														
+												
+													</td>
+												<td class="table_color color_b3">
+												<!-- 订单操作开始 订单状态:1.等待支付2.支付成功3.出票完成4.配送5.申请退票6.取消订单7.等待审核8.审核失败9.退款成功10.订单关闭11.已经废票12.已经退票13.申请改签14.已经改签 -->
+											  
+											    
+												
+ 
+												
+												<input type="button" class="button108" id="btnRRTicket" value="配送"   onclick="showpeisong();" /><br/>
+												<!-- 订单操作结束 -->
+												</td>
+												
+											</tr>
+											
+										
+											
+											<tr   id="11888" align="center"
+												onmouseover="currentcolor=this.style.backgroundColor;this.className='colortrin',this.style.fontWeight='';"
+												onmouseout="this.className='colortrout',this.style.fontWeight='';">
+ 
+												<td class="table_color color_b3" ><input type="checkbox" 
+													name="selectid" value="11888" /></td>
+												<td class="table_color color_b3">
+												
+												
+												<a href="javascript: goEdit('orderinfo!toshowb2c.action?id=11888','11888');">A21888</a>
+												
+												
+												</td>
+													
+												<td class="table_color color_b3">asd/ad</td>
+													
+												<td class="table_color color_b3">南京
+												- 北京
+												</td>
+												
+												<td class="table_color color_b3">MU2841</td>
+												<td class="table_color color_b3"><a href="#" onclick="copyToClipboard('txtpnr_11888',true,'11888');return false;"> X4G0H </a><input id='txtpnr_11888' style="display:none" type="text" value=" X4G0H " />(小)<br /><a href="#" onclick="copyToClipboard('txtbigpnr_11888',true,'11888');return false;">FYTRX </a><input id='txtbigpnr_11888' style="display:none" type="text" value="FYTRX " />(大)</td>
+												<td class="table_color color_b3">
+												2010-10-01 16:55:00<br />2010-09-30 15:55:03</td>
+												<!--<td class="table_color color_b3">asd/asd</td>
+												<td class="table_color color_b3"> X4G0H </td>
+												
+												
+												
+											<td class="table_color color_b3">1,820.00</td>
+												<td class="table_color color_b3">1,930.00</td>
+												
+												
+												
+												<td class="table_color color_b3">11830</td>
+												<td class="table_color color_b3">
+												网站预订
+												
+												
+												
+												
+												
+												</td>-->
+												<td class="table_color color_b3">
+												
+												
+												在线支付
+												
+												
+												
+												</td>
+												<td class="table_color color_b3">出票完成</td>
+												<td class="table_color color_b3">未支付</td>
+												<td class="table_color color_b3">
+												
+												
+														
+														<img src="../images/Lock.png" border="0" /><br />张鹏<input type="hidden" id='hidname_11888' value='张鹏' />
+														
+												
+													</td>
+												<td class="table_color color_b3">
+												<!-- 订单操作开始 订单状态:1.等待支付2.支付成功3.出票完成4.申请废票5.申请退票6.取消订单7.等待审核8.审核失败9.退款成功10.订单关闭11.已经废票12.已经退票13.申请改签14.已经改签 -->
+											  
+											    
+												
+ 
+												
+												<input type="button" class="button108" id="btnRRTicket" value="配送"   onclick="showpeisong();" /><br/>
+												<!-- 订单操作结束 -->
+												</td>
+												
+											</tr>
+											
+										
+											
+											<tr   id="11730" align="center"
+												onmouseover="currentcolor=this.style.backgroundColor;this.className='colortrin',this.style.fontWeight='';"
+												onmouseout="this.className='colortrout',this.style.fontWeight='';">
+ 
+												<td class="table_color color_b3" ><input type="checkbox" 
+													name="selectid" value="11730" /></td>
+												<td class="table_color color_b3">
+												
+												
+												<a href="javascript: goEdit('orderinfo!toshowb2c.action?id=11730','11730');">A21730</a>
+												
+												
+												</td>
+													
+												<td class="table_color color_b3">王二</td>
+													
+												<td class="table_color color_b3">北京
+												- 大连
+												</td>
+												
+												<td class="table_color color_b3">CN7183</td>
+												<td class="table_color color_b3"><a href="#" onclick="copyToClipboard('txtpnr_11730',true,'11730');return false;">NOPNR</a><input id='txtpnr_11730' style="display:none" type="text" value="NOPNR" />(小)<br /></td>
+												<td class="table_color color_b3">
+												2010-10-01 22:10:00<br />2010-09-29 09:27:59</td>
+												<!--<td class="table_color color_b3">搜狗</td>
+												<td class="table_color color_b3">NOPNR</td>
+												
+												
+												
+											<td class="table_color color_b3">710.00</td>
+												<td class="table_color color_b3">820.00</td>
+												
+												
+												
+												<td class="table_color color_b3">11672</td>
+												<td class="table_color color_b3">
+												
+												
+												
+												
+												
+												呼叫中心
+												</td>-->
+												<td class="table_color color_b3">
+												
+												
+												
+												
+												票到付款
+												
+												</td>
+												<td class="table_color color_b3">出票完成</td>
+												<td class="table_color color_b3">未支付</td>
+												<td class="table_color color_b3">
+												
+												
+														
+														<img src="../images/Lock.png" border="0" /><br />张鹏<input type="hidden" id='hidname_11730' value='张鹏' />
+														
+												
+													</td>
+												<td class="table_color color_b3">
+												<!-- 订单操作开始 订单状态:1.等待支付2.支付成功3.出票完成4.申请废票5.申请退票6.取消订单7.等待审核8.审核失败9.退款成功10.订单关闭11.已经废票12.已经退票13.申请改签14.已经改签 -->
+											  
+											    
+												
+ 
+												
+												<input type="button" class="button108" id="btnRRTicket" value="配送"   onclick="showpeisong();" /><br/>
+												<!-- 订单操作结束 -->
+												</td>
+												
+											</tr>
+											
+										
+											
+											<tr   id="11678" align="center"
+												onmouseover="currentcolor=this.style.backgroundColor;this.className='colortrin',this.style.fontWeight='';"
+												onmouseout="this.className='colortrout',this.style.fontWeight='';">
+ 
+												<td class="table_color color_b3" ><input type="checkbox" 
+													name="selectid" value="11678" /></td>
+												<td class="table_color color_b3">
+												
+												
+												<a href="javascript: goEdit('orderinfo!toshowb2c.action?id=11678','11678');">A21678</a>
+												
+												
+												</td>
+													
+												<td class="table_color color_b3">kkkkkk/geg</td>
+													
+												<td class="table_color color_b3">南京
+												- 北京
+												</td>
+												
+												<td class="table_color color_b3">FM2801</td>
+												<td class="table_color color_b3"><a href="#" onclick="copyToClipboard('txtpnr_11678',true,'11678');return false;"> YDWL4 </a><input id='txtpnr_11678' style="display:none" type="text" value=" YDWL4 " />(小)<br /><a href="#" onclick="copyToClipboard('txtbigpnr_11678',true,'11678');return false;">C5S5G </a><input id='txtbigpnr_11678' style="display:none" type="text" value="C5S5G " />(大)</td>
+												<td class="table_color color_b3">
+												2010-09-30 07:50:00<br />2010-09-28 15:13:07</td>
+												<!--<td class="table_color color_b3">晨曦</td>
+												<td class="table_color color_b3"> YDWL4 </td>
+												
+												
+												
+											<td class="table_color color_b3">710.00</td>
+												<td class="table_color color_b3">820.00</td>
+												
+												
+												
+												<td class="table_color color_b3">11620</td>
+												<td class="table_color color_b3">
+												
+												
+												
+												
+												
+												呼叫中心
+												</td>-->
+												<td class="table_color color_b3">
+												
+												
+												
+												
+												票到付款
+												
+												</td>
+												<td class="table_color color_b3">出票完成</td>
+												<td class="table_color color_b3">未支付</td>
+												<td class="table_color color_b3">
+												
+												
+														
+															<img src="../images/Unlocked.png" border="0" />
+														
+												
+													</td>
+												<td class="table_color color_b3">
+												<!-- 订单操作开始 订单状态:1.等待支付2.支付成功3.出票完成4.申请废票5.申请退票6.取消订单7.等待审核8.审核失败9.退款成功10.订单关闭11.已经废票12.已经退票13.申请改签14.已经改签 -->
+											  
+											    
+												
+ 
+												
+												<input type="button" class="button108" id="btnRRTicket" value="配送"   onclick="showpeisong();" /><br/>
+												
+												<!-- 订单操作结束 -->
+												</td>
+												
+											</tr>
+											
+										
+											
+											<tr   id="11664" align="center"
+												onmouseover="currentcolor=this.style.backgroundColor;this.className='colortrin',this.style.fontWeight='';"
+												onmouseout="this.className='colortrout',this.style.fontWeight='';">
+ 
+												<td class="table_color color_b3" ><input type="checkbox" 
+													name="selectid" value="11664" /></td>
+												<td class="table_color color_b3">
+												
+												
+												<a href="javascript: goEdit('orderinfo!toshowb2c.action?id=11664','11664');">A21664</a>
+												
+												
+												</td>
+													
+												<td class="table_color color_b3">sad/ad</td>
+													
+												<td class="table_color color_b3">北京
+												- 重庆
+												</td>
+												
+												<td class="table_color color_b3">CA1419</td>
+												<td class="table_color color_b3"><a href="#" onclick="copyToClipboard('txtpnr_11664',true,'11664');return false;">RQ18G </a><input id='txtpnr_11664' style="display:none" type="text" value="RQ18G " />(小)<br /></td>
+												<td class="table_color color_b3">
+												2010-09-30 07:30:00<br />2010-09-28 11:53:46</td>
+												<!--<td class="table_color color_b3">sad/asd</td>
+												<td class="table_color color_b3">RQ18G </td>
+												
+												
+												
+											<td class="table_color color_b3">1,560.00</td>
+												<td class="table_color color_b3">1,670.00</td>
+												
+												
+												
+												<td class="table_color color_b3">11606</td>
+												<td class="table_color color_b3">
+												网站预订
+												
+												
+												
+												
+												
+												</td>-->
+												<td class="table_color color_b3">
+												
+												
+												在线支付
+												
+												
+												
+												</td>
+												<td class="table_color color_b3">出票完成</td>
+												<td class="table_color color_b3">已支付</td>
+												<td class="table_color color_b3">
+												
+												
+														
+														<img src="../images/Lock.png" border="0" /><br />张鹏<input type="hidden" id='hidname_11664' value='张鹏' />
+														
+												
+													</td>
+												<td class="table_color color_b3">
+												<!-- 订单操作开始 订单状态:1.等待支付2.支付成功3.出票完成4.申请废票5.申请退票6.取消订单7.等待审核8.审核失败9.退款成功10.订单关闭11.已经废票12.已经退票13.申请改签14.已经改签 -->
+											  
+											    
+												
+ 
+												
+												<input type="button" class="button108" id="btnRRTicket" value="配送"   onclick="showpeisong();" /><br/>
+												<!-- 订单操作结束 -->
+												</td>
+												
+											</tr>
+											
+										
+									</tbody>
+								</table>
+								</td>
+							</tr>
+							<tr>
+								<td height="43" align="center">
+							共&nbsp;5&nbsp;条记录&nbsp;当前1/1页&nbsp; <a href="#" class="font_grey_001" onclick='javascript:go(1);'>首页</a>&nbsp;<span class="font_grey_001"> <strong>1</strong>  <a href="#" class="font_grey_001" onclick='javascript:go(1);'>尾页</a></span><script>function go(pageno){document.form1.action="orderinfo!tob2c.action?pageinfo.pagenum="+pageno;document.form1.submit();}</script>
+										<input type="hidden" name="" id="hur"  style="width: 150px" />				
+								</td>
+							</tr>
+ 
+						</table>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+</div>
+<table>
+	<tr>
+		<td><strong><span style="color: Red">注意事项:</span></strong></td>
+	</tr>
+	<tr>
+		<td>
+		<ul>
+ 
+            <li style="color: Red;">提示信息：点击PNR编码即可复制PNR编码到剪贴板</li>
+			<li style="color: Red;">票号和EI项可以在订单详情页面添加</li>
+			<li id="li1"><span id="Label1">解锁功能只有本单位的管理员才具有</span></li>
+			<li>点击"创建时间"即可查看订单详细</li>
+			<li>查询范围为 本登录帐户所在部门的所有订单 可以根据订单状态来跟踪 订单动向</li>
+			<li>点击"进行中的买入订单"按钮可查看"已经完成支付，但是没有结束的采购交易"的订单</li>
+			<li id="liRemark">点击"进行中的卖出订单"按钮可查看"买家已经完成支付，但是没有结束的卖出交易"的订单</li>
+			<li>点击"进行中的退款订单"按钮可查看"进行中的退款订单"的订单</li>
+			<li>过滤真实废票订单选项,只在查询'废票订单，等待审核'状态的订单或选择'进行中的退款订单'时起效</li>
+		</ul>
+		</td>
+	</tr>
+</table>
+</form>
+<div style="width: 100%; background-color:Gray; display:none; height: 100%; position:absolute; left: 0; top: 0;" id="xie">
+<div style="width: 260px; background-color:Gray; display:none; height: 113px; position:absolute; left: 244px; top: 137px;" id="content1"></div>
+ 
+</div>
+</body>
+</html>
+ 
+ 
+<script language="JavaScript"> 
+	function toadd(){
+		window.location="orderinfo!toadd.action?pageinfo.pagenum=1&pageinfo.pagerow=20";
+	}
+	function deleteItem(){
+			var length=document.form1.selectid.length;
+			
+			//唯一项
+			if(length== undefined){
+			
+				if(document.form1.selectid.checked ==true)
+				{
+						var temp = confirm('确认删除吗？');
+						if(temp==true){
+						
+							document.form1.action="orderinfo!delete.action?id="+document.form1.selectid.value;
+							document.form1.submit();
+						}
+						return;
+				}
+			}
+			
+			  	 if ( length == null || length==0 ){
+					  	 
+					  	  	 alert("你未选择任何内容");
+					          return;
+				  }else{
+					   	 var len=0;
+					   	 var uvalue=0;
+					     for (var i = 0; i < length; i++)
+					      {
+					         
+					         if( document.form1.selectid[i].checked ==true){
+								uvalue=document.form1.selectid[i].value;
+								len++;					         
+					         }
+						      
+					      }
+					      
+					     
+					      if(len==1){
+					      	var temp = confirm('确认删除吗？');
+							if(temp==true){
+								document.form1.action="orderinfo!delete.action?id="+uvalue;
+								document.form1.submit();
+							}
+							return;
+					      }else if (len>1){
+					      	var temp = confirm('确认删除吗？');
+					      	if(temp==true){
+					      		document.form1.action="orderinfo!batch.action?opt=1";
+								document.form1.submit();
+							}
+							return;
+					      
+					      }
+					      
+				 }	
+				
+			alert("无效操作,你未选择任何内容!");
+			return;
+  }
+ 
+ function updateItem(){
+			var length=document.form1.selectid.length;
+			
+			//唯一项
+			if(length== undefined){
+			
+				if(document.form1.selectid.checked ==true)
+				{
+						
+						document.form1.action="orderinfo!toeditb2c.action?id="+document.form1.selectid.value;
+						document.form1.submit();
+						
+						return;
+				}
+			}
+			
+			  	 if ( length == null || length==0 ){
+					  	 
+					  	  	 alert("你未选择任何内容");
+					          return;
+				  }else{
+					   	 var len=0;
+					   	 var uvalue=0;
+					     for (var i = 0; i < length; i++)
+					      {
+					         
+					         if( document.form1.selectid[i].checked ==true){
+								uvalue=document.form1.selectid[i].value;
+								len++;					         
+					         }
+						      
+					      }
+					      
+					     
+					      if(len==1){
+					      		document.form1.action="orderinfo!toeditb2c.action?id="+uvalue;
+								document.form1.submit();
+								return;
+					      }else if (len>1){
+					      	var temp = confirm('只能选择一项进行操作？');
+							return;
+					      
+					      }
+					      
+				 }	
+				
+			alert("无效操作,你未选择任何内容!");
+			return;
+  }
+	
+ function checkItem(){
+			var length=document.form1.selectid.length;
+			
+			//唯一项
+			if(length== undefined){
+			
+				if(document.form1.selectid.checked ==true)
+				{
+						
+						document.form1.action="orderinfo!tocheck.action?id="+document.form1.selectid.value;
+						document.form1.submit();
+						
+						return;
+				}
+			}
+			
+			  	 if ( length == null || length==0 ){
+					  	 
+					  	  	 alert("你未选择任何内容");
+					          return;
+				  }else{
+					   	 var len=0;
+					   	 var uvalue=0;
+					     for (var i = 0; i < length; i++)
+					      {
+					         
+					         if( document.form1.selectid[i].checked ==true){
+								uvalue=document.form1.selectid[i].value;
+								len++;					         
+					         }
+						      
+					      }
+					      
+					     
+					      if(len==1){
+					      		document.form1.action="orderinfo!tocheck.action?id="+uvalue;
+								document.form1.submit();
+								return;
+					      }else if (len>1){
+					      	var temp = confirm('只能选择一项进行操作？');
+							return;
+					      
+					      }
+					      
+				 }	
+				
+			alert("无效操作,你未选择任何内容!");
+			return;
+  }
+  // 详细信息展示
+  function showItem(){
+			var length=document.form1.selectid.length;
+			
+			//唯一项
+			if(length== undefined){
+			
+				if(document.form1.selectid.checked ==true)
+				{
+						
+						document.form1.action="orderinfo!toshowb2c.action?id="+document.form1.selectid.value;
+						document.form1.submit();
+						
+						return;
+				}
+			}
+			
+			  	 if ( length == null || length==0 ){
+					  	 
+					  	  	 alert("你未选择任何内容");
+					          return;
+				  }else{
+					   	 var len=0;
+					   	 var uvalue=0;
+					     for (var i = 0; i < length; i++)
+					      {
+					         
+					         if( document.form1.selectid[i].checked ==true){
+								uvalue=document.form1.selectid[i].value;
+								len++;					         
+					         }
+						      
+					      }
+					      
+					     
+					      if(len==1){
+					      		document.form1.action="orderinfo!toshowb2c.action?id="+uvalue;
+								document.form1.submit();
+								return;
+					      }else if (len>1){
+					      	var temp = confirm('只能选择一项进行操作？');
+							return;
+					      
+					      }
+					      
+				 }	
+				
+			alert("无效操作,你未选择任何内容!");
+			return;
+  }
+			
+function unselectall()
+{
+    if(document.form1.all.checked){
+	document.form1.all.checked = document.form1.all.checked&0;
+    }
+}
+ 
+function selectall1()
+{
+    var length=document.form1.selectid.length;
+    document.form1.all1.checked = document.form1.all1.checked|0;
+  
+ 
+   if ( length ==undefined &&  document.form1.selectid!=null ){
+    	  document.form1.selectid.checked=document.form1.all1.checked ;
+          return;
+    }
+ 
+ 
+    if (length>1)
+    {
+      for (var i = 0; i < length; i++)
+       {
+          document.form1.selectid[i].checked = document.form1.all1.checked;
+	      document.form1.getElementsByTagName("*").checked=document.form1.all1.checked;
+       }
+    }
+}
+ 
+ 
+</script>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+

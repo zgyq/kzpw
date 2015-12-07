@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Roomtype">
+  
+  <typeAlias alias="Roomtype" type="com.yf.system.base.roomtype.Roomtype"/>
+  
+
+  <resultMap id="resultRoomtypeMap" class="Roomtype">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="areadesc" column="C_AREADESC"/>
+  
+     <result property="roomdesc" column="C_ROOMDESC"/>
+  
+     <result property="bed" column="C_BED"/>
+  
+     <result property="roomset" column="C_ROOMSET"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="hotelid" column="C_HOTELID"/>
+  
+     <result property="layer" column="C_LAYER"/>
+  
+     <result property="breakfast" column="C_BREAKFAST"/>
+  
+     <result property="wideband" column="C_WIDEBAND"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+     
+      <result property="roomcode" column="C_ROOMCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllRoomtype"  resultMap="resultRoomtypeMap"  parameterClass="java.util.Map">
+  
+    select * from T_ROOMTYPE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllRoomtypeBySql"  resultMap="resultRoomtypeMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteRoomtypeBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countRoomtypeBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_ROOMTYPE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findRoomtype" parameterClass="long" resultClass="Roomtype">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_AREADESC as areadesc,
+	  			C_ROOMDESC as roomdesc,
+	  			C_BED as bed,
+	  			C_ROOMSET as roomset,
+	  			C_STATE as state,
+	  			C_HOTELID as hotelid,
+	  			C_LAYER as layer,
+	  			C_BREAKFAST as breakfast,
+	  			C_WIDEBAND as wideband,
+	  			C_UCODE as ucode,
+	  			C_ROOMCODE as roomcode,
+	  			C_LANGUAGE as language 
+     from T_ROOMTYPE
+    where ID = #id#
+  </select>
+   
+  <insert id="createRoomtype" parameterClass="Roomtype">
+    insert into T_ROOMTYPE ( 
+    	ID,
+	  			C_NAME,
+	  			C_AREADESC,
+	  			C_ROOMDESC,
+	  			C_BED,
+	  			C_ROOMSET,
+	  			C_STATE,
+	  			C_HOTELID,
+	  			C_LAYER,
+	  			C_BREAKFAST,
+	  			C_WIDEBAND,
+	  			C_UCODE,
+	  			C_ROOMCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#areadesc#,
+	  					
+	  						#roomdesc#,
+	  					
+							#bed:DECIMAL#,
+						
+	  						#roomset#,
+	  					
+							#state:DECIMAL#,
+						
+							#hotelid:DECIMAL#,
+						
+	  						#layer#,
+	  					
+							#breakfast:DECIMAL#,
+						
+							#wideband:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+							
+							#roomcode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteRoomtype" parameterClass="long">
+    delete from T_ROOMTYPE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateRoomtype" parameterClass="Roomtype">
+    update T_ROOMTYPE 
+    set 
+    	C_NAME = #name#,
+	  					C_AREADESC = #areadesc#,
+	  					C_ROOMDESC = #roomdesc#,
+	  					C_BED = #bed:DECIMAL#,
+						C_ROOMSET = #roomset#,
+	  					C_STATE = #state:DECIMAL#,
+						C_HOTELID = #hotelid:DECIMAL#,
+						C_LAYER = #layer#,
+	  					C_BREAKFAST = #breakfast:DECIMAL#,
+						C_WIDEBAND = #wideband:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_ROOMCODE = #roomcode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 机票基础价格表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Airbaseprice createAirbaseprice(Airbaseprice airbaseprice) throws SQLException;
+	
+	/**
+	 * 删除 机票基础价格表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAirbaseprice(long id);
+	
+	
+	/**
+	 * 修改 机票基础价格表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAirbaseprice(Airbaseprice airbaseprice);
+
+		
+	/**
+	 * 修改 机票基础价格表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAirbasepriceIgnoreNull(Airbaseprice airbaseprice);
+		
+	
+	/**
+	 * 查找 机票基础价格表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirbaseprice(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 机票基础价格表
+	 * @param id
+	 * @return
+	 */
+	public Airbaseprice findAirbaseprice(long id);
+	
+	/**
+	 * 查找 机票基础价格表 by language
+	 * @param id
+	 * @return
+	 */
+	public Airbaseprice findAirbasepricebylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 机票基础价格表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAirbasepriceForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找机票基础价格表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirbasepriceBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 机票基础价格表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAirbasepriceBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAirbasepriceBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IAirbasepriceComponent airbasepriceComponent;
+	  
+ 	
+ 	public IAirbasepriceComponent getAirbasepriceComponent() {
+		return airbasepriceComponent;
+	}
+	public void setAirbasepriceComponent(IAirbasepriceComponent  airbasepriceComponent) {
+		this.airbasepriceComponent = airbasepriceComponent;
+	}
+	/**
+	 * 创建 机票基础价格表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Airbaseprice createAirbaseprice(Airbaseprice airbaseprice) throws SQLException{
+	
+		return airbasepriceComponent.createAirbaseprice(airbaseprice);
+	}
+	/**
+	 * 删除 机票基础价格表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAirbaseprice(long id){
+	
+		return airbasepriceComponent.deleteAirbaseprice(id);
+	}
+	
+	
+	/**
+	 * 修改 机票基础价格表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAirbaseprice(Airbaseprice airbaseprice){
+		return airbasepriceComponent.updateAirbaseprice(airbaseprice);
+	
+	}
+
+		
+	/**
+	 * 修改 机票基础价格表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAirbasepriceIgnoreNull(Airbaseprice airbaseprice){
+			return airbasepriceComponent.updateAirbasepriceIgnoreNull(airbaseprice);
+	
+	}
+	
+	/**
+	 * 查找 机票基础价格表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirbaseprice(String where, String orderby,int limit,int offset){
+		return airbasepriceComponent.findAllAirbaseprice(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 机票基础价格表
+	 * @param id
+	 * @return
+	 */
+	public Airbaseprice findAirbaseprice(long id){
+		return airbasepriceComponent.findAirbaseprice(id);
+	}
+	
+	/**
+	 * 查找 机票基础价格表
+	 * @param id
+	 * @return
+	 */
+	public Airbaseprice findAirbasepricebylanguage(long id,Integer language){
+		return airbasepriceComponent.findAirbasepricebylanguage(id,language);
+	}
+	/** 
+	 * 查找 机票基础价格表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAirbasepriceForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return airbasepriceComponent.findAllAirbaseprice(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找机票基础价格表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirbasepriceBySql(String sql,int limit,int offset){
+		return airbasepriceComponent.findAllAirbaseprice(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 机票基础价格表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAirbasepriceBySql(String sql){
+		return airbasepriceComponent.excuteAirbasepriceBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAirbasepriceBySql(String sql){
+		return airbasepriceComponent.countAirbasepriceBySql(sql);
+	}
+	
+	
+

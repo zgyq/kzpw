@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Airlien">
+  
+  <typeAlias alias="Airlien" type="com.yf.system.base.airlien.Airlien"/>
+  
+
+  <resultMap id="resultAirlienMap" class="Airlien">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="scode" column="C_SCODE"/>
+  
+     <result property="ecode" column="C_ECODE"/>
+  
+     <result property="scityname" column="C_SCITYNAME"/>
+  
+     <result property="ecityname" column="C_ECITYNAME"/>
+  
+     <result property="shzl" column="C_SHZL"/>
+  
+     <result property="ehzl" column="C_EHZL"/>
+  
+     <result property="distance" column="C_DISTANCE"/>
+  
+     <result property="ftime" column="C_FTIME"/>
+  
+     <result property="aircode" column="C_AIRCODE"/>
+  
+     <result property="airno" column="C_AIRNO"/>
+  
+     <result property="airname" column="C_AIRNAME"/>
+  
+     <result property="airportfee" column="C_AIRPORTFEE"/>
+  
+     <result property="fuelfee" column="C_FUELFEE"/>
+  
+     <result property="stopnum" column="C_STOPNUM"/>
+  
+     <result property="stopinfo" column="C_STOPINFO"/>
+  
+     <result property="meal" column="C_MEAL"/>
+  
+     <result property="departtime" column="C_DEPARTTIME"/>
+  
+     <result property="arrivetime" column="C_ARRIVETIME"/>
+  
+     <result property="sharenum" column="C_SHARENUM"/>
+  
+     <result property="banqi" column="C_BANQI"/>
+  
+     <result property="airtype" column="C_AIRTYPE"/>
+  
+     <result property="yprice" column="C_YPRICE"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllAirlien"  resultMap="resultAirlienMap"  parameterClass="java.util.Map">
+  
+    select * from T_AIRLIEN
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllAirlienBySql"  resultMap="resultAirlienMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteAirlienBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countAirlienBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_AIRLIEN
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findAirlien" parameterClass="long" resultClass="Airlien">
+    select 
+    	ID as id,
+	  			C_SCODE as scode,
+	  			C_ECODE as ecode,
+	  			C_SCITYNAME as scityname,
+	  			C_ECITYNAME as ecityname,
+	  			C_SHZL as shzl,
+	  			C_EHZL as ehzl,
+	  			C_DISTANCE as distance,
+	  			C_FTIME as ftime,
+	  			C_AIRCODE as aircode,
+	  			C_AIRNO as airno,
+	  			C_AIRNAME as airname,
+	  			C_AIRPORTFEE as airportfee,
+	  			C_FUELFEE as fuelfee,
+	  			C_STOPNUM as stopnum,
+	  			C_STOPINFO as stopinfo,
+	  			C_MEAL as meal,
+	  			C_DEPARTTIME as departtime,
+	  			C_ARRIVETIME as arrivetime,
+	  			C_SHARENUM as sharenum,
+	  			C_BANQI as banqi,
+	  			C_AIRTYPE as airtype,
+	  			C_YPRICE as yprice,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state 
+     from T_AIRLIEN
+    where ID = #id#
+  </select>
+   
+  <insert id="createAirlien" parameterClass="Airlien">
+    insert into T_AIRLIEN ( 
+    	ID,
+	  			C_SCODE,
+	  			C_ECODE,
+	  			C_SCITYNAME,
+	  			C_ECITYNAME,
+	  			C_SHZL,
+	  			C_EHZL,
+	  			C_DISTANCE,
+	  			C_FTIME,
+	  			C_AIRCODE,
+	  			C_AIRNO,
+	  			C_AIRNAME,
+	  			C_AIRPORTFEE,
+	  			C_FUELFEE,
+	  			C_STOPNUM,
+	  			C_STOPINFO,
+	  			C_MEAL,
+	  			C_DEPARTTIME,
+	  			C_ARRIVETIME,
+	  			C_SHARENUM,
+	  			C_BANQI,
+	  			C_AIRTYPE,
+	  			C_YPRICE,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#scode#,
+	  					
+	  						#ecode#,
+	  					
+	  						#scityname#,
+	  					
+	  						#ecityname#,
+	  					
+	  						#shzl#,
+	  					
+	  						#ehzl#,
+	  					
+	  						#distance#,
+	  					
+	  						#ftime#,
+	  					
+	  						#aircode#,
+	  					
+	  						#airno#,
+	  					
+	  						#airname#,
+	  					
+	  						#airportfee#,
+	  					
+	  						#fuelfee#,
+	  					
+	  						#stopnum#,
+	  					
+	  						#stopinfo#,
+	  					
+	  						#meal#,
+	  					
+	  						#departtime#,
+	  					
+	  						#arrivetime#,
+	  					
+	  						#sharenum#,
+	  					
+	  						#banqi#,
+	  					
+	  						#airtype#,
+	  					
+	  						#yprice#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteAirlien" parameterClass="long">
+    delete from T_AIRLIEN
+    where ID = #id#
+  </delete>
+	
+  <update id="updateAirlien" parameterClass="Airlien">
+    update T_AIRLIEN 
+    set 
+    	C_SCODE = #scode#,
+	  					C_ECODE = #ecode#,
+	  					C_SCITYNAME = #scityname#,
+	  					C_ECITYNAME = #ecityname#,
+	  					C_SHZL = #shzl#,
+	  					C_EHZL = #ehzl#,
+	  					C_DISTANCE = #distance#,
+	  					C_FTIME = #ftime#,
+	  					C_AIRCODE = #aircode#,
+	  					C_AIRNO = #airno#,
+	  					C_AIRNAME = #airname#,
+	  					C_AIRPORTFEE = #airportfee#,
+	  					C_FUELFEE = #fuelfee#,
+	  					C_STOPNUM = #stopnum#,
+	  					C_STOPINFO = #stopinfo#,
+	  					C_MEAL = #meal#,
+	  					C_DEPARTTIME = #departtime#,
+	  					C_ARRIVETIME = #arrivetime#,
+	  					C_SHARENUM = #sharenum#,
+	  					C_BANQI = #banqi#,
+	  					C_AIRTYPE = #airtype#,
+	  					C_YPRICE = #yprice#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

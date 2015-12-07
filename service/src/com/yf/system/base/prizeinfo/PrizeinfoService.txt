@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 积分礼品信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Prizeinfo createPrizeinfo(Prizeinfo prizeinfo) throws SQLException;
+	
+	/**
+	 * 删除 积分礼品信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deletePrizeinfo(long id);
+	
+	
+	/**
+	 * 修改 积分礼品信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updatePrizeinfo(Prizeinfo prizeinfo);
+
+		
+	/**
+	 * 修改 积分礼品信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updatePrizeinfoIgnoreNull(Prizeinfo prizeinfo);
+		
+	
+	/**
+	 * 查找 积分礼品信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPrizeinfo(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 积分礼品信息
+	 * @param id
+	 * @return
+	 */
+	public Prizeinfo findPrizeinfo(long id);
+	
+	
+	/** 
+	 * 查找 积分礼品信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllPrizeinfoForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找积分礼品信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPrizeinfoBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 积分礼品信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excutePrizeinfoBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countPrizeinfoBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IPrizeinfoComponent prizeinfoComponent;
+	  
+ 	
+ 	public IPrizeinfoComponent getPrizeinfoComponent() {
+		return prizeinfoComponent;
+	}
+	public void setPrizeinfoComponent(IPrizeinfoComponent  prizeinfoComponent) {
+		this.prizeinfoComponent = prizeinfoComponent;
+	}
+	/**
+	 * 创建 积分礼品信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Prizeinfo createPrizeinfo(Prizeinfo prizeinfo) throws SQLException{
+	
+		return prizeinfoComponent.createPrizeinfo(prizeinfo);
+	}
+	/**
+	 * 删除 积分礼品信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deletePrizeinfo(long id){
+	
+		return prizeinfoComponent.deletePrizeinfo(id);
+	}
+	
+	
+	/**
+	 * 修改 积分礼品信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updatePrizeinfo(Prizeinfo prizeinfo){
+		return prizeinfoComponent.updatePrizeinfo(prizeinfo);
+	
+	}
+
+		
+	/**
+	 * 修改 积分礼品信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updatePrizeinfoIgnoreNull(Prizeinfo prizeinfo){
+			return prizeinfoComponent.updatePrizeinfoIgnoreNull(prizeinfo);
+	
+	}
+	
+	/**
+	 * 查找 积分礼品信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPrizeinfo(String where, String orderby,int limit,int offset){
+		return prizeinfoComponent.findAllPrizeinfo(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 积分礼品信息
+	 * @param id
+	 * @return
+	 */
+	public Prizeinfo findPrizeinfo(long id){
+		return prizeinfoComponent.findPrizeinfo(id);
+	}
+	
+	/** 
+	 * 查找 积分礼品信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllPrizeinfoForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return prizeinfoComponent.findAllPrizeinfo(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找积分礼品信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPrizeinfoBySql(String sql,int limit,int offset){
+		return prizeinfoComponent.findAllPrizeinfo(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 积分礼品信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excutePrizeinfoBySql(String sql){
+		return prizeinfoComponent.excutePrizeinfoBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countPrizeinfoBySql(String sql){
+		return prizeinfoComponent.countPrizeinfoBySql(sql);
+	}
+	
+	
+

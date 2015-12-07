@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Logindesc">
+  
+  <typeAlias alias="Logindesc" type="com.yf.system.base.logindesc.Logindesc"/>
+  
+
+  <resultMap id="resultLogindescMap" class="Logindesc">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="loginname" column="C_LOGINNAME"/>
+  
+     <result property="userid" column="C_USERID"/>
+  
+     <result property="loginip" column="C_LOGINIP"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="descinfo" column="C_DESCINFO"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllLogindesc"  resultMap="resultLogindescMap"  parameterClass="java.util.Map">
+  
+    select * from T_LOGINDESC
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllLogindescBySql"  resultMap="resultLogindescMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteLogindescBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countLogindescBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_LOGINDESC
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findLogindesc" parameterClass="long" resultClass="Logindesc">
+    select 
+    	ID as id,
+	  			C_LOGINNAME as loginname,
+	  			C_USERID as userid,
+	  			C_LOGINIP as loginip,
+	  			C_AGENTID as agentid,
+	  			C_DESCINFO as descinfo,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime 
+     from T_LOGINDESC
+    where ID = #id#
+  </select>
+   
+  <insert id="createLogindesc" parameterClass="Logindesc">
+    insert into T_LOGINDESC ( 
+    	ID,
+	  			C_LOGINNAME,
+	  			C_USERID,
+	  			C_LOGINIP,
+	  			C_AGENTID,
+	  			C_DESCINFO,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#loginname#,
+	  					
+							#userid:DECIMAL#,
+						
+	  						#loginip#,
+	  					
+							#agentid:DECIMAL#,
+						
+	  						#descinfo#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteLogindesc" parameterClass="long">
+    delete from T_LOGINDESC
+    where ID = #id#
+  </delete>
+	
+  <update id="updateLogindesc" parameterClass="Logindesc">
+    update T_LOGINDESC 
+    set 
+    	C_LOGINNAME = #loginname#,
+	  					C_USERID = #userid:DECIMAL#,
+						C_LOGINIP = #loginip#,
+	  					C_AGENTID = #agentid:DECIMAL#,
+						C_DESCINFO = #descinfo#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

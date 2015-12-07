@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Backpoint">
+  
+  <typeAlias alias="Backpoint" type="com.yf.system.base.backpoint.Backpoint"/>
+  
+
+  <resultMap id="resultBackpointMap" class="Backpoint">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="startdate" column="C_STARTDATE"/>
+  
+     <result property="isenables" column="C_ISENABLES"/>
+  
+     <result property="backpoint" column="C_BACKPOINT"/>
+  
+     <result property="policyrange" column="C_POLICYRANGE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="customeragentid" column="C_CUSTOMERAGENTID"/>
+   
+  </resultMap>
+  
+  <select id="findAllBackpoint"  resultMap="resultBackpointMap"  parameterClass="java.util.Map">
+  
+    select * from T_BACKPOINT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllBackpointBySql"  resultMap="resultBackpointMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteBackpointBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countBackpointBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_BACKPOINT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findBackpoint" parameterClass="long" resultClass="Backpoint">
+    select 
+    	ID as id,
+	  			C_STARTDATE as startdate,
+	  			C_ISENABLES as isenables,
+	  			C_BACKPOINT as backpoint,
+	  			C_POLICYRANGE as policyrange,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_CUSTOMERAGENTID as customeragentid 
+     from T_BACKPOINT
+    where ID = #id#
+  </select>
+   
+  <insert id="createBackpoint" parameterClass="Backpoint">
+    insert into T_BACKPOINT ( 
+    	ID,
+	  			C_STARTDATE,
+	  			C_ISENABLES,
+	  			C_BACKPOINT,
+	  			C_POLICYRANGE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_CUSTOMERAGENTID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#startdate#,
+	  					
+							#isenables:DECIMAL#,
+						
+	  						#backpoint#,
+	  					
+	  						#policyrange#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+  							#customeragentid:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteBackpoint" parameterClass="long">
+    delete from T_BACKPOINT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateBackpoint" parameterClass="Backpoint">
+    update T_BACKPOINT 
+    set 
+    	C_STARTDATE = #startdate#,
+	  					C_ISENABLES = #isenables:DECIMAL#,
+						C_BACKPOINT = #backpoint#,
+	  					C_POLICYRANGE = #policyrange#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_CUSTOMERAGENTID = #customeragentid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

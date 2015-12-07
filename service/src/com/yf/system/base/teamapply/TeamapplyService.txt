@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 团队申请表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Teamapply createTeamapply(Teamapply teamapply) throws SQLException;
+	
+	/**
+	 * 删除 团队申请表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTeamapply(long id);
+	
+	
+	/**
+	 * 修改 团队申请表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTeamapply(Teamapply teamapply);
+
+		
+	/**
+	 * 修改 团队申请表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTeamapplyIgnoreNull(Teamapply teamapply);
+		
+	
+	/**
+	 * 查找 团队申请表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTeamapply(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 团队申请表
+	 * @param id
+	 * @return
+	 */
+	public Teamapply findTeamapply(long id);
+	
+	
+	/** 
+	 * 查找 团队申请表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTeamapplyForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找团队申请表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTeamapplyBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 团队申请表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTeamapplyBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTeamapplyBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITeamapplyComponent teamapplyComponent;
+	  
+ 	
+ 	public ITeamapplyComponent getTeamapplyComponent() {
+		return teamapplyComponent;
+	}
+	public void setTeamapplyComponent(ITeamapplyComponent  teamapplyComponent) {
+		this.teamapplyComponent = teamapplyComponent;
+	}
+	/**
+	 * 创建 团队申请表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Teamapply createTeamapply(Teamapply teamapply) throws SQLException{
+	
+		return teamapplyComponent.createTeamapply(teamapply);
+	}
+	/**
+	 * 删除 团队申请表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTeamapply(long id){
+	
+		return teamapplyComponent.deleteTeamapply(id);
+	}
+	
+	
+	/**
+	 * 修改 团队申请表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTeamapply(Teamapply teamapply){
+		return teamapplyComponent.updateTeamapply(teamapply);
+	
+	}
+
+		
+	/**
+	 * 修改 团队申请表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTeamapplyIgnoreNull(Teamapply teamapply){
+			return teamapplyComponent.updateTeamapplyIgnoreNull(teamapply);
+	
+	}
+	
+	/**
+	 * 查找 团队申请表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTeamapply(String where, String orderby,int limit,int offset){
+		return teamapplyComponent.findAllTeamapply(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 团队申请表
+	 * @param id
+	 * @return
+	 */
+	public Teamapply findTeamapply(long id){
+		return teamapplyComponent.findTeamapply(id);
+	}
+	
+	/** 
+	 * 查找 团队申请表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTeamapplyForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return teamapplyComponent.findAllTeamapply(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找团队申请表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTeamapplyBySql(String sql,int limit,int offset){
+		return teamapplyComponent.findAllTeamapply(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 团队申请表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTeamapplyBySql(String sql){
+		return teamapplyComponent.excuteTeamapplyBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTeamapplyBySql(String sql){
+		return teamapplyComponent.countTeamapplyBySql(sql);
+	}
+	
+	
+

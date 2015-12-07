@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 文件
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Filecabinfile createFilecabinfile(Filecabinfile filecabinfile) throws SQLException;
+	
+	/**
+	 * 删除 文件
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteFilecabinfile(long id);
+	
+	
+	/**
+	 * 修改 文件
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateFilecabinfile(Filecabinfile filecabinfile);
+
+		
+	/**
+	 * 修改 文件但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateFilecabinfileIgnoreNull(Filecabinfile filecabinfile);
+		
+	
+	/**
+	 * 查找 文件
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFilecabinfile(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 文件
+	 * @param id
+	 * @return
+	 */
+	public Filecabinfile findFilecabinfile(long id);
+	
+	
+	/** 
+	 * 查找 文件
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllFilecabinfileForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找文件
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFilecabinfileBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 文件
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteFilecabinfileBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countFilecabinfileBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IFilecabinfileComponent filecabinfileComponent;
+	  
+ 	
+ 	public IFilecabinfileComponent getFilecabinfileComponent() {
+		return filecabinfileComponent;
+	}
+	public void setFilecabinfileComponent(IFilecabinfileComponent  filecabinfileComponent) {
+		this.filecabinfileComponent = filecabinfileComponent;
+	}
+	/**
+	 * 创建 文件
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Filecabinfile createFilecabinfile(Filecabinfile filecabinfile) throws SQLException{
+	
+		return filecabinfileComponent.createFilecabinfile(filecabinfile);
+	}
+	/**
+	 * 删除 文件
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteFilecabinfile(long id){
+	
+		return filecabinfileComponent.deleteFilecabinfile(id);
+	}
+	
+	
+	/**
+	 * 修改 文件
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateFilecabinfile(Filecabinfile filecabinfile){
+		return filecabinfileComponent.updateFilecabinfile(filecabinfile);
+	
+	}
+
+		
+	/**
+	 * 修改 文件但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateFilecabinfileIgnoreNull(Filecabinfile filecabinfile){
+			return filecabinfileComponent.updateFilecabinfileIgnoreNull(filecabinfile);
+	
+	}
+	
+	/**
+	 * 查找 文件
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFilecabinfile(String where, String orderby,int limit,int offset){
+		return filecabinfileComponent.findAllFilecabinfile(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 文件
+	 * @param id
+	 * @return
+	 */
+	public Filecabinfile findFilecabinfile(long id){
+		return filecabinfileComponent.findFilecabinfile(id);
+	}
+	
+	/** 
+	 * 查找 文件
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllFilecabinfileForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return filecabinfileComponent.findAllFilecabinfile(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找文件
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFilecabinfileBySql(String sql,int limit,int offset){
+		return filecabinfileComponent.findAllFilecabinfile(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 文件
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteFilecabinfileBySql(String sql){
+		return filecabinfileComponent.excuteFilecabinfileBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countFilecabinfileBySql(String sql){
+		return filecabinfileComponent.countFilecabinfileBySql(sql);
+	}
+	
+	
+

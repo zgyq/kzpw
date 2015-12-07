@@ -1,0 +1,1506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>火车票搜索页</title>
+<link href="css/index.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/train_list.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/train_common.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+
+<body>
+<div class="header">
+	<div class="top1 wrap">
+		<div class="logo"><a href="#"><img src="images/logo.jpg" height="120" /></a></div>
+		<div class="top_r">
+			<div class="hot_phone">400-8888-999</div>
+			<div class="t_link">
+				<a href="#" class="wap">手机版</a>|
+				<a href="#">收藏本站</a>|
+				<a href="#">在线客服</a>|
+				<a href="#">帮助</a>|
+				<a href="#">积分广场</a>|
+				<a href="#">礼品卡</a>|
+				<a href="#">English</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="nav">
+		<div class="wrap">
+			<div class="navmain">
+				<ul>
+					<li><a href="#" class="now">首页</a></li>
+					<li><a href="#">国内酒店</a></li>
+					<li><a href="#">预订机票</a></li>
+					<li><a href="#" class="now">火车票</a></li>
+				</ul>
+				<ul class="clear"></ul>
+			</div>
+			<div class="m_c">			
+				<a href="#" class="dbg">我的账户</a>
+				<a href="#">免费注册</a>
+				<a href="#" class="dbg">登陆</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<!--end header -->
+
+<!--end banner -->
+<div class="contmain wrap mt20">
+	<div class="box_type2">
+        <p class="bread">
+            <a href="http://train.elong.com">火车票预订</a> <span>
+              > 北京南到青岛火车票预订</span>
+        </p>
+        <ul class="train_searchBox">
+            <li class="list_search_input">
+                <label>
+                    出发</label>
+                <input type="text" name="" id="txtStartStation" value="北京南" citynamecn="北京南" citynameen="beijingnan">
+            </li>
+            <li class="list_search_block"><a id="btnChangeStation" href="javascript:void(0);"
+                title="切换城市"><span class="icon2 head_arr"></span></a></li>
+            <li class="list_search_input">
+                <label>
+                    到达</label>
+                <input type="text" name="" id="txtEndStation" value="青岛"
+                    citynamecn="青岛"
+                    citynameen="qingdao">
+            </li>
+            <li class="list_search_block"></li>
+            <li class="list_search_date">
+                <label>
+                    出发日期</label>
+                <input type="text" id="txtStartDate" value="2014-07-01" readonly="true">
+                <span class="icon2 date" id="txtDateMouse"></span></li>
+            <li class="list_search_block"></li>
+            <li class="list_search_btn" id="btnSearchTicket"><a href="#"></a></li>
+        </ul>
+        <div class="leftBox">
+            <div class="list_title">
+                <h1>
+                    <span class="left" id="lastbread"><span>北京南-青岛列车</span><span style="font-size:14px; font-weight:100;">共13次列车符合条件</span></span>
+                    
+                </h1>
+            </div>
+            <div class="clear">
+            </div>
+            
+<!--订票日历开始-->
+<div class="list_dateBox">
+    <a class="date_leftArr" onclick="CanlenderLeftButtonClick01()" id="canlenderleftbutton01">
+    </a>
+    <ul class="day" id="ulCanlender01">
+        
+        <li style=""><a href="?fromdate=2014-06-28" class="">
+            <span>
+                06-28</span>
+            周六</a> </li>
+        
+        <li style=""><a href="?fromdate=2014-06-29" class="">
+            <span>
+                06-29</span>
+            周日</a> </li>
+        
+        <li style=""><a href="?fromdate=2014-06-30" class="">
+            <span>
+                06-30</span>
+            周一</a> </li>
+        
+        <li style=""><a href="?fromdate=2014-07-01" class="on">
+            <span>
+                07-01</span>
+            周二</a> </li>
+        
+        <li style=""><a href="?fromdate=2014-07-02" class="">
+            <span>
+                07-02</span>
+            周三</a> </li>
+        
+        <li style=""><a href="?fromdate=2014-07-03" class="">
+            <span>
+                07-03</span>
+            周四</a> </li>
+        
+        <li style=""><a href="?fromdate=2014-07-04" class="">
+            <span>
+                07-04</span>
+            周五</a> </li>
+        
+        <li style="display:none"><a href="?fromdate=2014-07-05" class="">
+            <span>
+                07-05</span>
+            周六</a> </li>
+        
+        <li style="display:none"><a href="?fromdate=2014-07-06" class="">
+            <span>
+                07-06</span>
+            周日</a> </li>
+        
+        <li style="display:none"><a href="?fromdate=2014-07-07" class="">
+            <span>
+                07-07</span>
+            周一</a> </li>
+        
+        <li style="display:none"><a href="?fromdate=2014-07-08" class="">
+            <span>
+                07-08</span>
+            周二</a> </li>
+        
+        <li style="display:none"><a href="?fromdate=2014-07-09" class="">
+            <span>
+                07-09</span>
+            周三</a> </li>
+        
+        <li style="display:none"><a href="?fromdate=2014-07-10" class="">
+            <span>
+                07-10</span>
+            周四</a> </li>
+        
+        <li style="display:none"><a href="?fromdate=2014-07-11" class="">
+            <span>
+                07-11</span>
+            周五</a> </li>
+        
+        <li style="display:none"><a href="?fromdate=2014-07-12" class="">
+            <span>
+                07-12</span>
+            周六</a> </li>
+        
+        <li style="display:none"><a href="?fromdate=2014-07-13" class="">
+            <span>
+                07-13</span>
+            周日</a> </li>
+        
+        <li style="display:none"><a href="?fromdate=2014-07-14" class="">
+            <span>
+                07-14</span>
+            周一</a> </li>
+        
+        <li style="display:none"><a href="?fromdate=2014-07-15" class="">
+            <span>
+                07-15</span>
+            周二</a> </li>
+        
+        <li style="display:none"><a href="?fromdate=2014-07-16" class="">
+            <span>
+                07-16</span>
+            周三</a> </li>
+        
+        <li style="display:none"><a href="?fromdate=2014-07-17" class="">
+            <span>
+                07-17</span>
+            周四</a> </li>
+        
+        <input type="hidden" value="3"  id="currentItem"/>
+    </ul>
+    <a class="date_rightArr" onclick="CanlenderRightButtonClick01()" id="canlenderrightbutton01">
+    </a>
+</div>
+<!--订票日历结束-->
+
+            <div class="list_typtBox" id="filterDiv" style="overflow: hidden;padding-bottom: 20px;">
+                <div class="typeBox">
+                    <p>
+                        车型:</p>
+                    <ul>
+                        <li class="no_lim">
+                            <label mark="0" class="on" method="f_trainType">
+                                <span></span>不限</label>
+                        </li>
+                        <li>
+                            <label mark="1">
+                                <span class="icon2 ckbox" method="f_trainType"></span><span  id="MoveHighCar" class="type_txt" method="f_trainType">
+                                    G高铁/D动车</span></label>
+                        </li>
+                        <li>
+                            <label mark="2">
+                                <span class="icon2 ckbox" method="f_trainType"></span><span class="type_txt" method="f_trainType">
+                                    快车（Z/T/K）</span></label>
+                        </li>
+                        <li>
+                            <label mark="3">
+                                <span class="icon2 ckbox" method="f_trainType"></span><span class="type_txt" method="f_trainType">
+                                    L临客/普快</span></label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="typeBox">
+                    <p>
+                        发车:</p>
+                    <ul>
+                        <li class="no_lim">
+                            <label class="on" mark="0" method="f_start">
+                                <span></span>不限</label>
+                        </li>
+                        <li>
+                            <label mark="1">
+                                <span class="icon2 ckbox" method="f_start"></span><span class="type_txt" method="f_start">
+                                    早上(00:00-06:00)</span></label>
+                        </li>
+                        <li>
+                            <label mark="2">
+                                <span class="icon2 ckbox" method="f_start"></span><span class="type_txt" method="f_start">
+                                    上午(6:00-12:00)</span></label>
+                        </li>
+                        <li>
+                            <label mark="3">
+                                <span class="icon2 ckbox" method="f_start"></span><span class="type_txt" method="f_start">
+                                    下午(12:00-18:00)</span></label>
+                        </li>
+                        <li>
+                            <label mark="4">
+                                <span class="icon2 ckbox" method="f_start"></span><span class="type_txt" method="f_start">
+                                    晚上(18:00-24:00)</span></label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="typeBox">
+                    <p>
+                        到达:</p>
+                    <ul>
+                        <li class="no_lim">
+                            <label class="on" mark="0" method="f_end">
+                                <span class=""></span>不限</label>
+                        </li>
+                        <li>
+                            <label mark="1">
+                                <span class="icon2 ckbox" method="f_end"></span><span class="type_txt" method="f_end">
+                                    早上(00:00-06:00)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label mark="2">
+                                <span class="icon2 ckbox" method="f_end"></span><span class="type_txt" method="f_end">
+                                    上午(6:00-12:00)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label mark="3">
+                                <span class="icon2 ckbox" method="f_end"></span><span class="type_txt" method="f_end">
+                                    下午(12:00-18:00)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label mark="4">
+                                <span class="icon2 ckbox" method="f_end"></span><span class="type_txt" method="f_end">
+                                    晚上(18:00-24:00)</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="typeBox" id="no_result_div_1">
+                    <p>
+                        发站:</p>
+                    <ul>
+                        <li class="no_lim">
+                            <label class="on" mark="0" method="f_sStaion">
+                                <span class=""></span>不限</label>
+                        </li>
+                        
+                        <li>
+                            <label mark="1">
+                                <span class="icon2 ckbox" method="f_sStaion"></span><span class="type_txt" method="f_sStaion">
+                                    北京南</span>
+                            </label>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="typeBox" id="no_result_div_2">
+                    <p>
+                        到站:</p>
+                    <ul>
+                        <li class="no_lim" mark="0">
+                            <label class="on" mark="0" method="f_eStaion">
+                                <span class=""></span>不限</label>
+                        </li>
+                        
+                        <li>
+                            <label mark="1">
+                                <span class="icon2 ckbox" method="f_eStaion"></span><span class="type_txt" method="f_eStaion">
+                                    青岛</span>
+                            </label>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="typeBox">
+                    <p>
+                        始发:</p>
+                    <ul>
+                        <li class="no_lim">
+                            <label class="on" mark="0" method="f_first">
+                                <span class=""></span>不限</label>
+                        </li>
+                        <li>
+                            <label mark="1">
+                                <span class="icon2 ckbox" method="f_first"></span><span class="type_txt" method="f_first">
+                                    始发</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label mark="2">
+                                <span class="icon2 ckbox" method="f_first"></span><span class="type_txt" method="f_first">
+                                    过路</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+               
+            </div>
+            
+
+<div class="ticketsBox" id="trainList">
+    <ul class="t_title" id="sortDiv">
+        <li class="t_no">车次</li>
+        <li class="t_go">
+            <a class="on" href="javascript:void(0);" method="s_start">出发<span class="icon2 arr_up" method="s_start"></span></a>
+        </li>
+        <li class="t_to">
+            <a href="javascript:void(0);" method="s_end">到达<span class="icon2 arr_up" method="s_end"></span></a>
+        </li>
+        <li class="t_sta">车站</li>
+        <li class="t_time">
+            <a href="javascript:void(0);" method="s_duration">行车时间<span class="icon2 arr_up" method="s_duration"></span></a>
+        </li>
+        <li class="t_price">
+            <a href="javascript:void(0);" method="s_price">价格<span class="icon2 arr_up" method="s_price"></span></a>
+        </li>
+        <li class="t_num">票量</li>
+    </ul>
+    
+    <div class="ticketsBox_info" id="train_0_D331" filterMark="D331,07:10,12:31,321,北京南,青岛,true,249">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>D331</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="0_D331">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+            
+                <p class="t_start">始</p>
+                
+                <p class="t_over">终</p>
+                
+            </li>
+            <li class="t_to">
+                <p class="on">07:10</p>
+                <p>12:31</p>
+            </li>
+            <li class="t_sta">
+                <p>北京南</p>
+                <p>青岛</p>
+            </li>
+            <li class="t_time">
+                <p>5小时21分</p>
+                <p></p>
+            </li>
+            <li class="t_price">
+            
+                <p>
+                    <span class="t_seat">二等座</span><span class="t_price_n">￥249</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">一等座</span><span class="t_price_n">￥354</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">商务座</span><span class="t_price_n">￥759</span>
+                </p>
+                
+            </li>
+            <li class="t_num">
+            
+                <p class="alarm"></p>
+                
+                <p class="alarm"></p>
+                
+                <p class="alarm">少量</p>
+                
+            </li>
+            <li class="t_ord">
+            
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=D331&seatCode=O&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=D331&seatCode=M&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=D331&seatCode=9&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_0_D331" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="ticketsBox_info" id="train_1_G181" filterMark="G181,07:30,12:10,280,北京南,青岛,true,314">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>G181</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="1_G181">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+            
+                <p class="t_start">始</p>
+                
+                <p class="t_over">终</p>
+                
+            </li>
+            <li class="t_to">
+                <p class="on">07:30</p>
+                <p>12:10</p>
+            </li>
+            <li class="t_sta">
+                <p>北京南</p>
+                <p>青岛</p>
+            </li>
+            <li class="t_time">
+                <p>4小时40分</p>
+                <p></p>
+            </li>
+            <li class="t_price">
+            
+                <p>
+                    <span class="t_seat">二等座</span><span class="t_price_n">￥314</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">一等座</span><span class="t_price_n">￥474</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">商务座</span><span class="t_price_n">￥984</span>
+                </p>
+                
+            </li>
+            <li class="t_num">
+            
+                <p class="alarm"></p>
+                
+                <p class="alarm"></p>
+                
+                <p class="alarm">少量</p>
+                
+            </li>
+            <li class="t_ord">
+            
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G181&seatCode=O&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G181&seatCode=M&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G181&seatCode=9&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_1_G181" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="ticketsBox_info" id="train_2_D333" filterMark="D333,08:16,14:05,349,北京南,青岛,true,249">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>D333</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="2_D333">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+            
+                <p class="t_start">始</p>
+                
+                <p class="t_over">终</p>
+                
+            </li>
+            <li class="t_to">
+                <p class="on">08:16</p>
+                <p>14:05</p>
+            </li>
+            <li class="t_sta">
+                <p>北京南</p>
+                <p>青岛</p>
+            </li>
+            <li class="t_time">
+                <p>5小时49分</p>
+                <p></p>
+            </li>
+            <li class="t_price">
+            
+                <p>
+                    <span class="t_seat">二等座</span><span class="t_price_n">￥249</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">一等座</span><span class="t_price_n">￥354</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">商务座</span><span class="t_price_n">￥759</span>
+                </p>
+                
+            </li>
+            <li class="t_num">
+            
+                <p class="alarm">少量</p>
+                
+                <p class="alarm"></p>
+                
+                <p class="alarm">少量</p>
+                
+            </li>
+            <li class="t_ord">
+            
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=D333&seatCode=O&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=D333&seatCode=M&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=D333&seatCode=9&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_2_D333" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="ticketsBox_info" id="train_3_G183" filterMark="G183,10:45,15:33,288,北京南,青岛,true,314">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>G183</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="3_G183">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+            
+                <p class="t_start">始</p>
+                
+                <p class="t_over">终</p>
+                
+            </li>
+            <li class="t_to">
+                <p class="on">10:45</p>
+                <p>15:33</p>
+            </li>
+            <li class="t_sta">
+                <p>北京南</p>
+                <p>青岛</p>
+            </li>
+            <li class="t_time">
+                <p>4小时48分</p>
+                <p></p>
+            </li>
+            <li class="t_price">
+            
+                <p>
+                    <span class="t_seat">二等座</span><span class="t_price_n">￥314</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">一等座</span><span class="t_price_n">￥474</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">商务座</span><span class="t_price_n">￥984</span>
+                </p>
+                
+            </li>
+            <li class="t_num">
+            
+                <p class="alarm"></p>
+                
+                <p class="alarm">少量</p>
+                
+                <p class="alarm">少量</p>
+                
+            </li>
+            <li class="t_ord">
+            
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G183&seatCode=O&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G183&seatCode=M&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G183&seatCode=9&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_3_G183" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="ticketsBox_info" id="train_4_G185" filterMark="G185,11:49,16:47,298,北京南,青岛,true,314">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>G185</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="4_G185">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+            
+                <p class="t_start">始</p>
+                
+                <p class="t_over">终</p>
+                
+            </li>
+            <li class="t_to">
+                <p class="on">11:49</p>
+                <p>16:47</p>
+            </li>
+            <li class="t_sta">
+                <p>北京南</p>
+                <p>青岛</p>
+            </li>
+            <li class="t_time">
+                <p>4小时58分</p>
+                <p></p>
+            </li>
+            <li class="t_price">
+            
+                <p>
+                    <span class="t_seat">二等座</span><span class="t_price_n">￥314</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">一等座</span><span class="t_price_n">￥474</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">商务座</span><span class="t_price_n">￥984</span>
+                </p>
+                
+            </li>
+            <li class="t_num">
+            
+                <p class="alarm"></p>
+                
+                <p class="alarm"></p>
+                
+                <p class="alarm"></p>
+                
+            </li>
+            <li class="t_ord">
+            
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G185&seatCode=O&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G185&seatCode=M&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     订完
+                     
+                </p>
+                
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_4_G185" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="ticketsBox_info" id="train_5_G187" filterMark="G187,12:32,17:21,289,北京南,青岛,true,314">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>G187</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="5_G187">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+            
+                <p class="t_start">始</p>
+                
+                <p class="t_over">终</p>
+                
+            </li>
+            <li class="t_to">
+                <p class="on">12:32</p>
+                <p>17:21</p>
+            </li>
+            <li class="t_sta">
+                <p>北京南</p>
+                <p>青岛</p>
+            </li>
+            <li class="t_time">
+                <p>4小时49分</p>
+                <p></p>
+            </li>
+            <li class="t_price">
+            
+                <p>
+                    <span class="t_seat">二等座</span><span class="t_price_n">￥314</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">一等座</span><span class="t_price_n">￥474</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">商务座</span><span class="t_price_n">￥984</span>
+                </p>
+                
+            </li>
+            <li class="t_num">
+            
+                <p class="alarm"></p>
+                
+                <p class="alarm"></p>
+                
+                <p class="alarm"></p>
+                
+            </li>
+            <li class="t_ord">
+            
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G187&seatCode=O&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G187&seatCode=M&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     订完
+                     
+                </p>
+                
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_5_G187" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="ticketsBox_info" id="train_6_G189" filterMark="G189,12:53,17:48,295,北京南,青岛,true,314">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>G189</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="6_G189">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+            
+                <p class="t_start">始</p>
+                
+                <p class="t_over">终</p>
+                
+            </li>
+            <li class="t_to">
+                <p class="on">12:53</p>
+                <p>17:48</p>
+            </li>
+            <li class="t_sta">
+                <p>北京南</p>
+                <p>青岛</p>
+            </li>
+            <li class="t_time">
+                <p>4小时55分</p>
+                <p></p>
+            </li>
+            <li class="t_price">
+            
+                <p>
+                    <span class="t_seat">二等座</span><span class="t_price_n">￥314</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">一等座</span><span class="t_price_n">￥474</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">商务座</span><span class="t_price_n">￥984</span>
+                </p>
+                
+            </li>
+            <li class="t_num">
+            
+                <p class="alarm"></p>
+                
+                <p class="alarm"></p>
+                
+                <p class="alarm"></p>
+                
+            </li>
+            <li class="t_ord">
+            
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G189&seatCode=O&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G189&seatCode=M&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G189&seatCode=9&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_6_G189" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="ticketsBox_info" id="train_7_G191" filterMark="G191,13:18,18:09,291,北京南,青岛,true,314">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>G191</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="7_G191">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+            
+                <p class="t_start">始</p>
+                
+                <p class="t_over">终</p>
+                
+            </li>
+            <li class="t_to">
+                <p class="on">13:18</p>
+                <p>18:09</p>
+            </li>
+            <li class="t_sta">
+                <p>北京南</p>
+                <p>青岛</p>
+            </li>
+            <li class="t_time">
+                <p>4小时51分</p>
+                <p></p>
+            </li>
+            <li class="t_price">
+            
+                <p>
+                    <span class="t_seat">二等座</span><span class="t_price_n">￥314</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">一等座</span><span class="t_price_n">￥474</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">商务座</span><span class="t_price_n">￥984</span>
+                </p>
+                
+            </li>
+            <li class="t_num">
+            
+                <p class="alarm"></p>
+                
+                <p class="alarm">少量</p>
+                
+                <p class="alarm">少量</p>
+                
+            </li>
+            <li class="t_ord">
+            
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G191&seatCode=O&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G191&seatCode=M&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G191&seatCode=9&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_7_G191" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="ticketsBox_info" id="train_8_G193" filterMark="G193,14:21,19:06,285,北京南,青岛,true,314">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>G193</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="8_G193">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+            
+                <p class="t_start">始</p>
+                
+                <p class="t_over">终</p>
+                
+            </li>
+            <li class="t_to">
+                <p class="on">14:21</p>
+                <p>19:06</p>
+            </li>
+            <li class="t_sta">
+                <p>北京南</p>
+                <p>青岛</p>
+            </li>
+            <li class="t_time">
+                <p>4小时45分</p>
+                <p></p>
+            </li>
+            <li class="t_price">
+            
+                <p>
+                    <span class="t_seat">二等座</span><span class="t_price_n">￥314</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">一等座</span><span class="t_price_n">￥474</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">商务座</span><span class="t_price_n">￥984</span>
+                </p>
+                
+            </li>
+            <li class="t_num">
+            
+                <p class="alarm"></p>
+                
+                <p class="alarm"></p>
+                
+                <p class="alarm"></p>
+                
+            </li>
+            <li class="t_ord">
+            
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G193&seatCode=O&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G193&seatCode=M&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G193&seatCode=9&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_8_G193" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="ticketsBox_info" id="train_9_G195" filterMark="G195,15:35,20:30,295,北京南,青岛,true,314">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>G195</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="9_G195">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+            
+                <p class="t_start">始</p>
+                
+                <p class="t_over">终</p>
+                
+            </li>
+            <li class="t_to">
+                <p class="on">15:35</p>
+                <p>20:30</p>
+            </li>
+            <li class="t_sta">
+                <p>北京南</p>
+                <p>青岛</p>
+            </li>
+            <li class="t_time">
+                <p>4小时55分</p>
+                <p></p>
+            </li>
+            <li class="t_price">
+            
+                <p>
+                    <span class="t_seat">二等座</span><span class="t_price_n">￥314</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">一等座</span><span class="t_price_n">￥474</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">商务座</span><span class="t_price_n">￥984</span>
+                </p>
+                
+            </li>
+            <li class="t_num">
+            
+                <p class="alarm"></p>
+                
+                <p class="alarm"></p>
+                
+                <p class="alarm"></p>
+                
+            </li>
+            <li class="t_ord">
+            
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G195&seatCode=O&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G195&seatCode=M&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G195&seatCode=9&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_9_G195" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="ticketsBox_info" id="train_10_G197" filterMark="G197,16:42,21:26,284,北京南,青岛,true,314">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>G197</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="10_G197">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+            
+                <p class="t_start">始</p>
+                
+                <p class="t_over">终</p>
+                
+            </li>
+            <li class="t_to">
+                <p class="on">16:42</p>
+                <p>21:26</p>
+            </li>
+            <li class="t_sta">
+                <p>北京南</p>
+                <p>青岛</p>
+            </li>
+            <li class="t_time">
+                <p>4小时44分</p>
+                <p></p>
+            </li>
+            <li class="t_price">
+            
+                <p>
+                    <span class="t_seat">二等座</span><span class="t_price_n">￥314</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">一等座</span><span class="t_price_n">￥474</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">商务座</span><span class="t_price_n">￥984</span>
+                </p>
+                
+            </li>
+            <li class="t_num">
+            
+                <p class="alarm"></p>
+                
+                <p class="alarm"></p>
+                
+                <p class="alarm">少量</p>
+                
+            </li>
+            <li class="t_ord">
+            
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G197&seatCode=O&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G197&seatCode=M&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G197&seatCode=9&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_10_G197" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="ticketsBox_info" id="train_11_G199" filterMark="G199,17:34,22:11,277,北京南,青岛,true,314">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>G199</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="11_G199">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+            
+                <p class="t_start">始</p>
+                
+                <p class="t_over">终</p>
+                
+            </li>
+            <li class="t_to">
+                <p class="on">17:34</p>
+                <p>22:11</p>
+            </li>
+            <li class="t_sta">
+                <p>北京南</p>
+                <p>青岛</p>
+            </li>
+            <li class="t_time">
+                <p>4小时37分</p>
+                <p></p>
+            </li>
+            <li class="t_price">
+            
+                <p>
+                    <span class="t_seat">二等座</span><span class="t_price_n">￥314</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">一等座</span><span class="t_price_n">￥474</span>
+                </p>
+                
+                <p>
+                    <span class="t_seat">商务座</span><span class="t_price_n">￥984</span>
+                </p>
+                
+            </li>
+            <li class="t_num">
+            
+                <p class="alarm"></p>
+                
+                <p class="alarm">少量</p>
+                
+                <p class="alarm">少量</p>
+                
+            </li>
+            <li class="t_ord">
+            
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G199&seatCode=O&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G199&seatCode=M&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=G199&seatCode=9&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_11_G199" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="ticketsBox_info" id="train_12_D659" filterMark="D659,18:08,23:08,300,北京南,青岛,true,249">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>D659</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="12_D659">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+            
+                <p class="t_start">始</p>
+                
+                <p class="t_over">终</p>
+                
+            </li>
+            <li class="t_to">
+                <p class="on">18:08</p>
+                <p>23:08</p>
+            </li>
+            <li class="t_sta">
+                <p>北京南</p>
+                <p>青岛</p>
+            </li>
+            <li class="t_time">
+                <p>5小时0分</p>
+                <p></p>
+            </li>
+            <li class="t_price">
+            
+                <p>
+                    <span class="t_seat">二等座</span><span class="t_price_n">￥249</span>
+                </p>
+                
+            </li>
+            <li class="t_num">
+            
+                <p class="alarm"></p>
+                
+            </li>
+            <li class="t_ord">
+            
+                <p>
+                
+                     <a href="/Order/Index?from=%e5%8c%97%e4%ba%ac%e5%8d%97&to=%e9%9d%92%e5%b2%9b&number=D659&seatCode=O&date=2014-07-01" target="_blank">预订</a>
+                    
+                </p>
+                
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_12_D659" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div id="no_result_filter" class="no_result" style="display:none;">
+        <dl class="trainMapInfo">
+            <dt class="icon_no"></dt>
+            <dd class="">
+                <h1>抱歉，没有找到符合您搜索条件的车次。</h1>
+                <p>建议您重新搜索试试？</p>
+            </dd>
+        </dl>
+    </div>
+</div>
+            <div id="jsTemp" style="display: none">
+                
+
+<ul class="t_title">
+    <li class="t_no">车次</li>
+    <li class="t_go">
+        <a class="on" href="#">出发<span class="icon2 arr_up"></span></a>
+    </li>
+    <li class="t_to">
+        <a href="#">到达<span class="icon2 arr_down"></span></a>
+    </li>
+    <li class="t_sta">车站</li>
+    <li class="t_time">
+        <a href="#">行车时间<span class="icon2 arr_up"></span></a>
+    </li>
+    <li class="t_price">
+        <a href="#">价格<span class="icon2 arr_down"></span></a>
+    </li>
+    <li class="t_num">票量</li>
+</ul>
+
+<div id="trainJsTemp">
+    <div class="ticketsBox_info" id="train_#{sequenceNum}_#{trainNum}">
+        <ul class="t_info">
+            <li class="t_no">
+                <h1>#{trainNum}</h1>
+                <a href="javascript:void(0);" method="showDetial" trainNum="#{sequenceNum}_#{trainNum}">查看经停<span class="icon2 arr_down"></span></a>
+            </li>
+            <li class="t_go">
+                #{isFirst}
+                #{isEnd}
+            </li>
+            <li class="t_to">
+                <p class="on">#{sTime}</p>
+                <p>#{eTime}</p>
+            </li>
+            <li class="t_sta">
+                <p>#{sName}</p>
+                <p>#{eName}</p>
+            </li>
+            <li class="t_time">
+                <p>#{duration}</p>
+                <p>#{todayOrYesterday}</p>
+            </li>
+            <li class="t_price">
+            #{seatNameAndPrice}
+            </li>
+            <li class="t_num">
+            #{leftTikets}
+            </li>
+            <li class="t_ord">
+            #{order}
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="t_place" id="trainDetial_#{sequenceNum}_#{trainNum}" style="display:none"> 
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+            </div>
+        </div>
+        
+<div class="rightBox">
+    <!--机票开始-->
+    <div class="plane_hot" start="北京南" end="青岛" startdate="2014/7/1 0:00:00" id="flightInfo" lowprice="249">
+      <div class="hot_title">
+        <h1>每日低价机票</h1>
+        <a href="http://flight.elong.com/beijing-qingdao/cn_day3.html" target="_blank"><span>北京</span>—<span>青岛</span></a></div>
+      <ul>
+        <li><a href="http://flight.elong.com/beijing-qingdao/cn_day3.html" target="_blank"> <span class="title">07月01日</span> <span class="price"> <span class="icon2 icon_sale">5.5折</span> <span class="word">￥520</span><span class="icon2 icon_arrow"></span></span> <span class="info">首都航空</span> </a></li>
+        <li><a href="http://flight.elong.com/beijing-qingdao/cn_day4.html" target="_blank"> <span class="title">07月02日</span> <span class="price"> <span class="icon2 icon_sale">5.5折</span> <span class="word">￥520</span><span class="icon2 icon_arrow"></span></span> <span class="info">首都航空</span> </a></li>
+        <li><a href="http://flight.elong.com/beijing-qingdao/cn_day5.html" target="_blank"> <span class="title">07月03日</span> <span class="price"> <span class="icon2 icon_sale">6.3折</span> <span class="word">￥600</span><span class="icon2 icon_arrow"></span></span> <span class="info">首都航空</span> </a></li>
+        <li><a href="http://flight.elong.com/beijing-qingdao/cn_day6.html" target="_blank"> <span class="title">07月04日</span> <span class="price"> <span class="icon2 icon_sale">7.9折</span> <span class="word">￥752</span><span class="icon2 icon_arrow"></span></span> <span class="info">东方航空</span> </a></li>
+        <li><a href="http://flight.elong.com/beijing-qingdao/cn_day7.html" target="_blank"> <span class="title">07月05日</span> <span class="price"> <span class="icon2 icon_sale">6.3折</span> <span class="word">￥600</span><span class="icon2 icon_arrow"></span></span> <span class="info">首都航空</span> </a></li>
+        <li><a href="http://flight.elong.com/beijing-qingdao/cn_day8.html" target="_blank"> <span class="title">07月06日</span> <span class="price"> <span class="icon2 icon_sale">7.5折</span> <span class="word">￥710</span><span class="icon2 icon_arrow"></span></span> <span class="info">首都航空</span> </a></li>
+        <li><a href="http://flight.elong.com/beijing-qingdao/cn_day9.html" target="_blank"> <span class="title">07月07日</span> <span class="price"> <span class="icon2 icon_sale">6.8折</span> <span class="word">￥650</span><span class="icon2 icon_arrow"></span></span> <span class="info">首都航空</span> </a></li>
+      </ul>
+    </div>
+    <!--机票结束-->
+
+    <!--提示开始-->
+    <div class="tipBox">
+        <h1>
+            火车票小助手提示 <a target="view_window" href="http://help.elong.com/category/%E7%81%AB%E8%BD%A6%E7%A5%A8%E9%A2%84%E8%AE%A2/">更多</a></h1>
+        <ul>
+            <li>
+                <h2>线下取票</h2>
+                <p>可凭购票证件在任何取票点取票。非铁路取票点收取5元手续费。</p>
+            </li>
+            <li>
+                <h2>在线退票</h2>
+                <p>订单已出票且未换取纸质车票，在发车前4小时可以在“我的艺龙”中在线申请退票。在线退票处理时间是7:00-23:00。</p>
+            </li>
+            <li>
+                <h2>线下退票</h2>
+                <p>非工作时间或者已取票的乘客，如需退票，请凭购票有效证件在发车前到火车站退票窗口办理退票。</p>
+            </li>
+            <li>
+                <h2>退票费用</h2>
+                <p>根据铁路局退票规定，开车时间前48小时以上按票价5%计，24小时以上不足48小时按票价10%计，不足24小时的按票价20%计。</p>
+            </li>
+            <li>
+                <h2>车票改签</h2>
+                <p>需持有效证件原件和火车票去始发地火车站或取票地火车站窗口办理。如果改签过程中产生的应退票款,我们将会在15个工作日内原渠道退还。</p>
+            </li>
+        </ul>
+    </div>
+    <!--提示结束-->
+    <!--右侧框体结束-->
+</div>
+
+    </div>
+	<div class="clear"></div>
+</div>
+<!--cont -->
+<div class="footer mt20">
+	<div class="foot1"><img src="images/btn1.png" width="1200" height="40" /></div>
+	<div class="foot_link wrap">
+		<a href="#">关于我们</a>
+		<a href="#">公司地图</a>
+		<a href="#">联系我们</a>
+		<a href="#">服务说明</a>
+		<a href="#">免费注册</a>
+		<a href="#">网站导航</a>
+		<a href="#">隐私条款</a>
+		<a href="#">支付方式</a>
+	</div>
+	<div class="foot2">
+		<ul>
+			<li>Copyright© 2014-2020, tuyui.com. All rights reserved.</li>
+		</ul>
+	</div>
+	<div class="foot3">
+		<a href="#"><img src="images/icp1.jpg" width="90" height="34" /></a>
+		<a href="#"><img src="images/icp2.jpg" width="90" height="34" /></a>
+		<a href="#"><img src="images/icp3.jpg" width="90" height="34" /></a>
+		<a href="#"><img src="images/icp4.jpg" width="90" height="34" /></a>
+	</div>
+</div>
+</body>
+</html>

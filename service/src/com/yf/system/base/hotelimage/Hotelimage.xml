@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Hotelimage">
+  
+  <typeAlias alias="Hotelimage" type="com.yf.system.base.hotelimage.Hotelimage"/>
+  
+
+  <resultMap id="resultHotelimageMap" class="Hotelimage">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="path" column="C_PATH"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="hotelid" column="C_HOTELID"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllHotelimage"  resultMap="resultHotelimageMap"  parameterClass="java.util.Map">
+  
+    select * from T_HOTELIMAGE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllHotelimageBySql"  resultMap="resultHotelimageMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteHotelimageBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countHotelimageBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_HOTELIMAGE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findHotelimage" parameterClass="long" resultClass="Hotelimage">
+    select 
+    	ID as id,
+	  			C_PATH as path,
+	  			C_TYPE as type,
+	  			C_DESCRIPTION as description,
+	  			C_HOTELID as hotelid,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_HOTELIMAGE
+    where ID = #id#
+  </select>
+   
+  <insert id="createHotelimage" parameterClass="Hotelimage">
+    insert into T_HOTELIMAGE ( 
+    	ID,
+	  			C_PATH,
+	  			C_TYPE,
+	  			C_DESCRIPTION,
+	  			C_HOTELID,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#path#,
+	  					
+							#type:DECIMAL#,
+						
+	  						#description#,
+	  					
+							#hotelid:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteHotelimage" parameterClass="long">
+    delete from T_HOTELIMAGE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateHotelimage" parameterClass="Hotelimage">
+    update T_HOTELIMAGE 
+    set 
+    	C_PATH = #path#,
+	  					C_TYPE = #type:DECIMAL#,
+						C_DESCRIPTION = #description#,
+	  					C_HOTELID = #hotelid:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

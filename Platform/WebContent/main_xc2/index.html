@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/easySlider1.5.js"></script>
+<script type="text/javascript" src="js/accordian.pack.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+	var l = $("#left").outerHeight(true);
+	var r = $("#right").outerHeight(true);
+	
+	if(r > l)
+	{
+		$("#right").height(r = l);
+	}
+	else
+	{
+		$("#left").height(l = r);
+	}
+	
+});
+</script>
+<title>无标题文档</title>
+</head>
+
+<body onload="new Accordian('basic-accordian',5,'header_highlight');">
+<!--header-->
+<div class="container_top">
+  <div class="top">
+    <div class="top_right">
+      <a href="#" class="tuichu">安全退出</a>
+      <div class="top_login">您好，欢迎你登录  <font color="#da7500">李木子！</font></div>
+      <div class="top_tel" id="teltips"><span>客服电话：<b>400-649-8898</b></span>
+        <ul id="tips">
+          出票：<font color="#0096cd">56258257</font><br />退改签：<font color="#0096cd">56259366</font><br />行程单：<font color="#0096cd">56259766</font><br />国际客服：<font color="#0096cd">56259697</font><br />投诉建议：<font color="#0096cd">82251248</font>
+        </ul>
+      </div>
+    </div>
+    <div class="top_left"><a href="#"><img src="images/logo.jpg" /></a><img src="images/logo1.jpg" /></div> 
+  </div>
+  <div class="clear"></div>
+  <div class="menu">
+    <div class="menu_con">
+      <div class="menu_right"><a href="#" class="kefu">在线客服</a><a href="#" class="tuigai">退改签规定</a></div>
+      <div class="menu_left">
+        <div class="menu_home"><a href="#">返回首页</a></div>
+        <div class="menu_lsit">
+          <div class="picshow" id="easyslider">
+            <ul>
+              <li><a href="#">机票采购</a>|<a href="#">酒店</a>|<a href="#">市场拓展</a>|<a href="#">报表管理</a>|<a href="#">系统管理</a></li>
+              <li><a href="#">速度国防</a>|<a href="#">市场</a>|<a href="#">撒的撒的</a>|<a href="#">瑞特人人</a>|<a href="#">华国锋的</a></li>
+            </ul>
+          </div>
+          <div class="aclick"><a href="javascript:void(0)" id="prevpic" class="pert"></a><a href="javascript:void(0)" id="nextpic" class="next"></a></div>
+        </div>
+        <div class="menu_dai"><a href="#">待处理订单<font color="#ffb085">（3）</font></a></div>
+      </div>   
+    </div>
+  </div>
+</div>
+<!--header end-->
+
+<!--main-->
+<div class="container_body clear">
+  <div class="main_left" id="LeftBox">
+    <div id="left">
+      <div id="basic-accordian" >
+        <div class="nav">
+          <div id="test-header" class="accordion_headings"><span class="nav_01"></span>机票采购</div>
+          <div id="test-content">
+            <div class="nav_list">
+              <ul>
+                <li><a href="#">机票采购</a></li>
+                <li><a href="#">机票采购</a></li>
+                <li><a href="#">机票采购</a></li>
+              </ul>
+              <div class="clear"></div>
+            </div>    
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="nav">
+          <div id="test1-header" class="accordion_headings"><span class="nav_02"></span>机票采购管理</div>
+          <div id="test1-content">
+            <div class="nav_list">
+              <ul>
+                <li><a href="#">国内机票查询</a></li>
+                <li><a href="#">国际机票查询</a></li>
+                <li><a href="#">团队/包机申请</a></li>
+              </ul>
+              <div class="clear"></div>
+            </div> 
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="nav">
+          <div id="test2-header" class="accordion_headings"><span class="nav_03"></span>机票订单管理</div>
+          <div id="test2-content">
+            <div class="nav_list">
+              <ul>
+                <li><a href="#">国内机票查询</a></li>
+                <li><a href="#">国际机票查询</a></li>
+                <li><a href="#">团队/包机申请</a></li>
+              </ul>
+              <div class="clear"></div>
+            </div> 
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="nav">
+          <div id="test3-header" class="accordion_headings"><span class="nav_04"></span>退废票管理</div>
+          <div id="test3-content">
+            <div class="nav_list">
+              <ul>
+                <li><a href="#">国内机票查询</a></li>
+                <li><a href="#">国际机票查询</a></li>
+                <li><a href="#">团队/包机申请</a></li>
+              </ul>
+              <div class="clear"></div>
+            </div> 
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="nav">
+          <div id="test4-header" class="accordion_headings"><span class="nav_05"></span>配送收银订单</div>
+          <div id="test4-content">
+            <div class="nav_list">
+              <ul>
+                <li><a href="#">国内机票查询</a></li>
+                <li><a href="#">国际机票查询</a></li>
+                <li><a href="#">团队/包机申请</a></li>
+              </ul>
+              <div class="clear"></div>
+            </div> 
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="nav">
+          <div id="test5-header" class="accordion_headings"><span class="nav_06"></span>常用工具</div>
+          <div id="test5-content">
+            <div class="nav_list">
+              <ul>
+                <li><a href="#">国内机票查询</a></li>
+                <li><a href="#">国际机票查询</a></li>
+                <li><a href="#">团队/包机申请</a></li>
+              </ul>
+              <div class="clear"></div>
+            </div> 
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="nav">
+          <div id="test6-header" class="accordion_headings"><span class="nav_07"></span>帮助中心</div>
+          <div id="test6-content">
+            <div class="nav_list">
+              <ul>
+                <li><a href="#">国内机票查询</a></li>
+                <li><a href="#">国际机票查询</a></li>
+                <li><a href="#">团队/包机申请</a></li>
+              </ul>
+              <div class="clear"></div>
+            </div> 
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="nav">
+          <div id="test7-header" class="accordion_headings"><span class="nav_08"></span>投诉与建议</div>
+          <div id="test7-content">
+            <div class="nav_list">
+              <ul>
+                <li><a href="#">国内机票查询</a></li>
+                <li><a href="#">国际机票查询</a></li>
+                <li><a href="#">团队/包机申请</a></li>
+              </ul>
+              <div class="clear"></div>
+            </div> 
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+      <div class="pay">
+        <div class="pay_header">支付宝信息</div>
+        <div class="pay_con">
+          <ul>
+            <li><a href="#"><img src="images/pay_01.jpg" /></a></li>
+            <li><a href="#"><img src="images/pay_02.jpg" /></a></li>
+            <li><a href="#"><img src="images/pay_03.jpg" /></a></li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="main_right" id="RightBox">
+    <div id="right">
+      <div class="zuolan" id="Mobile" onclick="show_menuC()"></div>
+      <div class="main_right_con">
+        <div class="query">
+          <div class="query_header">
+            <ul id="a0">
+              <li class="queryA" onmousemove="query(this,0)">机票查询</li>
+              <li class="queryB" onmousemove="query(this,1)">PNR导入</li>
+              <li class="queryB" onmousemove="query(this,2)">PNR文本导入</li>
+              <li class="queryB" onmousemove="query(this,3)">客服中心</li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+          <div class="query_con" id="a00">
+            <div class="ticket_title">国内领先低价机票预订网站，提供四千多条国内国际航线特价机票，打折机票的价格查询！</div>
+            <div class="ticket_top"><div class="ticket_name">航程类型：</div><input type="radio" class="radio" name="radio" /><span>单程</span><input type="radio" class="radio" name="radio" /><span>往返</span></div>
+            <div class="ticket_con">
+              <div class="ticket_hang"><div class="ticket_zi">出发城市</div><input type="text" class="text" value="北京" /></div>
+              <div class="ticket_hang"><div class="ticket_zi">到达城市</div><input type="text" class="text" value="上海虹桥" /></div>
+              <div class="ticket_hang"><div class="ticket_zi">出发日期</div><input type="text" class="text1" value="2013-03-11" /></div>
+              <div class="ticket_hang"><div class="ticket_zi">中转城市</div><input type="text" class="text" value="" /></div>
+              <div class="ticket_hang"><div class="ticket_zi">航空公司</div><select name="" class="select"><option value="">所有航空公司</option></select></div>
+              <div class="ticket_hang"><div class="ticket_zi">返程日期</div><input type="text" class="text1" value="2013-03-15" /></div>        
+            </div>
+            <div class="clear"></div>
+            <div class="ticket_bot"><input type="button" class="button" value="查询" /><input type="checkbox" class="checkbox" /><span>柜台查询</span></div>
+          </div>
+          <div class="query_con" id="a01" style="display:none;">
+            <div class="pnr_top"><input type="radio" class="radio" name="radio" /><span>常规PNR导入</span><input type="radio" class="radio" name="radio" /><span>团队PNR导入　<font color="#da7500">(必须是已经K位成功的编码)</font></span></div>
+            <div class="pnr_hang"><span>PNR</span><input type="text" class="text2" value="" /><input type="button" class="button" value="导入" /></div>
+            <div class="pnr_nei">
+  注意事项：<br />
+  1、该PNR姓名组正确<br />
+  2、航段组正确、舱位状况正确<br />
+  3、每个乘客均有真实的SSR FOID 项输入<br />
+  4、该PNR不能包含票价组项，如FC/FN/FP<br />
+  <font color="#da7500">5、当儿童编码和成人编码一起导入时，格式为：“成人PNR|儿童PNR”</font><br /><br />
+  <a href="#">通过RT内容创建订单 -></a>  
+            </div>
+          </div>
+          <div class="query_con" id="a02" style="display:none;">
+            <div class="pnrwen_top"><textarea name="" class="textarea"></textarea></div>
+            <div class="clear"></div>
+            <div class="pnrwen_con">
+              <div class="pnrwen_left"><input type="button" class="button1" value="导入" /><span>特别提示:请及时授权RMK TJ AUTH URC220</span></div>
+              <div class="pnrwen_right">
+  注意事项：<br />1、该PNR姓名组正确　　　　　　　　4、该PNR不能包含票价组项，如FC/FN/FP<br />
+  2、航段组正确、舱位状况正确　　　  <font color="#da7500">5、请对我公司OFFICE:URC220授权</font><br />
+  3、每个乘客均有真实的SSR FOID 项输入   
+              </div>
+            </div>
+          </div>
+          <div class="query_con" id="a03" style="display:none;">
+            <div class="service_top">
+  <span class="service_name">24小时免费服务热线：</span><span class="service_nei">400-649-8898</span><br />
+  <span class="service_name">催单服务：</span><span class="service_nei">400-649-8898请按（1）</span><span class="service_name">保险单：</span><span class="service_nei">400-649-8898请按（6）</span><br />
+  <span class="service_name">国际票：</span><span class="service_nei">400-649-8898请按（2）</span><span class="service_name">技术支持：</span><span class="service_nei">400-649-8898请按（8）</span><br />
+  <span class="service_name">退改签：</span><span class="service_nei">400-649-8898请按（3）</span><span class="service_name">投诉建议：</span><span class="service_nei">400-649-8898请按（9）</span><br />
+  <span class="service_name">行程单：</span><span class="service_nei">400-649-8898请按（5）</span>
+            </div>
+            <div class="clear"></div>
+            <div class="service_hang"><font color="#0097cd">催单服务</font> (周一至周日工作时间: 00:00-23:59 热线电话：400-649-8898)</div>
+            <div class="service_qq"><a href="#"><img src="images/qq.jpg" /></a><a href="#"><img src="images/qq.jpg" /></a></div>
+            <div class="service_hang"><font color="#0097cd">退票处理</font> (周一至周日工作时间: 00:00-23:59 热线电话：400-649-8898)</div>
+            <div class="service_qq"><a href="#"><img src="images/qq.jpg" /></a><a href="#"><img src="images/qq.jpg" /></a></div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="main_bot">
+          <div class="news">
+            <div class="news_header"><a href="#">更多></a><b>行业动态</b></div>
+            <div class="news_con">
+              <ul>
+                <li><a href="#">心程旅行网改版成功啦！</a></li>
+                <li><a href="#">心程旅行网十大品牌排名最新排行榜</a></li>
+                <li><a href="#">心程旅行网改版成功啦！</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="annuo">
+            <div class="news_header"><a href="#">更多></a><b>平台公告</b></div>
+            <div class="news_con">
+              <ul>
+                <li><a href="#">心程旅行网改版成功啦！</a></li>
+                <li><a href="#">心程旅行网十大品牌排名最新排行榜</a></li>
+                <li><a href="#">心程旅行网改版成功啦！</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--main end-->
+
+<!--footer-->
+<div class="container_foot clear"><span>Copyright(a) 2010-2015 All Rights Reserved　心程旅行网</span></div>
+<!--footer end-->
+</body>
+</html>
+<!--[if IE 6]>
+<script type="text/javascript" src="js/DD_belatedPNG.js" ></script>
+
+<script type="text/javascript">
+DD_belatedPNG.fix('div, ul, img, li, input, a,.home,.import_link,user_plate,.mask,.bnet,.account');
+</script>
+<![endif]-->

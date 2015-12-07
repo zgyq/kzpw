@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Rzhixiao">
+  
+  <typeAlias alias="Rzhixiao" type="com.yf.system.base.rzhixiao.Rzhixiao"/>
+  
+
+  <resultMap id="resultRzhixiaoMap" class="Rzhixiao">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="number" column="C_NUMBER"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="maoriprice" column="C_MAORIPRICE"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="department" column="C_DEPARTMENT"/>
+  
+     <result property="datetime" column="C_DATETIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllRzhixiao"  resultMap="resultRzhixiaoMap"  parameterClass="java.util.Map">
+  
+    select * from T_RZHIXIAO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllRzhixiaoBySql"  resultMap="resultRzhixiaoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteRzhixiaoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countRzhixiaoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_RZHIXIAO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findRzhixiao" parameterClass="long" resultClass="Rzhixiao">
+    select 
+    	ID as id,
+	  			C_NUMBER as number,
+	  			C_PRICE as price,
+	  			C_MAORIPRICE as maoriprice,
+	  			C_TYPE as type,
+	  			C_DEPARTMENT as department,
+	  			C_DATETIME as datetime 
+     from T_RZHIXIAO
+    where ID = #id#
+  </select>
+   
+  <insert id="createRzhixiao" parameterClass="Rzhixiao">
+    insert into T_RZHIXIAO ( 
+    	ID,
+	  			C_NUMBER,
+	  			C_PRICE,
+	  			C_MAORIPRICE,
+	  			C_TYPE,
+	  			C_DEPARTMENT,
+	  			C_DATETIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#number:DECIMAL#,
+						
+							#price:DECIMAL#,
+						
+							#maoriprice:DECIMAL#,
+						
+							#type:DECIMAL#,
+						
+							#department:DECIMAL#,
+						
+	  						#datetime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteRzhixiao" parameterClass="long">
+    delete from T_RZHIXIAO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateRzhixiao" parameterClass="Rzhixiao">
+    update T_RZHIXIAO 
+    set 
+    	C_NUMBER = #number:DECIMAL#,
+						C_PRICE = #price:DECIMAL#,
+						C_MAORIPRICE = #maoriprice:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_DEPARTMENT = #department:DECIMAL#,
+						C_DATETIME = #datetime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

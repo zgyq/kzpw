@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 国际机票机场
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Fairport createFairport(Fairport fairport) throws SQLException;
+	
+	/**
+	 * 删除 国际机票机场
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteFairport(long id);
+	
+	
+	/**
+	 * 修改 国际机票机场
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateFairport(Fairport fairport);
+
+		
+	/**
+	 * 修改 国际机票机场但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateFairportIgnoreNull(Fairport fairport);
+		
+	
+	/**
+	 * 查找 国际机票机场
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFairport(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 国际机票机场
+	 * @param id
+	 * @return
+	 */
+	public Fairport findFairport(long id);
+	
+	/**
+	 * 查找 国际机票机场 by language
+	 * @param id
+	 * @return
+	 */
+	public Fairport findFairportbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 国际机票机场
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllFairportForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找国际机票机场
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFairportBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 国际机票机场
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteFairportBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countFairportBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IFairportComponent fairportComponent;
+	  
+ 	
+ 	public IFairportComponent getFairportComponent() {
+		return fairportComponent;
+	}
+	public void setFairportComponent(IFairportComponent  fairportComponent) {
+		this.fairportComponent = fairportComponent;
+	}
+	/**
+	 * 创建 国际机票机场
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Fairport createFairport(Fairport fairport) throws SQLException{
+	
+		return fairportComponent.createFairport(fairport);
+	}
+	/**
+	 * 删除 国际机票机场
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteFairport(long id){
+	
+		return fairportComponent.deleteFairport(id);
+	}
+	
+	
+	/**
+	 * 修改 国际机票机场
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateFairport(Fairport fairport){
+		return fairportComponent.updateFairport(fairport);
+	
+	}
+
+		
+	/**
+	 * 修改 国际机票机场但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateFairportIgnoreNull(Fairport fairport){
+			return fairportComponent.updateFairportIgnoreNull(fairport);
+	
+	}
+	
+	/**
+	 * 查找 国际机票机场
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFairport(String where, String orderby,int limit,int offset){
+		return fairportComponent.findAllFairport(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 国际机票机场
+	 * @param id
+	 * @return
+	 */
+	public Fairport findFairport(long id){
+		return fairportComponent.findFairport(id);
+	}
+	
+	/**
+	 * 查找 国际机票机场
+	 * @param id
+	 * @return
+	 */
+	public Fairport findFairportbylanguage(long id,Integer language){
+		return fairportComponent.findFairportbylanguage(id,language);
+	}
+	/** 
+	 * 查找 国际机票机场
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllFairportForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return fairportComponent.findAllFairport(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找国际机票机场
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFairportBySql(String sql,int limit,int offset){
+		return fairportComponent.findAllFairport(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 国际机票机场
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteFairportBySql(String sql){
+		return fairportComponent.excuteFairportBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countFairportBySql(String sql){
+		return fairportComponent.countFairportBySql(sql);
+	}
+	
+	
+

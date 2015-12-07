@@ -1,0 +1,30 @@
+body{ margin:0;padding:0;}
+#dao {background-image: url(../mainimages/menuback.jpg); height:110px;min-width:1024px !important; width: 100%; margin:0 auto; position:relative;}
+
+
+#menu {position:absolute;top:58px; left:360px; width:654px; height:45px;clear:both;}
+#menu ul{ padding:0; margin:0;}
+#menu ul li{ padding:0; margin:0; float:left; width:109px; height:45px; line-height:45px; list-style:none;}
+#menu ul li a{ color:#fff; text-decoration:none;display:block;width:109px; height:45px; text-indent:35px;}
+
+#menu ul li a#m-1{ background:url(../mainimages/nav_home_bg.gif) no-repeat 0 0;}
+#menu ul li a#m-2{ background:url(../mainimages/nav_tjcx_bg.gif) no-repeat 0 0;}
+#menu ul li a#m-3{ background:url(../mainimages/nav_wpgl_bg.gif) no-repeat 0 0;}
+#menu ul li a#m-4{ background:url(../mainimages/nav_xsgl_bg.gif) no-repeat 0 0;}
+#menu ul li a#m-5{ background:url(../mainimages/nav_xtsz_bg.gif) no-repeat 0 0;}
+#menu ul li a#m-6{ background:url(../mainimages/nav_xzgl_bg.gif) no-repeat 0 0;}
+
+#menu a#m-1.select,#menu a#m-1:hover{ background-image:url(../mainimages/nav_home_bg_hover.gif) !important;}
+#menu a#m-2.select,#menu a#m-2:hover{ background-image:url(../mainimages/nav_tjcx_bg_hover.gif) !important;}
+#menu a#m-3.select,#menu a#m-3:hover{ background-image:url(../mainimages/nav_wpgl_bg_hover.gif) !important;}
+#menu a#m-4.select,#menu a#m-4:hover{ background-image:url(../mainimages/nav_xsgl_bg_hover.gif) !important;}
+#menu a#m-5.select,#menu a#m-5:hover{ background-image:url(../mainimages/nav_xtsz_bg_hover.gif) !important;}
+#menu a#m-6.select,#menu a#m-6:hover{ background-image:url(../mainimages/nav_xzgl_bg_hover.gif) !important;}
+#daoinfo { width: 350px; position: absolute; top: 5px; left:760px; line-height:38px;font-size:12px;color:#fff;text-align:right; z-index:999}
+#daoinfo img{ vertical-align:middle; border:none;}
+#daoinfo a{ color:#FFF;}
+#daoinfo a:hover{ color:#F93}
+
+#shengqing{ position:absolute; z-index:99999; bottom:20px; left:920px;}
+#shengqing a{ color:#Fff; font-size:14px; margin:0 5px; text-decoration:none;}
+#shengqing a:hover{ text-decoration:underline; color:#FF0}

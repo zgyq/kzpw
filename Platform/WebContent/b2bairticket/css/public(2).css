@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0;
+   padding:0;
+   text-decoration:none;
+   list-style:none;
+}
+li ul ol{
+margin:0;
+padding:0;
+list-style-type:none;
+}
+
+
+body{width:100%;
+       font-size:12px; 
+	   color:#003399;
+	   margin:0;
+	   padding:0;
+	   font-family:Tahoma, Geneva, sans-serif;
+}
+img {vertical-align:middle; border:none; } 
+*:lang(th) img{
+    vertical-align:top!important
+}
+img:empty {
+    vertical-align:top!important
+} 
+input{
+vertical-align:middle;
+margin-right:5px;
+
+}
+a{ color:#003399;
+   font-size:12px;
+   text-decoration:none;
+   cursor:pointer;
+}
+a:hover{color:#f48000;
+        text-decoration:underline;
+}
+td{ padding-left:5px;}
+.f{ float:left;
+}
+.r{float:right;
+}
+.c{clear:both;
+}
+
+.tr1{background:#f0f7fb;}
+.tr2{background:#fff;}
+.tr3{background:#f0f7fb;cursor:pointer;}
+.tr4{background:#f6fafd;}
+.tr5{background:#fff;}
+
+.mr8{ margin-right:8px;}
+.mr18{ margin-right:18px;}
+.mr11{ margin-right:11px;}
+.ml5{ margin-left:5px;}
+.line-h18{ line-height:18px;}
+
+
+.table_yin{background:#cbe2f2; border-left:1px solid #f0f6ff; border-top:1px solid #f0f6ff; color:#003366}
+.table_wu{ border-left:none; border-top:none; color:#999}
+.x_line{ text-decoration:underline;}
+.center{ margin:0 auto; text-align:center;}
+
+.hand{ cursor:pointer;}
+.box{ border:1px solid #99cbed;}
+.box_hui{ border:1px solid #dbdbdb;}
+.text{ width:95px; height:20px; line-height:20px; border:1px solid #bebebe; padding-left:5px; font-size:12px;color:#666}
+.text_d{ width:95px; height:18px; line-height:18px; border:1px solid #bebebe; padding-left:5px; font-size:12px;color:#666}
+.text_dd{ width:45px; height:18px; line-height:18px; border:1px solid #bebebe; padding-left:5px; font-size:12px; color:#666}
+.text30{ width:30px; height:16px; line-height:16px; border:1px solid #bebebe; text-align:center; font-size:12px;}
+.button_shuaxin{ background:url(/cn_home/images/demosticTicket/shuaxin.gif); width:60px; height:23px; line-height:23px; border:none; cursor: pointer;}
+.button_ewm{ background:url(/cn_home/images/demosticTicket/button_ewm.png); width:100px; height:30px; line-height:30px; border:none; font-size:14px; font-weight:bold; cursor: pointer; text-align:center; color:#fff}
+
+.h8{ height:8px; line-height:8px;}
+
+.button_sea{ background:url(/cn_home/images/demosticTicket/button.gif) no-repeat; width:84px; height:24px; line-height:24px; text-align:right; border:none; cursor:pointer; padding-right:8px; font-size:12px; color:#065fb8;}
+
+.sjbj{ background:#e6e6e6; color:#000}
+.textsj{ width:280px; height:22px; line-height:22px;}
+
+.font-039{ color:#003399; font-size:12px;}
+.font-f60{ color:#ff6600; font-size:12px;}
+.font-000{ color:#000; font-size:12px;}
+.font-666{ color:#666666; font-size:12px;}
+.font-69f{ color:#6699ff; font-size:12px;}
+.font16-f90{ color:#f90; font-size:14px; font-weight:bold;}
+
+.on_tab{background:#225ca6; color:#FFF; height:22px; line-height:22px;}
+.out_tab{background:#b9b9b9; color:#000; height:22px; line-height:22px;}
+.font-1f5da6{color:#1f5da6; text-decoration:underline}

@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 景区线路信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotline createSpotline(Spotline spotline) throws SQLException;
+	
+	/**
+	 * 删除 景区线路信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotline(long id);
+	
+	
+	/**
+	 * 修改 景区线路信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotline(Spotline spotline);
+
+		
+	/**
+	 * 修改 景区线路信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotlineIgnoreNull(Spotline spotline);
+		
+	
+	/**
+	 * 查找 景区线路信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotline(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 景区线路信息
+	 * @param id
+	 * @return
+	 */
+	public Spotline findSpotline(long id);
+	
+	
+	/** 
+	 * 查找 景区线路信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotlineForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找景区线路信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 景区线路信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotlineBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotlineBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISpotlineComponent spotlineComponent;
+	  
+ 	
+ 	public ISpotlineComponent getSpotlineComponent() {
+		return spotlineComponent;
+	}
+	public void setSpotlineComponent(ISpotlineComponent  spotlineComponent) {
+		this.spotlineComponent = spotlineComponent;
+	}
+	/**
+	 * 创建 景区线路信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotline createSpotline(Spotline spotline) throws SQLException{
+	
+		return spotlineComponent.createSpotline(spotline);
+	}
+	/**
+	 * 删除 景区线路信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotline(long id){
+	
+		return spotlineComponent.deleteSpotline(id);
+	}
+	
+	
+	/**
+	 * 修改 景区线路信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotline(Spotline spotline){
+		return spotlineComponent.updateSpotline(spotline);
+	
+	}
+
+		
+	/**
+	 * 修改 景区线路信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotlineIgnoreNull(Spotline spotline){
+			return spotlineComponent.updateSpotlineIgnoreNull(spotline);
+	
+	}
+	
+	/**
+	 * 查找 景区线路信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotline(String where, String orderby,int limit,int offset){
+		return spotlineComponent.findAllSpotline(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 景区线路信息
+	 * @param id
+	 * @return
+	 */
+	public Spotline findSpotline(long id){
+		return spotlineComponent.findSpotline(id);
+	}
+	
+	/** 
+	 * 查找 景区线路信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotlineForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return spotlineComponent.findAllSpotline(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找景区线路信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineBySql(String sql,int limit,int offset){
+		return spotlineComponent.findAllSpotline(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 景区线路信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotlineBySql(String sql){
+		return spotlineComponent.excuteSpotlineBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotlineBySql(String sql){
+		return spotlineComponent.countSpotlineBySql(sql);
+	}
+	
+	
+

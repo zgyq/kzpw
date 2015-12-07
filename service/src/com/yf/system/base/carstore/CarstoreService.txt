@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 租车门店
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Carstore createCarstore(Carstore carstore) throws SQLException;
+	
+	/**
+	 * 删除 租车门店
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCarstore(long id);
+	
+	
+	/**
+	 * 修改 租车门店
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCarstore(Carstore carstore);
+
+		
+	/**
+	 * 修改 租车门店但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCarstoreIgnoreNull(Carstore carstore);
+		
+	
+	/**
+	 * 查找 租车门店
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarstore(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 租车门店
+	 * @param id
+	 * @return
+	 */
+	public Carstore findCarstore(long id);
+	
+	
+	/** 
+	 * 查找 租车门店
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCarstoreForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找租车门店
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarstoreBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 租车门店
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCarstoreBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCarstoreBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ICarstoreComponent carstoreComponent;
+	  
+ 	
+ 	public ICarstoreComponent getCarstoreComponent() {
+		return carstoreComponent;
+	}
+	public void setCarstoreComponent(ICarstoreComponent  carstoreComponent) {
+		this.carstoreComponent = carstoreComponent;
+	}
+	/**
+	 * 创建 租车门店
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Carstore createCarstore(Carstore carstore) throws SQLException{
+	
+		return carstoreComponent.createCarstore(carstore);
+	}
+	/**
+	 * 删除 租车门店
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCarstore(long id){
+	
+		return carstoreComponent.deleteCarstore(id);
+	}
+	
+	
+	/**
+	 * 修改 租车门店
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCarstore(Carstore carstore){
+		return carstoreComponent.updateCarstore(carstore);
+	
+	}
+
+		
+	/**
+	 * 修改 租车门店但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCarstoreIgnoreNull(Carstore carstore){
+			return carstoreComponent.updateCarstoreIgnoreNull(carstore);
+	
+	}
+	
+	/**
+	 * 查找 租车门店
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarstore(String where, String orderby,int limit,int offset){
+		return carstoreComponent.findAllCarstore(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 租车门店
+	 * @param id
+	 * @return
+	 */
+	public Carstore findCarstore(long id){
+		return carstoreComponent.findCarstore(id);
+	}
+	
+	/** 
+	 * 查找 租车门店
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCarstoreForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return carstoreComponent.findAllCarstore(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找租车门店
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarstoreBySql(String sql,int limit,int offset){
+		return carstoreComponent.findAllCarstore(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 租车门店
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCarstoreBySql(String sql){
+		return carstoreComponent.excuteCarstoreBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCarstoreBySql(String sql){
+		return carstoreComponent.countCarstoreBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "xwork-1.0.dtd">
+<xwork>
+  <package name="ticticket" extends="default">
+   <action name="ticticket"
+			class="com.yf.website.web.action.DomesticTicketAction">
+			
+			<result name="toticket" type="dispatcher">
+				<param name="location">ticket/ticket.jsp</param>
+				
+			</result>
+			<result name="tolist" type="dispatcher">
+				<param name="location">ticket/list_51.jsp</param>
+			</result>
+			<result name="tolist51" type="dispatcher">
+				<param name="location">ticket/list.jsp</param>
+			</result>
+			<result name="tocreateorder" type="dispatcher">
+				<param name="location">ticket/createorder.jsp</param>
+			</result>
+			<result name="toLogin" type="dispatcher">
+				<param name="location">member/quick_login.jsp</param>
+			</result>
+			<result name="success" type="dispatcher">
+				<param name="location">ticket/success.jsp</param>
+			</result>
+			<result name="failorder" type="dispatcher">
+				<param name="location">ticket/failed.jsp</param>
+			</result>
+			<result name="forword" type="redirect">
+				<param name="location">/${forword}</param>
+			</result>
+			<result name="toerrinfo" type="dispatcher">
+				<param name="location">ticket/errinfo.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+	</action>
+	
+  </package>
+</xwork>
+

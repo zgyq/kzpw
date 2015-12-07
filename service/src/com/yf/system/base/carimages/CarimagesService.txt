@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 汽车图片
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Carimages createCarimages(Carimages carimages) throws SQLException;
+	
+	/**
+	 * 删除 汽车图片
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCarimages(long id);
+	
+	
+	/**
+	 * 修改 汽车图片
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCarimages(Carimages carimages);
+
+		
+	/**
+	 * 修改 汽车图片但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCarimagesIgnoreNull(Carimages carimages);
+		
+	
+	/**
+	 * 查找 汽车图片
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarimages(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 汽车图片
+	 * @param id
+	 * @return
+	 */
+	public Carimages findCarimages(long id);
+	
+	
+	/** 
+	 * 查找 汽车图片
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCarimagesForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找汽车图片
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarimagesBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 汽车图片
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCarimagesBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCarimagesBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ICarimagesComponent carimagesComponent;
+	  
+ 	
+ 	public ICarimagesComponent getCarimagesComponent() {
+		return carimagesComponent;
+	}
+	public void setCarimagesComponent(ICarimagesComponent  carimagesComponent) {
+		this.carimagesComponent = carimagesComponent;
+	}
+	/**
+	 * 创建 汽车图片
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Carimages createCarimages(Carimages carimages) throws SQLException{
+	
+		return carimagesComponent.createCarimages(carimages);
+	}
+	/**
+	 * 删除 汽车图片
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCarimages(long id){
+	
+		return carimagesComponent.deleteCarimages(id);
+	}
+	
+	
+	/**
+	 * 修改 汽车图片
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCarimages(Carimages carimages){
+		return carimagesComponent.updateCarimages(carimages);
+	
+	}
+
+		
+	/**
+	 * 修改 汽车图片但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCarimagesIgnoreNull(Carimages carimages){
+			return carimagesComponent.updateCarimagesIgnoreNull(carimages);
+	
+	}
+	
+	/**
+	 * 查找 汽车图片
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarimages(String where, String orderby,int limit,int offset){
+		return carimagesComponent.findAllCarimages(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 汽车图片
+	 * @param id
+	 * @return
+	 */
+	public Carimages findCarimages(long id){
+		return carimagesComponent.findCarimages(id);
+	}
+	
+	/** 
+	 * 查找 汽车图片
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCarimagesForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return carimagesComponent.findAllCarimages(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找汽车图片
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarimagesBySql(String sql,int limit,int offset){
+		return carimagesComponent.findAllCarimages(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 汽车图片
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCarimagesBySql(String sql){
+		return carimagesComponent.excuteCarimagesBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCarimagesBySql(String sql){
+		return carimagesComponent.countCarimagesBySql(sql);
+	}
+	
+	
+

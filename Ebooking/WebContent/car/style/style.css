@@ -1,0 +1,74 @@
+@charset "utf-8";
+.content{width:100%;height:auto;background:#fff;}
+.banner{width:1280px;height:461px;margin:0 auto;overflow:hidden;position:relative;}
+.banner ul{position:absolute;top:0;left:0;width:5120px;}
+.banner ul li{width:1280px;height:461px;float:left;position:relative;}
+.banner .layer{width:372px;height:212px;background:url(../images/banner_layer_bg.png) no-repeat;position:absolute;top:37px;left:0;padding:20px 0 0 50px;color:#fff;}
+.banner .layer h3{font-size:22px;}
+.banner .layer p{width:222px;margin:12px 0 50px;}
+.banner .layer a{display:block;width:195px;height:31px;line-height:31px;background:#9e1b32 url(../images/rigth.png) 186px center no-repeat;color:#fff;padding-left:15px;}
+.btns{position:absolute;bottom:35px;left:95px;}
+.btns span{display:inline-block;width:16px;height:15px;background:url(../images/radius.png) no-repeat;margin-right:4px;cursor:pointer;}
+.btns span.cur{background:url(../images/radius_cur.png) no-repeat;}
+.center{width:1280px;background:#efeeeb;padding:8px 0 3px;max-width:1280px;margin:0 auto;}
+
+/*.center_b{width:1280px;height:242px;margin:0 auto;position:relative;}
+.center_b .layer{position:absolute;top:80px;left:950px;}
+.center_b .layer h3{color:#9e1b32;}
+.center_b .layer p{width:196px;margin:15px 0 20px;}
+.center_b .layer p span{display:block;float:left;width:21px;height:18px;background:url(../images/apply.png) no-repeat;}
+.center_b .layer p a{display:block;float:left;height:18px;line-height:18px;margin-left:11px;}
+.center_s{width:1029px;height:157px;margin:0 auto;position:relative;}
+.center_s .layer{position:absolute;top:40px;left:704px;}
+.center_s .l,.center_b .l{left:0;}
+.center_s .layer h3{color:#9e1b32;}
+.center_s .layer p{width:242px;margin:15px 0 20px;}
+*/
+.center_show{width:1029px;height:157px;margin:0 auto;position:relative;}
+.center_show_img{width:1029px;height:157px;}
+.center_show .layer_outer{width:1029px;height:157px;position:absolute;top:0;left:0;}
+.center_show .layer{position:absolute;top:40px;left:704px;}
+.center_show .l,.center_b .l{left:0;}
+.center_show .layer h3{color:#9e1b32;}
+.center_show .layer p{width:242px;margin:15px 0 20px;}
+.center_show .layer p span{display:block;float:left;width:21px;height:18px;background:url(../images/apply.png) no-repeat;}
+.center_show .layer p a{display:block;float:left;height:18px;line-height:18px;margin-left:11px;}
+
+
+.know_more{width:100%;background:#d8d5cf;position:relative;padding-bottom:48px;max-width:1280px;margin:0 auto;overflow:hidden;}
+.know_more h3{width:1029px;height:98px;line-height:98px;margin:0 auto;font-size:18px;}
+.more_imgs{width:1029px;height:281px;position:relative;margin:0 auto;}
+.know_more ul{position:absolute;width:3000px;top:0;left:0;}
+.know_more ul li{float:left;margin-right:15px;width:315px;height:281px;background:#fff;}
+.know_more ul li p{color:#81807c;margin-left:22px;font-size:12px;line-height:18px;}
+.know_more ul li h4{margin:16px 0 7px 22px;font-size:12px;}
+.know_more_left,.know_more_right{width:34px;height:281px;position:absolute;top:98px;z-index:1;cursor:pointer;}
+/*
+.know_more_left:hover,.know_more_right:hover{background:#352c2c url(../images/more_left.png) center center no-repeat}
+*/
+
+.know_more_left{background:#919696 url(../images/more_left.png) center center no-repeat;left:0;}
+.know_more_right{background:#919696 url(../images/more_right.png) center center no-repeat;right:0;}
+
+.know_more_lef,.know_more_righ{width:34px;height:281px;position:absolute;top:98px;z-index:1;cursor:pointer;}
+.know_more_lef{background:#9e1b32 url(../images/more_left.png) center center no-repeat;left:0;}
+.know_more_righ{background:#9e1b32 url(../images/more_right.png) center center no-repeat;right:0;}
+/*
+红色
+*/
+.know_more_lefh,.know_more_righh{width:34px;height:281px;position:absolute;top:98px;z-index:1;cursor:pointer;}
+.know_more_lefh{background:#9e1b32 url(../images/more_left.png) center center no-repeat;left:0;}
+.know_more_righh{background:#9e1b32 url(../images/more_right.png) center center no-repeat;right:0;}
+
+/*
+黑色
+*/
+.know_more_lefhs,.know_more_righhs{width:34px;height:281px;position:absolute;top:98px;z-index:1;cursor:pointer;}
+.know_more_lefhs{background:#352c2c url(../images/more_left.png) center center no-repeat;left:0;}
+.know_more_righhs{background:#352c2c url(../images/more_right.png) center center no-repeat;right:0;}
+
+.know_more2{width:100%;background:#d8d5cf;position:relative;padding-bottom:48px;max-width:1280px;margin:0 auto;overflow:hidden;}
+.know_more2_left,.know_more2_right{width:34px;height:281px;position:absolute;top:98px;z-index:1;cursor:pointer;}
+.know_more2_left{background:#9e1b32 url(../images/more_right.png) center center no-repeat;left:0;}
+.know_more2_right{background:#9e1b32 url(../images/more_left.png) center center no-repeat;right:0;}
+

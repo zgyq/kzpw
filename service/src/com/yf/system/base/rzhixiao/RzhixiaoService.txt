@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 直销汇总表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Rzhixiao createRzhixiao(Rzhixiao rzhixiao) throws SQLException;
+	
+	/**
+	 * 删除 直销汇总表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRzhixiao(long id);
+	
+	
+	/**
+	 * 修改 直销汇总表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRzhixiao(Rzhixiao rzhixiao);
+
+		
+	/**
+	 * 修改 直销汇总表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRzhixiaoIgnoreNull(Rzhixiao rzhixiao);
+		
+	
+	/**
+	 * 查找 直销汇总表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRzhixiao(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 直销汇总表
+	 * @param id
+	 * @return
+	 */
+	public Rzhixiao findRzhixiao(long id);
+	
+	
+	/** 
+	 * 查找 直销汇总表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRzhixiaoForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找直销汇总表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRzhixiaoBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 直销汇总表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRzhixiaoBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRzhixiaoBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IRzhixiaoComponent rzhixiaoComponent;
+	  
+ 	
+ 	public IRzhixiaoComponent getRzhixiaoComponent() {
+		return rzhixiaoComponent;
+	}
+	public void setRzhixiaoComponent(IRzhixiaoComponent  rzhixiaoComponent) {
+		this.rzhixiaoComponent = rzhixiaoComponent;
+	}
+	/**
+	 * 创建 直销汇总表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Rzhixiao createRzhixiao(Rzhixiao rzhixiao) throws SQLException{
+	
+		return rzhixiaoComponent.createRzhixiao(rzhixiao);
+	}
+	/**
+	 * 删除 直销汇总表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRzhixiao(long id){
+	
+		return rzhixiaoComponent.deleteRzhixiao(id);
+	}
+	
+	
+	/**
+	 * 修改 直销汇总表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRzhixiao(Rzhixiao rzhixiao){
+		return rzhixiaoComponent.updateRzhixiao(rzhixiao);
+	
+	}
+
+		
+	/**
+	 * 修改 直销汇总表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRzhixiaoIgnoreNull(Rzhixiao rzhixiao){
+			return rzhixiaoComponent.updateRzhixiaoIgnoreNull(rzhixiao);
+	
+	}
+	
+	/**
+	 * 查找 直销汇总表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRzhixiao(String where, String orderby,int limit,int offset){
+		return rzhixiaoComponent.findAllRzhixiao(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 直销汇总表
+	 * @param id
+	 * @return
+	 */
+	public Rzhixiao findRzhixiao(long id){
+		return rzhixiaoComponent.findRzhixiao(id);
+	}
+	
+	/** 
+	 * 查找 直销汇总表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRzhixiaoForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return rzhixiaoComponent.findAllRzhixiao(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找直销汇总表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRzhixiaoBySql(String sql,int limit,int offset){
+		return rzhixiaoComponent.findAllRzhixiao(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 直销汇总表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRzhixiaoBySql(String sql){
+		return rzhixiaoComponent.excuteRzhixiaoBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRzhixiaoBySql(String sql){
+		return rzhixiaoComponent.countRzhixiaoBySql(sql);
+	}
+	
+	
+

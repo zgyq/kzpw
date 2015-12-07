@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Sysmessage">
+  
+  <typeAlias alias="Sysmessage" type="com.yf.system.base.sysmessage.Sysmessage"/>
+  
+
+  <resultMap id="resultSysmessageMap" class="Sysmessage">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="customeruserid" column="C_CUSTOMERUSERID"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="title" column="C_TITLE"/>
+  
+     <result property="content" column="C_CONTENT"/>
+  
+     <result property="users" column="C_USERS"/>
+  
+     <result property="pubtime" column="C_PUBTIME"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="endtime" column="C_ENDTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllSysmessage"  resultMap="resultSysmessageMap"  parameterClass="java.util.Map">
+  
+    select * from T_SYSMESSAGE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSysmessageBySql"  resultMap="resultSysmessageMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSysmessageBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSysmessageBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SYSMESSAGE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSysmessage" parameterClass="long" resultClass="Sysmessage">
+    select 
+    	ID as id,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_CUSTOMERUSERID as customeruserid,
+	  			C_TYPE as type,
+	  			C_TITLE as title,
+	  			C_CONTENT as content,
+	  			C_USERS as users,
+	  			C_PUBTIME as pubtime,
+	  			C_STATE as state,
+	  			C_ENDTIME as endtime 
+     from T_SYSMESSAGE
+    where ID = #id#
+  </select>
+   
+  <insert id="createSysmessage" parameterClass="Sysmessage">
+    insert into T_SYSMESSAGE ( 
+    	ID,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_CUSTOMERUSERID,
+	  			C_TYPE,
+	  			C_TITLE,
+	  			C_CONTENT,
+	  			C_USERS,
+	  			C_PUBTIME,
+	  			C_STATE,
+	  			C_ENDTIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#customeruserid:DECIMAL#,
+						
+							#type:DECIMAL#,
+						
+	  						#title#,
+	  					
+	  						#content#,
+	  					
+	  						#users#,
+	  					
+	  						#pubtime#,
+	  					
+							#state:DECIMAL#,
+						
+	  						#endtime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSysmessage" parameterClass="long">
+    delete from T_SYSMESSAGE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSysmessage" parameterClass="Sysmessage">
+    update T_SYSMESSAGE 
+    set 
+    	C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_CUSTOMERUSERID = #customeruserid:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_TITLE = #title#,
+	  					C_CONTENT = #content#,
+	  					C_USERS = #users#,
+	  					C_PUBTIME = #pubtime#,
+	  					C_STATE = #state:DECIMAL#,
+						C_ENDTIME = #endtime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

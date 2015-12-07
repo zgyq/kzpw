@@ -1,0 +1,78 @@
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib uri="webwork" prefix="ww"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${compname}-常用配送地址</title>
+
+<ww:head name="login" jsURL="citycontrol" />
+</head>
+
+<body>
+<div id="container">
+   <div class="center"><ww:include page="../top.jsp"/></div>
+    <!--includ top 直接替换掉整个DIV-->
+</div>    
+<!----------header over---------->
+<div id="member">
+    <jsp:include flush="true" page="../member/left.jsp?ty=member" ></jsp:include>
+   <div class="right mt10 r">
+       <div>
+          <ul>
+            <li class="mation fff">会员信息</li>
+            <li class="mation_info"><font class="mation_left f"><b>注册时间</b></font><span class="f mr25">会员注册时间为：2011年10月11日</span>      <font class="f90 f">普通会员</font> <span class="r mation_right">&nbsp;</span>    </li>
+          </ul>
+       </div>
+       
+       <!--会员基本信息over-->
+       <div class="mt7 box">
+            <div class="title">
+                   <font class="black low f mr15">常用配送地址</font>
+                   <font class="f mr25 c999">欢迎加入${compname}，我们将为您提供最优质的服务，服务咨询热线：${tel}。</font>
+                   <div class="c"></div>
+            </div>
+            <div class="data">
+                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="right" width="25%"><font class="fontxing mlr">*</font>收货人姓名：</td>
+                    <td><input type="text" class="text_regsit" /></td>
+                  </tr>
+                  <tr>
+                    <td align="right"><font class="fontxing mlr">*</font>省份：</td>
+                    <td> 
+                    <input class="text_regsitlatt" type="text" value="北京市" /><input class="text_regsitlatt" value="石景山区" type="text" /> <input class="text_regsit" type="text"  value="玉泉大厦805" /></td>
+                  </tr>
+                   <tr>
+                     <td align="right">地址：</td>
+                     <td><input type="text" class="text_regsit" /></td>
+                   </tr>
+                   <tr>
+                     <td align="right"> 联系电话：</td>
+                     <td><input type="text" class="text_regsitd" />—&nbsp;<input type="text" class="text_regsitlatter" />例：010-00000000</td>
+                   </tr>
+                   <tr>
+                     <td align="right">手机号：</td>
+                     <td><input type="text" class="text_regsit" /></td>
+                   </tr>
+                   <tr>
+                     <td align="right">电子邮件：</td>
+                     <td><input type="text" class="text_regsit" /></td>
+                   </tr>
+                   <tr>
+                     <td align="right">邮政编码：</td>
+                     <td><input type="text" class="text_regsitlatt" /></td>
+                   </tr>
+                   <tr>
+                   <td colspan="2" class="save"><input type="button" value="保存信息" class="button_sea_ticket"  /> </td>
+                   </tr>
+                 </table>
+
+            </div>
+       </div> 
+   </div>
+</div>
+
+<ww:include page="../footer.jsp"/>  
+</body>
+</html>

@@ -1,0 +1,18 @@
+
+.box-shadow{filter:progid:DXImageTransform.Microsoft.Shadow(color='#969696',Direction=135,Strength=5);background-color:#fff;-moz-box-shadow:2px 2px 5px #969696;-webkit-box-shadow:2px 2px 5px #969696;box-shadow:2px 2px 5px #969696}.toptarinline{border:1px solid #f0f0f0;width:790px;margin:10px 0 20px;-moz-box-shadow:0 1px 5px #e0e0e0;box-shadow:0 1px 5px #e0e0e0}
+
+.toptarinline .top{border-bottom:2px solid #2da1e7;height:20px;padding:10px;position:relative}
+
+.toptarinline .top .topimg{height:20px;width:22px;overflow:hidden;background:url(../images/train-bg_v1.png) no-repeat scroll -43px -313px}
+
+.toptarinline .top h2{line-height:22px;font-family:'\5FAE\8F6F\96C5\9ED1';font-size:18px;color:#2da1e7;padding-left:4px;margin-right:265px}.toptarinline .top ul{line-height:24px;font-family:'\5B8B\4F53';font-size:12px;color:#333}.toptarinline .top ul li{height:22px;width:41px;text-align:center;margin-right:20px;display:inline;float:left;cursor:pointer}
+
+.toptarinline .top ul li.on{overflow:hidden;color:#fff;background:url(../images/train-bg_v1.png) no-repeat scroll 0 -310px}
+
+.toptarinline .top ul li:hover{overflow:hidden;color:#fff;background:url(../images/train-bg_v1.png) no-repeat scroll 0 -332px}
+
+.toptarinline .top a:hover{text-decoration:none}.toptarinline .mtop{margin:15px 20px 10px 15px}.toptarinline .type01{display:inline-block}.toptarinline .type01 ul{line-height:24px;font-family:'\5B8B\4F53';font-size:12px;color:#333}.toptarinline .type01 ul li{height:28px;width:250px;display:inline;float:left}.toptarinline .type01 ul li a{float:left;width:100px;color:#0073b6}.toptarinline .type01 ul li a:hover{text-decoration:none;color:#f60}.toptarinline .type01 ul li span{float:left}.toptarinline .type01 ul li span font{color:#f60;font-family:arial;font-size:14px;margin-right:2px}.toptarinline .beijing{position:relative}.toptarinline .shanghai{position:relative}.toptarinline .guangzhou{position:relative}.toptarinline .hangzhou{position:relative}.toptarinline .nanjing{position:relative}.toptarinno{border:1px solid #f0f0f0;width:790px;margin:10px 0 20px;-moz-box-shadow:0 2px 5px #e0e0e0;box-shadow:0 2px 5px #e0e0e0}.toptarinno .top{border-bottom:2px solid #2da1e7;height:20px;padding:10px;position:relative}
+
+.toptarinno .top .topimg{height:20px;width:22px;overflow:hidden;background:url(../images/train-bg_v1.png) no-repeat scroll -43px -313px}
+
+.toptarinno .top h2{line-height:22px;font-family:'\5FAE\8F6F\96C5\9ED1';font-size:18px;color:#2da1e7;padding-left:4px;margin-right:265px}.toptarinno .top a:hover{text-decoration:none}.toptarinno .mtop{margin:15px 20px 10px 15px;display:inline-block}.toptarinno .trainno{position:relative}.toptarinno .hotNumBody ul{line-height:24px;font-family:'\5B8B\4F53';font-size:12px;color:#333}.toptarinno .hotNumBody ul li{height:28px;width:250px;cursor:pointer;display:inline;float:left}.toptarinno .hotNumBody ul li a{font-family:arial;font-size:14px;width:90px;float:left;text-decoration:none}.toptarinno .hotNumBody ul li span{float:left}.toptarinno .hotNumBody ul li span a{font-family:'\5B8B\4F53';font-size:12px;color:#333;width:160px;cursor:auto}

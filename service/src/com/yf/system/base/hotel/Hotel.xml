@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Hotel">
+  
+  <typeAlias alias="Hotel" type="com.yf.system.base.hotel.Hotel"/>
+  
+
+  <resultMap id="resultHotelMap" class="Hotel">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="enname" column="C_ENNAME"/>
+  
+     <result property="star" column="C_STAR"/>
+  
+     <result property="hot" column="C_HOT"/>
+  
+     <result property="repair" column="C_REPAIR"/>
+  
+     <result property="contryid" column="C_CONTRYID"/>
+  
+     <result property="provinceid" column="C_PROVINCEID"/>
+  
+     <result property="cityid" column="C_CITYID"/>
+  
+     <result property="regionid1" column="C_REGIONID1"/>
+  
+     <result property="regionid2" column="C_REGIONID2"/>
+  
+     <result property="regionid3" column="C_REGIONID3"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="rooms" column="C_ROOMS"/>
+  
+     <result property="footitem" column="C_FOOTITEM"/>
+  
+     <result property="serviceitem" column="C_SERVICEITEM"/>
+  
+     <result property="meetingitem" column="C_MEETINGITEM"/>
+  
+     <result property="playitem" column="C_PLAYITEM"/>
+  
+     <result property="carttype" column="C_CARTTYPE"/>
+  
+     <result property="repaildate" column="C_REPAILDATE"/>
+  
+     <result property="nearhotel" column="C_NEARHOTEL"/>
+  
+     <result property="postcode" column="C_POSTCODE"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="pyname" column="C_PYNAME"/>
+  
+     <result property="jpname" column="C_JPNAME"/>
+  
+     <result property="mainfloor" column="C_MAINFLOOR"/>
+  
+     <result property="websign" column="C_WEBSIGN"/>
+  
+     <result property="opendate" column="C_OPENDATE"/>
+  
+     <result property="faxdesc" column="C_FAXDESC"/>
+  
+     <result property="markettell" column="C_MARKETTELL"/>
+  
+     <result property="tortell" column="C_TORTELL"/>
+  
+     <result property="prespec" column="C_PRESPEC"/>
+  
+     <result property="appendlever" column="C_APPENDLEVER"/>
+  
+     <result property="mainlevel" column="C_MAINLEVEL"/>
+  
+     <result property="statedesc" column="C_STATEDESC"/>
+  
+     <result property="sellpoint" column="C_SELLPOINT"/>
+  
+     <result property="fullname" column="C_FULLNAME"/>
+  
+     <result property="openbank" column="C_OPENBANK"/>
+  
+     <result property="bankaccount" column="C_BANKACCOUNT"/>
+  
+     <result property="sort" column="C_SORT"/>
+  
+     <result property="companyid" column="C_COMPANYID"/>
+  
+     <result property="checkdesc" column="C_CHECKDESC"/>
+  
+     <result property="fax2" column="C_FAX2"/>
+  
+     <result property="fax1" column="C_FAX1"/>
+  
+     <result property="startprice" column="C_STARTPRICE"/>
+  
+     <result property="lng" column="C_LNG"/>
+  
+     <result property="lat" column="C_LAT"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+  
+     <result property="countryid" column="C_COUNTRYID"/>
+  
+     <result property="sourcetype" column="C_SOURCETYPE"/>
+  
+     <result property="hotelcode" column="C_HOTELCODE"/>
+  
+     <result property="airportservice" column="C_AIRPORTSERVICE"/>
+  
+     <result property="trafficinfo" column="C_TRAFFICINFO"/>
+  
+     <result property="paytype" column="C_PAYTYPE"/>
+  
+     <result property="checktype" column="C_CHECKTYPE"/>
+     
+     <result property="rebateway" column="C_REBATEWAY"/>
+  
+     <result property="rulesback" column="C_RULESBACK"/>
+  
+     <result property="payment" column="C_PAYMENT"/>
+  
+     <result property="chaininfoid" column="C_CHAININFOID"/>
+     
+     <result property="meneyback" column="C_MENEYBACK"/>
+     
+     <result property="pricetype" column="C_PRICETYPE"/>
+     
+   
+  </resultMap>
+  
+  <select id="findAllHotel"  resultMap="resultHotelMap"  parameterClass="java.util.Map">
+  
+    select * from T_HOTEL
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllHotelBySql"  resultMap="resultHotelMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteHotelBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countHotelBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_HOTEL
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findHotel" parameterClass="long" resultClass="Hotel">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_ENNAME as enname,
+	  			C_STAR as star,
+	  			C_HOT as hot,
+	  			C_REPAIR as repair,
+	  			C_CONTRYID as contryid,
+	  			C_PROVINCEID as provinceid,
+	  			C_CITYID as cityid,
+	  			C_REGIONID1 as regionid1,
+	  			C_REGIONID2 as regionid2,
+	  			C_REGIONID3 as regionid3,
+	  			C_ADDRESS as address,
+	  			C_DESCRIPTION as description,
+	  			C_TYPE as type,
+	  			C_ROOMS as rooms,
+	  			C_FOOTITEM as footitem,
+	  			C_SERVICEITEM as serviceitem,
+	  			C_MEETINGITEM as meetingitem,
+	  			C_PLAYITEM as playitem,
+	  			C_CARTTYPE as carttype,
+	  			C_REPAILDATE as repaildate,
+	  			C_NEARHOTEL as nearhotel,
+	  			C_POSTCODE as postcode,
+	  			C_STATE as state,
+	  			C_PYNAME as pyname,
+	  			C_JPNAME as jpname,
+	  			C_MAINFLOOR as mainfloor,
+	  			C_WEBSIGN as websign,
+	  			C_OPENDATE as opendate,
+	  			C_FAXDESC as faxdesc,
+	  			C_MARKETTELL as markettell,
+	  			C_TORTELL as tortell,
+	  			C_PRESPEC as prespec,
+	  			C_APPENDLEVER as appendlever,
+	  			C_MAINLEVEL as mainlevel,
+	  			C_STATEDESC as statedesc,
+	  			C_SELLPOINT as sellpoint,
+	  			C_FULLNAME as fullname,
+	  			C_OPENBANK as openbank,
+	  			C_BANKACCOUNT as bankaccount,
+	  			C_SORT as sort,
+	  			C_COMPANYID as companyid,
+	  			C_CHECKDESC as checkdesc,
+	  			C_FAX2 as fax2,
+	  			C_FAX1 as fax1,
+	  			C_STARTPRICE as startprice,
+	  			C_LNG as lng,
+	  			C_LAT as lat,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language,
+	  			C_COUNTRYID as countryid,
+	  			C_SOURCETYPE as sourcetype,
+	  			C_HOTELCODE as hotelcode,
+	  			C_AIRPORTSERVICE as airportservice,
+	  			C_TRAFFICINFO as trafficinfo,
+	  			C_PAYTYPE as paytype,
+	  			C_CHECKTYPE as checktype,
+	  			C_REBATEWAY as rebateway,
+	  			C_RULESBACK as rulesback,
+	  			C_PAYMENT as payment,
+	  			C_CHAININFOID as chaininfoid,
+	  			C_PRICETYPE as pricetype,
+	  			C_MENEYBACK as meneyback
+     from T_HOTEL
+    where ID = #id#
+  </select>
+   
+  <insert id="createHotel" parameterClass="Hotel">
+    insert into T_HOTEL ( 
+    	ID,
+	  			C_NAME,
+	  			C_ENNAME,
+	  			C_STAR,
+	  			C_HOT,
+	  			C_REPAIR,
+	  			C_CONTRYID,
+	  			C_PROVINCEID,
+	  			C_CITYID,
+	  			C_REGIONID1,
+	  			C_REGIONID2,
+	  			C_REGIONID3,
+	  			C_ADDRESS,
+	  			C_DESCRIPTION,
+	  			C_TYPE,
+	  			C_ROOMS,
+	  			C_FOOTITEM,
+	  			C_SERVICEITEM,
+	  			C_MEETINGITEM,
+	  			C_PLAYITEM,
+	  			C_CARTTYPE,
+	  			C_REPAILDATE,
+	  			C_NEARHOTEL,
+	  			C_POSTCODE,
+	  			C_STATE,
+	  			C_PYNAME,
+	  			C_JPNAME,
+	  			C_MAINFLOOR,
+	  			C_WEBSIGN,
+	  			C_OPENDATE,
+	  			C_FAXDESC,
+	  			C_MARKETTELL,
+	  			C_TORTELL,
+	  			C_PRESPEC,
+	  			C_APPENDLEVER,
+	  			C_MAINLEVEL,
+	  			C_STATEDESC,
+	  			C_SELLPOINT,
+	  			C_FULLNAME,
+	  			C_OPENBANK,
+	  			C_BANKACCOUNT,
+	  			C_SORT,
+	  			C_COMPANYID,
+	  			C_CHECKDESC,
+	  			C_FAX2,
+	  			C_FAX1,
+	  			C_STARTPRICE,
+	  			C_LNG,
+	  			C_LAT,
+	  			C_UCODE,
+	  			C_LANGUAGE,
+	  			C_COUNTRYID,
+	  			C_SOURCETYPE,
+	  			C_HOTELCODE,
+	  			C_AIRPORTSERVICE,
+	  			C_TRAFFICINFO,
+	  			C_PAYTYPE,
+	  			C_CHECKTYPE,
+	  			C_REBATEWAY,
+	  			C_RULESBACK,
+	  			C_PAYMENT,
+	  			C_CHAININFOID,
+	  			C_PRICETYPE,
+	  			C_MENEYBACK  
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#enname#,
+	  					
+							#star:DECIMAL#,
+						
+							#hot:DECIMAL#,
+						
+							#repair:DECIMAL#,
+						
+							#contryid:DECIMAL#,
+						
+							#provinceid:DECIMAL#,
+						
+							#cityid:DECIMAL#,
+						
+							#regionid1:DECIMAL#,
+						
+							#regionid2:DECIMAL#,
+						
+							#regionid3:DECIMAL#,
+						
+	  						#address#,
+	  					
+	  						#description#,
+	  					
+							#type:DECIMAL#,
+						
+							#rooms:DECIMAL#,
+						
+	  						#footitem#,
+	  					
+	  						#serviceitem#,
+	  					
+	  						#meetingitem#,
+	  					
+	  						#playitem#,
+	  					
+	  						#carttype#,
+	  					
+	  						#repaildate#,
+	  					
+	  						#nearhotel#,
+	  					
+	  						#postcode#,
+	  					
+							#state:DECIMAL#,
+						
+	  						#pyname#,
+	  					
+	  						#jpname#,
+	  					
+	  						#mainfloor#,
+	  					
+							#websign:DECIMAL#,
+						
+	  						#opendate#,
+	  					
+	  						#faxdesc#,
+	  					
+	  						#markettell#,
+	  					
+	  						#tortell#,
+	  					
+	  						#prespec#,
+	  					
+							#appendlever:DECIMAL#,
+						
+							#mainlevel:DECIMAL#,
+						
+	  						#statedesc#,
+	  					
+	  						#sellpoint#,
+	  					
+	  						#fullname#,
+	  					
+	  						#openbank#,
+	  					
+	  						#bankaccount#,
+	  					
+							#sort:DECIMAL#,
+						
+							#companyid:DECIMAL#,
+						
+	  						#checkdesc#,
+	  					
+	  						#fax2#,
+	  					
+	  						#fax1#,
+	  					
+							#startprice:DECIMAL#,
+						
+							#lng:DECIMAL#,
+						
+							#lat:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+							#language:DECIMAL#,
+						
+							#countryid:DECIMAL#,
+						
+							#sourcetype:DECIMAL#,
+						
+	  						#hotelcode#,
+	  					
+	  						#airportservice#,
+	  					
+	  						#trafficinfo#,
+	  					
+							#paytype:DECIMAL#,
+						
+  							#checktype:DECIMAL#,
+						
+							#rebateway:DECIMAL#,
+						
+	  						#rulesback#,
+	  					
+							#payment:DECIMAL#,
+						
+  							#chaininfoid:DECIMAL#,
+  							
+  							#pricetype:DECIMAL#,
+  							
+  						 	#meneyback:DECIMAL#
+    
+    )
+  </insert>
+  
+  <delete id="deleteHotel" parameterClass="long">
+    delete from T_HOTEL
+    where ID = #id#
+  </delete>
+	
+  <update id="updateHotel" parameterClass="Hotel">
+    update T_HOTEL 
+    set 
+    	C_NAME = #name#,
+	  					C_ENNAME = #enname#,
+	  					C_STAR = #star:DECIMAL#,
+						C_HOT = #hot:DECIMAL#,
+						C_REPAIR = #repair:DECIMAL#,
+						C_CONTRYID = #contryid:DECIMAL#,
+						C_PROVINCEID = #provinceid:DECIMAL#,
+						C_CITYID = #cityid:DECIMAL#,
+						C_REGIONID1 = #regionid1:DECIMAL#,
+						C_REGIONID2 = #regionid2:DECIMAL#,
+						C_REGIONID3 = #regionid3:DECIMAL#,
+						C_ADDRESS = #address#,
+	  					C_DESCRIPTION = #description#,
+	  					C_TYPE = #type:DECIMAL#,
+						C_ROOMS = #rooms:DECIMAL#,
+						C_FOOTITEM = #footitem#,
+	  					C_SERVICEITEM = #serviceitem#,
+	  					C_MEETINGITEM = #meetingitem#,
+	  					C_PLAYITEM = #playitem#,
+	  					C_CARTTYPE = #carttype#,
+	  					C_REPAILDATE = #repaildate#,
+	  					C_NEARHOTEL = #nearhotel#,
+	  					C_POSTCODE = #postcode#,
+	  					C_STATE = #state:DECIMAL#,
+						C_PYNAME = #pyname#,
+	  					C_JPNAME = #jpname#,
+	  					C_MAINFLOOR = #mainfloor#,
+	  					C_WEBSIGN = #websign:DECIMAL#,
+						C_OPENDATE = #opendate#,
+	  					C_FAXDESC = #faxdesc#,
+	  					C_MARKETTELL = #markettell#,
+	  					C_TORTELL = #tortell#,
+	  					C_PRESPEC = #prespec#,
+	  					C_APPENDLEVER = #appendlever:DECIMAL#,
+						C_MAINLEVEL = #mainlevel:DECIMAL#,
+						C_STATEDESC = #statedesc#,
+	  					C_SELLPOINT = #sellpoint#,
+	  					C_FULLNAME = #fullname#,
+	  					C_OPENBANK = #openbank#,
+	  					C_BANKACCOUNT = #bankaccount#,
+	  					C_SORT = #sort:DECIMAL#,
+						C_COMPANYID = #companyid:DECIMAL#,
+						C_CHECKDESC = #checkdesc#,
+	  					C_FAX2 = #fax2#,
+	  					C_FAX1 = #fax1#,
+	  					C_STARTPRICE = #startprice:DECIMAL#,
+						C_LNG = #lng:DECIMAL#,
+						C_LAT = #lat:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_COUNTRYID = #countryid:DECIMAL#,
+						C_SOURCETYPE = #sourcetype:DECIMAL#,
+						C_HOTELCODE = #hotelcode#,
+	  					C_AIRPORTSERVICE = #airportservice#,
+	  					C_TRAFFICINFO = #trafficinfo#,
+	  					C_PAYTYPE = #paytype:DECIMAL#,
+						C_CHECKTYPE = #checktype:DECIMAL#,
+						C_REBATEWAY = #rebateway:DECIMAL#,
+						C_RULESBACK = #rulesback#,
+	  					C_PAYMENT = #payment:DECIMAL#,
+						C_CHAININFOID = #chaininfoid:DECIMAL#,
+						C_PRICETYPE = #pricetype:DECIMAL#,
+						C_MENEYBACK = #meneyback:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

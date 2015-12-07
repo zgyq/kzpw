@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Qzguojia">
+  
+  <typeAlias alias="Qzguojia" type="com.yf.system.base.qzguojia.Qzguojia"/>
+  
+
+  <resultMap id="resultQzguojiaMap" class="Qzguojia">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="classid" column="C_CLASSID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="bclassid" column="C_BCLASSID"/>
+  
+     <result property="bclassname" column="C_BCLASSNAME"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllQzguojia"  resultMap="resultQzguojiaMap"  parameterClass="java.util.Map">
+  
+    select * from T_QZGUOJIA
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllQzguojiaBySql"  resultMap="resultQzguojiaMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteQzguojiaBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countQzguojiaBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_QZGUOJIA
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findQzguojia" parameterClass="long" resultClass="Qzguojia">
+    select 
+    	ID as id,
+	  			C_CLASSID as classid,
+	  			C_NAME as name,
+	  			C_BCLASSID as bclassid,
+	  			C_BCLASSNAME as bclassname,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state 
+     from T_QZGUOJIA
+    where ID = #id#
+  </select>
+   
+  <insert id="createQzguojia" parameterClass="Qzguojia">
+    insert into T_QZGUOJIA ( 
+    	ID,
+	  			C_CLASSID,
+	  			C_NAME,
+	  			C_BCLASSID,
+	  			C_BCLASSNAME,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#classid#,
+	  					
+	  						#name#,
+	  					
+	  						#bclassid#,
+	  					
+	  						#bclassname#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteQzguojia" parameterClass="long">
+    delete from T_QZGUOJIA
+    where ID = #id#
+  </delete>
+	
+  <update id="updateQzguojia" parameterClass="Qzguojia">
+    update T_QZGUOJIA 
+    set 
+    	C_CLASSID = #classid#,
+	  					C_NAME = #name#,
+	  					C_BCLASSID = #bclassid#,
+	  					C_BCLASSNAME = #bclassname#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

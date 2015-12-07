@@ -1,0 +1,299 @@
+@CHARSET "UTF-8";
+body
+{
+	font-family: "宋体";
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+.T1
+{
+	background: url(../images/tou1.jpg) no-repeat;
+	float: left;
+	height: 41px;
+	width: 214px;
+}
+
+.T1_1
+{
+	background: url(../images/tou1-1.jpg) no-repeat;
+	float: left;
+	height: 41px;
+	width: 214px;
+}
+
+
+
+.T2
+{
+	background: url(../images/tou2.jpg) repeat-x;
+	float: left;
+	height: 41px;
+	overflow: hidden;
+	width: 546px;
+}
+.T3
+{
+	border: none;
+	border-collapse: collapse;
+	border-spacing: 0;
+	display: inline;
+	float: left;
+	height: 30px;
+	margin: 0 10px 0 310px;
+	padding: 0;
+	text-align: center;
+	width: 220px;	
+}
+table.T3 tr td
+{
+	width: 20%;
+	color: #666666;
+	height: 15px;
+}
+table.T3 td .lightBlock
+{
+	background: #FF0000;
+	font-size: 0px;
+	height: 7px;
+	margin-top: 8px;
+	width: 42px;
+}
+table.T3 td .darkBlock
+{
+	background: #D8D8D8;
+	font-size: 0px;
+	height: 7px;
+	margin-top: 8px;
+	width: 42px;
+}
+.T4
+{
+	background: url(../images/tou3.jpg) no-repeat;
+	float: left;
+	height: 41px;
+	width: 6px;
+}
+.T5
+{
+	background: #FBF9F5;
+	border: solid #9BC5C7;
+	border-width: 0 1px 0 1px;
+	clear: both;
+	height: 40px;
+	line-height: 40px;
+	text-indent: 15px;
+}
+.btnBefore
+{
+	background: url(../images/an1.jpg) no-repeat;
+	border: 0;
+	height: 27px;
+	outline: none;
+	width: 91px;
+}
+.btnAfter
+{
+	background: url(../images/an2.jpg) no-repeat;
+	border: 0;
+	height: 27px;
+	outline: none;
+	width: 91px;
+}
+.btnDestine
+{
+	background: url(../images/an3.jpg) no-repeat;
+	border: 0;
+	height: 21px;
+	width: 83px;
+}
+.btnLow
+{
+	background: url(../images/an4.jpg) no-repeat;
+	border: 0;
+	height: 21px;
+	width: 83px;
+}
+.btnAll
+{
+	background: url(../images/an5.jpg) no-repeat;
+	border: 0;
+	height: 21px;
+	width: 83px;
+}
+.font1
+{
+	font-size: 15px;
+	font-family:"黑体";
+	font-weight: bolder;
+}
+.font2
+{
+	font-size: 12px;
+	font-family: "宋体";
+	font-weight: bolder;
+}
+.font3
+{
+	font-size: 12px;
+	font-family: "宋体";
+	font-weight: normal;
+}
+/* 舱位信息字体 最上面头部字体 begin */
+.font4
+{
+	color: #0B3C55;
+	font-size: 12px;
+	font-family: 宋体;
+	font-weight: bolder;
+}
+.color4
+{
+	color: #FF0000;
+	font-size: 12px;
+	font-family: 宋体;
+	font-weight: normal;
+}
+.color5
+{
+	color: #990000;
+	font-size: 12px;
+	font-family: 宋体;
+	font-weight: normal;
+}
+.colorPrice
+{
+    font-weight: bold;
+}
+.colorPlace
+{
+	color: #000000;
+	font-size: 12px;
+	font-family: "宋体";
+	font-weight: normal;
+}
+.colorTotal
+{
+	font-weight: bold;
+}
+.colorDotnum
+{
+	color: #FF0000;
+	font-size: 15px;
+	font-family:Arial;
+	font-weight: bold;
+}
+.font7
+{
+	color: Black;
+	font-size: 12px;
+	font-family: 宋体;
+	font-weight: normal;
+}
+.font8
+{
+	color: #FF0000;
+	font-size: 15px;
+	font-family: Arial;
+	font-weight: bolder;
+}
+.font9
+{
+	color: Black;
+	font-size: 12px;
+	font-family: 宋体;
+	font-weight: bolder;
+}
+/* 舱位信息字体 end */
+.black
+{
+	color: Black;
+}
+.white
+{
+	color: White;
+}
+.color1
+{
+	color: #8A8A00;
+}
+.color2
+{
+	color: Black;
+}
+.color3
+{
+	color: #666666;
+	font-size: 12px;
+	font-family: "宋体";
+	font-weight: normal;
+}
+.color4
+{
+	color: #FF0000;
+}
+.remind
+{
+	background: #FBF9F5;
+	border: solid #9BC5C7;
+	border-width: 1px;
+	height: 69px;
+	
+
+}
+.remind .txt
+{
+	float: left;
+	height: 70px;
+	width: 760px;
+}
+.remind .divBtn
+{
+	float:left;
+	margin: 20px 0 0 0;
+	width: 200px;
+}
+#OkPanel
+{
+	clear: left;
+}
+.ul1
+{
+	list-style-type: none;
+	margin: 0 0 0 15px;
+	padding: 0;
+}
+.ul1 li
+{
+	line-height: 20px;
+	margin: 0;
+}
+.h1
+{
+	clear: both;
+}
+.h2
+{
+	clear: both;
+	height: 20px;
+}
+.th
+{
+	background: url(../images/bj2.gif) repeat-x;
+	color: #0B3C55;
+	font-size: 12px;
+	font-family: 宋体;
+	font-weight:bold;
+}
+#OkPanel
+{
+	clear: both;
+	float: left;
+}
+
+/*begin绿色回程票页头样式   pengbo   2011-11-08*/
+.pb_border{ border:solid 1px #7AB8C7;  }
+.pb_leftBG{width:7px; height:27px; display:none; }
+.pb_middleBG{font-size:16px; font-weight:bold; background:url('../images/bg2.gif') repeat-x; vertical-align:bottom;  width:756px; height:25px; overflow:hidden;  text-indent :30; border:solid 1px #7AB8C7; border-bottom:1px;color:#7AB8C7;}
+.pb_rightBG{width:7px; height:27px;display:none;}
+/*end绿色回程票页头样式   pengbo   2011-11-08*/

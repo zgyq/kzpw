@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../css/init.css" />
+<link rel="stylesheet" type="text/css" href="../css/vipCenter.css" />
+<script src="../js/jquery-1.8.0.min.js" type="text/javascript"></script>
+<script src="../js/jquery.wookmark.js" type="text/javascript"></script>
+<script>
+	$(function(){
+		$(".vipMenu li:first").addClass("vipMenuClick")
+		$(".vipMenu h3").click(function(){
+			$(this).parent().toggleClass("vipMenuClick");
+		})		//瀑布流
+		$("#tiles li").wookmark({
+			autoResize:true,
+			container:$("#main"),
+			offset:3,
+			itemWidth:220,
+			resizeDelay:100
+		});
+	})
+</script>
+</head>
+<body>
+<!--vipHeader-->
+<div class="vipHeader vipCenter">
+	<p><a href="#">返回官网首页</a><a href="#">车友俱乐部</a><span><a>会员中心</a></span></p>
+</div>
+<!--vipHeader end-->
+<!--你现在的位置-->
+<div class="currentLocation"><p class="vipCenter">你的位置：<a href="#">首页</a>><a href="#">投资者关系</a></p></div>
+<!--你现在的位置 end-->
+<!--vipContent-->
+<div class="vipContent">
+	<div style="background:url(images/vipContentBg.jpg) repeat-x top center;" class="vipContentBg">
+    <div class="vipCenter">
+        <div class="vipContentLeft">
+        	<div class="vipName">
+            	<p class="vipNameTitle"><span>merisa</span>你好！</p>
+                <p class="youDo">待处理事项:<i>3</i></p>
+            </div>
+            <img src="images/vipHelloBottom_bg.png" height="4" width="220" class="vipHelloImg" />
+            <ul class="vipMenu">
+            	<li>
+                	<h3>定制我的页面</h3>
+                    <div>
+                    	<a href="#" class="vipMenuaFocus">我的页面</a>
+                        <a href="#">定制页面</a>
+                    </div>
+                </li>
+                <li>
+                	<h3>会员信息</h3>
+                    <div>
+                    	<a href="#">我的资料</a>
+                        <a href="#">编辑资料</a>
+                        <a href="#">修改密码</a>
+                        <a href="#">简历与留言<span><i>1</i></span></a>
+                    </div>
+                </li>
+                <li><a href="#">系统消息</a></li>
+                <li>
+                	<h3>预约信息</h3>
+                    <div>
+                    	<a href="#">预约试驾</a>
+                        <a href="#">预约服务</a>
+                        <a href="#">预约活动</a>
+                    </div>
+                </li>
+                <li>
+                	<h3>在线订车</h3>
+                    <div>
+                    	<a href="#">订单信息</a>
+                    </div>
+                </li>
+                <li><a href="#">我的CLUB</a></li>
+                <li><a href="#">意见反馈</a></li>
+            </ul>
+            <img src="images/vipMenuBottom_bg.png" height="5" width="200" class="vipMenuImg" />
+            <ul class="vipContentTips">
+            	<li><a href="#"><img src="images/dingche.png" height="23" width="22" />我关注的车型</a></li>
+                <li><a href="#"><img src="images/wangdian.png" height="23" width="22" />在线咨询</a></li>
+            </ul>
+            <img src="images/vipHelloBottom_bg.png" height="4" width="220" class="vipHelloImg" />
+        </div>
+        <div class="vipContentRight">
+        	<div class="dingzhi">
+            	<!--ad-->
+                <div class="bigAd">
+                	<a href="#"><img src="images/ad1.jpg" height="94" width="666" /></a>
+                </div>
+                <p class="dingzhiTitle"><a href="#">查看所有信息</a><span>merisa</span> 的定制页面</p>
+                <!--dingzhiList-->
+                <div id="main" role="main">
+                <ul class="dingzhiList" id="tiles">
+                	<li>
+                    	<a href="#"><img src="images/dingzhiListImg.jpg" width="208" /></a>
+                        <p>全国人大代表安进提议建立“抗战...
+情定五星 悦满江淮 江淮车友联盟...
+集团公司1月共销售整车49902辆 </p>
+                    </li>
+                    <li>
+                    	<a href="#"><img src="images/dingzhiListImg.jpg" width="208" /></a>
+                        <p>全国人大代表安进提议建立“抗战...
+情定五星 悦满江淮 江淮车友联盟...
+集团公司1月共销售整车499集团公司1月共销售整车4990集团公司1月共销售整车499002辆 </p>
+                    </li>
+                    <li>
+                    	<a href="#"><img src="images/dingzhiListImg.jpg" width="208" /></a>
+                        <p>全国人大代表安进提议建立“抗战...
+情定五星 悦满江淮 江淮车友联盟...
+集团公司1月共集团公司1月共销售整车4990销售整车49902辆 </p>
+                    </li>
+                    <li>
+                    	<a href="#"><img src="images/dingzhiListImg.jpg" width="208" /></a>
+                        <p>全国人大代表安进提议建立“抗战...
+情定五星 集团公司1月共销售整车4990悦满江淮 江淮车友联盟...
+集团公司1月共销售整车49902辆 </p>
+                    </li>
+                    <li>
+                    	<a href="#"><img src="images/dingzhiListImg.jpg" width="208" /></a>
+                        <p>全国人大代表安进提议建立“抗战...
+情定五星 悦集团公司1月共销售整车4990集团公司1月共销售整车4990满江淮 江淮车友联盟...
+集团公司1月共销售整车49902辆 </p>
+                    </li>
+                    <li>
+                    	<a href="#"><img src="images/dingzhiListImg.jpg" width="208" /></a>
+                        <p>全国人大代表安进提议建立“抗战...
+情定五星 悦满江淮 江淮车友联盟...
+集团公司1月共销售整车49902辆 </p>
+                    </li>
+                    <li>
+                    	<a href="#"><img src="images/dingzhiListImg.jpg" width="208" /></a>
+                        <p>全国人大代表安进提议建立“抗战...
+情定五星 悦满江淮集团公司1月共销售整车4990集团公司1月共销售整车4990 江淮车友联盟...
+集团公司1月共销售整车49902辆 </p>
+                    </li>
+                    <li>
+                    	<a href="#"><img src="images/dingzhiListImg.jpg" width="208" /></a>
+                        <p>全国人大代表安进提议建立“抗战...
+情定五星 悦满江淮 江淮车友联盟...
+集团公司1月共销售整车49902辆 </p>
+                    </li>
+                    <li>
+                    	<a href="#"><img src="images/dingzhiListImg.jpg" width="208" /></a>
+                        <p>全国人大代表安进提议建立“抗战...
+情定五星 悦满江淮 江淮车友联盟...
+集团公司1月共销售整车49902辆
+集团公司1月共销售整车4990 </p>
+                    </li>
+                </ul>
+                </div>
+                <div class="clearBox"></div>
+            </div>
+            <img src="images/vipContentRightBottom.png" height="10" width="700" class="vipContentRightImg" />
+            
+            <!--在线订车-->
+            <div class="dingzhi onlineDingzhi dingzhiJianju">
+            	<p class="onlineTitle BBSTitle">论坛信息</p>
+            	<ul class="BBSInformation">
+                	<Li><span>2014-03-03</span><a href="#"> 合资是王道！朗逸等销量前十车型降2.1万</a></Li>
+                    <Li><span>2014-03-03</span><a href="#"> 合资是王道！朗逸等销量前十车型降2.1万</a></Li>
+                    <Li><span>2014-03-03</span><a href="#"> 合资是王道！朗逸等销量前十车型降2.1万</a></Li>
+                    <Li><span>2014-03-03</span><a href="#"> 合资是王道！朗逸等销量前十车型降2.1万</a></Li>
+                </ul>
+                <a href="#" class="BBSAd"><img src="images/smallAdImg.jpg" height="100" width="210" /></a>
+                <div class="clearBox"></div>
+            </div>
+            <img src="images/vipContentRightBottom.png" height="10" width="700" class="vipContentRightImg" />
+        </div>
+        <div class="clearBox"></div>
+    </div>
+    </div>
+</div>
+<!--vipContent end-->
+</body>
+</html>

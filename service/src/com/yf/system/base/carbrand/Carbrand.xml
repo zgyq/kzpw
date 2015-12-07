@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Carbrand">
+  
+  <typeAlias alias="Carbrand" type="com.yf.system.base.carbrand.Carbrand"/>
+  
+
+  <resultMap id="resultCarbrandMap" class="Carbrand">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+   
+  </resultMap>
+  
+  <select id="findAllCarbrand"  resultMap="resultCarbrandMap"  parameterClass="java.util.Map">
+  
+    select * from T_CARBRAND
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCarbrandBySql"  resultMap="resultCarbrandMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCarbrandBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCarbrandBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CARBRAND
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCarbrand" parameterClass="long" resultClass="Carbrand">
+    select 
+    	ID as id,
+	  			C_CODE as code,
+	  			C_NAME as name,
+	  			C_COMMENT as comment 
+     from T_CARBRAND
+    where ID = #id#
+  </select>
+   
+  <insert id="createCarbrand" parameterClass="Carbrand">
+    insert into T_CARBRAND ( 
+    	ID,
+	  			C_CODE,
+	  			C_NAME,
+	  			C_COMMENT 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#code#,
+	  					
+	  						#name#,
+	  					
+	  						#comment#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCarbrand" parameterClass="long">
+    delete from T_CARBRAND
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCarbrand" parameterClass="Carbrand">
+    update T_CARBRAND 
+    set 
+    	C_CODE = #code#,
+	  					C_NAME = #name#,
+	  					C_COMMENT = #comment#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

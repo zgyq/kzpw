@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 星级结算分类
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Starsettlementtype createStarsettlementtype(Starsettlementtype starsettlementtype) throws SQLException;
+	
+	/**
+	 * 删除 星级结算分类
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteStarsettlementtype(long id);
+	
+	
+	/**
+	 * 修改 星级结算分类
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateStarsettlementtype(Starsettlementtype starsettlementtype);
+
+		
+	/**
+	 * 修改 星级结算分类但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateStarsettlementtypeIgnoreNull(Starsettlementtype starsettlementtype);
+		
+	
+	/**
+	 * 查找 星级结算分类
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllStarsettlementtype(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 星级结算分类
+	 * @param id
+	 * @return
+	 */
+	public Starsettlementtype findStarsettlementtype(long id);
+	
+	
+	/** 
+	 * 查找 星级结算分类
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllStarsettlementtypeForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找星级结算分类
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllStarsettlementtypeBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 星级结算分类
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteStarsettlementtypeBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countStarsettlementtypeBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IStarsettlementtypeComponent starsettlementtypeComponent;
+	  
+ 	
+ 	public IStarsettlementtypeComponent getStarsettlementtypeComponent() {
+		return starsettlementtypeComponent;
+	}
+	public void setStarsettlementtypeComponent(IStarsettlementtypeComponent  starsettlementtypeComponent) {
+		this.starsettlementtypeComponent = starsettlementtypeComponent;
+	}
+	/**
+	 * 创建 星级结算分类
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Starsettlementtype createStarsettlementtype(Starsettlementtype starsettlementtype) throws SQLException{
+	
+		return starsettlementtypeComponent.createStarsettlementtype(starsettlementtype);
+	}
+	/**
+	 * 删除 星级结算分类
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteStarsettlementtype(long id){
+	
+		return starsettlementtypeComponent.deleteStarsettlementtype(id);
+	}
+	
+	
+	/**
+	 * 修改 星级结算分类
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateStarsettlementtype(Starsettlementtype starsettlementtype){
+		return starsettlementtypeComponent.updateStarsettlementtype(starsettlementtype);
+	
+	}
+
+		
+	/**
+	 * 修改 星级结算分类但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateStarsettlementtypeIgnoreNull(Starsettlementtype starsettlementtype){
+			return starsettlementtypeComponent.updateStarsettlementtypeIgnoreNull(starsettlementtype);
+	
+	}
+	
+	/**
+	 * 查找 星级结算分类
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllStarsettlementtype(String where, String orderby,int limit,int offset){
+		return starsettlementtypeComponent.findAllStarsettlementtype(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 星级结算分类
+	 * @param id
+	 * @return
+	 */
+	public Starsettlementtype findStarsettlementtype(long id){
+		return starsettlementtypeComponent.findStarsettlementtype(id);
+	}
+	
+	/** 
+	 * 查找 星级结算分类
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllStarsettlementtypeForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return starsettlementtypeComponent.findAllStarsettlementtype(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找星级结算分类
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllStarsettlementtypeBySql(String sql,int limit,int offset){
+		return starsettlementtypeComponent.findAllStarsettlementtype(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 星级结算分类
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteStarsettlementtypeBySql(String sql){
+		return starsettlementtypeComponent.excuteStarsettlementtypeBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countStarsettlementtypeBySql(String sql){
+		return starsettlementtypeComponent.countStarsettlementtypeBySql(sql);
+	}
+	
+	
+

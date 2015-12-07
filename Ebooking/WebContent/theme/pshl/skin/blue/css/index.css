@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+#index{ background:url(../images/bj_body.png) repeat-x;}
+
+#top{ width:1004px; margin:0 auto;background:url(../images/bj_body.png) repeat-x;}
+#middle{ width:1004px; margin:0 auto; height:634px; background:url(../images/bj_middle.png);}
+#middle .left{ width:300px; padding:110px 0 0 60px;}
+#middle .input{ width:150px; height:30px; line-height:30px; padding-left:10px; background:#e9e9e9; border:none;}
+#middle .input70{ width:70px; height:30px; line-height:30px; padding-left:10px; background:#e9e9e9; border:none;}
+#middle .bnt{  background:url(../images/input.gif); width:130px; height:41px; line-height:40px; border:none; cursor:pointer;}
+#middle .right{ width:380px; padding:90px 0 0 90px;}
+#middle .nav{ background:url(../images/bj_nav.gif) no-repeat; width:366px; height:37px; line-height:37px;}
+#middle .nav ul{}
+#middle .nav ul li{ width:120px; margin:0 1px 0 1px; text-align:center; font-size:14px; font-weight:bold; display:inline; }
+#middle .navon{ background:url(../images/navon.gif) repeat-x;}
+#middle .navon a{ color:#cc0000; text-decoration:none;}
+#middle .navout{width:120px;}
+#middle .navout a{ color:#fff; text-decoration:none;}
+#middle .input_time{ background:url(../images/input_time.gif); width:102px; height:21px; line-height:21px; padding-left:5px; border:none;}
+#middle .input_city{ background:url(../images/input_city.gif); width:102px; height:21px; line-height:21px; padding-left:5px; border:none; color:#cc6600}
+#middle .sele{ width:245px; height:21px; line-height:21px; border:1px solid #ccc; font-size:12px; color:#999}
+#middle .bnt_sea{ background:url(../images/bnt_sea.gif); width:99px; height:35px; line-height:35px; text-align:center; color:#cc6600; border:none;}
+#middle .pbnt{ padding-top:20px; color:#cc6600;}
+#middle .middle{ height:480px;}
+#po{ width:1004px; margin:0 auto;}
+#bottom{ height:42px; line-height:42px; background:url(../images/botm.gif) repeat-x; text-align:center;}

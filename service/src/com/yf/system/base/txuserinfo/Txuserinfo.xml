@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Txuserinfo">
+  
+  <typeAlias alias="Txuserinfo" type="com.yf.system.base.txuserinfo.Txuserinfo"/>
+  
+
+  <resultMap id="resultTxuserinfoMap" class="Txuserinfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="loginname" column="C_LOGINNAME"/>
+  
+     <result property="loginpwd" column="C_LOGINPWD"/>
+  
+     <result property="pid" column="C_PID"/>
+  
+     <result property="pidstr" column="C_PIDSTR"/>
+  
+     <result property="feilv" column="C_FEILV"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="alipayname" column="C_ALIPAYNAME"/>
+  
+     <result property="beizhu" column="C_BEIZHU"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllTxuserinfo"  resultMap="resultTxuserinfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_TXUSERINFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTxuserinfoBySql"  resultMap="resultTxuserinfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTxuserinfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTxuserinfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TXUSERINFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTxuserinfo" parameterClass="long" resultClass="Txuserinfo">
+    select 
+    	ID as id,
+	  			C_LOGINNAME as loginname,
+	  			C_LOGINPWD as loginpwd,
+	  			C_PID as pid,
+	  			C_PIDSTR as pidstr,
+	  			C_FEILV as feilv,
+	  			C_NAME as name,
+	  			C_ALIPAYNAME as alipayname,
+	  			C_BEIZHU as beizhu,
+	  			C_ADDRESS as address,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_MEMBERID as memberid,
+	  			C_TYPE as type,
+	  			C_STATE as state 
+     from T_TXUSERINFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createTxuserinfo" parameterClass="Txuserinfo">
+    insert into T_TXUSERINFO ( 
+    	ID,
+	  			C_LOGINNAME,
+	  			C_LOGINPWD,
+	  			C_PID,
+	  			C_PIDSTR,
+	  			C_FEILV,
+	  			C_NAME,
+	  			C_ALIPAYNAME,
+	  			C_BEIZHU,
+	  			C_ADDRESS,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_MEMBERID,
+	  			C_TYPE,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#loginname#,
+	  					
+	  						#loginpwd#,
+	  					
+							#pid:DECIMAL#,
+						
+	  						#pidstr#,
+	  					
+	  						#feilv#,
+	  					
+	  						#name#,
+	  					
+	  						#alipayname#,
+	  					
+	  						#beizhu#,
+	  					
+	  						#address#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+							#memberid:DECIMAL#,
+						
+							#type:DECIMAL#,
+						
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTxuserinfo" parameterClass="long">
+    delete from T_TXUSERINFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTxuserinfo" parameterClass="Txuserinfo">
+    update T_TXUSERINFO 
+    set 
+    	C_LOGINNAME = #loginname#,
+	  					C_LOGINPWD = #loginpwd#,
+	  					C_PID = #pid:DECIMAL#,
+						C_PIDSTR = #pidstr#,
+	  					C_FEILV = #feilv#,
+	  					C_NAME = #name#,
+	  					C_ALIPAYNAME = #alipayname#,
+	  					C_BEIZHU = #beizhu#,
+	  					C_ADDRESS = #address#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MEMBERID = #memberid:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

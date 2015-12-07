@@ -1,0 +1,220 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 留点记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Liudianrecord createLiudianrecord(Liudianrecord liudianrecord) throws SQLException;
+	
+	/**
+	 * 删除 留点记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteLiudianrecord(long id);
+	
+	
+	/**
+	 * 修改 留点记录表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateLiudianrecord(Liudianrecord liudianrecord);
+
+		
+	/**
+	 * 修改 留点记录表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateLiudianrecordIgnoreNull(Liudianrecord liudianrecord);
+		
+	
+	/**
+	 * 查找 留点记录表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllLiudianrecord(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 留点记录表
+	 * @param id
+	 * @return
+	 */
+	public Liudianrecord findLiudianrecord(long id);
+	
+	/**
+	 * 查找 留点记录表 by language
+	 * @param id
+	 * @return
+	 */
+	public Liudianrecord findLiudianrecordbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 留点记录表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllLiudianrecordForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找留点记录表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllLiudianrecordBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 留点记录表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteLiudianrecordBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countLiudianrecordBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ILiudianrecordComponent liudianrecordComponent;
+	  
+ 	
+ 	public ILiudianrecordComponent getLiudianrecordComponent() {
+		return liudianrecordComponent;
+	}
+	public void setLiudianrecordComponent(ILiudianrecordComponent  liudianrecordComponent) {
+		this.liudianrecordComponent = liudianrecordComponent;
+	}
+	/**
+	 * 创建 留点记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Liudianrecord createLiudianrecord(Liudianrecord liudianrecord) throws SQLException{
+	
+		return liudianrecordComponent.createLiudianrecord(liudianrecord);
+	}
+	/**
+	 * 删除 留点记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteLiudianrecord(long id){
+	
+		return liudianrecordComponent.deleteLiudianrecord(id);
+	}
+	
+	
+	/**
+	 * 修改 留点记录表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateLiudianrecord(Liudianrecord liudianrecord){
+		return liudianrecordComponent.updateLiudianrecord(liudianrecord);
+	
+	}
+
+		
+	/**
+	 * 修改 留点记录表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateLiudianrecordIgnoreNull(Liudianrecord liudianrecord){
+			return liudianrecordComponent.updateLiudianrecordIgnoreNull(liudianrecord);
+	
+	}
+	
+	/**
+	 * 查找 留点记录表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllLiudianrecord(String where, String orderby,int limit,int offset){
+		return liudianrecordComponent.findAllLiudianrecord(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 留点记录表
+	 * @param id
+	 * @return
+	 */
+	public Liudianrecord findLiudianrecord(long id){
+		return liudianrecordComponent.findLiudianrecord(id);
+	}
+	
+	/**
+	 * 查找 留点记录表
+	 * @param id
+	 * @return
+	 */
+	public Liudianrecord findLiudianrecordbylanguage(long id,Integer language){
+		return liudianrecordComponent.findLiudianrecordbylanguage(id,language);
+	}
+	/** 
+	 * 查找 留点记录表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllLiudianrecordForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return liudianrecordComponent.findAllLiudianrecord(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找留点记录表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllLiudianrecordBySql(String sql,int limit,int offset){
+		return liudianrecordComponent.findAllLiudianrecord(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 留点记录表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteLiudianrecordBySql(String sql){
+		return liudianrecordComponent.excuteLiudianrecordBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countLiudianrecordBySql(String sql){
+		return liudianrecordComponent.countLiudianrecordBySql(sql);
+	}
+	
+	
+

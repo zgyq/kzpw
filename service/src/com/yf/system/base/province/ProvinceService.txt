@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 省份
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Province createProvince(Province province) throws SQLException;
+	
+	/**
+	 * 删除 省份
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteProvince(long id);
+	
+	
+	/**
+	 * 修改 省份
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateProvince(Province province);
+
+		
+	/**
+	 * 修改 省份但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateProvinceIgnoreNull(Province province);
+		
+	
+	/**
+	 * 查找 省份
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllProvince(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 省份
+	 * @param id
+	 * @return
+	 */
+	public Province findProvince(long id);
+	
+	/**
+	 * 查找 省份 by language
+	 * @param id
+	 * @return
+	 */
+	public Province findProvincebylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 省份
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllProvinceForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找省份
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllProvinceBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 省份
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteProvinceBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countProvinceBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IProvinceComponent provinceComponent;
+	  
+ 	
+ 	public IProvinceComponent getProvinceComponent() {
+		return provinceComponent;
+	}
+	public void setProvinceComponent(IProvinceComponent  provinceComponent) {
+		this.provinceComponent = provinceComponent;
+	}
+	/**
+	 * 创建 省份
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Province createProvince(Province province) throws SQLException{
+	
+		return provinceComponent.createProvince(province);
+	}
+	/**
+	 * 删除 省份
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteProvince(long id){
+	
+		return provinceComponent.deleteProvince(id);
+	}
+	
+	
+	/**
+	 * 修改 省份
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateProvince(Province province){
+		return provinceComponent.updateProvince(province);
+	
+	}
+
+		
+	/**
+	 * 修改 省份但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateProvinceIgnoreNull(Province province){
+			return provinceComponent.updateProvinceIgnoreNull(province);
+	
+	}
+	
+	/**
+	 * 查找 省份
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllProvince(String where, String orderby,int limit,int offset){
+		return provinceComponent.findAllProvince(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 省份
+	 * @param id
+	 * @return
+	 */
+	public Province findProvince(long id){
+		return provinceComponent.findProvince(id);
+	}
+	
+	/**
+	 * 查找 省份
+	 * @param id
+	 * @return
+	 */
+	public Province findProvincebylanguage(long id,Integer language){
+		return provinceComponent.findProvincebylanguage(id,language);
+	}
+	/** 
+	 * 查找 省份
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllProvinceForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return provinceComponent.findAllProvince(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找省份
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllProvinceBySql(String sql,int limit,int offset){
+		return provinceComponent.findAllProvince(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 省份
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteProvinceBySql(String sql){
+		return provinceComponent.excuteProvinceBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countProvinceBySql(String sql){
+		return provinceComponent.countProvinceBySql(sql);
+	}
+	
+	
+

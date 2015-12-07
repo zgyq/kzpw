@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Changpass">
+  
+  <typeAlias alias="Changpass" type="com.yf.system.base.changpass.Changpass"/>
+  
+
+  <resultMap id="resultChangpassMap" class="Changpass">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="userid" column="C_USERID"/>
+  
+     <result property="passids" column="C_PASSIDS"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="descinfo" column="C_DESCINFO"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="status" column="C_STATUS"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="ordernum" column="C_ORDERNUM"/>
+  
+     <result property="payurl" column="C_PAYURL"/>
+  
+     <result property="rettype" column="C_RETTYPE"/>
+  
+     <result property="name" column="C_NEME"/>
+  
+     <result property="idnum" column="C_IDNUM"/>
+  
+     <result property="idtype" column="C_IDTYPE"/>
+   
+  </resultMap>
+  
+  <select id="findAllChangpass"  resultMap="resultChangpassMap"  parameterClass="java.util.Map">
+  
+    select * from T_CHANGPASS
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllChangpassBySql"  resultMap="resultChangpassMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteChangpassBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countChangpassBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CHANGPASS
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findChangpass" parameterClass="long" resultClass="Changpass">
+    select 
+    	ID as id,
+	  			C_ORDERID as orderid,
+	  			C_USERID as userid,
+	  			C_PASSIDS as passids,
+	  			C_AGENTID as agentid,
+	  			C_DESCINFO as descinfo,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_STATUS as status,
+	  			C_TYPE as type,
+	  			C_ORDERNUM as ordernum,
+	  			C_PAYURL as payurl,
+	  			C_RETTYPE as rettype,
+	  			C_NEME as name,
+	  			C_IDNUM as idnum,
+	  			C_IDTYPE as idtype 
+     from T_CHANGPASS
+    where ID = #id#
+  </select>
+   
+  <insert id="createChangpass" parameterClass="Changpass">
+    insert into T_CHANGPASS ( 
+    	ID,
+	  			C_ORDERID,
+	  			C_USERID,
+	  			C_PASSIDS,
+	  			C_AGENTID,
+	  			C_DESCINFO,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_STATUS,
+	  			C_TYPE,
+	  			C_ORDERNUM,
+	  			C_PAYURL,
+	  			C_RETTYPE,
+	  			C_NEME,
+	  			C_IDNUM,
+	  			C_IDTYPE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#orderid:DECIMAL#,
+						
+							#userid:DECIMAL#,
+						
+	  						#passids#,
+	  					
+							#agentid:DECIMAL#,
+						
+	  						#descinfo#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#status:DECIMAL#,
+						
+							#type:DECIMAL#,
+						
+	  						#ordernum#,
+	  					
+	  						#payurl#,
+	  					
+	  						#rettype#,
+	  					
+	  						#name#,
+	  					
+	  						#idnum#,
+	  					
+	  						#idtype#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteChangpass" parameterClass="long">
+    delete from T_CHANGPASS
+    where ID = #id#
+  </delete>
+	
+  <update id="updateChangpass" parameterClass="Changpass">
+    update T_CHANGPASS 
+    set 
+    	C_ORDERID = #orderid:DECIMAL#,
+						C_USERID = #userid:DECIMAL#,
+						C_PASSIDS = #passids#,
+	  					C_AGENTID = #agentid:DECIMAL#,
+						C_DESCINFO = #descinfo#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_STATUS = #status:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_ORDERNUM = #ordernum#,
+	  					C_PAYURL = #payurl#,
+	  					C_RETTYPE = #rettype#,
+	  					C_NEME = #name#,
+	  					C_IDNUM = #idnum#,
+	  					C_IDTYPE = #idtype#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="train" extends="default">
+	<action name="train" class="com.yf.system.back.action.TrainAction">
+	<result name="index" type="dispatcher">
+        <param name="location">train/index.jsp</param>
+      </result>
+       <result name="forword" type="redirect">
+	        ${forword}
+	  </result>
+      <result name="tochupiao" type="dispatcher">
+        <param name="location">train/chupiao.jsp</param>
+      </result>
+      <result name="topeisong" type="dispatcher">
+        <param name="location">train/peisong.jsp</param>
+      </result>
+      
+       <result name="tofenpei" type="dispatcher">
+        <param name="location">train/fenpei.jsp</param>
+      </result>
+	<result name="trainlist" type="dispatcher">
+        <param name="location">train/trainlist.jsp</param>
+      </result>
+	<result name="yptrain" type="dispatcher">
+        <param name="location">train/yptrainlist.jsp</param>
+      </result>
+	<result name="toordertrain" type="dispatcher">
+        <param name="location">train/trainorder.jsp</param>
+    </result>
+	<result name="ordersuccess" type="dispatcher">
+        <param name="location">train/success.jsp</param>
+    </result>
+	<result name="trainorder" type="dispatcher">
+        <param name="location">train/trainorderrecord.jsp</param>
+    </result>
+	<result name="orderdetail" type="dispatcher">
+        <param name="location">train/orderdetail.jsp</param>
+    </result>
+	<result name="trainreport" type="dispatcher">
+        <param name="location">report/trainrebatreport.jsp</param>
+    </result>
+	<result name="trainroom" type="dispatcher">
+        <param name="location">train/trainroom.jsp</param>
+    </result>
+    <result name="toedit" type="dispatcher">
+        <param name="location">train/trainorderedit.jsp</param>
+    </result>
+    
+     <result name="orderpay" type="redirect">
+	        ${forword}
+	  </result>
+	   <result name="forword" type="redirect">
+	        ${forword}
+	  </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    
+    
+	<action name="trainroom" class="com.yf.system.back.action.TrainroomAction">
+	  <result name="success" type="dispatcher">
+        <param name="location">trainroom/trainroom.jsp</param>
+      </result>
+	  <result name="editroom" type="dispatcher">
+        <param name="location">trainroom/editroom.jsp</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    
+	</package>
+	
+</xwork>
+

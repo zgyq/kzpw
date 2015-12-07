@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Airliencabin">
+  
+  <typeAlias alias="Airliencabin" type="com.yf.system.base.airliencabin.Airliencabin"/>
+  
+
+  <resultMap id="resultAirliencabinMap" class="Airliencabin">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="airlineid" column="C_AIRLINEID"/>
+  
+     <result property="scode" column="C_SCODE"/>
+  
+     <result property="ecode" column="C_ECODE"/>
+  
+     <result property="airno" column="C_AIRNO"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllAirliencabin"  resultMap="resultAirliencabinMap"  parameterClass="java.util.Map">
+  
+    select * from T_AIRLIENCABIN
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllAirliencabinBySql"  resultMap="resultAirliencabinMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteAirliencabinBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countAirliencabinBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_AIRLIENCABIN
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findAirliencabin" parameterClass="long" resultClass="Airliencabin">
+    select 
+    	ID as id,
+	  			C_AIRLINEID as airlineid,
+	  			C_SCODE as scode,
+	  			C_ECODE as ecode,
+	  			C_AIRNO as airno,
+	  			C_CODE as code,
+	  			C_PRICE as price,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_STATE as state 
+     from T_AIRLIENCABIN
+    where ID = #id#
+  </select>
+   
+  <insert id="createAirliencabin" parameterClass="Airliencabin">
+    insert into T_AIRLIENCABIN ( 
+    	ID,
+	  			C_AIRLINEID,
+	  			C_SCODE,
+	  			C_ECODE,
+	  			C_AIRNO,
+	  			C_CODE,
+	  			C_PRICE,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#airlineid:DECIMAL#,
+						
+	  						#scode#,
+	  					
+	  						#ecode#,
+	  					
+	  						#airno#,
+	  					
+	  						#code#,
+	  					
+	  						#price#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteAirliencabin" parameterClass="long">
+    delete from T_AIRLIENCABIN
+    where ID = #id#
+  </delete>
+	
+  <update id="updateAirliencabin" parameterClass="Airliencabin">
+    update T_AIRLIENCABIN 
+    set 
+    	C_AIRLINEID = #airlineid:DECIMAL#,
+						C_SCODE = #scode#,
+	  					C_ECODE = #ecode#,
+	  					C_AIRNO = #airno#,
+	  					C_CODE = #code#,
+	  					C_PRICE = #price#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

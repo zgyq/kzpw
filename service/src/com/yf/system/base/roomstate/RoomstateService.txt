@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 酒店房态
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Roomstate createRoomstate(Roomstate roomstate) throws SQLException;
+	
+	/**
+	 * 删除 酒店房态
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRoomstate(long id);
+	
+	
+	/**
+	 * 修改 酒店房态
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRoomstate(Roomstate roomstate);
+
+		
+	/**
+	 * 修改 酒店房态但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRoomstateIgnoreNull(Roomstate roomstate);
+		
+	
+	/**
+	 * 查找 酒店房态
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRoomstate(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 酒店房态
+	 * @param id
+	 * @return
+	 */
+	public Roomstate findRoomstate(long id);
+	
+	/**
+	 * 查找 酒店房态 by language
+	 * @param id
+	 * @return
+	 */
+	public Roomstate findRoomstatebylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 酒店房态
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRoomstateForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找酒店房态
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRoomstateBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 酒店房态
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRoomstateBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRoomstateBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IRoomstateComponent roomstateComponent;
+	  
+ 	
+ 	public IRoomstateComponent getRoomstateComponent() {
+		return roomstateComponent;
+	}
+	public void setRoomstateComponent(IRoomstateComponent  roomstateComponent) {
+		this.roomstateComponent = roomstateComponent;
+	}
+	/**
+	 * 创建 酒店房态
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Roomstate createRoomstate(Roomstate roomstate) throws SQLException{
+	
+		return roomstateComponent.createRoomstate(roomstate);
+	}
+	/**
+	 * 删除 酒店房态
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRoomstate(long id){
+	
+		return roomstateComponent.deleteRoomstate(id);
+	}
+	
+	
+	/**
+	 * 修改 酒店房态
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRoomstate(Roomstate roomstate){
+		return roomstateComponent.updateRoomstate(roomstate);
+	
+	}
+
+		
+	/**
+	 * 修改 酒店房态但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRoomstateIgnoreNull(Roomstate roomstate){
+			return roomstateComponent.updateRoomstateIgnoreNull(roomstate);
+	
+	}
+	
+	/**
+	 * 查找 酒店房态
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRoomstate(String where, String orderby,int limit,int offset){
+		return roomstateComponent.findAllRoomstate(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 酒店房态
+	 * @param id
+	 * @return
+	 */
+	public Roomstate findRoomstate(long id){
+		return roomstateComponent.findRoomstate(id);
+	}
+	
+	/**
+	 * 查找 酒店房态
+	 * @param id
+	 * @return
+	 */
+	public Roomstate findRoomstatebylanguage(long id,Integer language){
+		return roomstateComponent.findRoomstatebylanguage(id,language);
+	}
+	/** 
+	 * 查找 酒店房态
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRoomstateForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return roomstateComponent.findAllRoomstate(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找酒店房态
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRoomstateBySql(String sql,int limit,int offset){
+		return roomstateComponent.findAllRoomstate(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 酒店房态
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRoomstateBySql(String sql){
+		return roomstateComponent.excuteRoomstateBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRoomstateBySql(String sql){
+		return roomstateComponent.countRoomstateBySql(sql);
+	}
+	
+	
+

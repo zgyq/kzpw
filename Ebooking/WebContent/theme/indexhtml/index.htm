@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body onLoad="setTimeout('ani()',delay)" style="margin: 0px;">
+<div align="center">
+<div align="center">
+<img id="box" style="width: 1200px; height: 615px;" src="index_data/1.jpg" height="615" width="1200">
+<script language="JavaScript"> 
+<!--
+if (document.all){
+
+pics=new Array("index_data/1.jpg","index_data/2.png","index_data/3.jpg")
+
+//Transition speed. 4000 = 4 seconds etc.
+delay=4000;
+
+//Nothing needs altering paste here.
+l=new Array()
+for (i=0; i < pics.length;i++){
+var img=new Image()
+img.src=pics[i];
+l[i]=img;
+}
+n="progid:DXImageTransform.Microsoft.";
+f=new Array()
+f[0]="Wheel(spokes=3)";
+f[1]="Blinds(Bands=10,direction=up)";
+f[2]="Stretch(stretchstyle=PUSH)";
+f[3]="Stretch(stretchstyle=SPIN)";
+f[4]="RadialWipe(wipestyle=RADIAL)";
+f[5]="RadialWipe(wipestyle=WEDGE)";
+f[6]="Checkerboard(Direction=right,SquaresX=8,SquaresY=8)";
+f[7]="Fade(Overlap=1.00)";
+f[8]="GradientWipe(GradientSize=0.25,wipestyle=0,motion=forward)";
+f[9]="Iris(irisstyle=CIRCLE,motion=out)";
+f[10]="Iris(irisstyle=STAR,motion=out)";
+f[11]="Barn( motion=out,orientation=vertical)";
+f[12]="Barn( motion=in,orientation=vertical)";
+f[13]="Strips(motion=leftup)";
+f[14]="Slide(slidestyle=HIDE,Bands=1)";
+f[15]="Slide(slidestyle=PUSH,Bands=1)";
+f[16]="Slide(slidestyle=SWAP,Bands=1)";
+f[17]="RandomDissolve(duration=1)";
+
+imgstep=0;
+
+function ani(){
+rnd=f[Math.floor(Math.random()*f.length)]
+box.style.filter=n+rnd;
+box.filters[0].apply();
+box.src=l[imgstep].src;
+box.filters[0].play();
+imgstep++;
+if (imgstep >= l.length) imgstep=0;
+setTimeout("ani()",delay);
+ }
+}
+//-->
+</script>
+</div>
+</div>
+
+
+
+</body></html>

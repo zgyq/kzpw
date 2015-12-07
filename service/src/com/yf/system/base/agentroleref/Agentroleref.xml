@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Agentroleref">
+  
+  <typeAlias alias="Agentroleref" type="com.yf.system.base.agentroleref.Agentroleref"/>
+  
+
+  <resultMap id="resultAgentrolerefMap" class="Agentroleref">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="roleid" column="C_ROLEID"/>
+  
+     <result property="customeruserid" column="C_CUSTOMERUSERID"/>
+   
+  </resultMap>
+  
+  <select id="findAllAgentroleref"  resultMap="resultAgentrolerefMap"  parameterClass="java.util.Map">
+  
+    select * from T_AGENTROLEREF
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllAgentrolerefBySql"  resultMap="resultAgentrolerefMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteAgentrolerefBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countAgentrolerefBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_AGENTROLEREF
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findAgentroleref" parameterClass="long" resultClass="Agentroleref">
+    select 
+    	ID as id,
+	  			C_ROLEID as roleid,
+	  			C_CUSTOMERUSERID as customeruserid 
+     from T_AGENTROLEREF
+    where ID = #id#
+  </select>
+   
+  <insert id="createAgentroleref" parameterClass="Agentroleref">
+    insert into T_AGENTROLEREF ( 
+    	ID,
+	  			C_ROLEID,
+	  			C_CUSTOMERUSERID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#roleid:DECIMAL#,
+						
+  							#customeruserid:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteAgentroleref" parameterClass="long">
+    delete from T_AGENTROLEREF
+    where ID = #id#
+  </delete>
+	
+  <update id="updateAgentroleref" parameterClass="Agentroleref">
+    update T_AGENTROLEREF 
+    set 
+    	C_ROLEID = #roleid:DECIMAL#,
+						C_CUSTOMERUSERID = #customeruserid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

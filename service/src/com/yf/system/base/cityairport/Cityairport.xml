@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Cityairport">
+  
+  <typeAlias alias="Cityairport" type="com.yf.system.base.cityairport.Cityairport"/>
+  
+
+  <resultMap id="resultCityairportMap" class="Cityairport">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="cityname" column="C_CITYNAME"/>
+  
+     <result property="pinyin" column="C_PINYIN"/>
+  
+     <result property="shortpinyin" column="C_SHORTPINYIN"/>
+  
+     <result property="airportcode" column="C_AIRPORTCODE"/>
+  
+     <result property="airportname" column="C_AIRPORTNAME"/>
+  
+     <result property="cityindex" column="C_CITYINDEX"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="isenable" column="C_ISENABLE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+     
+     <result property="countrycode" column="C_COUNTRYCODE"/>
+   
+  </resultMap>
+  
+  <select id="findAllCityairport"  resultMap="resultCityairportMap"  parameterClass="java.util.Map">
+  
+    select * from T_CITYAIRPORT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCityairportBySql"  resultMap="resultCityairportMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCityairportBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCityairportBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CITYAIRPORT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCityairport" parameterClass="long" resultClass="Cityairport">
+    select 
+    	ID as id,
+	  			C_CITYNAME as cityname,
+	  			C_PINYIN as pinyin,
+	  			C_SHORTPINYIN as shortpinyin,
+	  			C_AIRPORTCODE as airportcode,
+	  			C_AIRPORTNAME as airportname,
+	  			C_CITYINDEX as cityindex,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_ISENABLE as isenable,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language,
+	  			C_COUNTRYCODE as countrycode 
+     from T_CITYAIRPORT
+    where ID = #id#
+  </select>
+   
+  <insert id="createCityairport" parameterClass="Cityairport">
+    insert into T_CITYAIRPORT ( 
+    	ID,
+	  			C_CITYNAME,
+	  			C_PINYIN,
+	  			C_SHORTPINYIN,
+	  			C_AIRPORTCODE,
+	  			C_AIRPORTNAME,
+	  			C_CITYINDEX,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_ISENABLE,
+	  			C_UCODE,
+	  			C_LANGUAGE,
+	  			C_COUNTRYCODE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#cityname#,
+	  					
+	  						#pinyin#,
+	  					
+	  						#shortpinyin#,
+	  					
+	  						#airportcode#,
+	  					
+	  						#airportname#,
+	  					
+							#cityindex:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#isenable:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#,
+  							
+  							#countrycode#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCityairport" parameterClass="long">
+    delete from T_CITYAIRPORT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCityairport" parameterClass="Cityairport">
+    update T_CITYAIRPORT 
+    set 
+    	C_CITYNAME = #cityname#,
+	  					C_PINYIN = #pinyin#,
+	  					C_SHORTPINYIN = #shortpinyin#,
+	  					C_AIRPORTCODE = #airportcode#,
+	  					C_AIRPORTNAME = #airportname#,
+	  					C_CITYINDEX = #cityindex:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_ISENABLE = #isenable:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_COUNTRYCODE=#countrycode#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

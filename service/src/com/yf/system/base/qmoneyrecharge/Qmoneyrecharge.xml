@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Qmoneyrecharge">
+  
+  <typeAlias alias="Qmoneyrecharge" type="com.yf.system.base.qmoneyrecharge.Qmoneyrecharge"/>
+  
+
+  <resultMap id="resultQmoneyrechargeMap" class="Qmoneyrecharge">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="ordernumber" column="C_ORDERNUMBER"/>
+     <result property="cardid" column="C_CARDID"/>
+     <result property="buynum" column="C_BUYNUM"/>
+  
+     <result property="qqnumber" column="C_QQNUMBER"/>
+  
+     <result property="rechmoney" column="C_RECHMONEY"/>
+     <result property="inprice" column="C_INPRICE"/>
+  
+     <result property="rechtime" column="C_RECHTIME"/>
+  
+     <result property="rechuid" column="C_RECHUID"/>
+      <result property="rechagentid" column="C_RECHAGENTID"/>
+     <result property="rechtouid" column="C_RECHTOUID"/>
+       <result property="rechuname" column="RECHUNAME"/>
+     <result property="rechstate" column="C_RECHSTATE"/>
+     <result property="refordernumber" column="C_REFORDERNUMBER"/>
+      <result property="paymethod" column="C_PAYMETHOD"/>
+      <result property="paystate" column="C_PAYSTATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllQmoneyrecharge"  resultMap="resultQmoneyrechargeMap"  parameterClass="java.util.Map">
+  
+    select *,dbo.F_getCustomerusername(R.C_RECHUID) AS RECHUNAME ,
+      dbo.F_getCustomerusername(R.C_RECHTOUID) AS RECHTOUNAME 
+     from T_QMONEYRECHARGE AS R
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllQmoneyrechargeBySql"  resultMap="resultQmoneyrechargeMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteQmoneyrechargeBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countQmoneyrechargeBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_QMONEYRECHARGE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findQmoneyrecharge" parameterClass="long" resultClass="Qmoneyrecharge">
+    select 
+    	ID as id,
+	  			C_ORDERNUMBER as ordernumber,
+	  			C_REFORDERNUMBER as refordernumber,
+	  			C_CARDID as cardid,
+	  			C_BUYNUM as buynum,
+	  			C_QQNUMBER as qqnumber,
+	  			C_RECHMONEY as rechmoney,
+	  			C_INPRICE as inprice,
+	  			C_RECHTIME as rechtime,
+	  			C_RECHAGENTID as rechagentid,
+	  			C_RECHUID as rechuid,
+	  			C_RECHTOUID as rechtouid,
+	  			dbo.F_getCustomerusername(R.C_RECHUID) AS rechuname,
+	  			dbo.F_getCustomerusername(R.C_RECHTOUID) AS rechtouname,
+	  			C_RECHSTATE as rechstate ,
+	  			C_PAYMETHOD as paymethod,
+	  			C_PAYSTATE as paystate
+     from T_QMONEYRECHARGE R
+    where ID = #id#
+  </select>
+   
+  <insert id="createQmoneyrecharge" parameterClass="Qmoneyrecharge">
+    insert into T_QMONEYRECHARGE ( 
+    	ID,
+	  			C_ORDERNUMBER,
+	  			C_REFORDERNUMBER,
+	  			C_CARDID,
+	  			C_BUYNUM,
+	  			C_QQNUMBER,
+	  			C_RECHMONEY,
+	  			C_INPRICE,
+	  			C_RECHTIME,
+	  			C_RECHAGENTID,
+	  			C_RECHUID,
+	  			C_RECHTOUID,
+	  			C_RECHSTATE ,
+	  			C_PAYMETHOD,
+	  		    C_PAYSTATE
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#ordernumber#,
+	  						#refordernumber#,
+	  						#cardid#,
+	  						#buynum#,
+	  					
+	  						#qqnumber#,
+	  					
+							#rechmoney:DECIMAL#,
+							#inprice:DECIMAL#,
+						
+	  						#rechtime#,
+	  					
+	  						#rechagentid#,
+	  						#rechuid#,
+	  						#rechtouid#,
+	  					
+	  						#rechstate#,
+	  						#paymethod#,
+	  						#paystate#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteQmoneyrecharge" parameterClass="long">
+    delete from T_QMONEYRECHARGE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateQmoneyrecharge" parameterClass="Qmoneyrecharge">
+    update T_QMONEYRECHARGE 
+    set 
+    	C_ORDERNUMBER = #ordernumber#,
+    	C_REFORDERNUMBER = #refordernumber#,
+	  					C_CARDID = #cardid#,
+	  					C_BUYNUM = #buynum#,
+	  					C_QQNUMBER = #qqnumber#,
+	  					C_RECHMONEY = #rechmoney:DECIMAL#,
+	  					C_INPRICE = #inprice:DECIMAL#,
+						C_RECHTIME = #rechtime#,
+	  					C_RECHAGENTID = #rechagentid#,
+	  					C_RECHUID = #rechuid#,
+	  					C_RECHTOUID = #rechtouid#,
+	  					C_RECHSTATE = #rechstate#,
+	  					C_PAYMETHOD =#paymethod#,
+	  					C_PAYSTATE =#paystate#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

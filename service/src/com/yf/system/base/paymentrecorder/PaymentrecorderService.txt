@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 支付记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Paymentrecorder createPaymentrecorder(Paymentrecorder paymentrecorder) throws SQLException;
+	
+	/**
+	 * 删除 支付记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deletePaymentrecorder(long id);
+	
+	
+	/**
+	 * 修改 支付记录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updatePaymentrecorder(Paymentrecorder paymentrecorder);
+
+		
+	/**
+	 * 修改 支付记录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updatePaymentrecorderIgnoreNull(Paymentrecorder paymentrecorder);
+		
+	
+	/**
+	 * 查找 支付记录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPaymentrecorder(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 支付记录
+	 * @param id
+	 * @return
+	 */
+	public Paymentrecorder findPaymentrecorder(long id);
+	
+	/**
+	 * 查找 支付记录 by language
+	 * @param id
+	 * @return
+	 */
+	public Paymentrecorder findPaymentrecorderbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 支付记录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllPaymentrecorderForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找支付记录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPaymentrecorderBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 支付记录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excutePaymentrecorderBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countPaymentrecorderBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IPaymentrecorderComponent paymentrecorderComponent;
+	  
+ 	
+ 	public IPaymentrecorderComponent getPaymentrecorderComponent() {
+		return paymentrecorderComponent;
+	}
+	public void setPaymentrecorderComponent(IPaymentrecorderComponent  paymentrecorderComponent) {
+		this.paymentrecorderComponent = paymentrecorderComponent;
+	}
+	/**
+	 * 创建 支付记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Paymentrecorder createPaymentrecorder(Paymentrecorder paymentrecorder) throws SQLException{
+	
+		return paymentrecorderComponent.createPaymentrecorder(paymentrecorder);
+	}
+	/**
+	 * 删除 支付记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deletePaymentrecorder(long id){
+	
+		return paymentrecorderComponent.deletePaymentrecorder(id);
+	}
+	
+	
+	/**
+	 * 修改 支付记录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updatePaymentrecorder(Paymentrecorder paymentrecorder){
+		return paymentrecorderComponent.updatePaymentrecorder(paymentrecorder);
+	
+	}
+
+		
+	/**
+	 * 修改 支付记录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updatePaymentrecorderIgnoreNull(Paymentrecorder paymentrecorder){
+			return paymentrecorderComponent.updatePaymentrecorderIgnoreNull(paymentrecorder);
+	
+	}
+	
+	/**
+	 * 查找 支付记录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPaymentrecorder(String where, String orderby,int limit,int offset){
+		return paymentrecorderComponent.findAllPaymentrecorder(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 支付记录
+	 * @param id
+	 * @return
+	 */
+	public Paymentrecorder findPaymentrecorder(long id){
+		return paymentrecorderComponent.findPaymentrecorder(id);
+	}
+	
+	/**
+	 * 查找 支付记录
+	 * @param id
+	 * @return
+	 */
+	public Paymentrecorder findPaymentrecorderbylanguage(long id,Integer language){
+		return paymentrecorderComponent.findPaymentrecorderbylanguage(id,language);
+	}
+	/** 
+	 * 查找 支付记录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllPaymentrecorderForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return paymentrecorderComponent.findAllPaymentrecorder(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找支付记录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPaymentrecorderBySql(String sql,int limit,int offset){
+		return paymentrecorderComponent.findAllPaymentrecorder(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 支付记录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excutePaymentrecorderBySql(String sql){
+		return paymentrecorderComponent.excutePaymentrecorderBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countPaymentrecorderBySql(String sql){
+		return paymentrecorderComponent.countPaymentrecorderBySql(sql);
+	}
+	
+	
+

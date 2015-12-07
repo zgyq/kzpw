@@ -1,0 +1,149 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0;
+   padding:0;
+   text-decoration:none;
+   list-style:none;
+}
+li ul ol{
+margin:0;
+padding:0;
+list-style-type:none;
+}   
+body{background:#198bc9;
+       font-size:12px; 
+	   color:#000;
+	   margin:0;
+	   padding:0;
+	   font-family:Tahoma, Geneva, sans-serif, '宋体';
+}
+img {vertical-align:middle; border:none; } 
+*:lang(th) img{
+    vertical-align:top!important
+}
+img:empty {
+    vertical-align:top!important
+} 
+input{
+vertical-align:middle;
+margin-right:5px;
+
+}
+a{ color:#003399;
+   font-size:12px;
+   text-decoration:none;
+   cursor:pointer;
+}
+a:hover{color:#f48000;
+        text-decoration:underline;
+}
+td{ padding-left:5px;}
+.f{ float:left;
+}
+.r{float:right;
+}
+.c{clear:both;
+}
+
+.tr1{background:#f0f7fb;}
+.tr2{background:#fff;}
+.tr3{background:#f0f7fb;cursor:pointer;}
+.tr4{background:#f6fafd;}
+.tr5{background:#fff;}
+
+.mr8{ margin-right:8px;}
+.mr18{ margin-right:18px;}
+.mr11{ margin-right:11px;}
+.ml3{ margin-left:4px;}
+.ml5{ margin-left:5px;}
+.mt3{ margin-top:1px;}
+.mt7{ margin-top:7px;}
+.mfr5{ margin:0 5px 0 5px;}
+.mfr20{ margin:0 20px 0 20px;}
+.mr15{ margin:0 15px 0 15px;}
+.mf20{ margin-left:20px;}
+.pf15{ padding-left:15px;}
+.pt30{ padding-top:30px;}
+.pr5{ padding-right:5px;}
+.pr15{ padding-right:15px;}
+.pt19{ padding-top:15px;}
+.nohave{ height:10px; line-height:10px; overflow:hidden;}
+.nohave5{ height:8px; line-height:8px; overflow:hidden;}
+.line-h18{ line-height:18px;}
+.line-h26{ line-height:26px;}
+
+.table_yin{ background:url(../images/bj_th.gif); color:#003366}
+.table24{ border-collapse:collapse; border:1px solid #a0cfee;}
+.table24 td{ border-color:#a0cfee; line-height:24px;}
+.table25{ border-collapse:collapse; border:1px solid #bcbfc1;}
+.table25 td{ border-color:#bcbfc1; line-height:25px;}
+.table26{ border-collapse:collapse; border:1px solid #a0cfee;}
+.table26 td{ border-color:#a0cfee; line-height:24px;}
+.table_wu{ border-left:none; border-top:none; color:#999}
+.x_line{ text-decoration:underline;}
+.center{ margin:0 auto;}
+
+.hand{ cursor:pointer;}
+.box{ border:1px solid #99cbed;}
+.box_hui{ border:1px solid #dbdbdb;}
+.box_top{border-top:1px solid #d2d2d2}
+.box_top_xu{border-top:1px dashed #d2d2d2}
+.box_top_l{border-top:1px solid #198bc9}
+.text{ width:95px; height:20px; line-height:20px; border:1px solid #bebebe; padding-left:5px; font-size:12px;color:#666}
+.text_d{ width:95px; height:18px; line-height:18px; border:1px solid #bebebe; padding-left:5px; font-size:12px;color:#666}
+.text_dd{ width:45px; height:18px; line-height:18px; border:1px solid #bebebe; padding-left:5px; font-size:12px; color:#666}
+.text30{ width:30px; height:16px; line-height:16px; border:1px solid #bebebe; text-align:center; font-size:12px;}
+.text_name{ width:70px; height:20px; line-height:20px; background:#fff; border:1px solid #cccccc; margin-right:0; margin-left:3px;}
+.sel_type{ width:56px; height:22px; line-height:22px; background:#fff; border:1px solid #cccccc; margin-right:0; margin-left:3px;}
+.sel_documents{ width:61px; height:22px; line-height:22px; background:#fff; border:1px solid #cccccc; margin-right:0; margin-left:3px;}
+.text_number{ width:135px; height:20px; line-height:20px; background:#fff; border:1px solid #cccccc; margin-right:0; margin-left:3px; font-size:12px; font-family:"宋体"}
+.sel_number{ width:138px; height:22px; line-height:22px; background:#fff; border:1px solid #cccccc; margin-right:0; margin-left:3px; font-size:12px; font-family:"宋体"}
+.button_shuaxin{ background:url(../images/shuaxin.gif); width:60px; height:23px; line-height:23px; border:none; cursor: pointer;}
+.bnt{ background:url(../images/bnt.gif); width:62px; height:27px; line-height:27px; border:none; cursor: pointer;}
+
+.h8{ height:8px; line-height:8px;}
+
+.button_sea{ background:url(../images/button.gif) no-repeat; width:84px; height:24px; line-height:24px; text-align:right; border:none; cursor:pointer; padding-right:8px; font-size:12px; color:#065fb8;}
+
+.tanchu_boxw{position:absolute; top:40px; left:100px; border:2px solid #22a1fe}
+.tanchu_boxn{border:4px solid #ceecf4; background:#fff; width:560px; height:410px;}
+.tanchu{ background:url(../images/bj_danchu.gif); height:40px; line-height:34px; padding-left:55px;}
+.tanchu_main{width:540px; height:339px; overflow:auto; margin:0 auto; margin-top:9px;}
+.cloes{line-height:14px; font-size:18px;}
+.gonggaomian{ text-indent:2em; line-height:24px;}
+.text_center{ text-align:center}
+
+.msg{ border:1px solid #e3e3e3; background:#f6f6f6; line-height:24px; color:#000; width:98%; margin:0 auto;}/*公用提示样式*/
+.msgul{ background:#fff; margin:3px;}
+.floatall{ position:relative;}/*-----公用漂浮容器-----*/
+.information{ width:98%; margin:0 auto;}/*公用的表格样式*/
+.information table{ border-collapse:collapse; color:#000}
+.information td{ border:1px solid #dadada; height:30px; line-height:30px; padding-left:5px;}
+.hadow{ background-position:0 -410px;}
+.box_over{ border-bottom:1px solid #e3e3e3}
+.text_l{ text-align:left;}
+.text_r{ text-align:right;}
+
+.font-039{ color:#003399; font-size:12px;}
+.font-f60{ color:#ff6600; font-size:12px;}
+.font-f00{ color:#f00; font-size:12px;}
+.font-000{ color:#000; font-size:12px;}
+.font-666{ color:#666666; font-size:12px;}
+.font-69f{ color:#6699ff; font-size:12px;}
+.font16-f90{ color:#f90; font-size:14px; font-weight:bold;}
+.font16-166fc2{ color:#166fc2; font-size:14px; font-weight:bold;}/*深蓝*/
+.font-63{ color:#636363; font-size:12px;}
+.font-fff{ color:#fff; font-size:12px;}
+.font-9e{color:#9e9e9e; font-size:12px;}
+.font-166fc2{color:#166fc2; font-size:12px;} /*深蓝色*/
+.font-un06c{color:#0066cc; text-decoration:underline;}/*蓝色下划线*/
+.font-bdb0000{color:#db0000; font-weight:bold;}/*深红色粗*/
+.font-3797f1{color:#3797f1;}/*蓝色*/
+.font-b3797f1{color:#3797f1; font-weight:bold}/*蓝色*/
+.font-ff893b{color:#ff893b; font-size:18px; font-weight:bolder; font-family:"微软雅黑"}/*黄色大个的*/
+.font-e8fd37{color:#e8fd37; font-size:18px; font-weight:bolder;font-family:"微软雅黑"}/*浅黄色大个的*/
+.font-db0000{color:#db0000; font-size:18px; font-weight:bolder;font-family:"微软雅黑"}/*红色大个的*/
+.font-ff8{color:#ff893b;font-weight:bolder;}/*黄色小个的*/
+.font-18{ font-size:18px; }
+.fontxing{color:#f00; font-size:14px; font-family:"宋体";}

@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0;
+   padding:0;
+   text-decoration:none;
+   list-style:none;
+}
+li ul ol{
+margin:0;
+padding:0;
+list-style-type:none;
+}   
+body{background:#fff;
+       font-size:12px; 
+	   margin:0;
+	   padding:0;
+
+}
+img {vertical-align:middle; border:none; } 
+*:lang(th) img{
+    vertical-align:top!important
+}
+img:empty {
+    vertical-align:top!important
+} 
+input{
+vertical-align:middle;
+margin-right:5px;
+
+}
+a{ color:#000;
+   font-size:12px;
+   text-decoration:none;
+   cursor:pointer;
+}
+a:hover{color:#f48000;
+        text-decoration:underline;
+}
+td{ padding-left:5px;}
+.f{ float:left;
+}
+.r{float:right;
+}
+.c{clear:both;
+}
+
+
+/*在线支付公用样式*/
+.ico_morny,.payout_left,.payout_right,.ico_zhifubao,.ico_wangyin,.ico_caifutong,.ico_kuaiqian,.payon_left,.payon_right,.ico_tips,.ico_paytips,.bnt_pay,.pay_caifutong{ background:url(../images/pay.png)}
+#pay{ width:100%; color:#000; line-height:30px;}
+#pay .mornybj{background:#f0f0f0; line-height:30px; padding-left:30px;}
+#pay .ico_morny{ padding-left:25px; line-height:30px; padding-top:8px;}
+#pay .pay{background-position:-280px 0; padding-left:22px;  padding-top:10px;}
+#pay .pay li{ cursor:pointer;}
+#pay .payout_left{ background-position:0 -40px; line-height:27px; height:27px; padding-left:14px; color:#000}
+#pay .payout_right{ background-position:-186px -40px; line-height:27px; height:27px; padding-right:10px; margin-right:6px;}
+#pay .payon_left{ background-position:0 -80px; line-height:27px; height:27px; padding-left:14px; color:#fff}
+#pay .payon_right{ background-position:-186px -80px; line-height:27px; height:27px; padding-right:10px; margin-right:6px;}
+#pay .ico_zhifubao{ background-position:-31px 0; padding-left:15px;}
+#pay .ico_wangyin{ background-position:-61px 0; padding-left:15px;}
+#pay .ico_kuaiqian{background-position:-691px 0; padding-left:35px;}
+#pay .ico_caifutong{background-position:-141px 0; padding-left:48px; }
+#pay .box{ border:1px solid #21abdc; margin-left:20px; margin-right:20px;}
+#pay .boxnei{ border:2px solid #e3f0f9; padding-left:40px;}
+#pay .oneli{ padding-top:15px;}
+#pay .tips{ border:1px solid #a7d1f2; background:#f1f7fc; line-height:24px; height:24px; margin-right:50px; padding-left:10px;}
+#pay .ico_tips{ background-position:0 -120px;}
+#pay .allyinhang{ no-repeat; width:660px;}
+#pay .allyinhang ul{}
+#pay .allyinhang ul li{ height:20px;*height:23px;_height:23px;   line-height:20px; padding-top:8px;*padding-top:5px;_padding-top:5px; margin-top:10px; width:140px; margin-right:10px; padding-left:5px; border:1px solid #e8e8e8; display:inline;}
+#pay .ico_paytips{ background-position:0 -120px; padding-left:17px;}
+#pay .paybnt{ margin-top:10px; height:60px; text-align:center;}
+#pay .bnt_pay{ background-position:-40px -120px; width:160px; height:42px; border:none; cursor:pointer;}
+#pay .pay_caifutong{background-position:0 -160px; padding-left:17px;}
+
+
+#pay .font-db0000{color:#db0000; font-size:18px; font-weight:bolder;font-family:"微软雅黑"}/*红色大个的*/
+#pay .font-33baea{ color:#33baea; text-decoration:underline;}
+#pay .mr15{ margin-right:15px;}
+#pay .nohave{ height:10px; line-height:10px; overflow:hidden;}

@@ -1,0 +1,43 @@
+@charset "gb2312";
+/* CSS Document */
+body{margin:0px; padding:0px; font-size:12px; font-family:"ËÎÌו"; color:#36322f; font-size:12px; line-height:21px; background:#fff}
+a{color:#2577e3;}
+img{border:0px;}
+a:link {text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
+ul, p, dl, dt, dd, li, img, div, p, table {padding:0px; margin:0px;}
+li{list-style-position:outside; list-style-type:none;}
+h1, h2, h3, h4, h5{ padding:0px; margin:0px; font-weight:normal;}
+h2 { font-size:18px;}
+h5 { font-size:14px; line-height:21px;}
+.clearit { clear:both; width:0px; height:0px; overflow:hidden; zoom:1;}
+.space { height:10px; overflow:hidden;}
+img { vertical-align:top;}
+
+#wrap{ width:100%;}
+.order-tit{width:94%; margin:50px auto 20px; font-size:18px; font-weight:bold}
+.order-tit span{ padding-right:10px;}
+.order-resu{width:94%; margin:20px auto;border: 1px solid #dfdfdf; border-right:0; border-bottom:0;}
+.order-resu-top{ background:#eae8e8; height:40px; line-height:38px; text-align:center; border-bottom:1px solid #dfdfdf; color:#000;}
+.order-resu-con{line-height:20px; text-align:center; color:#8d8c8c; text-align:center;}
+.order-resu table td{ border-right:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf; width:10%}
+.order-resu table td span{ display:block; margin-bottom:5px;}
+.order-resu table td a{ text-decoration:none;}
+.order-resu table span.orange{ font-weight:bold; color:#ff4a00}
+.tijiao{width:91%; margin:0 auto; text-align:right; padding-right:7%;}
+.tijiao .pay-for p{ margin-bottom:5px; font-size:16px;}
+.tijiao .pay-for span{ font-weight:bold; font-size:20px; color:#ff4a00; display:inline-block;}
+.tijiao .submit{height:100%; overflow:hidden; float:right; margin-top:10px;}
+.tijiao .submit div{ float:left; margin-right:10px;}
+
+
+
+
+
+
+
+
+
+
+

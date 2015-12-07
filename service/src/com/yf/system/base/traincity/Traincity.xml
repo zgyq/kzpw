@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Traincity">
+  
+  <typeAlias alias="Traincity" type="com.yf.system.base.traincity.Traincity"/>
+  
+
+  <resultMap id="resultTraincityMap" class="Traincity">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="enname" column="C_ENNAME"/>
+  
+     <result property="back1" column="C_BACK1"/>
+  
+     <result property="back2" column="C_BACK2"/>
+  
+     <result property="back3" column="C_BACK3"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllTraincity"  resultMap="resultTraincityMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRAINCITY
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTraincityBySql"  resultMap="resultTraincityMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTraincityBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTraincityBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRAINCITY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTraincity" parameterClass="long" resultClass="Traincity">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_ENNAME as enname,
+	  			C_BACK1 as back1,
+	  			C_BACK2 as back2,
+	  			C_BACK3 as back3,
+	  			C_STATE as state 
+     from T_TRAINCITY
+    where ID = #id#
+  </select>
+   
+  <insert id="createTraincity" parameterClass="Traincity">
+    insert into T_TRAINCITY ( 
+    	ID,
+	  			C_NAME,
+	  			C_ENNAME,
+	  			C_BACK1,
+	  			C_BACK2,
+	  			C_BACK3,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#enname#,
+	  					
+	  						#back1#,
+	  					
+	  						#back2#,
+	  					
+	  						#back3#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTraincity" parameterClass="long">
+    delete from T_TRAINCITY
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTraincity" parameterClass="Traincity">
+    update T_TRAINCITY 
+    set 
+    	C_NAME = #name#,
+	  					C_ENNAME = #enname#,
+	  					C_BACK1 = #back1#,
+	  					C_BACK2 = #back2#,
+	  					C_BACK3 = #back3#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

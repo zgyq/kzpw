@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Policyperiod">
+  
+  <typeAlias alias="Policyperiod" type="com.yf.system.base.policyperiod.Policyperiod"/>
+  
+
+  <resultMap id="resultPolicyperiodMap" class="Policyperiod">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="policyguid" column="C_POLICYGUID"/>
+  
+     <result property="begindate" column="C_BEGINDATE"/>
+  
+     <result property="enddate" column="C_ENDDATE"/>
+  
+     <result property="zrateid" column="C_ZRATEID"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="isenable" column="C_ISENABLE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllPolicyperiod"  resultMap="resultPolicyperiodMap"  parameterClass="java.util.Map">
+  
+    select * from T_POLICYPERIOD
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllPolicyperiodBySql"  resultMap="resultPolicyperiodMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excutePolicyperiodBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countPolicyperiodBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_POLICYPERIOD
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findPolicyperiod" parameterClass="long" resultClass="Policyperiod">
+    select 
+    	ID as id,
+	  			C_POLICYGUID as policyguid,
+	  			C_BEGINDATE as begindate,
+	  			C_ENDDATE as enddate,
+	  			C_ZRATEID as zrateid,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_ISENABLE as isenable,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_POLICYPERIOD
+    where ID = #id#
+  </select>
+   
+  <insert id="createPolicyperiod" parameterClass="Policyperiod">
+    insert into T_POLICYPERIOD ( 
+    	ID,
+	  			C_POLICYGUID,
+	  			C_BEGINDATE,
+	  			C_ENDDATE,
+	  			C_ZRATEID,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_ISENABLE,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#policyguid:DECIMAL#,
+						
+	  						#begindate#,
+	  					
+	  						#enddate#,
+	  					
+							#zrateid:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#isenable:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deletePolicyperiod" parameterClass="long">
+    delete from T_POLICYPERIOD
+    where ID = #id#
+  </delete>
+	
+  <update id="updatePolicyperiod" parameterClass="Policyperiod">
+    update T_POLICYPERIOD 
+    set 
+    	C_POLICYGUID = #policyguid:DECIMAL#,
+						C_BEGINDATE = #begindate#,
+	  					C_ENDDATE = #enddate#,
+	  					C_ZRATEID = #zrateid:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_ISENABLE = #isenable:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

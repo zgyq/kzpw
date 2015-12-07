@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Zrate">
+  
+  <typeAlias alias="Zrate" type="com.yf.system.base.zrate.Zrate"/>
+  
+
+  <resultMap id="resultZrateMap" class="Zrate">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="departureport" column="C_DEPARTUREPORT"/>
+  
+     <result property="arrivalport" column="C_ARRIVALPORT"/>
+  
+     <result property="traveltype" column="C_TRAVELTYPE"/>
+  
+     <result property="outpattern" column="C_OUTPATTERN"/>
+  
+     <result property="moneykeep" column="C_MONEYKEEP"/>
+  
+     <result property="pointkeep" column="C_POINTKEEP"/>
+  
+     <result property="flightnumber" column="C_FLIGHTNUMBER"/>
+  
+     <result property="cabincode" column="C_CABINCODE"/>
+  
+     <result property="ratevalue" column="C_RATEVALUE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="issuedstartdate" column="C_ISSUEDSTARTDATE"/>
+  
+     <result property="issuedendate" column="C_ISSUEDENDATE"/>
+  
+     <result property="remark" column="C_REMARK"/>
+  
+     <result property="weeknum" column="C_WEEKNUM"/>
+  
+     <result property="isenable" column="C_ISENABLE"/>
+  
+     <result property="aircompanycode" column="C_AIRCOMPANYCODE"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="tickettype" column="C_TICKETTYPE"/>
+  
+     <result property="relationzrateid" column="C_RELATIONZRATEID"/>
+  
+     <result property="agentcode" column="C_AGENTCODE"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+  
+     <result property="isauto" column="C_ISAUTO"/>
+  
+     <result property="ischange" column="C_ISCHANGE"/>
+  
+     <result property="localzrate" column="C_LOCALZRATE"/>
+  
+     <result property="addratevalue" column="C_ADDRATEVALUE"/>
+  
+     <result property="general" column="C_GENERAL"/>
+  
+     <result property="zratetype" column="C_ZRATETYPE"/>
+  
+     <result property="begindate" column="C_BEGINDATE"/>
+  
+     <result property="enddate" column="C_ENDDATE"/>
+  
+     <result property="outid" column="C_OUTID"/>
+  
+     <result property="limitdate" column="C_LIMITDATE"/>
+  
+     <result property="istype" column="C_ISTYPE"/>
+     
+     <result property="worktime" column="C_WORKTIME"/>
+      
+     <result property="afterworktime" column="C_AFTERWORKTIME"/>
+     
+     <result property="flightisuse" column="C_FLIGHTISUSE"/>
+     
+     <result property="speed" column="C_SPEED"/>
+     
+     <result property="feetype" column="C_FEETYPE"/>
+     
+     <result property="agentfee" column="C_AGENTFEE"/>
+     
+     <result property="onetofiveworktime" column="C_ONETOFIVEWORKTIME"/>
+     
+     <result property="onetofiveaftertime" column="C_ONETOFIVEAFTERTIME"/>
+     
+     <result property="weekendworktime" column="C_WEEKENDWORKTIME"/>
+     
+     <result property="weekendaftertime" column="C_WEEKENDAFTERTIME"/>
+     
+     <result property="onetofivewastetime" column="C_ONETOFIVEWASTETIME"/>
+     
+     <result property="weekendwastetime" column="C_WEEKENDWASTETIME"/>
+     
+     <result property="ztype" column="C_ZTYPE"/>
+     
+     <result property="voyagetype" column="C_VOYAGETYPE"/>
+     
+     <result property="schedule" column="C_SCHEDULE"/>
+     
+     <result property="usertype" column="C_USERTYPE"/>
+     
+     <result property="workstatus" column="C_WORKSTATUS"/>
+     
+     <result property="departureexclude" column="C_DEPARTUREEXCLUDE"/>
+     
+     <result property="arrivalexclude" column="C_ARRIVALEXCLUDE"/>
+   
+  </resultMap>
+  
+  <parameterMap id="parameter-map" class="java.util.HashMap" >    
+	    <parameter property="tlbname" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>    
+	    <parameter property="fldname" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	    <parameter property="pagesize" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+	    <parameter property="currentpage" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+	    <parameter property="fldsort" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	    <parameter property="sort" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+	    <parameter property="where" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	    <parameter property="fldid" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	    <parameter property="dist" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+	    <parameter property="pagecount" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+	    <parameter property="totalcount" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>   
+	</parameterMap>  
+   <procedure id="sppagination" resultMap="resultZrateMap" parameterMap="parameter-map">    
+    {call sp_pagination(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}    
+   </procedure>
+
+  <select id="findAllZrate"  resultMap="resultZrateMap"  parameterClass="java.util.Map">
+  
+    select * from T_ZRATE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllZrateBySql"  resultMap="resultZrateMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteZrateBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countZrateBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_ZRATE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findZrate" parameterClass="long" resultClass="Zrate">
+    select 
+    	ID as id,
+	  			C_DEPARTUREPORT as departureport,
+	  			C_ARRIVALPORT as arrivalport,
+	  			C_TRAVELTYPE as traveltype,
+	  			C_OUTPATTERN as outpattern,
+	  			C_MONEYKEEP as moneykeep,
+	  			C_POINTKEEP as pointkeep,
+	  			C_FLIGHTNUMBER as flightnumber,
+	  			C_CABINCODE as cabincode,
+	  			C_RATEVALUE as ratevalue,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_ISSUEDSTARTDATE as issuedstartdate,
+	  			C_ISSUEDENDATE as issuedendate,
+	  			C_REMARK as remark,
+	  			C_WEEKNUM as weeknum,
+	  			C_ISENABLE as isenable,
+	  			C_AIRCOMPANYCODE as aircompanycode,
+	  			C_AGENTID as agentid,
+	  			C_TICKETTYPE as tickettype,
+	  			C_RELATIONZRATEID as relationzrateid,
+	  			C_AGENTCODE as agentcode,
+	  			C_TYPE as type,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language,
+	  			C_ISAUTO as isauto,
+	  			C_ISCHANGE as ischange,
+	  			C_LOCALZRATE as localzrate,
+	  			C_ADDRATEVALUE as addratevalue,
+	  			C_GENERAL as general,
+	  			C_ZRATETYPE as zratetype,
+	  			C_BEGINDATE as begindate,
+	  			C_ENDDATE as enddate,
+	  			C_OUTID as outid,
+	  			C_LIMITDATE as limitdate,
+	  			C_WORKTIME as worktime,
+	  			C_AFTERWORKTIME as afterworktime,
+	  			C_ISTYPE as istype,
+	  			C_WORKSTATUS as workstatus,
+	  			C_SPEED as speed,
+	  			C_FEETYPE as feetype,
+	  			C_AGENTFEE as agentfee,
+	  			C_ONETOFIVEWORKTIME as onetofiveworktime,
+	  			C_ONETOFIVEAFTERTIME as onetofiveaftertime,
+	  			C_WEEKENDWORKTIME as weekendworktime,
+	  			C_WEEKENDAFTERTIME as weekendaftertime,
+	  			C_ONETOFIVEWASTETIME as onetofivewastetime,
+	  			C_WEEKENDWASTETIME as weekendwastetime,
+	  			C_ZTYPE as ztype,
+	  			C_VOYAGETYPE as voyagetype,
+	  			C_SCHEDULE as schedule,
+	  			C_USERTYPE as usertype,
+	  			C_DEPARTUREEXCLUDE as departureexclude,
+	  			C_ARRIVALEXCLUDE as arrivalexclude,
+	  			C_FLIGHTISUSE as flightisuse 
+     from T_ZRATE
+    where ID = #id#
+  </select>
+   
+  <insert id="createZrate" parameterClass="Zrate">
+    insert into T_ZRATE ( 
+    	
+	  			C_DEPARTUREPORT,
+	  			C_ARRIVALPORT,
+	  			C_TRAVELTYPE,
+	  			C_OUTPATTERN,
+	  			C_MONEYKEEP,
+	  			C_POINTKEEP,
+	  			C_FLIGHTNUMBER,
+	  			C_CABINCODE,
+	  			C_RATEVALUE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_ISSUEDSTARTDATE,
+	  			C_ISSUEDENDATE,
+	  			C_REMARK,
+	  			C_WEEKNUM,
+	  			C_ISENABLE,
+	  			C_AIRCOMPANYCODE,
+	  			C_AGENTID,
+	  			C_TICKETTYPE,
+	  			C_RELATIONZRATEID,
+	  			C_AGENTCODE,
+	  			C_TYPE,
+	  			C_UCODE,
+	  			C_LANGUAGE,
+	  			C_ISAUTO,
+	  			C_ISCHANGE,
+	  			C_LOCALZRATE,
+	  			C_ADDRATEVALUE,
+	  			C_GENERAL,
+	  			C_ZRATETYPE,
+	  			C_BEGINDATE,
+	  			C_ENDDATE,
+	  			C_OUTID,
+	  			C_LIMITDATE,
+	  			C_AFTERWORKTIME,
+	  			C_WORKTIME,
+	  			C_ISTYPE,
+	  			C_WORKSTATUS,
+	  			C_SPEED,
+	  			C_FEETYPE,
+	  			C_AGENTFEE,
+	  			C_ONETOFIVEWORKTIME,
+	  			C_ONETOFIVEAFTERTIME,
+	  			C_WEEKENDWORKTIME,
+	  			C_WEEKENDAFTERTIME,
+	  			C_ONETOFIVEWASTETIME,
+	  			C_WEEKENDWASTETIME,
+	  			C_ZTYPE,
+	  			C_VOYAGETYPE,
+	  			C_SCHEDULE,
+	  			C_USERTYPE,
+	  			C_DEPARTUREEXCLUDE,
+	  			C_ARRIVALEXCLUDE,
+	  			C_FLIGHTISUSE 
+    )
+    values (
+    	
+	  						
+	  					
+	  						#departureport#,
+	  					
+	  						#arrivalport#,
+	  					
+							#traveltype:DECIMAL#,
+						
+	  						#outpattern#,
+	  					
+							#moneykeep:DECIMAL#,
+						
+							#pointkeep:DECIMAL#,
+						
+	  						#flightnumber#,
+	  					
+	  						#cabincode#,
+	  					
+							#ratevalue:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+	  						#issuedstartdate#,
+	  					
+	  						#issuedendate#,
+	  					
+	  						#remark#,
+	  					
+	  						#weeknum#,
+	  					
+							#isenable:DECIMAL#,
+						
+	  						#aircompanycode#,
+	  					
+							#agentid:DECIMAL#,
+						
+							#tickettype:DECIMAL#,
+						
+							#relationzrateid:DECIMAL#,
+						
+	  						#agentcode#,
+	  					
+							#type:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+							#language:DECIMAL#,
+						
+							#isauto:DECIMAL#,
+						
+							#ischange:DECIMAL#,
+						
+							#localzrate:DECIMAL#,
+						
+							#addratevalue:DECIMAL#,
+						
+							#general:DECIMAL#,
+						
+							#zratetype:DECIMAL#,
+						
+	  						#begindate#,
+	  					
+	  						#enddate#,
+	  					
+	  						#outid#,
+	  					
+	  						#limitdate#,
+	  						#afterworktime#,
+	  						
+	  						#worktime#,
+	  					
+  							#istype:DECIMAL#,
+  							
+  							#workstatus:DECIMAL#,
+  							
+  							#speed:DECIMAL#,
+  							
+  							#feetype:DECIMAL#,
+  							
+  							#agentfee:DECIMAL#,
+  							
+  							#onetofiveworktime:DECIMAL#,
+  							
+  							#onetofiveaftertime:DECIMAL#,
+  							
+  							#weekendworktime:DECIMAL#,
+  							
+  							#weekendaftertime:DECIMAL#,
+  							
+  							#onetofivewastetime:DECIMAL#,
+  							
+  							#weekendwastetime:DECIMAL#,
+  							
+  							#ztype:DECIMAL#,
+  							
+  							#voyagetype:DECIMAL#,
+  							
+  							#schedule:DECIMAL#,
+  							
+  							#usertype:DECIMAL#,
+  							
+  							#departureexclude:DECIMAL#,
+  							
+  							#arrivalexclude:DECIMAL#,
+  							
+  							#flightisuse:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteZrate" parameterClass="long">
+    delete from T_ZRATE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateZrate" parameterClass="Zrate">
+    update T_ZRATE 
+    set 
+    	C_DEPARTUREPORT = #departureport#,
+	  					C_ARRIVALPORT = #arrivalport#,
+	  					C_TRAVELTYPE = #traveltype:DECIMAL#,
+						C_OUTPATTERN = #outpattern#,
+	  					C_MONEYKEEP = #moneykeep:DECIMAL#,
+						C_POINTKEEP = #pointkeep:DECIMAL#,
+						C_FLIGHTNUMBER = #flightnumber#,
+	  					C_CABINCODE = #cabincode#,
+	  					C_RATEVALUE = #ratevalue:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_ISSUEDSTARTDATE = #issuedstartdate#,
+	  					C_ISSUEDENDATE = #issuedendate#,
+	  					C_REMARK = #remark#,
+	  					C_WEEKNUM = #weeknum#,
+	  					C_ISENABLE = #isenable:DECIMAL#,
+						C_AIRCOMPANYCODE = #aircompanycode#,
+	  					C_AGENTID = #agentid:DECIMAL#,
+						C_TICKETTYPE = #tickettype:DECIMAL#,
+						C_RELATIONZRATEID = #relationzrateid:DECIMAL#,
+						C_AGENTCODE = #agentcode#,
+	  					C_TYPE = #type:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_ISAUTO = #isauto:DECIMAL#,
+						C_ISCHANGE = #ischange:DECIMAL#,
+						C_LOCALZRATE = #localzrate:DECIMAL#,
+						C_ADDRATEVALUE = #addratevalue:DECIMAL#,
+						C_GENERAL = #general:DECIMAL#,
+						C_ZRATETYPE = #zratetype:DECIMAL#,
+						C_BEGINDATE = #begindate#,
+	  					C_ENDDATE = #enddate#,
+	  					C_OUTID = #outid#,
+	  					C_LIMITDATE = #limitdate#,
+	  					C_AFTERWORKTIME=#afterworktime#,
+	  					C_WORKTIME=#worktime#,
+	  					C_ISTYPE = #istype:DECIMAL#,
+	  					C_WORKSTATUS = #workstatus:DECIMAL#,
+	  					C_SPEED = #speed:DECIMAL#,
+			  			C_FEETYPE = #feetype:DECIMAL#,
+			  			C_AGENTFEE = #agentfee:DECIMAL#,
+			  			C_ONETOFIVEWORKTIME = #onetofiveworktime:DECIMAL#,
+			  			C_ONETOFIVEAFTERTIME = #onetofiveaftertime:DECIMAL#,
+			  			C_WEEKENDWORKTIME = #weekendworktime:DECIMAL#,
+			  			C_WEEKENDAFTERTIME = #weekendaftertime:DECIMAL#,
+			  			C_ONETOFIVEWASTETIME = #onetofivewastetime:DECIMAL#,
+			  			C_WEEKENDWASTETIME = #weekendwastetime:DECIMAL#,
+			  			C_ZTYPE = #ztype:DECIMAL#,
+			  			C_VOYAGETYPE = #voyagetype:DECIMAL#,
+			  			C_SCHEDULE = #schedule:DECIMAL#,
+			  			C_USERTYPE = #usertype:DECIMAL#,
+			  			C_DEPARTUREEXCLUDE = #departureexclude:DECIMAL#,
+			  			C_ARRIVALEXCLUDE = #arrivalexclude:DECIMAL#,
+	  					C_FLIGHTISUSE=#flightisuse:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

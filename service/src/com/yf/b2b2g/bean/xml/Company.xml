@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Company">
+
+	<typeAlias alias="Company" type="com.yf.b2b2g.bean.Company" />
+	<resultMap id="resultCompanyMap" class="Company">
+		<result property="id" column="ID" />
+		<result property="comcode" column="C_COMCODE" />
+		<result property="cnamecn" column="C_CNAMECN" />
+		<result property="simnamecn" column="C_SIMNAMECN" />
+		<result property="simnameen" column="C_SIMNAMEEN" />
+		<result property="calling" column="C_CALLING" />
+		<result property="number" column="C_NUMBER" />
+		<result property="comtel" column="C_COMTEL" />
+		<result property="comfax" column="C_COMFAX" />
+		<result property="comaddr" column="C_COMADDR" />
+		<result property="area" column="C_AREA" />
+		<result property="postid" column="C_POSTID" />
+		<result property="contactname" column="C_CONTACTNAME" />
+		<result property="contacttel" column="C_CONTACTTEL" />
+		<result property="ispactpersonname" column="C_ISPACTPERSONNAME" />
+		<result property="ispactpersontel" column="C_ISPACTPERSONTEL" />
+		<result property="ispacttime" column="C_ISPACTTIME" />
+		<result property="ispactvalidbgtime"
+			column="C_ISPACTVALIDBGTIME" />
+		<result property="ispactvalidendtime"
+			column="C_ISPACTVALIDENDTIME" />
+		<result property="paywayment" column="C_PAYWAYMENT" />
+		<result property="showlowfare" column="C_SHOWLOWFARE" />
+		<result property="lowfaretime" column="C_LOWFARETIME" />
+		<result property="isapprove" column="C_ISAPPROVE" />
+		<result property="isvetomessage" column="C_ISVETOMESSAGE" />
+	</resultMap>
+
+	<sql id="comwheresql">
+		<dynamic prepend="WHERE">
+			<isNotEmpty prepend="AND" property="comcode">
+				C_COMCODE =#comcode#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="cnamecn">
+				C_CNAMECN LIKE '%'+#cnamecn#+'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="simnameen">
+				C_SIMNAMEEN LIKE '%'+#simnameen#+'%'
+			</isNotEmpty>
+		</dynamic>
+	</sql>
+	<select id="findAllCompany" resultMap="resultCompanyMap" parameterClass="Company">
+		SELECT * FROM T_COMPANY
+		<include refid="comwheresql"/>
+	</select>
+	
+	<select id="countCompany" resultClass="int" parameterClass="Company">
+	SELECT COUNT(*) FROM T_COMPANY
+	<include refid="comwheresql"/>
+	</select>
+	<select id="findCompany" parameterClass="long"
+		resultMap="resultCompanyMap">
+		SELECT * FROM T_COMPANY where ID = #id#
+	</select>
+	<select id="findCompanyByDeptid" parameterClass="long"
+		resultMap="resultCompanyMap">
+		SELECT * FROM T_COMPANY where ID =(SELECT C_COMID FROM T_B2GDEPT
+		WHERE ID=#value# )
+	</select>
+
+	<insert id="createCompany" parameterClass="Company">
+		<selectKey resultClass="long" type="pre" keyProperty="id">
+			SELECT ISNULL(MAX(ID),0)+1 AS VALUE FROM T_COMPANY
+		</selectKey>
+		INSERT INTO T_COMPANY (ID, C_CNAMECN, C_SIMNAMECN, C_SIMNAMEEN,
+		C_CALLING, C_NUMBER, C_COMTEL, C_COMFAX, C_COMADDR, C_AREA,
+		C_POSTID, C_CONTACTNAME, C_CONTACTTEL, C_ISPACTPERSONNAME,
+		C_ISPACTPERSONTEL, C_ISPACTTIME, C_ISPACTVALIDBGTIME,
+		C_ISPACTVALIDENDTIME, C_PAYWAYMENT, C_SHOWLOWFARE,
+		C_LOWFARETIME, C_ISAPPROVE, C_ISVETOMESSAGE ) VALUES
+		(#id#,#cnamecn#,#simnamecn#,#simnameen#,
+		#calling#,#number#,#comtel#,#comfax#,#comaddr#,
+		#area#,#postid#,#contactname#,#contacttel#,
+		#ispactpersonname#,#ispactpersontel#,#ispacttime#,
+		#ispactvalidbgtime#,#ispactvalidendtime#,#paywayment#,
+		#showlowfare#,#lowfaretime#,#isapprove#,#isvetomessage# )
+	</insert>
+	<update id="updateCompany" parameterClass="Company">
+		UPDATE T_COMPANY
+		<dynamic prepend="SET">
+			<isNotNull prepend="," property="cnamecn">
+				C_CNAMECN=#cnamecn#
+			</isNotNull>
+			<isNotNull prepend="," property="simnamecn">
+				C_SIMNAMECN=#simnamecn#
+			</isNotNull>
+			<isNotNull prepend="," property="simnameen">
+				C_SIMNAMEEN=#simnameen#
+			</isNotNull>
+			<isNotNull prepend="," property="calling">
+				C_CALLING=#calling#
+			</isNotNull>
+			<isNotNull prepend="," property="calling">
+				C_NUMBER=#number#
+			</isNotNull>
+			<isNotNull prepend="," property="comtel">
+				C_COMTEL=#comtel#
+			</isNotNull>
+			<isNotNull prepend="," property="comfax">
+				C_COMFAX=#comfax#
+			</isNotNull>
+			<isNotNull prepend="," property="comfax">
+				C_COMADDR=#comaddr#
+			</isNotNull>
+			<isNotNull prepend="," property="comfax">
+				C_POSTID=#postid#
+			</isNotNull>
+			<isNotNull prepend="," property="comfax">
+				C_CONTACTNAME=#contactname#
+			</isNotNull>
+			<isNotNull prepend="," property="comfax">
+				C_CONTACTTEL=#contacttel#
+			</isNotNull>
+			<isGreaterThan prepend="," compareProperty="paywayment"
+				compareValue="-1">
+				C_PAYWAYMENT=#paywayment#
+			</isGreaterThan>
+			<isGreaterThan prepend="," compareProperty="showlowfare"
+				compareValue="-1">
+				C_SHOWLOWFARE=#showlowfare#
+			</isGreaterThan>
+			<isGreaterThan prepend="," compareProperty="isapprove"
+				compareValue="-1">
+				C_ISAPPROVE=#isapprove#
+			</isGreaterThan>
+			<isGreaterThan prepend="," compareProperty="isvetomessage"
+				compareValue="-1">
+				C_ISVETOMESSAGE=#isvetomessage#
+			</isGreaterThan>
+		</dynamic>
+		WHERE ID=#id#
+	</update>
+
+
+
+
+</sqlMap>
+
+

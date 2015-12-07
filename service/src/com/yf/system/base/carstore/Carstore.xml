@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Carstore">
+  
+  <typeAlias alias="Carstore" type="com.yf.system.base.carstore.Carstore"/>
+  
+
+  <resultMap id="resultCarstoreMap" class="Carstore">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="storecode" column="C_STORECODE"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="formtime" column="C_FORMTIME"/>
+  
+     <result property="totime" column="C_TOTIME"/>
+  
+     <result property="cityid" column="C_CITYID"/>
+  
+     <result property="provincecode" column="C_PROVINCECODE"/>
+  
+     <result property="createuserid" column="C_CREATEUSERID"/>
+  
+     <result property="tel" column="C_TEL"/>
+  
+     <result property="district" column="C_DISTRICT"/>
+  
+     <result property="abbrname" column="C_ABBRNAME"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+   
+  </resultMap>
+  
+  <select id="findAllCarstore"  resultMap="resultCarstoreMap"  parameterClass="java.util.Map">
+  
+    select * from T_CARSTORE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCarstoreBySql"  resultMap="resultCarstoreMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCarstoreBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCarstoreBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CARSTORE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCarstore" parameterClass="long" resultClass="Carstore">
+    select 
+    	ID as id,
+	  			C_STORECODE as storecode,
+	  			C_NAME as name,
+	  			C_ADDRESS as address,
+	  			C_FORMTIME as formtime,
+	  			C_TOTIME as totime,
+	  			C_CITYID as cityid,
+	  			C_PROVINCECODE as provincecode,
+	  			C_CREATEUSERID as createuserid,
+	  			C_TEL as tel,
+	  			C_DISTRICT as district,
+	  			C_ABBRNAME as abbrname,
+	  			C_COMMENT as comment 
+     from T_CARSTORE
+    where ID = #id#
+  </select>
+   
+  <insert id="createCarstore" parameterClass="Carstore">
+    insert into T_CARSTORE ( 
+    	ID,
+	  			C_STORECODE,
+	  			C_NAME,
+	  			C_ADDRESS,
+	  			C_FORMTIME,
+	  			C_TOTIME,
+	  			C_CITYID,
+	  			C_PROVINCECODE,
+	  			C_CREATEUSERID,
+	  			C_TEL,
+	  			C_DISTRICT,
+	  			C_ABBRNAME,
+	  			C_COMMENT 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#storecode#,
+	  					
+	  						#name#,
+	  					
+	  						#address#,
+	  					
+	  						#formtime#,
+	  					
+	  						#totime#,
+	  					
+	  						#cityid#,
+	  					
+	  						#provincecode#,
+	  					
+							#createuserid:DECIMAL#,
+						
+	  						#tel#,
+	  					
+	  						#district#,
+	  					
+	  						#abbrname#,
+	  					
+	  						#comment#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCarstore" parameterClass="long">
+    delete from T_CARSTORE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCarstore" parameterClass="Carstore">
+    update T_CARSTORE 
+    set 
+    	C_STORECODE = #storecode#,
+	  					C_NAME = #name#,
+	  					C_ADDRESS = #address#,
+	  					C_FORMTIME = #formtime#,
+	  					C_TOTIME = #totime#,
+	  					C_CITYID = #cityid#,
+	  					C_PROVINCECODE = #provincecode#,
+	  					C_CREATEUSERID = #createuserid:DECIMAL#,
+						C_TEL = #tel#,
+	  					C_DISTRICT = #district#,
+	  					C_ABBRNAME = #abbrname#,
+	  					C_COMMENT = #comment#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

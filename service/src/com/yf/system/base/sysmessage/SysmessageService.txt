@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 消息公告
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Sysmessage createSysmessage(Sysmessage sysmessage) throws SQLException;
+	
+	/**
+	 * 删除 消息公告
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSysmessage(long id);
+	
+	
+	/**
+	 * 修改 消息公告
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSysmessage(Sysmessage sysmessage);
+
+		
+	/**
+	 * 修改 消息公告但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSysmessageIgnoreNull(Sysmessage sysmessage);
+		
+	
+	/**
+	 * 查找 消息公告
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSysmessage(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 消息公告
+	 * @param id
+	 * @return
+	 */
+	public Sysmessage findSysmessage(long id);
+	
+	
+	/** 
+	 * 查找 消息公告
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSysmessageForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找消息公告
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSysmessageBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 消息公告
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSysmessageBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSysmessageBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISysmessageComponent sysmessageComponent;
+	  
+ 	
+ 	public ISysmessageComponent getSysmessageComponent() {
+		return sysmessageComponent;
+	}
+	public void setSysmessageComponent(ISysmessageComponent  sysmessageComponent) {
+		this.sysmessageComponent = sysmessageComponent;
+	}
+	/**
+	 * 创建 消息公告
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Sysmessage createSysmessage(Sysmessage sysmessage) throws SQLException{
+	
+		return sysmessageComponent.createSysmessage(sysmessage);
+	}
+	/**
+	 * 删除 消息公告
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSysmessage(long id){
+	
+		return sysmessageComponent.deleteSysmessage(id);
+	}
+	
+	
+	/**
+	 * 修改 消息公告
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSysmessage(Sysmessage sysmessage){
+		return sysmessageComponent.updateSysmessage(sysmessage);
+	
+	}
+
+		
+	/**
+	 * 修改 消息公告但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSysmessageIgnoreNull(Sysmessage sysmessage){
+			return sysmessageComponent.updateSysmessageIgnoreNull(sysmessage);
+	
+	}
+	
+	/**
+	 * 查找 消息公告
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSysmessage(String where, String orderby,int limit,int offset){
+		return sysmessageComponent.findAllSysmessage(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 消息公告
+	 * @param id
+	 * @return
+	 */
+	public Sysmessage findSysmessage(long id){
+		return sysmessageComponent.findSysmessage(id);
+	}
+	
+	/** 
+	 * 查找 消息公告
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSysmessageForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return sysmessageComponent.findAllSysmessage(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找消息公告
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSysmessageBySql(String sql,int limit,int offset){
+		return sysmessageComponent.findAllSysmessage(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 消息公告
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSysmessageBySql(String sql){
+		return sysmessageComponent.excuteSysmessageBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSysmessageBySql(String sql){
+		return sysmessageComponent.countSysmessageBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Passengerrepayrc">
+  
+  <typeAlias alias="Passengerrepayrc" type="com.yf.system.base.passengerrepayrc.Passengerrepayrc"/>
+  
+
+  <resultMap id="resultPassengerrepayrcMap" class="Passengerrepayrc">
+  
+  
+     <result property="bigpriceid" column="C_BIGPRICEID"/>
+     <result property="hkuserid" column="C_HKUSERID"/>
+  
+     <result property="hkmoney" column="C_HKMONEY"/>
+  
+     <result property="hkdatetime" column="C_HKDATETIME"/>
+  
+     <result property="passenger" column="C_PASSENGER"/>
+   
+  </resultMap>
+  
+  <select id="findAllPassengerrepayrc"  resultMap="resultPassengerrepayrcMap"  parameterClass="java.util.Map">
+  
+    select * from T_PASSENGERREPAYRC
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllPassengerrepayrcBySql"  resultMap="resultPassengerrepayrcMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excutePassengerrepayrcBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countPassengerrepayrcBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_PASSENGERREPAYRC
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+   
+  <insert id="createPassengerrepayrc" parameterClass="Passengerrepayrc">
+    insert into T_PASSENGERREPAYRC ( 
+                C_BIGPRICEID,
+	  			C_HKUSERID,
+	  			C_HKMONEY,
+	  			C_HKDATETIME,
+	  			C_PASSENGER 
+    )
+    values (
+    	
+	  					     #bigpriceid#,
+	  						#hkuserid#,
+	  					
+							#hkmoney:DECIMAL#,
+						
+	  						#hkdatetime#,
+	  					
+	  						#passenger#
+	  					 
+    
+    )
+  </insert>
+	
+  <update id="updatePassengerrepayrc" parameterClass="Passengerrepayrc">
+    update T_PASSENGERREPAYRC 
+    set 
+       C_BIGPRICEID=#bigpriceid#,
+    	C_HKUSERID = #hkuserid#,
+	  					C_HKMONEY = #hkmoney:DECIMAL#,
+						C_HKDATETIME = #hkdatetime#,
+	  					C_PASSENGER = #passenger#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

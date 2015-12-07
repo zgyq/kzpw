@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Role">
+
+	<typeAlias alias="Role" type="com.yf.b2b2g.bean.Role" />
+	<resultMap id="resultRoleMap" class="Role">
+		<result property="id" column="ID" />
+		<result property="comid" column="C_COMID" />
+		<result property="type" column="C_TYPE" />
+		<result property="name" column="C_NAME" />
+		<result property="memo" column="C_MEMO" />
+	</resultMap>
+
+	<select id="findRole" resultMap="resultRoleMap"
+		parameterClass="long">
+		SELECT * FROM T_B2GROLE WHERE ID=#id#
+	</select>
+	<select id="findAllRoleByEmpid" resultMap="resultRoleMap"
+		parameterClass="long">
+		SELECT * FROM T_B2GROLE WHERE ID IN (SELECT C_ROLEID FROM 
+		T_B2GUSERROLE WHERE C_EMPID=#value#)
+	</select>
+
+	<sql id="rolewheresql">
+		<dynamic prepend="WHERE">
+			<isGreaterThan prepend="AND" property="comid"
+				compareValue="0">
+				C_COMID=#comid#
+			</isGreaterThan>
+			<isGreaterThan prepend="AND" property="type"
+				compareValue="0">
+				C_TYPE=#type#
+			</isGreaterThan>
+			<isNotEmpty prepend="AND" property="name">
+				C_NAME LIKE '%'+#name#+'%'
+			</isNotEmpty>
+		</dynamic>
+	</sql>
+
+	<select id="findAllRole" resultMap="resultRoleMap"
+		parameterClass="Role">
+		SELECT * FROM T_B2GROLE 
+		 <include refid="rolewheresql"/>
+	</select>
+
+	<select id="countRole" resultClass="int" parameterClass="Role">
+		SELECT COUNT(*) FROM T_B2GROLE 
+		 <include refid="rolewheresql"/>
+	</select>
+	
+	<update id="updateRole" parameterClass="Role">
+    UPDATE T_B2GROLE 
+    <dynamic prepend="SET">
+	    <isNotNull prepend="," property="name">C_NAME =#name#</isNotNull>
+	    <isNotNull prepend="," property="memo">C_MEMO=#memo#</isNotNull>
+    </dynamic>
+    where ID = #id#
+  </update>
+
+	<delete id="deleteRole" parameterClass="long">
+		DELETE T_B2GROLE WHERE ID=#id#
+	</delete>
+	<insert id="createRole">
+	 <selectKey resultClass="long" type="pre" keyProperty="id">
+      SELECT ISNULL(MAX(ID),0)+1 AS VALUE FROM T_B2GROLE
+    </selectKey>
+		INSERT INTO T_B2GROLE (ID,C_TYPE,C_COMID,C_NAME,C_MEMO)
+		VALUES(#id#,#type#,#comid#,#name#,#memo#)
+	</insert>
+
+
+
+
+</sqlMap>
+
+

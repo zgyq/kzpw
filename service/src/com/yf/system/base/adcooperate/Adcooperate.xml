@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Adcooperate">
+  
+  <typeAlias alias="Adcooperate" type="com.yf.system.base.adcooperate.Adcooperate"/>
+  
+
+  <resultMap id="resultAdcooperateMap" class="Adcooperate">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="copname" column="C_COPNAME"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="username" column="C_USERNAME"/>
+  
+     <result property="mobile" column="C_MOBILE"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+   
+  </resultMap>
+  
+  <select id="findAllAdcooperate"  resultMap="resultAdcooperateMap"  parameterClass="java.util.Map">
+  
+    select * from T_ADCOOPERATE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllAdcooperateBySql"  resultMap="resultAdcooperateMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteAdcooperateBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countAdcooperateBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_ADCOOPERATE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findAdcooperate" parameterClass="long" resultClass="Adcooperate">
+    select 
+    	ID as id,
+	  			C_COPNAME as copname,
+	  			C_ADDRESS as address,
+	  			C_CREATETIME as createtime,
+	  			C_USERNAME as username,
+	  			C_MOBILE as mobile,
+	  			C_COMMENT as comment 
+     from T_ADCOOPERATE
+    where ID = #id#
+  </select>
+   
+  <insert id="createAdcooperate" parameterClass="Adcooperate">
+    insert into T_ADCOOPERATE ( 
+    	ID,
+	  			C_COPNAME,
+	  			C_ADDRESS,
+	  			C_CREATETIME,
+	  			C_USERNAME,
+	  			C_MOBILE,
+	  			C_COMMENT 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#copname#,
+	  					
+	  						#address#,
+	  					
+	  						#createtime#,
+	  					
+	  						#username#,
+	  					
+	  						#mobile#,
+	  					
+	  						#comment#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteAdcooperate" parameterClass="long">
+    delete from T_ADCOOPERATE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateAdcooperate" parameterClass="Adcooperate">
+    update T_ADCOOPERATE 
+    set 
+    	C_COPNAME = #copname#,
+	  					C_ADDRESS = #address#,
+	  					C_CREATETIME = #createtime#,
+	  					C_USERNAME = #username#,
+	  					C_MOBILE = #mobile#,
+	  					C_COMMENT = #comment#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

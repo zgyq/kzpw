@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Dcampaign">
+  
+  <typeAlias alias="Dcampaign" type="com.yf.system.base.dcampaign.Dcampaign"/>
+  
+
+  <resultMap id="resultDcampaignMap" class="Dcampaign">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="picsrc" column="C_PICSRC"/>
+  
+     <result property="bpicsrc" column="C_BPICSRC"/>
+  
+     <result property="online" column="C_ONLINE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="sttime" column="C_STTIME"/>
+  
+     <result property="endtime" column="C_ENDTIME"/>
+  
+     <result property="sum" column="C_SUM"/>
+     
+       <result property="chaininfoid" column="C_CHAININFOID"/>
+   
+  </resultMap>
+  
+  <select id="findAllDcampaign"  resultMap="resultDcampaignMap"  parameterClass="java.util.Map">
+  
+    select * from T_DCAMPAIGN
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllDcampaignBySql"  resultMap="resultDcampaignMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteDcampaignBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countDcampaignBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_DCAMPAIGN
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findDcampaign" parameterClass="long" resultClass="Dcampaign">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_CODE as code,
+	  			C_DESCRIPTION as description,
+	  			C_PICSRC as picsrc,
+	  			C_BPICSRC as bpicsrc,
+	  			C_ONLINE as online,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_CHAININFOID as chaininfoid,
+	  			C_STTIME as sttime,
+	  			C_ENDTIME as endtime,
+	  			C_SUM as sum 
+     from T_DCAMPAIGN
+    where ID = #id#
+  </select>
+   
+  <insert id="createDcampaign" parameterClass="Dcampaign">
+    insert into T_DCAMPAIGN ( 
+    	ID,
+	  			C_NAME,
+	  			C_CODE,
+	  			C_DESCRIPTION,
+	  			C_PICSRC,
+	  			C_BPICSRC,
+	  			C_ONLINE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_STTIME,
+	  			C_CHAININFOID,
+	  			C_ENDTIME,
+	  			C_SUM 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#code#,
+	  					
+	  						#description#,
+	  					
+	  						#picsrc#,
+	  					
+	  						#bpicsrc#,
+	  					
+							#online:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#sttime#,
+	  						
+	  						#chaininfoid:DECIMAL#,
+	  					
+	  						#endtime#,
+	  					
+	  						#sum#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteDcampaign" parameterClass="long">
+    delete from T_DCAMPAIGN
+    where ID = #id#
+  </delete>
+	
+  <update id="updateDcampaign" parameterClass="Dcampaign">
+    update T_DCAMPAIGN 
+    set 
+    	C_NAME = #name#,
+	  					C_CODE = #code#,
+	  					C_DESCRIPTION = #description#,
+	  					C_PICSRC = #picsrc#,
+	  					C_BPICSRC = #bpicsrc#,
+	  					C_ONLINE = #online:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STTIME = #sttime#,
+	  					C_ENDTIME = #endtime#,
+	  					C_CHAININFOID = #chaininfoid:DECIMAL#,
+	  					C_SUM = #sum#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

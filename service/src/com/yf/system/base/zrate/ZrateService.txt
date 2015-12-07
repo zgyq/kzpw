@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 普通政策表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Zrate createZrate(Zrate zrate) throws SQLException;
+	
+	/**
+	 * 删除 普通政策表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteZrate(long id);
+	
+	
+	/**
+	 * 修改 普通政策表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateZrate(Zrate zrate);
+
+		
+	/**
+	 * 修改 普通政策表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateZrateIgnoreNull(Zrate zrate);
+		
+	
+	/**
+	 * 查找 普通政策表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllZrate(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 普通政策表
+	 * @param id
+	 * @return
+	 */
+	public Zrate findZrate(long id);
+	
+	
+	/** 
+	 * 查找 普通政策表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllZrateForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找普通政策表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllZrateBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 普通政策表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteZrateBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countZrateBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IZrateComponent zrateComponent;
+	  
+ 	
+ 	public IZrateComponent getZrateComponent() {
+		return zrateComponent;
+	}
+	public void setZrateComponent(IZrateComponent  zrateComponent) {
+		this.zrateComponent = zrateComponent;
+	}
+	/**
+	 * 创建 普通政策表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Zrate createZrate(Zrate zrate) throws SQLException{
+	
+		return zrateComponent.createZrate(zrate);
+	}
+	/**
+	 * 删除 普通政策表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteZrate(long id){
+	
+		return zrateComponent.deleteZrate(id);
+	}
+	
+	
+	/**
+	 * 修改 普通政策表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateZrate(Zrate zrate){
+		return zrateComponent.updateZrate(zrate);
+	
+	}
+
+		
+	/**
+	 * 修改 普通政策表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateZrateIgnoreNull(Zrate zrate){
+			return zrateComponent.updateZrateIgnoreNull(zrate);
+	
+	}
+	
+	/**
+	 * 查找 普通政策表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllZrate(String where, String orderby,int limit,int offset){
+		return zrateComponent.findAllZrate(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 普通政策表
+	 * @param id
+	 * @return
+	 */
+	public Zrate findZrate(long id){
+		return zrateComponent.findZrate(id);
+	}
+	
+	/** 
+	 * 查找 普通政策表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllZrateForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return zrateComponent.findAllZrate(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找普通政策表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllZrateBySql(String sql,int limit,int offset){
+		return zrateComponent.findAllZrate(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 普通政策表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteZrateBySql(String sql){
+		return zrateComponent.excuteZrateBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countZrateBySql(String sql){
+		return zrateComponent.countZrateBySql(sql);
+	}
+	
+	
+

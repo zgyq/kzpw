@@ -1,0 +1,220 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 线路订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Triporder createTriporder(Triporder triporder) throws SQLException;
+	
+	/**
+	 * 删除 线路订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTriporder(long id);
+	
+	
+	/**
+	 * 修改 线路订单
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTriporder(Triporder triporder);
+
+		
+	/**
+	 * 修改 线路订单但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTriporderIgnoreNull(Triporder triporder);
+		
+	
+	/**
+	 * 查找 线路订单
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriporder(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 线路订单
+	 * @param id
+	 * @return
+	 */
+	public Triporder findTriporder(long id);
+	
+	/**
+	 * 查找 线路订单 by language
+	 * @param id
+	 * @return
+	 */
+	public Triporder findTriporderbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 线路订单
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTriporderForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找线路订单
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriporderBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 线路订单
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTriporderBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTriporderBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITriporderComponent triporderComponent;
+	  
+ 	
+ 	public ITriporderComponent getTriporderComponent() {
+		return triporderComponent;
+	}
+	public void setTriporderComponent(ITriporderComponent  triporderComponent) {
+		this.triporderComponent = triporderComponent;
+	}
+	/**
+	 * 创建 线路订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Triporder createTriporder(Triporder triporder) throws SQLException{
+	
+		return triporderComponent.createTriporder(triporder);
+	}
+	/**
+	 * 删除 线路订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTriporder(long id){
+	
+		return triporderComponent.deleteTriporder(id);
+	}
+	
+	
+	/**
+	 * 修改 线路订单
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTriporder(Triporder triporder){
+		return triporderComponent.updateTriporder(triporder);
+	
+	}
+
+		
+	/**
+	 * 修改 线路订单但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTriporderIgnoreNull(Triporder triporder){
+			return triporderComponent.updateTriporderIgnoreNull(triporder);
+	
+	}
+	
+	/**
+	 * 查找 线路订单
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriporder(String where, String orderby,int limit,int offset){
+		return triporderComponent.findAllTriporder(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 线路订单
+	 * @param id
+	 * @return
+	 */
+	public Triporder findTriporder(long id){
+		return triporderComponent.findTriporder(id);
+	}
+	
+	/**
+	 * 查找 线路订单
+	 * @param id
+	 * @return
+	 */
+	public Triporder findTriporderbylanguage(long id,Integer language){
+		return triporderComponent.findTriporderbylanguage(id,language);
+	}
+	/** 
+	 * 查找 线路订单
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTriporderForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return triporderComponent.findAllTriporder(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找线路订单
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriporderBySql(String sql,int limit,int offset){
+		return triporderComponent.findAllTriporder(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 线路订单
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTriporderBySql(String sql){
+		return triporderComponent.excuteTriporderBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTriporderBySql(String sql){
+		return triporderComponent.countTriporderBySql(sql);
+	}
+	
+	
+

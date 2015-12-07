@@ -1,0 +1,107 @@
+@charset "utf-8";
+/* CSS Document */
+
+#top{ background:url(../images/bj_topid.png) repeat-x; height:120px;}
+#top .top{ background:url(../images/bj_top.png) repeat-x; height:70px; width:1200px; margin:0 auto;}
+#top .logo{ margin-left:20px;}
+#top .top_right{ text-align:right; line-height:25px; padding-top:10px; margin-right:20px; color:#555555}
+
+#top .nav{ background:#3094e2; height:40px; line-height:40px; padding-left:20px; width:1180px; margin:0 auto;}
+#top .nav ul{}
+#top .nav ul li{ float:left; display:inline; padding:0 20px 0 20px;}
+#top .nav ul li a{ font-size:16px; color:#fff; font-weight:bold;}
+#top .nav ul li a:link{ font-size:16px; color:#fff; font-weight:bold;}
+#top .nav ul li a:hover{ font-size:16px; color:#f48000; font-weight:bold; text-decoration:none}
+#top .on{ background:#116cb5}
+
+
+#index{ width:1200px; margin:0 auto; margin-top:5px;}
+#index .left{ width:880px;}
+#index .yue{ padding:20px 30px 20px 30px;}
+#index .yue_left{ width:665px;}
+#index .cygj{ width:100%; border-top:1px solid #e8e8e8; line-height:50px; height:55px;}
+#index .cygj a:link{ font-size:13px; text-decoration:underline; color:#0f6fcf; margin-right:20px;}
+#index .zhye{ width:350px;}
+#index .zhye dl{ line-height:50px; height:60px;}
+#index .czan{ padding-top:40px;}
+#index .ipjl{ height:48px; line-height:48px; border-top:none; padding-left:30px; font-size:14px; color:#696969}
+#index .yue_right{ width:150px; padding-top:0px; line-height:22px;}
+#index .yue_right ul{}
+#index .yue_right ul li{ padding-left:40px;}
+#index .yue_right ul li a{ color:#808080; text-decoration:none}
+#index .yajin{ margin-left:30px; text-decoration:line-through;}
+#index .kuaijie{ height:79px; padding-top:10px;}
+#index .kuaijie ul{}
+#index .kuaijie ul li{ float:left; margin-left:10px; margin-right:22px; }
+
+#index .sea_top{ height:34px; line-height:34px; background:#f4f4f4; border-bottom:1px solid #dddddd}
+#index .sea_top ul{}
+#index .sea_top ul li{ float:left; padding:0 20px 0 20px; }
+#index .sea_top ul li a:link{ font-size:15px; }
+#index .on{ background:#fff; height:34px; border-top:1px solid #65b71f; }
+#index .on a:link{ color:#f60;}
+#index .out a:link{ color:#7b7b7b }
+
+#index .main_air{ padding:10px 20px 10px 20px; line-height:42px;}
+
+
+#index .right{ width:310px;}
+#index .member{ border:1px solid #ffcc00;}
+#index .member_top{ height:35px; line-height:35px; background:#ffffec; border-bottom:1px solid #ffcc00}
+#index .member_main{ line-height:27px; padding:9px 30px 9px 30px;}
+#index .recharge{ line-height:27px; padding:15px 30px 15px 30px; border:1px solid #c4c4c4; border-top:none;}
+#index .gonggao ul{}
+#index .gonggao ul li{ list-style:disc;}
+#index .gonggao{ border:1px solid #c4c4c4; margin-top:11px; padding:15px; line-height:26px;}
+#index .gonggao a{margin-left:170px; font-size:10PX; color:#ff7300}
+#index .gonggao_top{ background:url(../images/bj_gonggao.png); height:30px; line-height:26px; padding-left:20px; font-size:14px;}
+
+
+
+#footer{ background:url(../images/bj_bottom.png); height:54px; line-height:40px; text-align:center;}
+
+
+.gonggaotc{
+	width:584px; height:460px; background:url(../images/bj_gg.png); padding:10px 32px 10px 24px;
+left:50%;/*FF IE7*/
+top: 40%;/*FF IE7*/
+margin-left:-310px!important;/*FF IE7 值为一 */
+margin-top:-160px!important;/*FF IE7 值为叩一*/
+margin-top:0px;
+z-index:99;
+position:fixed!important;/*FF IE7*/
+position:absolute;/*IE6*/
+
+_top:       expression(eval(document.compatMode &&
+            document.compatMode=='CSS1Compat') ?
+            documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/
+            document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/
+}
+
+.bg {
+background-color: #ccc;
+width: 100%;
+height: 100%;
+left:0;
+top:0;/*FF IE7*/
+filter:alpha(opacity=50);/*IE*/
+opacity:0.5;/*FF*/
+z-index:1;
+
+position:fixed!important;/*FF IE7*/
+position:absolute;/*IE6*/
+
+_top:       expression(eval(document.compatMode &&
+            document.compatMode=='CSS1Compat') ?
+            documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/
+            document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/
+
+}
+
+
+
+#left{ width:228px; border:1px solid #dddddd; font-size:14px; border-top:none;}
+
+#left .top{height:36px; line-height:34px; background:#ecf0f1; padding-left:10px; border-top:1px solid #ddd}
+#left .list{ line-height:34px; padding:10px 0 10px 25px; color:#2c3e50;}
+#left .list a:link{color:#2c3e50; font-size:14px; text-decoration:none}

@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 系统用户行为
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Systemaction createSystemaction(Systemaction systemaction) throws SQLException;
+	
+	/**
+	 * 删除 系统用户行为
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSystemaction(long id);
+	
+	
+	/**
+	 * 修改 系统用户行为
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSystemaction(Systemaction systemaction);
+
+		
+	/**
+	 * 修改 系统用户行为但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSystemactionIgnoreNull(Systemaction systemaction);
+		
+	
+	/**
+	 * 查找 系统用户行为
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSystemaction(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 系统用户行为
+	 * @param id
+	 * @return
+	 */
+	public Systemaction findSystemaction(long id);
+	
+	
+	/** 
+	 * 查找 系统用户行为
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSystemactionForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找系统用户行为
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSystemactionBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 系统用户行为
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSystemactionBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSystemactionBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISystemactionComponent systemactionComponent;
+	  
+ 	
+ 	public ISystemactionComponent getSystemactionComponent() {
+		return systemactionComponent;
+	}
+	public void setSystemactionComponent(ISystemactionComponent  systemactionComponent) {
+		this.systemactionComponent = systemactionComponent;
+	}
+	/**
+	 * 创建 系统用户行为
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Systemaction createSystemaction(Systemaction systemaction) throws SQLException{
+	
+		return systemactionComponent.createSystemaction(systemaction);
+	}
+	/**
+	 * 删除 系统用户行为
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSystemaction(long id){
+	
+		return systemactionComponent.deleteSystemaction(id);
+	}
+	
+	
+	/**
+	 * 修改 系统用户行为
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSystemaction(Systemaction systemaction){
+		return systemactionComponent.updateSystemaction(systemaction);
+	
+	}
+
+		
+	/**
+	 * 修改 系统用户行为但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSystemactionIgnoreNull(Systemaction systemaction){
+			return systemactionComponent.updateSystemactionIgnoreNull(systemaction);
+	
+	}
+	
+	/**
+	 * 查找 系统用户行为
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSystemaction(String where, String orderby,int limit,int offset){
+		return systemactionComponent.findAllSystemaction(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 系统用户行为
+	 * @param id
+	 * @return
+	 */
+	public Systemaction findSystemaction(long id){
+		return systemactionComponent.findSystemaction(id);
+	}
+	
+	/** 
+	 * 查找 系统用户行为
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSystemactionForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return systemactionComponent.findAllSystemaction(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找系统用户行为
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSystemactionBySql(String sql,int limit,int offset){
+		return systemactionComponent.findAllSystemaction(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 系统用户行为
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSystemactionBySql(String sql){
+		return systemactionComponent.excuteSystemactionBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSystemactionBySql(String sql){
+		return systemactionComponent.countSystemactionBySql(sql);
+	}
+	
+	
+

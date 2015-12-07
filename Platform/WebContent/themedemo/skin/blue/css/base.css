@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0;
+   padding:0;
+   text-decoration:none;
+   list-style:none;
+}
+li ul ol{
+margin:0;
+padding:0;
+list-style-type:none;
+} 
+body{
+	   background:#fff;
+	  line-height:24px;
+       font-size:12px; 
+	   color:#000;
+	   margin:0;
+	   padding:0;
+	   font-family: "微软雅黑", Tahoma, Geneva, sans-serif;
+    }
+img {vertical-align:middle; border:none; } 
+*:lang(th) img{
+    vertical-align:top!important
+}
+img:empty {
+    vertical-align:top!important
+} 
+input{
+vertical-align:middle;
+margin-right:5px;
+font-family:"微软雅黑", Tahoma, Geneva, sans-serif; padding-left:5px;
+}
+button{ cursor:pointer;}
+select{font-family:"微软雅黑", Tahoma, Geneva, sans-serif;}
+a{ color:#000;
+   font-size:12px;
+   text-decoration:none;
+   cursor: pointer;
+   behavior:url("../js/aout.htc")
+}
+
+a:focus {outline:0;}/*---火狐链接中去除虚线框---*/
+
+a:hover{color:#f48000;
+        text-decoration:underline;
+}
+.f{ float:left;
+}
+.r{float:right;
+}
+.c{clear:both}
+
+.mr0{ margin-right:0}
+.mt7{ margin-top:7px;}
+.mr15{ margin-right:15px;}
+.mr25{ margin-right:25px;}
+.mlr{ margin:0 5px 0 5px}
+.mlr15{ margin:0 15px 0 15px}
+.pf5{ padding-left:5px;}
+
+.lh27{ line-height:27px;}
+.lh34{ line-height:34px; height:34px;}
+
+
+.wel,.chinese,.english,.on,.out,.low,.text_low,.but_low,.text_city,.bnt_modify,.button_sea_ticket,.bnt_booking,.bnt_next,.bnt_previous,.bnt_paid{ background:url(../images/base.png) repeat-y;}
+.top,.nav,.title,.footer,.tips{ background:url(../images/bg.png) repeat-x; }
+.text_search{ width:141px; height:20px; line-height:20px; background:#fff; border:1px solid #9b9fb8; margin-right:0; margin-left:3px;}
+.sel_search{ width:147px; height:22px; line-height:22px; background:#fff; border:1px solid #9b9fb8; margin-right:0; margin-left:3px;}
+.sel_type{ width:56px; height:22px; line-height:22px; background:#fff; border:1px solid #cccccc; margin-right:0; margin-left:3px;}
+.sel_documents{ width:61px; height:22px; line-height:22px; background:#fff; border:1px solid #cccccc; margin-right:0; margin-left:3px;}
+.sel_fraction{ width:34px; height:22px; line-height:22px; background:#fff; border:1px solid #cccccc; margin-right:0; margin-left:3px;}
+.text_searchwf{ width:65px; height:20px; line-height:20px; background:#fff; border:1px solid #9b9fb8; margin-right:0; margin-left:3px;}
+.text_name{ width:70px; height:20px; line-height:20px; background:#fff; border:1px solid #cccccc; margin-right:0; margin-left:3px;}
+.text_number{ width:120px; height:20px; line-height:20px; background:#fff; border:1px solid #cccccc; margin-right:0; margin-left:3px;}
+.text_low{ width:98px; height:23px; line-height:23px; background-position:-200px -230px; border:none; margin:5px 5px 0 5px;}
+.text_city{ width:61px; height:19px; line-height:19px; border:none; background-position:-280px -180px; margin:7px 0 0 10px; *margin:1px 0 0 10px !important; *margin:7px 0 0 10px; cursor:pointer;}
+.but_low{ width:33px; height:17px; line-height:17px; background-position:-280px -90px; border:none; margin:9px 5px 0 5px; padding-left:5px; cursor:pointer}
+.button_search{ width:92px; height:40px; line-height:40px; text-align:center; background:url(../images/ico_index.png) 0 -50px; border:none; color:#fff; cursor:pointer;}
+.button_sea_ticket{width:92px; height:40px; line-height:40px; text-align:center; background-position:-280px 0; border:none; color:#fff;cursor:pointer;}
+.bnt_modify{background-position:0 -370px; width:64px; height:25px; line-height:20px; border:none; text-align:center;cursor:pointer;}
+.bnt_booking{background-position:-80px -370px; width:64px; height:25px; line-height:20px; border:none; text-align:center;cursor:pointer;}
+.bnt_next{ background-position:-140px -480px; padding-right:15px; width:111px; height:37px; line-height:37px; border:none; text-align:center; cursor:pointer;}
+.bnt_previous{background-position:0px -480px; width:111px; height:37px; line-height:37px; border:none; text-align:center; cursor:pointer;}
+.bnt_paid{background-position:-200px -260px; width:67px; height:22px; line-height:22px; border:none; text-align:center; cursor:pointer;}
+.selnumber{ width:40px; height:22px; line-height:22px; border:1px solid #ccc}
+
+
+.box{ border:1px solid #e3e3e3}
+.box_sea{ border:1px solid #cacae1}
+.box_tell{ border:1px solid #e1e1ca}
+.box_over{ border-bottom:1px solid #e3e3e3}
+.box_over_l{ border-bottom:1px solid #36beef}
+.box_botm{border-bottom:1px solid #ccc}
+.box_botm_xu{border-bottom:1px dashed #ccc}
+.center{ margin:0 auto; width:1004px;}
+
+
+.title{ height:34px; line-height:34px; background-position:0 -120px;}/*公用标题栏*/
+.low{ padding-left:30px; background-position:-1px -181px; height:33px; line-height:33px;}
+.msg{ border:1px solid #e3e3e3; background:#f6f6f6;}/*公用提示样式*/
+.msgul{ background:#fff; margin:3px;}
+.msg_l{ border:1px solid #36beef; background:#e7f9ff;}/*公用提示样式*/
+.msgul_l{ background:#fff; margin:3px;}
+.nohave{ height:10px; line-height:10px; clear:both; overflow:hidden;}
+.floatall{ position:relative;}/*-----公用漂浮容器-----*/
+
+#container{ background:url(../images/bj_index.gif) repeat-x;}
+#header{ width:1004px; margin:0 auto;}
+#header .top{ line-height:30px; height:30px;}
+#header .wel{ padding-left:25px;}
+#header .middle{ height:96px;}
+#header .logo{ padding:3px 30px 3px 30px;}
+#header .adtop{ padding:17px 0}
+#header .chinese{ padding-left:25px; background-position:0px -30px; line-height:20px; margin:25px 60px 0 0; width:80px;}
+#header .english{ padding-left:25px; background-position:0px -60px; line-height:20px; margin:10px 60px 0 0;width:80px;}
+#header .nav{ background-position:0 -40px; height:34px; padding-left:70px; }
+#header .nav ul{}
+#header .nav ul li{ float:left; text-align:center;}
+#header .on{ background-position:-140px 0; width:100px;height:34px;}
+#header .on a{ color:#000; font-size:14px; line-height:32px;}
+#header .out{ background-position:-140px -40px;width:100px; height:34px;}
+#header .out a{ color:#fff;font-size:14px; line-height:32px;}
+#header .last{ width:102px;}
+
+#footer{ background-position:0 -170px; height:106px; padding-top:20px; line-height:30px; text-align:center;}
+
+

@@ -1,0 +1,316 @@
+@charset "utf-8";
+/* CSS Document */
+
+.order_main {
+    width: 978px;
+    margin: 0 auto;
+    font-size: 14px;
+    background-color: #FFF;
+    border: 1px solid #E6E6E6;
+}
+/* 产品信息 */
+.product {
+    padding: 15px 25px;
+}
+.product .fg {
+    border-top: 1px dashed #EAEAEA;
+}
+.buycar {
+    padding: 10px 0;
+    position: relative;    
+}
+.buycar ul {
+    float: left;    
+}
+.buy_clear {
+    text-align: right;
+    padding: 5px 0;
+}
+.buy_header {
+    background-color: #EAEAEA;
+}
+.buy_header div {
+    padding: 5px 0;
+    font-size: 15px;
+}
+.buy_title {
+    padding: 8px 0;
+}
+.buy_title img {
+    border: 0 none;
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+.buy_title dl {
+    float: left;
+    padding-left: 20px;
+}
+.buycar_title {
+    width: 453px;
+    line-height: 26px;
+}
+.buycar_title a {
+    font-size: 18px;
+    line-height: 30px;
+}
+.buy_price {
+    text-align: center;
+    width: 139px;
+}
+.buycar_num {
+    text-align: center;
+    position: relative;
+    padding: 0 23px;
+    width: 93px;
+}
+.buycar_num a {
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    width: 18px;
+    height: 18px;    
+    text-indent: -9999em;
+    text-decoration: none;
+    
+}
+.buycar_num_add {
+    background: transparent url(../image/buycar.png) repeat-x -1px 0;   
+    top: 2px;
+    right: 27px;
+}
+.buycar_num_add:hover {
+    background: transparent url(../image/buycar.png) repeat-x -1px -20px;   
+}
+.buycar_num_reduce {
+    background: transparent url(../image/buycar.png) repeat-x -21px 0;
+    top: 2px;
+    left: 27px;
+}
+.buycar_num_reduce:hover {
+    background: transparent url(../image/buycar.png) repeat-x -21px -20px;
+}
+.buycar_num input {
+    border: 1px solid #CCCCCC;
+    height: 16px;
+    padding: 2px;
+    text-align: center;
+    width: 30px;
+}
+.buy_total {
+    text-align: center;
+}
+.totalmoney {
+    text-align: right;
+    font-size: 16px;
+}
+.totalmoney strong {
+     font-size: 18px;
+}
+.totalmoney span {
+    font-size: 18px;
+    color: #FF5400;
+}
+.buy_del {
+    text-align: center;
+}
+
+/* 填写订单信息 */
+.buycar_info {
+    background-color: #EAEAEA;
+    padding: 5px 15px;
+    margin: 0 20px;
+}
+.buycar_info span {
+    font-size: 16px;
+}
+.buycar_info em {
+    font-size: 16px;
+}
+
+/* 地址信息 */
+.address_box {
+    
+}
+.address_box .left {
+    float: left;
+    width: 469px;
+    padding-left: 20px;
+}
+.address_box .right {
+    float: left;
+    width: 469px;
+    padding-left: 20px;
+}
+.address {
+    width: 490px;
+    float: left;
+}
+.address ul {
+    padding: 20px;
+}
+.address ul li span{
+    background: none repeat scroll 0 0 #565656;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 26px;
+    padding: 5px 15px;
+}
+.address dl dd input {
+    color: #666;
+}
+.address dl {
+    padding: 5px 20px;
+}
+.address dl dt {
+    float: left;
+    line-height: 22px;
+}
+.address dl dd {
+    float: left;
+    padding-left: 5px;
+    position: relative;
+}
+.address .l_truename,.l_phone,.l_email,.l_address {
+    position: absolute;
+    left: 10px;
+    top: 4px;
+    z-index: 9999;
+}
+/* input控制 */
+.address .i_truename,.i_phone,.i_email,.i_address,.g_truename,.g_phone,.g_email,.g_address {
+    border: 1px solid #CCCCCC;
+    height: 16px;
+    padding: 4px;
+    width: 150px;
+}
+.address #bz {
+    border: 1px solid #CCCCCC;
+    height: 16px;
+    padding: 4px;
+    width: 300px;
+    height: 50px;
+    resize: none;
+}
+.address em.error {
+    padding: 4px 0 4px 10px;
+    color: red;
+}
+.address input.error {
+    border: 1px dotted red;
+}
+.address #address,#g_address {
+    width: 300px;
+}
+
+/* 物流信息 */
+.express {
+    padding: 20px 40px 0;
+}
+.express ul {
+    padding: 10px 0;
+}
+.express hr {
+    border: 0;
+    border-bottom: 1px dashed #EAEAEA;
+}
+.express ul li input {
+    margin-right: 5px;
+}
+.express ul li span{
+    background: none repeat scroll 0 0 #565656;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 26px;
+    padding: 5px 15px;
+}
+
+/* 付款信息 */
+.payment {
+    padding: 20px 40px 0;
+}
+.payment ul {
+    padding: 10px 0;
+}
+.payment ul li {
+    padding: 5px 0;
+}
+.payment ul li input {
+    margin-right: 5px;
+}
+.payment ul li span{
+    background: none repeat scroll 0 0 #565656;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 26px;
+    padding: 5px 15px;
+}
+.payment ul li em{
+    font-size: 16px;
+}
+.payment #alipay{
+    background: transparent url(../image/alipay.png) no-repeat 0 0;
+    padding-left: 115px;
+    line-height: 39px;
+}
+.payment hr {
+    border: 0;
+    border-bottom: 1px dashed #EAEAEA;
+}
+.payment ul li p {
+    line-height: 26px;
+}
+/* 优惠信息 */
+.preferential {
+    padding: 20px 40px;
+}
+.preferential em {
+    padding: 0 5px;
+    
+}
+.preferential #precode {
+    border: 1px solid #CCCCCC;
+    height: 16px;
+    padding: 4px;
+    width: 150px;
+}
+/* 提交订单 */
+.submit_box {
+    padding: 20px 40px 100px;
+}
+.submit_box ul li {
+    float: right;
+}
+.submit_box em {
+    background: url("../image/money_ico.png") no-repeat scroll 0 6px transparent;
+    padding: 0 35px 0 25px;
+    color: #FF5400;
+    font-family: verdana;
+    font-size: 2em;
+    line-height: 49px;
+}
+.submit_box span {
+    font-size: 2em;
+    line-height: 49px;    
+}
+.submit_box a {
+    background: transparent url(../image/btn_submit.png) repeat-x 0 0;
+    text-indent: -9999em;
+    text-decoration: none;
+    display: block;
+    width: 172px;
+    height: 49px;
+}
+.submit_box a:hover {
+    background: transparent url(../image/btn_submit.png) repeat-x 0 -50px;
+}
+.submit_but {
+    background: transparent url(../image/btn_submit.png) repeat-x 0 0;    
+    border: 0 none;
+    width: 172px;
+    height: 49px;
+    cursor: pointer;
+}
+.submit_but_hover {
+    background: transparent url(../image/btn_submit.png) repeat-x 0 -50px;
+}

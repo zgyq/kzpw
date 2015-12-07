@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Zhefan">
+  
+  <typeAlias alias="Zhefan" type="com.yf.system.base.zhefan.Zhefan"/>
+  
+
+  <resultMap id="resultZhefanMap" class="Zhefan">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="szhe" column="C_SZHE"/>
+  
+     <result property="endzhe" column="C_ENDZHE"/>
+  
+     <result property="zhefan" column="C_ZHEFAN"/>
+  
+     <result property="miaoshu" column="C_MIAOSHU"/>
+  
+     <result property="userid" column="C_USERID"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllZhefan"  resultMap="resultZhefanMap"  parameterClass="java.util.Map">
+  
+    select * from T_ZHEFAN
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllZhefanBySql"  resultMap="resultZhefanMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteZhefanBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countZhefanBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_ZHEFAN
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findZhefan" parameterClass="long" resultClass="Zhefan">
+    select 
+    	ID as id,
+	  			C_SZHE as szhe,
+	  			C_ENDZHE as endzhe,
+	  			C_ZHEFAN as zhefan,
+	  			C_MIAOSHU as miaoshu,
+	  			C_USERID as userid,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state 
+     from T_ZHEFAN
+    where ID = #id#
+  </select>
+   
+  <insert id="createZhefan" parameterClass="Zhefan">
+    insert into T_ZHEFAN ( 
+    	ID,
+	  			C_SZHE,
+	  			C_ENDZHE,
+	  			C_ZHEFAN,
+	  			C_MIAOSHU,
+	  			C_USERID,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#szhe#,
+	  					
+	  						#endzhe#,
+	  					
+	  						#zhefan#,
+	  					
+	  						#miaoshu#,
+	  					
+							#userid:DECIMAL#,
+						
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteZhefan" parameterClass="long">
+    delete from T_ZHEFAN
+    where ID = #id#
+  </delete>
+	
+  <update id="updateZhefan" parameterClass="Zhefan">
+    update T_ZHEFAN 
+    set 
+    	C_SZHE = #szhe#,
+	  					C_ENDZHE = #endzhe#,
+	  					C_ZHEFAN = #zhefan#,
+	  					C_MIAOSHU = #miaoshu#,
+	  					C_USERID = #userid:DECIMAL#,
+						C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 航线信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Airlien createAirlien(Airlien airlien) throws SQLException;
+	
+	/**
+	 * 删除 航线信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAirlien(long id);
+	
+	
+	/**
+	 * 修改 航线信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAirlien(Airlien airlien);
+
+		
+	/**
+	 * 修改 航线信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAirlienIgnoreNull(Airlien airlien);
+		
+	
+	/**
+	 * 查找 航线信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirlien(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 航线信息
+	 * @param id
+	 * @return
+	 */
+	public Airlien findAirlien(long id);
+	
+	
+	/** 
+	 * 查找 航线信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAirlienForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找航线信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirlienBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 航线信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAirlienBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAirlienBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IAirlienComponent airlienComponent;
+	  
+ 	
+ 	public IAirlienComponent getAirlienComponent() {
+		return airlienComponent;
+	}
+	public void setAirlienComponent(IAirlienComponent  airlienComponent) {
+		this.airlienComponent = airlienComponent;
+	}
+	/**
+	 * 创建 航线信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Airlien createAirlien(Airlien airlien) throws SQLException{
+	
+		return airlienComponent.createAirlien(airlien);
+	}
+	/**
+	 * 删除 航线信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAirlien(long id){
+	
+		return airlienComponent.deleteAirlien(id);
+	}
+	
+	
+	/**
+	 * 修改 航线信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAirlien(Airlien airlien){
+		return airlienComponent.updateAirlien(airlien);
+	
+	}
+
+		
+	/**
+	 * 修改 航线信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAirlienIgnoreNull(Airlien airlien){
+			return airlienComponent.updateAirlienIgnoreNull(airlien);
+	
+	}
+	
+	/**
+	 * 查找 航线信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirlien(String where, String orderby,int limit,int offset){
+		return airlienComponent.findAllAirlien(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 航线信息
+	 * @param id
+	 * @return
+	 */
+	public Airlien findAirlien(long id){
+		return airlienComponent.findAirlien(id);
+	}
+	
+	/** 
+	 * 查找 航线信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAirlienForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return airlienComponent.findAllAirlien(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找航线信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirlienBySql(String sql,int limit,int offset){
+		return airlienComponent.findAllAirlien(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 航线信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAirlienBySql(String sql){
+		return airlienComponent.excuteAirlienBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAirlienBySql(String sql){
+		return airlienComponent.countAirlienBySql(sql);
+	}
+	
+	
+

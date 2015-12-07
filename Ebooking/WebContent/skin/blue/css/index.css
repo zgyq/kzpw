@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+ 
+.sea_top,.sea_topon,.sea_bom,.titlenew,.ico_lis,.answer,.ico_ques,.ico_answ,.left_top,.bntt,.center_top,.ico_bom{ background:url(../images/ico_index.png) no-repeat;} 
+
+#main{ width:1004px; margin:0 auto; margin-top:8px;}
+#main .left{ width:267px;}
+#main .sea_top{ height:32px; line-height:32px; padding-left:20px;}
+#main .sea_topon{ background-position:-280px 0; width:75px; text-align:center;margin:0 5px 0 5px;}
+#main .sea_topout{width:75px; text-align:center; margin:0 5px 0 5px;}
+#search{ padding-left:20px; width:245px;border-left:1px solid #cacae1;border-right:1px solid #cacae1;}
+#search .searchtop{ width:215px; height:35px; text-align:center; color:#000;line-height:35px; }
+#search .seatchtop input{ height:39px; line-height:39px;}
+#search .ulli{ height:30px; line-height:30px;}
+#search .choose{ padding-left:20px; line-height:38px; height:38px;}
+#search .choose input{height:38px; line-height:38px;}
+#search .guild{ line-height:20px; margin-right:15px;}
+#search .but{ padding-top:7px; margin-top:8px; border-top:1px dashed #000000; margin-right:25px; padding-bottom:5px;}
+#main .sea_bom{ background-position:0px -32px; height:12px; line-height:12px; overflow:hidden; width:267px;}
+
+#main .center{ width:480px; margin-left:8px;}
+
+#main .right{ width:242px;}
+#main .titlenew{ height:32px; line-height:32px; padding-left:30px; background-position:0 -50px;}
+#main .content{ padding:8px 20px 7px 20px; line-height:23px;}
+
+#cemain{width:1004px; margin:0 auto; margin-top:2px;}
+#cemain .left{width:680px;}
+#cemain .lowlist{ height:180px; padding-left:10px;}
+#cemain .lowmain{ width:33%; text-align:center; margin-top:13px;} 
+#cemain .lowcity{ line-height:24px;  width:70px;}
+#cemain .lowmorny{ width:45px; line-height:16px;}
+#cemain .lowmorny dd{ text-indent:0; list-style:none}
+#cemain .lowmorny dt{ text-indent:0; list-style:none; line-height:14px;}
+#cemain .general-ticket{ width:334px;}
+#cemain .visa{ width:334px;}
+#cemain .sense_main{ margin:2px 10px 0px 20px; height:107px; padding:5px 0 0 9px; overflow:hidden}
+#cemain .ico_lis{ background-position:-260px -60px; padding-left:20px; }
+#cemain .sense_main_ad{ padding-left:30px; margin-bottom:10px;}
+
+#cemain .city{ position:relative;}
+#cemain .city_ul{ position:absolute; top:26px;*top:28px!important; *top:28px; left:10px; background:#fff; line-height:19px; width:59px; padding-left:5px;}
+
+
+#cemain .right{width:315px;}
+#cemain .answer{ background-position:0 -85px; width:300px; height:48px;}
+#cemain .question{ line-height:26px; padding-left:15px;}
+#cemain .question ul{ margin-top:3px;}
+#cemain .question ul li{ height:24px; line-height:24px;}
+#cemain .ico_ques{ background-position:-300px -49px; padding-left:26px; line-height:20px;}
+#cemain .ico_answ{background-position:-300px -71px; padding-left:26px;line-height:20px;}
+#cemain .ad1004{ margin-top:7px;*margin-top:2px;_margin-top:2px;}
+
+#bommain{ width:1004px; margin:0 auto; margin-top:8px;}
+#bommain .left{ width:334px;}
+#bommain .left_top{ background-position:0 -150px; height:43px; line-height:43px; padding-left:38px;}
+#bommain .international{ padding:5px 0 5px 20px; line-height:26px;}
+#bommain .bntt{ background-position:-340px -50px; width:36px; height:17px; line-height:17px; border:none; cursor:pointer; text-align:center;}
+#bommain .center{ width:334px; margin-left:8px;}
+#bommain .center_top{background-position:0 -220px; height:52px; line-height:42px; padding-left:49px;}
+#bommain .airline{padding:10px 0 14px  0px; line-height:29px;}
+
+#bommain .right{ width:320px;}
+#overmain{ width:1004px; margin:0 auto; margin-top:7px;}
+#overmain th{ background:url(../images/bg.png) 0 -310px; height:38px; line-height:38px;}
+#overmain td{ line-height:28px;}
+#overmain .ico_bom1{ background-position:-300px -110px; padding-left:20px;}
+#overmain .ico_bom2{ background-position:-330px -110px; padding-left:20px;}
+#overmain .ico_bom3{ background-position:-360px -110px; padding-left:20px;}
+#overmain .ico_bom4{ background-position:-390px -110px; padding-left:20px;}
+#overmain .ico_bom5{ background-position:-420px -110px; padding-left:20px;}
+#overmain .ico_bom6{ background-position:-450px -110px; padding-left:20px;}

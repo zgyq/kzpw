@@ -1,0 +1,61 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.f90{ color:#ff9900}
+.c999{color:#999999}
+.fff{ color:#fff}
+.f00{ color:#f00}
+.b000{color:#000}
+.cfff{color:#fff; font-weight:bold}
+.fff14{color:#fff; font-size:14px; font-weight:bold;}
+.dcff58{color:#dcff58;}
+.black{color:#000; font-size:14px; font-weight:bold;}
+.font000{color:#000}
+.ff7f05{color:#ff7f05;font-family:"黑体"; font-weight:bold;}
+.font10{ font-size:10px; color:#ccc; }
+.cfda1d{ color:#cfda1d}
+.font20{ font-size:20px;}
+.font18f60{ font-size:18px; font-weight:bold; color:#f60;}
+.fontun06c{ text-decoration:underline; color:#06c}
+.l06c{color:#0066cc}/*蓝色*/
+.un000{ text-decoration:underline; color:#000}
+.fontxing{color:#f00; font-size:14px; font-family:"宋体";}
+.font1805a{ font-size:18px; font-weight:bold; color:#05a; text-decoration:underline}
+.spacing3{letter-spacing:4px;}
+.spacing2{letter-spacing:12px;}
+.dd2626{ color:#dd2626}/*紫色*/
+.aa1717{ color:#aa1717}/*紫色*/
+.a41300{color:#a41300}/*暗紫色*/
+.f90c{color:#f90; font-weight:bold; font-size:14px;}/*黄色粗的*/
+.c09f{color:#09f; font-weight:bold; font-size:14px;}/*蓝色粗的*/
+.unc09f{color:#04a3e5; font-weight:bold; text-decoration:underline}/*蓝色下划线*/
+.unc09fx{color:#04a3e5;text-decoration:underline}/*蓝色下划线细的*/
+
+.font24000{ font-size:24px; color:#050505; font-weight:bold;}
+.font18000{ font-size:18px; color:#050505; font-weight:bold;}
+.font12000{ font-size:12px; color:#050505; font-weight:bold;}
+
+.lv678b06{ color:#678b06; }/*深绿色*/
+.lan418caa{ color:#418caa;}/*暗蓝色*/
+.l267dff{color:#267dff;}/*亮蓝*/
+.un8b{ text-decoration:underline; color:#8b8b8b}
+.dd0c94{ color:#dd0c94}
+
+
+.unfff{color:#000; text-decoration:underline}
+.bigfff{color:#000; font-size:18px; font-weight:bold}
+.big000{color:#000; font-size:16px;}
+.biger000{color:#000; font-size:24px; font-weight:bold; line-height:38px;}
+.cfff{color:#fff; font-weight:bold}
+.cfff14{color:#000; font-size:14px; font-weight:bold}
+.f00{ color:#f00}
+.cfda1d{ color:#cfda1d}/*浅绿*/
+.font-1da7d9{color:#1da7d9}
+
+.font-06f-24{ color:#0066ff; font-size:24px;}/*特大蓝*/
+.font-06f-24c{ color:#0066ff; font-size:24px; font-weight:bold;}/*特大粗蓝*/
+.font-f60-24{ color:#ff6600; font-size:24px;}/*特大黄*/
+.font-f60-16{ color:#ff6600; font-size:16px; font-weight:bold;}/*中号黄*/
+.font_fff_09{ color:#fff; font-size:9px;}/*小白*/
+.font_f60_c{ color:#f60; font-weight:bold}/*小白*/
+.font-f60-del{ color:#f60; text-decoration:line-through}

@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 团购信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Buying createBuying(Buying buying) throws SQLException;
+	
+	/**
+	 * 删除 团购信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteBuying(long id);
+	
+	
+	/**
+	 * 修改 团购信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateBuying(Buying buying);
+
+		
+	/**
+	 * 修改 团购信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateBuyingIgnoreNull(Buying buying);
+		
+	
+	/**
+	 * 查找 团购信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllBuying(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 团购信息
+	 * @param id
+	 * @return
+	 */
+	public Buying findBuying(long id);
+	
+	
+	/** 
+	 * 查找 团购信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllBuyingForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找团购信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllBuyingBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 团购信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteBuyingBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countBuyingBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IBuyingComponent buyingComponent;
+	  
+ 	
+ 	public IBuyingComponent getBuyingComponent() {
+		return buyingComponent;
+	}
+	public void setBuyingComponent(IBuyingComponent  buyingComponent) {
+		this.buyingComponent = buyingComponent;
+	}
+	/**
+	 * 创建 团购信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Buying createBuying(Buying buying) throws SQLException{
+	
+		return buyingComponent.createBuying(buying);
+	}
+	/**
+	 * 删除 团购信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteBuying(long id){
+	
+		return buyingComponent.deleteBuying(id);
+	}
+	
+	
+	/**
+	 * 修改 团购信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateBuying(Buying buying){
+		return buyingComponent.updateBuying(buying);
+	
+	}
+
+		
+	/**
+	 * 修改 团购信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateBuyingIgnoreNull(Buying buying){
+			return buyingComponent.updateBuyingIgnoreNull(buying);
+	
+	}
+	
+	/**
+	 * 查找 团购信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllBuying(String where, String orderby,int limit,int offset){
+		return buyingComponent.findAllBuying(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 团购信息
+	 * @param id
+	 * @return
+	 */
+	public Buying findBuying(long id){
+		return buyingComponent.findBuying(id);
+	}
+	
+	/** 
+	 * 查找 团购信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllBuyingForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return buyingComponent.findAllBuying(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找团购信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllBuyingBySql(String sql,int limit,int offset){
+		return buyingComponent.findAllBuying(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 团购信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteBuyingBySql(String sql){
+		return buyingComponent.excuteBuyingBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countBuyingBySql(String sql){
+		return buyingComponent.countBuyingBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Customeruser">
+  
+  <typeAlias alias="Customeruser" type="com.yf.system.base.customeruser.Customeruser"/>
+  
+
+  <resultMap id="resultCustomeruserMap" class="Customeruser">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="loginname" column="C_LOGINNAME"/>
+  
+     <result property="logpassword" column="C_LOGPASSWORD"/>
+  
+     <result property="membername" column="C_MEMBERNAME"/>
+  
+     <result property="membersex" column="C_MEMBERSEX"/>
+  
+     <result property="memberemail" column="C_MEMBEREMAIL"/>
+  
+     <result property="mobile" column="C_MOBILE"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="isadmin" column="C_ISADMIN"/>
+  
+     <result property="birthday" column="C_BIRTHDAY"/>
+  
+  
+     <result property="memberfax" column="C_MEMBERFAX"/>
+  
+  
+     <result property="isweb" column="C_ISWEB"/>
+  
+     <result property="membermobile" column="C_MEMBERMOBILE"/>
+  
+     <result property="isenable" column="C_ISENABLE"/>
+  
+     <result property="membertype" column="C_MEMBERTYPE"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="deptid" column="C_DEPTID"/>
+  
+  
+     <result property="cardtype" column="C_CARDTYPE"/>
+  
+     <result property="cardnunber" column="C_CARDNUNBER"/>
+  
+     <result property="workphone" column="C_WORKPHONE"/>
+  
+  
+     <result property="description" column="C_DESCRIPTION"/>
+   
+     <result property="enname" column="C_ENNAME"/>
+  
+  
+  
+  <!-- 
+     <result property="linkother" column="C_LINKOTHER"/>
+     <result property="entrytime" column="C_ENTRYTIME"/>
+     <result property="localcity" column="C_LOCALCITY"/>
+     <result property="memberdesc" column="C_MEMBERDESC"/>
+     <result property="cardnumber" column="C_CARDNUMBER"/>  
+     <result property="cardpassword" column="C_CARDPASSWORD"/>     
+     <result property="ismanager" column="C_ISMANAGER"/>
+     <result property="livingcardtype" column="C_LIVINGCARDTYPE"/>
+     <result property="livingcardnum" column="C_LIVINGCARDNUM"/>
+  
+     <result property="livingperiod" column="C_LIVINGPERIOD"/>
+  
+     
+  
+     <result property="workperiod" column="C_WORKPERIOD"/>
+     <result property="profits" column="C_PROFITS"/>
+     <result property="nationality" column="C_NATIONALITY"/>
+      -->
+     <result property="worknumber" column="C_WORKNUMBER"/>
+     <result property="chinaaddress" column="C_CHINAADDRESS"/>
+     <result property="postalcode" column="C_POSTALCODE"/>
+  
+     <result property="profits" column="C_PROFITS"/>
+     <result property="totalscore" column="C_TOTALSCORE"/>
+  </resultMap>
+  
+  <select id="findAllCustomeruser"  resultMap="resultCustomeruserMap"  parameterClass="java.util.Map">
+  
+    select * from T_CUSTOMERUSER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCustomeruserBySql"  resultMap="resultCustomeruserMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCustomeruserBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCustomeruserBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CUSTOMERUSER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  <sql id="getbean">
+   select 
+    	ID as id,
+	  			C_LOGINNAME as loginname,
+	  			C_LOGPASSWORD as logpassword,
+	  			C_MEMBERNAME as membername,
+	  			C_MEMBERSEX as membersex,
+	  			C_MEMBEREMAIL as memberemail,
+	  			C_MOBILE as mobile,
+	  			C_STATE as state,
+	  			C_TYPE as type,
+	  			C_ISADMIN as isadmin,
+	  			C_BIRTHDAY as birthday,
+	  			C_MEMBERFAX as memberfax,
+	  			C_ISWEB as isweb,
+	  			C_MEMBERMOBILE as membermobile,
+	  			C_ISENABLE as isenable,
+	  			C_MEMBERTYPE as membertype,
+	  			C_AGENTID as agentid,
+	  			C_MODIFYTIME as modifytime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_CREATETIME as createtime,
+	  			C_CREATEUSER as createuser,
+	  			C_DEPTID as deptid,
+    	<!-- 
+	  			C_LOCALCITY as localcity,
+	  			C_CARDNUMBER as cardnumber,
+	  			C_CARDPASSWORD as cardpassword,
+	  			C_MEMBERDESC as memberdesc,
+	  			C_ISMANAGER as ismanager,
+	  			C_LIVINGCARDTYPE as livingcardtype,
+	  			C_LIVINGCARDNUM as livingcardnum,
+	  			C_LIVINGPERIOD as livingperiod,
+	  			
+	  			C_WORKPERIOD as workperiod,
+	  			
+	  			C_NATIONALITY as nationality,
+	  			C_LINKOTHER as linkother,
+	  			C_ENTRYTIME as entrytime,
+	  			 -->
+	  		    C_WORKNUMBER as worknumber,
+	  			C_PROFITS as profits,
+	  			C_POSTALCODE as postalcode,
+	  			C_CHINAADDRESS as chinaaddress,
+	  			C_CARDTYPE as cardtype,
+	  			C_CARDNUNBER as cardnunber,
+	  			C_WORKPHONE as workphone,
+	  			C_DESCRIPTION as description,
+	  			C_ENNAME as enname,
+	  			C_TOTALSCORE as totalscore
+     from T_CUSTOMERUSER
+  </sql>
+  <select id="findCustomeruser" parameterClass="long" resultClass="Customeruser">
+   <include refid="getbean"/>
+    where ID = #id#
+  </select>
+  <select id="findCustomeruserByNameAndPwd" parameterClass="Customeruser" resultClass="Customeruser">
+   <include refid="getbean"/>
+    where C_LOGINNAME=#loginname# AND C_LOGPASSWORD=#logpassword#
+  </select>
+  
+  
+   
+  <insert id="createCustomeruser" parameterClass="Customeruser">
+  <selectKey resultClass="long" type="pre" keyProperty="id">
+      SELECT ISNULL(MAX(ID),0)+1 AS VALUE FROM T_CUSTOMERUSER
+    </selectKey>
+    insert into T_CUSTOMERUSER ( 
+    	ID,
+	  			C_LOGINNAME,
+	  			C_LOGPASSWORD,
+	  			C_MEMBERNAME,
+	  			C_MEMBERSEX,
+	  			C_MEMBEREMAIL,
+	  			C_MOBILE,
+	  			C_STATE,
+	  			C_TYPE,
+	  			C_ISADMIN,
+	  			C_BIRTHDAY,
+	  			C_MEMBERFAX,
+	  			C_ISWEB,
+	  			C_MEMBERMOBILE,
+	  			C_ISENABLE,
+	  			C_MEMBERTYPE,
+	  			C_AGENTID,
+	  			C_MODIFYTIME,
+	  			C_MODIFYUSER,
+	  			C_CREATETIME,
+	  			C_CREATEUSER,
+	  			C_DEPTID,
+	  			C_CARDTYPE,
+	  			C_CARDNUNBER,
+	  			C_WORKPHONE,
+	  			C_DESCRIPTION,
+	  			C_ENNAME,
+	  			<!--
+	  			C_ENTRYTIME,
+	  			  C_CARDNUMBER,
+	  			C_CARDPASSWORD,
+	  			C_LOCALCITY,
+	  			C_MEMBERDESC,
+	  			C_ISMANAGER,
+	  			C_LINKOTHER,
+	  			C_LIVINGCARDTYPE,
+	  			C_LIVINGCARDNUM,
+	  			C_LIVINGPERIOD,
+	  			
+	  			C_WORKPERIOD,
+	  			C_NATIONALITY,
+	  			
+	  			  -->
+	  			C_WORKNUMBER,
+	  			C_PROFITS,
+	  			C_CHINAADDRESS,
+	  			C_POSTALCODE,
+	  			C_TOTALSCORE
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#loginname#,
+	  					
+	  						#logpassword#,
+	  					
+	  						#membername#,
+	  					
+	  						#membersex#,
+	  					
+	  						#memberemail#,
+	  					
+	  						#mobile#,
+	  					
+							#state:DECIMAL#,
+						
+							#type:DECIMAL#,
+						
+							#isadmin:DECIMAL#,
+						
+	  						#birthday#,
+	  					
+	  					
+	  						#memberfax#,
+	  					
+	  					
+	  					
+							#isweb:DECIMAL#,
+						
+	  						#membermobile#,
+	  					
+							#isenable:DECIMAL#,
+						
+							#membertype:DECIMAL#,
+						
+							#agentid:DECIMAL#,
+						
+	  						#modifytime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#createuser#,
+	  					
+							#deptid:DECIMAL#,
+						
+						
+							#cardtype:DECIMAL#,
+						
+	  						#cardnunber#,
+	  					
+	  						#workphone#,
+	  					
+	  					
+	  						#description#,
+	  					
+	  						#enname#,
+	  					
+	  					<!-- 
+	  						#memberdesc#,
+	  						#entrytime#,
+	  						#cardnumber#,
+	  					
+	  						#cardpassword#,
+	  						#localcity#,
+  							#ismanager:DECIMAL#,
+	  						#linkother#,
+	  						#livingcardtype#,
+	  					
+	  						#livingcardnum#,
+	  					
+	  						#livingperiod#,
+	  					
+	  						
+	  					
+	  						#workperiod#,
+	  					
+  						    #nationality#,
+  						   
+  						    
+	  					 -->
+	  					 	#worknumber#,
+	  					    #profits:DECIMAL#,
+	  						#chinaaddress#,
+  						    #postalcode#,  						    
+  						    #totalscore#
+    
+    )
+  </insert>
+  
+  <delete id="deleteCustomeruser" parameterClass="long">
+    delete from T_CUSTOMERUSER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCustomeruser" parameterClass="Customeruser">
+    update T_CUSTOMERUSER 
+    set 
+	  					C_LOGINNAME = #loginname#,
+	  					C_LOGPASSWORD = #logpassword#,
+	  					C_MEMBERNAME = #membername#,
+	  					C_MEMBERSEX = #membersex#,
+	  					C_MEMBEREMAIL = #memberemail#,
+	  					C_MOBILE = #mobile#,
+	  					C_STATE = #state:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_ISADMIN = #isadmin:DECIMAL#,
+						C_BIRTHDAY = #birthday#,
+	  					C_MEMBERFAX = #memberfax#,
+	  				
+	  					C_ISWEB = #isweb:DECIMAL#,
+						C_MEMBERMOBILE = #membermobile#,
+	  					C_ISENABLE = #isenable:DECIMAL#,
+						C_MEMBERTYPE = #membertype:DECIMAL#,
+						C_AGENTID = #agentid:DECIMAL#,
+						C_MODIFYTIME = #modifytime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_DEPTID = #deptid:DECIMAL#,
+						C_CARDTYPE = #cardtype:DECIMAL#,
+						C_CARDNUNBER = #cardnunber#,
+	  					C_WORKPHONE = #workphone#,
+	  					C_DESCRIPTION = #description#,
+	  					C_ENNAME = #enname#,
+    	                <!-- 
+    	                	C_MEMBERDESC = #memberdesc#,
+	  					C_ENTRYTIME = #entrytime#,
+    	                 C_CARDNUMBER = #cardnumber#,
+	  					C_CARDPASSWORD = #cardpassword#,
+	  					C_LOCALCITY = #localcity#,
+						C_ISMANAGER = #ismanager:DECIMAL#,
+	  					C_LINKOTHER = #linkother#,
+	  					C_LIVINGCARDTYPE = #livingcardtype#,
+	  					C_LIVINGCARDNUM = #livingcardnum#,
+	  					C_LIVINGPERIOD = #livingperiod#,
+	  					
+	  					C_WORKPERIOD = #workperiod#,
+	  					C_NATIONALITY  = #nationality#,
+	  					C_PROFITS = #profits:DECIMAL#,
+    	                 -->
+    	                C_WORKNUMBER = #worknumber#,
+    	                C_PROFITS = #profits:DECIMAL#,
+	  					C_CHINAADDRESS = #chinaaddress#,
+	  					C_POSTALCODE = #postalcode#,
+	  					C_TOTALSCORE  = #totalscore#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Carinfo">
+  
+  <typeAlias alias="Carinfo" type="com.yf.system.base.carinfo.Carinfo"/>
+  
+
+  <resultMap id="resultCarinfoMap" class="Carinfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="brandcode" column="C_BRANDCODE"/>
+  
+     <result property="carriage" column="C_CARRIAGE"/>
+  
+     <result property="deliverycapacity" column="C_DELIVERYCAPACITY"/>
+  
+     <result property="oilvolume" column="C_OILVOLUME"/>
+  
+     <result property="seatingcount" column="C_SEATINGCOUNT"/>
+  
+     <result property="gear" column="C_GEAR"/>
+  
+     <result property="imageurl" column="C_IMAGEURL"/>
+   
+  </resultMap>
+  
+  <select id="findAllCarinfo"  resultMap="resultCarinfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_CARINFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCarinfoBySql"  resultMap="resultCarinfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCarinfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCarinfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CARINFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCarinfo" parameterClass="long" resultClass="Carinfo">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_CODE as code,
+	  			C_BRANDCODE as brandcode,
+	  			C_CARRIAGE as carriage,
+	  			C_DELIVERYCAPACITY as deliverycapacity,
+	  			C_OILVOLUME as oilvolume,
+	  			C_SEATINGCOUNT as seatingcount,
+	  			C_GEAR as gear,
+	  			C_IMAGEURL as imageurl 
+     from T_CARINFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createCarinfo" parameterClass="Carinfo">
+    insert into T_CARINFO ( 
+    	ID,
+	  			C_NAME,
+	  			C_CODE,
+	  			C_BRANDCODE,
+	  			C_CARRIAGE,
+	  			C_DELIVERYCAPACITY,
+	  			C_OILVOLUME,
+	  			C_SEATINGCOUNT,
+	  			C_GEAR,
+	  			C_IMAGEURL 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#code#,
+	  					
+	  						#brandcode#,
+	  					
+	  						#carriage#,
+	  					
+	  						#deliverycapacity#,
+	  					
+	  						#oilvolume#,
+	  					
+	  						#seatingcount#,
+	  					
+	  						#gear#,
+	  					
+	  						#imageurl#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCarinfo" parameterClass="long">
+    delete from T_CARINFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCarinfo" parameterClass="Carinfo">
+    update T_CARINFO 
+    set 
+    	C_NAME = #name#,
+	  					C_CODE = #code#,
+	  					C_BRANDCODE = #brandcode#,
+	  					C_CARRIAGE = #carriage#,
+	  					C_DELIVERYCAPACITY = #deliverycapacity#,
+	  					C_OILVOLUME = #oilvolume#,
+	  					C_SEATINGCOUNT = #seatingcount#,
+	  					C_GEAR = #gear#,
+	  					C_IMAGEURL = #imageurl#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

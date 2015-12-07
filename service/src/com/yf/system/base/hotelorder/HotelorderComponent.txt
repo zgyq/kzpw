@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+  
+
+  <bean id="hotelorderManager" class="com.yf.b2bjoy.base.hotelorder.HotelorderManager">
+  	<property name="dataSource">
+  		<ref local="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref local="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="hotelorderComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.b2bjoy.base.hotelorder.HotelorderComponent">
+	        <property name="hotelorderManager" ref="hotelorderManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ 
+ <!--
+  <sqlMap resource="com/ccservice/b2bjoy/base/hotelorder/Hotelorder.xml"/>
+  <bean id="xxxService" class="com.yf.b2bjoy.base.service">
+ 	<property name="hotelorderComponent" ref="hotelorderComponentProxy"/>	
+  </bean>
+ -->
+  
+</beans>
+
+ 
+ 

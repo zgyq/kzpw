@@ -1,0 +1,285 @@
+package com.yf.website.web.action;
+
+import java.util.List;
+
+import com.ccservice.b2b2c.base.aircompany.Aircompany;
+import com.ccservice.b2b2c.base.flightinfo.FlightInfo;
+import com.ccservice.b2b2c.base.flightinfo.FlightSearch;
+import com.ccservice.b2b2c.base.infocontent.Infocontent;
+import com.ccservice.b2b2c.base.informationinfo.Informationinfo;
+import com.ccservice.b2b2c.base.infotype.Infotype;
+import com.yf.website.web.server.Server;
+
+/**
+ * 国内机票Action
+ * @Date 2011-11-14
+ * @author 陈星
+ *
+ */
+
+public class DomesticTicketAction extends TicketCommonAction {
+
+	/**
+	 **定义公共变量*************************开始************************************* 
+	 * @author 陈星
+	 * @Date 2011-11-14
+	 * 
+	 */
+		//航程类型 1单程 2往返 3联程
+		public int s_traveltype=1;
+		//出发城市三字码
+		public String s_depcitycode;
+		//出发城市名称
+		public String s_depcityname;
+		//到达城市名称
+		public String s_arrcityname;
+		//到达城市三字码
+		public String s_arrcitycode;
+		//出发时间
+		public String s_startdate;
+		//返程时间
+		public String s_backdate;
+		//航空公司代码
+		public String s_aircompanycode;
+		//航空公司信息
+		public List<Aircompany> listAirCompany;
+		//航班信息List
+		private List<FlightInfo> listFlightInfoAll;
+	 /**定义公共变量**************************结束************************************ 
+	
+	/**
+	 **定义机票相关帮助信息*************************开始************************************* 
+	 * @author 陈星
+	 * @Date 2011-11-21
+	 * 
+	 */
+		//帮助信息list
+		public List<Infocontent> ListInfocontent;
+		//资讯信息list
+		public List<Informationinfo> ListInformationinfo;
+		//帮助类型	ID
+		public long typeid;
+
+/**定义机票相关帮助信息**************************结束************************************ 
+			
+		
+	
+	/**
+	 * 机票查询方法
+	 * @return 返回到列表页面
+	 * @throws Exception
+	 * @author 陈星
+	 * @Date 2011-11-14
+	 */
+	public String toTicketList() throws Exception{
+		
+		System.out.println("执行机票查询方法");
+        //航班查询条件赋值
+		FlightSearch searchParam=new FlightSearch();
+		//出发城市三字码
+		searchParam.setStartAirportCode(s_depcitycode);
+		//出发城市名称
+		searchParam.setStartAirPortName(s_depcityname);
+		//到达城市三字码
+		searchParam.setEndAirportCode(s_arrcitycode);
+		//到达城市名称
+		searchParam.setEndAirPortName(s_arrcityname);
+		//出发日期
+		searchParam.setFromDate(s_startdate);
+		//出发时间
+		searchParam.setFromTime("");
+		//返程日期
+		searchParam.setBackDate(s_backdate);
+		//航空公司代码
+		searchParam.setAirCompanyCode(s_aircompanycode);
+		//航程类型
+		searchParam.setTravelType(String.valueOf(s_traveltype));
+		//调用查询航班方法
+		listFlightInfoAll=AVOpen(searchParam, s_traveltype);
+		//从缓存中得到航空公司信息
+		listAirCompany=Server.getInstance().getTicketSearchService().getAircompanyCache();
+		//查询帮助信息
+		//添加人:陈星
+		//添加时间:2011-11-21
+		seachInfocontent();
+		return "tolist";
+		
+		
+	}
+	
+	/**
+	 * 调用接口查询航班信息
+	 * @author 陈星
+	 * @Date 2011-11-14
+	 * @param flightSearch 航班查询条件
+	 * @param intType  航程类型
+	 * @return  航班信息列表
+	 */
+	public List<FlightInfo> AVOpen(FlightSearch flightSearch, int intType)
+	{
+	   List<FlightInfo> list = Server.getInstance().getTicketSearchService().findAllFlightinfo(flightSearch);
+	   return list;
+	}
+	/**
+	 * 进入国内机票页面
+	 * @author gaoliang
+	 * @Date 2011-11-21
+	 * @return 国内机票页面
+	 * @throws Exception
+	 */
+	public String toTicket() throws Exception {
+
+		System.out.println("来到了国内机票页面!!!");
+		//从缓存中得到航空公司信息
+		listAirCompany=Server.getInstance().getTicketSearchService().getAircompanyCache();
+		//查询帮助信息
+		//添加人:陈星
+		//添加时间:2011-11-21
+		seachInfocontent();
+		//查询资讯信息
+		//添加人:陈星
+		//添加时间:2011-11-21
+		seachInformationinfo();
+		return "toticket";
+
+	}	
+	
+	/**
+	 * 根据帮助信息类型ID查询NAME
+	 * @author 陈星
+	 * @Date 2011-11-21
+	 * @param id 帮助信息类型ID
+	 * @param 
+	 * @return  帮助信息类型name
+	 */
+	public String GetInfoTypeNameById(long id){
+		
+		return Server.getInstance().getMemberService().findInfotype(id).getTypename();
+	}
+	/**
+	 * 查询帮助信息
+	 * @author 陈星
+	 * @Date 2011-11-21
+	 * @param 
+	 * @param 
+	 * @return  帮助信息列表
+	 */
+	public void seachInfocontent(){
+		
+		String where =" where 1=1 and "+Infocontent.COL_typeid+" = ( SELECT "+Infotype.COL_id+" FROM "+Infotype.TABLE+" where "+Infotype.COL_typename+" ='相关信息')";
+		ListInfocontent =Server.getInstance().getMemberService().findAllInfocontent(where, " ORDER BY ID DESC ", 20, 0);
+		if(ListInfocontent.size()>0){
+		typeid=ListInfocontent.get(0).getTypeid();
+		}
+	}
+	/**
+	 * 查询最新资讯信息
+	 * @author 陈星
+	 * @Date 2011-11-21
+	 * @param 
+	 * @param 
+	 * @return  资讯信息列表
+	 */
+	public void seachInformationinfo(){
+		
+		String where=" where 1=1 ";
+		ListInformationinfo=Server.getInstance().getMemberService().findAllInformationinfo(where, " ORDER BY ID DESC ", 7, 0);
+	
+	}
+	
+	@Override
+	public Object getModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int getS_traveltype() {
+		return s_traveltype;
+	}
+
+	public void setS_traveltype(int s_traveltype) {
+		this.s_traveltype = s_traveltype;
+	}
+
+	public String getS_depcitycode() {
+		return s_depcitycode;
+	}
+
+	public void setS_depcitycode(String s_depcitycode) {
+		this.s_depcitycode = s_depcitycode;
+	}
+
+	public String getS_arrcitycode() {
+		return s_arrcitycode;
+	}
+
+	public void setS_arrcitycode(String s_arrcitycode) {
+		this.s_arrcitycode = s_arrcitycode;
+	}
+
+	public String getS_startdate() {
+		return s_startdate;
+	}
+
+	public void setS_startdate(String s_startdate) {
+		this.s_startdate = s_startdate;
+	}
+
+	public String getS_backdate() {
+		return s_backdate;
+	}
+
+	public void setS_backdate(String s_backdate) {
+		this.s_backdate = s_backdate;
+	}
+
+	public List<FlightInfo> getListFlightInfoAll() {
+		return listFlightInfoAll;
+	}
+
+	public void setListFlightInfoAll(List<FlightInfo> listFlightInfoAll) {
+		this.listFlightInfoAll = listFlightInfoAll;
+	}
+
+	public String getS_aircompanycode() {
+		return s_aircompanycode;
+	}
+
+	public void setS_aircompanycode(String s_aircompanycode) {
+		this.s_aircompanycode = s_aircompanycode;
+	}
+
+	public List<Aircompany> getListAirCompany() {
+		return listAirCompany;
+	}
+
+	public void setListAirCompany(List<Aircompany> listAirCompany) {
+		this.listAirCompany = listAirCompany;
+	}
+
+
+	  public List<Infocontent> getListInfocontent() {
+			return ListInfocontent;
+		}
+
+		public void setListInfocontent(List<Infocontent> listInfocontent) {
+			ListInfocontent = listInfocontent;
+		}
+
+		public long getTypeid() {
+			return typeid;
+		}
+
+		public void setTypeid(long typeid) {
+			this.typeid = typeid;
+		}
+
+		public List<Informationinfo> getListInformationinfo() {
+			return ListInformationinfo;
+		}
+
+		public void setListInformationinfo(List<Informationinfo> listInformationinfo) {
+			ListInformationinfo = listInformationinfo;
+		}
+
+}

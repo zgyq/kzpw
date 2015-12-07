@@ -1,0 +1,72 @@
+/* CSS Document */
+*{ margin:0; padding:0;  list-style-type:none; text-decoration:none;}
+body{font-size:12px; font-family:tahoma, "宋体" ; }
+input,img{vertical-align:middle;}
+a{color:#666666;}
+a:hover{color:#0000FF;}
+.f{ float:left;}
+.r{float:right;}
+.c{ clear:both;}
+.c2{content:"."; display:block; height:0; _height:1%; clear:both; visibility:hidden;}
+.box{border:1px solid #BDD2E0;}
+.table_color{ background:#F3F7F8}
+.table_color_1{ background:#FAFCFC}
+.table{line-height:24px; border-collapse:collapse; background:#FFFFFF; margin:0 auto;}
+.del{margin:0; padding:0; }
+.mar_t10{ margin-top:10px;}
+h2{ line-height:40px; text-align:center; margin-top:15px;}
+
+.left,.right{ background:url(../images/right.png) repeat-x;}
+.header,.yiny,.titler{ background:url(../images/bg.png) ;}
+.weler,.baoer,.indexer,.hongqier,.shandian,.duihua,.menu1O,.texter,.buttoner,.goer,.tishier,.tianer,.mianbaoer,.button_lcer,.jt_lefter,.jt_righter,.menu{background:url(../images/button.png) ;}
+
+
+#head{ height:80px; line-height:80px; overflow:hidden;}
+#head .logo{ margin-top:7px; margin-left:23px; display:inline}
+#head .mnue{ margin-right:22px; display:inline}
+#head .wel{ display:block; width:14px; height:14px; float:left; margin-top:33px; margin-right:8px; overflow:hidden; }
+#head .well{display:block; width:16px; height:14px; float:left; margin-top:33px; margin-right:8px; background-position:-40px 0;overflow:hidden;  }
+#head .out{display:block; width:14px; height:14px; float:left; margin-top:33px; margin-right:8px; background-position:-60px 0; margin-left:10px; overflow:hidden; }
+#head .shu{display:block; width:1px; height:31px; float:left; margin-top:23px; margin-right:8px; background-position:0px -20px; margin-left:10px; overflow:hidden; }
+#head .name{float:left; display:block;}
+#head .role{display:block; margin-top:-24px; margin-left:30px;}
+#head .role_box{display:block; width:112px; border:none;  height:29px; margin-top:23px; background-position:0 -300px;}
+#head .renxing{ display:block; background-position:-200px 0; height:16px; width:16px; float:left; margin-top:30px; margin-right:6px; }
+
+/*-----------------top样式  ----------------*/
+
+
+#left{width:204px; overflow:hidden;  line-height:25px; border-right:1px solid #98B5C8;}
+#left .column{width:178px;  margin:15px 10px 0px 10px; background:#FFFFFF ; padding-bottom:1px;}
+#left .menu{background-position:-200px -260px; height:25px; margin:0 1px 0 1px; overflow:hidden; padding-left:25px; cursor:pointer;}
+#left .bao{ background-position:-80px 0; width:16px; height:15px; float:left; margin-right:10px; margin:5px; overflow:hidden; }
+#left .nav{width:156px; margin:0 auto; margin-top:10px;}
+#left .nav ul{}
+#left .nav ul li{  width:138px; line-height:25px; height:26px; padding-left:20px; overflow:hidden;}
+#left .lib{background:url(../images/button.png) -20px -20px; width:138px; line-height:25px; height:26px; padding-left:20px; overflow:hidden; }
+#left .lia{  width:138px; line-height:25px; height:26px; padding-left:20px; overflow:hidden; background:url(../images/button.png) -200px -20px; }
+#left .lic{background:url(../images/left.png);}
+#left .yinying{height:10px; background-position:0 -800px ; margin:4px 1px 0 1px; overflow:hidden;}
+
+
+#right{width:100%; overflow:hidden;line-height:25px;}
+#right .index{ width:16px; height:15px; overflow:hidden; background-position:-120px 0; display:block; float:left; margin:0 5px 0 20px;  display:inline;}
+#right .line_x{width:98%; height:1px;background:#98B5C8; border-bottom:1px solid #fff; overflow:hidden; margin:0 auto; margin-top:5px;}
+#right .content{width:94%; margin:0 auto; margin-top:10px; }
+#right .title{ background-position:0 -820px; line-height:26px; height:24px; margin:1px;}
+#right .hongqi{ background-position:-140px 0; width:16px; height:16px; display:block; overflow:hidden; margin:6px 6px 0 6px;}
+#right .shandian{ background-position:-160px 0; width:16px; height:16px; display:block; overflow:hidden; margin:6px 6px 0 6px;}
+#right .duihua{ background-position:-180px 0; width:16px; height:16px; display:block; overflow:hidden; margin:6px 6px 0 6px;}
+#right .cont{border-top:1px solid #BDD2E0; padding:3px; background:#FFFFFF;}
+td{ padding-left:10px; padding-right:10px;}
+
+
+.banquan{text-align:center; margin-top:50px;}
+.load{ width:50%; margin:0 auto; height:100%; text-align:center;}
+.logo_lo{width:418px; margin:0 auto; margin-top:90px;}
+
+
+
+
+.limove{ color:#FF0000}
+.liout{ color:#009966}

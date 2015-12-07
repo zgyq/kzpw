@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Tickctspa">
+  
+  <typeAlias alias="Tickctspa" type="com.yf.system.base.tickctspa.Tickctspa"/>
+  
+
+  <resultMap id="resultTickctspaMap" class="Tickctspa">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="period" column="C_PERIOD"/>
+  
+     <result property="desc" column="C_DESC"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+  
+     <result property="homeprice" column="C_HOMEPRICE"/>
+  
+     <result property="pic" column="C_PIC"/>
+  
+     <result property="pic2" column="C_PIC2"/>
+  
+     <result property="pic3" column="C_PIC3"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+   
+  </resultMap>
+  
+  <select id="findAllTickctspa"  resultMap="resultTickctspaMap"  parameterClass="java.util.Map">
+  
+    select * from T_TICKCTSPA
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTickctspaBySql"  resultMap="resultTickctspaMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTickctspaBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTickctspaBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TICKCTSPA
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTickctspa" parameterClass="long" resultClass="Tickctspa">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_PRICE as price,
+	  			C_PERIOD as period,
+	  			C_DESC as [desc],
+	  			C_CREATETIME as createtime,
+	  			C_CREATEUSER as createuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language,
+	  			C_HOMEPRICE as homeprice,
+	  			C_PIC as pic,
+	  			C_PIC2 as pic2,
+	  			C_PIC3 as pic3,
+	  			C_DESCRIPTION as description 
+     from T_TICKCTSPA
+    where ID = #id#
+  </select>
+   
+  <insert id="createTickctspa" parameterClass="Tickctspa">
+    insert into T_TICKCTSPA ( 
+    	ID,
+	  			C_NAME,
+	  			C_PRICE,
+	  			C_PERIOD,
+	  			C_DESC,
+	  			C_CREATETIME,
+	  			C_CREATEUSER,
+	  			C_MODIFYTIME,
+	  			C_MODIFYUSER,
+	  			C_UCODE,
+	  			C_LANGUAGE,
+	  			C_HOMEPRICE,
+	  			C_PIC,
+	  			C_PIC2,
+	  			C_PIC3,
+	  			C_DESCRIPTION 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+							#price:DECIMAL#,
+						
+	  						#period#,
+	  					
+	  						#desc#,
+	  					
+	  						#createtime#,
+	  					
+	  						#createuser#,
+	  					
+	  						#modifytime#,
+	  					
+	  						#modifyuser#,
+	  					
+							#ucode:DECIMAL#,
+						
+							#language:DECIMAL#,
+						
+							#homeprice:DECIMAL#,
+						
+	  						#pic#,
+	  					
+	  						#pic2#,
+	  					
+	  						#pic3#,
+	  					
+	  						#description#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTickctspa" parameterClass="long">
+    delete from T_TICKCTSPA
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTickctspa" parameterClass="Tickctspa">
+    update T_TICKCTSPA 
+    set 
+    	C_NAME = #name#,
+	  					C_PRICE = #price:DECIMAL#,
+						C_PERIOD = #period#,
+	  					C_DESC = #desc#,
+	  					C_CREATETIME = #createtime#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_HOMEPRICE = #homeprice:DECIMAL#,
+						C_PIC = #pic#,
+	  					C_PIC2 = #pic2#,
+	  					C_PIC3 = #pic3#,
+	  					C_DESCRIPTION = #description#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

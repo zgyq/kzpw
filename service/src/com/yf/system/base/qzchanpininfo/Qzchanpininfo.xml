@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Qzchanpininfo">
+  
+  <typeAlias alias="Qzchanpininfo" type="com.yf.system.base.qzchanpininfo.Qzchanpininfo"/>
+  
+
+  <resultMap id="resultQzchanpininfoMap" class="Qzchanpininfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="outid" column="C_OUTID"/>
+  
+     <result property="title" column="C_TITLE"/>
+  
+     <result property="titleurl" column="C_TITLEURL"/>
+  
+     <result property="country" column="C_COUNTRY"/>
+  
+     <result property="category" column="C_CATEGORY"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="sprice" column="C_SPRICE"/>
+  
+     <result property="qprice" column="C_QPRICE"/>
+  
+     <result property="dealcity" column="C_DEALCITY"/>
+  
+     <result property="area" column="C_AREA"/>
+  
+     <result property="confine" column="C_CONFINE"/>
+  
+     <result property="feeinfo" column="C_FEEINFO"/>
+  
+     <result property="validitydate" column="C_VALIDITTDATE"/>
+  
+     <result property="settleday" column="C_SETTLEDAY"/>
+  
+     <result property="intendingday" column="C_INTENDINGDAY"/>
+  
+     <result property="numberofentries" column="C_NUMBEROFENTRIES"/>
+  
+     <result property="isexam" column="C_ISEXAM"/>
+  
+     <result property="smalltext" column="C_SMALLTEXT"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllQzchanpininfo"  resultMap="resultQzchanpininfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_QZCHANPININFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllQzchanpininfoBySql"  resultMap="resultQzchanpininfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteQzchanpininfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countQzchanpininfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_QZCHANPININFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findQzchanpininfo" parameterClass="long" resultClass="Qzchanpininfo">
+    select 
+    	ID as id,
+	  			C_OUTID as outid,
+	  			C_TITLE as title,
+	  			C_TITLEURL as titleurl,
+	  			C_COUNTRY as country,
+	  			C_CATEGORY as category,
+	  			C_PRICE as price,
+	  			C_SPRICE as sprice,
+	  			C_QPRICE as qprice,
+	  			C_DEALCITY as dealcity,
+	  			C_AREA as area,
+	  			C_CONFINE as confine,
+	  			C_FEEINFO as feeinfo,
+	  			C_VALIDITTDATE as validitydate,
+	  			C_SETTLEDAY as settleday,
+	  			C_INTENDINGDAY as intendingday,
+	  			C_NUMBEROFENTRIES as numberofentries,
+	  			C_ISEXAM as isexam,
+	  			C_SMALLTEXT as smalltext,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state 
+     from T_QZCHANPININFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createQzchanpininfo" parameterClass="Qzchanpininfo">
+    insert into T_QZCHANPININFO ( 
+    	ID,
+	  			C_OUTID,
+	  			C_TITLE,
+	  			C_TITLEURL,
+	  			C_COUNTRY,
+	  			C_CATEGORY,
+	  			C_PRICE,
+	  			C_SPRICE,
+	  			C_QPRICE,
+	  			C_DEALCITY,
+	  			C_AREA,
+	  			C_CONFINE,
+	  			C_FEEINFO,
+	  			C_VALIDITTDATE,
+	  			C_SETTLEDAY,
+	  			C_INTENDINGDAY,
+	  			C_NUMBEROFENTRIES,
+	  			C_ISEXAM,
+	  			C_SMALLTEXT,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#outid#,
+	  					
+	  						#title#,
+	  					
+	  						#titleurl#,
+	  					
+	  						#country#,
+	  					
+	  						#category#,
+	  					
+	  						#price#,
+	  					
+	  						#sprice#,
+	  					
+	  						#qprice#,
+	  					
+	  						#dealcity#,
+	  					
+	  						#area#,
+	  					
+	  						#confine#,
+	  					
+	  						#feeinfo#,
+	  					
+	  						#validitydate#,
+	  					
+	  						#settleday#,
+	  					
+	  						#intendingday#,
+	  					
+	  						#numberofentries#,
+	  					
+	  						#isexam#,
+	  					
+	  						#smalltext#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteQzchanpininfo" parameterClass="long">
+    delete from T_QZCHANPININFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateQzchanpininfo" parameterClass="Qzchanpininfo">
+    update T_QZCHANPININFO 
+    set 
+    	C_OUTID = #outid#,
+	  					C_TITLE = #title#,
+	  					C_TITLEURL = #titleurl#,
+	  					C_COUNTRY = #country#,
+	  					C_CATEGORY = #category#,
+	  					C_PRICE = #price#,
+	  					C_SPRICE = #sprice#,
+	  					C_QPRICE = #qprice#,
+	  					C_DEALCITY = #dealcity#,
+	  					C_AREA = #area#,
+	  					C_CONFINE = #confine#,
+	  					C_FEEINFO = #feeinfo#,
+	  					C_VALIDITTDATE = #validitydate#,
+	  					C_SETTLEDAY = #settleday#,
+	  					C_INTENDINGDAY = #intendingday#,
+	  					C_NUMBEROFENTRIES = #numberofentries#,
+	  					C_ISEXAM = #isexam#,
+	  					C_SMALLTEXT = #smalltext#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 门票订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotorder createSpotorder(Spotorder spotorder) throws SQLException;
+	
+	/**
+	 * 删除 门票订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotorder(long id);
+	
+	
+	/**
+	 * 修改 门票订单
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotorder(Spotorder spotorder);
+
+		
+	/**
+	 * 修改 门票订单但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotorderIgnoreNull(Spotorder spotorder);
+		
+	
+	/**
+	 * 查找 门票订单
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotorder(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 门票订单
+	 * @param id
+	 * @return
+	 */
+	public Spotorder findSpotorder(long id);
+	
+	
+	/** 
+	 * 查找 门票订单
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotorderForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找门票订单
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotorderBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 门票订单
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotorderBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotorderBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISpotorderComponent spotorderComponent;
+	  
+ 	
+ 	public ISpotorderComponent getSpotorderComponent() {
+		return spotorderComponent;
+	}
+	public void setSpotorderComponent(ISpotorderComponent  spotorderComponent) {
+		this.spotorderComponent = spotorderComponent;
+	}
+	/**
+	 * 创建 门票订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotorder createSpotorder(Spotorder spotorder) throws SQLException{
+	
+		return spotorderComponent.createSpotorder(spotorder);
+	}
+	/**
+	 * 删除 门票订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotorder(long id){
+	
+		return spotorderComponent.deleteSpotorder(id);
+	}
+	
+	
+	/**
+	 * 修改 门票订单
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotorder(Spotorder spotorder){
+		return spotorderComponent.updateSpotorder(spotorder);
+	
+	}
+
+		
+	/**
+	 * 修改 门票订单但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotorderIgnoreNull(Spotorder spotorder){
+			return spotorderComponent.updateSpotorderIgnoreNull(spotorder);
+	
+	}
+	
+	/**
+	 * 查找 门票订单
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotorder(String where, String orderby,int limit,int offset){
+		return spotorderComponent.findAllSpotorder(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 门票订单
+	 * @param id
+	 * @return
+	 */
+	public Spotorder findSpotorder(long id){
+		return spotorderComponent.findSpotorder(id);
+	}
+	
+	/** 
+	 * 查找 门票订单
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotorderForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return spotorderComponent.findAllSpotorder(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找门票订单
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotorderBySql(String sql,int limit,int offset){
+		return spotorderComponent.findAllSpotorder(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 门票订单
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotorderBySql(String sql){
+		return spotorderComponent.excuteSpotorderBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotorderBySql(String sql){
+		return spotorderComponent.countSpotorderBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Tuipiao">
+  
+  <typeAlias alias="Tuipiao" type="com.yf.system.base.tuipiao.Tuipiao"/>
+  
+
+  <resultMap id="resultTuipiaoMap" class="Tuipiao">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="rttime" column="C_RTTIME"/>
+  
+     <result property="ordercode" column="C_ORDERCODE"/>
+  
+     <result property="pnr" column="C_PNR"/>
+  
+     <result property="number" column="C_NUMBER"/>
+  
+     <result property="rnumber" column="C_RNUMBER"/>
+  
+     <result property="applytime" column="C_APPLYTIME"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="office" column="C_OFFICE"/>
+  
+     <result property="tuiprice" column="C_TUIPRICE"/>
+  
+     <result property="tuitime" column="C_TUITIME"/>
+  
+     <result property="ticketno" column="C_TICKETNO"/>
+  
+     <result property="passenger" column="C_PASSENGER"/>
+  
+     <result property="ptype" column="C_PTYPE"/>
+  
+     <result property="startcity" column="C_STARTCITY"/>
+  
+     <result property="endcity" column="C_ENDCITY"/>
+  
+     <result property="sail" column="C_SAIL"/>
+  
+     <result property="aircompany" column="C_AIRCOMPANY"/>
+  
+     <result property="flightnum" column="C_FLIGHTNUM"/>
+  
+     <result property="flighttime" column="C_FLIGHTTIME"/>
+  
+     <result property="cabin" column="C_CABIN"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="jijian" column="C_JIJIAN"/>
+  
+     <result property="ranyou" column="C_RANYOU"/>
+  
+     <result property="talfee" column="C_TALFEE"/>
+  
+     <result property="journeytype" column="C_JOURNEYTYPE"/>
+  
+     <result property="fuwufei" column="C_FUWUFEI"/>
+   
+  </resultMap>
+  
+  <select id="findAllTuipiao"  resultMap="resultTuipiaoMap"  parameterClass="java.util.Map">
+  
+    select * from T_TUIPIAO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTuipiaoBySql"  resultMap="resultTuipiaoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTuipiaoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTuipiaoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TUIPIAO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTuipiao" parameterClass="long" resultClass="Tuipiao">
+    select 
+    	ID as id,
+	  			C_RTTIME as rttime,
+	  			C_ORDERCODE as ordercode,
+	  			C_PNR as pnr,
+	  			C_NUMBER as number,
+	  			C_RNUMBER as rnumber,
+	  			C_APPLYTIME as applytime,
+	  			C_STATE as state,
+	  			C_OFFICE as office,
+	  			C_TUIPRICE as tuiprice,
+	  			C_TUITIME as tuitime,
+	  			C_TICKETNO as ticketno,
+	  			C_PASSENGER as passenger,
+	  			C_PTYPE as ptype,
+	  			C_STARTCITY as startcity,
+	  			C_ENDCITY as endcity,
+	  			C_SAIL as sail,
+	  			C_AIRCOMPANY as aircompany,
+	  			C_FLIGHTNUM as flightnum,
+	  			C_FLIGHTTIME as flighttime,
+	  			C_CABIN as cabin,
+	  			C_PRICE as price,
+	  			C_JIJIAN as jijian,
+	  			C_RANYOU as ranyou,
+	  			C_TALFEE as talfee,
+	  			C_JOURNEYTYPE as journeytype,
+	  			C_FUWUFEI as fuwufei 
+     from T_TUIPIAO
+    where ID = #id#
+  </select>
+   
+  <insert id="createTuipiao" parameterClass="Tuipiao">
+    insert into T_TUIPIAO ( 
+    	ID,
+	  			C_RTTIME,
+	  			C_ORDERCODE,
+	  			C_PNR,
+	  			C_NUMBER,
+	  			C_RNUMBER,
+	  			C_APPLYTIME,
+	  			C_STATE,
+	  			C_OFFICE,
+	  			C_TUIPRICE,
+	  			C_TUITIME,
+	  			C_TICKETNO,
+	  			C_PASSENGER,
+	  			C_PTYPE,
+	  			C_STARTCITY,
+	  			C_ENDCITY,
+	  			C_SAIL,
+	  			C_AIRCOMPANY,
+	  			C_FLIGHTNUM,
+	  			C_FLIGHTTIME,
+	  			C_CABIN,
+	  			C_PRICE,
+	  			C_JIJIAN,
+	  			C_RANYOU,
+	  			C_TALFEE,
+	  			C_JOURNEYTYPE,
+	  			C_FUWUFEI 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#rttime#,
+	  					
+	  						#ordercode#,
+	  					
+	  						#pnr#,
+	  					
+							#number:DECIMAL#,
+						
+							#rnumber:DECIMAL#,
+						
+	  						#applytime#,
+	  					
+							#state:DECIMAL#,
+						
+	  						#office#,
+	  					
+							#tuiprice:DECIMAL#,
+						
+	  						#tuitime#,
+	  					
+	  						#ticketno#,
+	  					
+	  						#passenger#,
+	  					
+	  						#ptype#,
+	  					
+	  						#startcity#,
+	  					
+	  						#endcity#,
+	  					
+	  						#sail#,
+	  					
+	  						#aircompany#,
+	  					
+	  						#flightnum#,
+	  					
+	  						#flighttime#,
+	  					
+	  						#cabin#,
+	  					
+							#price:DECIMAL#,
+						
+							#jijian:DECIMAL#,
+						
+							#ranyou:DECIMAL#,
+						
+							#talfee:DECIMAL#,
+						
+	  						#journeytype#,
+	  					
+  							#fuwufei:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTuipiao" parameterClass="long">
+    delete from T_TUIPIAO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTuipiao" parameterClass="Tuipiao">
+    update T_TUIPIAO 
+    set 
+    	C_RTTIME = #rttime#,
+	  					C_ORDERCODE = #ordercode#,
+	  					C_PNR = #pnr#,
+	  					C_NUMBER = #number:DECIMAL#,
+						C_RNUMBER = #rnumber:DECIMAL#,
+						C_APPLYTIME = #applytime#,
+	  					C_STATE = #state:DECIMAL#,
+						C_OFFICE = #office#,
+	  					C_TUIPRICE = #tuiprice:DECIMAL#,
+						C_TUITIME = #tuitime#,
+	  					C_TICKETNO = #ticketno#,
+	  					C_PASSENGER = #passenger#,
+	  					C_PTYPE = #ptype#,
+	  					C_STARTCITY = #startcity#,
+	  					C_ENDCITY = #endcity#,
+	  					C_SAIL = #sail#,
+	  					C_AIRCOMPANY = #aircompany#,
+	  					C_FLIGHTNUM = #flightnum#,
+	  					C_FLIGHTTIME = #flighttime#,
+	  					C_CABIN = #cabin#,
+	  					C_PRICE = #price:DECIMAL#,
+						C_JIJIAN = #jijian:DECIMAL#,
+						C_RANYOU = #ranyou:DECIMAL#,
+						C_TALFEE = #talfee:DECIMAL#,
+						C_JOURNEYTYPE = #journeytype#,
+	  					C_FUWUFEI = #fuwufei:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

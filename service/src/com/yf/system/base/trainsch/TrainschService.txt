@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 列车时刻
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Trainsch createTrainsch(Trainsch trainsch) throws SQLException;
+	
+	/**
+	 * 删除 列车时刻
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTrainsch(long id);
+	
+	
+	/**
+	 * 修改 列车时刻
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTrainsch(Trainsch trainsch);
+
+		
+	/**
+	 * 修改 列车时刻但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTrainschIgnoreNull(Trainsch trainsch);
+		
+	
+	/**
+	 * 查找 列车时刻
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTrainsch(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 列车时刻
+	 * @param id
+	 * @return
+	 */
+	public Trainsch findTrainsch(long id);
+	
+	
+	/** 
+	 * 查找 列车时刻
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTrainschForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找列车时刻
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTrainschBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 列车时刻
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTrainschBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTrainschBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITrainschComponent trainschComponent;
+	  
+ 	
+ 	public ITrainschComponent getTrainschComponent() {
+		return trainschComponent;
+	}
+	public void setTrainschComponent(ITrainschComponent  trainschComponent) {
+		this.trainschComponent = trainschComponent;
+	}
+	/**
+	 * 创建 列车时刻
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Trainsch createTrainsch(Trainsch trainsch) throws SQLException{
+	
+		return trainschComponent.createTrainsch(trainsch);
+	}
+	/**
+	 * 删除 列车时刻
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTrainsch(long id){
+	
+		return trainschComponent.deleteTrainsch(id);
+	}
+	
+	
+	/**
+	 * 修改 列车时刻
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTrainsch(Trainsch trainsch){
+		return trainschComponent.updateTrainsch(trainsch);
+	
+	}
+
+		
+	/**
+	 * 修改 列车时刻但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTrainschIgnoreNull(Trainsch trainsch){
+			return trainschComponent.updateTrainschIgnoreNull(trainsch);
+	
+	}
+	
+	/**
+	 * 查找 列车时刻
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTrainsch(String where, String orderby,int limit,int offset){
+		return trainschComponent.findAllTrainsch(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 列车时刻
+	 * @param id
+	 * @return
+	 */
+	public Trainsch findTrainsch(long id){
+		return trainschComponent.findTrainsch(id);
+	}
+	
+	/** 
+	 * 查找 列车时刻
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTrainschForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return trainschComponent.findAllTrainsch(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找列车时刻
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTrainschBySql(String sql,int limit,int offset){
+		return trainschComponent.findAllTrainsch(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 列车时刻
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTrainschBySql(String sql){
+		return trainschComponent.excuteTrainschBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTrainschBySql(String sql){
+		return trainschComponent.countTrainschBySql(sql);
+	}
+	
+	
+

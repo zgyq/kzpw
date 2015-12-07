@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Cabin">
+  
+  <typeAlias alias="Cabin" type="com.yf.system.base.cabin.Cabin"/>
+  
+
+  <resultMap id="resultCabinMap" class="Cabin">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="aircompanycode" column="C_AIRCOMPANYCODE"/>
+  
+     <result property="cabincode" column="C_CABINCODE"/>
+  
+     <result property="discount" column="C_DISCOUNT"/>
+  
+     <result property="isenable" column="C_ISENABLE"/>
+  
+     <result property="stratedate" column="C_STRATEDATE"/>
+  
+     <result property="enddate" column="C_ENDDATE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="cabinrule" column="C_CABINRULE"/>
+  
+     <result property="typename" column="C_TYPENAME"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllCabin"  resultMap="resultCabinMap"  parameterClass="java.util.Map">
+  
+    select * from T_CABIN
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCabinBySql"  resultMap="resultCabinMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCabinBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCabinBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CABIN
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCabin" parameterClass="long" resultClass="Cabin">
+    select 
+    	ID as id,
+	  			C_AIRCOMPANYCODE as aircompanycode,
+	  			C_CABINCODE as cabincode,
+	  			C_DISCOUNT as discount,
+	  			C_ISENABLE as isenable,
+	  			C_STRATEDATE as stratedate,
+	  			C_ENDDATE as enddate,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_CABINRULE as cabinrule,
+	  			C_TYPENAME as typename,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_CABIN
+    where ID = #id#
+  </select>
+   
+  <insert id="createCabin" parameterClass="Cabin">
+    insert into T_CABIN ( 
+    	ID,
+	  			C_AIRCOMPANYCODE,
+	  			C_CABINCODE,
+	  			C_DISCOUNT,
+	  			C_ISENABLE,
+	  			C_STRATEDATE,
+	  			C_ENDDATE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_CABINRULE,
+	  			C_TYPENAME,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#aircompanycode#,
+	  					
+	  						#cabincode#,
+	  					
+							#discount:DECIMAL#,
+						
+							#isenable:DECIMAL#,
+						
+	  						#stratedate#,
+	  					
+	  						#enddate#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+	  						#cabinrule#,
+	  					
+	  						#typename#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCabin" parameterClass="long">
+    delete from T_CABIN
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCabin" parameterClass="Cabin">
+    update T_CABIN 
+    set 
+    	C_AIRCOMPANYCODE = #aircompanycode#,
+	  					C_CABINCODE = #cabincode#,
+	  					C_DISCOUNT = #discount:DECIMAL#,
+						C_ISENABLE = #isenable:DECIMAL#,
+						C_STRATEDATE = #stratedate#,
+	  					C_ENDDATE = #enddate#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_CABINRULE = #cabinrule#,
+	  					C_TYPENAME = #typename#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

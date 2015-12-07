@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 国际机票乘机人表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Fguest createFguest(Fguest fguest) throws SQLException;
+	
+	/**
+	 * 删除 国际机票乘机人表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteFguest(long id);
+	
+	
+	/**
+	 * 修改 国际机票乘机人表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateFguest(Fguest fguest);
+
+		
+	/**
+	 * 修改 国际机票乘机人表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateFguestIgnoreNull(Fguest fguest);
+		
+	
+	/**
+	 * 查找 国际机票乘机人表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFguest(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 国际机票乘机人表
+	 * @param id
+	 * @return
+	 */
+	public Fguest findFguest(long id);
+	
+	
+	/** 
+	 * 查找 国际机票乘机人表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllFguestForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找国际机票乘机人表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFguestBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 国际机票乘机人表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteFguestBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countFguestBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IFguestComponent fguestComponent;
+	  
+ 	
+ 	public IFguestComponent getFguestComponent() {
+		return fguestComponent;
+	}
+	public void setFguestComponent(IFguestComponent  fguestComponent) {
+		this.fguestComponent = fguestComponent;
+	}
+	/**
+	 * 创建 国际机票乘机人表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Fguest createFguest(Fguest fguest) throws SQLException{
+	
+		return fguestComponent.createFguest(fguest);
+	}
+	/**
+	 * 删除 国际机票乘机人表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteFguest(long id){
+	
+		return fguestComponent.deleteFguest(id);
+	}
+	
+	
+	/**
+	 * 修改 国际机票乘机人表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateFguest(Fguest fguest){
+		return fguestComponent.updateFguest(fguest);
+	
+	}
+
+		
+	/**
+	 * 修改 国际机票乘机人表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateFguestIgnoreNull(Fguest fguest){
+			return fguestComponent.updateFguestIgnoreNull(fguest);
+	
+	}
+	
+	/**
+	 * 查找 国际机票乘机人表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFguest(String where, String orderby,int limit,int offset){
+		return fguestComponent.findAllFguest(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 国际机票乘机人表
+	 * @param id
+	 * @return
+	 */
+	public Fguest findFguest(long id){
+		return fguestComponent.findFguest(id);
+	}
+	
+	/** 
+	 * 查找 国际机票乘机人表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllFguestForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return fguestComponent.findAllFguest(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找国际机票乘机人表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFguestBySql(String sql,int limit,int offset){
+		return fguestComponent.findAllFguest(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 国际机票乘机人表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteFguestBySql(String sql){
+		return fguestComponent.excuteFguestBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countFguestBySql(String sql){
+		return fguestComponent.countFguestBySql(sql);
+	}
+	
+	
+

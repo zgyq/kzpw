@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 4.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="utf-8">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>CSSJS弹出层效果,兼容所有浏览器 破洛洛提供演示</title>
+</head>
+<style>
+body{background:url('');margin:0px;padding:0px}
+input{margin:5px;padding:0px;border:1px solid #000;}
+</style>
+<script type="text/javascript">
+var MyWin = new Win();
+var imgfile = "http://www.poluoluo.com/example/css/1/img/"; //设置图片路径,相对或绝对都行
+var imgname=new Array();
+var img = new Array();
+imgname[0] = imgfile+"c.gif";  
+imgname[1] = imgfile+"b1.png";
+imgname[2] = imgfile+"l1.png";  
+imgname[3] = imgfile+"l2.png";  
+imgname[4] = imgfile+"r1.png";  
+imgname[5] = imgfile+"r2.png";  
+imgname[6] = imgfile+"t1.png";  
+imgname[7] = imgfile+"t2.png";  
+imgname[8] = imgfile+"t3.png";  
+//预读图片
+for (i=0;i<=imgname.length-1;i++)
+{
+   img[i] = new Image();
+   img[i].src = imgname[i];
+}
+var zIndex = 0;
+var Winid  = 0;
+var Ie = /msie/i.test(navigator.userAgent);
+function $(Id){return(document.getElementById(Id))}
+function Win()
+{
+ this.Create = function(mask,title, wbody, w, h, l, t)
+ {
+  Winid++;
+  mask = mask;
+  title = title || "新窗口 - 加载中...";
+  wbody = wbody || " <p align='center'>正在载入…</p>";
+  w = w || 350;
+  h = h || 150;
+  cw = document.documentElement.clientWidth;
+  ch = document.documentElement.clientHeight;
+  sw = document.documentElement.scrollWidth;
+  sh = document.documentElement.scrollHeight;
+        st = (document.documentElement.scrollTop || document.body.scrollTop);
+  if (w > cw)
+  ww = 0;
+  else
+  ww = (cw - w)/2;
+  if (h > ch)
+  hh = 0;
+  else
+  hh = (st + (ch - h)/2);
+  l = l || ww;
+  t = t || hh;
+  
+        if (mask != "no"){
+    var ndiv = document.createElement("DIV");
+    ndiv.setAttribute("id", "ndiv"+ Winid);
+    ndiv.style.cssText = "width:"+ sw +"px;height:"+ sh +"px;left:0px;top:0px;position:absolute;overflow:hidden;background:#fff;filter:alpha(opacity=20); opacity:0.2;-moz-opacity:0.2;";
+    document.body.appendChild(ndiv);
+  
+    if (Ie)
+    {
+    var niframe = document.createElement("iframe");
+    niframe.style.width = sw;
+    niframe.style.height = sh;    
+          niframe.style.top = "0px";    
+          niframe.style.left = "0px";  
+          niframe.style.visibility = "inherit";    
+          niframe.style.filter = "alpha(opacity=0)";    
+          niframe.style.position = "absolute";    
+          niframe.style.zIndex = -1;   
+    ndiv.insertAdjacentElement("afterBegin",niframe);
+    }
+        }
+  var mywin = document.createElement("DIV");
+  mywin.setAttribute("id", "win"+ Winid);
+  mywin.style.cssText = "width:"+ w +"px;height:"+ h +"px;left:0px;top:0px;position:absolute;overflow:hidden;padding:0px;font-family:Arial, 宋体";
+  mywin.style.zIndex = ++zIndex;
+  document.body.appendChild(mywin);
+  
+  var mytie = document.createElement("DIV");
+  var myboy = document.createElement("DIV");
+  var mybom = document.createElement("DIV");
+  
+  mytie.style.cssText = "overflow:hidden;height:30px;font-weight:bold;font-size:14px;width:100%";
+  myboy.style.cssText = "overflow:hidden;width:100%";
+  mybom.style.cssText = "overflow:hidden;height:30px;width:100%";
+  
+  mywin.appendChild(mytie);
+  mywin.appendChild(myboy);
+  mywin.appendChild(mybom);
+  var wintag = [[mytie, 30, 15, "t1"], [mytie, 30, w-30, "t2"], [mytie, 30, 15, "t3"], [myboy, h-45, 15, "l1"], [myboy, h-47, w-32], [myboy, h-45, 15, "r1"], [mybom, 15, 15, "l2"], [mybom, 15, w-30, "b1"], [mybom, 15, 15, "r2"]];
+  for (var i = 0; i < 9; i++)
+  {
+   var temp = document.createElement("DIV");
+   temp.setAttribute("Fid", "win"+ Winid);
+   wintag[i][0].appendChild(temp);
+      if (wintag[i][3])
+   {
+    temp.style.cssText = "float:left;height:"+ wintag[i][1] +"px;width:"+ wintag[i][2] +"px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+imgfile+""+ wintag[i][3] +".png', sizingMethod='scale');background:url('"+imgfile+""+ wintag[i][3] +".png') !important;background:;";
+   }
+   else
+   {
+    temp.style.cssText = "float:left;filter:alpha(Opacity=95,style=0);opacity:0.95;height:"+ wintag[i][1] +"px;width:"+ wintag[i][2] +"px;background:#f7f7f7;border:1px solid #666;overflow:hidden;padding:0px";
+   }
+  }
+  mytie.childNodes[1].innerHTML = "<div style=\"position:absolute;overflow:hidden;height:15px;top:12px;padding-left:4px;padding-right:4px;\"></div><div style=\"position:absolute;background:url('"+imgfile+"c.gif');overflow:hidden;width:43px;height:17px;top:7px !important;right:15px\" title=\"关闭窗口\" onclick=\"MyWin.Close('win"+ Winid +"',10); MyWin.ndiv('ndiv"+ Winid +"',10);\"></div>";
+  this.Title("win"+ Winid, title);
+  this.Body("win"+ Winid, wbody);
+  this.Move_e("win"+ Winid, l, t, 0, 0);
+  return(mywin);
+ }
+ this.Title = function(Id, title)
+ {
+     if (Id == null) return;
+     var o = $(Id);
+     if (!o) return;
+     o.childNodes[0].childNodes[1].childNodes[0].innerHTML = title;
+ }
+ this.Body = function(Id, wbody)
+ {
+     if (Id == null) return;
+     var o = $(Id);
+        if (!o) return;
+        if (wbody.slice(0, 4) == "[pg]")
+            o.childNodes[1].childNodes[1].innerHTML = "<iframe onfocus=\"MyWin.Show('"+ Id +"',this)\" src='"+ wbody.slice(4) +"' frameBorder='0' marginHeight='0' marginWidth='0' scrolling='no' width='100%' height='100%'></iframe>";
+        else
+            o.childNodes[1].childNodes[1].innerHTML = wbody;
+ }
+ this.Show = function(Id)
+    {     
+     if (Id == null) return;
+     var o = $(Id);
+        if (!o) return;
+     o.style.zIndex = ++zIndex;
+    }
+    this.Move_e = function(Id, l , t, ll, tt)
+    {
+     if (typeof(window["ct"+ Id]) != "undefined") clearTimeout(window["ct"+ Id]);
+     var o = $(Id);
+     if (!o) return;
+      o.style.left = l +"px";
+      o.style.top = t +"px";
+     window["ct"+ Id] = window.setTimeout("MyWin.Move_e('"+ Id +"', "+ l +" , "+ t +", "+ ll +", "+ tt +")", 1);
+    }
+    this.Close = function(Id, Opacity)
+    {
+     if (typeof(window["et"+ Id]) != "undefined") clearTimeout(window["et"+ Id]);
+     var o = $(Id);
+     if (!o) return;
+     if (Opacity == 10) o.childNodes[0].childNodes[1].innerHTML = "";
+     if (Ie)
+     {
+      o.style.filter = "alpha(opacity="+ Opacity +",style=0)";
+     }
+     else
+     {
+      o.style.opacity = Opacity / 10;
+     }
+     if (Opacity > 20)
+      Opacity -= 10;
+     else
+      Opacity--;
+     if (Opacity <= 0)
+     {
+         if (o.getElementsByTagName("IFRAME").length != 0)
+         {
+             o.getElementsByTagName("IFRAME").src = "about:blank";
+         }
+         o.innerHTML = "";
+      document.body.removeChild(o);
+      return;
+     }
+     window["et"+ Id] = window.setTimeout("MyWin.Close('"+ Id +"', "+ Opacity +")", 1);
+    }
+    this.ndiv = function(Id, Opacity)
+    {
+     var o = $(Id);
+     if (!o) return;
+     o.innerHTML = "";
+  document.body.removeChild(o);
+  return;
+    }
+}
+</script>
+<body>
+<input type="button" value="这是一个默认窗口,窗口位置默认为当前可视区域的居中,把鼠标往下拉,下面有个按钮可以测试"  onclick="MyWin.Create('','标题','这里是内容,可以是变量哦');"/>
+<br>
+<input type="button" value="这个窗口设置了宽度500px,高度300px" onclick="MyWin.Create('','标题','这里是内容,可以是变量哦','500','300');" />
+<br>
+<input type="button" value="这是一个固定了位置x=600px,y=400px的窗口" onclick="MyWin.Create('','标题','这里是内容,可以是变量哦','500','300','600','400');" />
+<br>
+<input type="button" value="当窗口宽度或高度大于可视区域的宽度或高度,以固定位置的设置优先" onclick="MyWin.Create('','标题','这里是内容,可以是变量哦','700','900','600','400');" />
+<br>
+<input type="button" value="这是没有设置固定位置时的情况" onclick="MyWin.Create('','标题','这里是内容,可以是变量哦','700','900');" />
+<br>
+<input type="button" value="以上窗口都有遮罩,但这个没有" onclick="MyWin.Create('no','标题','这里是内容,可以是变量哦','500','300');" />
+<br>
+<input type="button" value="细心的朋友可能已经发现了,没有遮罩的窗口可以打开无限个哦" onclick="MyWin.Create('no','标题','这里是内容,可以是变量哦','500','300','100','300');" />
+<br>
+<input type="button" value="窗口里除了内容,也可以放iframe" onclick="MyWin.Create('no','我是和谐的百度','[pg]http://www.baidu.com','800','500');" />
+<br>
+<input type="button" value="有遮罩的iframe,同上,盖住select没商量" onclick="MyWin.Create('','我是和谐的百度','[pg]http://www.baidu.com','800','500');" />
+<br>
+<input type="button" value="考虑到大多用于单个窗口,且窗口位置可设置,所以没有写拖动函数,如有需要请自行添加" onclick="MyWin.Create('','^-^','我是不能拖动的');" />
+<br>
+<input type="button" value="本代码测试通过IE6/7/8/9; FF3.6.2; chorme5.0.375.55; Safari4.0.5; Opera10.60" onclick="MyWin.Create('','^-^','本代码测试通过IE6/7/8/9; FF3.6.2; chorme5.0.375.55; Safari4.0.5; Opera10.60');" />
+<br>
+<input type="button" value="本代码脱胎于网络收集的程序,我只是把它们磋成一砣,如有眼熟,请无视之.." onclick="MyWin.Create();" />
+<br>
+<input type="button" value="本代码没有版权,欢迎转载,可用于任何个人或商业应用,但本人不负任何相关责任." onclick="MyWin.Create();" />
+<br>
+<input type="button" value="本人所学有限,不足之处,请大侠们口诛笔伐,我受得了的...." onclick="MyWin.Create();" />
+<br>
+<input type="button" value="BY zxbmt 2010-8-23" onclick="MyWin.Create();" />
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<textarea rows="2" name="S1" cols="20"></textarea><br>
+<select size="1" name="D1">
+<option>1</option>
+<option>2</option>
+</select> <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<input type="button" value="弹出一个iframe" onclick="MyWin.Create('yes','这是一个iframe','[pg]http://www.baidu.com','300','300')" />
+<br>
+<br>
+</body>
+</html>

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Cpzrate">
+  
+  <typeAlias alias="Cpzrate" type="com.yf.system.base.cpzrate.Cpzrate"/>
+  
+
+  <resultMap id="resultCpzrateMap" class="Cpzrate">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="aircompany" column="C_AIRCOMPANY"/>
+  
+     <result property="begindate" column="C_BEGINDATE"/>
+  
+     <result property="enddate" column="C_ENDDATE"/>
+  
+     <result property="startcity" column="C_STARTCITY"/>
+  
+     <result property="endcity" column="C_ENDCITY"/>
+  
+     <result property="airline" column="C_AIRLINE"/>
+  
+     <result property="aircode" column="C_AIRCODE"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="discount" column="C_DISCOUNT"/>
+  
+     <result property="rebate" column="C_REBATE"/>
+  
+     <result property="sprice" column="C_SPRICE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllCpzrate"  resultMap="resultCpzrateMap"  parameterClass="java.util.Map">
+  
+    select * from T_CPZRATE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCpzrateBySql"  resultMap="resultCpzrateMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCpzrateBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCpzrateBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CPZRATE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCpzrate" parameterClass="long" resultClass="Cpzrate">
+    select 
+    	ID as id,
+	  			C_AIRCOMPANY as aircompany,
+	  			C_BEGINDATE as begindate,
+	  			C_ENDDATE as enddate,
+	  			C_STARTCITY as startcity,
+	  			C_ENDCITY as endcity,
+	  			C_AIRLINE as airline,
+	  			C_AIRCODE as aircode,
+	  			C_PRICE as price,
+	  			C_DISCOUNT as discount,
+	  			C_REBATE as rebate,
+	  			C_SPRICE as sprice,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime 
+     from T_CPZRATE
+    where ID = #id#
+  </select>
+   
+  <insert id="createCpzrate" parameterClass="Cpzrate">
+    insert into T_CPZRATE ( 
+    	ID,
+	  			C_AIRCOMPANY,
+	  			C_BEGINDATE,
+	  			C_ENDDATE,
+	  			C_STARTCITY,
+	  			C_ENDCITY,
+	  			C_AIRLINE,
+	  			C_AIRCODE,
+	  			C_PRICE,
+	  			C_DISCOUNT,
+	  			C_REBATE,
+	  			C_SPRICE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#aircompany#,
+	  					
+	  						#begindate#,
+	  					
+	  						#enddate#,
+	  					
+	  						#startcity#,
+	  					
+	  						#endcity#,
+	  					
+	  						#airline#,
+	  					
+	  						#aircode#,
+	  					
+							#price:DECIMAL#,
+						
+							#discount:DECIMAL#,
+						
+							#rebate:DECIMAL#,
+						
+							#sprice:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCpzrate" parameterClass="long">
+    delete from T_CPZRATE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCpzrate" parameterClass="Cpzrate">
+    update T_CPZRATE 
+    set 
+    	C_AIRCOMPANY = #aircompany#,
+	  					C_BEGINDATE = #begindate#,
+	  					C_ENDDATE = #enddate#,
+	  					C_STARTCITY = #startcity#,
+	  					C_ENDCITY = #endcity#,
+	  					C_AIRLINE = #airline#,
+	  					C_AIRCODE = #aircode#,
+	  					C_PRICE = #price:DECIMAL#,
+						C_DISCOUNT = #discount:DECIMAL#,
+						C_REBATE = #rebate:DECIMAL#,
+						C_SPRICE = #sprice:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

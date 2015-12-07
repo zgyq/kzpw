@@ -1,0 +1,1228 @@
+﻿.ml30{margin-left:30px}
+.tuangou{margin-top:10px;border-bottom:1px solid #EAEAEA}
+.tuangou .banner{display:block;width:198px;background:#263573 url(../pic/tuangou.jpg?t=201405301709) 0 -1px;height:180px;border:1px solid #EAEAEA;border-bottom:0}
+.tuangou .tg_li{display:block;text-decoration:none;cursor:pointer}
+.tuangou .tg_li dl{padding:10px;border:1px solid #EAEAEA;border-bottom:0}
+.tuangou .tg_li:hover{background:#F1F4F7}
+.tuangou .tg_li:hover dt{text-decoration:none}
+.tuangou .tg_li dl dt{line-height:20px;margin-bottom:5px;color:#36c;text-decoration:none}
+.tuangou .tg_li dl dd{float:left;color:#666}
+.tuangou .tg_li dl dd span{line-height:16px}
+.tuangou .tg_li dl .tg_price{color:#F38303;line-height:38px;font-weight:bold;margin-right:20px}
+.tuangou .tg_li dl .tg_price strong{font-size:24px}
+.tuangou p{text-align:right;line-height:30px;padding-right:5px;border:1px solid #EAEAEA;border-bottom:0}
+.tuangou p .more{color:#fff;text-decoration:none;color:#36c}
+#w_content{width:960px;margin:0 auto}
+.layout_con{float:left;width:900px;overflow:hidden}
+.layout_fuc{float:right;width:200px}
+.ift_lrd{clear:both;height:0;line-height:0;margin:0 auto;font-size:1px}
+.ift_load{background:url(../pic/loading.gif?t=201405301709) no-repeat;width:16px;height:16px;margin-right:3px;display:inline;padding:4px 8px;*line-height:25px}
+.ift_xww{padding-left:5px}
+a:link,a:visited{color:#1568BD;text-decoration:none}
+a:hover{color:#f38303;text-decoration:none}
+a:active{color:#F60;text-decoration:none}
+a.fuz:link{color:#1568BD;text-decoration:none;border-bottom:#1568BD 1px dashed}
+a.fuz:visited{color:#001d75;text-decoration:none;border-bottom:#001d75 1px dashed}
+a.fuz:hover{color:#f00;text-decoration:none;border-bottom:0}
+a.fuz:active{color:#F60;text-decoration:none;border-bottom:#F60 1px dashed}
+a.ift_no:link{color:#001d75;text-decoration:none}
+a.ift_no:visited{color:#001d75;text-decoration:none}
+a.ift_no:hover{color:#001d75;text-decoration:none}
+.mlx{margin-left:5px}
+.pseudo_link{color:#36c;cursor:pointer}
+.pseudo_link:hover{color:#f60}
+.bor{border-bottom:1px dotted #36c}
+.bor:hover{border-color:#f60}
+inpit,select{font-size:12px}
+.tct{text-align:center;margin-top:5px}
+.trt{text-align:right}
+.red_star{color:red;padding:0 2px 0 0}
+.og{color:#d36200}
+.gy{color:#777}
+.jhy{color:#d36200;font-weight:bold}
+.hong{color:#F00}
+.ahong{color:#b00}
+.hui{color:#777}
+.zt_14{font-size:14px}
+.fp_price{font-weight:bold;color:#f38303;padding-right:15px}
+.bianjia{font-size:12px}
+.fp_c{color:#f38303}
+.fp_ma_3{padding-right:15px}
+.ift_More_b{font-weight:bold}
+.if_cd{float:right}
+.pr_b_top_left{float:left}
+.lo_ps{position:relative}
+.ok_xt{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -341px;width:14px;height:14px}
+.no_xt{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -15px -341px;width:14px;height:14px}
+.eah{border:#b00 solid 2px}
+.flight_bottom{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -35px -341px;width:12px;height:10px;display:inline-block;*margin-left:-2px;_background-position:-35px -338px}
+.flight_top{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -52px -341px;width:12px;height:10px;display:inline-block;*margin-left:-2px;_background-position:-52px -338px}
+.rprice{font-weight:normal}
+.rprice strong{padding:0 3px 0 12px;font:bold 13px arial;color:#f38303}
+.note_a{padding:10px 12px 8px;background:#31659c;font:14px arial,sans-serif;color:#fff}
+.note_a .ac_close{margin:-5px -7px 0 0;_margin-right:-4px}
+.note_exp{padding:0 3px;font:12px/1.6em arial,sans-serif;color:#777}
+a.ac_close{float:right;margin:2px 0 0;text-indent:-9999em;display:block;width:11px;font:1px/1px arial;height:11px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -99px;overflow:hidden}
+a.ac_close:hover{background-position:0 -116px}
+.bt_ord{width:65px;height:28px;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat 0 -2053px;color:#fff;text-align:center;font:14px arial;border:0;cursor:pointer}
+.bt_ord_disnable{width:65px;height:28px;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat 0 -2084px;color:#999;text-align:center;font:14px arial;border:0;cursor:pointer}
+#w_content h1{padding:8px 10px 5px;font:20px SimHei,arial,sans-serif;color:#F38303}
+#w_content .layout_con h1{padding:8px 0 12px}
+.layout_con_h1{margin-top:10px}
+.search_box_w{background:url(../pic/bg_ht_isw.png?t=201405301709) repeat-y -833px top;margin-bottom:10px}
+.search_box{padding:0 0 15px;background:url(../pic/bg_ht_isw.png?t=201405301709) no-repeat -1580px bottom}
+.search_box li{padding:0 0 10px 30px}
+.search_box ul{*margin-top:10px;*margin-left:-30px}
+.search_box li.search_box_top{padding-top:20px;background:url(../pic/bg_ht_isw.png?t=201405301709) no-repeat 0 0}
+.search_box li.search_box_top input{vertical-align:middle;_vertical-align:text-bottom;margin-right:3px;*margin-right:0;margin-left:5px;*margin-left:0}
+.search_box .clx input{vertical-align:middle;*vertical-align:text-bottom}
+.search_box .sub_bt{padding:10px 0 5px;margin:0 25px;border-top:1px dotted #7f7f7f;text-align:center}
+.search_bt{font-size:14px;font-weight:bold;letter-spacing:1em;padding-left:16px;*padding-left:5px}
+.search_bt_an{font-size:14px;font-weight:bold;letter-spacing:1em;padding-left:16px;*padding-left:5px}
+.search_box select{color:#777}
+.search_box .li_hi30{height:30px}
+.search_box .li_hr{width:690px;height:1px;font-size:1px;line-height:0;border-top:1px dotted #7f7f7f;margin:0 auto 3px 0}
+a.s_box_m{*margin-right:-18px;margin-right:30px;_margin-right:15px}
+.search_box .tj_h{background:#feefbd;width:660px;margin-left:28px;padding-top:12px}
+.search_box .tj_h span{padding-right:10px}
+.search_box .tj_h div{margin:-3px 15px 0 -27px;float:left;_margin:-3px 15px 0 -14px;position:relative}
+.search_box .fma{*margin-top:-10px}
+.search_box .fma select{height:20px;margin-left:5px}
+.search_box .fma .mar_1{margin-left:3px;display:inline-block}
+.search_box .fma .ma_h{margin-left:0}
+.search_box .e_flt_ll input{margin-left:5px;margin-right:5px;*margin-left:2px;*margin-right:2px}
+.flt_ll{float:left;width:330px}
+.flt_ll_x{float:left;width:250px}
+.flt_ll_m{margin-left:6px}
+.flt_ll_m_1{margin-left:10px}
+.flt_ll_m_2{margin-top:10px}
+.flt_ll_m_3{margin:0 0 0 189px;*position:absolute;*margin-left:195px;_margin-left:190px}
+.flt_s_date,.flt_s_city{width:152px;height:17px;border:1px solid #859eb2;background:#fff url(../pic/bg_search_flight.png?t=201405301709) no-repeat;color:#777}
+.flt_s_date{background-position:134px -77px}
+.flt_s_city{background-position:134px -58px}
+.flt_st{padding:7px 0 3px;font-weight:bold}
+.flt_plus,.flt_minus{float:right;margin-right:8px;line-height:23px;text-indent:7px}
+.flt_plus_m1{margin-right:35px;*margin-right:30px;_margin-right:17px}
+.flt_minus{background-position:0 -184px}
+a.s_box_m3{text-align:left}
+a.s_box_m2{text-align:left}
+.flt_plus,.flt_minus{display:block;width:74px;height:21px;background:url(../../common/pic/com_bg.png?t=201405301709) no-repeat 0 -132px;text-decoration:none}
+.flt_minus{background-position:0 -184px}
+a.flt_plus:hover{background-position:0 -158px}
+a.flt_minus:hover{background-position:0 -210px}
+.flight_promotion{position:relative}
+.flight_promotion h2{font:bold 14px arial,sans-serif;color:#f38303;position:absolute;left:8px;top:10px}
+.flight_cm{padding:8px 0 12px}
+.fp_table{width:100%}
+.fp_table td,.fp_table th{padding:10px;border-bottom:1px solid #ccc;text-align:left;vertical-align:top}
+.fp_table th{color:#777;font-weight:normal}
+.fp_table th.pal{padding-left:30px}
+.fp_table .mimg{margin-right:3px}
+.fp_table td.fp_nb{padding-bottom:0;border:0}
+.fp_table .bt_ord{margin:0}
+.fp_table .bt_ord_disnable{margin:0}
+.fp_more{text-align:right;margin:0;padding:10px 18px 0 2px;font-weight:normal}
+.fp_fwr{display:inline-block;margin-right:3px;margin-bottom:-5px}
+#cities_nav{padding:0 8px 0 160px;border-bottom:3px solid #3792FF}
+#cities_nav li{float:left;margin-right:1px;text-align:center}
+#cities_nav li a{position:relative;bottom:-3px;float:left;padding-top:7px;width:65px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -71px -610px;text-decoration:none}
+#cities_nav li.action a{color:#f38303;font:bold 14px/1.6em arial,sans-serif;width:70px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -608px}
+#t_sh,#t_gz,#t_sz,#t_hz{display:none}
+.ift_faqs .nbox h2{font:12px arial}
+.ift_list_ser{float:left;margin-top:10px}
+.ift_list{float:right;margin-top:10px}
+.ift_list_sbox{padding:6px 3px 0 7px;background:#fff;zoom:1}
+.nbox .ift_list_sboxw{padding:0}
+.nbox .ift_list_sboxw li{padding:0 0 4px 0;background:transparent}
+.nbox1 .ift_list_sboxw{padding:0}
+.nbox1 .ift_list_sboxw .inp_m input{vertical-align:-2px;*vertical-align:baseline;margin-right:1px;margin-left:3px;*margin-right:0;*margin-left:0}
+.nbox1 .ift_list_sboxw li{padding:2px 0 8px 0;background:transparent;color:#3d2103}
+.ift_sfaq{display:block;padding:6px 8px 4px 27px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -526px -823px}
+.ift_pr{position:absolute;right:0;top:0;width:350px;height:35px;overflow:hidden;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -350px -880px;color:#777}
+.ift_pr li{float:left;padding:18px 0 0 52px}
+.ift_pr li.f{padding-left:0}
+.ift_pr .og{color:#000}
+.tsbox_b{border:#ccc solid 1px;padding:5px 10px;margin-bottom:12px}
+.note_info{padding:4px 0;margin-bottom:5px;clear:both;width:auto;overflow:hidden;position:relative}
+.note_info_x{padding:4px 7px;margin-top:-8px;background:0;border:0;clear:both;width:730px;overflow:hidden;position:relative}
+.note_info .spp{padding:0 16px}
+.note_info .pa_2{padding-left:10px}
+.note_info .pa_3{margin-left:180px;*margin-left:160px;_margin-left:165px}
+.note_info .pa_4{margin-left:20px}
+.note_z{width:43px;height:19px;display:inline-block;line-height:21px;text-align:center;padding-left:10px;position:absolute;top:4px;right:55px}
+.note_y{width:53px;width:48px\9;height:19px;line-height:21px;display:inline-block;text-align:center;padding-right:5px\9;position:absolute;top:4px;right:0}
+.note_wz{cursor:default}
+.note_wy{cursor:default}
+a.note_y:link,a.note_y:visited{color:#001d75;text-decoration:underline}
+a.note_y:hover{color:#f38303;text-decoration:underline}
+a.note_y:active{color:#F60;text-decoration:underline}
+a.note_z:link,a.note_z:visited{color:#001d75;text-decoration:underline}
+a.note_z:hover{color:#f38303;text-decoration:underline}
+a.note_z:active{color:#F60;text-decoration:underline}
+a.note_wz:link,a.note_wz:visited{color:#bdbcbc;text-decoration:none}
+a.note_wz:hover{color:#bdbcbc;text-decoration:none}
+a.note_wz:active{color:#bdbcbc;text-decoration:none}
+a.note_wy:link,a.note_wy:visited{color:#bdbcbc;text-decoration:none}
+a.note_wy:hover{color:#bdbcbc;text-decoration:none}
+a.note_wy:active{color:#bdbcbc;text-decoration:none}
+.iflignt_abs{width:100%;margin:10px 0 5px;border-bottom:1px solid #3792FF}
+.iflignt_abs th{border:1px solid #3792FF;border-width:0 1px 1px 0;text-align:center;font-weight:normal}
+.iflignt_abs td{border-bottom:1px solid #ccc;border-right:1px solid #3792FF;background:#f1f4f7;text-align:center}
+.iflignt_abs .tdnr{border-right:0}
+.iflignt_abs .tdnb{border-bottom:0}
+.iflignt_abs .tdal{background:#fff}
+.iflignt_abs .tdal_b{border-bottom:1px solid #3792FF}
+.iflignt_abs .ke{display:inline-block;margin-right:3px;margin-bottom:-5px}
+.ift_mf{text-align:right;padding-bottom:6px}
+.mf_lr_d,.mf_lr_a,.mf_rr_a,.mf_rr_d{border:0;margin:0 2px;width:10px;height:10px;background:transparent url(../pic/bg_search_flight.png?t=201405301709) no-repeat;vertical-align:middle;cursor:pointer}
+.mf_rr_d{background-position:0 -26px}
+.mf_lr_a{background-position:0 -13px}
+.mf_lr_d{background-position:0 -39px}
+.ift_ltt{margin:4px 0 10px;padding:6px 10px 3px;background:#F1F8FE;font:bold 14px arial,sans-serif}
+.ift_ltt span{font:12px/1.6em arial,sans-serif;padding:0 3px}
+.ift_ltv{border-bottom:3px solid #3792FF;height:25px;margin-top:8px;padding-bottom:2px}
+.ift_ltv li{height:20px;float:left;padding-top:5px}
+.ift_ltv .tnav{padding-left:13px}
+.ift_ltv .s_ma{margin-left:100px;margin-top:3px}
+.ift_ltv .s_ma select{height:20px;vertical-align:middle;vertical-align:baseline\9;font-family:Arial}
+.ift_ltv .s_ma .tdetg{width:250px}
+.ift_ltv_j{width:698px;height:22px;background:#f1f5f8;margin-top:0;padding-top:3px;padding-left:50px}
+.ift_ltv .if_cd{margin-top:5px;margin-top:7px\9;*margin-top:5px}
+.ift_ltv .if_cd input{vertical-align:middle;_vertical-align:text-bottom;margin-right:2px;margin-left:5px}
+.ift_ltv_j .ma_111{margin-left:112px;_margin-left:68px}
+.ift_ltv_j .ma_105{margin-left:123px;_margin-left:122px}
+.ift_ltv_j .ma_65{margin-left:65px}
+.ift_ltv_j li{float:left;font-weight:bold}
+.ift_plt{width:100%;margin:6px 0 4px}
+.ift_plt th{background:#f1f4f7;text-align:left;font-weight:normal}
+.ift_plt th,.ift_plt td{padding:5px 8px 3px}
+.ift_pds .tdodd *,.ift_plt th *{vertical-align:middle}
+.tdodd{width:160px}
+.trr{font:bold 16px arial,sans-serif;padding-right:3px}
+.ift_pds{width:100%;background:#f2f2f2;padding:5px 0}
+.ift_pds td{padding:2px 11px 0;line-height:1}
+.ift_pds .tdodd{width:152px}
+.ift_pds .trt{padding:5px 30px}
+.pro_ads{margin:0 auto 10px}
+.pro_ads img{display:block}
+.nbox{margin-bottom:10px;padding:1px;border:1px solid #ccc;zoom:1}
+.nbox1{margin-bottom:10px;padding:1px;zoom:1;background:url(../pic/researchBg.png?t=201405301709) repeat-x}
+.nbox h2{padding:7px 10px 3px;background:#DEE7EF;font:bold 14px arial,sans-serif}
+.nbox1 h2{padding:10px 0;text-align:center;color:#FFF}
+.nbox1 .tags,.nbox1 ul{padding:8px 10px 4px}
+.nbox1 ul li{padding:0 0 5px 0}
+.nbox1 .bx-s{font-family:SimSun;color:#f38303}
+.nbox1 .tags{line-height:2}
+.nbox1 .tags a{margin-right:6px}
+.nbox1 .tg{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -833px;height:17px;display:inline-block;margin:5px 0 8px 6px;padding:0 0 0 20px}
+.nbox .tags,.nbox ul{padding:8px 10px 4px}
+.nbox ul li{padding:0 0 5px 0}
+.nbox .bx-s{font-family:SimSun;color:#f38303}
+.nbox .tags{line-height:2}
+.nbox .tags a{margin-right:6px}
+.nbox .tg{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -833px;height:17px;display:inline-block;margin:5px 0 8px 6px;padding:0 0 0 20px}
+.nbox_content{padding:6px 10px}
+.nbox .info{margin:5px 10px;padding:5px 10px;border-top:1px dotted #ccc}
+.cbox{width:210px;background-position:top right}
+.cbox_ctl{margin-right:3px;padding-top:3px;background-position:-150px 0}
+.cbox_ctw{margin-right:-3px;background-position:-150px bottom}
+.cbox_cnt{margin-left:3px;padding:0 3px 3px 0;background-position:right bottom}
+.cbox_list{max-height:200px;overflow:auto}
+.cbox_list li{padding:1px 6px}
+.cbox_list li.cur{background:#1c94c4;color:#fff}
+.cbox_error{padding:1px 8px;background:#b00;color:#fff;clear:both}
+.cbox_error_b{padding:1px 8px;background:#fff;color:#131313;clear:both}
+.cbox_title{padding:3px 8px 1px;background:#e8f0f6}
+.cbox_content{padding:4px 8px 2px}
+.hrev_fuc{float:left}
+.hrev_con{float:right}
+.hrev_crumb{padding:12px 0;font-weight:bold}
+.hrev_crumb span{font-weight:normal}
+.nbox h2.hcitys{color:#f38303;padding-right:0}
+.nbox1 h2.hcitys{color:#f38303;padding-right:0}
+.tcitys a{white-space:nowrap}
+.hrev_ser{margin:0 -7px;padding:3px 5px;border:1px solid #d9d9d9;background:#f2f2f2}
+.ccity_ser{width:100px;padding:2px 0 0 2px;margin-right:3px;border:1px solid #859eb2;color:#777}
+.tct .search_bt_s,.tct .search_bt_s_an{background:url(http://www.elongstatic.com/home/pic/home_pic_zn.png?t=201405301709) no-repeat scroll 0 0 transparent;font-size:0;width:130px;height:52px}
+.tct .search_bt_s_an{background:url(http://www.elongstatic.com/home/pic/home_pic_zn.png?t=201405301709) no-repeat scroll 0 0 transparent;font-size:0;width:130px;height:52px}
+.search_bt_s_1{width:61px;height:21px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -314px;border:0;cursor:pointer;_cursor:hand;color:#FFF;font-weight:bold;line-height:22px}
+.hrev_fuc a:link,.hrev_fuc a:visited{text-decoration:none}
+.ccity:link,.ccity:visited{text-decoration:underline}
+.nbox .hrev_hot li{padding:0 0 5px;margin-bottom:7px;background:transparent;border-bottom:1px dotted #777}
+.nbox1 .hrev_hot li{padding:0 0 5px;margin-bottom:7px;background:transparent;border-bottom:1px dotted #777}
+.nbox .hrev_hot h3{font-weight:normal}
+.nbox1 .hrev_hot h3{font-weight:normal}
+.hrev_ath{color:#777;text-align:right}
+.search_box a{text-decoration:none}
+.hrev_filters{padding:0 0 6px 6px}
+.hrev_filtert{float:left;padding:3px 0 0 5px}
+.hrev_filter a.ac_close{display:inline-block;display:-moz-inline-stack;*zoom:1;*display:inline;float:none;margin:0 0 0 4px;position:relative;top:-10px;*top:0}
+.hrev_tnav{padding:7px 10px 0;margin-bottom:4px;border:1px solid #ccc;border-bottom-width:3px}
+.tnav a{padding:4px 8px}
+.tnav .cur{border-top:1px solid #3792FF;border-left:1px solid #3792FF;border-right:1px solid #3792FF;background:#F1F8FE;text-decoration:none;display:block;margin-top:-4px;_position:relative;_margin-bottom:-10px;_zoom:1;_display:inline}
+.tnav .curj{background:#F1F5F8}
+.tnav .curt{background:#F1F5F8}
+.tnav .curj_a{background:#F1F5F8}
+.tnav .curt_a{background:#F1F5F8}
+.hrev_tnav .pages{float:right}
+.pages{text-align:right;padding-bottom:4px}
+.pages a,.pages span{padding:0 3px}
+.hrev_item{padding:12px 0 8px;margin:0 0 6px;border-bottom:1px solid #ddd;clear:both;zoom:1;overflow:hidden}
+.hrev_item_img{float:left;padding-bottom:3px;width:112px;background:#f2f2f2;border:1px solid #d9d9d9;text-align:center}
+.hrev_item_img img{margin:10px auto}
+.hrev_item_con{float:right;width:660px}
+.hrev_intr{float:left;width:354px;line-height:1.7;padding-top:5px}
+.hrev_rev h4{margin:0;padding:11px 13px 3px;font-weight:normal}
+.hrev_intr a,.hrev_rev h4 a{text-decoration:none}
+.hrev_rev p{margin:0;padding:0 13px}
+.hrev_rm{clear:both}
+.hrev_rat{float:left;color:#777}
+.hrev_mlk{float:right}
+.hrev_mlk a{margin-right:8px}
+.hrv_add_form{padding:20px}
+.hrv_add_form dt{font-size:14px}
+.hrv_add_form dd{padding:0 0 16px 28px}
+.hrv_add_note{margin:20px;padding:10px 15px;background:#F1F8FE}
+.hrv_add_note h4{font-size:14px}
+.hrv_add_note p{margin:0}
+.hrv_add_flp{width:475px;border:1px solid #a5acb2}
+.hrv_add_fsp{width:175px;border:1px solid #a5acb2}
+.hrv_add_fta{width:475px;height:106px;border:1px solid #a5acb2;overflow:auto}
+.hrv_tit{padding-left:7px;font-size:14px;line-height:34px}
+.hrv_tit .search_bt{float:right}
+.hrv_topx{padding-left:13px;font:12px/1.6em arial,sans-serif}
+.rvs_item{padding:0 0 10px;margin:0 14px;border:0;border-bottom:1px solid #dcdcdc}
+.nbox .rvs_item p.rvs_item_ns,.nbox .rvs_item_ath{margin-left:0;margin-right:0;padding-left:0;padding-right:0}
+.nbox .rvs_item p.rvs_item_ns{margin-left:-5px}
+.nbox1 .rvs_item p.rvs_item_ns,.nbox1 .rvs_item_ath{margin-left:0;margin-right:0;padding-left:0;padding-right:0}
+.nbox1 .rvs_item p.rvs_item_ns{margin-left:-5px}
+.rvs_item h3,.rvs_item p{margin:0}
+.rvs_item_ath{padding:20px 0 11px;background:transparent;color:#777}
+.rvs_item_ath span{float:none}
+.rvs_item_ath .hrv_anm{padding:0 15px}
+.hrv_uses{padding-top:6px;color:#777}
+.hrv_uses img{margin:0 2px 0 6px}
+.htd_content .rvs_pgs{padding-right:11px}
+.ift_More ul{margin-left:-3px;padding-top:10px}
+.ift_More_delmore{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -469px;width:74px;height:21px;border:0;cursor:pointer}
+.ift_More_delmore_an{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -495px;width:74px;height:21px;border:0;cursor:pointer}
+.ift_More_delmore_1{height:0;_margin-bottom:-20px;_margin-right:-10px}
+.ift_More_delmore_2{text-align:right;height:30px;float:none;_margin-right:-10px}
+.e_flt_mr{clear:both}
+.ift_More_addmore{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -555px;width:74px;height:21px;border:0;cursor:pointer}
+.ift_More_addmore_an{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -587px;width:74px;height:21px;border:0;cursor:pointer}
+.ift_More_jj{margin-top:10px}
+.g_way{width:381px;height:319px}
+.g_way_bk{width:379px;height:311px;border-bottom:#666 solid 1px;border-left:#666 solid 1px;border-right:#666 solid 1px}
+.g_way_bk_1{width:349px;height:283px;border-bottom:#e8e8e8 solid 3px;border-left:#e8e8e8 solid 3px;border-right:#e8e8e8 solid 3px;padding:12px;overflow-x:hidden;overflow-y:auto;text-align:justify;text-justify:inter-ideograph;background:#FFF}
+.g_way_bk_1 img{text-align:center}
+.g_way_d{width:320px;height:280px}
+.g_way_bk_d{width:318px;height:271px;border-bottom:#666 solid 1px;border-left:#666 solid 1px;border-right:#666 solid 1px}
+.g_way_bk_1_d{width:288px;height:244px;border-bottom:#e8e8e8 solid 3px;border-left:#e8e8e8 solid 3px;border-right:#e8e8e8 solid 3px;padding:12px;overflow-x:hidden;overflow-y:auto;text-align:justify;text-justify:inter-ideograph;background:#FFF}
+.ift_zz{width:750px;height:20px}
+.ift_zz_770{width:710px;height:20px}
+.ift_zz_600{width:555px;height:20px}
+.ift_zz_hr{height:1px;width:702px;background:#ccc;float:left;margin-top:9px;font-size:1px;line-height:0}
+.ift_zz_bj{width:43px;height:20px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -524px;float:left;color:#999;padding:0 0 0 5px;height:18px\9;padding:2px 0 0 5px\9}
+.ift_zz_hr_770{height:1px;width:650px;border-bottom:#ccc dashed 1px;float:left;margin-top:9px;font-size:1px;line-height:0}
+.ift_zz_hr_600{height:1px;width:505px;border-bottom:#ccc dashed 1px;float:left;margin-top:9px;font-size:1px;line-height:0}
+.ift_Back_table{background:#F1F8FE;border:#ccc 1px solid;width:768px;height:168px;margin-bottom:20px}
+.ift_Back_table_zt{font-size:14px;font-weight:bold;margin-right:11px;margin-bottom:10px}
+.ift_Back_table_zt_1 span{color:#b00;font-weight:bold}
+.ift_Back_table_zt_1 .li_1{text-indent:7em}
+.ift_Back_table_zt_1{padding:5px;line-height:24px;background:#FFFAD4;border:#ECDF64 dashed 1px;margin-top:10px;margin-bottom:10px}
+.pr_b_top_left .gs{margin-left:10px}
+.pr_b_top_right{float:right}
+.pr_b_pr{width:350px;height:35px;overflow:hidden;background:url(../pic/bg_ift_process.gif?t=201405301709) no-repeat -250px top;margin-top:10px;color:#777}
+.pr_b_pr .og{color:#000}
+.pr_b_pr li{float:left;padding:18px 0 0 52px}
+.pr_b_pr li.f{padding-left:0}
+.pr_b_con{border:#ccc 1px solid;padding:10px 15px;margin-top:5px;zoom:1;_width:928px;_overflow:hidden}
+.pr_b_con .p_top{margin-top:10px}
+.pr_b_con .p_pad{padding-left:35px}
+.pr_b_con .p_pad_1{padding-left:35px}
+.pr_b_con .xhy{margin:30px 0 30px 25px}
+.pr_b_con .xhy ul{float:left;margin-left:20px;width:790px}
+.pr_b_con .xhy .okc{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -720px;width:89px;height:83px;float:left;margin-top:15px}
+.pr_b_con .xhy .hrt{color:#F00;font-weight:bold;font-size:14px}
+.pr_b_ul1 .ift_Back_table_zt span{padding-left:10px}
+.pr_b_con .p_pad_2{padding-left:58px}
+.pr_b_con .m_pad_2{margin-top:5px}
+.pr_b_con .p_pad_w{width:280px}
+.pr_b_con .hr{width:930px;height:1px;font-size:1px;line-height:1px;border-bottom:#ccc solid 1px;margin-top:5px}
+.pr_b_ul1 dt{height:22px}
+.pr_b_ul1 dd{float:left;width:200px;height:22px}
+.pr_b_ul1 .htu{display:block;float:left;margin:9px 3px 0 1px;_margin:8px 0 0 0}
+.pr_b_h{background:#F1F8FE;height:22px;font-size:14px;font-weight:bold;padding:3px 0 0 15px}
+.pr_b_ul2 dt{height:22px}
+.pr_b_ul2 dd{float:left;width:177px;height:22px}
+.pr_b_ul2 .htu{display:inline-block;margin-bottom:-15px;margin-right:-5px}
+.pr_b_ul2 span{padding-left:10px}
+.pr_b_ul1_jju{margin-top:10px}
+.pr_b_ul1_jju_1{margin-top:5px}
+.pr_b_ul1_se{background:none repeat scroll 0 0 #FEEFBD;padding:5px 0 5px 15px}
+.pr_b_ul1_se_span{margin-left:35px}
+.pr_b_ul1_se a{margin-left:50px}
+.pr_b_con_2{border:#ccc 1px solid;margin-top:15px;padding-bottom:5px;zoom:1;_width:958px;_overflow:hidden}
+.pr_b_con_2 .m_33{margin-left:15px}
+.pr_b_con_2 .m_32{margin-left:15px}
+.pr_b_con_2 .m_32 .pr_b_con_3_ul_zt input{vertical-align:middle;*vertical-align:baseline;margin-right:3px;*margin-right:0}
+.pr_b_con_2_top{background:#F1F8FE;padding:5px;border:#FFF 1px solid}
+.pr_b_con_2 .texts{width:550px;height:100px}
+.pr_b_con_k{width:17px;height:17px;text-align:center;line-height:18px;background:#F38303;font-size:14px;font-family:Arial;font-weight:bold;color:#FFF;margin-right:10px;margin-top:2px;overflow:hidden;float:left}
+.pr_c{padding:5px 10px 0 10px}
+.pr_c .ri_b{height:17px}
+.pr_c_1{margin-top:5px}
+.pr_c_1 li{height:30px}
+.pr_c_1 ul{float:left}
+.pr_c_1_ul1{margin-left:10px;_margin-left:5px}
+.pr_ltt{padding-right:24px}
+.pr_ltt_1{padding-left:12px}
+.pr_ltt_2{padding-right:18px;*padding-right:24px}
+.pr_w155{width:155px}
+.pr_w220{width:153px;_height:17px}
+.pr_w225{width:163px}
+.pr_s163{width:78px}
+.pr_s160{width:208px;_height:17px}
+.pr_s161{width:99px;_height:17px}
+.pr_w75{width:74px;_height:17px}
+.pr_w102{width:59px;_height:17px}
+.pr_c_1 .del_a{position:absolute;width:273px;*width:200px;_width:282px}
+.pr_p2{padding-left:15px}
+.pr_p2 li{float:left}
+.pr_p2 .p_l{margin-left:6px;*margin-left:3px}
+.pr_w86{width:50px}
+.pr_w127{width:127px;_height:17px}
+.pr_w90{width:65px;margin-left:2px}
+.pr_w91{width:157px}
+.pr_w92{width:100px;_height:17px}
+.pr_w93{width:130px;_height:17px}
+.pr_w100{width:100px;_height:17px}
+.pr_w110{width:140px;margin-left:5px}
+.pr_w125{width:83px;_height:17px}
+.m_a_d{width:30px;_height:17px}
+.pr_w112{width:98px;_height:17px}
+.pr_w113{width:98px;_height:17px}
+.pr_w114{margin-left:80px}
+.pr_m12{margin-left:15px;margin-bottom:10px}
+.pr_c_select_u113{width:285px}
+.pr_c_select_h20{height:19px;height:20px\9;vertical-align:top;*vertical-align:baseline}
+.pr_c_ma30{width:300px;margin-left:55px}
+.pr_c_bottom{width:18px;height:18px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -72px -341px;border:0;cursor:pointer;margin:0 5px 0 0;margin:0 5px -5px 0\9;*margin:0 5px 0 0\9}
+.pr_c_hr{height:1px;border-bottom:#777 dotted 1px;font-size:1px;line-height:1px;margin:0 auto;width:900px;clear:both}
+.pr_c_hr_5{padding-top:5px}
+.pr_c_hr_6{margin-bottom:10px}
+.pr_c_cj{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -132px;border:0;color:#001d75;width:69px;height:16px;padding:5px 0 0 5px;float:right;margin-right:35px;margin-top:10px;cursor:pointer}
+.pr_c_cj_1{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -184px;border:0;color:#001d75;width:54px;height:18px;padding:3px 0 0 20px;cursor:pointer;position:absolute;margin:0 0 0 200px}
+.pr_c_2{margin-top:15px}
+.pr_c_2 .ma_l{margin-left:22px}
+.pr_c_2 li{float:left;margin-left:15px}
+.pr_c_2 .li_j{margin-left:0}
+.pr_c_2 ul{margin-top:10px;margin-left:22px}
+.pr_b_con_3_ul input{margin-right:3px;*margin-right:0;vertical-align:middle;*vertical-align:baseline}
+.pr_b_con_3_ul li{margin-top:5px}
+.pr_b_con_3_ul_zt{font-weight:bold}
+.pr_b_con_3_ul_jj{margin-left:15px}
+.pr_b_con_4_ju{margin:10px 0}
+.pr_b_con_4_dli{list-style-type:disc;list-style-position:inside}
+.pr_b_con_4_in_1{width:128px;margin-left:10px;height:21px}
+.pr_b_con_4_in_2{width:127px;height:21px}
+.pr_b_con_4_in_3{width:407px;_height:17px}
+.pr_b_con_4_in_4{width:90px;_height:17px}
+.pr_b_con_4_in_6{margin-left:5px}
+.pr_b_con_4_in_7{width:429px;height:21px;margin-left:80px;*margin-left:83px}
+.pr_b_con_4_in_8{width:425px;margin-left:80px;*margin-left:58px;_height:17px}
+.pr_b_con_4_in_9{width:431px;height:21px;margin-left:10px}
+.pr_b_con_4_in_10{width:61px;*width:56px;_height:17px}
+.pr_b_con_4_in_11{width:320px;height:21px;margin-left:10px}
+.pr_b_con_4_in_12{width:162px;*width:159px;_height:17px}
+.pr_b_con_4_in_uli{height:30px}
+.pr_b_con_4_m{margin-left:51px}
+.pr_b_con_4_m_1{margin-left:60px}
+.pr_b_con_4_m_2{margin-left:10px}
+.pr_b_con_4_m_2 .pr_b_con_3_ul_zt input{margin-right:3px;*margin-right:0;vertical-align:middle;*vertical-align:baseline}
+.pr_b_con_5_bank{width:20px;height:20px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -103px -341px;float:left}
+.pr_b_con_6{margin-top:10px}
+.pr_b_con_6 .com_btnout{border:#acadad solid 1px;background:#dfe0e0;color:#acabab;cursor:default}
+.pr_b_con_6_zt{font-weight:bold;font-size:14px;float:left}
+.pr_b_con_6_botton{width:155px;height:35px;background:url("../pic/flight_icon.gif?t=201405301709") no-repeat scroll 0 -2498px transparent;cursor:pointer;border:0;color:#FFF;font-weight:bold;font-size:14px;margin:5px 0 0 375px}
+.pr_b_con_6_botton_1{width:92px;height:30px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -560px;cursor:pointer;border:0;color:#FFF;font-weight:bold;font-size:14px;margin:5px 0 0 425px}
+.pr_b_con_7 li{height:30px}
+.s_jj{margin-left:10px;height:20px}
+.pr_b_con_7 .span_ll{padding-bottom:15px}
+.pr_b_con_7 .br_a{margin-left:10px}
+.ri_b{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 105px -77px;width:125px;border:1px solid #859eb2}
+.pr_b_con_duo li{font-size:14px;height:30px}
+.pr_b_con_3_ul_zt .pr_ts{margin-left:5px;color:#666;font-weight:normal}
+.flt_i_city{background:url("../../common/pic/com_bg.png?t=201405301709") no-repeat scroll 110px -58px #FFF;border:1px solid #7F9DB9;color:#777;cursor:pointer;height:18px;padding-right:2px;width:126px;margin-right:10px}
+#pr_ticket{margin:0;padding:0;overflow:hidden;zoom:1}
+#pr_ticket dt{width:125px;float:left;margin-left:0;display:inline-block;margin-bottom:5px;*margin-bottom:4px}
+#pr_ticket dd{width:795px;float:right;margin-right:0;display:inline-block;text-algin:left;margin-bottom:5px;*margin-bottom:4px}
+#pr_ticket dd .title{width:75px;display:inline-block}
+#pr_ticket dd .name{width:70px;margin-right:5px;height:17px;line-height:17px;color:#777}
+#pr_ticket dd .itick01{width:486px}
+#pr_ticket .switch{margin-right:2px;*margin-right:0;vertical-align:middle;*vertical-align:middle;vertical-align:-6%\9;_vertical-align:5%}
+#pr_ticket dd div{margin-top:5px;*margin-top:4px}
+.pr_hd_pr{background-position:-148px top}
+.pr_hd_pr_o{background-position:-48px top}
+.pr_hd_s_1{margin-bottom:10px;padding-left:15px}
+.pr_hd_s_2{margin-left:15px}
+.pr_hd_s_3{margin-top:20px;margin-bottom:20px}
+.pr_hd_s_4{_margin-top:-7px}
+.pr_hd_s_5{margin-top:20px;margin-bottom:10px}
+.pr_hd_s_sp{margin-left:10px}
+.pr_hd_top1{margin-top:7px}
+.pr_hd_top1 .cjw1{width:170px;height:20px;overflow:hidden}
+.pr_hd_top1 .cjw2{width:130px;height:20px;margin-left:10px}
+.pr_hd_top1 .cjw3{width:50px;height:20px;padding-left:0;margin-left:50px}
+.pr_hd_top1 .cjw4{width:160px;height:20px;padding-left:0;margin-left:90px}
+.pr_hd_top1 .cjw5{width:170px;height:20px;padding-left:0;margin-left:20px}
+.pr_hd_top1 .cjw6{width:120px;height:20px;padding-left:0;margin-left:64px;*margin-left:68px;_margin-left:37px}
+.pr_hd_top1 .cjw7{width:170px;height:20px;padding-left:0;margin-left:60px}
+.pr_hd_top1 .cjw8{width:500px;padding-left:0;margin-left:10px}
+.pr_hd_top1 .cjw9{width:200px;margin-left:5px;height:20px;overflow:hidden}
+.pr_hd_top1 .cjw10{width:120px;height:20px;overflow:hidden;margin-left:5px}
+.pr_hd_top1 .cjw11{width:170px;height:20px;overflow:hidden;margin-left:5px}
+.pr_hd_top1 .cjw12{width:550px;height:20px;overflow:hidden;margin-left:62px;padding-left:0;_margin-left:33px}
+.pr_hd_top1 li{float:left;margin-left:5px;_margin-left:5px}
+.pr_hd_top1_w{width:115px}
+.pr_hd_top1_w1{padding-left:10px}
+.pr_hd_top1_w2{padding-left:5px}
+.pr_hd_top1_w3{padding:10px}
+.pr_hd_top1_w60{width:60px;padding-left:20px}
+.pr_hd_top1_w112{width:132px}
+.pr_hd_top1_ma50{padding-left:50px}
+.pr_hd_top1_ma50t{margin-top:20px;padding-bottom:20px}
+.pr_hd_top1_ma10{margin-left:10px}
+.pr_hd_top1_pp{margin-right:30px;margin-top:10px}
+.pr_hd_top1_topj{*margin-top:-7px}
+.pr_hd_top2_jk{padding:0 15px 0 0}
+.pr_hd_top2_ajk{font-size:12px;margin-left:15px}
+.pr_hd_ton_con{margin:5px 0 5px 0}
+.pr_hd_ton_con ul{float:left}
+.pr_hd_ton_con li{height:25px}
+.pr_hd_ton_con_ul_1 li{width:100px}
+.pr_hd_ton_con_ul_2 li{width:180px}
+.pr_hd_ton_con_ul_2 select{height:19px;vertical-align:top;vertical-align:bottom\9}
+.pr_hd_ton_con_ul_2 input{vertical-align:middle}
+.pr_hd_top2_top3_m11 input{vertical-align:middle;*vertical-align:baseline}
+.pr_hd_ton_con_ul_3 li{width:300px}
+.pr_hd_ton_con_ul_3_z1{margin-top:-1px}
+.pr_hd_ton_con_ul_3_z2{*margin-top:-2px}
+.pr_hd_ton_con span{float:left;display:block;margin-left:5px;height:14px}
+.pr_hd_top2_se_1{width:175px;height:22px}
+.pr_hd_top2_se_170{width:171px}
+.pr_hd_top2_se_80{width:80px}
+.pr_hd_top2_se_70{height:21px;width:83px}
+.pr_hd_top2_se_60{height:21px;width:84px}
+.pr_hd_top2_se_5{margin-left:5px}
+.pr_hd_top2_top3_m11{margin:5px 0 0 10px}
+.pr_hd_top2_top3_m11 li{height:25px}
+.pr_hd_con_6_botton{width:236px;height:35px;background:url("../pic/flight_icon.gif?t=201405301709") no-repeat scroll 0 -2705px transparent;cursor:pointer;border:0;color:#FFF;font-weight:bold;font-size:14px;margin:5px 0 0 400px}
+.pr_hd_top3_ma10{margin-left:20px}
+.pr_hd_top3_ma50{margin-left:50px}
+.pr_hd_con_6_ukl li{line-height:23px}
+.pr_hd_con_6_ukl .leftx{float:left}
+.pr_hd_con_6_ukl .leftx2{float:left;width:790px}
+.ift_lib_y{height:26px;background:#f1f5f8;padding:5px 8px 3px;margin-bottom:10px}
+.ift_lib_y div{float:left}
+.ift_lib{margin-top:10px}
+.ift_lib .e_zom{zoom:1}
+.ift_lib li{float:left}
+.ift_libl li{float:left;height:auto}
+.ift_lib_h{width:750px;height:1px;line-height:0;border-bottom:#ccc solid 1px;font-size:1px;margin-bottom:10px;padding-top:10px}
+.ift_lib_li_1{width:150px;padding-left:40px}
+.ift_lib_li_2{width:200px}
+.ift_lib_li_3{width:117px}
+.ift_lib_li_4{width:75px;text-align:center}
+.ift_lib_li_4 input{position:relative;margin-top:-3px}
+.iftb_t{padding-bottom:5px;border-bottom:#dfe6f0 solid 1px}
+.ift_lib_zw{width:44px;height:26px}
+.ift_lib_li_5{width:158px;padding-right:6px}
+.ift_lib_zk{background:#00aef1;padding:0 5px;*padding:2px 5px 0;color:#FFF}
+.ift_lib_z{margin:10px 0 10px 185px}
+.ift_lib_lis_1{width:270px;padding-right:10px}
+.ift_lib_lis_2{width:150px}
+.ift_lib_lis_3{width:95px}
+.ift_lib_lis_4{width:155px}
+.ift_lib_lis_5{width:25px}
+.ift_lib_lis_6{width:155px;padding-left:25px;*padding-left:0}
+.ift_lib_mm_1{width:170px}
+.ift_lib_mm_3{width:130px}
+.ift_lib_mm_4{width:100px}
+.ift_lib_mm_5{width:170px}
+.ift_lib_mm_6{width:83px}
+.ift_lib_mm_7{width:60px}
+.ift_lib_mm_8{width:40px}
+.ift_lib_pp_1{padding:0 8px 0 0}
+.ift_lib_yy{background:#f2f2f2;width:700px;float:right;padding:8px 15px;margin-bottom:3px}
+.ift_lib_yy li{float:left;height:32px;_height:0}
+.ift_lib_yy_w1{width:180px;padding-top:3px}
+.ift_lib_yy_w2{width:338px;padding-top:3px}
+.ift_lib_yy_w3{width:116px;padding-top:3px}
+.ift_lib_yy_w4{width:65px}
+.ift_lib_UA{margin-left:-20px;position:absolute}
+.ift_lib_UA_1{margin-top:13px;position:absolute}
+.ift_lib_table{background:#F1F8FE;border:#ccc 1px solid;width:715px;margin-bottom:20px;padding:5px 15px}
+.ift_lib_table_1{margin-bottom:10px}
+.ift_lib_table_2{margin-top:10px}
+.ift_lib_table_3{margin-left:10px}
+.ift_lib_table_4{margin-right:10px;text-align:right}
+.ift_jgt{background:#ccc;padding:3px 5px 3px 5px;margin-left:5px}
+.ift_cwrts{background:#feefbd;padding:10px}
+.ift_cwrts_380{width:380px;min-height:100px;_height:auto;_height:100px}
+.ift_cwrts_200{width:380px;min-height:170px;_height:auto;_height:170px}
+.ok_xt_jj{margin-left:1px}
+.ift_cms_z{width:600px;padding:5px}
+.ift_tj{width:28px;height:30px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -72px -467px}
+.ift_yl{width:18px;height:18px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -103px -467px;cursor:pointer}
+.ift_tj_jl{margin:-5px 5px 0 -40px;position:absolute}
+.ift_yl_jl{white-space:nowrap;display:inline-block;margin-left:-35px;margin-top:5px;position:absolute}
+.ift_f22{font-size:22px;_font-size:26px;line-height:1px;_vertical-align:middle}
+.pr_b_con_w{border-left:#ccc 1px solid;border-right:#ccc 1px solid;padding:15px 17px 5px 17px;zoom:1}
+.pr_b_con_w_top{background:#F1F8FE;padding:5px;border:#FFF 1px solid}
+.pr_b_con_w_1{margin-left:35px}
+.pr_b_con_w_2{margin-right:35px}
+.pr_b_con_w_b{border-bottom:#ccc 1px solid}
+.pr_b_con_w_bottom{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -271px;width:109px;height:31px;cursor:pointer;border:0;font-size:14px;color:#FFF;letter-spacing:8px;text-align:center;font-weight:bold;padding-left:16px;*padding-left:8px}
+.pr_b_con_w_bottom_1{background:url("../pic/flight_icon.gif?t=201405301709") no-repeat scroll 0 -2705px transparent;width:236px;height:35px;cursor:pointer;border:0;font-size:14px;color:#FFF;text-align:center;font-weight:bold}
+.pr_b_con_w_bottom_a{background:url("../pic/flight_icon.gif?t=201405301709") no-repeat scroll 0 -2745px transparent;width:236px;height:35px;cursor:pointer;border:0;font-size:14px;color:#FFF;letter-spacing:8px;text-align:center;font-weight:bold;padding-left:16px;*padding-left:8px}
+.pr_b_con_w_bottom_a_1{background:url("../pic/flight_icon.gif?t=201405301709") no-repeat scroll 0 -2745px transparent;width:236px;height:35px;cursor:pointer;border:0;font-size:14px;color:#FFF;text-align:center;font-weight:bold}
+.pr_b_con_w_bb{margin:10px auto 0 auto;text-align:center}
+.pr_b_con_t{padding:1px;border:#ccc 1px solid}
+.pr_b_con_t_1{background:#feefbd;padding:10px}
+.pr_b_con_t_1 .zt_14{text-align:right;font-weight:bold;font-size:14px}
+.pr_b_con_t_1 .fp_price{font-size:14px}
+.payment_ad{clear:both;font-size:12px}
+.pr_b_con_f_2{margin-right:50px}
+.pr_b_con_f_3{padding-right:10px}
+.pr_b_con_f_4{margin-top:5px;margin-right:50px;*margin-right:25px;_margin-right:16px}
+.pr_b_con_f_5{margin-top:15px;margin-left:20px}
+.pr_b_con_zd_1{padding:10px}
+.pr_b_con_zd_1 li{list-style-type:disc;list-style-position:inside}
+.pr_b_con_ma{padding-left:30px;padding-right:5px}
+.ift_tc{margin:0 auto;width:550px}
+.ift_tc .tc_h{height:30px}
+.ift_tc .tc_pa{margin-left:60px}
+.ift_tc .tc_hr{background:#3088D4;font-size:1px;height:1px;line-height:1px;margin:20px 0 10px 0;clear:both;overflow:hidden;zoom:1}
+.ift_tc .tc_bo{height:30px;margin-top:10px;text-align:center;border:1px solid #f00}
+.ift_tc_k{padding:5px 10px}
+.ift_xzhb{font-size:14px;font-weight:bold;margin-top:15px}
+.ift_load1{text-align:center;margin:0 auto}
+.ift_load1 .logo213{padding:40px;background:url(../pic/logo_213x51.gif?t=201405301709) no-repeat 50% 50%}
+.ift_load1 .zt16{font:20px SimHei,arial,sans-serif;color:#f38303}
+.ift_load1 .loadtu{background:url(../pic/loading02.gif?t=201405301709) no-repeat 50% 50%;height:45px}
+.pr_b_pr_l li{padding:18px 0 0 48px}
+.ift_dd{margin-right:5px;font-weight:200;color:#545454;font-size:14px}
+#com_404 .com_btnout{border:#acadad solid 1px;background:#dfe0e0;color:#acabab;cursor:default}
+.pr_hd_con_6_ukl .leftx4{text-align:left}
+.ift_st{width:960px;margin:5% auto 10% auto}
+.ift_st .jhao{background:url(../pic/ts.gif?t=201405301709) no-repeat;width:70px;height:72px}
+.ift_st .zhao{font-size:14px;font-weight:bold}
+.ift_st .jju1{font-size:14px;font-weight:bold;margin-left:5px}
+.ift_st td{padding:5px}
+.ift_ddg{margin:20px 0 0 0;padding:10px 15px;background:#F1F8FE}
+.ift_ddg span{margin-right:20px;font-family:SimSun}
+#dvFlightAndHotel{margin-bottom:10px;padding-right:3px}
+#dvFlightAndHotel table{width:auto}
+#bankbox,#bankboxt,#bankchoosed{color:#666;overflow:hidden;zoom:1}
+#bankbox span,#bankboxt span,#bankchoosed span{margin-right:20px}
+.indent50{padding-left:18px}
+.indent50 strong{font-weight:bold}
+.indent35{padding-left:35px}
+#bankbox h5,#bankboxt h5,#bankchoosed h5{font-weight:bold;font-size:14px;color:#666}
+#bankbox p,#bankboxt p,#bankchoosed p{color:#666}
+#bankbox ul,#bankboxt ul,#bankchoosed ul{margin-left:35px}
+#bankbox li,#bankboxt li,#bankchoosed li{width:400px;float:left;margin-top:5px}
+.finish_arrow_down_a{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat;background-position:-95px -920px;width:19px;height:10px;text-align:center;display:inline-block;margin-left:2px}
+*html .finish_arrow_down_a{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat;background-position:-95px -916px;width:19px;height:10px;text-align:center;display:inline-block;margin-left:2px}
+*+html .finish_arrow_down_a{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat;background-position:-95px -920px;width:19px;height:10px;text-align:center;display:inline-block;margin-left:2px}
+.finish_arrow_down_b{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat;background-position:-119px -920px;width:19px;height:10px;text-align:center;display:inline-block;margin-left:2px}
+*html .finish_arrow_down_b{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat;background-position:-119px -916px;width:19px;height:10px;text-align:center;display:inline-block;margin-left:2px}
+*+html .finish_arrow_down_b{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat;background-position:-119px -920px;width:19px;height:10px;text-align:center;display:inline-block;margin-left:2px}
+.f_bg{border:1px solid #3e93c9}
+.f_infobox{padding:0 10px 0 8px}
+.f_infobox ul{border-bottom:1px solid #ccc}
+.f_infobox li{margin:8px 0;list-style-type:none}
+.f_infobox li span.cols00{width:25px;display:inline-block}
+.f_infobox li span.cols00 span{display:inline-block}
+.f_infobox li span.cols01{width:150px;display:inline-block}
+.f_infobox li span.cols01 span{margin-right:5px}
+.f_infobox li span.cols02{width:80px;display:inline-block}
+.f_infobox li span.cols03{width:395px;display:inline-block}
+.f_infobox li span.cols03 a{margin-left:3px;text-decoration:none}
+.f_infobox li span.cols02 a{text-decoration:none}
+.f_infobox li span.cols03 .ift_f22{font-size:14px}
+.f_infobox li span.cols04{width:65px;display:inline-block}
+.f_infobox li span.cols04 span.price{color:#F38303;font-weight:bold}
+.f_infobox li span.cols06{width:58px;text-align:right;margin-left:10px}
+.f_infobox .transit{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -882px;width:46px;height:20px;position:absolute;left:0;top:-10px;display:inline-block;border:0}
+.f_infobox .transitbox{border-bottom:1px dashed #ccc;line-height:1px;font-size:1px;position:relative;display:inline-block;width:99%;margin:0 0 5px 3px}
+.f_infobox .transit_en{background:url(http://www.elongstatic.com/flights/pic/flight_icon.gif?t=201405301709) no-repeat -59px -1360px;width:46px;height:20px;position:absolute;left:0;top:-10px;display:inline-block}
+.f_infobox li h4{text-indent:5px;font-weight:bold;padding-bottom:5px}
+.f_infobox li h4 span a{margin-left:10px;font-size:12px;font-weight:normal}
+.dun{color:#001d75;text-decoration:none;border-bottom:#001d75 1px dashed}
+.bt_ord_next{font-weight:bold;padding-top:2px\9;width:75px;height:23px;background:#00AEF1;color:#fff;text-align:center;border:0;cursor:pointer}
+.bt_ord_disnable_next{font-weight:bold;padding-top:2px\9;width:75px;height:23px;text-align:center;border:0;cursor:pointer;color:#fff}
+.bt_ord_fc{font-weight:bold;padding-top:2px\9;width:62px;height:23px;background:#00AEF1;color:#fff;text-align:center;border:0;cursor:pointer}
+.bt_ord_disnable_fc{font-weight:bold;padding-top:2px\9;width:62px;height:23px;text-align:center;border:0;cursor:pointer;color:#fff}
+.zt_12 span.title{font-weight:bold;margin-right:10px;font-size:14px}
+.pr_b_top_left h1{margin-top:10px}
+.pr_b_top_left h1 span.prompt{margin-left:10px;font-size:12px;font-weight:normal;font-family:宋体;color:#313131;vertical-align:30%}
+.pr_b_top_left span a{margin-left:3px}
+#flightlist table{width:100%;border-bottom:1px solid #ccc;border-right:1px solid #ccc;border-left:1px solid #ccc}
+.ftab_bg{background:#f1f5f8}
+#flightlist .hhr{height:1px;width:750px;background:#d1d1d1;overflow:hidden;margin:10px 0}
+#flightlist .hhr_seo{height:2px;width:750px;background:#d1d1d1;overflow:hidden;margin:10px 0}
+.fltable td.cols01{width:27%;text-align:left;padding-left:15px}
+.fltable td.cols01 .price{color:#F38303;font:bold 16px arial,sans-serif;font-weight:bold}
+.fltable td.cols01 .price_c{color:#F38303;font:bold 14px arial,sans-serif;font-weight:bold}
+.fltable td.cols01 p{line-height:2.2em}
+.fltable td.cols01 .ift_tj_jl{margin:-5px 5px 0 -10px;position:absolute}
+.fltable td.cols01 .trr{font:bold 16px arial,sans-serif}
+.fltable td.cols01 .ift_yl_jl{display:inline-block;margin-left:-5px;margin-top:5px;position:absolute;white-space:nowrap}
+.fltable td.cols01 .childbox{color:#666}
+.fltable td.cols01 .ift_lib_zk{background:none repeat scroll 0 0 #E9831F;color:#FFF;padding:2px 5px 1px 5px}
+.fltable td.cols02{width:8%;text-align:center}
+.fltable td.cols02_dan{width:3%;text-align:center}
+.fltable td.cols03{width:24%}
+.fltable td.cols03 span{margin-right:3px}
+.fltable td.cols03 .ftime{font-weight:bold}
+.fltable td.cols03 span a{text-decoration:none}
+.fltable td.cols04{width:0;*width:5%;text-align:right}
+.fltable td.cols05{width:22%;text-align:left}
+.fltable td.cols05 a{text-decoration:none}
+.fltable td.cols06{width:9%;text-align:center}
+.fltable td.cols06 div{color:#666}
+.fltable td.cols07 p{width:80px;display:inline-block;text-align:right;padding-right:10px}
+.fltable td.cols07_dan p{width:105px;display:inline-block;text-align:right;padding-right:10px}
+.fltable .tline{border-bottom:1px solid #ccc;height:1px;line-height:1px}
+.fltable .cols04 div{vertical-align:middle}
+.fltable .hduan{border:1px solid #cbccce;color:#333;padding:0 2px 0 2px;margin:2px 0 0 10px;float:left;background:#fff}
+.fltable td{padding:5px 0}
+.fltable .transit{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -882px;width:46px;height:20px;position:absolute;left:0;top:-10px;display:inline-block;border:0}
+.fltable .transitbox{border-bottom:1px dashed #ccc;line-height:1px;font-size:1px;position:relative;display:inline-block;width:99%;margin:0 0 5px 3px}
+.bt_ord_w{font-weight:bold;padding-top:2px\9;width:92px;height:23px;background:#00AEF1;color:#fff;text-align:center;border:0;cursor:pointer}
+.bt_ord_disnable_w{font-weight:bold;padding-top:2px\9;width:92px;height:23px;text-align:center;border:0;cursor:pointer;background:#1186bb;color:#fff}
+#newbox{position:absolute;float:left;left:232px;*left:233px;_left:203px;top:22px}
+.newrel{position:relative}
+.t_ind10{text-indent:10px}
+.ift_yl_new{background:url("../pic/bg_search_flight.png?t=201405301709") no-repeat scroll 0 -913px;cursor:pointer;height:18px;width:18px}
+.tnav .curt{background:#F1F5F8;border-left:1px solid #3792FF;border-top:1px solid #3792FF;border-right:1px solid #3792FF}
+/必须放在页面中/ .fltable .cols01 dl{clear:both;overflow:hidden;zoom:1}
+.fltable .cols01 dt{width:12%;display:inline-block;float:left;margin-left:0}
+.fltable .cols01 dd{width:82%;display:inline-block;float:right;margin-right:0;color:#777}
+.fltable .cols01 .ift_yl{background:url("../pic/bg_search_flight.png?t=201405301709") no-repeat scroll -100px -467px transparent;cursor:pointer;height:18px;width:24px;margin-top:3px}
+.fltable .cols01 .ift_tj{background:url("../pic/bg_search_flight.png?t=201405301709") no-repeat scroll -73px -467px transparent;height:30px;width:28px}
+.fltable .cols01 .rebatebox{margin-bottom:5px}
+#tickettimebox,#filltipbox{clear:both;margin-top:10px;overflow:hidden;zoom:1;border:1px solid #ccc}
+#tickettimebox h2,#filltipbox h2{background:#F1F8FE;text-indent:14px;font-size:14px;font-weight:bold;padding:5px 0 1px 0;margin:1px}
+#tickettimebox li,#filltipbox li{float:left;margin-right:20px}
+#tickettimebox ul{margin:10px 16px}
+#filltipbox TEXTAREA{width:900px;height:80px;padding:5px 10px;color:#666}
+#filltipbox div{padding:10px 0;margin:0 16px}
+.jfenbox{color:#f00;text-align:left;padding:1px 0 4px 0;text-indent:68px}
+.pr_b_top_left span.prompt{vertical-align:3%}
+#filltipbox h2 span{margin-left:5px;font-weight:normal;font-size:12px}
+.pr_hd_s_6{margin-top:10px;margin-bottom:10px}
+#f_point{clear:both;overflow:hidden;zoom:1;margin:10px 0 10px 0;width:960px}
+#f_point p{padding:2px 10px;color:#666}
+#f_point .f_box{padding:10px 0 0 0;*padding:10px 0 10px 0;clear:both;border:1px solid #ccc;clear:both;overflow:hidden;zoom:1}
+#f_point li{width:440px;float:left}
+#f_point ul{margin:0 10px;clear:both}
+#f_point li span.cols01{width:330px;margin-left:0;display:inline-block;float:left;margin-left:0;height:28px}
+#f_point li span.cols02{width:100px;margin-left:0;display:inline-block;float:right;margin-right:0;height:28px}
+#f_point li input{vertical-align:middle;margin-right:2px;*margin-right:0}
+#f_point .submitbox{width:900px;text-align:center;margin-bottom:10px}
+#f_point .search_bt_s{text-indent:0;letter-spacing:0;font-weight:normal;font-size:12px;font-family:arial,SimSun,Verdana,Geneva,Helvetica;font-weight:bold}
+#finishbox .tipbox{padding:2px 10px}
+#banktransfer strong{font-weight:bold}
+#banktransfer input{margin-left:10px;margin-right:3px;*margin-right:1px;vertical-align:middle;*vertical-align:1%;vertical-align:middle\9;_vertical-align:-1%}
+.layer_arrow{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -69px -916px;width:12px;height:13px;display:inline-block;position:absolute;top:-13px;float:left}
+.paypopbox{width:905px;border:1px solid #ccc;background:#f0f0f0;margin-top:9px;margin- left:75px;position:relative;padding:5px 10px;*padding:5px 10px 0 10px}
+.paypopbox li{overflow:hidden;zoom:1;margin:5px 0;color:#666}
+.paypopw02{width:883px}
+.arrow_buyao{left:65px;*left:75px}
+#fill_order .yellow{color:#f60}
+#fill_order .blue{color:#06c}
+#fill_order .t20{font-size:20px}
+#fill_order .bg_yellow{background:#fff0b5}
+#fill_order .search_btn{width:236px;height:35px;color:#FFF;cursor:pointer;font-size:16px;font-weight:700;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat 0 -2745px;border:0}
+#fill_order .search_btn_an{width:236px;height:35px;color:#FFF;cursor:pointer;font-size:16px;font-weight:700;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat 0 -2705px;border:0}
+.yellow{color:#f38303}
+#w_content .nosearch{margin:10px auto 20px;padding:15px 10px 10px;border:1px solid #fec63b;border-bottom-width:2px;background:#fffbe1}
+#w_content .nosearch a{text-decoration:underline}
+#w_content .tborder table,#w_content .tborder tr,#w_content .tborder td{border:1px solid #ccc}
+.flightlist .price{color:#F38303;font-size:18px}
+.ift_yl{display:inline-block;width:18px;height:18px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -103px -467px;cursor:pointer}
+.iflight{border-bottom:2px solid #c3d8f5;padding:8px 0 5px}
+.iflight li,.iflight_bg li{float:left;padding-left:10px;display:inline;min-height:20px}
+.iflight .iflight_li1{width:151px}
+.iflight .price,.iflight_bg .price{color:#F38303;font-size:18px}
+.iflight .iflight_li2{width:193px}
+.iflight .iflight_li3{width:144px;padding-top:2px}
+.iflight .iflight_li4{width:55px;padding-top:21px}
+.iflight .iflight_li5{width:97px;padding-top:15px}
+.iflight .iflight_li6{width:55px;padding:10px 0 0 0}
+.iflight_bg{background:#f5f5f5;padding:8px 0}
+.iflight_bg .iflight_bg_li1{width:151px}
+.iflight_bg .iflight_bg_li2{width:412px;padding-top:3px}
+.iflight_bg .iflight_bg_li3{width:97px}
+.iflight_bg .iflight_bg_li4{width:55px;padding:5px 0 0}
+.transitbox{margin:0 170px 0 170px}
+.transit{width:32px;height:16px;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat -70px -2090px}
+.transit_hr{margin-left:32px;border-bottom:1px dotted #ccc;line-height:0;position:relative;top:-8px;z-index:1}
+#check_order .t18{font-size:18px}
+#check_order .bg_yellow{background:#fff5cc}
+#check_order .search_btn{width:236px;height:35px;color:#FFF;cursor:pointer;font-size:16px;font-weight:700;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat 0 -2745px;border:0}
+#check_order .search_btn_an{width:236px;height:35px;color:#FFF;cursor:pointer;font-size:16px;font-weight:700;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat 0 -2705px;border:0}
+#check_order{width:960px;margin:10px auto;background:#9fcff4;font-family:Arial,"宋体",Helvetica,sans-serif,Tahoma,Geneva,sans-serif}
+#check_order .arrow{font-family:"宋体";padding:0 5px}
+#check_order a{color:#06C;text-decoration:none}
+#check_order a:hover{color:#f30}
+#check_order h1{font-size:20px;font-family:simhei;padding:5px 0 0 15px}
+#check_order strong{font-weight:bold}
+#check_order .underline{text-decoration:underline}
+#check_order a.bottom_line{border-bottom:1px dashed #1568BD}
+ul.subnav{position:absolute;right:10px;top:8px;width:200px}
+ul.subnav li{float:left;height:30px;padding-left:5px;color:#666;font:12px "宋体";line-height:16px}
+ul.subnav li.on{color:#000;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat -95px -183px}
+#check_order .top_side,#check_order .down_side{height:10px;overflow:hidden}
+#check_order .top_side span,#check_order .down_side span{display:inline-block;width:10px;height:10px;overflow:hidden;background:url(../pic/flight_icon.gif?t=201405301709) -113px -87px no-repeat}
+#check_order .top_side span.l{float:left;background-position:0 -2376px}
+#check_order .top_side span.r{float:right;background-position:-9px -2376px}
+#check_order .down_side span.l{float:left;background-position:0 -2386px}
+#check_order .down_side span.r{float:right;background-position:-9px -2386px}
+#check_order .side_box{margin:8px 10px 5px 10px;background:#fff}
+#check_order .side_box .t_s,#check_order .side_box .d_s{height:10px;overflow:hidden}
+#check_order .side_box .t_s span,#check_order .side_box .d_s span{display:inline-block;width:10px;height:10px;overflow:hidden;background:url(../pic/flight_icon.gif?t=201405301709) -153px -87px no-repeat}
+#check_order .side_box .t_s span.l{float:left;background-position:-40px -2376px}
+#check_order .side_box .t_s span.r{float:right;background-position:-50px -2376px}
+#check_order .side_box .d_s span.l{float:left;background-position:-40px -2386px}
+#check_order .side_box .d_s span.r{float:right;background-position:-50px -2386px}
+#check_order .main{padding:10px 10px 5px}
+#check_order .main .ift_zz_bg{border-bottom:1px dotted #ccc;height:1px;line-height:0;padding-top:9px}
+#check_order .main .ift_zz{width:43px;height:20px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -524px;float:left;color:#999;padding:0 0 0 5px;height:18px\9;padding:2px 0 0 5px\9}
+dl.info_list{padding:15px 0;border-bottom:1px solid #a1d0f4}
+dl.info_list dt{float:left;padding-left:10px;width:80px;font-size:14px;font-weight:bold}
+dl.info_list dd{float:left;line-height:22px}
+dl.info_list dd.w01{width:150px}
+dl.info_list dd.w02{width:680px}
+dl.info_list li.w01{float:left;width:250px}
+dl.info_list li.w02{float:left;width:200px}
+dl.info_list li.w03{float:left;width:200px}
+.backicon{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -103px -341px;float:left;height:20px;width:20px}
+#confirm .icon_up,#confirm .icon_down{display:inline-block;margin-left:3px;width:10px;height:14px;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat;vertical-align:middle;cursor:pointer}
+#confirm .icon_up{background-position:-145px -1965px}
+#confirm .icon_down{background-position:-145px -1982px}
+#confirm input.button{width:236px;height:35px;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat 0 -2705px;cursor:pointer;border:0;font-size:14px;color:#fff;font-weight:bold}
+#confirm{margin:0 auto;width:960px}
+#confirm h1{padding:8px 10px 5px;font:20px SimHei,arial,sans-serif;color:#F38303}
+#confirm .content{width:930px;padding:14px;border:1px solid #2da9f0;position:relative}
+#confirm .content{margin-bottom:10px}
+#confirm .tips{color:#f38303;padding-bottom:20px;_height:20px;padding-left:30px;background:url(../pic/tips.gif?t=201405301709) no-repeat 5px top}
+#confirm .top_side_l,#confirm .bottom_side_l,#confirm .top_side_r,#confirm .bottom_side_r{position:absolute;z-index:2;width:9px;height:9px;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat;overflow:hidden}
+#confirm .top_side_l{top:-1px;left:-1px;background-position:-80px -2370px}
+#confirm .top_side_r{top:-1px;right:-1px;background-position:-90px -2370px}
+#confirm .bottom_side_l{bottom:-1px;left:-1px;background-position:-80px -2380px}
+#confirm .bottom_side_r{bottom:-1px;right:-1px;background-position:-90px -2380px}
+#confirm .order_info{background:#f0faff;padding:10px}
+#confirm .order_info dt{float:left;width:65px}
+#confirm .order_info dd{float:left;width:835px}
+#confirm .order_info2{margin-top:5px;padding:10px 10px 0 10px;border:1px solid #c4c4c4;position:relative}
+#confirm .top_side2_l,#confirm .bottom_side2_l,#confirm .top_side2_r,#confirm .bottom_side2_r{position:absolute;z-index:2;width:9px;height:9px;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat;overflow:hidden}
+#confirm .top_side2_l{top:-1px;left:-1px;background-position:-100px -2370px}
+#confirm .top_side2_r{top:-1px;right:-1px;background-position:-110px -2370px}
+#confirm .bottom_side2_l{bottom:-1px;left:-1px;background-position:-100px -2380px}
+#confirm .bottom_side2_r{bottom:-1px;right:-1px;background-position:-110px -2380px}
+#confirm h2{font-weight:700}
+.arrow{font-family:"宋体";padding:0 5px}
+.hr_dotted{border-bottom:1px dotted #ccc;height:1px;line-height:0}
+#confirm table td{min-height:24px;*height:24px}
+#confirm .colspan{background:#fff;padding-right:10px;text-align:right}
+#confirm .main2 dl{padding-top:10px}
+#confirm .main2 dt{float:left;width:65px;line-height:22px;padding:3px 0}
+#confirm .main2 dd{float:left;width:835px;line-height:22px;padding:3px 0}
+#confirm p{color:#666;padding:2px 10px}
+#confirm .f_box{border:1px solid #CCC;clear:both;overflow:hidden;padding:10px 10px 0}
+#confirm .f_box .cols01{width:250px;float:left}
+#confirm .submitbox{margin-bottom:10px;text-align:center;width:900px;clear:both}
+#confirm li input{margin-right:2px;vertical-align:-2px}
+#confirm .myelong{overflow:hidden}
+#confirm .myelong li{width:100px;float:right}
+#confirm .myelong li .arrow{font-family:"宋体"}
+#iframe{margin-top:10px}
+#confirm .xhy{margin:30px 0 30px 25px}
+#confirm .xhy ul{float:left;margin-left:20px;width:790px}
+#confirm .xhy .okc{background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat 0 -720px;width:89px;height:83px;float:left;margin-top:15px}
+#confirm .xhy .hrt{color:#F00;font-weight:bold;font-size:14px}
+.nbox1{border:0;padding:0;box-shadow:1px 1px 3px #ddd}
+.nbox1 h2{height:36px;line-height:38px;overflow:hidden;padding:0;text-align:center}
+.tct .search_bt_s,.tct .search_bt_s_an{width:105px;height:35px;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat left -710px;font-size:14px;font-weight:700}
+.tct .search_bt_s_an{background-position:left -710px}
+.nbox1 .b_gb{height:5px;overflow:hidden;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat left -696px}
+#fill_page{width:960px;margin:20px auto 10px;font-family:Arial,"宋体",Helvetica,sans-serif,Tahoma,Geneva,sans-serif}
+#fill_page input{vertical-align:-2px}
+#fill_page .mr50{margin-right:50px}
+#fill_page .pt30{padding-top:30px}
+#fill_page .t18{font-size:18px}
+#fill_page label,#fill_page .radio,#fill_page .checkbox{cursor:pointer}
+#fill_page .radio,#fill_page .checkbox{vertical-align:-2px;_vertical-align:-2px;margin-right:3px;*padding:0;*margin:0}
+#fill_page p{line-height:30px}
+#fill_page .arrow{font-family:"宋体";padding:0 5px}
+#fill_page .yellow{color:#f60}
+#fill_page a{color:#06C;text-decoration:none}
+#fill_page a:hover{color:#f30}
+#fill_page strong{font-weight:bold}
+#fill_page .underline{text-decoration:underline}
+#fill_page textarea{width:580px;border:1px solid #e1e1e1;margin-top:-10px;font-size:12px;padding:5px 10px;color:#777}
+#fill_page a.dashed{border-bottom:1px dashed #1568BD;margin-left:10px;cursor:pointer}
+input,option,select{vertical-align:middle;_vertical-align:-2px;color:#777}
+input.on,textarea.on{background:#fff7be}
+#fill_page .tips{color:#f60;background:url(../pic/com_icon.png) no-repeat left 3px;text-indent:20px;line-height:24px}
+#fill_page .step li{float:left;height:24px;line-height:26px;background:url(../pic/pages_com.png?t=201405301709) no-repeat;width:188px;color:#777;text-align:center}
+#fill_page .step li.step01{width:208px;background-position:left -28px;color:#131313}
+#fill_page .step li.step02{background-position:-210px -28px;color:#131313}
+#fill_page .step li.step03{background-position:-210px top}
+#fill_page .step li.step04{background-position:-210px top}
+#fill_page .step li.step05{background-position:-400px top}
+#fill_page .bg_top,#fill_page .bg_bottom{background:url(../pic/pages_com.png?t=201405301709) no-repeat}
+#fill_page h1.bg_top{height:44px;line-height:40px;margin-top:10px;padding-left:20px;color:#333;font-size:18px;font-family:simhei;background-position:left -90px}
+#fill_page .bg_bottom{height:15px;background-position:left -142px}
+#fill_page .container{padding:5px 10px;border-right:5px solid #9fcff4;border-left:5px solid #9fcff4}
+#fill_page .main,#fill_page .main2{margin-top:5px;margin-bottom:30px;border-top:1px solid #39F}
+#fill_page .main h2,#fill_page .main2 h2{height:28px;line-height:30px;text-indent:15px;font-size:14px;font-weight:700;border:1px solid #e1e1e1;background:url(../pic/com_icon.png) repeat-x left -57px;_background-position:left -55px}
+#fill_page .main .content{float:left;padding:10px 15px;width:670px;border-right:1px solid #e1e1e1}
+#fill_page .flight{border:1px solid #e1e1e1;border-top-width:0}
+#fill_page .content dl{padding:10px 0}
+#fill_page .content dt{font-weight:bold}
+#fill_page .content dd{margin-left:45px;height:24px;line-height:26px}
+#fill_page .content .zhong_zhuan{background:url(../pic/com_icon.png) repeat-x left -90px;margin-top:5px;margin-bottom:5px}
+#fill_page .content .zz_icon{display:inline-block;color:#777;margin-left:130px;padding:0 5px 0 20px;background:url(../pic/com_icon.png) #FFF no-repeat -10px -34px}
+#fill_page .content .qifei{padding-right:30px}
+#fill_page .cmsbox{float:right;padding:10px 0 0 10px;width:215px;color:#777}
+#fill_page .cmsbox dt{font-size:14px;font-weight:700;line-height:30px}
+#fill_page .cmsbox dd{padding-left:10px;line-height:24px;_padding-top:5px}
+#fill_page .cmsbox .arrow1{display:inline-block;width:15px;height:15px;margin-left:-10px;background:url(../pic/com_icon.png) no-repeat left -20px}
+#fill_page .main2 .content{float:left;width:700px;padding-bottom:20px;border-right:1px solid #e1e1e1}
+#fill_page .passenger{border:1px solid #e1e1e1;border-top-width:0}
+#fill_page .passenger_info{border-bottom:1px dotted #ccc;margin-bottom:5px;_padding-top:5px}
+#fill_page .passenger_info li{line-height:30px;height:30px}
+#fill_page .passenger_info .insurance_name{margin-left:69px;*margin-left:56px}
+#fill_page .passenger_info .baoxian_tips{padding:0 15px 5px;_padding-left:22px;color:#777;line-height:20px;height:auto}
+#fill_page .passenger_info .package{height:auto;margin:20px 0 20px 60px;padding:10px;background:#eee}
+#fill_page .passenger_info .package .title strong{margin-right:5px;font:700 14px simsun,sans-serif;color:#f60}
+#fill_page .passenger_info .package .box{margin-left:70px;_margin-bottom:10px}
+#fill_page .passenger_info .package .box select{width:120px}
+#fill_page .passenger_box{padding:10px 15px;margin-bottom:30px;background:#fafafa}
+#fill_page .intxt{height:20px;line-height:20px;padding-left:2px;border:1px solid #a5acb2;font-family:Arial}
+#fill_page .intxt:focus,#fill_page .passenger_box .intxt_on{border:1px solid #0ea0ef;box-shadow:0 0 2px #09f;outline:0}
+#fill_page .passenger_box .w01{width:54px;line-height:18px;padding-left:2px;height:18px;border:1px solid #a5acb2}
+#fill_page .passenger_box select.w01{padding:0;height:auto;line-height:none;overflow:hidden;_vertical-align:-2px}
+#fill_page .passenger_box .w02{width:71px;line-height:18px;padding-left:2px;height:18px;border:1px solid #a5acb2}
+#fill_page .passenger_box .w03{width:80px;line-height:18px;padding-left:2px;height:18px;border:1px solid #a5acb2}
+#fill_page .passenger_box select.w03{width:90px;padding:0;height:auto;line-height:none;overflow:hidden;_vertical-align:-2px}
+#fill_page .passenger_box .w04{width:120px;line-height:18px;padding-left:2px;height:18px;border:1px solid #a5acb2}
+#fill_page .passenger_box .w05{width:170px;line-height:18px;padding-left:2px;height:18px;border:1px solid #a5acb2}
+#fill_page .passenger_box select.w06{width:285px}
+#fill_page .passenger_box .titleXx{padding-left:61px}
+#fill_page .passenger_box .titleXx .s1{margin-right:225px}
+#fill_page .passenger_box .cols02{width:105px;display:inline-block;text-align:right}
+#fill_page .passenger_box .cols03{width:70px;display:inline-block;text-align:right}
+#fill_page .payment_box{margin:0 15px;border-bottom:1px dotted #e1e1e1}
+#fill_page .payment_box2{margin:0 15px;border:0}
+#fill_page .payment_box .ca{line-height:30px;padding-left:10px;background:#fff0b5}
+#fill_page .payment_box2 .ca{line-height:30px;padding-left:10px;background:#fff0b5}
+#fill_page .payment_box .ca .checkbox{vertical-align:-2px;_vertical-align:0;margin-right:3px;_padding:0;_margin:0}
+#fill_page .payment_box2 .ca .checkbox{vertical-align:-2px;_vertical-align:0;margin-right:3px;_padding:0;_margin:0}
+#fill_page .payment_box .ca .w01{width:50px;height:16px;padding-left:2px}
+#fill_page .payment_box2 .ca .w01{width:50px;height:16px;padding-left:2px}
+#fill_page .buchong_box{padding:0 0 0 65px;margin:0 15px}
+#fill_page .buchong_box .title_box{height:50px;text-indent:13px;line-height:50px;_height:35px;_padding-top:15px;font-family:Tahoma}
+#fill_page .payment_box .title_box{height:50px;line-height:50px;_height:35px;_padding-top:15px;font-family:Tahoma}
+#fill_page .payment_box2 .title_box{height:50px;line-height:50px;_height:35px;_padding-top:15px;font-family:Tahoma}
+#fill_page .payment_box .other_box{position:relative;z-index:1;margin-top:-5px;margin-left:50px;border:1px solid #e1e1e1;background:#fafafa;padding:10px 12px}
+#fill_page .payment_box2 .other_box{position:relative;z-index:1;margin-top:-5px;margin-left:50px;border:1px solid #e1e1e1;background:#fafafa;padding:10px 12px;zoom:1}
+#fill_page .word2{display:inline-block;width:30px;height:17px;line-height:17px}
+#fill_page .word3{display:inline-block;width:45px;height:17px;line-height:17px}
+#fill_page .word4{display:inline-block;width:60px;height:17px;line-height:17px}
+#fill_page .deli1{left:335px;_left:335px;top:-10px}
+#fill_page .payment_box2 .other_box span.arrow{position:absolute;z-index:3;display:block;width:16px;height:16px;background:url(../pic/com_icon.png) no-repeat left -120px}
+#fill_page .payment_box .other_box label{margin-right:10px}
+#fill_page .payment_box2 .other_box label{margin-right:10px}
+#fill_page .payment_box .other_box .address{line-height:24px}
+#fill_page .payment_box2 .other_box p.address input{line-height:16px;margin-top:3px;margin-bottom:3px;vertical-align:middle}
+#fill_page .payment_box .other_box p.address input{line-height:16px;margin-top:3px;margin-bottom:3px;vertical-align:middle}
+#fill_page .payment_box2 .other_box p.address select{margin-top:3px;margin-bottom:3px;vertical-align:middle}
+#fill_page .payment_box .other_box p.address select{margin-top:3px;margin-bottom:3px;vertical-align:middle}
+#fill_page .payment_box .other_box .address input{border:1px solid #a5acb2;overflow:hidden}
+#fill_page .payment_box2 .other_box .address input{border:1px solid #a5acb2;overflow:hidden}
+#fill_page .payment_box .other_box .address .w01{width:120px;margin-right:76px}
+#fill_page .payment_box2 .other_box .address .w01{width:120px;margin-right:76px}
+#fill_page .payment_box .other_box .address .w02{width:125px}
+#fill_page .payment_box2 .other_box .address .w02{width:125px}
+#fill_page .payment_box .other_box .address .w03{width:380px}
+#fill_page .payment_box2 .other_box .address .w03{width:380px}
+#fill_page .payment_box .other_box .address .w04{width:380px}
+#fill_page .payment_box2 .other_box .address .w04{width:380px}
+#fill_page .payment_box2 .other_box .w_CA{width:35px;line-height:18px;padding-left:2px;height:18px;border:1px solid #A5ACB2}
+#fill_page .payment_box2 .other_box .paymentcode,#fill_page .payment_box .other_box .paymentcode{margin-top:10px}
+#fill_page .payment_box2 .other_box .paymentcode li,#fill_page .payment_box .other_box .paymentcode li{margin-bottom:5px;color:#333;height:26px}
+#fill_page .payment_box2 .other_box .paymentcode li .title,#fill_page .payment_box .other_box .paymentcode li .title{display:inline-block;width:60px;text-align:left;margin-right:5px}
+#fill_page .payment_box2 .other_box .paymentcode .code_p,#fill_page .payment_box .other_box .paymentcode .code_p{width:124px}
+#fill_page .payment_box2 .other_box .paymentcode .code_v,#fill_page .payment_box .other_box .paymentcode .code_v{width:58px}
+#fill_page .payment_box2 .other_box .paymentcode span b,#fill_page .payment_box .other_box .paymentcode span b{display:inline-block;+display:inline;+zoom:1;vertical-align:middle;line-height:0;font-size:0;overflow:hidden;width:15px;height:18px;background:url(../pic/pages_com.png?t=201405301709) no-repeat -86px -56px}
+#fill_page .payment_box2 .other_box .paymentcode li .btnLoading,#fill_page .payment_box .other_box .paymentcode li .btnLoading{display:inline-block;+display:inline;+zoom:1;vertical-align:middle;line-height:0;font-size:0;overflow:hidden;width:16px;height:16px;background:url(../pic/loading.gif?t=201405301709) no-repeat}
+#fill_page .payment_box2 .other_box .paymentcode .btn,#fill_page .payment_box2 .other_box .paymentcode .btn_on,#fill_page .payment_box .other_box .paymentcode .btn,#fill_page .payment_box .other_box .paymentcode .btn_on{width:128px;height:26px;border:0;font-size:12px;font-weight:700;color:#fff!important;background:url(../pic/pages_com.png?t=201405301709) no-repeat -120px -380px;cursor:pointer}
+#fill_page .payment_box2 .other_box .paymentcode .btn:hover,#fill_page .payment_box2 .other_box .paymentcode .btn_on,#fill_page .payment_box .other_box .paymentcode .btn:hover,#fill_page .payment_box .other_box .paymentcode .btn_on{background-position:-254px -380px}
+#fill_page .payment_box2 .other_box .paymentcode .disable,#fill_page .payment_box .other_box .paymentcode .disable{background-position:-388px -380px;cursor:not-allowed}
+#fill_page .payment_box2 .other_box .paymentcode .disable:hover,#fill_page .payment_box .other_box .paymentcode .disable:hover{background-position:-388px -380px}
+#fill_page .sidebar{float:right;padding:10px 10px 0 20px;width:195px;color:#777}
+#fill_page .sidebar dl{border-bottom:1px dotted #e1e1e1;padding:5px 0;margin-bottom:5px}
+#fill_page .sidebar dt{font-size:14px;font-weight:700;color:#777}
+#fill_page .sidebar .td01{width:65px;padding-top:3px;text-align:left}
+#fill_page .sidebar .td02{width:60px;padding-top:3px}
+#fill_page .but_box{padding:0 0 20px 380px}
+#fill_page .button,#fill_page .button_on{width:236px;height:35px;color:#FFF;cursor:pointer;font-size:16px;font-weight:700;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat 0 -2745px;border:0}
+#fill_page .button_on{background-position:0 -2705px}
+#fill_page a.add_btn,#fill_page a.add_btn_disable{width:79px;margin-top:-20px;display:block;height:26px;cursor:pointer;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat 0 -2615px}
+#fill_page a.add_btn_disable{background-position:0 -2675px;cursor:not-allowed}
+#fill_page a.add_btn:hover{background-position:0 -2645px}
+#check_page{width:960px;margin:10px auto;font-family:Arial,"宋体",Helvetica,sans-serif,Tahoma,Geneva,sans-serif}
+#check_page .mr50{margin-right:50px}
+#check_page .pt30{padding-top:30px}
+#check_page .t18{font-size:18px}
+#check_page label,#check_page .radio,#check_page .checkbox{cursor:pointer}
+#check_page .radio,#check_page .checkbox{vertical-align:-2px;_vertical-align:0;margin-right:3px;_padding:0;_margin:0}
+#check_page .arrow{font-family:"宋体";padding:0 5px}
+#check_page .yellow{color:#f60}
+#check_page a{color:#06C;text-decoration:none}
+#check_page a:hover{color:#f30}
+#check_page strong{font-weight:bold}
+#check_page .underline{text-decoration:underline}
+#check_page textarea{width:660px;border:1px solid #e1e1e1;padding:3px;color:#777}
+#check_page a.dashed{border-bottom:1px dashed #1568BD;margin-left:10px;cursor:pointer}
+input,option,select{vertical-align:middle;_vertical-align:0;color:#777}
+input.on,textarea.on{background:#fff7be}
+#check_page .price{color:#f60;text-indent:10px;line-height:24px}
+#check_page .step li{float:left;height:24px;line-height:26px;background:url(../pic/pages_com.png?t=201405301709) no-repeat;width:188px;color:#777;text-align:center}
+#check_page .step li.step01{width:208px;background-position:left -28px;color:#131313}
+#check_page .step li.step02{background-position:-210px -56px;color:#131313}
+#check_page .step li.step03{background-position:-210px -28px;color:#131313}
+#check_page .step li.step04{background-position:-210px top}
+#check_page .step li.step05{background-position:-400px top}
+#check_page .bg_top,#check_page .bg_bottom{background:url(../pic/pages_com.png?t=201405301709) no-repeat}
+#check_page h1.bg_top{height:44px;line-height:44px;margin-top:10px;padding-left:20px;color:#333;font-size:18px;font-family:simhei;background-position:left -90px}
+#check_page .bg_bottom{height:15px;background-position:left -142px}
+#check_page .container{padding:5px 10px;border-right:5px solid #9fcff4;border-left:5px solid #9fcff4}
+#check_page .main,#check_page .main2{margin-top:5px;margin-bottom:30px;border-top:1px solid #39F}
+#check_page .main h2,#check_page .main2 h2{height:28px;line-height:30px;text-indent:15px;font-size:14px;font-weight:700;border:1px solid #e1e1e1;background:url(../pic/com_icon.png) repeat-x left -57px;_background-position:left -55px}
+#check_page .main .content{float:left;padding:10px 15px;width:670px}
+#check_page .flight{border:1px solid #e1e1e1;border-top-width:0}
+#check_page .main .content dl{padding:15px 0}
+#check_page .main .content dt{font-weight:bold}
+#check_page .main .content dd{margin-left:45px;white-space:nowrap;height:24px;line-height:26px}
+#check_page .main .content .zhong_zhuan{background:url(../pic/com_icon.png) repeat-x left -85px;margin-top:5px;margin-bottom:5px}
+#check_page .main .content .zz_icon{display:inline-block;color:#777;margin-left:130px;padding:0 5px 0 20px;background:url(../pic/com_icon.png) #FFF no-repeat -10px -32px}
+#check_page .main .content .qifei{padding-right:30px}
+#check_page .cmsbox{float:right;padding:10px 0 0 10px;width:215px;color:#777}
+#check_page .cmsbox dt{font-size:14px;font-weight:700}
+#check_page .cmsbox dd{padding-left:15px}
+#check_page .cmsbox .arrow1{display:inline-block;width:15px;height:15px;margin-left:-10px;background:url(../pic/com_icon.png) no-repeat left -20px}
+#check_page .main2 .content{border:1px solid #e1e1e1;border-top-width:0;padding:10px 15px}
+#check_page .main2 .content dl{border-bottom:1px dotted #e1e1e1;padding:15px 0}
+#check_page .main2 .content dt{float:left;width:80px;font-weight:bold}
+#check_page .main2 .content dd{float:left}
+#check_page .main2 .content .cols01{width:150px}
+#check_page .main2 .content .cols02{width:210px}
+#check_page .main2 .content .cols03{width:200px}
+#check_page .main2 .content .cols04{width:150px}
+#check_page .main2 .content .cols05{width:800px}
+#check_page .but_box{padding-bottom:20px;text-align:center}
+#check_page .button,#check_page .button_on{width:236px;height:35px;color:#FFF;cursor:pointer;font-size:16px;font-weight:700;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat 0 -2745px;border:0}
+#check_page .button_on{background-position:0 -2705px}
+#check_page a.add_btn,#check_page a.add_btn_disable{width:79px;margin-top:-15px;display:block;height:26px;cursor:pointer;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat 0 -2615px}
+#check_page a.add_btn_disable{background-position:0 -2675px;cursor:not-allowed}
+#check_page a.add_btn:hover{background-position:0 -2645px}
+#check_page .confirm{margin-top:-10px;text-align:center;margin-bottom:10px;color:#f60;line-height:20px}
+#check_page .fanhui{float:left;padding-left:30px;font-size:14px;font-weight:700;background:url(../pic/com_icon.png) no-repeat 20px -165px}
+#goto_pay{width:960px;margin:10px auto;font-family:Arial,"宋体",Helvetica,sans-serif,Tahoma,Geneva,sans-serif}
+#goto_pay .bg_top,#goto_pay .bg_bottom{background:url(../pic/pages_com.png?t=201405301709) no-repeat}
+#goto_pay h1.bg_top{height:44px;line-height:44px;margin-top:10px;padding-left:20px;color:#333;font-size:18px;font-family:simhei;background-position:left -90px}
+#goto_pay .bg_bottom{height:15px;background-position:left -142px}
+#goto_pay .container{padding:5px 10px;border-right:5px solid #9fcff4;border-left:5px solid #9fcff4}
+#goto_pay #right{width:190px;float:right;padding:15px}
+#goto_pay #left{width:670px;float:left;margin-left:0;padding:15px;border-right:1px dotted #ccc}
+#goto_pay #left h2{padding:2px 0 2px 15px;font:20px SimHei,arial,sans-serif}
+#goto_pay #left .bgyellow{background:#fff0b5}
+.stepbox{border:#dadada solid 1px;padding:10px;overflow:hidden;zoom:1;clear:both;margin-bottom:10px}
+.stepbox h3{font-weight:bold}
+.stepbox ul{padding:10px 0}
+.stepbox li{text-align:center}
+.stepbox .blkbg{background:#e0f0ff;padding:3px 4px 2px 4px;text-align:center;border:1px solid #dbdbdd}
+.stepbox li.colsblk{padding:8px}
+.stepbox .arrow_down{background:url(../pic/flight_icon.gif?t=201405301709) no-repeat 0 -365px;width:11px;height:8px;margin:0 auto;display:block}
+#goto_pay .price{color:#f60;text-indent:10px;line-height:24px}
+#goto_pay .step li{float:left;height:24px;line-height:26px;background:url(../pic/pages_com.png?t=201405301709) no-repeat;width:188px;color:#777;text-align:center}
+#goto_pay .step li.step01{width:208px;background-position:left -28px;color:#131313}
+#goto_pay .step li.step02{background-position:-210px -56px;color:#131313}
+#goto_pay .step li.step03{background-position:-210px -56px;color:#131313}
+#goto_pay .step li.step04{background-position:-210px -28px;color:#131313}
+#goto_pay .step li.step05{background-position:-400px top}
+#goto_pay .but_box{padding-bottom:20px;text-align:center}
+#goto_pay .button,#goto_pay .button_on{width:236px;height:35px;color:#FFF;cursor:pointer;font-size:16px;font-weight:700;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat 0 -2745px;border:0}
+#goto_pay .button_on{background-position:0 -2705px}
+#w_content .no_mp{margin:0;padding:0}
+#w_content a.bottom_line{border-bottom:1px dashed #1568BD}
+#w_content .main{border:1px solid #b5d2ff}
+#w_content .main input{margin:0 4px;*margin:0;cursor:pointer;vertical-align:-2px;_vertical-align:0}
+#w_content .main label{margin-right:10px;cursor:pointer}
+#w_content .button,#w_content .button_on{width:67px;height:28px;background:url(../pic/pages_com.png?t=201405301709) no-repeat -850px top;border:0;font-weight:700;font-size:14px;text-align:center;color:#FFF;line-height:32px}
+#w_content .button_on{background-position:-850px -30px}
+#w_content .iflight .button,#w_content .iflight .button_on,#w_content .iflight .button_disnable{width:70px;height:30px;background:url(../pic/list_img.png?t=201405301709) no-repeat 0 -80px;border:0;font-weight:700;font-size:14px;text-align:center;color:#FFF;line-height:32px;cursor:pointer}
+#w_content .iflight .button_on{background-position:0 -120px}
+#w_content .iflight .button_disnable{background-position:0 -160px;color:#999}
+#w_content .nav{padding:10px 15px;line-height:24px;background:#f1f4f7}
+#w_content .nav dl{padding-left:65px}
+#w_content .nav dt{float:left;display:inline;width:65px;margin-left:-65px;font-weight:700}
+#w_content .nav dd{height:22px;white-space:nowrap;float:left}
+#w_content .nav dd.on{overflow:hidden;width:40px;padding-left:4px;background:url(../pic/pages_com.png?t=201405301709) no-repeat -600px 2px}
+#w_content .nav dd.no_on{width:40px;overflow:hidden;padding-left:4px}
+#w_content .nav dd.on a{color:#FFF}
+#w_content .nav .paixu dd{display:inline-block;padding-right:10px;width:auto}
+#w_content .nav .paixu dd.ertong{padding-left:57px}
+#w_content .nav2{height:35px;background:url(../pic/com_icon.png?t=201405301709) repeat-x left -225px}
+#w_content .nav2 li{float:left;display:inline-block;_padding-top:5px;*padding-top:5px}
+.nav2_li1{padding-left:35px;padding-top:6px}
+.nav2_li2{padding-left:75px}
+.nav2_li3{padding-left:65px;padding-top:6px}
+.nav2_li4{padding-left:35px}
+.nav2_li5{padding-left:110px;padding-top:6px}
+#w_content .kefu{width:60px;height:60px;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat -120px -90px}
+#w_content .help{display:inline-block;position:relative;top:4px;left:3px;width:15px;height:15px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat scroll -533px -833px transparent}
+#w_content .tips{margin-top:10px;width:747px;*width:745px;border-bottom:3px solid #0091e2;color:#FFF;position:relative;z-index:1;left:-1px}
+#w_content .tips p{text-indent:15px;height:23px;width:120px;background:url(../pic/pages_com.png?t=201405301709) repeat-x -600px -60px;font-size:14px;line-height:30px;overflow:hidden}
+#w_content .iflight{border-bottom:1px solid #b5d2ff;padding:15px 0 10px;color:#777}
+#w_content .iflight .cols00{width:346px}
+#w_content .iflight .cols01{padding-left:35px;width:140px}
+#w_content .iflight .cols02{width:180px}
+#w_content .iflight .cols03{width:105px}
+#w_content .iflight .cols04{width:160px}
+#w_content .iflight .cols05{width:55px;text-align:center}
+#w_content .iflight .cols06{text-align:center;width:90px}
+#w_content .iflight .bgcolor{background:#f5f5f5;padding:1px 0;margin-bottom:-10px;text-align:center}
+#w_content .iflight .bgcolor table{margin:10px 0;text-align:left}
+#w_content .iflight .cols04 a{display:inline-block}
+#w_content .ift_lib_UA{margin-left:-23px;margin-right:5px;*margin-right:0;position:static;display:inline-block;vertical-align:-2px;*vertical-align:middle}
+#w_content .special{background:#fafafa}
+#w_content .special .zhong_zhuan .zz_icon{background-color:#fafafa}
+#w_content .icon_bg02,#w_content .icon_bg02 span{display:inline-block;height:17px;line-height:17px;line-height:19px\9;color:#FFF;background:url(../pic/pages_com.png?t=201405301709) no-repeat;white-space:nowrap;cursor:pointer}
+#w_content .icon_bg02{background-position:-860px -320px;padding-left:2px;margin:1px 0;float:left;display:inline}
+#w_content .icon_bg02 span{background-position:right -320px;padding-right:2px}
+#w_content .radius2_top{width:747px;height:5px;background:url(../pic/pages_com.png?t=201405301709) repeat-x left -190px;overflow:hidden}
+#w_content .radius2_bottom{width:747px;margin-bottom:10px;height:5px;background:url(../pic/pages_com.png?t=201405301709) repeat-x left -200px;overflow:hidden}
+#w_content .yixuanze{color:#777;padding:5px 0 15px;border-right:1px solid #b5d2ff;border-left:1px solid #b5d2ff;background:#f1f8fe}
+#w_content .yixuanze p{font-size:14px;font-weight:700;padding:0 15px 10px;color:#131313}
+#w_content .yixuanze .cols00{width:460px}
+#w_content .yixuanze .cols01{padding-left:35px;width:140px}
+#w_content .yixuanze .cols02{width:180px}
+#w_content .yixuanze .cols03{width:125px}
+#w_content .yixuanze .cols04{width:130px}
+#w_content .yixuanze .cols05{width:0}
+#w_content .yixuanze .cols06{text-align:left}
+#w_content .yixuanze .zz_icon{background-color:#f1f8fe}
+#w_content .ift_lib_zk{background:#00aef1;white-space:nowrap;padding:0 3px;*padding:2px 3px 0;color:#FFF}
+#w_content .btn_Loading{background:url(../pic/loading.gif?t=201405301709) no-repeat center center;width:70px;height:20px;display:inline-block}
+#w_content .price{color:#F38303;font-size:22px}
+.ift_yl{display:inline-block;width:18px;height:18px;background:url(../pic/bg_search_flight.png?t=201405301709) no-repeat -103px -467px;cursor:pointer}
+#w_content .zhong_zhuan{margin:0 25px 0 15px;background:url(../pic/com_icon.png?t=201405301709) repeat-x left -180px;height:30px}
+#w_content .zhong_zhuan .zz_icon{display:inline-block;margin-left:18px;padding:0 5px;text-indent:16px;background:url(../pic/com_icon.png?t=201405301709) #fff no-repeat -10px -451px;color:#f38303;height:30px;line-height:30px}
+#w_content .yixuanze .zhong_zhuan .zz_icon{background-color:#f1f8fe;line-height:18px;height:18px;padding-top:7px}
+#w_content .no_flight{color:#f38303;font-size:14px;padding:10px 10px}
+#fpagebox{clear:both;margin-top:10px;overflow:hidden;text-align:right}
+#fpagebox a{color:#1568BD;text-decoration:none}
+#fpagebox .nextbox{margin-left:20px}
+#fpagebox a:hover{color:#E47B00}
+#fpagebox .ficona{background:url(../pic/flight_icon.gif?t=201405301709) no-repeat scroll -135px -1972px transparent;border:0 none;cursor:pointer;display:inline-block;height:9px;*height:12px;_height:9px;_background-position:-135px -1969px;margin-right:5px;width:6px}
+#fpagebox .ficonb{background:url(../pic/flight_icon.gif?t=201405301709) no-repeat scroll -135px -1991px transparent;border:0 none;cursor:pointer;display:inline-block;height:9px;*height:12px;_height:9px;_background-position:-135px -1989px;margin-left:5px;width:6px}
+#fpagebox .seonav{color:#666;float:left}
+#fpagebox .seonav a{text-decoration:none}
+.list_seo{border:1px solid #e1e1e1;margin-top:10px;padding:5px 10px}
+.list_seo h3{font-weight:bold;color:#666;border-bottom:#ccc 1px dashed;margin-bottom:5px;line-height:25px}
+.list_seo li{float:left;width:145px}
+.list_seo a,.list_seo a:visited{text-decoration:none;color:#777}
+.list_seo a:hover{text-decoration:underline}
+#w_content .nbox1 ul{padding:8px 0 4px 10px}
+#w_content #liFlightType input,#w_content #liFlightType label{cursor:pointer}
+#w_content .ift_More ul{margin:0;padding-top:0;padding-bottom:0}
+#w_content .nbox1 .flt_s_date,#w_content .nbox1 .flt_s_city{padding-left:3px;width:107px;line-height:16px}
+#w_content .nbox1 .flt_s_date{background-position:95px -75px}
+#w_content .nbox1 .flt_s_city{background-position:95px -55px}
+#w_content .tct{margin-top:10px}
+#w_content .nbox1{border:0;padding:0;border:2px solid #FFE535}
+#w_content .nbox1 h2{height:36px;text-align:left;text-indent:10px;color:#131313;overflow:hidden;padding:0;color:#3d2103;font:16px/38px "Microsoft Yahei",Simsun}
+#w_content .nbox1 .ift_list_sbox{padding-bottom:10px}
+#w_content .tct .search_bt_s,#w_content .tct .search_bt_s_an{width:103px;height:27px;background:url(../pic/pages_com.png?t=201405301709) no-repeat right -225px;border:0;font-size:14px;font-weight:700}
+#w_content .tct .search_bt_s_an{background-position:right -255px;border:0}
+#w_content .nbox1 .b_gb{height:5px;overflow:hidden;background:url(../pic/pages_com.png?t=201405301709) no-repeat right -215px}
+#w_content .ma_h{width:115px}
+.payment_wait_box{width:960px;clear:both;overflow:hidden;zoom:1;margin:0 auto;border:1px solid #d1d1d1;margin-top:30px;height:250px}
+.payment_wait_box div{margin-top:70px;text-align:center;font-size:20px;color:#333;font-family:Microsoft Yahei,simsun}
+.payment_wait_box .waitpic{background:url(../../flights/pic/waitpic.gif?t=201405301709);width:58px;height:59px;display:inline-block}
+#paymentsuccess{margin:0 auto;width:960px}
+#paymentsuccess .linebox{border:1px solid #3A9BC6;margin:10px 0 0;overflow:hidden;padding:10px 20px}
+#paymentsuccess .content1{margin:10px auto 5px;padding:15px 10px 10px;border:1px solid #fec63b;border-bottom-width:2px;background:#fffbe1}
+#paymentsuccess dt{float:left;margin-left:20px;width:30px;height:30px;background:url(../pic/flight_icon.gif?t=201405301709) no-repeat scroll -107px -557px transparent}
+#paymentsuccess dd{float:left;padding-left:30px}
+#paymentsuccess dd h1{font-size:18px;font-weight:bold;color:#f80}
+#paymentsuccess .dashline{border-bottom:1px dashed #d1d1d1;height:1px;line-height:1px;margin:10px 0}
+#paymentsuccess .content2{margin-top:10px;padding:0 20px}
+#paymentsuccess .content2 span{color:#f80;font-weight:700}
+#paymentsuccess a{text-decoration:underline;color:#1568bd}
+#paymentsuccess a:hover{color:#f80}
+#w_content #ResearchBox .tct .search_bt_s2{border-radius:0;width:150px;height:34px;background:url(../pic/list_img.png?t=201405301709) no-repeat -79px -114px;font:18px/32px Microsoft Yahei,Simsun,sans-serif;margin:0 auto}
+#w_content #ResearchBox .tct .search_bt_s_an2{border-radius:0;width:150px;height:34px;background:url(../pic/list_img.png?t=201405301709) no-repeat -79px -114px;font:18px/32px Microsoft Yahei,Simsun,sans-serif;margin:0 auto;background-position:-79px -154px;border-radius:0}
+.ift_list_sbox li label{color:#3d2103}
+.ift_list_sbox li .flt_s_city,.ift_list_sbox li .flt_s_date{width:110px;height:14px;padding:4px;line-height:18px;font-size:12px;border:1px solid #d8d8d8;box-shadow:inset 1px 1px 2px #e9e9e9;*vertical-align:middle;margin-left:5px}
+.ift_list_sbox li select{box-shadow:inset 1px 1px 2px #e9e9e9;padding:1px;margin-left:5px}
+.fly_loading{width:400px;padding:20px 0;color:#666;font-size:14px}
+.fly_loading dt{width:40px;height:40px;float:left;margin:0 10px}
+.fly_loading dd{width:310px;float:left}
+.fly_loading .loading{width:40px;height:40px;vertical-align:middle;background:url(../pic/loading3.gif?t=201405301709) no-repeat;display:inline-block}
+#w_content .nav2 li .sort_time_go{display:inline-block;width:44px;padding-left:11px;height:25px;line-height:24px;background:url(../pic/list_img.png?t=201405301709) no-repeat -81px -41px;cursor:pointer;margin-top:4px;*margin-top:0}
+#w_content .nav2 li .sort_time_go:hover,#w_content .nav2 li .sort_time_go_on{cursor:pointer;background:url(../pic/list_img.png?t=201405301709) no-repeat -81px -70px}
+#w_content .nav2 li .sort_time_back{margin-top:4px;*margin-top:0;display:inline-block;width:44px;padding-left:11px;height:25px;line-height:24px;background:url(../pic/list_img.png?t=201405301709) no-repeat -136px -41px;cursor:pointer}
+#w_content .nav2 li .sort_time_back:hover,#w_content .nav2 li .sort_time_back_on{cursor:pointer;background:url(../pic/list_img.png?t=201405301709) no-repeat -136px -70px}
+#w_content .nav2 li .sort_price{margin-top:4px;*margin-top:0;display:inline-block;width:45px;padding-left:10px;height:25px;line-height:24px;background:url(../pic/list_img.png?t=201405301709) no-repeat -195px -41px;cursor:pointer}
+#w_content .nav2 li .sort_price:hover{background-position:-195px -70px}
+#w_content .nav2 li .sort_price_on{cursor:pointer;background-position:-195px -70px}
+#w_content .nav2 li .sort_time:hover,#w_content .nav2 li .sort_price:hover{cursor:pointer}
+.header_step_div{width:960px;margin:0 auto}
+.header_step{width:680px;margin-top:12px;float:right}
+.header_step li{margin-right:10px;height:18px;float:right;overflow:hidden;font:16px/18px "Microsoft Yahei",Simsun;color:#ccc}
+.header_step li span.stBg{width:86px;height:18px;background:url(../pic/pages_com.png?t=201405301709) no-repeat 0 -53px;margin-right:5px;float:left}
+.header_step li.action span.stBg{width:80px;background-position:0 -71px}
+.header_step li.action{color:#000}
+#check_page .orderTitle,#fill_page .orderTitle{padding:10px 15px;background:#2ca9ec;position:relative}
+#check_page .orderTitle span.title,#fill_page .orderTitle span.title{font:20px "Microsoft Yahei",Simsun;color:#fff}
+#check_page .orderTitle ul.login,#fill_page .orderTitle ul.login{float:right}
+#check_page .orderTitle ul.login li,#fill_page .orderTitle ul.login li{float:left;padding:5px 10px;background:url(../pic/pages_com.png?t=201405301709) no-repeat -958px -433px}
+#check_page .orderTitle ul.login li span.fg,#fill_page .orderTitle ul.login li span.fg{color:#80baea;float:right}
+#check_page .orderTitle ul.login li a,#fill_page .orderTitle ul.login li a{color:#fff}
+#check_page .orderTitle ul.login li.long,#fill_page .orderTitle ul.login li.long{color:#f4ff4b}
+#check_page .orderTitle ul.login li.name,#fill_page .orderTitle ul.login li.name{color:#fff}
+#check_page .orderTitle ul.login li.myacc,#fill_page .orderTitle ul.login li.myacc{padding:5px 8px 5px 14px}
+#check_page .orderTitle ul.login li.myacc tt,#fill_page .orderTitle ul.login li.myacc tt{margin-left:4px;display:inline-block;width:9px;height:9px;background:url(../pic/fly_header.png?t=201405301709) no-repeat no-repeat -88px -2px}
+#check_page .container2,#fill_page .container2{border-right:3px solid #2ca9ec;border-left:3px solid #2ca9ec;border-bottom:3px solid #2ca9ec}
+.payment_tip h2{font:18px Microsoft Yahei,Simsun,sans-serif;color:#f60;margin:20px 0}
+.payment_tip h2 tt{display:inline-block;width:52px;height:52px;margin-right:10px;background:url(../pic/pages_com.png?t=201405301709) no-repeat -760px -225px;overflow:hidden;vertical-align:middle}
+.payment_tip .btn{display:inline-block;width:127px;height:37px;line-height:34px;color:#fff;cursor:pointer;font-size:16px;font-weight:400;font-family:Microsoft Yahei,Simsun;text-decoration:none;background:url(../pic/pages_com.png?t=201405301709) no-repeat -360px -240px;border:0}
+.payment_tip .btn:hover{background-position:-360px -280px;color:#fff}
+.payment_tip .tip_close{position:absolute;display:block;width:22px;height:22px;background:url(../pic/pages_com.png?t=201405301709) no-repeat -822px -233px;top:5px;right:5px}
+.payment_tip .tip_close:hover{filter:alpha(opacity=70);opacity:.7}
+.ty_div{padding:10px 15px;border:1px solid #FFCA7F;background:#FFFEDD;margin:0 40px 30px 40px}
+.ty_div h3{color:#f60;padding-bottom:10px}
+.ty_div .ty_table{width:100%}
+.ty_div .ty_table tr td{padding:10px;text-align:left;border-top:1px dotted #FFCA7F}
+#confirm .adv{width:960px;height:130px;margin-top:20px}
+#confirm .adv:hover{opacity:.9}

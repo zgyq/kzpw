@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 航班经停信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Flightstop createFlightstop(Flightstop flightstop) throws SQLException;
+	
+	/**
+	 * 删除 航班经停信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteFlightstop(long id);
+	
+	
+	/**
+	 * 修改 航班经停信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateFlightstop(Flightstop flightstop);
+
+		
+	/**
+	 * 修改 航班经停信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateFlightstopIgnoreNull(Flightstop flightstop);
+		
+	
+	/**
+	 * 查找 航班经停信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFlightstop(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 航班经停信息
+	 * @param id
+	 * @return
+	 */
+	public Flightstop findFlightstop(long id);
+	
+	/**
+	 * 查找 航班经停信息 by language
+	 * @param id
+	 * @return
+	 */
+	public Flightstop findFlightstopbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 航班经停信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllFlightstopForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找航班经停信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFlightstopBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 航班经停信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteFlightstopBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countFlightstopBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IFlightstopComponent flightstopComponent;
+	  
+ 	
+ 	public IFlightstopComponent getFlightstopComponent() {
+		return flightstopComponent;
+	}
+	public void setFlightstopComponent(IFlightstopComponent  flightstopComponent) {
+		this.flightstopComponent = flightstopComponent;
+	}
+	/**
+	 * 创建 航班经停信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Flightstop createFlightstop(Flightstop flightstop) throws SQLException{
+	
+		return flightstopComponent.createFlightstop(flightstop);
+	}
+	/**
+	 * 删除 航班经停信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteFlightstop(long id){
+	
+		return flightstopComponent.deleteFlightstop(id);
+	}
+	
+	
+	/**
+	 * 修改 航班经停信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateFlightstop(Flightstop flightstop){
+		return flightstopComponent.updateFlightstop(flightstop);
+	
+	}
+
+		
+	/**
+	 * 修改 航班经停信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateFlightstopIgnoreNull(Flightstop flightstop){
+			return flightstopComponent.updateFlightstopIgnoreNull(flightstop);
+	
+	}
+	
+	/**
+	 * 查找 航班经停信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFlightstop(String where, String orderby,int limit,int offset){
+		return flightstopComponent.findAllFlightstop(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 航班经停信息
+	 * @param id
+	 * @return
+	 */
+	public Flightstop findFlightstop(long id){
+		return flightstopComponent.findFlightstop(id);
+	}
+	
+	/**
+	 * 查找 航班经停信息
+	 * @param id
+	 * @return
+	 */
+	public Flightstop findFlightstopbylanguage(long id,Integer language){
+		return flightstopComponent.findFlightstopbylanguage(id,language);
+	}
+	/** 
+	 * 查找 航班经停信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllFlightstopForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return flightstopComponent.findAllFlightstop(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找航班经停信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFlightstopBySql(String sql,int limit,int offset){
+		return flightstopComponent.findAllFlightstop(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 航班经停信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteFlightstopBySql(String sql){
+		return flightstopComponent.excuteFlightstopBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countFlightstopBySql(String sql){
+		return flightstopComponent.countFlightstopBySql(sql);
+	}
+	
+	
+

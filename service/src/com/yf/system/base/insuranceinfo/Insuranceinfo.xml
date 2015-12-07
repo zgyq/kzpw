@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Insuranceinfo">
+  
+  <typeAlias alias="Insuranceinfo" type="com.yf.system.base.insuranceinfo.Insuranceinfo"/>
+ 
+  <resultMap id="resultInsuranceinfoMap" class="Insuranceinfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="companyname" column="C_COMPANYNAME"/>
+  
+     <result property="insurancename" column="C_INSURANCENAME"/>
+  
+  
+     <result property="insurancemoney" column="C_INSURANCEMONEY"/>
+  
+     <result property="insurancefee" column="C_INSURANCEFEE"/>
+  
+     <result property="ordernumber" column="C_ORDERNUMBER"/>
+  
+     <result property="description" column="C_DESC"/>
+  
+     <result property="employeeid" column="C_EMPLOYEEID"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+     
+     <result property="danzhenghao" column="C_DANZHENGHAO"/>
+     
+     
+     <result property="toubaoren" column="C_TOUBAOREN"/>
+     
+     <result property="beibaoren" column="C_BEIBAOREN"/>
+     
+     <result property="insurancenum" column="C_INSURANCENUM"/>
+     
+     <result property="insurancestate" column="C_INSURANCESTATE"/>
+     
+     
+     <result property="enddate" column="C_ENDDATE"/>
+     
+     
+     <result property="worktime" column="C_WORKTIME"/>
+     
+     
+     
+   
+  </resultMap>
+  
+  <select id="findAllInsuranceinfo"  resultMap="resultInsuranceinfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_INSURANCEINFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllInsuranceinfoBySql"  resultMap="resultInsuranceinfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteInsuranceinfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countInsuranceinfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_INSURANCEINFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findInsuranceinfo" parameterClass="long" resultClass="Insuranceinfo">
+    select 
+    	ID as id,
+	  			C_COMPANYNAME as companyname,
+	  			C_INSURANCENAME as insurancename,
+	  			C_INSURANCEMONEY as insurancemoney,
+	  			C_INSURANCEFEE as insurancefee,
+	  			C_ORDERNUMBER as ordernumber,
+	  			C_DESC as description,
+	  			C_EMPLOYEEID as employeeid,
+	  			C_CREATETIME as createtime ,
+	  			C_DANZHENGHAO as danzhenghao,
+	  			C_TOUBAOREN as toubaoren,
+	  			C_BEIBAOREN as beibaoren,
+	  			C_INSURANCENUM as insurancenum,
+	  			C_INSURANCESTATE as insurancestate,
+	  			C_ENDDATE as enddate,
+	  			C_WORKTIME as worktime
+     from T_INSURANCEINFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createInsuranceinfo" parameterClass="Insuranceinfo">
+    insert into T_INSURANCEINFO ( 
+    	ID,
+	  			C_COMPANYNAME,
+	  			C_INSURANCENAME,
+	  			C_INSURANCEMONEY,
+	  			C_INSURANCEFEE,
+	  			C_ORDERNUMBER,
+	  			C_DESC,
+	  			C_EMPLOYEEID,
+	  			C_CREATETIME ,
+	  			C_DANZHENGHAO,
+	  			C_TOUBAOREN,
+	  			C_BEIBAOREN,
+	  			C_INSURANCENUM,
+	  			C_INSURANCESTATE,
+	  			C_ENDDATE,
+	  			C_WORKTIME
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#companyname#,
+	  					
+	  						#insurancename#,
+	  					
+	  					
+	  						#insurancemoney#,
+	  					
+	  						#insurancefee#,
+	  					
+	  						#ordernumber#,
+	  					
+	  						#description#,
+	  					
+	  						#employeeid#,
+	  					
+	  						#createtime#,
+	  						
+	  					    #danzhenghao#,
+	  					    
+	  					    
+	  					    #toubaoren#,
+	  					    
+	  					    #beibaoren#,
+	  					    
+	  					    #insurancenum#,
+	  					    
+	  					    #insurancestate#,
+	  					    
+	  					    
+	  					    #enddate#,
+	  					    
+	  					    #worktime#
+    
+    )
+  </insert>
+  
+  <delete id="deleteInsuranceinfo" parameterClass="long">
+    delete from T_INSURANCEINFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateInsuranceinfo" parameterClass="Insuranceinfo">
+    update T_INSURANCEINFO 
+    set 
+    	C_COMPANYNAME = #companyname#,
+	  					C_INSURANCENAME = #insurancename#,
+	  					C_INSURANCEMONEY = #insurancemoney#,
+	  					C_INSURANCEFEE = #insurancefee#,
+	  					C_ORDERNUMBER = #ordernumber#,
+	  					C_DESC = #description#,
+	  					C_EMPLOYEEID = #employeeid#,
+	  					C_CREATETIME = #createtime#,
+	  					C_DANZHENGHAO =#danzhenghao#,
+	  			        C_TOUBAOREN=#toubaoren#,
+	  			        C_BEIBAOREN =#beibaoren#,
+	  			        
+	  			        C_INSURANCENUM=#insurancenum#,
+	  			        
+	  			        C_INSURANCESTATE=#insurancestate#,
+	  			        C_ENDDATE=#enddate#,
+	  			        C_WORKTIME=#worktime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

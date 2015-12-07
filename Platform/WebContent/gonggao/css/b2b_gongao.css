@@ -1,0 +1,172 @@
+body
+	{
+		color:#696969;font-family: "ËÎÌו";font-size: 12px; background: url("images/b2b_body.png") repeat;
+	}
+a
+	{
+		text-decoration:none; color:#696969;
+	}
+a:hover
+	{
+		text-decoration:underline;color: #E4393C;
+	}
+* 
+	{
+		margin: 0;
+		padding: 0;
+	}
+.clear
+	{
+		clear:both; float:none;
+	}		
+.b2b_dingdanjianshi_hengxian
+	{
+		width:100%;height:40px;background: none repeat scroll 0 0 #2A98DA;
+	}
+		
+.b2b_gonggaozhongxin
+	{
+		width:960px;margin:0 auto;
+	}	
+
+.c_Left 
+	{
+		float: left;
+		height: auto !important;
+		min-height: 418px;
+	}
+.c_HoDh 
+	{
+		background: url("images/NIcon.png") no-repeat scroll -124px 0 rgba(0, 0, 0, 0);
+		height: 22px;
+		line-height:22px;
+		padding-left: 36px;
+		width: 156px;
+	}
+.c_HoDh .c_HoDh_guide 
+	{
+		color: #2A98DA;
+		font-family: Microsoft YaHei;
+		font-size: 18px;
+		font-weight: bold;
+	}
+.c_HotCont 
+	{
+		background-color: #2A98DA;
+		border-bottom: 1px solid #E0E0E0;
+		border-top: 1px solid #E0E0E0;
+		margin-top: 5px;
+		position: relative;
+		width: 190px;
+		z-index: 211;
+	}
+.c_HotCont .c_HotContList 
+	{
+		position: relative;
+		z-index: 111;
+	}
+.add_c_HotContList 
+	{
+		background-color: #2A98DA;
+	}
+.c_HotContList div 
+	{
+		border-bottom: 1px solid #FFFFFF;
+		border-left: 1px solid #2A98DA;
+		border-right: 1px solid #2A98DA;
+		color: #FFFFFF;
+		font-family: Microsoft YaHei;
+		font-size: 14px;
+		height: 32px;
+		line-height: 32px;
+		overflow: hidden;
+		padding-left: 35px;
+		padding-right: 15px;
+		color: #FFFFFF;
+	}
+.add_c_HotContList .c_LeftArrow 
+	{
+		background: url("images/NIcon.png") no-repeat scroll -22px -159px rgba(0, 0, 0, 0);
+		height: 7px;
+		width: 7px; float: right;
+		margin-top: 13px;
+		overflow: hidden;
+	}	
+.c_HotContList ul
+	 {
+		background-color: #FFFFFF;
+		border-left: 1px solid #E0E0E0;
+		border-right: 1px solid #E0E0E0;
+		height:auto;
+		overflow: hidden;
+	}
+.c_HotContList ul li 
+	{
+		float: left;
+		height: 32px;
+		line-height: 32px;
+		overflow: hidden;
+	}
+.c_HotContList ul li a 
+	{
+		color: #666666;
+		display: inline-block;
+		float: left;
+		font-family: Simsun;
+		font-size: 14px;
+		height: 32px;
+		padding-left: 35px;
+		width: 153px;
+	}
+.c_HotContList ul li a:hover 
+	{
+		color: #F48000;
+		font-family: Simsun;
+		font-size: 14px;
+		text-decoration: none;
+	}
+.c_Right 
+	{
+		float: right;
+		overflow: hidden;
+		width: 760px;
+	}
+.c_SearchRTitle 
+	{
+		border-bottom: 1px solid #DDDDDD;
+		color: #333333;
+		font-family: Microsoft YaHei;
+		font-size: 18px;
+		padding-bottom: 7px;
+		padding-left: 10px;
+	}
+.c_SearchRCont 
+	{
+		padding-top: 5px;
+	}
+
+.c_SearchRContul 
+	{
+		padding-bottom: 20px;
+		padding-left: 10px;
+	}	
+.c_SearchRContli 
+	{
+		border-bottom: 1px solid #DDDDDD;
+		padding: 15px 0; list-style: none outside none;
+	}
+.c_SearchGuiz 
+	{
+		color: #2185C1;
+		font-family: Simsun;
+		font-size: 14px;
+		font-weight: bold;
+	}
+.c_SearchPcont 
+	{
+		color: #666666;
+		font-family: Simsun;
+		margin: 8px 0;font-family: Simsun;line-height:26px;
+	}
+
+	

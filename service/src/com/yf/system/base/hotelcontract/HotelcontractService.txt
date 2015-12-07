@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 酒店合同
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Hotelcontract createHotelcontract(Hotelcontract hotelcontract) throws SQLException;
+	
+	/**
+	 * 删除 酒店合同
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteHotelcontract(long id);
+	
+	
+	/**
+	 * 修改 酒店合同
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateHotelcontract(Hotelcontract hotelcontract);
+
+		
+	/**
+	 * 修改 酒店合同但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateHotelcontractIgnoreNull(Hotelcontract hotelcontract);
+		
+	
+	/**
+	 * 查找 酒店合同
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelcontract(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 酒店合同
+	 * @param id
+	 * @return
+	 */
+	public Hotelcontract findHotelcontract(long id);
+	
+	/**
+	 * 查找 酒店合同 by language
+	 * @param id
+	 * @return
+	 */
+	public Hotelcontract findHotelcontractbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 酒店合同
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllHotelcontractForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找酒店合同
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelcontractBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 酒店合同
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteHotelcontractBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countHotelcontractBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IHotelcontractComponent hotelcontractComponent;
+	  
+ 	
+ 	public IHotelcontractComponent getHotelcontractComponent() {
+		return hotelcontractComponent;
+	}
+	public void setHotelcontractComponent(IHotelcontractComponent  hotelcontractComponent) {
+		this.hotelcontractComponent = hotelcontractComponent;
+	}
+	/**
+	 * 创建 酒店合同
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Hotelcontract createHotelcontract(Hotelcontract hotelcontract) throws SQLException{
+	
+		return hotelcontractComponent.createHotelcontract(hotelcontract);
+	}
+	/**
+	 * 删除 酒店合同
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteHotelcontract(long id){
+	
+		return hotelcontractComponent.deleteHotelcontract(id);
+	}
+	
+	
+	/**
+	 * 修改 酒店合同
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateHotelcontract(Hotelcontract hotelcontract){
+		return hotelcontractComponent.updateHotelcontract(hotelcontract);
+	
+	}
+
+		
+	/**
+	 * 修改 酒店合同但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateHotelcontractIgnoreNull(Hotelcontract hotelcontract){
+			return hotelcontractComponent.updateHotelcontractIgnoreNull(hotelcontract);
+	
+	}
+	
+	/**
+	 * 查找 酒店合同
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelcontract(String where, String orderby,int limit,int offset){
+		return hotelcontractComponent.findAllHotelcontract(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 酒店合同
+	 * @param id
+	 * @return
+	 */
+	public Hotelcontract findHotelcontract(long id){
+		return hotelcontractComponent.findHotelcontract(id);
+	}
+	
+	/**
+	 * 查找 酒店合同
+	 * @param id
+	 * @return
+	 */
+	public Hotelcontract findHotelcontractbylanguage(long id,Integer language){
+		return hotelcontractComponent.findHotelcontractbylanguage(id,language);
+	}
+	/** 
+	 * 查找 酒店合同
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllHotelcontractForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return hotelcontractComponent.findAllHotelcontract(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找酒店合同
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelcontractBySql(String sql,int limit,int offset){
+		return hotelcontractComponent.findAllHotelcontract(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 酒店合同
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteHotelcontractBySql(String sql){
+		return hotelcontractComponent.excuteHotelcontractBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countHotelcontractBySql(String sql){
+		return hotelcontractComponent.countHotelcontractBySql(sql);
+	}
+	
+	
+

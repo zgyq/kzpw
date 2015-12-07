@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 航空公司报表导入
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Travelskyreport createTravelskyreport(Travelskyreport travelskyreport) throws SQLException;
+	
+	/**
+	 * 删除 航空公司报表导入
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTravelskyreport(long id);
+	
+	
+	/**
+	 * 修改 航空公司报表导入
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTravelskyreport(Travelskyreport travelskyreport);
+
+		
+	/**
+	 * 修改 航空公司报表导入但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTravelskyreportIgnoreNull(Travelskyreport travelskyreport);
+		
+	
+	/**
+	 * 查找 航空公司报表导入
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTravelskyreport(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 航空公司报表导入
+	 * @param id
+	 * @return
+	 */
+	public Travelskyreport findTravelskyreport(long id);
+	
+	
+	/** 
+	 * 查找 航空公司报表导入
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTravelskyreportForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找航空公司报表导入
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTravelskyreportBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 航空公司报表导入
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTravelskyreportBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTravelskyreportBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITravelskyreportComponent travelskyreportComponent;
+	  
+ 	
+ 	public ITravelskyreportComponent getTravelskyreportComponent() {
+		return travelskyreportComponent;
+	}
+	public void setTravelskyreportComponent(ITravelskyreportComponent  travelskyreportComponent) {
+		this.travelskyreportComponent = travelskyreportComponent;
+	}
+	/**
+	 * 创建 航空公司报表导入
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Travelskyreport createTravelskyreport(Travelskyreport travelskyreport) throws SQLException{
+	
+		return travelskyreportComponent.createTravelskyreport(travelskyreport);
+	}
+	/**
+	 * 删除 航空公司报表导入
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTravelskyreport(long id){
+	
+		return travelskyreportComponent.deleteTravelskyreport(id);
+	}
+	
+	
+	/**
+	 * 修改 航空公司报表导入
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTravelskyreport(Travelskyreport travelskyreport){
+		return travelskyreportComponent.updateTravelskyreport(travelskyreport);
+	
+	}
+
+		
+	/**
+	 * 修改 航空公司报表导入但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTravelskyreportIgnoreNull(Travelskyreport travelskyreport){
+			return travelskyreportComponent.updateTravelskyreportIgnoreNull(travelskyreport);
+	
+	}
+	
+	/**
+	 * 查找 航空公司报表导入
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTravelskyreport(String where, String orderby,int limit,int offset){
+		return travelskyreportComponent.findAllTravelskyreport(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 航空公司报表导入
+	 * @param id
+	 * @return
+	 */
+	public Travelskyreport findTravelskyreport(long id){
+		return travelskyreportComponent.findTravelskyreport(id);
+	}
+	
+	/** 
+	 * 查找 航空公司报表导入
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTravelskyreportForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return travelskyreportComponent.findAllTravelskyreport(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找航空公司报表导入
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTravelskyreportBySql(String sql,int limit,int offset){
+		return travelskyreportComponent.findAllTravelskyreport(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 航空公司报表导入
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTravelskyreportBySql(String sql){
+		return travelskyreportComponent.excuteTravelskyreportBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTravelskyreportBySql(String sql){
+		return travelskyreportComponent.countTravelskyreportBySql(sql);
+	}
+	
+	
+

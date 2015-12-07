@@ -1,0 +1,107 @@
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib uri="webwork" prefix="ww"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>帮助中心</title>
+<ww:head name="help"/>
+</head>
+<script src="js/jquery/jquery1.3.2.js" type="text/javascript"></script>
+<script src="js/jquery/jquery.validationEngine-cn.js" type="text/javascript"></script>
+<script src="js/jquery/jquery.validationEngine.js" type="text/javascript"></script>
+
+<body>
+<div id="container">
+ <div class="center"><ww:include page="../top.jsp?type=bangzhu"/></div>
+ <!--includ top 直接替换掉整个DIV-->
+</div> 
+<div id="help">
+   <div id="help_left" class="f mt10">
+     <div class="helptitle">
+      <span class="why f"></span><font class="fff14">帮助中心</font>
+     </div>
+     <div class="box">
+  
+        <ul>
+       
+         <%int j = 1; int i = 1;%>
+        <ww:iterator value="ListHelpcenter" status="t">
+        <li   <ww:if test="Helpid==id">class="open"</ww:if><ww:else>class="close"</ww:else>  id='help<%=i%>'
+        onclick="check(<%=i%>)"><ww:property value="name"/></li>
+        <!-- onclick="onloadcss(<%=i%>)" -->
+       <ww:if test="GetHelpLastById(id).size>0">
+		        <li class="box_over" id="nhelp<%=i%>" <ww:if test="Helpid==id">style='display: block;'</ww:if><ww:else>style='display: none;'</ww:else> >
+		        <dl class="openlist">
+			        <ww:iterator value="GetHelpLastById(id)">
+			       <a href="index!toHelpInfo.jspx?HelpcenterID=<ww:property value="id"/>"><dt class="list"><ww:property value="name"/></dt></a>
+			        </ww:iterator>
+		        </dl>
+		        </li>
+	        </ww:if>
+	        <%i++;%>
+        </ww:iterator>
+       
+        
+        </ul>
+     </div>
+   </div>
+   <div id="help_right" class="r mt7">
+      <div class="searh">
+         <ul>
+         <li><input name="" type="text" class="searh_text mr25"  value="搜索您想搜索的问题，如：如何注册" /><input type="button" class="searh_bnt fff14" value="立即搜索"  /></li>
+         <li class="dd2626 searhtips"><span class="wenhao f">&nbsp;</span><font class="f pt5" >热门问题：如何注册，如何买票，签证常识...</font></li>
+         </ul>
+      </div>
+      <div class="msg helpmap mt3">
+        <ul>
+          <li><font class="mlr10 f90c">如何注册</font><img src="../images/helpmapone.jpg" width="652" height="42" /></li>
+          <li class="mt10"><font class="mlr10 c09f">如何买票</font><img src="../images/helpmaptwo.jpg" width="652" height="42" /></li>
+        </ul>
+      </div>
+      <div class="msg helpmain mt10">
+        <div class="msgul">
+                <ul class="f helpmainleft">
+                <li class="msgul box_over pf5 f00">乘机常识</li>
+                <li><span class="ico_bollow mlr10"></span>春运携子乘机 购买机票有窍门</li>    
+                <li><span class="ico_bollow mlr10"></span>留学荷兰：国际特价机票常识</li>    
+                <li><span class="ico_bollow mlr10"></span>出国留学机票小常识</li>    
+                <li><span class="ico_bollow mlr10"></span>孕妇安全带有特别系法</li>
+                </ul>
+                <ul class="r helpmainright">
+                <li class="msgul box_over pf5 f00">签证知识</li>
+                <li><span class="ico_green mlr10"></span>孕妇安全带有特别系法</li>
+                <li><span class="ico_green mlr10"></span>孕妇安全带有特别系法</li>
+                <li><span class="ico_green mlr10"></span>孕妇安全带有特别系法</li>
+                <li><span class="ico_green mlr10"></span>孕妇安全带有特别系法</li>
+                </ul>
+            <div class="c"></div>
+         </div>  
+      </div>
+      <div class="box helpmain mt10">
+         <ul class="helptips">
+          <li class="box_over pf5"><font class="l06c mr15">热门问题</font><span class="ico"></span></li>
+          <li>
+            <ul class="f ">
+                <li><span class="ico_bollow mlr10"></span>春运携子乘机 购买机票有窍门</li>    
+                <li><span class="ico_bollow mlr10"></span>留学荷兰：国际特价机票常识</li>    
+                <li><span class="ico_bollow mlr10"></span>出国留学机票小常识</li>    
+                <li><span class="ico_bollow mlr10"></span>孕妇安全带有特别系法</li>
+                </ul>
+                <ul class="r helpmainright">
+                <li><span class="ico_green mlr10"></span>孕妇安全带有特别系法</li>
+                <li><span class="ico_green mlr10"></span>孕妇安全带有特别系法</li>
+                <li><span class="ico_green mlr10"></span>孕妇安全带有特别系法</li>
+                <li><span class="ico_green mlr10"></span>孕妇安全带有特别系法</li>
+                </ul>
+            <div class="c"></div>
+            </li>
+         </ul> 
+      </div>
+   </div>
+   <div class="nohave"></div>
+</div>
+ <iframe src="../footer.html" scrolling="no" hspace="0" frameborder="0" width="100%" height="126"></iframe>
+</body>
+</html>

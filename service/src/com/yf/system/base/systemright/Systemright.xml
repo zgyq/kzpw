@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Systemright">
+  
+  <typeAlias alias="Systemright" type="com.yf.system.base.systemright.Systemright"/>
+  
+  
+
+  <resultMap id="resultSystemrightMap" class="Systemright" >
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="parentid" column="C_PARENTID"/>
+  
+     <result property="parentstr" column="C_PARENTSTR"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="resource" column="C_RESOURCE"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+   
+  </resultMap>
+  
+  <sql id="query_right">
+   <dynamic prepend="WHERE">
+    <isNotEmpty prepend="AND" property="where">
+       $where$
+    </isNotEmpty>
+    <isNotEmpty prepend="AND" property="parentid">
+        charindex(','+CONVERT(nvarchar, $parentid$)+',',','+C_PARENTSTR+',')> 0
+    </isNotEmpty>
+    <isNotEmpty prepend="AND" property="roles">
+        ID IN(SELECT C_RIGHTID FROM T_SYSROLERIGHT WHERE C_ROLEID IN($roles$))
+    </isNotEmpty>
+    <isNotEmpty prepend="ORDER BY" property="DESC">
+     $DESC$ DESC
+    </isNotEmpty>
+    <isNotEmpty prepend="ORDER BY" property="ASC">
+     $ASC$ ASC
+    </isNotEmpty>
+   </dynamic>
+  </sql>
+  
+  <select id="findTompMenuByRoles"   resultClass="Systemright"  parameterClass="java.util.Map">
+    SELECT ID AS id ,C_NAME name,C_CODE  code,C_PARENTID parentid 
+  FROM T_SYSTEMRIGHT WHERE C_PARENTID=1 AND ID IN (SELECT C_LIMITID FROM T_B2GROLELIMIT WHERE C_ROLEID IN($roles$) )
+  </select>
+  <select id="findRightsByRolesAndPid"   resultClass="Systemright"  parameterClass="java.util.Map">
+    SELECT ID AS id ,C_NAME name,C_CODE  code,C_PARENTID parentid 
+  FROM T_SYSTEMRIGHT WHERE CHARINDEX(','+CONVERT(NVARCHAR,$pid$)+',',','+C_PARENTSTR+',')>0 AND ID IN (SELECT C_LIMITID FROM T_B2GROLELIMIT WHERE C_ROLEID IN($roles$) )
+  </select>
+  <select id="findAllRightsByComid" resultMap="resultSystemrightMap" parameterClass="long">
+    SELECT * FROM T_SYSTEMRIGHT WHERE ID IN (SELECT C_RIGHTID FROM T_B2GCOMLIMIT WHERE C_COMID=#value#)
+  </select>
+  <select id="findAllRightsByRoleid" resultMap="resultSystemrightMap" parameterClass="long">
+    SELECT * FROM T_SYSTEMRIGHT WHERE ID IN (SELECT C_LIMITID FROM T_B2GROLELIMIT WHERE C_ROLEID=#value#)
+  </select>
+  <select id="findAllSystemright"   resultMap="resultSystemrightMap"  parameterClass="java.util.Map">
+  
+    select * from T_SYSTEMRIGHT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSystemrightBySql"  resultMap="resultSystemrightMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSystemrightBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSystemrightBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SYSTEMRIGHT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSystemright" parameterClass="long" resultClass="Systemright">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_CODE as code,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_STATE as state,
+	  			C_PARENTID as parentid,
+	  			C_PARENTSTR as parentstr,
+	  			C_TYPE as type,
+	  			C_RESOURCE as resource,
+	  			C_ORDERID as orderid 
+     from T_SYSTEMRIGHT
+    where ID = #id#
+  </select>
+   
+  <insert id="createSystemright" parameterClass="Systemright">
+    insert into T_SYSTEMRIGHT ( 
+    	ID,
+	  			C_NAME,
+	  			C_CODE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_STATE,
+	  			C_PARENTID,
+	  			C_PARENTSTR,
+	  			C_TYPE,
+	  			C_RESOURCE,
+	  			C_ORDERID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#code#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#state:DECIMAL#,
+						
+							#parentid:DECIMAL#,
+						
+	  						#parentstr#,
+	  					
+							#type:DECIMAL#,
+						
+	  						#resource#,
+	  					
+  							#orderid:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSystemright" parameterClass="long">
+    delete from T_SYSTEMRIGHT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSystemright" parameterClass="Systemright">
+    update T_SYSTEMRIGHT 
+    set 
+    	C_NAME = #name#,
+	  					C_CODE = #code#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_STATE = #state:DECIMAL#,
+						C_PARENTID = #parentid:DECIMAL#,
+						C_PARENTSTR = #parentstr#,
+	  					C_TYPE = #type:DECIMAL#,
+						C_RESOURCE = #resource#,
+	  					C_ORDERID = #orderid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

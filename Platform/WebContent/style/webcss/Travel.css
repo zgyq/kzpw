@@ -1,0 +1,24 @@
+#main{margin-top:10px;}
+#main .left{ width:686px;}
+#main .nav_sea{ background:url(../../images/webimages/bj_quan.gif); height:32px; line-height:32px; padding-left:30px; }
+#main .nav_sea ul{}
+#main .nav_sea ul li{margin-top:1px; width:99px; height:31px; line-height:31px;   text-align:center; font-weight:bold; float:left;}
+#main .nav_sea ul li a{ color:#479AF0;font-size:14px;}
+
+.nav_city{ height:23px; line-height:23px; margin-top:9px;}
+.nav_city ul{}
+.nav_city ul li{ width:58px; height:23px; line-height:23px; margin-right:5px; background:url(../../images/webimages/nav_city_b.gif); float:left; text-align:center; font-size:12px; font-weight:100;}
+.nav_city ul li a{ color:#000;}
+
+#main .right{ width:304px;}
+#main .fuwu{ padding:15px 0 15px 25px; line-height:24px;} 
+#main .yh_tab{margin: 0 auto; line-height:24px; padding:10px 0 }
+#main .sea_tab{line-height:28px; background:#DDECF3; padding-top:15px; color:#6E6E6E; padding-left:30px}
+
+#list{ margin-top:10px;}
+#list .left{ width:232px;  float:left; display:inline; overflow:hidden;}
+
+
+#list .right{ width:761px; float:right; display:inline; overflow:hidden;}
+
+

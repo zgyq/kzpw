@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Infocontent createInfocontent(Infocontent infocontent) throws SQLException;
+	
+	/**
+	 * 删除 信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteInfocontent(long id);
+	
+	
+	/**
+	 * 修改 信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateInfocontent(Infocontent infocontent);
+
+		
+	/**
+	 * 修改 信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateInfocontentIgnoreNull(Infocontent infocontent);
+		
+	
+	/**
+	 * 查找 信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInfocontent(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 信息
+	 * @param id
+	 * @return
+	 */
+	public Infocontent findInfocontent(long id);
+	
+	
+	/** 
+	 * 查找 信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllInfocontentForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInfocontentBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteInfocontentBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countInfocontentBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IInfocontentComponent infocontentComponent;
+	  
+ 	
+ 	public IInfocontentComponent getInfocontentComponent() {
+		return infocontentComponent;
+	}
+	public void setInfocontentComponent(IInfocontentComponent  infocontentComponent) {
+		this.infocontentComponent = infocontentComponent;
+	}
+	/**
+	 * 创建 信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Infocontent createInfocontent(Infocontent infocontent) throws SQLException{
+	
+		return infocontentComponent.createInfocontent(infocontent);
+	}
+	/**
+	 * 删除 信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteInfocontent(long id){
+	
+		return infocontentComponent.deleteInfocontent(id);
+	}
+	
+	
+	/**
+	 * 修改 信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateInfocontent(Infocontent infocontent){
+		return infocontentComponent.updateInfocontent(infocontent);
+	
+	}
+
+		
+	/**
+	 * 修改 信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateInfocontentIgnoreNull(Infocontent infocontent){
+			return infocontentComponent.updateInfocontentIgnoreNull(infocontent);
+	
+	}
+	
+	/**
+	 * 查找 信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInfocontent(String where, String orderby,int limit,int offset){
+		return infocontentComponent.findAllInfocontent(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 信息
+	 * @param id
+	 * @return
+	 */
+	public Infocontent findInfocontent(long id){
+		return infocontentComponent.findInfocontent(id);
+	}
+	
+	/** 
+	 * 查找 信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllInfocontentForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return infocontentComponent.findAllInfocontent(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInfocontentBySql(String sql,int limit,int offset){
+		return infocontentComponent.findAllInfocontent(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteInfocontentBySql(String sql){
+		return infocontentComponent.excuteInfocontentBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countInfocontentBySql(String sql){
+		return infocontentComponent.countInfocontentBySql(sql);
+	}
+	
+	
+

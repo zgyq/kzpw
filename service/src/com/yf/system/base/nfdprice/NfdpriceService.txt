@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 NFD价格
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Nfdprice createNfdprice(Nfdprice nfdprice) throws SQLException;
+	
+	/**
+	 * 删除 NFD价格
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteNfdprice(long id);
+	
+	
+	/**
+	 * 修改 NFD价格
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateNfdprice(Nfdprice nfdprice);
+
+		
+	/**
+	 * 修改 NFD价格但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateNfdpriceIgnoreNull(Nfdprice nfdprice);
+		
+	
+	/**
+	 * 查找 NFD价格
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllNfdprice(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 NFD价格
+	 * @param id
+	 * @return
+	 */
+	public Nfdprice findNfdprice(long id);
+	
+	
+	/** 
+	 * 查找 NFD价格
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllNfdpriceForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找NFD价格
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllNfdpriceBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql NFD价格
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteNfdpriceBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countNfdpriceBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private INfdpriceComponent nfdpriceComponent;
+	  
+ 	
+ 	public INfdpriceComponent getNfdpriceComponent() {
+		return nfdpriceComponent;
+	}
+	public void setNfdpriceComponent(INfdpriceComponent  nfdpriceComponent) {
+		this.nfdpriceComponent = nfdpriceComponent;
+	}
+	/**
+	 * 创建 NFD价格
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Nfdprice createNfdprice(Nfdprice nfdprice) throws SQLException{
+	
+		return nfdpriceComponent.createNfdprice(nfdprice);
+	}
+	/**
+	 * 删除 NFD价格
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteNfdprice(long id){
+	
+		return nfdpriceComponent.deleteNfdprice(id);
+	}
+	
+	
+	/**
+	 * 修改 NFD价格
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateNfdprice(Nfdprice nfdprice){
+		return nfdpriceComponent.updateNfdprice(nfdprice);
+	
+	}
+
+		
+	/**
+	 * 修改 NFD价格但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateNfdpriceIgnoreNull(Nfdprice nfdprice){
+			return nfdpriceComponent.updateNfdpriceIgnoreNull(nfdprice);
+	
+	}
+	
+	/**
+	 * 查找 NFD价格
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllNfdprice(String where, String orderby,int limit,int offset){
+		return nfdpriceComponent.findAllNfdprice(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 NFD价格
+	 * @param id
+	 * @return
+	 */
+	public Nfdprice findNfdprice(long id){
+		return nfdpriceComponent.findNfdprice(id);
+	}
+	
+	/** 
+	 * 查找 NFD价格
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllNfdpriceForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return nfdpriceComponent.findAllNfdprice(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找NFD价格
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllNfdpriceBySql(String sql,int limit,int offset){
+		return nfdpriceComponent.findAllNfdprice(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql NFD价格
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteNfdpriceBySql(String sql){
+		return nfdpriceComponent.excuteNfdpriceBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countNfdpriceBySql(String sql){
+		return nfdpriceComponent.countNfdpriceBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Messgroup">
+  
+  <typeAlias alias="Messgroup" type="com.yf.system.base.messgroup.Messgroup"/>
+  
+
+  <resultMap id="resultMessgroupMap" class="Messgroup">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="messname" column="C_MESSNAME"/>
+  
+     <result property="messnums" column="C_MESSNUMS"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createuserid" column="C_CREATEUSERID"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+   
+  </resultMap>
+  
+  <select id="findAllMessgroup"  resultMap="resultMessgroupMap"  parameterClass="java.util.Map">
+  
+    select * from T_MESSGROUP
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllMessgroupBySql"  resultMap="resultMessgroupMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteMessgroupBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countMessgroupBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_MESSGROUP
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findMessgroup" parameterClass="long" resultClass="Messgroup">
+    select 
+    	ID as id,
+	  			C_MESSNAME as messname,
+	  			C_MESSNUMS as messnums,
+	  			C_CREATETIME as createtime,
+	  			C_CREATEUSERID as createuserid,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3 
+     from T_MESSGROUP
+    where ID = #id#
+  </select>
+   
+  <insert id="createMessgroup" parameterClass="Messgroup">
+    insert into T_MESSGROUP ( 
+    	ID,
+	  			C_MESSNAME,
+	  			C_MESSNUMS,
+	  			C_CREATETIME,
+	  			C_CREATEUSERID,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#messname#,
+	  					
+	  						#messnums#,
+	  					
+	  						#createtime#,
+	  					
+							#createuserid:DECIMAL#,
+						
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteMessgroup" parameterClass="long">
+    delete from T_MESSGROUP
+    where ID = #id#
+  </delete>
+	
+  <update id="updateMessgroup" parameterClass="Messgroup">
+    update T_MESSGROUP 
+    set 
+    	C_MESSNAME = #messname#,
+	  					C_MESSNUMS = #messnums#,
+	  					C_CREATETIME = #createtime#,
+	  					C_CREATEUSERID = #createuserid:DECIMAL#,
+						C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,220 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 乘机人表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Passenger createPassenger(Passenger passenger) throws SQLException;
+	
+	/**
+	 * 删除 乘机人表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deletePassenger(long id);
+	
+	
+	/**
+	 * 修改 乘机人表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updatePassenger(Passenger passenger);
+
+		
+	/**
+	 * 修改 乘机人表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updatePassengerIgnoreNull(Passenger passenger);
+		
+	
+	/**
+	 * 查找 乘机人表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPassenger(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 乘机人表
+	 * @param id
+	 * @return
+	 */
+	public Passenger findPassenger(long id);
+	
+	/**
+	 * 查找 乘机人表 by language
+	 * @param id
+	 * @return
+	 */
+	public Passenger findPassengerbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 乘机人表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllPassengerForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找乘机人表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPassengerBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 乘机人表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excutePassengerBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countPassengerBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IPassengerComponent passengerComponent;
+	  
+ 	
+ 	public IPassengerComponent getPassengerComponent() {
+		return passengerComponent;
+	}
+	public void setPassengerComponent(IPassengerComponent  passengerComponent) {
+		this.passengerComponent = passengerComponent;
+	}
+	/**
+	 * 创建 乘机人表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Passenger createPassenger(Passenger passenger) throws SQLException{
+	
+		return passengerComponent.createPassenger(passenger);
+	}
+	/**
+	 * 删除 乘机人表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deletePassenger(long id){
+	
+		return passengerComponent.deletePassenger(id);
+	}
+	
+	
+	/**
+	 * 修改 乘机人表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updatePassenger(Passenger passenger){
+		return passengerComponent.updatePassenger(passenger);
+	
+	}
+
+		
+	/**
+	 * 修改 乘机人表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updatePassengerIgnoreNull(Passenger passenger){
+			return passengerComponent.updatePassengerIgnoreNull(passenger);
+	
+	}
+	
+	/**
+	 * 查找 乘机人表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPassenger(String where, String orderby,int limit,int offset){
+		return passengerComponent.findAllPassenger(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 乘机人表
+	 * @param id
+	 * @return
+	 */
+	public Passenger findPassenger(long id){
+		return passengerComponent.findPassenger(id);
+	}
+	
+	/**
+	 * 查找 乘机人表
+	 * @param id
+	 * @return
+	 */
+	public Passenger findPassengerbylanguage(long id,Integer language){
+		return passengerComponent.findPassengerbylanguage(id,language);
+	}
+	/** 
+	 * 查找 乘机人表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllPassengerForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return passengerComponent.findAllPassenger(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找乘机人表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllPassengerBySql(String sql,int limit,int offset){
+		return passengerComponent.findAllPassenger(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 乘机人表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excutePassengerBySql(String sql){
+		return passengerComponent.excutePassengerBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countPassengerBySql(String sql){
+		return passengerComponent.countPassengerBySql(sql);
+	}
+	
+	
+

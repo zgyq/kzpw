@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Infocontent">
+  
+  <typeAlias alias="Infocontent" type="com.yf.system.base.infocontent.Infocontent"/>
+  
+
+  <resultMap id="resultInfocontentMap" class="Infocontent">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="title" column="C_TITLE"/>
+  
+     <result property="content" column="C_CONTENT"/>
+  
+     <result property="typeid" column="C_TYPEID"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllInfocontent"  resultMap="resultInfocontentMap"  parameterClass="java.util.Map">
+  
+    select * from T_INFOCONTENT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllInfocontentBySql"  resultMap="resultInfocontentMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteInfocontentBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countInfocontentBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_INFOCONTENT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findInfocontent" parameterClass="long" resultClass="Infocontent">
+    select 
+    	ID as id,
+	  			C_TITLE as title,
+	  			C_CONTENT as content,
+	  			C_TYPEID as typeid,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime 
+     from T_INFOCONTENT
+    where ID = #id#
+  </select>
+   
+  <insert id="createInfocontent" parameterClass="Infocontent">
+    insert into T_INFOCONTENT ( 
+    	ID,
+	  			C_TITLE,
+	  			C_CONTENT,
+	  			C_TYPEID,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#title#,
+	  					
+	  						#content#,
+	  					
+							#typeid:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteInfocontent" parameterClass="long">
+    delete from T_INFOCONTENT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateInfocontent" parameterClass="Infocontent">
+    update T_INFOCONTENT 
+    set 
+    	C_TITLE = #title#,
+	  					C_CONTENT = #content#,
+	  					C_TYPEID = #typeid:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

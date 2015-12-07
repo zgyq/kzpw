@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 用户信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Txuserinfo createTxuserinfo(Txuserinfo txuserinfo) throws SQLException;
+	
+	/**
+	 * 删除 用户信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTxuserinfo(long id);
+	
+	
+	/**
+	 * 修改 用户信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTxuserinfo(Txuserinfo txuserinfo);
+
+		
+	/**
+	 * 修改 用户信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTxuserinfoIgnoreNull(Txuserinfo txuserinfo);
+		
+	
+	/**
+	 * 查找 用户信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTxuserinfo(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 用户信息
+	 * @param id
+	 * @return
+	 */
+	public Txuserinfo findTxuserinfo(long id);
+	
+	
+	/** 
+	 * 查找 用户信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTxuserinfoForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找用户信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTxuserinfoBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 用户信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTxuserinfoBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTxuserinfoBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITxuserinfoComponent txuserinfoComponent;
+	  
+ 	
+ 	public ITxuserinfoComponent getTxuserinfoComponent() {
+		return txuserinfoComponent;
+	}
+	public void setTxuserinfoComponent(ITxuserinfoComponent  txuserinfoComponent) {
+		this.txuserinfoComponent = txuserinfoComponent;
+	}
+	/**
+	 * 创建 用户信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Txuserinfo createTxuserinfo(Txuserinfo txuserinfo) throws SQLException{
+	
+		return txuserinfoComponent.createTxuserinfo(txuserinfo);
+	}
+	/**
+	 * 删除 用户信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTxuserinfo(long id){
+	
+		return txuserinfoComponent.deleteTxuserinfo(id);
+	}
+	
+	
+	/**
+	 * 修改 用户信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTxuserinfo(Txuserinfo txuserinfo){
+		return txuserinfoComponent.updateTxuserinfo(txuserinfo);
+	
+	}
+
+		
+	/**
+	 * 修改 用户信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTxuserinfoIgnoreNull(Txuserinfo txuserinfo){
+			return txuserinfoComponent.updateTxuserinfoIgnoreNull(txuserinfo);
+	
+	}
+	
+	/**
+	 * 查找 用户信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTxuserinfo(String where, String orderby,int limit,int offset){
+		return txuserinfoComponent.findAllTxuserinfo(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 用户信息
+	 * @param id
+	 * @return
+	 */
+	public Txuserinfo findTxuserinfo(long id){
+		return txuserinfoComponent.findTxuserinfo(id);
+	}
+	
+	/** 
+	 * 查找 用户信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTxuserinfoForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return txuserinfoComponent.findAllTxuserinfo(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找用户信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTxuserinfoBySql(String sql,int limit,int offset){
+		return txuserinfoComponent.findAllTxuserinfo(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 用户信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTxuserinfoBySql(String sql){
+		return txuserinfoComponent.excuteTxuserinfoBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTxuserinfoBySql(String sql){
+		return txuserinfoComponent.countTxuserinfoBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 酒店设置返点表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Hotelfan createHotelfan(Hotelfan hotelfan) throws SQLException;
+	
+	/**
+	 * 删除 酒店设置返点表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteHotelfan(long id);
+	
+	
+	/**
+	 * 修改 酒店设置返点表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateHotelfan(Hotelfan hotelfan);
+
+		
+	/**
+	 * 修改 酒店设置返点表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateHotelfanIgnoreNull(Hotelfan hotelfan);
+		
+	
+	/**
+	 * 查找 酒店设置返点表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelfan(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 酒店设置返点表
+	 * @param id
+	 * @return
+	 */
+	public Hotelfan findHotelfan(long id);
+	
+	
+	/** 
+	 * 查找 酒店设置返点表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllHotelfanForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找酒店设置返点表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelfanBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 酒店设置返点表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteHotelfanBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countHotelfanBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IHotelfanComponent hotelfanComponent;
+	  
+ 	
+ 	public IHotelfanComponent getHotelfanComponent() {
+		return hotelfanComponent;
+	}
+	public void setHotelfanComponent(IHotelfanComponent  hotelfanComponent) {
+		this.hotelfanComponent = hotelfanComponent;
+	}
+	/**
+	 * 创建 酒店设置返点表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Hotelfan createHotelfan(Hotelfan hotelfan) throws SQLException{
+	
+		return hotelfanComponent.createHotelfan(hotelfan);
+	}
+	/**
+	 * 删除 酒店设置返点表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteHotelfan(long id){
+	
+		return hotelfanComponent.deleteHotelfan(id);
+	}
+	
+	
+	/**
+	 * 修改 酒店设置返点表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateHotelfan(Hotelfan hotelfan){
+		return hotelfanComponent.updateHotelfan(hotelfan);
+	
+	}
+
+		
+	/**
+	 * 修改 酒店设置返点表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateHotelfanIgnoreNull(Hotelfan hotelfan){
+			return hotelfanComponent.updateHotelfanIgnoreNull(hotelfan);
+	
+	}
+	
+	/**
+	 * 查找 酒店设置返点表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelfan(String where, String orderby,int limit,int offset){
+		return hotelfanComponent.findAllHotelfan(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 酒店设置返点表
+	 * @param id
+	 * @return
+	 */
+	public Hotelfan findHotelfan(long id){
+		return hotelfanComponent.findHotelfan(id);
+	}
+	
+	/** 
+	 * 查找 酒店设置返点表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllHotelfanForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return hotelfanComponent.findAllHotelfan(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找酒店设置返点表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelfanBySql(String sql,int limit,int offset){
+		return hotelfanComponent.findAllHotelfan(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 酒店设置返点表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteHotelfanBySql(String sql){
+		return hotelfanComponent.excuteHotelfanBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countHotelfanBySql(String sql){
+		return hotelfanComponent.countHotelfanBySql(sql);
+	}
+	
+	
+

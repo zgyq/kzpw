@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Qmessage">
+  
+  <typeAlias alias="Qmessage" type="com.yf.system.base.qmessage.Qmessage"/>
+  
+
+  <resultMap id="resultQmessageMap" class="Qmessage">
+  
+     <result property="ID" column="ID"/>
+  
+     <result property="message" column="C_MESSAGE"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="status" column="C_STATUS"/>
+     
+     <result property="createuser" column="C_CREATEUSER"/>
+     
+     <result property="dealtime" column="C_DEALTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllQmessage"  resultMap="resultQmessageMap"  parameterClass="java.util.Map">
+  
+    select * from T_QMESSAGE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllQmessageBySql"  resultMap="resultQmessageMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteQmessageBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countQmessageBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_QMESSAGE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findQmessage" parameterClass="long" resultClass="Qmessage">
+    select 
+    	ID as ID,
+	  			C_MESSAGE as message,
+	  			C_CREATETIME as createtime,
+	  			C_STATUS as status,
+	  			C_CREATEUSER as createuser,
+	  			C_DEALTIME as dealtime
+     from T_QMESSAGE
+    where ID = #id#
+  </select>
+   
+  <insert id="createQmessage" parameterClass="Qmessage">
+    insert into T_QMESSAGE ( 
+    	ID,
+	  			C_MESSAGE,
+	  			C_CREATETIME,
+	  			C_STATUS,
+	  			C_CREATEUSER,
+	  			C_DEALTIME 
+    )
+    values (
+    	
+	  						#ID#,
+	  					
+	  						#message#,
+	  					
+	  						#createtime#,
+	  					
+  							#status:DECIMAL#,
+  							
+  							#createuser#,
+  							
+  							#dealtime#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteQmessage" parameterClass="long">
+    delete from T_QMESSAGE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateQmessage" parameterClass="Qmessage">
+    update T_QMESSAGE 
+    set 
+    	ID = #ID#,
+	  					C_MESSAGE = #message#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATUS = #status:DECIMAL#,
+	  					C_CREATEUSER=#createuser#,
+	  					C_DEALTIME=#dealtime#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

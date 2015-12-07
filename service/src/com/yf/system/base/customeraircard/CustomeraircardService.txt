@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 里程卡
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Customeraircard createCustomeraircard(Customeraircard customeraircard) throws SQLException;
+	
+	/**
+	 * 删除 里程卡
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCustomeraircard(long id);
+	
+	
+	/**
+	 * 修改 里程卡
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCustomeraircard(Customeraircard customeraircard);
+
+		
+	/**
+	 * 修改 里程卡但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCustomeraircardIgnoreNull(Customeraircard customeraircard);
+		
+	
+	/**
+	 * 查找 里程卡
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomeraircard(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 里程卡
+	 * @param id
+	 * @return
+	 */
+	public Customeraircard findCustomeraircard(long id);
+	
+	
+	/** 
+	 * 查找 里程卡
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCustomeraircardForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找里程卡
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomeraircardBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 里程卡
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCustomeraircardBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCustomeraircardBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ICustomeraircardComponent customeraircardComponent;
+	  
+ 	
+ 	public ICustomeraircardComponent getCustomeraircardComponent() {
+		return customeraircardComponent;
+	}
+	public void setCustomeraircardComponent(ICustomeraircardComponent  customeraircardComponent) {
+		this.customeraircardComponent = customeraircardComponent;
+	}
+	/**
+	 * 创建 里程卡
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Customeraircard createCustomeraircard(Customeraircard customeraircard) throws SQLException{
+	
+		return customeraircardComponent.createCustomeraircard(customeraircard);
+	}
+	/**
+	 * 删除 里程卡
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCustomeraircard(long id){
+	
+		return customeraircardComponent.deleteCustomeraircard(id);
+	}
+	
+	
+	/**
+	 * 修改 里程卡
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCustomeraircard(Customeraircard customeraircard){
+		return customeraircardComponent.updateCustomeraircard(customeraircard);
+	
+	}
+
+		
+	/**
+	 * 修改 里程卡但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCustomeraircardIgnoreNull(Customeraircard customeraircard){
+			return customeraircardComponent.updateCustomeraircardIgnoreNull(customeraircard);
+	
+	}
+	
+	/**
+	 * 查找 里程卡
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomeraircard(String where, String orderby,int limit,int offset){
+		return customeraircardComponent.findAllCustomeraircard(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 里程卡
+	 * @param id
+	 * @return
+	 */
+	public Customeraircard findCustomeraircard(long id){
+		return customeraircardComponent.findCustomeraircard(id);
+	}
+	
+	/** 
+	 * 查找 里程卡
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCustomeraircardForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return customeraircardComponent.findAllCustomeraircard(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找里程卡
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomeraircardBySql(String sql,int limit,int offset){
+		return customeraircardComponent.findAllCustomeraircard(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 里程卡
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCustomeraircardBySql(String sql){
+		return customeraircardComponent.excuteCustomeraircardBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCustomeraircardBySql(String sql){
+		return customeraircardComponent.countCustomeraircardBySql(sql);
+	}
+	
+	
+

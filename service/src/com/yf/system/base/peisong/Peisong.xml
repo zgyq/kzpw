@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Peisong">
+  
+  <typeAlias alias="Peisong" type="com.yf.system.base.peisong.Peisong"/>
+  
+
+  <resultMap id="resultPeisongMap" class="Peisong">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="linkname" column="C_LINKNAME"/>
+  
+     <result property="addcode" column="C_ADDCODE"/>
+  
+     <result property="linktel" column="C_LINKTEL"/>
+  
+     <result property="dizhi" column="C_DIZHI"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="userid" column="C_USERID"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllPeisong"  resultMap="resultPeisongMap"  parameterClass="java.util.Map">
+  
+    select * from T_PEISONG
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllPeisongBySql"  resultMap="resultPeisongMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excutePeisongBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countPeisongBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_PEISONG
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findPeisong" parameterClass="long" resultClass="Peisong">
+    select 
+    	ID as id,
+	  			C_ORDERID as orderid,
+	  			C_LINKNAME as linkname,
+	  			C_ADDCODE as addcode,
+	  			C_LINKTEL as linktel,
+	  			C_DIZHI as dizhi,
+	  			C_AGENTID as agentid,
+	  			C_USERID as userid,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state 
+     from T_PEISONG
+    where ID = #id#
+  </select>
+   
+  <insert id="createPeisong" parameterClass="Peisong">
+    insert into T_PEISONG ( 
+    	ID,
+	  			C_ORDERID,
+	  			C_LINKNAME,
+	  			C_ADDCODE,
+	  			C_LINKTEL,
+	  			C_DIZHI,
+	  			C_AGENTID,
+	  			C_USERID,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#orderid:DECIMAL#,
+						
+	  						#linkname#,
+	  					
+	  						#addcode#,
+	  					
+	  						#linktel#,
+	  					
+	  						#dizhi#,
+	  					
+							#agentid:DECIMAL#,
+						
+							#userid:DECIMAL#,
+						
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deletePeisong" parameterClass="long">
+    delete from T_PEISONG
+    where ID = #id#
+  </delete>
+	
+  <update id="updatePeisong" parameterClass="Peisong">
+    update T_PEISONG 
+    set 
+    	C_ORDERID = #orderid:DECIMAL#,
+						C_LINKNAME = #linkname#,
+	  					C_ADDCODE = #addcode#,
+	  					C_LINKTEL = #linktel#,
+	  					C_DIZHI = #dizhi#,
+	  					C_AGENTID = #agentid:DECIMAL#,
+						C_USERID = #userid:DECIMAL#,
+						C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

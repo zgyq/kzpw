@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 证件
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Customercredit createCustomercredit(Customercredit customercredit) throws SQLException;
+	
+	/**
+	 * 删除 证件
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCustomercredit(long id);
+	
+	
+	/**
+	 * 修改 证件
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCustomercredit(Customercredit customercredit);
+
+		
+	/**
+	 * 修改 证件但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCustomercreditIgnoreNull(Customercredit customercredit);
+		
+	
+	/**
+	 * 查找 证件
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomercredit(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 证件
+	 * @param id
+	 * @return
+	 */
+	public Customercredit findCustomercredit(long id);
+	
+	
+	/** 
+	 * 查找 证件
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCustomercreditForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找证件
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomercreditBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 证件
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCustomercreditBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCustomercreditBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ICustomercreditComponent customercreditComponent;
+	  
+ 	
+ 	public ICustomercreditComponent getCustomercreditComponent() {
+		return customercreditComponent;
+	}
+	public void setCustomercreditComponent(ICustomercreditComponent  customercreditComponent) {
+		this.customercreditComponent = customercreditComponent;
+	}
+	/**
+	 * 创建 证件
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Customercredit createCustomercredit(Customercredit customercredit) throws SQLException{
+	
+		return customercreditComponent.createCustomercredit(customercredit);
+	}
+	/**
+	 * 删除 证件
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCustomercredit(long id){
+	
+		return customercreditComponent.deleteCustomercredit(id);
+	}
+	
+	
+	/**
+	 * 修改 证件
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCustomercredit(Customercredit customercredit){
+		return customercreditComponent.updateCustomercredit(customercredit);
+	
+	}
+
+		
+	/**
+	 * 修改 证件但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCustomercreditIgnoreNull(Customercredit customercredit){
+			return customercreditComponent.updateCustomercreditIgnoreNull(customercredit);
+	
+	}
+	
+	/**
+	 * 查找 证件
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomercredit(String where, String orderby,int limit,int offset){
+		return customercreditComponent.findAllCustomercredit(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 证件
+	 * @param id
+	 * @return
+	 */
+	public Customercredit findCustomercredit(long id){
+		return customercreditComponent.findCustomercredit(id);
+	}
+	
+	/** 
+	 * 查找 证件
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCustomercreditForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return customercreditComponent.findAllCustomercredit(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找证件
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomercreditBySql(String sql,int limit,int offset){
+		return customercreditComponent.findAllCustomercredit(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 证件
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCustomercreditBySql(String sql){
+		return customercreditComponent.excuteCustomercreditBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCustomercreditBySql(String sql){
+		return customercreditComponent.countCustomercreditBySql(sql);
+	}
+	
+	
+

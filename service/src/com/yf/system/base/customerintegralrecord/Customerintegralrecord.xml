@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Customerintegralrecord">
+  
+  <typeAlias alias="Customerintegralrecord" type="com.yf.system.base.customerintegralrecord.Customerintegralrecord"/>
+  
+
+  <resultMap id="resultCustomerintegralrecordMap" class="Customerintegralrecord">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="refuid" column="C_REFUID"/>
+     <result property="refordernumber" column="C_REFORDERNUMBER"/>
+  
+     <result property="score" column="C_SCORE"/>
+     <result property="scoresource" column="C_SCORESOURCE"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="scorememo" column="C_SCOREMEMO"/>
+   
+  </resultMap>
+  
+  <select id="findAllCustomerintegralrecord"  resultMap="resultCustomerintegralrecordMap"  parameterClass="java.util.Map">
+  
+    select * from T_CUSTOMERINTEGRALRECORD
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCustomerintegralrecordBySql"  resultMap="resultCustomerintegralrecordMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCustomerintegralrecordBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCustomerintegralrecordBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CUSTOMERINTEGRALRECORD
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCustomerintegralrecord" parameterClass="long" resultClass="Customerintegralrecord">
+    select 
+    	ID as id,
+	  			C_REFUID as refuid,
+	  			C_REFORDERNUMBER as refordernumber,
+	  			C_SCORE as score,
+	  			C_SCORESOURCE as scoresource,
+	  			C_CREATETIME as createtime,
+	  			C_SCOREMEMO as scorememo 
+     from T_CUSTOMERINTEGRALRECORD
+    where ID = #id#
+  </select>
+   
+  <insert id="createCustomerintegralrecord" parameterClass="Customerintegralrecord">
+    insert into T_CUSTOMERINTEGRALRECORD ( 
+    	ID,
+	  			C_REFUID,
+	  			C_REFORDERNUMBER,
+	  			C_SCORE,
+	  			C_SCORESOURCE,
+	  			
+	  			C_CREATETIME,
+	  			C_SCOREMEMO 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#refuid#,
+	  						#refordernumber#,
+	  					
+							#score:DECIMAL#,
+							#scoresource#,
+						
+	  						#createtime#,
+	  					
+	  						#scorememo#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCustomerintegralrecord" parameterClass="long">
+    delete from T_CUSTOMERINTEGRALRECORD
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCustomerintegralrecord" parameterClass="Customerintegralrecord">
+    update T_CUSTOMERINTEGRALRECORD 
+    set 
+    	C_REFUID = #refuid#,
+    	C_REFUID = #refordernumber#,
+	  					C_SCORE = #score:DECIMAL#,
+	  					C_SCORE = #scoresource#,
+						C_CREATETIME = #createtime#,
+	  					C_SCOREMEMO = #scorememo#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

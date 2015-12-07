@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 线路订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotlineorder createSpotlineorder(Spotlineorder spotlineorder) throws SQLException;
+	
+	/**
+	 * 删除 线路订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotlineorder(long id);
+	
+	
+	/**
+	 * 修改 线路订单
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotlineorder(Spotlineorder spotlineorder);
+
+		
+	/**
+	 * 修改 线路订单但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotlineorderIgnoreNull(Spotlineorder spotlineorder);
+		
+	
+	/**
+	 * 查找 线路订单
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineorder(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 线路订单
+	 * @param id
+	 * @return
+	 */
+	public Spotlineorder findSpotlineorder(long id);
+	
+	
+	/** 
+	 * 查找 线路订单
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotlineorderForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找线路订单
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineorderBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 线路订单
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotlineorderBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotlineorderBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISpotlineorderComponent spotlineorderComponent;
+	  
+ 	
+ 	public ISpotlineorderComponent getSpotlineorderComponent() {
+		return spotlineorderComponent;
+	}
+	public void setSpotlineorderComponent(ISpotlineorderComponent  spotlineorderComponent) {
+		this.spotlineorderComponent = spotlineorderComponent;
+	}
+	/**
+	 * 创建 线路订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotlineorder createSpotlineorder(Spotlineorder spotlineorder) throws SQLException{
+	
+		return spotlineorderComponent.createSpotlineorder(spotlineorder);
+	}
+	/**
+	 * 删除 线路订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotlineorder(long id){
+	
+		return spotlineorderComponent.deleteSpotlineorder(id);
+	}
+	
+	
+	/**
+	 * 修改 线路订单
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotlineorder(Spotlineorder spotlineorder){
+		return spotlineorderComponent.updateSpotlineorder(spotlineorder);
+	
+	}
+
+		
+	/**
+	 * 修改 线路订单但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotlineorderIgnoreNull(Spotlineorder spotlineorder){
+			return spotlineorderComponent.updateSpotlineorderIgnoreNull(spotlineorder);
+	
+	}
+	
+	/**
+	 * 查找 线路订单
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineorder(String where, String orderby,int limit,int offset){
+		return spotlineorderComponent.findAllSpotlineorder(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 线路订单
+	 * @param id
+	 * @return
+	 */
+	public Spotlineorder findSpotlineorder(long id){
+		return spotlineorderComponent.findSpotlineorder(id);
+	}
+	
+	/** 
+	 * 查找 线路订单
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotlineorderForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return spotlineorderComponent.findAllSpotlineorder(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找线路订单
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineorderBySql(String sql,int limit,int offset){
+		return spotlineorderComponent.findAllSpotlineorder(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 线路订单
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotlineorderBySql(String sql){
+		return spotlineorderComponent.excuteSpotlineorderBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotlineorderBySql(String sql){
+		return spotlineorderComponent.countSpotlineorderBySql(sql);
+	}
+	
+	
+

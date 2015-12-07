@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Landmark">
+  
+  <typeAlias alias="Landmark" type="com.yf.system.base.landmark.Landmark"/>
+  
+
+  <resultMap id="resultLandmarkMap" class="Landmark">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="cityid" column="C_CITYID"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="regionid" column="C_REGIONID"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllLandmark"  resultMap="resultLandmarkMap"  parameterClass="java.util.Map">
+  
+    select * from T_LANDMARK
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllLandmarkBySql"  resultMap="resultLandmarkMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteLandmarkBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countLandmarkBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_LANDMARK
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findLandmark" parameterClass="long" resultClass="Landmark">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_CITYID as cityid,
+	  			C_TYPE as type,
+	  			C_REGIONID as regionid,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_LANDMARK
+    where ID = #id#
+  </select>
+   
+  <insert id="createLandmark" parameterClass="Landmark">
+    insert into T_LANDMARK ( 
+    	ID,
+	  			C_NAME,
+	  			C_CITYID,
+	  			C_TYPE,
+	  			C_REGIONID,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+							#cityid:DECIMAL#,
+						
+	  						#type#,
+	  					
+							#regionid:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteLandmark" parameterClass="long">
+    delete from T_LANDMARK
+    where ID = #id#
+  </delete>
+	
+  <update id="updateLandmark" parameterClass="Landmark">
+    update T_LANDMARK 
+    set 
+    	C_NAME = #name#,
+	  					C_CITYID = #cityid:DECIMAL#,
+						C_TYPE = #type#,
+	  					C_REGIONID = #regionid:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

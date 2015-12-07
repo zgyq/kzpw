@@ -1,0 +1,189 @@
+body
+	{
+		color:#696969;font-family: "ÀŒÃÂ";font-size: 12px; background: url("images/b2b_body.png") repeat;
+	}
+a
+	{
+		text-decoration:none; color:#696969;
+	}
+a:hover
+	{
+		text-decoration:underline;color: #E4393C;
+	}
+* 
+	{
+		margin: 0;
+		padding: 0;
+	}
+.clear
+	{
+		clear:both; float:none;
+	}	
+.b2b_body
+	{
+		width:1200px;margin:0 auto;
+	}
+.b2b_body_left
+	{
+		width:350px;height:auto;float:left;
+	}
+.b2b_body_left_xinxi
+	{
+		width:348px;height:220px;background-color:#FFFFFF;border:1px solid #ffcc00;
+	}
+.b2b_body_left_xinxi h2
+	{
+		width:338px;height:30px;font-size:14px;color:#ff7700;padding-left:10px;line-height:30px;background-color:#ffffec;border-bottom:1px solid #ffcc00;
+	}
+.b2b_body_left_xinxi ul
+	{
+		padding-top:5px;width:330px;height:160px;margin:0 auto;
+	}
+.b2b_body_left_xinxi  ul li
+	{
+		height:28px;line-height:28px;border-bottom:1px dashed #e8e8e8;list-style-type:none
+	}
+.b2b_body_left_xinxi  ul li span
+	{
+		color:#fe0814;
+	}
+.b2b_body_left_xiugaigerenxinxi 
+	{
+		border: 1px solid #FFFFFF !important;
+		color: #000000;
+		float: right;
+		font: 12px/15px Tahoma,Verdana;
+		height: 18px !important;
+		margin-top: 8px;
+		outline: 1px solid #D3E0E7;
+		padding: 0 5px;
+	}
+.b2b_body_left_congzhi
+	{
+		width:348px;height:auto;
+	}
+.b2b_body_left_congzhi h2
+	{
+		width:200px;height:30px;font-size:12px;color:#ff7700;line-height:30px;background: url("images/b2b_body_left_congzhi.png") left bottom no-repeat;padding-left:19px;
+	}
+.b2b_body_left_congzhi ul
+	{
+		width:348px;height:auto;border:1px solid #e8e8e8;background-color:#FFFFFF;
+	}
+.b2b_body_left_congzhi_form_user 
+	{
+		margin:0 auto;
+		width:320px;
+	}
+.b2b_body_left_congzhi_form_user  .b2bformInput 
+	{
+		background-image: url("images/field-bg.gif");
+		background-repeat: repeat-x;
+		border: 1px solid #C8C8C8;
+		color: #333333;
+		font-size: 13px;
+		line-height: 13px;
+		margin-top:20px;
+		padding: 2px;
+		width: 190px;
+	}
+.b2bformInput_txt
+	{
+		text-align:center;margin-top:10px;width: 320px;height:28px;line-height:28px;float:right;
+	}	
+.b2b_body_left_congzhi_form_user select
+	 {
+		border: 1px solid #C8C8C8;
+		height: 25px;
+		line-height: 25px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		vertical-align: middle;
+		width: 90px;
+	}
+.b2bformInput_button
+	{
+		width:100px;margin:0 auto;margin-bottom:10px;margin-top:10px;
+	}	
+	/* ”“≤‡—˘ Ω  */
+.b2b_body_right
+	{
+		width:830px;height:auto;float:right;
+	}
+.b2b_body_right_top
+	{
+		width:828px;height:222px;float:left;border:1px solid #e8e8e8;
+	}	
+.b2b_body_right_top_kefu
+	{
+		margin: 10px 0px 0px 20px;width:500px;height:150px;float:left;border-bottom:1px solid #e8e8e8;
+	}	
+.b2b_body_right_top_kefu h2
+	{
+		width:450px;height:30px;font-size:12px;color:#696969;line-height:30px;
+	}	
+.b2b_body_right_top_kefu ul
+	{
+		width:500px;
+	}	
+.b2b_body_right_top_kefu_dh
+	{
+		padding-left:10px;line-height:28px;font-size:12px;color:#696969;
+	}	
+.b2b_body_right_top_kefu ul li
+	{
+		width:250px;height:30px;line-height:30px;float:left;list-style-type:none
+	}	
+.b2b_body_right_top_kefu_x
+	{
+		margin-top:30px;margin-left:10px;width:1px;height:100px;float:left;border-left:1px solid #e8e8e8;
+	}	
+.b2b_body_right_top_gonggao
+	{
+		margin-top:10px;margin-right:10px;width:275px;height:150px;float:right;border-bottom:1px solid #e8e8e8;
+	}	
+.b2b_body_right_top_gonggao h2
+	{
+		width:260px;height:30px;font-size:12px;color:#696969;line-height:30px;
+	}		
+.b2b_body_right_top_gonggao ul
+	{
+		padding-top:5px;width:250px;height:115px;margin:0 auto;overflow:hidden;
+	}
+.b2b_body_right_top_gonggao  ul li
+	{
+		height:28px;line-height:28px;border-bottom:1px dashed #e8e8e8;list-style-type:none
+	}	
+.b2b_body_right_top_denglu
+	{
+		width:760px;height:40px;line-height:40px;margin:0 auto;font-size:13px;color:#696969;
+	}	
+.b2b_body_right_top_denglu span
+	{
+		color: #fe0814;
+	}		
+.b2b_body_right_top_kuaijie
+	{
+		width:828px;height:60px;float:left;
+	}	
+.b2b_body_right_top_kuaijie	img
+	{
+		margin-left:20px;
+	}
+.b2b_body_right_top_jipiaochaxun
+	{
+		border: 1px solid #E8E8E8;
+		float: left;
+		height: 147px;
+		width: 828px;
+	}
+.b2b_body_right_top_jipiaochaxun h2
+	{
+		float:left;padding-left:20px;width:60px;height:30px;font-size:12px;color:#696969;line-height:30px;background-color:#e8e8e8;
+	}
+.b2b_body_right_top_jipiaochaxun  ul
+	{
+		padding-top:10px;width:780px;height:100px;margin:0 auto;overflow:hidden;
+	}
+
+	

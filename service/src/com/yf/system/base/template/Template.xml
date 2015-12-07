@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Template">
+  
+  <typeAlias alias="Template" type="com.yf.system.base.template.Template"/>
+  
+
+  <resultMap id="resultTemplateMap" class="Template">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="content" column="C_CONTENT"/>
+  
+     <result property="path" column="C_PATH"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllTemplate"  resultMap="resultTemplateMap"  parameterClass="java.util.Map">
+  
+    select * from T_TEMPLATE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTemplateBySql"  resultMap="resultTemplateMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTemplateBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTemplateBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TEMPLATE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTemplate" parameterClass="long" resultClass="Template">
+    select 
+    	ID as id,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_TYPE as type,
+	  			C_STATE as state,
+	  			C_CONTENT as content,
+	  			C_PATH as path,
+	  			C_NAME as name,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_TEMPLATE
+    where ID = #id#
+  </select>
+   
+  <insert id="createTemplate" parameterClass="Template">
+    insert into T_TEMPLATE ( 
+    	ID,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_TYPE,
+	  			C_STATE,
+	  			C_CONTENT,
+	  			C_PATH,
+	  			C_NAME,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#type:DECIMAL#,
+						
+							#state:DECIMAL#,
+						
+	  						#content#,
+	  					
+	  						#path#,
+	  					
+	  						#name#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTemplate" parameterClass="long">
+    delete from T_TEMPLATE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTemplate" parameterClass="Template">
+    update T_TEMPLATE 
+    set 
+    	C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_TYPE = #type:DECIMAL#,
+						C_STATE = #state:DECIMAL#,
+						C_CONTENT = #content#,
+	  					C_PATH = #path#,
+	  					C_NAME = #name#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

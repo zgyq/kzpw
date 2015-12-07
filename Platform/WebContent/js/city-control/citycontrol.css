@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document 
+城市控件样式表
+Author:星星
+2011-11-11
+*/
+h1{margin:0;padding:20px 0;font-size:16px;}
+ol{padding-left:20px;line-height:130%;}
+#box{width:600px;text-align:left;margin:0 auto;padding-top:50px;}
+#suggest,#suggest2,#suggest-lc,#suggest2-lc{width:200px;}
+.gray{color:gray;}
+.ac_results {background:#fff;border:1px solid #7f9db9;position: absolute;z-index: 10000;display: none;}
+.ac_results ul{margin:0;padding:0;list-style:none;}
+.ac_results li a{white-space: nowrap;text-decoration:none;display:block;color:#05a;padding:1px 3px;}
+.ac_results li{border:1px solid #fff;line-height:20px;}
+.ac_over,.ac_results li a:hover {background:#c8e3fc;padding:1px;}
+.ac_results li a span{float:right;}
+.ac_result_tip{border-bottom:1px dashed #666;padding:3px;}
+
+#city{width:299px; font-size:12px; color:#000; position: absolute; background: #fff;}
+
+#city a{ color:#000}
+
+#city a:hover{ text-decoration:none;}
+
+#city .city-top{background:#49c3fc; padding-left:10px; height:26px; line-height:26px; border:1px solid #10aad0}
+
+#city .city-box{text-align:center; padding-top:0px;line-height:20px; padding-left:5px; padding-right:5px; border:1px solid #ccc; z-index:99}
+
+#city .city-navon{width:42px; border:1px solid #49c3fc; border-bottom:none; }
+
+#city .city-navon a{font-weight:bold;border: none;}
+#city .city-navon a:hover{ border: none; background: #fff}
+
+#city .city-nav-right{width:29px;border:none; border-bottom:1px solid #49c3fc;}
+#city .city-nav-right a{color:#06F; border: none;}
+#city .city-nav-right a:hover{ border: none; background: #fff}
+
+#city .city-nav{width:42px;border:none;border-bottom:1px solid #49c3fc;}
+
+#city .city-nav a{color:#06F; border: none;}
+#city .city-nav a:hover{ border: none; background: #fff}
+
+#city .mt5{ margin-top:5px;}
+
+#city .middle-line{ border-bottom:1px solid #49c3fc;}
+
+#city .cityon{ border:none;}
+
+#city .cityon a{width:58px; display:block; margin-right:3px; padding-left:5px; text-align:left; overflow:hidden; background:#fff; border:1px solid #fff;}
+
+#city .cityon a:hover{ width:60px; display:block; margin-right:3px; padding-left:5px; text-align:left; overflow:hidden; background:#f1fbff; border:1px solid #96d7ea;}
+
+#city .nohave{ height:5px; line-height:5px; overflow:hidden;}
+
+#city .fff{ color:#fff;}
+

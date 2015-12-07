@@ -1,0 +1,96 @@
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib uri="webwork" prefix="ww"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<ww:head name="login"/>
+<script src="js/jquery/jquery1.3.2.js" type="text/javascript"></script>
+<script src="js/jquery/jquery.validationEngine-cn.js" type="text/javascript"></script>
+<script src="js/jquery/jquery.validationEngine.js" type="text/javascript"></script>
+</head>
+
+<script>
+$(document).ready(function() {
+
+			$("#form1").validationEngine(
+			{
+				success : function() {
+				//表单提交时把按钮disable
+				document.getElementById("submitreg").disabled = true;
+				document.form1.submit();
+				}
+			}
+	
+	) 
+
+});
+
+  function freshvalidate()
+{
+	document.getElementById('checkvalidate1').src="validate?timetramp="+new Date().getTime();
+}
+</script>
+
+
+<body>
+<div id="container">
+     <ww:include page="../top.jsp"/>
+    <!--includ top 直接替换掉整个DIV-->
+</div>    
+<!----------header over---------->
+<div id="regsiter">
+<form action="<%=request.getContextPath()%>/login!Regsit.jspx" name="form1" method="post" id="form1">
+    <div class="mt7 box">
+        <div class="title">
+               <font class="black low f mr15">会员免费注册</font>
+               <font class="r mr25">欢迎加入国祥商旅网，我们将为您提供最优质的服务，服务咨询热线：010-68176515。</font>
+               <div class="c"></div>
+        </div>
+        <div class="regsit">
+            <ul>
+             <li>
+                 <font class="spacing3">用户名</font>：
+                 <input type="text" desc="用户名" class=" mlr15 text_regsit validate[length[6,16],ajax[ajaxUsername]]" id="loginusername" name="customeruser.loginname" value="" />
+                 <font class="fontxing">*</font>&nbsp;<font class="c999">有英文字母开头，数字或下划线组成，6至16位字符。</font>
+             </li>
+             <li>
+                 <font class="spacing2">密码</font>：
+                 <input type="password" desc="密码" id="password" class=" mlr15 text_regsit validate[required,length[1,16]" name="customeruser.logpassword" />
+                 <font class="fontxing">*</font>&nbsp;<font class="c999">6-16个字符，支持大小写字母、数字和符合。</font>
+             </li>
+             <li>确认密码：
+                 <input type="password" id="password1" desc="确认密码" class=" mlr15 text_regsit validate[required,confirm[password]]" />
+                 <font class="fontxing">*</font>&nbsp;<font class="c999">再次输入您的密码，以便确认。</font>
+             </li>
+             <li>
+                 <font class="spacing3">手机号</font>：
+                 <input type="text" id="mobile" desc="手机" class=" mlr15 text_regsit validate[required,custom[mobile],ajax[ajaxuserMobile]" name="customeruser.mobile" />
+                 <font class="fontxing">*</font>&nbsp;<font class="c999">请填写您的联系手机号，用户联系或登录。</font>
+             </li>
+             <li>
+                 <font class="spacing2">邮箱</font>：
+                 <input type="text" id="memberemail" desc="邮箱" class=" mlr15 text_regsit validate[required,custom[email],ajax[ajaxEmail]]" name="customeruser.memberemail" />
+                 &nbsp;&nbsp;<font class="c999">请填写安全可用的邮箱。可不填。</font>
+             </li>
+             <li>
+                 <font class="spacing3">验证码</font>：
+                 <input type="text" class=" mlr15 text_regsit validate[required,custom[onlyNumber]" style="width:70px;" name="validateImg"  id="validateImg" desc="验证码" />
+                 <img vertical-align="middle" src="validate" width="70" height="22"  style="padding-top: 5px;" alt="" id="checkvalidate1" onclick="javascript:freshvalidate();return false;" />
+                 &nbsp;&nbsp;<font class="c999">如看不清图片，可点击图片刷新验证码。</font>
+             </li>
+             <li class="bnt" style="height:120px;">
+            <span class="f"> 使用条款：<input name="" type="radio" disabled value="" checked />我已看过并同意<a href="#" class="fontun06c">《国祥商旅服务协议》</a><br/>
+             <input type="submit" class="button_login " value="立即注册" /></span>
+             <span class="r msger">&nbsp;</span>
+             </li>
+             
+            </ul>                                                   
+        </div>
+     </div>
+   </form>
+</div>
+<ww:include page="../footer.jsp"/>
+</body>
+</html>

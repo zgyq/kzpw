@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Fairport">
+  
+  <typeAlias alias="Fairport" type="com.yf.system.base.fairport.Fairport"/>
+  
+
+  <resultMap id="resultFairportMap" class="Fairport">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="airportname" column="C_AIRPORTNAME"/>
+  
+     <result property="citycode" column="C_CITYCODE"/>
+  
+     <result property="airportcode" column="C_AIRPORTCODE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllFairport"  resultMap="resultFairportMap"  parameterClass="java.util.Map">
+  
+    select * from T_FAIRPORT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllFairportBySql"  resultMap="resultFairportMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteFairportBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countFairportBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_FAIRPORT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findFairport" parameterClass="long" resultClass="Fairport">
+    select 
+    	ID as id,
+	  			C_AIRPORTNAME as airportname,
+	  			C_CITYCODE as citycode,
+	  			C_AIRPORTCODE as airportcode,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_FAIRPORT
+    where ID = #id#
+  </select>
+   
+  <insert id="createFairport" parameterClass="Fairport">
+    insert into T_FAIRPORT ( 
+    	ID,
+	  			C_AIRPORTNAME,
+	  			C_CITYCODE,
+	  			C_AIRPORTCODE,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#airportname#,
+	  					
+	  						#citycode#,
+	  					
+	  						#airportcode#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteFairport" parameterClass="long">
+    delete from T_FAIRPORT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateFairport" parameterClass="Fairport">
+    update T_FAIRPORT 
+    set 
+    	C_AIRPORTNAME = #airportname#,
+	  					C_CITYCODE = #citycode#,
+	  					C_AIRPORTCODE = #airportcode#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

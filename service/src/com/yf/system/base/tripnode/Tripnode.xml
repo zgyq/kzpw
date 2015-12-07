@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Tripnode">
+  
+  <typeAlias alias="Tripnode" type="com.yf.system.base.tripnode.Tripnode"/>
+  
+
+  <resultMap id="resultTripnodeMap" class="Tripnode">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="triplineid" column="C_TRIPLINEID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="sort" column="C_SORT"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="content" column="C_CONTENT"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllTripnode"  resultMap="resultTripnodeMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRIPNODE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTripnodeBySql"  resultMap="resultTripnodeMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTripnodeBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTripnodeBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRIPNODE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTripnode" parameterClass="long" resultClass="Tripnode">
+    select 
+    	ID as id,
+	  			C_TRIPLINEID as triplineid,
+	  			C_NAME as name,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_SORT as sort,
+	  			C_TYPE as type,
+	  			C_CONTENT as content,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_TRIPNODE
+    where ID = #id#
+  </select>
+   
+  <insert id="createTripnode" parameterClass="Tripnode">
+    insert into T_TRIPNODE ( 
+    	ID,
+	  			C_TRIPLINEID,
+	  			C_NAME,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_SORT,
+	  			C_TYPE,
+	  			C_CONTENT,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#triplineid:DECIMAL#,
+						
+	  						#name#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#sort:DECIMAL#,
+						
+							#type:DECIMAL#,
+						
+	  						#content#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTripnode" parameterClass="long">
+    delete from T_TRIPNODE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTripnode" parameterClass="Tripnode">
+    update T_TRIPNODE 
+    set 
+    	C_TRIPLINEID = #triplineid:DECIMAL#,
+						C_NAME = #name#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_SORT = #sort:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_CONTENT = #content#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

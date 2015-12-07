@@ -1,0 +1,400 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, li {
+    list-style: none
+}
+
+body {
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", \9ED1\4F53, \5b8b\4f53, sans-serif
+}
+
+.navAir {
+    width: 100%;
+    height: 500px;
+    background: url("../img/air.png") no-repeat center;
+    overflow: hidden;
+    *margin-top: -50px;
+}
+
+.navAir .searchBox {
+    width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    height: 280px;
+    border-radius: 3px;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99f1f1f1, endColorstr=#99f1f1f1);
+    background: rgba(241, 241, 255, 0.5);
+    overflow: hidden;
+    border: 1px solid #d7d7d7;
+    box-shadow: 0 0 4px 1px #eee
+
+}
+
+.searchBox .airTab {
+    width: 600px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #d7d7d7;
+    font-size: 12px;
+}
+
+.searchBox .airTab span {
+    margin-right: 10px;
+    color: #333
+}
+
+.searchBox .airTab span input {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.searchBox .goto {
+    width: 600px;
+    height: 80px;
+}
+
+.goto .gotoBox {
+    width: 275px;
+    height: 70px;
+    float: left;
+    padding-top: 10px;
+}
+
+.goto .gotoBox p {
+    display: inline-block;
+    width: 275px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold
+}
+
+.goto .gotoBox input {
+    width: 260px;
+    height: 20px;
+    padding: 5px;
+    border: 1px solid #c0c0c0;
+    color: #c0c0c0;
+    line-height: 20px;
+}
+
+.goto .changeBox {
+    width: 36px;
+    height: 24px;
+    background: url("../img/icon_cityswap.png") no-repeat;
+    float: left;
+    margin-top: 44px;
+    margin-left: 7px;
+    margin-right: 7px;
+    cursor: pointer;
+}
+
+.searchBox .gotoDate {
+    width: 600px;
+    height: 80px
+}
+
+.gotoDate .date {
+    width: 129px;
+    height: 70px;
+    padding-top: 10px;
+    float: left
+}
+
+.gotoDate .date p {
+    display: inline-block;
+    width: 129px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold
+}
+
+.gotoDate .date input {
+    width: 109px;
+    height: 20px;
+    padding: 5px;
+    border: 1px solid #c0c0c0;
+    color: #c0c0c0;
+    line-height: 20px;
+}
+
+.gotoDate .space {
+    width: 20px;
+    text-align: center;
+    height: 30px;
+    float: left;
+    color: #f26622;
+    margin-top: 44px;
+    font-weight: bold
+}
+
+.gotoDate .passengerBox {
+    width: 275px;
+    height: 80px;
+    float: left;
+    margin-left: 47px;
+}
+
+.passengerBox .passenger {
+    width: 63px;
+    height: 70px;
+    float: left;
+    padding-top: 10px;
+}
+.passengerBox .passenger1 {
+    width: 80px;
+    height: 70px;
+    float: left;
+    padding-top: 10px;
+}
+.passenger1 p {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333
+}
+.passenger1 select {
+    display: block;
+    width: 80px;
+    height: 32px;
+    padding: 5px 5px;
+    border: 1px solid #c0c0c0;
+    font-size: 14px;
+    line-height: 18px;
+    color: #323232;
+    text-align: center;
+    cursor: pointer;
+}
+.passenger p {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333
+}
+
+.passenger p span {
+    color: #959595
+}
+
+.passenger select {
+    display: block;
+    width: 45px;
+    height: 32px;
+    padding: 5px 5px;
+    border: 1px solid #c0c0c0;
+    font-size: 12px;
+    line-height: 18px;
+    color: #323232;
+    text-align: center;
+    cursor: pointer;
+
+}
+.searchBox .btnSearch{
+    display: block;
+    width: 248px;
+    height: 42px;
+    margin: 25px auto;
+    overflow: hidden;
+    background: url("../img/flysch_submitbg.png") no-repeat 0 0;
+    border: none;
+    line-height: 200px;
+    text-indent: -400px;
+    cursor: pointer
+}
+.searchBox .btnSearch:hover{
+    background: url("../img/flysch_submitbg.png") no-repeat 0 -50px;
+}
+
+
+
+
+
+
+
+
+
+
+/*mid*/
+.airMid{width: 1000px;overflow: auto;margin: 50px auto}
+.airMid .hotLine{width: 1000px;height: 140px;overflow: hidden;margin-bottom: 10px;}
+.hotLine ul{width: 1000px;height: 140px;overflow: hidden}
+.hotLine ul li{width: 220px;height: 140px;float: left;margin-right: 40px;position: relative}
+.hotLine ul .last{margin-right: 0px;}
+.hotLine ul li img{width: 220px;}
+.hotLine ul li .txt{position: absolute;  top: 40px;left: 0px;width: 220px;}
+.hotLine ul li .txt p{font-size: 20px;color: #fff;text-align: center;font-weight: bold}
+.hotLine ul li .txt span{display: inline-block;width: 220px;text-align: center;font-size: 20px;color: #b8a450}
+.hotLine ul li .txt span i{font-style: normal;font-size: 14px;}
+
+.airMid .supTxt{width: 1000px;height: 120px;margin-top: 20px;}
+.supTxt ul{width: 1000px;height: 120px;}
+.supTxt ul li{width: 300px;height: 120px;background: url("../img/icon_intro1.png") no-repeat left top;float: left;margin-right: 50px;}
+
+.supTxt ul .td3{margin-right: 0px;}
+.supTxt ul .td2{background: url("../img/icon_intro2.png") no-repeat left top;}
+.supTxt ul li h2{width: 240px;margin-left: 60px;font-size: 14px;}
+.supTxt ul li p{width: 240px;margin-left:60px;font-size: 12px;color: #959595;line-height: 18px;}
+
+/**/
+.navAir .searchBox2{
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    height: 280px;
+    border-radius: 3px;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99f1f1f1, endColorstr=#99f1f1f1);
+    background: rgba(241, 241, 255, 0.5);
+    overflow: hidden;
+    border: 1px solid #d7d7d7;
+    box-shadow: 0 0 4px 1px #eee
+
+}
+
+.searchBox2 .airTab {
+    width: 400px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #d7d7d7;
+    font-size: 12px;
+}
+
+.searchBox2 .airTab span {
+    margin-right: 10px;
+    color: #333
+}
+
+.searchBox2 .airTab span input {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.searchBox2 .goto {
+    width: 400px;
+    height: 80px;
+}
+
+.searchBox2 .goto .gotoBox {
+    width: 175px;
+    height: 70px;
+    float: left;
+    padding-top: 10px;
+}
+
+.searchBox2 .goto .gotoBox p {
+    display: inline-block;
+    width: 175px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold
+}
+
+.searchBox2 .goto .gotoBox input {
+    width: 160px;
+    height: 20px;
+    padding: 5px;
+    border: 1px solid #c0c0c0;
+    color: #c0c0c0;
+    line-height: 20px;
+}
+
+.searchBox2 .goto .changeBox {
+    width: 36px;
+    height: 24px;
+    background: url("../img/icon_cityswap.png") no-repeat;
+    float: left;
+    margin-top: 44px;
+    margin-left: 7px;
+    margin-right: 7px;
+    cursor: pointer;
+}
+
+.searchBox2 .gotoDate {
+    width: 400px;
+    height: 80px
+}
+
+.searchBox2 .gotoDate .date {
+     width: 190px;
+     height: 40px;
+     padding-top: 40px;
+     float: left;
+
+ }
+
+.searchBox2 .gotoDate .date p {
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #333;
+    float: left;
+    font-weight: bold
+}
+
+.searchBox2 .gotoDate .date input {
+    float: left;
+    width: 89px;
+    height: 20px;
+    padding: 5px;
+    border: 1px solid #c0c0c0;
+    color: #c0c0c0;
+    line-height: 20px;
+}
+
+.searchBox2 .gotoDate .date1 {
+    width: 190px;
+    height: 40px;
+    padding-top: 40px;
+    float: right;
+
+}
+
+.searchBox2 .gotoDate .date1 p {
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #333;
+    float: left;
+    font-weight: bold
+}
+
+.searchBox2 .gotoDate .date1 input {
+    float: left;
+    width: 89px;
+    height: 20px;
+    padding: 5px;
+    border: 1px solid #c0c0c0;
+    color: #c0c0c0;
+    line-height: 20px;
+}
+
+
+
+.searchBox2 .btnSearch{
+    display: block;
+    width: 248px;
+    height: 42px;
+    margin: 25px auto;
+    overflow: hidden;
+    background: url("../img/flysch_submitbg.png") no-repeat 0 0;
+    border: none;
+    line-height: 200px;
+    text-indent: -400px;
+    cursor: pointer
+}
+.searchBox2 .btnSearch:hover{
+    background: url("../img/flysch_submitbg.png") no-repeat 0 -50px;
+}

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Spotline">
+  
+  <typeAlias alias="Spotline" type="com.yf.system.base.spotline.Spotline"/>
+  
+
+  <resultMap id="resultSpotlineMap" class="Spotline">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="outid" column="C_OUTID"/>
+  
+     <result property="sid" column="C_SID"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="provineid" column="C_PROVINEID"/>
+  
+     <result property="cityid" column="C_CITYID"/>
+  
+     <result property="areaid" column="C_AREAID"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="info" column="C_INFO"/>
+  
+     <result property="traffic" column="C_TRAFFIC"/>
+  
+     <result property="notice" column="C_NOTICE"/>
+  
+     <result property="pics" column="C_PICS"/>
+  
+     <result property="minipics" column="C_MINIPICS"/>
+  
+     <result property="ticketnotic" column="C_TICKETNOTIC"/>
+  
+     <result property="guidelines" column="C_GUIDELINES"/>
+  
+     <result property="stime" column="C_STIME"/>
+  
+     <result property="days" column="C_DAYS"/>
+  
+     <result property="snums" column="C_SNUMS"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="stype" column="C_STYPE"/>
+  
+     <result property="djsname" column="C_DJSNAME"/>
+  
+     <result property="djstel" column="C_DJSTEL"/>
+  
+     <result property="djslinkname" column="C_DJSLINKNAME"/>
+  
+     <result property="djsaddress" column="C_DJSADDRESS"/>
+  
+     <result property="fwbz" column="C_FWBZ"/>
+  
+     <result property="baohan" column="C_BAOHAN"/>
+  
+     <result property="bubaohan" column="C_BUBAOHAN"/>
+  
+     <result property="menshibeizhu" column="C_MENSHIBEIZHU"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllSpotline"  resultMap="resultSpotlineMap"  parameterClass="java.util.Map">
+  
+    select * from T_SPOTLINE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSpotlineBySql"  resultMap="resultSpotlineMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSpotlineBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSpotlineBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SPOTLINE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSpotline" parameterClass="long" resultClass="Spotline">
+    select 
+    	ID as id,
+	  			C_OUTID as outid,
+	  			C_SID as sid,
+	  			C_AGENTID as agentid,
+	  			C_NAME as name,
+	  			C_PROVINEID as provineid,
+	  			C_CITYID as cityid,
+	  			C_AREAID as areaid,
+	  			C_ADDRESS as address,
+	  			C_INFO as info,
+	  			C_TRAFFIC as traffic,
+	  			C_NOTICE as notice,
+	  			C_PICS as pics,
+	  			C_MINIPICS as minipics,
+	  			C_TICKETNOTIC as ticketnotic,
+	  			C_GUIDELINES as guidelines,
+	  			C_STIME as stime,
+	  			C_DAYS as days,
+	  			C_SNUMS as snums,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_MEMBERID as memberid,
+	  			C_STYPE as stype,
+	  			C_DJSNAME as djsname,
+	  			C_DJSTEL as djstel,
+	  			C_DJSLINKNAME as djslinkname,
+	  			C_DJSADDRESS as djsaddress,
+	  			C_FWBZ as fwbz,
+	  			C_BAOHAN as baohan,
+	  			C_BUBAOHAN as bubaohan,
+	  			C_MENSHIBEIZHU as menshibeizhu,
+	  			C_STATE as state 
+     from T_SPOTLINE
+    where ID = #id#
+  </select>
+   
+  <insert id="createSpotline" parameterClass="Spotline">
+    insert into T_SPOTLINE ( 
+    	ID,
+	  			C_OUTID,
+	  			C_SID,
+	  			C_AGENTID,
+	  			C_NAME,
+	  			C_PROVINEID,
+	  			C_CITYID,
+	  			C_AREAID,
+	  			C_ADDRESS,
+	  			C_INFO,
+	  			C_TRAFFIC,
+	  			C_NOTICE,
+	  			C_PICS,
+	  			C_MINIPICS,
+	  			C_TICKETNOTIC,
+	  			C_GUIDELINES,
+	  			C_STIME,
+	  			C_DAYS,
+	  			C_SNUMS,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_MEMBERID,
+	  			C_STYPE,
+	  			C_DJSNAME,
+	  			C_DJSTEL,
+	  			C_DJSLINKNAME,
+	  			C_DJSADDRESS,
+	  			C_FWBZ,
+	  			C_BAOHAN,
+	  			C_BUBAOHAN,
+	  			C_MENSHIBEIZHU,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#outid#,
+	  					
+	  						#sid#,
+	  					
+	  						#agentid#,
+	  					
+	  						#name#,
+	  					
+							#provineid:DECIMAL#,
+						
+							#cityid:DECIMAL#,
+						
+							#areaid:DECIMAL#,
+						
+	  						#address#,
+	  					
+	  						#info#,
+	  					
+	  						#traffic#,
+	  					
+	  						#notice#,
+	  					
+	  						#pics#,
+	  					
+	  						#minipics#,
+	  					
+	  						#ticketnotic#,
+	  					
+	  						#guidelines#,
+	  					
+	  						#stime#,
+	  					
+	  						#days#,
+	  					
+	  						#snums#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+							#memberid:DECIMAL#,
+						
+							#stype:DECIMAL#,
+						
+	  						#djsname#,
+	  					
+	  						#djstel#,
+	  					
+	  						#djslinkname#,
+	  					
+	  						#djsaddress#,
+	  					
+	  						#fwbz#,
+	  					
+	  						#baohan#,
+	  					
+	  						#bubaohan#,
+	  					
+	  						#menshibeizhu#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSpotline" parameterClass="long">
+    delete from T_SPOTLINE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSpotline" parameterClass="Spotline">
+    update T_SPOTLINE 
+    set 
+    	C_OUTID = #outid#,
+	  					C_SID = #sid#,
+	  					C_AGENTID = #agentid#,
+	  					C_NAME = #name#,
+	  					C_PROVINEID = #provineid:DECIMAL#,
+						C_CITYID = #cityid:DECIMAL#,
+						C_AREAID = #areaid:DECIMAL#,
+						C_ADDRESS = #address#,
+	  					C_INFO = #info#,
+	  					C_TRAFFIC = #traffic#,
+	  					C_NOTICE = #notice#,
+	  					C_PICS = #pics#,
+	  					C_MINIPICS = #minipics#,
+	  					C_TICKETNOTIC = #ticketnotic#,
+	  					C_GUIDELINES = #guidelines#,
+	  					C_STIME = #stime#,
+	  					C_DAYS = #days#,
+	  					C_SNUMS = #snums#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MEMBERID = #memberid:DECIMAL#,
+						C_STYPE = #stype:DECIMAL#,
+						C_DJSNAME = #djsname#,
+	  					C_DJSTEL = #djstel#,
+	  					C_DJSLINKNAME = #djslinkname#,
+	  					C_DJSADDRESS = #djsaddress#,
+	  					C_FWBZ = #fwbz#,
+	  					C_BAOHAN = #baohan#,
+	  					C_BUBAOHAN = #bubaohan#,
+	  					C_MENSHIBEIZHU = #menshibeizhu#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

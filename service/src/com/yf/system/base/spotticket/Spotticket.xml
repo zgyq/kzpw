@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Spotticket">
+  
+  <typeAlias alias="Spotticket" type="com.yf.system.base.spotticket.Spotticket"/>
+  
+
+  <resultMap id="resultSpotticketMap" class="Spotticket">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="outid" column="C_OUTID"/>
+  
+     <result property="sid" column="C_SID"/>
+  
+     <result property="goodsid" column="C_GOODSID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="marketprice" column="C_MARKETPRICE"/>
+  
+     <result property="shopprice" column="C_SHOPPRICE"/>
+  
+     <result property="bitopt" column="C_BITOPT"/>
+  
+     <result property="limitnumber" column="C_LIMITNUMBER"/>
+  
+     <result property="sellendtime" column="C_SELLENDTIME"/>
+  
+     <result property="limitarea" column="C_LIMITAREA"/>
+  
+     <result property="accessarea" column="C_ACCESSAREA"/>
+  
+     <result property="limitsfznumber" column="C_LIMITSFZNUMBER"/>
+  
+     <result property="minnumber" column="C_MINNUMBER"/>
+  
+     <result property="tejia" column="C_TEJIA"/>
+  
+     <result property="title1" column="C_TITLE1"/>
+  
+     <result property="pic1" column="C_PIC1"/>
+  
+     <result property="pic2" column="C_PIC2"/>
+  
+     <result property="text1" column="C_TEXT1"/>
+  
+     <result property="text2" column="C_TEXT2"/>
+  
+     <result property="text3" column="C_TEXT3"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllSpotticket"  resultMap="resultSpotticketMap"  parameterClass="java.util.Map">
+  
+    select * from T_SPOTTICKET
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSpotticketBySql"  resultMap="resultSpotticketMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSpotticketBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSpotticketBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SPOTTICKET
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSpotticket" parameterClass="long" resultClass="Spotticket">
+    select 
+    	ID as id,
+	  			C_OUTID as outid,
+	  			C_SID as sid,
+	  			C_GOODSID as goodsid,
+	  			C_NAME as name,
+	  			C_MARKETPRICE as marketprice,
+	  			C_SHOPPRICE as shopprice,
+	  			C_BITOPT as bitopt,
+	  			C_LIMITNUMBER as limitnumber,
+	  			C_SELLENDTIME as sellendtime,
+	  			C_LIMITAREA as limitarea,
+	  			C_ACCESSAREA as accessarea,
+	  			C_LIMITSFZNUMBER as limitsfznumber,
+	  			C_MINNUMBER as minnumber,
+	  			C_TEJIA as tejia,
+	  			C_TITLE1 as title1,
+	  			C_PIC1 as pic1,
+	  			C_PIC2 as pic2,
+	  			C_TEXT1 as text1,
+	  			C_TEXT2 as text2,
+	  			C_TEXT3 as text3,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_MEMBERID as memberid,
+	  			C_STATE as state 
+     from T_SPOTTICKET
+    where ID = #id#
+  </select>
+   
+  <insert id="createSpotticket" parameterClass="Spotticket">
+    insert into T_SPOTTICKET ( 
+    	ID,
+	  			C_OUTID,
+	  			C_SID,
+	  			C_GOODSID,
+	  			C_NAME,
+	  			C_MARKETPRICE,
+	  			C_SHOPPRICE,
+	  			C_BITOPT,
+	  			C_LIMITNUMBER,
+	  			C_SELLENDTIME,
+	  			C_LIMITAREA,
+	  			C_ACCESSAREA,
+	  			C_LIMITSFZNUMBER,
+	  			C_MINNUMBER,
+	  			C_TEJIA,
+	  			C_TITLE1,
+	  			C_PIC1,
+	  			C_PIC2,
+	  			C_TEXT1,
+	  			C_TEXT2,
+	  			C_TEXT3,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_MEMBERID,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#outid#,
+	  					
+	  						#sid#,
+	  					
+	  						#goodsid#,
+	  					
+	  						#name#,
+	  					
+	  						#marketprice#,
+	  					
+	  						#shopprice#,
+	  					
+	  						#bitopt#,
+	  					
+	  						#limitnumber#,
+	  					
+	  						#sellendtime#,
+	  					
+	  						#limitarea#,
+	  					
+	  						#accessarea#,
+	  					
+	  						#limitsfznumber#,
+	  					
+	  						#minnumber#,
+	  					
+	  						#tejia#,
+	  					
+	  						#title1#,
+	  					
+	  						#pic1#,
+	  					
+	  						#pic2#,
+	  					
+	  						#text1#,
+	  					
+	  						#text2#,
+	  					
+	  						#text3#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+							#memberid:DECIMAL#,
+						
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSpotticket" parameterClass="long">
+    delete from T_SPOTTICKET
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSpotticket" parameterClass="Spotticket">
+    update T_SPOTTICKET 
+    set 
+    	C_OUTID = #outid#,
+	  					C_SID = #sid#,
+	  					C_GOODSID = #goodsid#,
+	  					C_NAME = #name#,
+	  					C_MARKETPRICE = #marketprice#,
+	  					C_SHOPPRICE = #shopprice#,
+	  					C_BITOPT = #bitopt#,
+	  					C_LIMITNUMBER = #limitnumber#,
+	  					C_SELLENDTIME = #sellendtime#,
+	  					C_LIMITAREA = #limitarea#,
+	  					C_ACCESSAREA = #accessarea#,
+	  					C_LIMITSFZNUMBER = #limitsfznumber#,
+	  					C_MINNUMBER = #minnumber#,
+	  					C_TEJIA = #tejia#,
+	  					C_TITLE1 = #title1#,
+	  					C_PIC1 = #pic1#,
+	  					C_PIC2 = #pic2#,
+	  					C_TEXT1 = #text1#,
+	  					C_TEXT2 = #text2#,
+	  					C_TEXT3 = #text3#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MEMBERID = #memberid:DECIMAL#,
+						C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

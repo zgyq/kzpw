@@ -1,0 +1,11 @@
+/* flyout menus */
+.flyout-menu {
+    position:absolute;
+    left:-200px;
+    top:-200px;
+    background:#fff;
+    text-align:left;
+    border:1px solid #aaa;
+    font-family: helvetica,arial,tahoma,sans-serif;
+}
+

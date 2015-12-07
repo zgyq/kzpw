@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 客人信息表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Guest createGuest(Guest guest) throws SQLException;
+	
+	/**
+	 * 删除 客人信息表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteGuest(long id);
+	
+	
+	/**
+	 * 修改 客人信息表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateGuest(Guest guest);
+
+		
+	/**
+	 * 修改 客人信息表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateGuestIgnoreNull(Guest guest);
+		
+	
+	/**
+	 * 查找 客人信息表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllGuest(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 客人信息表
+	 * @param id
+	 * @return
+	 */
+	public Guest findGuest(long id);
+	
+	/**
+	 * 查找 客人信息表 by language
+	 * @param id
+	 * @return
+	 */
+	public Guest findGuestbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 客人信息表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllGuestForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找客人信息表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllGuestBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 客人信息表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteGuestBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countGuestBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IGuestComponent guestComponent;
+	  
+ 	
+ 	public IGuestComponent getGuestComponent() {
+		return guestComponent;
+	}
+	public void setGuestComponent(IGuestComponent  guestComponent) {
+		this.guestComponent = guestComponent;
+	}
+	/**
+	 * 创建 客人信息表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Guest createGuest(Guest guest) throws SQLException{
+	
+		return guestComponent.createGuest(guest);
+	}
+	/**
+	 * 删除 客人信息表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteGuest(long id){
+	
+		return guestComponent.deleteGuest(id);
+	}
+	
+	
+	/**
+	 * 修改 客人信息表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateGuest(Guest guest){
+		return guestComponent.updateGuest(guest);
+	
+	}
+
+		
+	/**
+	 * 修改 客人信息表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateGuestIgnoreNull(Guest guest){
+			return guestComponent.updateGuestIgnoreNull(guest);
+	
+	}
+	
+	/**
+	 * 查找 客人信息表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllGuest(String where, String orderby,int limit,int offset){
+		return guestComponent.findAllGuest(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 客人信息表
+	 * @param id
+	 * @return
+	 */
+	public Guest findGuest(long id){
+		return guestComponent.findGuest(id);
+	}
+	
+	/**
+	 * 查找 客人信息表
+	 * @param id
+	 * @return
+	 */
+	public Guest findGuestbylanguage(long id,Integer language){
+		return guestComponent.findGuestbylanguage(id,language);
+	}
+	/** 
+	 * 查找 客人信息表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllGuestForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return guestComponent.findAllGuest(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找客人信息表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllGuestBySql(String sql,int limit,int offset){
+		return guestComponent.findAllGuest(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 客人信息表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteGuestBySql(String sql){
+		return guestComponent.excuteGuestBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countGuestBySql(String sql){
+		return guestComponent.countGuestBySql(sql);
+	}
+	
+	
+

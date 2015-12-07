@@ -1,0 +1,68 @@
+@CHARSET "UTF-8";
+@charset "utf-8";
+/* CSS Document */
+body{padding:0px;margin:0;text-align: center;}
+html {
+            _background-image: url(about:blank);   /*用浏览器空白页面作为背景*/
+            _background-attachment: fixed;   /* prevent screen flash in IE6 确保滚动条滚动时，元素不闪动*/
+        }
+form,ul,ol,h1,h2,h3,h4,h5,h6,p,dd,dl,p,span,b,ul,li,input,img{margin:0;padding:0;list-style:none;}
+input,textarea,select,button{font-size:12px;vertical-align: middle;}
+img{border:none;}
+.clear{clear:both; }
+a{color:#000;text-decoration:none;}
+a:hover{text-decoration:underline;color:#f00;text-decoration:none;}
+
+
+
+/*国内飞机查询*/
+.sevire{ width:300px; border:1px solid #eee; margin:0 auto;}
+.sevire h3{ font-size:14px; font-weight:bold; color:#014073; height:30px; line-height:30px; padding-left:17px; background:#f3f3f2;}
+.tabv{ width:300px; height:36px;}
+.igen b{ font-weight:normal; color:#F00; margin-right:36px;}
+.tinVg{ float:left; padding-top:5px; font-weight:bold;}
+.tinVg b{ padding:2px 0 0 15px; font-family:"微软雅黑";}
+.boxeb{ }
+.bienVd ul{ font-size:12px;}
+.bienVd ul li{ height:35px; line-height:35px; position:relative; float:left; font-size:14px; font-weight:bold;}
+.bienVd ul li label{ padding-left:16px; margin-left:5px;}
+.bienVd{ height:28px; display:block; padding-bottom:10px;}
+.bienVd input{ height:20px; line-height:20px; }
+.bienVd b{ padding:2px 0 0 15px; font-family:"微软雅黑";}
+.bienVd b,.bieM1,.bieM2{ float:left;}
+.bieM1,.bieM2{ border:1px solid #cdcdcd; height:20px; padding-left:3px;color: #0000FF;font-weight: bold; }
+.bieM1{ width:90px; margin:0 10px 0 10px; font-size:14px; color:#999; height:20px; margin-left:18px;}
+.bieM2{ width:43px; height:20px; margin-left:5px; font-size:14px;}
+.bienVo{ font-size:12px; height:20px; line-height:20px;}
+.bienVo label{ margin-right:5px;}
+.bienVo input{}
+.bienVdbd{ height:40px; margin-top:10px;}
+
+.bienVd1{ height:28px; display:block; padding-bottom:5px;}
+.bienVd1 input{ height:20px; line-height:20px;font-weight: bold;font-family: Arial;}
+.bienVd1 b{ padding:2px 0 0 15px; font-family:"微软雅黑";}
+.bienVd1 b,.bieM1,.bieM2{ float:left;}
+
+
+/*cont*/
+.conter{ width: 100%; position: fixed;_position: absolute;left:0;top: 0px; _top: expression(documentElement.scrollTop + 0 + "px");z-index: 100;}
+.cont{ width:758px; margin:0 auto; height:64px; border:1px solid #d5d5d5; border-top:2px solid #2064a1; position:relative;background-color: #FFFFFF;}
+.tab{ width:85px; float:left; padding-left:15px;}
+.igen{ font-size:12px; height:31px; padding-top:2px;}
+.igen b{ font-weight:normal; color:#F00; margin-right:6px;}
+.tab ul{ font-size:12px;}
+.tab ul li{ height:30px; line-height:30px; position:relative; padding-left:30px;}
+.vide{ position:absolute; top:10px; *top:6px; left:10px;}
+.zfd,.sz{ height:20px; line-height:19px; margin-right:5px;}
+.zfd{ width:102px;font-family:Arial; padding-left:3px;}
+.sz{ width:43px;}
+.tabod{ width:658px; float:left;}
+.an01{ width:80px; height:31px; line-height:31px; border:none; background:url(../images/an.jpg) no-repeat; cursor:pointer;font-family:"微软雅黑"; font-size:14px; margin-top:-7px;}
+.hide{ display:none;}
+.body{ border:1px solid #dadada; border-top:1px solid #c0c0c0;}
+.onmek{ position:relative; padding-left:20px;}
+.fxi{ position:absolute; left:0; top:0px; width:200px;}
+.che{ margin: 0 20px 0 21px;}
+.che{ color:#f07911;}
+.red{ color:#ff0500;}
+

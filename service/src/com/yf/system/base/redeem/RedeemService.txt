@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 积分兑换
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Redeem createRedeem(Redeem redeem) throws SQLException;
+	
+	/**
+	 * 删除 积分兑换
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRedeem(long id);
+	
+	
+	/**
+	 * 修改 积分兑换
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRedeem(Redeem redeem);
+
+		
+	/**
+	 * 修改 积分兑换但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRedeemIgnoreNull(Redeem redeem);
+		
+	
+	/**
+	 * 查找 积分兑换
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRedeem(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 积分兑换
+	 * @param id
+	 * @return
+	 */
+	public Redeem findRedeem(long id);
+	
+	
+	/** 
+	 * 查找 积分兑换
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRedeemForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找积分兑换
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRedeemBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 积分兑换
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRedeemBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRedeemBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IRedeemComponent redeemComponent;
+	  
+ 	
+ 	public IRedeemComponent getRedeemComponent() {
+		return redeemComponent;
+	}
+	public void setRedeemComponent(IRedeemComponent  redeemComponent) {
+		this.redeemComponent = redeemComponent;
+	}
+	/**
+	 * 创建 积分兑换
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Redeem createRedeem(Redeem redeem) throws SQLException{
+	
+		return redeemComponent.createRedeem(redeem);
+	}
+	/**
+	 * 删除 积分兑换
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRedeem(long id){
+	
+		return redeemComponent.deleteRedeem(id);
+	}
+	
+	
+	/**
+	 * 修改 积分兑换
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRedeem(Redeem redeem){
+		return redeemComponent.updateRedeem(redeem);
+	
+	}
+
+		
+	/**
+	 * 修改 积分兑换但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRedeemIgnoreNull(Redeem redeem){
+			return redeemComponent.updateRedeemIgnoreNull(redeem);
+	
+	}
+	
+	/**
+	 * 查找 积分兑换
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRedeem(String where, String orderby,int limit,int offset){
+		return redeemComponent.findAllRedeem(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 积分兑换
+	 * @param id
+	 * @return
+	 */
+	public Redeem findRedeem(long id){
+		return redeemComponent.findRedeem(id);
+	}
+	
+	/** 
+	 * 查找 积分兑换
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRedeemForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return redeemComponent.findAllRedeem(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找积分兑换
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRedeemBySql(String sql,int limit,int offset){
+		return redeemComponent.findAllRedeem(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 积分兑换
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRedeemBySql(String sql){
+		return redeemComponent.excuteRedeemBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRedeemBySql(String sql){
+		return redeemComponent.countRedeemBySql(sql);
+	}
+	
+	
+

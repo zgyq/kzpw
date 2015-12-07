@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Carimages">
+  
+  <typeAlias alias="Carimages" type="com.yf.system.base.carimages.Carimages"/>
+  
+
+  <resultMap id="resultCarimagesMap" class="Carimages">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="carurl" column="C_CARURL"/>
+  
+     <result property="cardesc" column="C_CARDESC"/>
+  
+     <result property="carid" column="C_CARID"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllCarimages"  resultMap="resultCarimagesMap"  parameterClass="java.util.Map">
+  
+    select * from T_CARIMAGES
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCarimagesBySql"  resultMap="resultCarimagesMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCarimagesBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCarimagesBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CARIMAGES
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCarimages" parameterClass="long" resultClass="Carimages">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_CARURL as carurl,
+	  			C_CARDESC as cardesc,
+	  			C_CARID as carid,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime 
+     from T_CARIMAGES
+    where ID = #id#
+  </select>
+   
+  <insert id="createCarimages" parameterClass="Carimages">
+    insert into T_CARIMAGES ( 
+    	ID,
+	  			C_NAME,
+	  			C_CARURL,
+	  			C_CARDESC,
+	  			C_CARID,
+	  			C_CREATEUSER,
+	  			C_CREATETIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#carurl#,
+	  					
+	  						#cardesc#,
+	  					
+	  						#carid#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCarimages" parameterClass="long">
+    delete from T_CARIMAGES
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCarimages" parameterClass="Carimages">
+    update T_CARIMAGES 
+    set 
+    	C_NAME = #name#,
+	  					C_CARURL = #carurl#,
+	  					C_CARDESC = #cardesc#,
+	  					C_CARID = #carid#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

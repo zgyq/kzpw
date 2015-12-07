@@ -1,0 +1,35 @@
+@charset "gb2312";
+/* CSS Document */
+body{margin:0px; padding:0px; font-size:12px; font-family:"宋体"; color:#36322f; font-size:12px; line-height:21px;}
+a{color:#2577e3;}
+img{border:0px;}
+a:link {text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
+ul, p, dl, dt, dd, li, img, div, p, table {padding:0px; margin:0px;}
+li{list-style-position:outside; list-style-type:none;}
+h1, h2, h3, h4, h5{ padding:0px; margin:0px; font-weight:normal;}
+h2 { font-size:18px;}
+h5 { font-size:14px; line-height:21px;}
+.clearit { clear:both; width:0px; height:0px; overflow:hidden; zoom:1;}
+.space { height:10px; overflow:hidden;}
+img { vertical-align:top;}
+
+
+/*新闻正文页面样式*/
+
+.news{ margin:0 auto; width:70%; overflow:hidden; text-align:center;background:#fff; padding:40px; height:100%; overflow:auto;box-shadow: 6px 7px 5px #b7b7b7}
+.news h1{ font-size:28px; font-weight:bold; margin-bottom:10px; height:40px; line-height:40px; color:#fd492a;}
+.news b{ margin:20px 0 30px 0; display:block; font-size:14px}
+.news p{ margin:10px 0; font-size:14px; color:#191919; text-indent:2em; line-height:30px}
+.news span{ text-align:right; display:block; padding-right:10px; margin:80px 0}
+.news-N{ text-align:center}
+.news-N b{ margin:0; padding:0}
+.news font{ text-align: left; font-weight:bold; margin:50px 0; display:block; font-size:14px}
+
+
+
+
+
+
+

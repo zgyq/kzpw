@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Trainsch">
+  
+  <typeAlias alias="Trainsch" type="com.yf.system.base.trainsch.Trainsch"/>
+  
+
+  <resultMap id="resultTrainschMap" class="Trainsch">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="train_id" column="C_TRAIN_ID"/>
+  
+     <result property="train_class" column="C_TRAIN_CLASS"/>
+  
+     <result property="trainstation_id" column="C_TRAINSTATION_ID"/>
+  
+     <result property="station_name" column="C_STATION_NAME"/>
+  
+     <result property="arr_time" column="C_ARR_TIME"/>
+  
+     <result property="dep_time" column="C_DEP_TIME"/>
+  
+     <result property="arr_time24" column="C_ARR_TIME24"/>
+  
+     <result property="dep_time24" column="C_DEP_TIME24"/>
+  
+     <result property="station_no" column="C_STATION_NO"/>
+  
+     <result property="day_arr" column="C_DAY_ARR"/>
+  
+     <result property="mem" column="C_MEM"/>
+  
+     <result property="back1" column="C_BACK1"/>
+  
+     <result property="back2" column="C_BACK2"/>
+  
+     <result property="back3" column="C_BACK3"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllTrainsch"  resultMap="resultTrainschMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRAINSCH
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTrainschBySql"  resultMap="resultTrainschMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTrainschBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTrainschBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRAINSCH
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTrainsch" parameterClass="long" resultClass="Trainsch">
+    select 
+    	ID as id,
+	  			C_TRAIN_ID as train_id,
+	  			C_TRAIN_CLASS as train_class,
+	  			C_TRAINSTATION_ID as trainstation_id,
+	  			C_STATION_NAME as station_name,
+	  			C_ARR_TIME as arr_time,
+	  			C_DEP_TIME as dep_time,
+	  			C_ARR_TIME24 as arr_time24,
+	  			C_DEP_TIME24 as dep_time24,
+	  			C_STATION_NO as station_no,
+	  			C_DAY_ARR as day_arr,
+	  			C_MEM as mem,
+	  			C_BACK1 as back1,
+	  			C_BACK2 as back2,
+	  			C_BACK3 as back3,
+	  			C_STATE as state 
+     from T_TRAINSCH
+    where ID = #id#
+  </select>
+   
+  <insert id="createTrainsch" parameterClass="Trainsch">
+    insert into T_TRAINSCH ( 
+    	ID,
+	  			C_TRAIN_ID,
+	  			C_TRAIN_CLASS,
+	  			C_TRAINSTATION_ID,
+	  			C_STATION_NAME,
+	  			C_ARR_TIME,
+	  			C_DEP_TIME,
+	  			C_ARR_TIME24,
+	  			C_DEP_TIME24,
+	  			C_STATION_NO,
+	  			C_DAY_ARR,
+	  			C_MEM,
+	  			C_BACK1,
+	  			C_BACK2,
+	  			C_BACK3,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#train_id#,
+	  					
+	  						#train_class#,
+	  					
+	  						#trainstation_id#,
+	  					
+	  						#station_name#,
+	  					
+	  						#arr_time#,
+	  					
+	  						#dep_time#,
+	  					
+	  						#arr_time24#,
+	  					
+	  						#dep_time24#,
+	  					
+	  						#station_no#,
+	  					
+	  						#day_arr#,
+	  					
+	  						#mem#,
+	  					
+	  						#back1#,
+	  					
+	  						#back2#,
+	  					
+	  						#back3#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTrainsch" parameterClass="long">
+    delete from T_TRAINSCH
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTrainsch" parameterClass="Trainsch">
+    update T_TRAINSCH 
+    set 
+    	C_TRAIN_ID = #train_id#,
+	  					C_TRAIN_CLASS = #train_class#,
+	  					C_TRAINSTATION_ID = #trainstation_id#,
+	  					C_STATION_NAME = #station_name#,
+	  					C_ARR_TIME = #arr_time#,
+	  					C_DEP_TIME = #dep_time#,
+	  					C_ARR_TIME24 = #arr_time24#,
+	  					C_DEP_TIME24 = #dep_time24#,
+	  					C_STATION_NO = #station_no#,
+	  					C_DAY_ARR = #day_arr#,
+	  					C_MEM = #mem#,
+	  					C_BACK1 = #back1#,
+	  					C_BACK2 = #back2#,
+	  					C_BACK3 = #back3#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

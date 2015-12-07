@@ -1,0 +1,56 @@
+<!-- Copyright (c) 2002 by ObjectLearn. All Rights Reserved. -->
+<project name="webmodulebuilder"  default="deploy"  basedir=".">
+
+
+  <!-- set global properties for this build -->
+  <property file="build.properties"/>
+ 
+	<target name="deploy">
+		<mkdir dir="${dist}"/>
+		<mkdir dir="${dist}/com"/>
+		<mkdir dir="${dist}/META-INF"/>
+		
+		<mkdir dir="${atomdist}"/>
+		<mkdir dir="${atomdist}/com"/>
+		<copy file="${webbase}/META-INF/b2b2c.tld" todir="${dist}/META-INF/"/>
+		<copy todir="${dist}/com">
+		      <fileset dir="${project.base.dir}/build/classes/com">
+		        <include name="**/*.*"/>
+		      </fileset>
+		 </copy>
+		
+		<copy todir="${atomdist}/com">
+		      <fileset dir="${atom.dir}/build/classes/com">
+		        <include name="**/*.*"/>
+		      </fileset>
+		 </copy>
+		
+		
+		<delete file="${dist}/${jarname}"/>
+		<delete file="${atomdist}/${atomjar}"/>
+		
+		<jar jarfile="${dist}/${jarname}" basedir="${dist}/"/>  
+		<jar jarfile="${atomdist}/${atomjar}" basedir="${atomdist}/"/>  
+		
+		<delete file="${webbase}/WEB-INF/lib/${jarname}"/>
+		<delete file="${webbase}/WEB-INF/lib/${atomjar}"/>
+				
+		<copy file="${dist}/${jarname}" todir="${webbase}/WEB-INF/lib"/>
+		<copy file="${atomdist}/${atomjar}" todir="${webbase}/WEB-INF/lib"/>
+		
+	</target>
+	  	    <target name="deployjar">
+	  	    	<copy file="${dist}/${jarname}" todir="${webbase}/WEB-INF/lib"/>
+	  	    	<copy file="${atomdist}/${atomjar}" todir="${webbase}/WEB-INF/lib"/>
+			</target>
+	
+			  <target name="undeployjar">
+		  	    	<delete file="${webbase}/WEB-INF/lib/${jarname}"/>
+			  		<delete file="${webbase}/WEB-INF/lib/${atomjar}"/>
+				</target>
+	
+	    <target name="buildwar">
+	    	<jar jarfile="../${warname}" basedir="${web}/"/>  
+		</target>
+
+</project>

@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 短信发送表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Ymsend createYmsend(Ymsend ymsend) throws SQLException;
+	
+	/**
+	 * 删除 短信发送表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteYmsend(long id);
+	
+	
+	/**
+	 * 修改 短信发送表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateYmsend(Ymsend ymsend);
+
+		
+	/**
+	 * 修改 短信发送表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateYmsendIgnoreNull(Ymsend ymsend);
+		
+	
+	/**
+	 * 查找 短信发送表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllYmsend(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 短信发送表
+	 * @param id
+	 * @return
+	 */
+	public Ymsend findYmsend(long id);
+	
+	
+	/** 
+	 * 查找 短信发送表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllYmsendForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找短信发送表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllYmsendBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 短信发送表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteYmsendBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countYmsendBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IYmsendComponent ymsendComponent;
+	  
+ 	
+ 	public IYmsendComponent getYmsendComponent() {
+		return ymsendComponent;
+	}
+	public void setYmsendComponent(IYmsendComponent  ymsendComponent) {
+		this.ymsendComponent = ymsendComponent;
+	}
+	/**
+	 * 创建 短信发送表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Ymsend createYmsend(Ymsend ymsend) throws SQLException{
+	
+		return ymsendComponent.createYmsend(ymsend);
+	}
+	/**
+	 * 删除 短信发送表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteYmsend(long id){
+	
+		return ymsendComponent.deleteYmsend(id);
+	}
+	
+	
+	/**
+	 * 修改 短信发送表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateYmsend(Ymsend ymsend){
+		return ymsendComponent.updateYmsend(ymsend);
+	
+	}
+
+		
+	/**
+	 * 修改 短信发送表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateYmsendIgnoreNull(Ymsend ymsend){
+			return ymsendComponent.updateYmsendIgnoreNull(ymsend);
+	
+	}
+	
+	/**
+	 * 查找 短信发送表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllYmsend(String where, String orderby,int limit,int offset){
+		return ymsendComponent.findAllYmsend(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 短信发送表
+	 * @param id
+	 * @return
+	 */
+	public Ymsend findYmsend(long id){
+		return ymsendComponent.findYmsend(id);
+	}
+	
+	/** 
+	 * 查找 短信发送表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllYmsendForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return ymsendComponent.findAllYmsend(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找短信发送表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllYmsendBySql(String sql,int limit,int offset){
+		return ymsendComponent.findAllYmsend(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 短信发送表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteYmsendBySql(String sql){
+		return ymsendComponent.excuteYmsendBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countYmsendBySql(String sql){
+		return ymsendComponent.countYmsendBySql(sql);
+	}
+	
+	
+

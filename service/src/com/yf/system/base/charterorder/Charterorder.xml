@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Charterorder">
+  
+  <typeAlias alias="Charterorder" type="com.yf.system.base.charterorder.Charterorder"/>
+  
+
+  <resultMap id="resultCharterorderMap" class="Charterorder">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="num" column="C_NUM"/>
+  
+     <result property="maxnum" column="C_MAXNUM"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="mobile" column="C_MOBILE"/>
+  
+     <result property="unitname" column="C_UNITNAME"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="zipcode" column="C_ZIPCODE"/>
+  
+     <result property="tel" column="C_TEL"/>
+  
+     <result property="qq" column="C_QQ"/>
+  
+     <result property="fax" column="C_FAX"/>
+  
+     <result property="mailbox" column="C_MAILBOX"/>
+  
+     <result property="remarks" column="C_REMARKS"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="usertype" column="C_USERTYPE"/>
+  
+     <result property="stime" column="C_STIME"/>
+  
+     <result property="etime" column="C_ETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+     
+     <result property="servicetype" column="C_SERVICETYPE"/>
+     
+     <result property="ordercode" column="C_ORDERCODE"/>
+   
+  </resultMap>
+  
+  <select id="findAllCharterorder"  resultMap="resultCharterorderMap"  parameterClass="java.util.Map">
+  
+    select * from T_CHARTERORDER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCharterorderBySql"  resultMap="resultCharterorderMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCharterorderBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCharterorderBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CHARTERORDER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCharterorder" parameterClass="long" resultClass="Charterorder">
+    select 
+    	ID as id,
+	  			C_NUM as num,
+	  			C_MAXNUM as maxnum,
+	  			C_NAME as name,
+	  			C_MOBILE as mobile,
+	  			C_UNITNAME as unitname,
+	  			C_ADDRESS as address,
+	  			C_ZIPCODE as zipcode,
+	  			C_TEL as tel,
+	  			C_QQ as qq,
+	  			C_FAX as fax,
+	  			C_MAILBOX as mailbox,
+	  			C_REMARKS as remarks,
+	  			C_PRICE as price,
+	  			C_CREATETIME as createtime,
+	  			C_MEMBERID as memberid,
+	  			C_TYPE as type,
+	  			C_SERVICETYPE as servicetype,
+	  			C_ORDERCODE as ORDERCODE,
+	  			C_USERTYPE as usertype,
+	  			C_STIME as stime,
+	  			C_ETIME as etime,
+	  			C_STATE as state 
+     from T_CHARTERORDER
+    where ID = #id#
+  </select>
+   
+  <insert id="createCharterorder" parameterClass="Charterorder">
+    insert into T_CHARTERORDER ( 
+    	ID,
+	  			C_NUM,
+	  			C_MAXNUM,
+	  			C_NAME,
+	  			C_MOBILE,
+	  			C_UNITNAME,
+	  			C_ADDRESS,
+	  			C_ZIPCODE,
+	  			C_TEL,
+	  			C_QQ,
+	  			C_FAX,
+	  			C_MAILBOX,
+	  			C_REMARKS,
+	  			C_PRICE,
+	  			C_CREATETIME,
+	  			C_MEMBERID,
+	  			C_TYPE,
+	  			C_SERVICETYPE,
+	  			C_ORDERCODE,
+	  			C_USERTYPE,
+	  			C_STIME,
+	  			C_ETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#num#,
+	  					
+	  						#maxnum#,
+	  					
+	  						#name#,
+	  					
+	  						#mobile#,
+	  					
+	  						#unitname#,
+	  					
+	  						#address#,
+	  					
+	  						#zipcode#,
+	  					
+	  						#tel#,
+	  					
+	  						#qq#,
+	  					
+	  						#fax#,
+	  					
+	  						#mailbox#,
+	  					
+	  						#remarks#,
+	  					
+	  						#price#,
+	  					
+	  						#createtime#,
+	  					
+							#memberid:DECIMAL#,
+						
+							#type:DECIMAL#,
+							
+							#servicetype:DECIMAL#,
+							
+							#ordercode:DECIMAL#,
+						
+							#usertype:DECIMAL#,
+						
+	  						#stime#,
+	  					
+	  						#etime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCharterorder" parameterClass="long">
+    delete from T_CHARTERORDER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCharterorder" parameterClass="Charterorder">
+    update T_CHARTERORDER 
+    set 
+    	C_NUM = #num#,
+	  					C_MAXNUM = #maxnum#,
+	  					C_NAME = #name#,
+	  					C_MOBILE = #mobile#,
+	  					C_UNITNAME = #unitname#,
+	  					C_ADDRESS = #address#,
+	  					C_ZIPCODE = #zipcode#,
+	  					C_TEL = #tel#,
+	  					C_QQ = #qq#,
+	  					C_FAX = #fax#,
+	  					C_MAILBOX = #mailbox#,
+	  					C_REMARKS = #remarks#,
+	  					C_PRICE = #price#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MEMBERID = #memberid:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_SERVICETYPE = #servicetype:DECIMAL#,
+						C_ORDERCODE = #ordercode:DECIMAL#,
+						C_USERTYPE = #usertype:DECIMAL#,
+						C_STIME = #stime#,
+	  					C_ETIME = #etime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

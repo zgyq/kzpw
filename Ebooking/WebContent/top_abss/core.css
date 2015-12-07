@@ -1,0 +1,50 @@
+
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,label,blockquote,th,td,button,span{padding:0;margin:0;}
+body{background:#fff;font:12px/1.5 Arial,"宋体";color:#2b2b2b}
+* html,* html body{background-image:url(about:blank);background-attachment:fixed}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:none;}
+address,caption,cite,code,dfn,th,var,em{font-weight:normal;font-style:normal;}
+ol,ul{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;font-size:100%;}
+input,select{vertical-align:middle}
+
+/*link*/
+a{text-decoration:none;color:#1e50a2;}
+a:hover{ text-decoration:underline;color:#1e50a2;}
+a:active{color:#1e50a2;}
+
+/*clearfix*/
+.clearfix{*zoom:1;}
+.clearfix:after{content:'\20 ';display:block;height:0;clear:both;}
+/*link*/
+
+
+
+nav {background:#b91313;height:40px;clear:both;position:relative;z-index:100; text-align:center;}
+.nav li {float:left;padding-top:12px;height:28px;position:relative}
+.nav .layout li a {font-size:14px; font-weight:bold; height:16px;line-height:16px;padding:0 22px;color:#fff; border-left: 1px solid #B91313;border-right: 1px solid #CD5A5A;}
+.nav .layout li a:hover {color:#fff;}
+.nav .layout #active {background:#970000}
+.nav .layout #active a {color:#fff;font-size:bold;border:none;zoom:1;}
+.nav .layout #active a:hover {background:#970000; margin:0;margin-top:-10px\9;}
+.nav .layout li.current a {background:#fff;font-weight:bold;color:#000;padding:10px 22px 11px;padding:10px 22px 13px\9;margin-top:-11px;zoom:1}
+.nav .layout li.current a:hover {background:#fff;color:#000;text-decoration:none;}
+.nav .layout li.other a:hover {padding:10px 22px 8px;padding:10px 22px 10px\9;_padding:10px 22px 12px\9;}
+.nav .layout li .piao_new_1219 {height: 30px;overflow: hidden;position: absolute;right: -1px;top: -14px;width: 43px;z-index: 100;background: url(../img/icons.png?5dc5b04abd2d90c5280c27f00766f441) no-repeat 0 -25px;}
+
+#mainNav {position:relative;z-index:3}
+.nav .layout li .snav {position:absolute;background:#fff;border:#b91313 2px solid;width:500px;border-top:none 0;top:40px;left:-1px;padding:10px 0px;display:none;overflow:hidden;z-index:88}
+.nav .layout li.current .snav {display:block}
+.nav .layout li .snav dl {padding:0px 0 10px;}
+.nav .layout li .snav dt {font-weight:bold;padding:5px 0;}
+.nav .layout li .snav p {border-bottom:#bebebe 1px dotted;line-height:20px;padding:5px 0 5px 80px;position:relative;overflow:hidden;zoom:1;}
+.nav .layout li .snav p:hover {background:#f2f2f2}
+.nav .layout li .snav strong {display:inline-block;width:60px;padding-left:10px;height:20px;line-height:20px;position:absolute;margin-left:-70px;}
+.nav .layout li .snav p a {font-size:12px;font-weight:500;line-height:20px;height:20px;color:#686868;text-align:left;padding:0;margin:0;border:0 none;display:inline-block;width:82px;background:none;overflow:hidden;}
+.nav .layout li.current .snav a:hover {text-decoration:underline;background:none;color:#aa2e44}
+.nav .layout li .tuan p a {width:60px;}
+.nav .layout li .snav p.hot a {width:auto;margin-right:10px;}
+
+

@@ -1,0 +1,332 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/init.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" href="css/brandWorld.css" type="text/css" />
+<style>
+	.RDfooter{margin-top:0px;}
+	.appointmentDrive{padding-bottom:80px;}
+</style>
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/RDfunction.js"></script>
+<script type="text/javascript" src="js/jquery.slide.js"></script>
+<script type="text/javascript" src="js/sildeBanner.js"></script>
+
+<script>
+	$(function(){
+		//设置品鉴、参数、亮点、视频的鼠标动画
+		$(".seeForth li a").each(function(index) {
+			//if("此处我需要程序判断这个seeForthFocus在那个位置上返回一个值和index比较")
+			var abc=$(this)
+			$(".seeForth li a").eq(index).hover(function(){
+					$(this).children("span").animate({bottom: 141}, 800);
+					$(this).children("em").animate({bottom: 0}, 800);
+			},function(){
+				//$(this).children("span").animate({height:141},slow)
+					$(abc).children("span").animate({bottom:0},800)
+					$(this).children("em").animate({bottom: -34}, 800);
+			})
+			
+        });
+		
+		//设置亮点的内容部分div向那个方向浮动
+		$(".brandLiangdian li:odd").addClass("bandLDLeft")
+		//设置公共部分的图片滚动
+		/* 用按钮控制图片左右滚动 */
+		$(".hotPic1 .JQ-slide").Slide({
+		effect:"scroolLoop",
+		autoPlay:false,
+		speed:"normal",
+		timer:3000,
+		steps:1
+		});
+		//
+		var kuan=$(".hotPic1 .JQ-slide-content li").width()*$(".hotPic1 .JQ-slide-content li").length+$(".hotPic1 .JQ-slide-content li").length*10;
+		//alert(kuan)
+		$(".hotPic1 .JQ-slide-content").css("width",kuan)
+		
+		//设置亮点的循环出来的li
+		
+	})
+</script>
+</head>
+
+<body>
+<div class="RDpublickheader">
+	<div class="RDheader">
+        <div class="RDcenter">
+            <div class="RDheaderLeft">
+            	<div>
+                    <span>北京</span>
+                        <ul>
+                            <li><a href="#">天津</a></li>
+                            <li><a href="#">上海</a></li>
+                            <li><a href="#">广州</a></li>
+                        </ul>
+                </div>
+            </div>
+            <ul class="RDheaderRight">
+            	<li class="yuyanChange">Language<div><a href="#">中文</a><a href="#">Language</a></div></li>
+                <li><a href="#">活动</a></li>
+                <li><a href="#">资讯</a></li>
+                <li><a href="#">投资者关系</a></li>
+                <li><a href="#">人才招聘</a></li>
+                <li><a href="#">企业与责任</a></li>
+                <li><input type="text" value="瑞风S5" class="searchText" /><input type="submit" value="" class="searchBtn" /></li>
+            </ul>
+        </div>
+    </div>
+    <!--logo RDnav-->
+    <div class="RDheader2">
+        <div class="RDcenter">
+            
+            <a href="#" class="RDlogo"><img src="images/logo.png" width="214" height="28" alt="江淮汽车" /></a>
+            <ul class="RDnav">
+                <li class="RDnavFocus">
+                	<a href="#">品牌中心</a>
+                </li>
+                <li><a href="#">购车指南</a></li>
+                <li><a href="#">贴心服务</a></li>
+                <li><a href="#">JAC车友俱乐部</a></li>
+            </ul>
+            <div class="clearBox"></div>
+        </div>
+    </div>
+    <!--logo RDnav end-->
+</div>
+<!--你现在的位置-->
+<div class="currentLocation"><p class="RDcenter">你的位置：<a href="#">首页</a>><a href="#">投资者关系</a></p></div>
+<!--你现在的位置 end-->
+<!--fenleiMore-->
+<div class="fenleiMore">
+	<ul>
+    	<Li><a href="#">瑞风S5</a></Li>
+        <Li  class="fenleiMoreFocus"><a href="#">瑞风M5</a></Li>
+        <Li><a href="#">瑞风穿梭</a></Li>
+        <Li><a href="#">瑞风祥和</a></Li>
+    </ul>
+</div>
+<!--fenleiMore-->
+<!--brandWord-->
+<div class="brandWord" style="background:#e8e8e8;">
+	<!--brandWordImgShow-->
+    <div class="brandWordImgShow">
+    	<div id="mfpSlide">
+            <!-- 轮播区 -->
+            <ul id="mfpSlide_con">
+                <li style="background:url(product-images/geerfa_bg.jpg) no-repeat 50% 100%;display:block" class="slideCon" >
+                    <div class="slideCenter">
+                        <a href="" class="link"></a>
+                    </div>
+                </li>
+                <li style="background:url(product-images/brand-liangdian.jpg) no-repeat 50% 100%;display:block" class="slideCon" >
+                    <div class="slideCenter">
+                        <a href="" class="link"></a>
+                    </div>
+                </li>
+            </ul>
+            <!-- 轮播器导航 -->
+            <ul id="mfpSlide_nav">
+                <li class="hover"></li>
+                <li></li>
+            </ul>
+      </div>
+    </div>
+    <!--色彩选择--> 
+    <div class="changeColor">
+        <ul class="chengyongche">
+            <li><a href="#"><img src="product-images/shijiaImg.png" height="18" width="19" />预约试驾</a></li>
+            <li><a href="#"><img src="product-images/zaixiandingche.png" height="18" width="19" />在线订车</a></li>
+            <li><a href="#"><img src="product-images/jingxiaoshang.png" height="19" width="17" />经销商查询</a></li>
+            <li><a href="#"><img src="product-images/yuyuefuwu.png" height="20" width="21"  />预约服务</a></li>
+            <li><a href="#"><img src="product-images/fuwu.png" height="20" width="16" />在线咨询</a></li>
+            <li><a href="#"><img src="product-images/chexingbijiao.png" height="20" width="21" />车型比较</a></li>
+        </ul>
+        <P><span class="colorWenzi">颜色:</span><span><img src="images/changeColorImg_05.jpg" height="27" width="27" /></span><span><img src="images/changeColorImg_06.jpg" height="27" width="27" /></span><span><img src="images/changeColorImg_07.jpg" height="27" width="27" /></span><span><img src="images/changeColorImg_08.jpg" height="27" width="27" /></span><span><img src="images/changeColorImg_09.jpg" height="27" width="27" /></span></P>
+    </div>
+    <!--brandWordContent-->
+    <div class="brandWordContent">
+    	
+        <!--车型须看-->
+        <ul class="seeForth">
+        	<li><a href="#"><span><i>赏析</i></span><img src="product-images/sixiangImg_14.jpg" height="141" width="243" /><em><i>赏析</i></em></a></li>
+            <li class="seeForthFocus"><a href="#"><span><i>亮点</i></span><img src="product-images/sixiangImg_16.jpg" height="141" width="243" /><em><i>亮点</i></em></a></li>
+            <li><a href="#"><span><i>参数</i></span><img src="product-images/sixiangImg_18.jpg" height="141" width="243" /><em><i>参数</i></em></a></li>
+            <li><a href="#"><span><i>活动</i></span><img src="product-images/sixiangImg_20.jpg" height="141" width="243" /><em><i>活动</i></em></a></li>
+        </ul>
+       	<!--liangdianImgShow-->
+        <ul class="productImgShow">
+        	<Li class="div1"><div><p><em>Ta</em><span>— 完美不止外表</span><br /><i>瑞风S5不仅且您探索未知美景，<br />并力求成为您人生中的华彩篇<br />章。来自世界汽车设计中心<br />的卓越灵感设计，<br />经典、时尚。</i></p></div><img src="product-images/liangdianImgNewList_03.jpg" height="554" width="1076" /></Li>
+            <Li  class="div2"><div><p><em>Ta</em><span>— 虎啸式前脸</span><br />整个车身主要特征线贯穿前后，时<br />而平顺，时而急转，完美诠释了<br />"SUN+轿跑"超前设计理念，车<br />身侧围肩线如行去流水，至<br />轮拱位置则有如瀑流迅<br />疾而下，极富张力！</p></div><img src="product-images/liangdianImgNewList_06.jpg" height="554" width="1076" /></Li>
+            <Li class="div3"><div><p><em>Ta</em><span> — 智能舒适的驾驶舱</span><br /><i>内饰设计时尚美观，层次分明，环绕曲线动感舒适一体式飞翼中控台左右对称，时尚个性，按键一目了然。
+<br />三辐式轿跑型真皮多功能方向盘，手感舒适，操控便利多边形仪表盘加上蓝白色的背光灯，直观、方便的读取行车数据，夜间驾车更安全。</i></p></div><img src="product-images/liangdianImgNewList_08.jpg" height="554" width="1076" /></Li>
+            <Li class="div1"><div><p><em>Ta</em><span> — 大灯</span><br /><i>伴我回家功能，可以持续点<br />亮近光灯30s，夜晚停车，<br />带给您的是温馨感与安全感。</i></p></div><img src="product-images/liangdianImgNewList_10.jpg" height="554" width="1076" /></Li>
+        </ul>
+        <div class="clearBox"></div>
+        <!--liangdianShow end-->
+        <div class="publicNewsList">
+        	<div class="ImgDiv fuceng"><a href="#"><img src="product-images/acImg_03.png" height="178" width="320" /></a></div>
+            <div>
+            	<p>资讯</p>
+                <ul>
+                	<li><span>[2014-01-02]</span><a href="#">情定五星 悦满江淮 江淮车友联盟.. </a></li>
+                    <li><span>[2014-01-02]</span><a href="#">瑞风S5助威《谁是球王&GO巴西.. </a></li>
+                    <li><span>[2014-01-02]</span><a href="#">江淮汽车广州车展秀“组合拳” </a></li>
+                </ul>
+                <p class="publicMore"><a href="#">了解详情></a></p>
+            </div>
+            <div>
+            	<p>媒体评测</p>
+                <ul>
+                	<li><span>[2014-01-02]</span><a href="#">情定五星 悦满江淮 江淮车友联盟.. </a></li>
+                    <li><span>[2014-01-02]</span><a href="#">瑞风S5助威《谁是球王&GO巴西.. </a></li>
+                    <li><span>[2014-01-02]</span><a href="#">江淮汽车广州车展秀“组合拳” </a></li>
+                </ul>
+                <p class="publicMore"><a href="#">了解详情></a></p>
+            </div>
+        </div>
+        <!--车型推荐-->
+        <div class="modelsRecommended">
+        	<p class="modelsRecommendedTip"><span>其他车型</span></p>
+            <div>
+                <div class="hotPic1 hotPic3">
+                <div class="JQ-slide">
+                <div class="JQ-slide-nav"><a class="prev" href="javascript:void(0);">&#8249;</a><a class="next" href="javascript:void(0);">&#8250;</a></div>
+                <div class="wrap">
+                <ul class="modelsRecommendedList chengyongche JQ-slide-content">
+                    <li><p>瑞风M5</p><a href="#"><img src="product-images/modelsRecommendedImg_31.jpg" height="178" width="320" /></a><p><a href="#">意大利大师级经典之作，尊贵时尚</a></p></li>
+                    <li><p>瑞风M6</p><a href="#"><img src="product-images/modelsRecommendedImg_31.jpg" height="178" width="320" /></a><p><a href="#">意大利大师级经典之作，尊贵时尚</a></p></li>
+                    <li><p>瑞风S5</p><a href="#"><img src="product-images/modelsRecommendedImg_31.jpg" height="178" width="320" /></a><p><a href="#">意大利大师级经典之作，尊贵时尚</a></p></li>
+                </ul>
+                </div></div></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--brandWord end-->
+<!--RDfooter-->
+<div class="RDfooter">
+	<div class="RDfooter1">
+    	<div class="RDcenter">
+        	<a href="javascript:void(0);" class="yincangBtn"><img src="images/jia.png" height="16" width="25" /></a>
+            <div class="RDfooterFuWu">
+                <img src="images/julebu.png" height="45" width="175" />
+                <dl>
+                    <dt>24小时贵宾服务热线</dt>
+                    <dd>4008-889933　乘用车</dd>
+                    <dd>4008-009933　轻卡</dd>
+                    <dd>4008-003366　星锐</dd>
+                    <dd>4008-006633　重卡</dd>
+                    <dd>4000-277771　瑞铃</dd>
+                    <dd>4008-878576　瑞驰</dd>
+                </dl>
+            </div>
+            <dl>
+                <dt>品牌中心</dt>
+                <dd><a href="#">和悦</a></dd>
+                <dd><a href="#">帅铃</a></dd>
+                <dd><a href="#">骏铃</a></dd>
+                <dd><a href="#">好运</a></dd>
+                <dd><a href="#">格尔发</a></dd>
+                <dd><a href="#">锐捷特</a></dd>
+                <dd><a href="#">江淮底盘</a></dd>
+            </dl>
+            <dl>
+                <dt>购车指南</dt>
+                <dd><a href="#">个性化定制</a></dd>
+                <dd><a href="#">车型对比</a></dd>
+                <dd><a href="#">预约试驾</a></dd>
+                <dd><a href="#">价格试算</a></dd>
+                <dd><a href="#">购车流程</a></dd>
+                <dd><a href="#">金融服务</a></dd>
+                <dd><a href="#">贷款计算器</a></dd>
+                <dd><a href="#">查找经销商</a></dd>
+                <dd><a href="#">在线购车</a></dd>
+                <dd><a href="#">最新活动</a></dd>
+            </dl>
+            <dl>
+                <dt>贴心服务</dt>
+                <dd><a href="#">服务承诺</a></dd>
+                <dd><a href="#">服务网点</a></dd>
+                <dd><a href="#">配件供应</a></dd>
+                <dd><a href="#">在线咨询</a></dd>
+            </dl>
+            <dl>
+                <dt>活动</dt>
+                <dd><a href="#">品牌活动</a></dd>
+                <dd><a href="#">促销活动</a></dd>
+                <dd><a href="#">往期活动</a></dd>
+            </dl>
+            <dl>
+                <dt>资讯</dt>
+                <dd><a href="#">企业新闻</a></dd>
+                <dd><a href="#">媒体报道</a></dd>
+                <dd><a href="#">记者专区</a></dd>
+            </dl>
+            <dl>
+                <dt>投资者关系</dt>
+                <dd><a href="#">产销报告</a></dd>
+                <dd><a href="#">临时公告</a></dd>
+                <dd><a href="#">定期报告</a></dd>
+            </dl>
+              <dl>
+                <dt>人才招聘</dt>
+                <dd><a href="#">员工福利</a></dd>
+                <dd><a href="#">校园招聘</a></dd>
+                <dd><a href="#">社会招聘</a></dd>
+                <dd><a href="#">员工风采</a></dd>
+            </dl>
+              <dl>
+                <dt>企业与责任</dt>
+                <dd><a href="#">公司介绍</a></dd>
+                <dd><a href="#">领导风采</a></dd>
+                <dd><a href="#">发展历程</a></dd>
+                <dd><a href="#">新能源</a></dd>
+                <dd><a href="#">底盘科技</a></dd>
+                <dd><a href="#">动力总成</a></dd>
+                <dd><a href="#">社会责任</a></dd>
+            </dl>
+              <dl>
+                <dt>精彩下载</dt>
+                <dd><a href="#">江淮汽车TV</a></dd>
+                <dd><a href="#">精美壁纸</a></dd>
+            </dl>
+            <div class="clearBox"></div>
+        </div>
+    </div>
+    <div class="RDfooter2">
+    	<div class="RDcenter">
+        	<ul>
+            	<li><a href="#">版权信息</a>|</li>
+                <li><a href="#">使用说明</a>|</li>
+                <li><a href="#">联系我们</a>|</li>
+                <li><a href="#">网站地图</a>|</li>
+                <li><a href="#">合作伙伴专区</a></li>
+            </ul>
+            <p>江淮汽车2013版权所有 皖ICP备 05005596</p>
+        </div>
+    </div>
+</div>
+<!--RDfooter end-->
+
+<!--rightFloat-->
+<div class="rightFloat">
+    <a href="" class="gotoTop"><img src="images/goTop.jpg" height="59" width="88" /></a>
+    <p><a href="#">登录</a><a href="#">注册</a></p>
+    <ul>
+        <li><a href="#"><img src="images/zixun.png" height="38" width="38" /><span>在线咨询</span></a></li>
+        <li><a href="#"><img src="images/jiazhao.png" height="38" width="38" /><span>预约试驾</span></a></li>
+        <li><a href="#"><img src="images/dingche.png" height="38" width="38" /><span>在线订车</span></a></li>
+        <li><a href="#"><img src="images/weixiu.png" height="38" width="38" /><span>预约维修</span></a></li>
+        <li><a href="#"><img src="images/wangdian.png"  height="38" width="38" /><span>经销网点查询</span></a></li>
+        <li><a href="#"><img src="images/fuwuwangdian.png" height="38" width="38" /><span>服务网点查询</span></a></li>
+        <li><a href="#"><img src="images/erweima.png" height="38" width="38" /><span>关注微信</span></a></li>
+        <li><a href="#"><img src="images/weibo.png" height="38" width="38" /><span>江淮微博</span></a></li>
+    </ul>
+</div>
+<!--rightFloat end-->
+</body>
+</html>

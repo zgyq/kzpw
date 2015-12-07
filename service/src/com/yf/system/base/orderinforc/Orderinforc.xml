@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Orderinforc">
+  
+  <typeAlias alias="Orderinforc" type="com.yf.system.base.orderinforc.Orderinforc"/>
+  
+
+  <resultMap id="resultOrderinforcMap" class="Orderinforc">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderinfoid" column="C_ORDERINFOID"/>
+  
+     <result property="customeruserid" column="C_CUSTOMERUSERID"/>
+  
+     <result property="content" column="C_CONTENT"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+     
+     <result property="suouserid" column="C_SUOUSERID"/>
+    
+     <result property="passid" column="C_PASSID"/>
+     
+     <result property="prestate" column="C_PRESTATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllOrderinforc"  resultMap="resultOrderinforcMap"  parameterClass="java.util.Map">
+  
+    select * from T_ORDERINFORC
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllOrderinforcBySql"  resultMap="resultOrderinforcMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteOrderinforcBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countOrderinforcBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_ORDERINFORC
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findOrderinforc" parameterClass="long" resultClass="Orderinforc">
+    select 
+    	ID as id,
+	  			C_ORDERINFOID as orderinfoid,
+	  			C_CUSTOMERUSERID as customeruserid,
+	  			C_CONTENT as content,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state,
+	  			C_UCODE as ucode,
+	  			C_SUOUSERID as suouserid,
+	  			C_PASSID as passid,
+	  			C_LANGUAGE as language,
+	  			C_PRESTATE as prestate 
+	  			
+     from T_ORDERINFORC
+    where ID = #id#
+  </select>
+   
+  <insert id="createOrderinforc" parameterClass="Orderinforc">
+    insert into T_ORDERINFORC ( 
+    	ID,
+	  			C_ORDERINFOID,
+	  			C_CUSTOMERUSERID,
+	  			C_CONTENT,
+	  			C_CREATETIME,
+	  			C_STATE,
+	  			C_UCODE,
+	  			C_SUOUSERID,
+	  			C_PASSID,
+	  			C_LANGUAGE,
+	  			C_PRESTATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#orderinfoid:DECIMAL#,
+						
+							#customeruserid:DECIMAL#,
+						
+	  						#content#,
+	  					
+	  						#createtime#,
+	  					
+							#state:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+							
+							#suouserid:DECIMAL#,
+							
+							#passid:DECIMAL#,
+						
+  							#language:DECIMAL#,
+  							
+  							#prestate:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteOrderinforc" parameterClass="long">
+    delete from T_ORDERINFORC
+    where ID = #id#
+  </delete>
+	
+  <update id="updateOrderinforc" parameterClass="Orderinforc">
+    update T_ORDERINFORC 
+    set 
+    	C_ORDERINFOID = #orderinfoid:DECIMAL#,
+						C_CUSTOMERUSERID = #customeruserid:DECIMAL#,
+						C_CONTENT = #content#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_SUOUSERID = #suouserid:DECIMAL#,
+						C_PASSID = #passid:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_PRESTATE = #prestate:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

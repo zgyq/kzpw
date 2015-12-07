@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Bussiness">
+  
+  <typeAlias alias="Bussiness" type="com.yf.system.base.bussiness.Bussiness"/>
+  
+
+  <resultMap id="resultBussinessMap" class="Bussiness">
+  
+     <result property="id" column="ID"/>
+     <result property="name" column="NAME"/>
+  
+  
+  </resultMap>
+  
+  <select id="findAllBussiness"  resultMap="resultBussinessMap"  parameterClass="java.util.Map">
+  
+    select * from T_Bussiness
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllBussinessBySql"  resultMap="resultBussinessMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteBussinessBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countBussinessBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_Bussiness
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  <select id="findBussiness" parameterClass="long" resultClass="Bussiness">
+    select 
+    	ID as id,
+	  			
+	  			C_NAME as name
+	 
+	  			
+     from T_Bussiness
+    where ID = #id#
+  </select>
+   
+  <insert id="createBussiness" parameterClass="Bussiness">
+   <selectKey resultClass="long" type="pre" keyProperty="id">
+     SELECT (C_VALUE+1) AS VALUE FROM T_B2BSEQUENCE WHERE C_NAME='T_Bussiness'
+    </selectKey>
+    insert into T_Bussiness ( 
+    	ID,
+	  			C_NAME
+	
+	  		
+    )
+    values (		#id#,
+	  					
+	  			    #name#
+	  					    
+	  		
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteBussiness" parameterClass="long">
+    delete from T_Bussiness
+    where ID = #id#
+  </delete>
+  <update id="updateBussiness" parameterClass="Bussiness">
+    update T_Bussiness 
+    set 
+    	C_NAME = #name# 
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

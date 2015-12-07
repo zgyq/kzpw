@@ -1,0 +1,2 @@
+#set($name=235)
+$name

@@ -1,0 +1,214 @@
+package com.yf.website.web.server;
+
+import java.net.MalformedURLException;
+
+import com.caucho.hessian.client.HessianProxyFactory;
+import com.ccservice.b2b2c.atom.service.IAtomService;
+import com.ccservice.b2b2c.atom.service.IManGoHotelService;
+import com.ccservice.b2b2c.atom.service.ITicketSearchService;
+import com.ccservice.b2b2c.base.service.IAirService;
+import com.ccservice.b2b2c.base.service.IHotelService;
+import com.ccservice.b2b2c.base.service.IInterhotelService;
+import com.ccservice.b2b2c.base.service.IInterticketService;
+import com.ccservice.b2b2c.base.service.IMemberService;
+import com.ccservice.b2b2c.base.service.IServicecenterService;
+import com.ccservice.b2b2c.base.service.ISystemService;
+import com.ccservice.b2b2c.base.service.ITrainService;
+import com.ccservice.b2b2c.base.service.ITripService;
+import com.ccservice.service.IRateService;
+	
+
+
+public class Server {
+	private static Server server = null;
+	private HessianProxyFactory factory = new HessianProxyFactory();
+	private String url = "http://localhost:8080/service/service/";
+	private String urlAtom = "http://localhost:8080/cn_interface/service/" ;
+	private String inter = "http://localhost:8080/ticket_inter/service/" ;
+
+	public String getInter() {
+		return inter;
+	}
+
+	public void setInter(String inter) {
+		this.inter = inter;
+	}
+	
+	private Server() {
+	}
+
+	public static Server getInstance() {
+		if (server == null) {
+
+			server = new Server();
+		}
+		return server;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getUrlAtom() {
+		return urlAtom;
+	}
+
+	public void setUrlAtom(String urlAtom) {
+		this.urlAtom = urlAtom;
+	}
+
+	public IAirService getAirService() {
+		try {
+			return (IAirService) factory.create(IAirService.class, url
+					+ IAirService.class.getSimpleName());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	public ITrainService getTrainService() {
+		try {
+			return (ITrainService) factory.create(ITrainService.class, url
+					+ ITrainService.class.getSimpleName());
+		} catch (MalformedURLException e) {
+			System.out.println("****调用TrainService出现异常：");
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+	public IInterhotelService getInterHotelService(){
+		try {
+			return (IInterhotelService) factory.create(IInterhotelService.class, url
+					+ IInterhotelService.class.getSimpleName());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	public IHotelService getHotelService(){
+		try {
+			return (IHotelService) factory.create(IHotelService.class, url
+					+ IHotelService.class.getSimpleName());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	public IManGoHotelService getManGoHotelService() {
+		try {
+			return (IManGoHotelService) factory.create(
+					IManGoHotelService.class, urlAtom
+							+ IManGoHotelService.class.getSimpleName());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	public IMemberService getMemberService() {
+		try {
+			return (IMemberService) factory.create(IMemberService.class, url
+					+ IMemberService.class.getSimpleName());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	public ITripService getTripService(){
+		try {
+			return (ITripService) factory.create(ITripService.class,
+					url + ITripService.class.getSimpleName());
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public ITicketSearchService getTicketSearchService(){
+		try {
+			return (ITicketSearchService) factory.create(ITicketSearchService.class, urlAtom
+					+ ITicketSearchService.class.getSimpleName());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public IAtomService getAtomService(){
+		try {
+			return (IAtomService) factory.create(IAtomService.class, urlAtom
+					+ IAtomService.class.getSimpleName());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	public IServicecenterService getServiceCenter(){
+		try {
+			return (IServicecenterService) factory.create(IServicecenterService.class, url
+					+ IServicecenterService.class.getSimpleName());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	public ISystemService getSystemService(){
+	try {
+		return (ISystemService) factory.create(ISystemService.class, url
+				+ ISystemService.class.getSimpleName());
+	} catch (MalformedURLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return null;
+	}
+	}	
+	public IInterticketService getInterticketService(){
+		try {
+			return (IInterticketService) factory.create(IInterticketService.class, url
+					+ IInterticketService.class.getSimpleName());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	public IRateService getRateService(){
+			
+			try {
+				return (IRateService) factory.create(IRateService.class, inter
+						+ IRateService.class.getSimpleName());
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return null;
+			}
+		}
+
+	public static Server getServer() {
+		return server;
+	}
+
+	public static void setServer(Server server) {
+		Server.server = server;
+	}
+
+	public HessianProxyFactory getFactory() {
+		return factory;
+	}
+
+	public void setFactory(HessianProxyFactory factory) {
+		this.factory = factory;
+	}
+	}

@@ -1,0 +1,288 @@
+/* 签证框架 */
+.list_main {
+    width: 980px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+/* 左侧 */
+.main_left {
+    float: left;
+    width: 720px;    
+}
+.visa_top {
+    background-color: #FFF;
+    padding: 30px 0 50px;
+    border: 1px solid #E6E6E6;
+    position: relative;
+    _zoom: 1;
+}
+/* 地图导航 */
+.world_map {
+    background: transparent url(../image/world_map.png) no-repeat scroll 0 0;
+    width: 718px;
+    height: 324px;    
+}
+.map_one {
+    background-position: 0 -1296px;
+    
+}
+.map_two {
+    background-position: 0 -972px;
+}
+.map_three {
+    background-position: 0 -1620px;
+}
+.map_four {
+    background-position: 0 -324px;    
+}
+.map_five {
+    background-position: 0 -648px;
+}
+
+.world_map img {
+    filter:alpha(opacity=0);
+    -moz-opacity:0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    border: 0;
+    width: 718px;
+    height: 324px;
+}
+.world_class {
+    background-color: #666;
+    filter:alpha(opacity=60);
+    -moz-opacity:0.6;
+    -khtml-opacity: 0.6;
+    opacity: 0.6;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index:100;
+    padding: 10px 20px;
+    width: 678px;
+}
+.world_class ul {
+    padding: 5px 0;
+}
+.world_class a {
+    color: #FFF;
+    padding: 0 8px;
+    text-decoration: none;
+    white-space:nowrap;
+}
+.world_class a:hover { 
+    background-color: #FFF;
+    color: #000;
+}
+.world_title {
+    font-size: 18px;
+    line-height: 30px;
+    color: #FFF;
+}
+.world_class .iconfont {
+    font-size: 22px;
+    line-height: 30px;
+    color: #FFF;
+}
+/* 热门国家 */
+.hot_country {
+    background-color: #FFF;
+    border: 1px solid #E6E6E6;
+    margin-top: 20px;
+    padding: 15px 20px;
+}
+.hot_country ul {
+    padding: 0 20px;
+}
+.country_title {
+    font-size: 18px;
+    line-height: 30px;
+    color: #638421;
+}
+.country_title .iconfont {
+    font-size: 22px;
+    line-height: 30px;
+    color: #638421;
+}
+.hot_country_box {
+    padding: 10px 0;    
+}
+.country img {
+    height: 36px;
+    width: 36px;
+    vertical-align: middle;
+}
+.country a {
+    float: left;
+    width: 143px;
+    padding: 5px 10px;
+    border: 1px solid #FFF;
+    font-size: 16px;
+    line-height: 36px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.country a:hover {
+    background-color: #FAFFF2;
+    border: 1px solid #8EC73B;
+    color: #539022;
+}
+/* 签证问答 */
+.visa_ask {
+    background:#FFF;
+    border: 1px solid #E6E6E6;
+    margin-top: 20px;
+    padding: 15px 20px;
+}
+.ask_title {
+    font-size: 18px;
+    line-height: 30px;
+    color: #638421;
+}
+.ask_title .iconfont {
+    font-size: 22px;
+    line-height: 30px;
+    color: #638421;
+}
+.show_ask {
+    padding: 10px 20px 0;
+}
+.show_ask ul {
+    padding-bottom: 15px;
+}
+.show_ask_rper {
+    
+}
+.show_ask_title {
+    font-size: 15px;
+}
+.show_ask_rp {
+    
+}
+/* 列表右侧 */
+.main_right {
+    background: #FFF;
+    border: 1px solid #E6E6E6;
+    float: left;
+    width: 240px;
+    margin-left: 18px;
+}
+/* 右侧滚动 */
+.mulitline {
+    padding: 30px 0;
+    margin: 0 20px;
+}
+.mulitline ul {
+    margin-top: 10px;
+    height: 150px;
+    overflow: hidden;    
+}
+.mulitline ul li {
+    line-height: 30px;
+}
+.mulitline ul li span,.mulitline ul li a {
+    vertical-align: middle;
+}
+.mulitline_title {
+    font-size: 18px;
+    line-height: 30px;
+    color: #638421;
+}
+.mulitline_title .iconfont {
+    font-size: 22px;
+    line-height: 30px;
+    color: #638421;
+}
+/* 信息 */
+.right_info {
+    background: transparent url(../image/info_one.jpg) no-repeat scroll 0 100px;
+    line-height: 24px;
+    padding: 30px 0;
+    margin: 0 20px;
+    border-bottom: 1px solid #EAEAEA;
+}
+.right_info .info_one {    
+    padding-bottom: 10px;
+}
+.right_info .info_one span {
+    font-size: 18px;
+    line-height: 18px;
+}
+.right_info .info_two {    
+    padding: 10px 0 30px 0;
+}
+.right_info .info_three {
+    padding-top: 10px;
+}
+.right_info .info_four {
+    padding-top: 20px;
+}
+/* service信息 */
+.right_service {    
+    margin: 0 20px;
+    padding: 30px 0;
+    border-top: 1px solid #EAEAEA;
+}
+.service_title {
+    font-size: 18px;
+}
+.right_service ul {
+    
+}
+.right_service ul li em {
+    font-size: 11px;
+}
+.right_service ul li span {
+    font-size: 24px;
+    color: #84a717;
+}
+.right_service .qq_group {
+    padding: 15px 0;
+}
+.right_service .qq_group a {
+    background: transparent url(../image/qq_group.png) no-repeat scroll left top;
+    width: 133px;
+    height: 24px;
+    display: block;
+    text-indent: -9999px;
+}
+.right_service .qq_group a:hover {
+    background: transparent url(../image/qq_group.png) no-repeat scroll left bottom;
+}
+
+/* 签证尾部 */
+.visa_bottom {
+    background: #FFF;
+    border: 1px solid #E6E6E6;
+    width: 978px;
+    margin: 30px auto 0;
+    padding: 0 2px 0 1px;
+}
+.visa_bottom dl {
+    float: left;
+    width: 195px;
+    margin: 15px auto;
+}
+.visa_bottom dl dt {
+    line-height: 30px;
+    padding: 0 0 5px 40px;
+}
+.visa_bottom dl dd {
+    line-height: 22px;
+    padding-left: 40px;
+}
+.visa_bottom .one dt {
+    background: transparent url(../image/bottom_title_bg.png) no-repeat scroll 10px 3px;
+}
+.visa_bottom .two dt {
+    background: transparent url(../image/bottom_title_bg.png) no-repeat scroll 10px -45px;
+}
+.visa_bottom .three dt {
+    background: transparent url(../image/bottom_title_bg.png) no-repeat scroll 10px -94px;
+}
+.visa_bottom .four dt {
+    background: transparent url(../image/bottom_title_bg.png) no-repeat scroll 10px -147px;
+}
+.visa_bottom .five dt {
+    background: transparent url(../image/bottom_title_bg.png) no-repeat scroll 10px -199px;
+}

@@ -1,0 +1,647 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/init.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" href="css/brandWorld.css" type="text/css" />
+<style>
+	.RDfooter{margin-top:0px;}
+	.appointmentDrive{padding-bottom:80px;}
+	.brandWord{padding-top:70px;}
+</style>
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/RDfunction.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script>
+	$(function(){
+		$("img[original]").lazyload({ placeholder:"images/color3.gif" });
+		//部分区域图片延迟加载
+		function lazyloadForPart(container) {
+			container.find('img').each(function () {
+				var original = $(this).attr("original");
+				if (original) {
+					$(this).attr('src', original).removeAttr('original');
+				}
+			});
+		}
+		//设置筛选车型的部分显示
+		$(".carScreening p").click(function(){
+			$(this).parent().toggleClass("carScreeningClick");
+			//return false;
+		})
+		//附加的车型分类的js
+		$(".yongtu").eq(0).css("display","block")
+		$(".fenleiqiche li").each(function(index) {
+			var abcd=$(this)
+           	$(this).click(function(){
+				$(".fenleiqiche li input:radio[name='carScreening']").attr("checked",false)
+				$(abcd).children("input:radio[name='carScreening']").attr("checked",true)
+				$(".yongtu").css("display","none")
+				$(".yongtu").eq(index-1).css("display","block")
+				//alert(index)
+			}) 
+        });
+		$(".qingka").click(function(){
+			$(this).children("input").attr("checked",true)
+			$(".gongneng").css("display","none")
+			$(".zhouju").css("display","block")
+		})
+		$(".zhongka").click(function(){
+			$(this).children("input").attr("checked",true)
+			$(".gongneng").css("display","block")
+			$(".zhouju").css("display","none")
+		})
+		$(".allRadio").click(function(){
+			$(this).children("input").attr("checked",true)
+			$(".gongneng").css("display","block")
+			$(".zhouju").css("display","block")
+		})
+		
+		
+	})
+</script>
+
+</head>
+
+<body>
+<div class="RDpublickheader">
+	<div class="RDheader">
+        <div class="RDcenter">
+            <div class="RDheaderLeft">
+            	<div>
+                    <span>北京</span>
+                        <ul>
+                            <li><a href="#">天津</a></li>
+                            <li><a href="#">上海</a></li>
+                            <li><a href="#">广州</a></li>
+                        </ul>
+                </div>
+            </div>
+            <ul class="RDheaderRight">
+            	<li class="yuyanChange">Language<div><a href="#">中文</a><a href="#">Language</a></div></li>
+                <li><a href="#">活动</a></li>
+                <li><a href="#">资讯</a></li>
+                <li><a href="#">投资者关系</a></li>
+                <li><a href="#">人才招聘</a></li>
+                <li><a href="#">企业与责任</a></li>
+                <li><input type="text" value="瑞风S5" class="searchText" /><input type="submit" value="" class="searchBtn" /></li>
+            </ul>
+        </div>
+    </div>
+    <!--logo RDnav-->
+    <div class="RDheader2">
+        <div class="RDcenter">
+            
+            <a href="#" class="RDlogo"><img src="images/logo.png" width="214" height="28" alt="江淮汽车" /></a>
+            <ul class="RDnav">
+                <li class="RDnavFocus">
+                	<a href="#">品牌中心</a>
+                </li>
+                <li><a href="#">购车指南</a></li>
+                <li><a href="#">贴心服务</a></li>
+                <li><a href="#">JAC车友俱乐部</a></li>
+            </ul>
+            <div class="clearBox"></div>
+        </div>
+    </div>
+    <!--logo RDnav end-->
+</div>
+<!--你现在的位置-->
+<div class="currentLocation"><p class="RDcenter">你的位置：<a href="#">首页</a>><a href="#">投资者关系</a></p></div>
+<!--你现在的位置 end-->
+<!--fenleiMore-->
+<div class="fenleiMore">
+	
+</div>
+<!--fenleiMore end-->
+<!--brandWord-->
+<div class="brandWord" style="background:rgb(232, 232, 232) url(images/yuyueweixiu_bg.jpg) no-repeat center top;">
+    <div class="brandWordContent">
+    	<img src="product-images/pinpaiCenter.png" height="70" width="241" class="pinpaiImg" />
+    	<!--汽车筛选-->
+        <div class="carScreening">
+        	<p class="carScreeningTips"><span>选择购车用途及车型筛选</span></p>
+            <div class="carScreeningContent">
+            	<ul class="fenleiqiche">
+                	<li>选择购车用途</li>
+                    <li><input type="radio" name="carScreening" id="chengyong" checked /><label for="chengyong">乘用车</label></li>
+                    <li><input type="radio" name="carScreening" id="shangyong" /><label for="shangyong">商用车</label></li>
+                    <li><input type="radio" name="carScreening" id="dianshang" /><label for="dianshang">多功能商用车</label></li>
+                </ul>
+                
+                <div class="yongtu">
+                    <dl>
+                        <dt>按品类</dt>
+                        <dd><span><input type="checkbox" />轿车</span><span><input type="checkbox" />SUV</span><span><input type="checkbox" />MPV</span></dd>
+                        <dd><span><input type="checkbox" />全部</span></dd>
+                    </dl>
+                    <dl>
+                        <dt>按价格</dt>
+                        <dd><span><input type="checkbox" />3万-5万</span><span><input type="checkbox" />5万-7万</span><span><input type="checkbox" />10万-15万</span></dd>
+                        <dd><span><input type="checkbox" />15万-20万</span><span><input type="checkbox" />20万以上</span></dd>
+                    </dl>
+                </div>
+                <div class="yongtu shangyong">
+                    <ul>
+                    	<li class="yongtuTips">按品类：</li>
+                        <li  class="allRadio"><input type="radio" checked name="pinlei" />全部</li>
+                        <li  class="qingka"><input type="radio" name="pinlei"  />轻卡</li>
+                        <li  class="zhongka"><input type="radio"  name="pinlei" />重卡</li>
+                    </ul>
+                    <ul class="zhouju">
+                    	<li class="yongtuTips">按轴距：</li>
+                        <li><input type="checkbox" />2400-3360</li>
+                        <li><input type="checkbox" />3815-4700</li>
+                        <li><input type="checkbox" />4700以上</li>
+                    </ul>
+                    <ul class="gongneng">
+                    	<li class="yongtuTips">按功能：</li>
+                        <li><input type="checkbox" />载货车</li>
+                        <li><input type="checkbox" />牵引车</li>
+                        <li><input type="checkbox" />工程车</li>
+                        <li><input type="checkbox" />专用车</li>
+                        <li><input type="checkbox" />LNG重卡</li>
+                    </ul>
+                </div>
+                <div class="yongtu">
+                    <ul>
+                    	<li class="yongtuTips">按用途：</li>
+                        <li><input type="checkbox" />全部</li>
+                        <li><input type="checkbox" />客车</li>
+                        <li><input type="checkbox" />厢货车</li>
+                        <li><input type="checkbox" />改装车</li>
+                    </ul>
+                </div>
+                
+                <div class="clearBox"></div>
+            </div>
+        </div>
+    	<!--brandWordList-->
+        <!--瑞风-->
+        <div class="brandWordList" id="floor1">
+        	<a href="#"><span class="biaotiBg">瑞风</<i>>></i></span></a>
+            <P class="brandWordListTips"><span><a href="javascript:void(0);" class="brandWordListTipsFocus">瑞风S5</a></span><span><a href="javascript:void(0);">瑞风M5</a></span><span><a href="javascript:void(0);">瑞风穿梭</a></span><span><a href="javascript:void(0);">瑞风祥和</a></span></P>
+            <div class="tabqiehuan tabqiehuanFocus">
+                <div class="brandWordLeft">
+                	<a href="#"><img src="product-images/ruifengCar_06.jpg" height="108" width="247"  /></a>
+                    <ul>
+                    	<Li><a href="#">详情点击</a></Li>
+                        <Li><a href="#">经销商查询</a></Li>
+                        <Li><a href="#">预约试驾</a></Li>
+                        <Li><a href="#">在线订车</a></Li>
+                    </ul>
+                </div>
+                <div class="brandWordRight">
+                	<dl>
+                    	<dt><a href="#"><img src="product-images/ruifengImg_03.jpg" height="73" width="172" /></a></dt>
+                        <dd ><a href="#" style="color:#000;">跨界全能，驰骋路上，驾驭激情与动感</a></dd>
+                        <dd><a href="#">官方指导价格：8.89万起</a></dd>
+                        <dd><a href="#">活动：瑞风S5送精品</a></dd>
+                        
+                    </dl>
+                    <div class="clearBox"></div>
+                    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>级别：中型车 </td>
+                            <td>车驱动方式：前置前驱 </td>
+                            <td>变速箱：手动档 </td>
+                        </tr>
+                        <tr>
+                            <td>排量：1.9L </td>
+                            <td>长×宽×高：2340×1700×350 </td>
+                            <td>轴距：2600 </td>
+                        </tr>
+                    </table>
+                    <ul>
+                    	<li><a href="#"><img src="product-images/tuifengImg_03.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/tuifengImg_05.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/tuifengImg_07.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/tuifengImg_09.png" height="94" width="164" /></a></li>
+                    </ul>
+                </div>
+                
+                <div class="clearBox"></div>
+            </div>
+            
+        </div>
+        <!--和悦-->
+        <div class="brandWordList" id="floor2">
+        	<a href="#"><span class="biaotiBg">和悦<i>>></i></span></a>
+            <P class="brandWordListTips"><span><a href="#" class="brandWordListTipsFocus">2014款和悦</a></span><span><a href="#">和悦A30</a></span><span><a href="#">和悦RS</a></span><span><a href="#">和悦A13</a></span><span><a href="#">悦悦</a></span><span><a href="#">和悦iEV</a></span></P>
+            <div>
+                <div class="brandWordLeft">
+                	<a href="#"><img src="product-images/carShow_03.png" height="108" width="247"  /></a>
+                    <ul>
+                    	<Li><a href="#">详情点击</a></Li>
+                        <Li><a href="#">经销商查询</a></Li>
+                        <Li><a href="#">预约试驾</a></Li>
+                        <Li><a href="#">在线订车</a></Li>
+                    </ul>
+                </div>
+                <div class="brandWordRight">
+                	<dl>
+                    	<dt><a href="#"><img src="product-images/heyueImg_03.jpg" height="73" width="172" /></a></dt>
+                        <dd><a href="#">官方指导价格：7.48万起</a></dd>
+                        <dd><a href="#">活动：送加油卡</a></dd>
+                        <dd>&nbsp;</dd>
+                    </dl>
+                    <div class="clearBox"></div>
+                    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>级别：中型车 </td>
+                            <td>车驱动方式：前置前驱 </td>
+                            <td>变速箱：手动档 </td>
+                        </tr>
+                        <tr>
+                            <td>排量：1.9L </td>
+                            <td>长×宽×高：2340×1700×350 </td>
+                            <td>轴距：2600 </td>
+                        </tr>
+                    </table>
+                    <ul>
+                    	<li><a href="#"><img src="product-images/heyueImgList_11.jpg" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/heyueImgList_13.jpg" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/heyueImgList_15.jpg" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/heyueImgList_17.jpg" height="94" width="164" /></a></li>
+                    </ul>
+                </div>
+                
+                <div class="clearBox"></div>
+            </div>
+        </div>
+        <!--和悦 end-->
+        <!--星锐-->
+        <div class="brandWordList" id="floor3">
+        	<a href="#"><span class="biaotiBg">星锐<i>>></i></span></a>
+            <P class="brandWordListTips"><span><a href="#" class="brandWordListTipsFocus">星锐客车</a></span><span><a href="#">星锐厢式车</a></span><span><a href="#">星锐改装车</a></span></P>
+            <div>
+                <div class="brandWordLeft">
+                	<a href="#"><img src="product-images/carShow_06.png" height="108" width="247"  /></a>
+                    <ul>
+                    	<Li><a href="#">详情点击</a></Li>
+                        <Li><a href="#">经销商查询</a></Li>
+                        <Li><a href="#">预约试驾</a></Li>
+                        <Li><a href="#">在线订车</a></Li>
+                    </ul>
+                </div>
+                <div class="brandWordRight">
+                	<dl>
+                    	<dt><a href="#"><img src="product-images/xingyueImg_10.jpg" height="73" width="172" /></a></dt>
+                        <dd><a href="#">官方指导价格：12.98万起</a></dd>
+                        <dd><a href="#">活动：送加油卡</a></dd>
+                        <dd>&nbsp;</dd>
+                    </dl>
+                    <div class="clearBox"></div>
+                    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>级别：中型车 </td>
+                            <td>车驱动方式：前置前驱 </td>
+                            <td>变速箱：手动档 </td>
+                        </tr>
+                        <tr>
+                            <td>排量：1.9L </td>
+                            <td>长×宽×高：2340×1700×350 </td>
+                            <td>轴距：2600 </td>
+                        </tr>
+                    </table>
+                    <ul>
+                    	<li><a href="#"><img src="product-images/xingyueImgList_29.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/xingyueImgList_31.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/xingyueImgList_32.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/xingyueImgList_34.png" height="94" width="164" /></a></li>
+                    </ul>
+                </div>
+                
+                <div class="clearBox"></div>
+            </div>
+        </div>
+        <!--星悦 end-->
+        <!--帅铃-->
+        <div class="brandWordList" id="floor4">
+        	<a href="#"><span class="biaotiBg">帅铃<i>>></i></span></a>
+            <P class="brandWordListTips"><span><a href="#" class="brandWordListTipsFocus">帅铃W系</a></span><span><a href="#">帅铃Z系</a></span><span><a href="#">帅铃N系</a></span></P>
+            <div>
+                <div class="brandWordLeft">
+                	<a href="#"><img src="product-images/carShow_09.png" height="108" width="247"  /></a>
+                    <ul>
+                    	<Li><a href="#">详情点击</a></Li>
+                        <Li><a href="#">经销商查询</a></Li>
+                        <Li><a href="#">预约试驾</a></Li>
+                        <Li><a href="#">在线订车</a></Li>
+                    </ul>
+                </div>
+                <div class="brandWordRight">
+                	<dl>
+                    	<dt><a href="#"><img src="product-images/shuailing_14.jpg" height="73" width="172" /></a></dt>
+                        <dd><a href="#">活动：送加油卡</a></dd>
+                        <dd>&nbsp;</dd>
+                        <dd>&nbsp;</dd>
+                    </dl>
+                    <div class="clearBox"></div>
+                    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>级别：中型车 </td>
+                            <td>车驱动方式：前置前驱 </td>
+                            <td>变速箱：手动档 </td>
+                        </tr>
+                        <tr>
+                            <td>排量：1.9L </td>
+                            <td>长×宽×高：2340×1700×350 </td>
+                            <td>轴距：2600 </td>
+                        </tr>
+                    </table>
+                    <ul>
+                    	<li><a href="#"><img src="product-images/shuailingImgList_47.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/shuailingImgList_49.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/shuailingImgList_50.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/shuailingImgList_51.png" height="94" width="164" /></a></li>
+                    </ul>
+                </div>
+                
+                <div class="clearBox"></div>
+            </div>
+        </div>
+        <!--帅铃 end-->
+        <!--骏铃-->
+        <div class="brandWordList" id="floor5">
+        	<a href="#"><span class="biaotiBg">骏铃<i>>></i></span></a>
+           <P class="brandWordListTips"><span><a href="#" class="brandWordListTipsFocus">骏铃W系</a></span><span><a href="#">骏铃M系</a></span><span><a href="#">骏铃N系</a></span></P>
+            <div>
+                <div class="brandWordLeft">
+                	<a href="#"><img src="product-images/carShow_13.png" height="108" width="247"  /></a>
+                    <ul>
+                    	<Li><a href="#">详情点击</a></Li>
+                        <Li><a href="#">经销商查询</a></Li>
+                        <Li><a href="#">预约试驾</a></Li>
+                        <Li><a href="#">在线订车</a></Li>
+                    </ul>
+                </div>
+                <div class="brandWordRight">
+                	<dl>
+                    	<dt><a href="#"><img src="product-images/junlingImg_20.jpg" height="73" width="172" /></a></dt>
+                        <dd><a href="#">活动：送加油卡</a></dd>
+                        <dd>&nbsp;</dd>
+                        <dd>&nbsp;</dd>
+                    </dl>
+                    <div class="clearBox"></div>
+                    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>级别：中型车 </td>
+                            <td>车驱动方式：前置前驱 </td>
+                            <td>变速箱：手动档 </td>
+                        </tr>
+                        <tr>
+                            <td>排量：1.9L </td>
+                            <td>长×宽×高：2340×1700×350 </td>
+                            <td>轴距：2600 </td>
+                        </tr>
+                    </table>
+                    <ul>
+                    	<li><a href="#"><img src="product-images/junlingImgList_62.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/junlingImgList_64.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/junlingImgList_66.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/junlingImgList_68.png" height="94" width="164" /></a></li>
+                    </ul>
+                </div>
+                
+                <div class="clearBox"></div>
+            </div>
+        </div>
+        <!--俊玲  end-->
+        <!--好运-->
+        <div class="brandWordList" id="floor5">
+        	<a href="#"><span class="biaotiBg">好运<i>>></i></span></a>
+            <P class="brandWordListTips"><span><a href="#" class="brandWordListTipsFocus">好运W系</a></span><span><a href="#">好运M系</a></span><span><a href="#">好运N系</a></span></P>
+            <div>
+                <div class="brandWordLeft">
+                	<a href="#"><img src="product-images/carShow_15.png" height="108" width="247"  /></a>
+                    <ul>
+                    	<Li><a href="#">详情点击</a></Li>
+                        <Li><a href="#">经销商查询</a></Li>
+                        <Li><a href="#">预约试驾</a></Li>
+                        <Li><a href="#">在线订车</a></Li>
+                    </ul>
+                </div>
+                <div class="brandWordRight">
+                	<dl>
+                    	<dt><a href="#"><img src="product-images/haoyunImg_25.jpg" height="73" width="172" /></a></dt>
+                        <dd><a href="#">活动：送加油卡</a></dd>
+                        <dd>&nbsp;</dd>
+                        <dd>&nbsp;</dd>
+                    </dl>
+                    <div class="clearBox"></div>
+                    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>级别：中型车 </td>
+                            <td>车驱动方式：前置前驱 </td>
+                            <td>变速箱：手动档 </td>
+                        </tr>
+                        <tr>
+                            <td>排量：1.9L </td>
+                            <td>长×宽×高：2340×1700×350 </td>
+                            <td>轴距：2600 </td>
+                        </tr>
+                    </table>
+                    <ul>
+                    	<li><a href="#"><img src="product-images/haoyunImgList_78.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/haoyunImgList_79.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/haoyunImgList_80.png" height="94" width="164" /></a></li>
+                        <li><a href="#"><img src="product-images/haoyunImgList_82.png" height="94" width="164" /></a></li>
+                    </ul>
+                </div>
+                
+                <div class="clearBox"></div>
+            </div>
+        </div>
+        <!--好运 end-->
+        <!--格尔发-->
+        <div class="brandWordList" id="floor6">
+        	<a href="#"><span class="biaotiBg">格尔发<i>>></i></span></a>
+            <P class="brandWordListTips"><span><a href="#" class="brandWordListTipsFocus">格尔发载货车</a></span><span><a href="#">格尔发牵引车</a></span><span><a href="#">格尔发工程车</a></span><span><a href="#">格尔发专用车</a></span><span><a href="#">格尔发LNG重卡</a></span></P>
+            <div>
+                <div class="brandWordLeft">
+                	<a href="#"><img src="product-images/carShow_17.png" height="108" width="247"  /></a>
+                    <ul>
+                    	<Li><a href="#">详情点击</a></Li>
+                        <Li><a href="#">经销商查询</a></Li>
+                        <Li><a href="#">预约试驾</a></Li>
+                        <Li><a href="#">在线订车</a></Li>
+                    </ul>
+                </div>
+                <div class="brandWordRight">
+                	<dl>
+                    	<dt><a href="#"><img src="product-images/geerfaImg_29.jpg" height="73" width="172" /></a></dt>
+                        <dd><a href="#">活动：送加油卡</a></dd>
+                        <dd>&nbsp;</dd>
+                        <dd>&nbsp;</dd>
+                    </dl>
+                    <div class="clearBox"></div>
+                    <ul>
+                    	<li><P><a href="#">格尔发KW系8×4搅拌车</a></P><a href="#"><img src="product-images/geerfaImgList_93.png" height="94" width="164" /></a></li>
+                        <li><p><a href="#">格尔发矿山6×4自卸车</a></p><a href="#"><img src="product-images/geerfaImgList_95.png" height="94" width="164" /></a></li>
+                        <li><p><a href="#">格尔发KW系8×4自卸</a></p><a href="#"><img src="product-images/geerfaImgList_96.png" height="94" width="164" /></a></li>
+                        <li><p><a href="#">格尔发KX系6×2自卸</a></p><a href="#"><img src="product-images/geerfaImgList_97.png" height="94" width="164" /></a></li>
+                    </ul>
+                </div>
+                
+                <div class="clearBox"></div>
+            </div>
+        </div>
+        <!--格尔发 end-->
+        <!--锐捷特-->
+        <div class="brandWordList" style="padding-bottom:45px;">
+        	<a href="#"><span class="biaotiBg">锐捷特<i>>></i></span></a>
+            <P class="brandWordListTips"><a href="#" style="background:none;"><img src="product-images/ruijietu.png" height="31" width="163" /></a></P>
+            <ul class="ruijiete">
+            	<li><a href="#"><img src="product-images/ruijieteImgList_03.png" height="209" width="234" /></a><p><a href="#">4GA平台产品具有动力强劲，节能，环保，使用可靠等优点。</a></p><p><span><a href="#">详情点击</a></span></p></li>
+                <li><a href="#"><img src="product-images/ruijieteImgList_05.png" height="209" width="234" /></a><p><a href="#">4GB平台产品使用先进的VVT，轻量化设计，正时链条传动技术排放达到欧IV标准</a></p><p><span><a href="#">详情点击</a></span></p></li>
+                <li><a href="#"><img src="product-images/ruijieteImgList_07.png" height="209" width="234" /></a><p><a href="#">4GC平台产品实现了缸内直喷+增压中冷+DVVT三大技术的完美组合</a></p><p><span><a href="#">详情点击</a></span></p></li>
+                <li><a href="#"><img src="product-images/ruijieteImgList_09.png" height="209" width="234" /></a><p><a href="#">4DB平台柴油机采用铝钢盖，VNT,EGR等先进技术，处于领先水平，是自主开发的成功实践</a></p><p><span><a href="#">详情点击</a></span></p></li>
+            </ul>
+            <div class="clearBox"></div>
+        </div>
+        <!--锐捷特 end-->
+        <!--底盘-->
+        <div class="brandWordList" id="floor8">
+        	<a href="#"><span class="biaotiBg">底盘<i>>></i></span></a>
+            <P class="brandWordListTips"><span><a href="#" class="brandWordListTipsFocus">客车底盘</a></span><span><a href="#">专用车底盘</a></span></P>
+            <p class="dipanImg"><a href="#"><img src="product-images/dipanImg_03.jpg" height="75" width="1001" /></a></p>
+            <div class="tabqiehuan tabqiehuanFocus">
+                <ul class="dipanList">
+                    <li><a href="#"><img src="product-images/dipanImgList_07.png" height="157" width="226" /></a><span>A系列底盘</span><p><a href="#">详情点击</a><a href="#">服务商查询</a></p></li>
+                    <li><a href="#"><img src="product-images/dipanImgList_09.png" height="157" width="226" /></a><span>K系列底盘</span><p><a href="#">详情点击</a><a href="#">服务商查询</a></p></li>
+                    <li><a href="#"><img src="product-images/dipanImgList_11.png" height="157" width="226" /></a><span>N系列底盘</span><p><a href="#">详情点击</a><a href="#">服务商查询</a></p></li>
+                    <li><a href="#"><img src="product-images/dipanImgList_13.png" height="157" width="226" /></a><span>Z系列底盘</span><p><a href="#">详情点击</a><a href="#">服务商查询</a></p></li>
+                </ul>
+            </div>
+            <div class="clearBox"></div>
+        </div>
+        <!--底盘 end-->
+    </div>
+</div>
+<!--brandWord end-->
+<!--RDfooter-->
+<div class="RDfooter">
+	<div class="RDfooter1">
+    	<div class="RDcenter">
+        	<a href="javascript:void(0);" class="yincangBtn"><img src="images/jia.png" height="16" width="25" /></a>
+            <div class="RDfooterFuWu">
+                <img src="images/julebu.png" height="45" width="175" />
+                <dl>
+                    <dt>24小时贵宾服务热线</dt>
+                    <dd>4008-889933　乘用车</dd>
+                    <dd>4008-009933　轻卡</dd>
+                    <dd>4008-003366　星锐</dd>
+                    <dd>4008-006633　重卡</dd>
+                    <dd>4000-277771　瑞铃</dd>
+                    <dd>4008-878576　瑞驰</dd>
+                </dl>
+            </div>
+            <dl>
+                <dt>品牌中心</dt>
+                <dd><a href="#">和悦</a></dd>
+                <dd><a href="#">帅铃</a></dd>
+                <dd><a href="#">骏铃</a></dd>
+                <dd><a href="#">好运</a></dd>
+                <dd><a href="#">格尔发</a></dd>
+                <dd><a href="#">锐捷特</a></dd>
+                <dd><a href="#">江淮底盘</a></dd>
+            </dl>
+            <dl>
+                <dt>购车指南</dt>
+                <dd><a href="#">个性化定制</a></dd>
+                <dd><a href="#">车型对比</a></dd>
+                <dd><a href="#">预约试驾</a></dd>
+                <dd><a href="#">价格试算</a></dd>
+                <dd><a href="#">购车流程</a></dd>
+                <dd><a href="#">金融服务</a></dd>
+                <dd><a href="#">贷款计算器</a></dd>
+                <dd><a href="#">查找经销商</a></dd>
+                <dd><a href="#">在线购车</a></dd>
+                <dd><a href="#">最新活动</a></dd>
+            </dl>
+            <dl>
+                <dt>贴心服务</dt>
+                <dd><a href="#">服务承诺</a></dd>
+                <dd><a href="#">服务网点</a></dd>
+                <dd><a href="#">配件供应</a></dd>
+                <dd><a href="#">在线咨询</a></dd>
+            </dl>
+            <dl>
+                <dt>活动</dt>
+                <dd><a href="#">品牌活动</a></dd>
+                <dd><a href="#">促销活动</a></dd>
+                <dd><a href="#">往期活动</a></dd>
+            </dl>
+            <dl>
+                <dt>资讯</dt>
+                <dd><a href="#">企业新闻</a></dd>
+                <dd><a href="#">媒体报道</a></dd>
+                <dd><a href="#">记者专区</a></dd>
+            </dl>
+            <dl>
+                <dt>投资者关系</dt>
+                <dd><a href="#">产销报告</a></dd>
+                <dd><a href="#">临时公告</a></dd>
+                <dd><a href="#">定期报告</a></dd>
+            </dl>
+              <dl>
+                <dt>人才招聘</dt>
+                <dd><a href="#">员工福利</a></dd>
+                <dd><a href="#">校园招聘</a></dd>
+                <dd><a href="#">社会招聘</a></dd>
+                <dd><a href="#">员工风采</a></dd>
+            </dl>
+              <dl>
+                <dt>企业与责任</dt>
+                <dd><a href="#">公司介绍</a></dd>
+                <dd><a href="#">领导风采</a></dd>
+                <dd><a href="#">发展历程</a></dd>
+                <dd><a href="#">新能源</a></dd>
+                <dd><a href="#">底盘科技</a></dd>
+                <dd><a href="#">动力总成</a></dd>
+                <dd><a href="#">社会责任</a></dd>
+            </dl>
+              <dl>
+                <dt>精彩下载</dt>
+                <dd><a href="#">江淮汽车TV</a></dd>
+                <dd><a href="#">精美壁纸</a></dd>
+            </dl>
+            <div class="clearBox"></div>
+        </div>
+    </div>
+    <div class="RDfooter2">
+    	<div class="RDcenter">
+        	<ul>
+            	<li><a href="#">版权信息</a>|</li>
+                <li><a href="#">使用说明</a>|</li>
+                <li><a href="#">联系我们</a>|</li>
+                <li><a href="#">网站地图</a>|</li>
+                <li><a href="#">合作伙伴专区</a></li>
+            </ul>
+            <p>江淮汽车2013版权所有 皖ICP备 05005596</p>
+        </div>
+    </div>
+</div>
+<!--RDfooter end-->
+
+<!--rightFloat-->
+<div class="rightFloat">
+    <a href="" class="gotoTop"><img src="images/goTop.jpg" height="33" width="88" /></a>
+    <p><a href="#cimuIframe" title="关闭" class="boxy">登录</a><a href="#registIframe" class="boxy" title="关闭">注册</a></p>
+    <ul>
+        <li><a href="#"><img src="images/8-1.png" height="38" width="38" /><img class="hoverImg" src="images/8.png" height="38" width="38" /><span>在线咨询</span></a></li>
+        <li><a href="#"><img src="images/7-1.png" height="38" width="38" /><img class="hoverImg" src="images/7.png" height="38" width="38" /><span>预约试驾</span></a></li>
+        <li><a href="#"><img src="images/6-1.png" height="38" width="38" /><img class="hoverImg" src="images/6.png" height="38" width="38" /><span>在线订车</span></a></li>
+        <li><a href="#"><img src="images/5-1.png" height="38" width="38" /><img class="hoverImg" src="images/5.png" height="38" width="38" /><span>预约维修</span></a></li>
+        <li><a href="#"><img src="images/4-1.png"  height="38" width="38" /><img class="hoverImg" src="images/4.png" height="38" width="38" /><span>经销商查询</span></a></li>
+        <li><a href="#"><img src="images/3-1.png" height="38" width="38" /><img class="hoverImg" src="images/3.png" height="38" width="38" /><span>服务商查询</span></a></li>
+        <li><a href="#"><img src="images/2-1.png" height="38" width="38" /><img class="hoverImg" src="images/2.png" height="38" width="38" /><span>关注微信</span></a></li>
+        <li><a href="#"><img src="images/1-1.png" height="38" width="38" /><img class="hoverImg" src="images/1.png" height="38" width="38" /><span>江淮微博</span></a></li>
+    </ul>
+</div>
+<!--rightFloat end-->
+</body>
+</html>

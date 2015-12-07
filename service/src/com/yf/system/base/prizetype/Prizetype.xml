@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Prizetype">
+  
+  <typeAlias alias="Prizetype" type="com.yf.system.base.prizetype.Prizetype"/>
+  
+
+  <resultMap id="resultPrizetypeMap" class="Prizetype">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="typename" column="C_TYPENAME"/>
+  
+     <result property="index" column="C_INDEX"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllPrizetype"  resultMap="resultPrizetypeMap"  parameterClass="java.util.Map">
+  
+    select * from T_PRIZETYPE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllPrizetypeBySql"  resultMap="resultPrizetypeMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excutePrizetypeBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countPrizetypeBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_PRIZETYPE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findPrizetype" parameterClass="long" resultClass="Prizetype">
+    select 
+    	ID as id,
+	  			C_TYPENAME as typename,
+	  			C_INDEX as index,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime 
+     from T_PRIZETYPE
+    where ID = #id#
+  </select>
+   
+  <insert id="createPrizetype" parameterClass="Prizetype">
+    insert into T_PRIZETYPE ( 
+    	ID,
+	  			C_TYPENAME,
+	  			C_INDEX,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#typename#,
+	  					
+							#index:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deletePrizetype" parameterClass="long">
+    delete from T_PRIZETYPE
+    where ID = #id#
+  </delete>
+	
+  <update id="updatePrizetype" parameterClass="Prizetype">
+    update T_PRIZETYPE 
+    set 
+    	C_TYPENAME = #typename#,
+	  					C_INDEX = #index:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

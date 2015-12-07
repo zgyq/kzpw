@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Gift">
+  
+  <typeAlias alias="Gift" type="com.yf.system.base.gift.Gift"/>
+  
+
+  <resultMap id="resultGiftMap" class="Gift">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="giftcode" column="C_GIFTCODE"/>
+  
+     <result property="giftdesc" column="C_GIFTDESC"/>
+  
+     <result property="brand" column="C_BRAND"/>
+  
+     <result property="oldintegral" column="C_OLDINTEGRAL"/>
+  
+     <result property="useintegral" column="C_USEINTEGRAL"/>
+  
+     <result property="picsrc" column="C_PICSRC"/>
+  
+     <result property="online" column="C_ONLINE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="giftcatalogid" column="C_GIFTCATALOGID"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllGift"  resultMap="resultGiftMap"  parameterClass="java.util.Map">
+  
+    select * from T_GIFT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllGiftBySql"  resultMap="resultGiftMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteGiftBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countGiftBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_GIFT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findGift" parameterClass="long" resultClass="Gift">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_GIFTCODE as giftcode,
+	  			C_GIFTDESC as giftdesc,
+	  			C_BRAND as brand,
+	  			C_OLDINTEGRAL as oldintegral,
+	  			C_USEINTEGRAL as useintegral,
+	  			C_PICSRC as picsrc,
+	  			C_ONLINE as online,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_GIFTCATALOGID as giftcatalogid,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_GIFT
+    where ID = #id#
+  </select>
+   
+  <insert id="createGift" parameterClass="Gift">
+    insert into T_GIFT ( 
+    	ID,
+	  			C_NAME,
+	  			C_GIFTCODE,
+	  			C_GIFTDESC,
+	  			C_BRAND,
+	  			C_OLDINTEGRAL,
+	  			C_USEINTEGRAL,
+	  			C_PICSRC,
+	  			C_ONLINE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_GIFTCATALOGID,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#giftcode#,
+	  					
+	  						#giftdesc#,
+	  					
+	  						#brand#,
+	  					
+							#oldintegral:DECIMAL#,
+						
+							#useintegral:DECIMAL#,
+						
+	  						#picsrc#,
+	  					
+							#online:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#giftcatalogid:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteGift" parameterClass="long">
+    delete from T_GIFT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateGift" parameterClass="Gift">
+    update T_GIFT 
+    set 
+    	C_NAME = #name#,
+	  					C_GIFTCODE = #giftcode#,
+	  					C_GIFTDESC = #giftdesc#,
+	  					C_BRAND = #brand#,
+	  					C_OLDINTEGRAL = #oldintegral:DECIMAL#,
+						C_USEINTEGRAL = #useintegral:DECIMAL#,
+						C_PICSRC = #picsrc#,
+	  					C_ONLINE = #online:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_GIFTCATALOGID = #giftcatalogid:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

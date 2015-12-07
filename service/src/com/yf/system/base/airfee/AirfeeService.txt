@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 燃油费机建费表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Airfee createAirfee(Airfee airfee) throws SQLException;
+	
+	/**
+	 * 删除 燃油费机建费表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAirfee(long id);
+	
+	
+	/**
+	 * 修改 燃油费机建费表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAirfee(Airfee airfee);
+
+		
+	/**
+	 * 修改 燃油费机建费表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAirfeeIgnoreNull(Airfee airfee);
+		
+	
+	/**
+	 * 查找 燃油费机建费表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirfee(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 燃油费机建费表
+	 * @param id
+	 * @return
+	 */
+	public Airfee findAirfee(long id);
+	
+	/**
+	 * 查找 燃油费机建费表 by language
+	 * @param id
+	 * @return
+	 */
+	public Airfee findAirfeebylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 燃油费机建费表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAirfeeForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找燃油费机建费表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirfeeBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 燃油费机建费表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAirfeeBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAirfeeBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IAirfeeComponent airfeeComponent;
+	  
+ 	
+ 	public IAirfeeComponent getAirfeeComponent() {
+		return airfeeComponent;
+	}
+	public void setAirfeeComponent(IAirfeeComponent  airfeeComponent) {
+		this.airfeeComponent = airfeeComponent;
+	}
+	/**
+	 * 创建 燃油费机建费表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Airfee createAirfee(Airfee airfee) throws SQLException{
+	
+		return airfeeComponent.createAirfee(airfee);
+	}
+	/**
+	 * 删除 燃油费机建费表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAirfee(long id){
+	
+		return airfeeComponent.deleteAirfee(id);
+	}
+	
+	
+	/**
+	 * 修改 燃油费机建费表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAirfee(Airfee airfee){
+		return airfeeComponent.updateAirfee(airfee);
+	
+	}
+
+		
+	/**
+	 * 修改 燃油费机建费表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAirfeeIgnoreNull(Airfee airfee){
+			return airfeeComponent.updateAirfeeIgnoreNull(airfee);
+	
+	}
+	
+	/**
+	 * 查找 燃油费机建费表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirfee(String where, String orderby,int limit,int offset){
+		return airfeeComponent.findAllAirfee(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 燃油费机建费表
+	 * @param id
+	 * @return
+	 */
+	public Airfee findAirfee(long id){
+		return airfeeComponent.findAirfee(id);
+	}
+	
+	/**
+	 * 查找 燃油费机建费表
+	 * @param id
+	 * @return
+	 */
+	public Airfee findAirfeebylanguage(long id,Integer language){
+		return airfeeComponent.findAirfeebylanguage(id,language);
+	}
+	/** 
+	 * 查找 燃油费机建费表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAirfeeForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return airfeeComponent.findAllAirfee(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找燃油费机建费表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirfeeBySql(String sql,int limit,int offset){
+		return airfeeComponent.findAllAirfee(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 燃油费机建费表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAirfeeBySql(String sql){
+		return airfeeComponent.excuteAirfeeBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAirfeeBySql(String sql){
+		return airfeeComponent.countAirfeeBySql(sql);
+	}
+	
+	
+

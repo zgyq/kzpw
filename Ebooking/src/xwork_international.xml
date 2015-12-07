@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "xwork-1.0.dtd">
+<xwork>
+	<package name="international" extends="default">
+		<action name="international" class="com.yf.website.web.action.InterNationalTicketAction">
+			<result name="tointernational" type="dispatcher">
+				<param name="location">international/international.jsp</param>
+			</result>
+			<result name="tointerlist" type="dispatcher">
+				<param name="location">international/list.jsp</param>
+			</result>
+			
+			<result name="tobooking" type="dispatcher">
+				<param name="location">international/booking.jsp</param>
+			</result>
+			
+			<result name="toordercheck" type="dispatcher">
+				<param name="location">international/check.jsp</param>
+			</result>
+			
+			<result name="success" type="dispatcher">
+				<param name="location">international/success.jsp</param>
+			</result>
+			
+			<result name="toLogin" type="dispatcher">
+				<param name="location">member/quick_login.jsp</param>
+			</result>
+			
+			<result name="forword" type="redirect">
+				<param name="location">/${forword}</param>
+			</result>
+		<interceptor-ref name="model-driven" />
+		<interceptor-ref name="params" />
+		<interceptor-ref name="validationStack" />	
+		
+		</action>
+		 <action name="interticket" class="com.yf.website.web.action.InterticketAction">
+      <result name="index" type="dispatcher">
+        <param name="location">interticket_new/index.jsp</param>
+      </result>
+      <result name="ticketlist" type="dispatcher">
+        <param name="location">interticket_new/ticketlist.jsp</param>
+      </result>
+      <result name="createorder" type="dispatcher">
+        <param name="location">interticket_new/createorder.jsp</param>
+      </result>
+      <result name="forword" type="redirect">
+        <param name="location">/${forword}</param>
+      </result>
+      <result name="success" type="dispatcher">
+        <param name="location">interticket_new/success.jsp</param>
+      </result>
+      
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+	</package>
+	
+</xwork>

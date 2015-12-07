@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Fairway">
+  
+  <typeAlias alias="Fairway" type="com.yf.system.base.fairway.Fairway"/>
+  
+
+  <resultMap id="resultFairwayMap" class="Fairway">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="airlinername" column="C_AIRLINERNAME"/>
+  
+     <result property="airlinercode" column="C_AIRLINERCODE"/>
+  
+     <result property="countrycode" column="C_COUNTRYCODE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllFairway"  resultMap="resultFairwayMap"  parameterClass="java.util.Map">
+  
+    select * from T_FAIRWAY
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllFairwayBySql"  resultMap="resultFairwayMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteFairwayBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countFairwayBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_FAIRWAY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findFairway" parameterClass="long" resultClass="Fairway">
+    select 
+    	ID as id,
+	  			C_AIRLINERNAME as airlinername,
+	  			C_AIRLINERCODE as airlinercode,
+	  			C_COUNTRYCODE as countrycode,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_FAIRWAY
+    where ID = #id#
+  </select>
+   
+  <insert id="createFairway" parameterClass="Fairway">
+    insert into T_FAIRWAY ( 
+    	ID,
+	  			C_AIRLINERNAME,
+	  			C_AIRLINERCODE,
+	  			C_COUNTRYCODE,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#airlinername#,
+	  					
+	  						#airlinercode#,
+	  					
+	  						#countrycode#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteFairway" parameterClass="long">
+    delete from T_FAIRWAY
+    where ID = #id#
+  </delete>
+	
+  <update id="updateFairway" parameterClass="Fairway">
+    update T_FAIRWAY 
+    set 
+    	C_AIRLINERNAME = #airlinername#,
+	  					C_AIRLINERCODE = #airlinercode#,
+	  					C_COUNTRYCODE = #countrycode#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Tickettype">
+  
+  <typeAlias alias="Tickettype" type="com.yf.system.base.tickettype.Tickettype"/>
+  
+
+  <resultMap id="resultTickettypeMap" class="Tickettype">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="typename" column="C_TYPENAME"/>
+  
+     <result property="typedesc" column="C_TYPEDESC"/>
+   
+  </resultMap>
+  
+  <select id="findAllTickettype"  resultMap="resultTickettypeMap"  parameterClass="java.util.Map">
+  
+    select * from T_TICKETTYPE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTickettypeBySql"  resultMap="resultTickettypeMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTickettypeBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTickettypeBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TICKETTYPE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTickettype" parameterClass="long" resultClass="Tickettype">
+    select 
+    	ID as id,
+	  			C_TYPENAME as typename,
+	  			C_TYPEDESC as typedesc 
+     from T_TICKETTYPE
+    where ID = #id#
+  </select>
+   
+  <insert id="createTickettype" parameterClass="Tickettype">
+    insert into T_TICKETTYPE ( 
+    	ID,
+	  			C_TYPENAME,
+	  			C_TYPEDESC 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#typename#,
+	  					
+	  						#typedesc#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTickettype" parameterClass="long">
+    delete from T_TICKETTYPE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTickettype" parameterClass="Tickettype">
+    update T_TICKETTYPE 
+    set 
+    	C_TYPENAME = #typename#,
+	  					C_TYPEDESC = #typedesc#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 景点门票
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotticket createSpotticket(Spotticket spotticket) throws SQLException;
+	
+	/**
+	 * 删除 景点门票
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotticket(long id);
+	
+	
+	/**
+	 * 修改 景点门票
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotticket(Spotticket spotticket);
+
+		
+	/**
+	 * 修改 景点门票但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotticketIgnoreNull(Spotticket spotticket);
+		
+	
+	/**
+	 * 查找 景点门票
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotticket(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 景点门票
+	 * @param id
+	 * @return
+	 */
+	public Spotticket findSpotticket(long id);
+	
+	
+	/** 
+	 * 查找 景点门票
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotticketForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找景点门票
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotticketBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 景点门票
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotticketBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotticketBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISpotticketComponent spotticketComponent;
+	  
+ 	
+ 	public ISpotticketComponent getSpotticketComponent() {
+		return spotticketComponent;
+	}
+	public void setSpotticketComponent(ISpotticketComponent  spotticketComponent) {
+		this.spotticketComponent = spotticketComponent;
+	}
+	/**
+	 * 创建 景点门票
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotticket createSpotticket(Spotticket spotticket) throws SQLException{
+	
+		return spotticketComponent.createSpotticket(spotticket);
+	}
+	/**
+	 * 删除 景点门票
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotticket(long id){
+	
+		return spotticketComponent.deleteSpotticket(id);
+	}
+	
+	
+	/**
+	 * 修改 景点门票
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotticket(Spotticket spotticket){
+		return spotticketComponent.updateSpotticket(spotticket);
+	
+	}
+
+		
+	/**
+	 * 修改 景点门票但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotticketIgnoreNull(Spotticket spotticket){
+			return spotticketComponent.updateSpotticketIgnoreNull(spotticket);
+	
+	}
+	
+	/**
+	 * 查找 景点门票
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotticket(String where, String orderby,int limit,int offset){
+		return spotticketComponent.findAllSpotticket(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 景点门票
+	 * @param id
+	 * @return
+	 */
+	public Spotticket findSpotticket(long id){
+		return spotticketComponent.findSpotticket(id);
+	}
+	
+	/** 
+	 * 查找 景点门票
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotticketForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return spotticketComponent.findAllSpotticket(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找景点门票
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotticketBySql(String sql,int limit,int offset){
+		return spotticketComponent.findAllSpotticket(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 景点门票
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotticketBySql(String sql){
+		return spotticketComponent.excuteSpotticketBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotticketBySql(String sql){
+		return spotticketComponent.countSpotticketBySql(sql);
+	}
+	
+	
+

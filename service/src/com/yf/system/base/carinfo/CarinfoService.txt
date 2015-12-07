@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 车型数据
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Carinfo createCarinfo(Carinfo carinfo) throws SQLException;
+	
+	/**
+	 * 删除 车型数据
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCarinfo(long id);
+	
+	
+	/**
+	 * 修改 车型数据
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCarinfo(Carinfo carinfo);
+
+		
+	/**
+	 * 修改 车型数据但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCarinfoIgnoreNull(Carinfo carinfo);
+		
+	
+	/**
+	 * 查找 车型数据
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarinfo(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 车型数据
+	 * @param id
+	 * @return
+	 */
+	public Carinfo findCarinfo(long id);
+	
+	
+	/** 
+	 * 查找 车型数据
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCarinfoForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找车型数据
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarinfoBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 车型数据
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCarinfoBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCarinfoBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ICarinfoComponent carinfoComponent;
+	  
+ 	
+ 	public ICarinfoComponent getCarinfoComponent() {
+		return carinfoComponent;
+	}
+	public void setCarinfoComponent(ICarinfoComponent  carinfoComponent) {
+		this.carinfoComponent = carinfoComponent;
+	}
+	/**
+	 * 创建 车型数据
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Carinfo createCarinfo(Carinfo carinfo) throws SQLException{
+	
+		return carinfoComponent.createCarinfo(carinfo);
+	}
+	/**
+	 * 删除 车型数据
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCarinfo(long id){
+	
+		return carinfoComponent.deleteCarinfo(id);
+	}
+	
+	
+	/**
+	 * 修改 车型数据
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCarinfo(Carinfo carinfo){
+		return carinfoComponent.updateCarinfo(carinfo);
+	
+	}
+
+		
+	/**
+	 * 修改 车型数据但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCarinfoIgnoreNull(Carinfo carinfo){
+			return carinfoComponent.updateCarinfoIgnoreNull(carinfo);
+	
+	}
+	
+	/**
+	 * 查找 车型数据
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarinfo(String where, String orderby,int limit,int offset){
+		return carinfoComponent.findAllCarinfo(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 车型数据
+	 * @param id
+	 * @return
+	 */
+	public Carinfo findCarinfo(long id){
+		return carinfoComponent.findCarinfo(id);
+	}
+	
+	/** 
+	 * 查找 车型数据
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCarinfoForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return carinfoComponent.findAllCarinfo(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找车型数据
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarinfoBySql(String sql,int limit,int offset){
+		return carinfoComponent.findAllCarinfo(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 车型数据
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCarinfoBySql(String sql){
+		return carinfoComponent.excuteCarinfoBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCarinfoBySql(String sql){
+		return carinfoComponent.countCarinfoBySql(sql);
+	}
+	
+	
+

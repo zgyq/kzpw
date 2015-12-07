@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Guest">
+  
+  <typeAlias alias="Guest" type="com.yf.system.base.guest.Guest"/>
+  
+
+  <resultMap id="resultGuestMap" class="Guest">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+     
+     <result property="country" column="C_COUNTRY"/>
+  
+     <result property="roomno" column="C_ROOMNO"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="memo" column="C_MEMO"/>
+  
+     <result property="version" column="C_VERSION"/>
+  
+     <result property="mobile" column="C_MOBILE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+     
+     <result property="shijitime" column="C_SHIJITIME"/>
+     
+    <result property="likaitime" column="C_LIKAITIME"/>
+    
+    <result property="ruzhutime" column="C_RUZHUTIME"/>
+    
+    <result property="price" column="C_PRICE"/>
+     
+    <result property="state" column="C_STATE"/>
+    
+    <result property="sex" column="C_SEX"/>
+    
+    <result property="userfan" column="C_USERFAN"/>
+    
+    <result property="platfan" column="C_PLATFAN"/>
+    
+    <result property="onefan" column="C_ONEFAN"/>
+    
+    <result property="twofan" column="C_TWOFAN"/>
+    
+    <result property="threefan" column="C_THREEFAN"/>
+   
+  </resultMap>
+  
+  <select id="findAllGuest"  resultMap="resultGuestMap"  parameterClass="java.util.Map">
+  
+    select * from T_GUEST
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllGuestBySql"  resultMap="resultGuestMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteGuestBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countGuestBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_GUEST
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findGuest" parameterClass="long" resultClass="Guest">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_COUNTRY as country,
+	  			C_ROOMNO as roomno,
+	  			C_ORDERID as orderid,
+	  			C_MEMO as memo,
+	  			C_VERSION as version,
+	  			C_MOBILE as mobile,
+	  			C_STATE as state,
+	  			C_PRICE as price,
+	  			C_SHIJITIME as shijitime,
+	  			C_LIKAITIME as likaitime,
+	  			C_RUZHUTIME as ruzhutime,
+	  			C_UCODE as ucode,
+	  			C_SEX as sex,
+	  			C_USERFAN as userfan,
+	  			C_PLATFAN as platfan,
+	  			C_ONEFAN as onefan,
+	  			C_TWOFAN as twofan,
+	  			C_THREEFAN as threefan,
+	  			C_LANGUAGE as language 
+     from T_GUEST
+    where ID = #id#
+  </select>
+   
+  <insert id="createGuest" parameterClass="Guest">
+    insert into T_GUEST ( 
+    	ID,
+	  			C_NAME,
+	  			C_COUNTRY,
+	  			C_ROOMNO,
+	  			C_ORDERID,
+	  			C_MEMO,
+	  			C_VERSION,
+	  			C_MOBILE,
+	  			C_UCODE,
+	  			C_STATE,
+	  			C_PRICE,
+	  			C_RUZHUTIME,
+	  			C_LIKAITIME,
+	  			C_SHIJITIME,
+	  			C_SEX,
+	  			C_USERFAN,
+	  			C_PLATFAN,
+	  			C_ONEFAN,
+	  			C_TWOFAN,
+	  			C_THREEFAN,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  						
+	  						#country#,
+	  					
+	  						#roomno#,
+	  					
+							#orderid:DECIMAL#,
+						
+	  						#memo#,
+	  					
+							#version:DECIMAL#,
+						
+	  						#mobile#,
+	  					
+							#ucode:DECIMAL#,
+							
+							#state:DECIMAL#,
+							
+							#price:DECIMAL#,
+							
+							#ruzhutime:DECIMAL#,
+							
+							#likaitime:DECIMAL#,
+							
+							#shijitime:DECIMAL#,
+							
+							#sex:DECIMAL#,
+							
+							#userfan:DECIMAL#,
+							
+							#platfan:DECIMAL#,
+							
+							#onefan:DECIMAL#,
+							
+							#twofan:DECIMAL#,
+							
+							#threefan:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteGuest" parameterClass="long">
+    delete from T_GUEST
+    where ID = #id#
+  </delete>
+	
+  <update id="updateGuest" parameterClass="Guest">
+    update T_GUEST 
+    set 
+    	C_NAME = #name#,
+	  					C_ROOMNO = #roomno#,
+	  					C_COUNTRY = #country#,
+	  					C_ORDERID = #orderid:DECIMAL#,
+						C_MEMO = #memo#,
+	  					C_VERSION = #version:DECIMAL#,
+						C_MOBILE = #mobile#,
+	  					C_UCODE = #ucode:DECIMAL#,
+	  					C_STATE = #state:DECIMAL#,
+	  					C_PRICE = #price:DECIMAL#,
+	  					C_RUZHUTIME = #ruzhutime:DECIMAL#,
+	  					C_LIKAITIME = #likaitime:DECIMAL#,
+	  					C_SHIJITIME = #shijitime:DECIMAL#,
+	  					C_SEX = #sex:DECIMAL#,
+	  					C_USERFAN = #userfan:DECIMAL#,
+	  					C_PLATFAN = #platfan:DECIMAL#,
+	  					C_ONEFAN = #onefan:DECIMAL#,
+	  					C_TWOFAN = #twofan:DECIMAL#,
+	  					C_THREEFAN = #threefan:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,126 @@
+@charset "utf-8";
+/* CSS Document */
+a{}
+a:hover{ text-decoration: none;}
+.f{ float:left;
+}
+.r{float:right;
+}
+.c{clear:both;
+}
+#container{ width: 960px; margin: 0 auto; }
+#main{ text-align: left; } 
+#main .left{ width:261px; overflow: hidden; } 
+#main .nav{ height:30px; font-size:20px; line-height:30px; text-align: left; padding-left: 30px;font-weight: bold;}
+#main .zzcx{line-height:40px; text-align: left; padding-left: 30px; }
+#main .chufa{ padding-left: 30px; padding-top: 20px; height:160px;}
+#main .sea_main{ height:247px;}
+#main .leixing{padding:0 5px 0 5px; width:270px;  margin:0 auto;}
+#main .xuan{ height:33px; padding-left:60px; padding-top:15px;  }
+#main .searh{padding-top:10px; line-height:18px; width:240px; margin:0 auto; }
+#main .hangban{ background:url(../images/side_tit_bg.gif) repeat-x; height:29px; line-height:29px; padding-left:20px; text-align: left;}
+#main .hbdt{ line-height:27px; height:200px;}
+#main .hbdt a{cursor: pointer;}
+#main .xiaochangshi{ height:129px; background:url(../himages/xiaochangshi.gif); line-height:30px;}
+#main .xiaochangshi ul{}
+#main .xiaochangshi ul li{ float:left; width:100px; padding-left:30px; }
+#main .xcs{ text-align:center}
+#main .ls{ background:url(../himages/bj_ls.gif) no-repeat; height:124px; width:257px; margin:0 auto; margin-top:8px;}
+#main .box_ad{border:1px solid #CECFD0; padding:3px; width:82px; height:56px; margin-top:5px;}
+#main .jieshao{line-height:15px; text-indent:2em; padding:3px 7px 3px 12px;}
+#main .xiangx{margin-right:8px; margin-top:-13px;}
+#main .xiqi{margin-top: 8px;}
+#main .xiqi ul{}
+#main .xiqi ul li{ float: left; width: 96px; text-align: center; height: 28px; line-height: 28px; margin-right:3px;}
+#main .xiqion{ background: url(../images/bj_xiqion.gif); color:#fff}
+#main .xiqiout{ background: url(../images/bj_xiqi.gif)}
+#main .recity{height:206px;}  
+#main .recity ul{}
+#main .recity ul li{ float: left; width: 116px; line-height:40px; padding-left: 20px; font-size:14px;}  
+#main .right{ width:691px; float:right; padding-top:0px;  }
+#main .air_di{ background:url(../himages/air_bj.gif);}
+#main .dijia{ background:url(../himages/air_di.gif); height:37px;}
+#main .city{ margin-top:13px; padding-right:5px;}
+#main .city ul{}
+#main .city ul li{ width:55px; height:22px; line-height:22px; background:url(../himages/bj_nav1.gif); text-align:center; float:left; margin-right:5px;} 
+#main .city ul li a{color:#0099FF; text-decoration:none}
+#main .ctiy_list{width:320px; height:170px; margin-left:10px; padding-left:5px; line-height:24px; padding-top:5px; display:inline; text-align:left}
+#main .ctiy_listr{width:320px;height:170px;  padding-left:5px; line-height:24px; padding-top:5px;display:inline;text-align:left; }
+
+#main .chang{ background:url(../images/info_tit_bg.gif) repeat-x; text-align:left; height:33px; line-height:33px; padding-left:32px;}
+#main .chang ul{}
+#main .chang ul li{ float:left;}
+#main .more{ width:300px; text-align:right}
+#main .widt{ width:120px;}
+#main .xx{ margin-top:3px;*margin-top:0!important;_margin-top:3px; }
+#main .zixun{ line-height:24px; text-align:left; text-indent:1.2em; height:152px; padding-right: 20px; }
+#main .listtb{line-height:18px;}
+#main .listtb td{ padding-left: 5px;}
+#main .listtb th{ padding-left: 5px;}
+
+#list{}
+#list .left{ width:220px; overflow:hidden}
+#list .seat{ height:34px; text-align:center;  line-height:34px; color:#0F99DA; font-size:14px; font-weight:bold;}
+#list .seat ul{padding:9px 0 0 7px; }
+#list .seat ul li{ color:#3399ff;float:left; margin-right:5px; background:url(../himages/bj_navd.gif) no-repeat; width:93px; height:28px; line-height:28px; text-align:center; font-weight:bold;} 
+#list .seab{ width:241px; height:235px; text-align:left; line-height:25px; color:#336699; background:url(../himages/bj_seadd.gif) no-repeat; }
+#list .tehui{ background:url(../himages/tehui_z.gif); text-align:left; padding:3px 20px 3px 10px;}
+#list .tehui ul{ line-height:22px;}
+#list .tehui ul li{ border-bottom:1px dashed #999999}
+#list .tehui ul li a{ color:#999999; text-decoration:none}
+#list .tehui ul li a:hover{ color:#36F;}
+#list .ml20{ margin-left:40px;}
+#list .hangban{background:url(../images/side_tit_bg.gif) repeat-x; height:29px; line-height:29px; padding-left:20px; text-align: left;}
+#list .hbdt{ line-height:27px; height:200px;}
+#list .hbdt a{cursor: pointer;}
+#list .seab{ width:220px; height:245px; background:url(../images/side_srh_bg.gif) 0px 0}
+#list .sea_d{ height:22px; line-height:22px;background:url(../images/side_srh_bg.gif) 0 -500px; }
+                     
+
+#list .no1{ line-height:20px; text-align:left}
+#list .xingqi{ width:680px; margin:0 auto; margin-top:10px;}
+#list .xingqi ul{}
+#list .xingqi ul li{ float:left; background:url(../himages/xingqi_l.gif); width:86px; height:62px; line-height:20px; text-align:center; color:#fff; padding-top:5px; margin-right:10px; cursor:pointer}
+#list .xingqi ul li a{ color:#fff; text-decoration:none;}
+#list .xingqi ul li a:hover{ font-weight:bold;text-decoration:none;}
+#list .wu{ background:url(../himages/bj_wu.gif); border:1px solid #EEEEEE; height:23px; line-height:23px; margin-top:5px; padding-right:15px;}
+#list .list_t{ background:url(../himages/bj_changd.gif); height:31px; line-height:31px; padding-right:20px; margin-top:8px; text-align:left; padding-left:45px;}
+#list .list{ background:url(../himages/list_z.gif); padding-top:10px; width:730px;}
+
+
+
+#list .yuding{ background:url(../himages/list_z.gif); line-height:28px; padding-top:5px;}
+#list .ddxx{ background:url(../himages/bj_dd.gif); height:56px; line-height:28px; border:1px solid #EFEFEF; margin-top:5px;}
+#list .add{width:700px; margin:0 auto;}
+
+#list .chang{background:url(../images/info_tit_bg.gif); text-align:left; height:33px; line-height:33px; padding-left:32px;}
+
+
+
+#list .right{ width:734px; float:right; text-align: left;}
+#list .dato{ background:url(../himages/bj_dato.gif) ; border:1px solid #EEEEEE; height:23px; line-height:23px; margin-top:5px; padding-right:15px;}
+#list .dota{background:url(../himages/bj_list_h.gif); height:50px; line-height:36px; margin-top:10px; padding-left:20px; padding-right:20px;}
+
+
+#list .yuding{ background:url(../himages/list_z.gif); line-height:28px; padding-top:5px;}
+#list .ddxx{ background:url(../himages/bj_dd.gif); height:56px; line-height:28px; border:1px solid #EFEFEF; margin-top:5px;}
+#list .add{width:700px; margin:0 auto;}
+#list .kuang{background:url(../himages/bj_zongj.gif); width:154px; height:128px;}
+#list .tianming{border-bottom:none; border-right:none; line-height:26px; margin-top:5px;}
+#list .hedui{width:680px; margin:0 auto; margin-top:10px;}
+#list .xiangxi{ width:440px; float:left; overflow:hidden}
+#list .ditu{ width:294px; float:right; padding-top:10px;}
+#list .wenzi{text-indent:2em; padding:10px; line-height:22px; height:187px; width:460px; overflow: hidden}
+#list .meile{ background:url(../himages/list_z.gif);}
+#list .riqi{line-height:14px; margin-top:-9px; display:block; color:#CCC;}
+#list .next{height:50px; padding-top:15px; text-align:center;}
+.hui14{ font-size:14px; font-weight:bold; color:#000; line-height:34px;}
+.lan14{ font-size:14px; font-weight:bold; color:#1290d1}
+.huang_jia{ color:#f48000}
+.lbox{border:1px solid #91c8e5}
+.l24{line-height: 24px;}
+.lbox_top{border-top:1px solid #91c8e5; margin-top:10px;} 
+.m10{margin-top: 10px;}
+.xinghao{ color:#f00}
+.button_ddd{background: url(../images/button_dd.gif); width:72px; height:26px; line-height:26px; text-align:center; border: none;color:#fff; cursor: pointer; padding-left: 10px; }
+.huangf60_16{color:#f60; font-weight:bold; font-size:16px;}

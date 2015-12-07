@@ -1,0 +1,67 @@
+@charset "gb2312";
+/* CSS Document */
+body{margin:0px; padding:0px; font-size:12px; font-family:"宋体"; color:#36322f; font-size:12px; line-height:21px; background:#f7f7f7}
+a{color:#2577e3;}
+img{border:0px;}
+a:link {text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
+ul, p, dl, dt, dd, li, img, div, p, table {padding:0px; margin:0px;}
+li{list-style-position:outside; list-style-type:none;}
+h1, h2, h3, h4, h5{ padding:0px; margin:0px; font-weight:normal;}
+h2 { font-size:18px;}
+h5 { font-size:14px; line-height:21px;}
+#wrap { width:1003px; min-height:400px; margin:0px auto;}
+.clearit { clear:both; width:0px; height:0px; overflow:hidden; zoom:1;}
+.space { height:10px; overflow:hidden;}
+img { vertical-align:top;}
+
+
+/*登录页面样式*/
+.top{ width:100%; height:100px; padding-bottom:10px; background:#fff}
+.top-wrap,.show-fun,.cp-cont{max-width:1020px; min-width:900px; position:relative; margin:0 auto; }
+.top-wrap .logo{ float:left; margin-top:25px;}
+.top-wrap .nav-info{ float:right;}
+.top-wrap .nav-info .service{ text-align:right; margin-bottom:10px;}
+.nav{ float:right; font-size:16px; font-weight:bold; line-height:55px;}
+.nav li{ float:left; width:100px;text-align:center}
+.nav li a{color:#4a4a4a}
+
+/*焦点图样式*/
+div.wrapper { width:100%; margin: 0 auto; position: relative; overflow:hidden}
+.fn-clear { zoom: 1; }
+.box_skitter { position: relative; background: none; }
+.box_skitter ul { display: none; }
+.box_skitter .container_skitter { overflow: hidden; position: relative; }
+.box_skitter .image { overflow: hidden; }
+.box_skitter .image img { display: none; }
+.box_skitter .box_clone { position: absolute; top: 0; left: 0; width: 100px; overflow: hidden; display: none; z-index: 20; }
+.box_skitter .box_clone img { position: absolute; top: 0; left: 0; z-index: 20; }
+.box_skitter .prev_button { position: absolute; top: 50%; left: -5px; z-index: 100; width: 57px; height: 62px; overflow: hidden; text-indent: -9999em; margin-top: -25px; background:url(../img/prev.png) no-repeat left top !important; }
+.box_skitter .next_button { position: absolute; top: 50%; right: -5px; z-index: 100; width: 57px; height: 62px; overflow: hidden; text-indent: -9999em; margin-top: -25px; background: url(../img/next.png) no-repeat left top !important; }
+.box_skitter .label_skitter { z-index: 150; position: absolute; display: none; }
+.loading { position: absolute; top: 50%; right: 50%; z-index: 10000; margin: -16px -16px; color: #fff; text-indent: -9999em; overflow: hidden; background: url(../img/ajax-loader.gif) no-repeat left top; width: 31px; height: 31px; }
+#slideshow { width:100%; height: 360px; }
+#slideshow ul { display: none; }
+
+.s-box{ width:300px; position:absolute; top:140px; right:200px; background:url(../img/search-box-bg.png) no-repeat; height:300px; z-index:999; border:1px solid #ccc}
+.s-box .tab{ height:40px; line-height:40px;}
+.s-box .tab li{ float:left; font-size:16px; text-align:center; width:150px; background:#999; cursor:pointer;}
+.s-box .tab li.selected{ background:none;}
+.s-box .cont{ padding:35px 0 0 40px; font-size:14px;}
+.s-box .cont div{ margin-bottom:10px; height:30px;}
+.password a{ font-size:12px; padding-left:10px;}
+.verify a{ padding-left:10px;}
+.s-box  div.login-btn{ width:300px; background:#2577e8; width:220px; height:45px; cursor:pointer; font-size:18px; color:#fff; text-align:center; line-height:45px; margin-top:20px;}
+
+.function{ width:100%; height:100%; overflow:auto;}
+.show-fun{ padding-top:45px; background:url(../img/show-bg.gif) top center no-repeat; height:210px;}
+.show-fun li{ float:left;width:200px; text-align:center; cursor:pointer}
+.show-fun li span{ display:block; padding-bottom:15px;}
+.show-fun li strong{ font-size:16px; margin-bottom:10px; display:block;}
+.cp-cont{ text-align:center}
+.cp-cont a,.cp-cont font{ color:#999;}
+.cp-cont p{ padding-top:10px; font-size:12px;}
+
+
+

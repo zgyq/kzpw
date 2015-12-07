@@ -1,0 +1,747 @@
+ 
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <meta http-equiv="content-type" content="text/html;charset=utf-8">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><title>
+	今日.天下通—航空公司服务热线查询 
+</title>
+    <style type="text/css">
+        .txtClass
+        {
+            width: 100px;
+            border: solid 1px #AAAAAA;
+        }
+        #lnkSave
+        {
+            text-decoration: underline;
+            color: Blue;
+        }
+        .grid
+        {
+        }
+        .grid-tbar
+        {
+            clear: both;
+            padding-bottom: 3px;
+            overflow: hidden;
+        }
+        .grid-bbar
+        {
+            clear: both;
+            padding: 5px;
+            overflow: hidden;
+            background-color: #F0F2F4;
+            border: 1px solid #d4d4d4;
+            margin-top: 1px;
+            _margin-top: 2px;
+            _zoom: 1;
+        }
+        .grid-head
+        {
+        }
+        .grid-head span
+        {
+            font-size: 12px;
+            font-weight: normal;
+        }
+        .grid-body
+        {
+        }
+        .grid table
+        {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .grid caption
+        {
+            padding: 5px 10px;
+            font-weight: bold;
+            color: #666;
+            background: url(../../Resources/imagesV2/grid.png) repeat-x 0 0;
+            border: 1px solid #d4d4d4;
+            border-style: solid solid none solid;
+        }
+        .grid caption a
+        {
+            color: #666;
+        }
+        .grid th
+        {
+            text-align: center;
+            border: 1px solid #d4d4d4;
+            line-height: 20px;
+            background-color: #F0F2F4;
+        }
+        .grid td
+        {
+            text-align: center;
+            border: 1px solid #d4d4d4;
+            line-height: 20px;
+            padding: 5px 0;
+            background-color: #fff;
+        }
+        .grid td a
+        {
+            color: #0000ff;
+            text-decoration: underline;
+        }
+        .grid td a:visited
+        {
+            color: #AA00AA;
+            text-decoration: underline;
+        }
+        .grid .al
+        {
+            padding-left: 10px;
+            text-align: left;
+        }
+        .grid .ar
+        {
+            padding-right: 10px;
+            text-align: right;
+        }
+        .grid td input, .grid td select
+        {
+            vertical-align: middle;
+        }
+        .grid .action a
+        {
+            display: inline-block;
+            height: 18px;
+            line-height: 18px;
+            border: 1px solid #999;
+            text-decoration: none;
+            color: #000;
+            background: url(../../Resources/imagesV2/button.png) repeat-x 0 0;
+            padding: 0 8px;
+        }
+        .grid tr.even td
+        {
+            background-color: #FAFDDF;
+        }
+        .grid-bbar .paging
+        {
+            float: right;
+        }
+        .grid-bbar .tools
+        {
+            float: left;
+        }
+        .grid-bbar .center
+        {
+            text-align: center;
+        }
+        .grid-bbar .center input
+        {
+            margin: 0 5px;
+        }
+        /*标签页*/.style1
+        {
+            height: 31px;
+        }
+        html, body
+        {
+            line-height: 1.5;
+            font-size: 12px;
+            height: 100%;
+        }
+        a
+        {
+            color: #404040;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        a:hover
+        {
+            color: #ff5500;
+        }
+        a[disabled="disabled"]
+        {
+            color: #ccc !important;
+        }
+        h3
+        {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .subMain
+        {
+            padding: 10px;
+            margin-left: 10px;
+            min-height: 500px;
+            _height: 800px;
+        }
+        .notice
+        {
+            border: 1px solid #FF9933;
+            background-color: #FFFFCC;
+            padding: 10px;
+        }
+        .notice b
+        {
+            color: #ff3300;
+            font-weight: bold;
+        }
+        .toolbar a
+        {
+            float: left;
+            height: 22px;
+            line-height: 22px;
+            padding-left: 18px;
+            margin-left: 5px;
+        }
+        .toolbar #back.icon
+        {
+            background-position: -384px -250px;
+        }
+        .toolbar #go.icon
+        {
+            background-position: -384px -275px;
+        }
+        .toolbar #refresh.icon
+        {
+            background-position: -384px -300px;
+        }
+        .toolbar #home.icon
+        {
+            background-position: -384px -325px;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1" method="post" action="AircompanyServer.aspx" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNzgzNDMwNTMzZGQVguCGG0RfL9k+IN2FR68LV6GFOQ==" />
+</div>
+ 
+<script> var tmpImagePath='Images';function HideOrderCanDiv() { $('#divOrderCan').hide() }</script>
+    <div>
+    <div id="ctl00_body_dvNotice" class="notice">
+            <span style="color: Red">尊敬的用户：</span>
+            <ul>
+          
+            <li>1.航空客服信息会有部分变动，请以各航空公司信息为准！</li>
+         
+            </ul>
+        </div>
+        <div class="grid">
+            <div class="grid-body">
+                <table>
+                    <caption>
+                        航空公司信息管理</caption>
+                    <thead>
+                        <tr>
+                            <th>
+                                航空公司
+                            </th>
+                            <th>
+                                简称
+                            </th>
+                            <th>
+                                服务热线
+                            </th>
+                            <th>
+                                投诉电话
+                            </th>
+                            <th>
+                                投诉传真
+                            </th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                                <tr id='27'>
+                                    <td>
+                                      
+                                        <span>国 航</span>
+                                    </td>
+                                    <td>
+                                        CA999
+                                    </td>
+                                    <td>
+                                        400-8100-999
+                                    </td>
+                                    <td>
+                                        010-64595912
+                                    </td>
+                                    <td>
+                                        010-64599100
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='28'>
+                                    <td>
+                                       
+                                        <span>东 航</span>
+                                    </td>
+                                    <td>
+                                        MU781
+                                    </td>
+                                    <td>
+                                        010-95808
+                                    </td>
+                                    <td>
+                                        021-62689236
+                                    </td>
+                                    <td>
+                                         021-62689292
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='29'>
+                                    <td>
+                                      
+                                        <span>南 航</span>
+                                    </td>
+                                    <td>
+                                        CZ784
+                                    </td>
+                                    <td>
+                                        010/020-95539
+                                    </td>
+                                    <td>
+                                        020-86122306
+                                    </td>
+                                    <td>
+                                        020-86665436
+                                    </td>
+                                    
+                                </tr>
+                            
+                                <tr id='30'>
+                                    <td>
+                                      
+                                        <span>海 航</span>
+                                    </td>
+                                    <td>
+                                        HU880
+                                    </td>
+                                    <td>
+                                        950718
+                                    </td>
+                                    <td>
+                                        0898-65756315
+                                    </td>
+                                    <td>
+                                        0898-65756934
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='31'>
+                                    <td>
+                                        
+                                        <span>上 航</span>
+                                    </td>
+                                    <td>
+                                        FM774
+                                    </td>
+                                    <td>
+                                        10105858
+                                    </td>
+                                    <td>
+                                        021-62558888
+                                    </td>
+                                    <td>
+                                        021-62559088
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='32'>
+                                    <td class="style1">
+                                      
+                                        <span>厦 航</span>
+                                    </td>
+                                    <td class="style1">
+                                        MF731
+                                    </td>
+                                    <td class="style1">
+                                        95557
+                                    </td>
+                                    <td class="style1">
+                                        0592-5739009
+                                    </td>
+                                    <td class="style1">
+                                        0592-5739091
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='33'>
+                                    <td>
+                                      
+                                        <span>深 航</span>
+                                    </td>
+                                    <td>
+                                        ZH479
+                                    </td>
+                                    <td>
+                                        400-889-5080/95080
+                                    </td>
+                                    <td>
+                                        0755-27776211
+                                    </td>
+                                    <td>
+                                        0755-27778655
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='34'>
+                                    <td>
+                                       
+                                        <span>川 航</span>
+                                    </td>
+                                    <td>
+                                        3U876
+                                    </td>
+                                    <td>
+                                        028-88888888
+                                    </td>
+                                    <td>
+                                        028-85393777
+                                    </td>
+                                    <td>
+                                        028-85393888
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='35'>
+                                    <td>
+                                      
+                                        <span>山 航</span>
+                                    </td>
+                                    <td>
+                                        SC324
+                                    </td>
+                                    <td>
+                                        0531-96777
+                                    </td>
+                                    <td>
+                                        0531-88522777
+                                    </td>
+                                    <td>
+                                        0531-85698269
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='36'>
+                                    <td>
+                                      
+                                        <span>奥 凯</span>
+                                    </td>
+                                    <td>
+                                        BK866
+                                    </td>
+                                    <td>
+                                        022-24903464
+                                    </td>
+                                    <td>
+                                        022-24903464
+                                    </td>
+                                    <td>
+                                        022-24903464
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='37'>
+                                    <td>
+                                     
+                                        <span>春 秋</span>
+                                    </td>
+                                    <td>
+                                        9C
+                                    </td>
+                                    <td>
+                                        021-62520000
+                                    </td>
+                                    <td>
+                                        021-62515444
+                                    </td>
+                                    <td>
+                                        021-62523734
+                                    </td>
+                                    
+                                </tr>
+                            
+                                <tr id='38'>
+                                    <td>
+                                       
+                                        <span>成都航空</span>
+                                    </td>
+                                    <td>
+                                        EU811
+                                    </td>
+                                    <td>
+                                        028-66668888
+                                    </td>
+                                    <td>
+                                        028-85205050
+                                    </td>
+                                    <td>
+                                        028-875706337
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='39'>
+                                    <td>
+                                      
+                                        <span>澳 门</span>
+                                    </td>
+                                    <td>
+                                        NX675
+                                    </td>
+                                    <td>
+                                        010-65159398
+                                    </td>
+                                    <td>
+                                        9903
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                  
+                                </tr>
+                            
+                                <tr id='40'>
+                                    <td class="style1">
+                                      
+                                        <span>东 星</span>
+                                    </td>
+                                    <td class="style1">
+                                        8C883
+                                    </td>
+                                    <td class="style1">
+                                        027-95151
+                                    </td>
+                                    <td class="style1">
+                                        
+                                    </td>
+                                    <td class="style1">
+                                        
+                                    </td>
+                                    
+                                </tr>
+                            
+                                <tr id='41'>
+                                    <td>
+                                      
+                                        <span>联 合</span>
+                                    </td>
+                                    <td>
+                                        KN822
+                                    </td>
+                                    <td>
+                                        400-610-0099
+                                    </td>
+                                    <td>
+                                        800-810-0099
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                  
+                                </tr>
+                            
+                                <tr id='42'>
+                                    <td>
+                                      
+                                        <span>首都航空</span>
+                                    </td>
+                                    <td>
+                                        JD898
+                                    </td>
+                                    <td>
+                                        010-64506281
+                                    </td>
+                                    <td>
+                                        64592491
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    
+                                </tr>
+                            
+                                <tr id='43'>
+                                    <td>
+                                       
+                                        <span>华 夏</span>
+                                    </td>
+                                    <td>
+                                        G5987
+                                    </td>
+                                    <td>
+                                        0851-5499684
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='44'>
+                                    <td>
+                                      
+                                        <span>吉 祥</span>
+                                    </td>
+                                    <td>
+                                        HO018
+                                    </td>
+                                    <td>
+                                        400-700-6000
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='45'>
+                                    <td>
+                                       
+                                        <span>祥 鹏</span>
+                                    </td>
+                                    <td>
+                                        8L859
+                                    </td>
+                                    <td>
+                                        400-8899-737
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='46'>
+                                    <td>
+                                       
+                                        <span>港 龙</span>
+                                    </td>
+                                    <td>
+                                        KA043
+                                    </td>
+                                    <td>
+                                        4008886628
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    
+                                </tr>
+                            
+                                <tr id='47'>
+                                    <td>
+                                       
+                                        <span>国 泰</span>
+                                    </td>
+                                    <td>
+                                        CX160
+                                    </td>
+                                    <td>
+                                        4008886628
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                   
+                                </tr>
+                            
+                                <tr id='48'>
+                                    <td>
+                                      
+                                        <span>长 荣</span>
+                                    </td>
+                                    <td>
+                                        BR695
+                                    </td>
+                                    <td>
+                                        010-65635000
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    
+                                </tr>
+                            
+                                <tr id='49'>
+                                    <td>
+                                      
+                                        <span>西 部</span>
+                                    </td>
+                                    <td>
+                                        PN847
+                                    </td>
+                                    <td>
+                                        95071095
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    
+                                </tr>
+                            
+                                <tr id='50'>
+                                    <td>
+                                      
+                                        <span>大新华</span>
+                                    </td>
+                                    <td>
+                                        GS826
+                                    </td>
+                                    <td>
+                                        950718
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    
+                                </tr>
+                            
+                            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+    
+    
+    </div>
+    </form>
+</body>
+</html>
+<DIV id="divRatingDetail" style="position:absolute;z-index:1000;background:#D64F2F;display:none;"></DIV><DIV id="divOrderCan" style="position:absolute;z-index:1000;background:#D64F2F;display:none;"></DIV>

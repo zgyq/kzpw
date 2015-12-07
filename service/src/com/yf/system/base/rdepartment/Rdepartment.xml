@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Rdepartment">
+  
+  <typeAlias alias="Rdepartment" type="com.yf.system.base.rdepartment.Rdepartment"/>
+  
+
+  <resultMap id="resultRdepartmentMap" class="Rdepartment">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="ticketnumber" column="C_TICKETNUMBER"/>
+  
+     <result property="ticketmoney" column="C_TICKETMONEY"/>
+  
+     <result property="profitmoney" column="C_PROFITMONEY"/>
+  
+     <result property="purchase" column="C_PURCHASE"/>
+  
+     <result property="supply" column="C_SUPPLY"/>
+  
+     <result property="department" column="C_DEPARTMENT"/>
+  
+     <result property="datetime" column="C_DATETIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllRdepartment"  resultMap="resultRdepartmentMap"  parameterClass="java.util.Map">
+  
+    select * from T_RDEPARTMENT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllRdepartmentBySql"  resultMap="resultRdepartmentMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteRdepartmentBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countRdepartmentBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_RDEPARTMENT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findRdepartment" parameterClass="long" resultClass="Rdepartment">
+    select 
+    	ID as id,
+	  			C_TICKETNUMBER as ticketnumber,
+	  			C_TICKETMONEY as ticketmoney,
+	  			C_PROFITMONEY as profitmoney,
+	  			C_PURCHASE as purchase,
+	  			C_SUPPLY as supply,
+	  			C_DEPARTMENT as department,
+	  			C_DATETIME as datetime 
+     from T_RDEPARTMENT
+    where ID = #id#
+  </select>
+   
+  <insert id="createRdepartment" parameterClass="Rdepartment">
+    insert into T_RDEPARTMENT ( 
+    	ID,
+	  			C_TICKETNUMBER,
+	  			C_TICKETMONEY,
+	  			C_PROFITMONEY,
+	  			C_PURCHASE,
+	  			C_SUPPLY,
+	  			C_DEPARTMENT,
+	  			C_DATETIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#ticketnumber:DECIMAL#,
+						
+							#ticketmoney:DECIMAL#,
+						
+							#profitmoney:DECIMAL#,
+						
+							#purchase:DECIMAL#,
+						
+							#supply:DECIMAL#,
+						
+							#department:DECIMAL#,
+						
+	  						#datetime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteRdepartment" parameterClass="long">
+    delete from T_RDEPARTMENT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateRdepartment" parameterClass="Rdepartment">
+    update T_RDEPARTMENT 
+    set 
+    	C_TICKETNUMBER = #ticketnumber:DECIMAL#,
+						C_TICKETMONEY = #ticketmoney:DECIMAL#,
+						C_PROFITMONEY = #profitmoney:DECIMAL#,
+						C_PURCHASE = #purchase:DECIMAL#,
+						C_SUPPLY = #supply:DECIMAL#,
+						C_DEPARTMENT = #department:DECIMAL#,
+						C_DATETIME = #datetime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,183 @@
+@charset "utf-8";
+/* CSS Document */
+.search,.searchbot,.number,.ico_triangle,.titleinfo,.navcity_on,.navcity_on_right,.main_give,.ico_recently,.ico_hotel,.del_condition,.condition,.ico_del,.list_on,.list_out,.ico_recommendation,.ico_morny,.ico_star,.ico_praise,.ico_bonus,.ico_mornyup,.ico_mornydown,.ico_starup,.ico_stardown,.ico_praiseup,.ico_bonusup,.ico_subscript,.list_top_left,.list_top_right,.list_img,.ico_map,.ico_tell,.ico_room,.ico_tips,.bnt,.allshow,.allnoshow,.details_tille_on,.details_tille_out,.ico_start,.ico_phone,.comment_line,.comment_star,.bnt_new,.bonus_main,.ico_tipsed,.booking_bntton,.tsico,.ico_sorry,.sorry_bnt,.number_li,.bnt_see,.numberone,.ico_landmark{ background:url(../images/hotel.png) no-repeat;}
+.list_line,.query,.list_bg{ background:url(../images/bj_hotel.png) repeat-x;}
+ 
+#hotel{ width:1004px;margin:0 auto; margin-top:7px;}
+#left{ width:260px;}
+#left .search{ width:220px; height:31px; line-height:31px; padding-left:40px;}
+#left .searchlist{}
+#left .searchall{ line-height:32px; height:32px;  padding-left:20px;}
+#left .but{ height:55px; padding-top:10px;  padding-left:20px; border-top:1px dashed #ccc; margin-top:10px;}
+#left .searchbot{ background-position:0 -35px; height:5px; line-height:5px; overflow:hidden}
+#left .number{ background-position:0 -45px; width:14px; padding-left:9px; line-height:22px;}
+#left .content{ padding:10px 20px 10px 15px; z-index:-3; }
+#left .content_lh{ height:20px;*height:25px!important;_height:20px; line-height:20px;}
+#left .ico_triangle{ background-position:-30px -45px; padding-left:12px;}
+#left .city_more{ position:absolute; background:#fff; width:115px; line-height:20px; left:-107px; top:34px; padding:5px 0 5px 0; z-index:8; text-align:left; display:block;}
+#left .city_more ul{}
+#left .city_more ul li{ width:40px; text-align:center; display:inline;}
+
+#left .city_on{ border:1px solid #e3e3e3; border-bottom:none; padding-left:10px; padding-right:5px; background:#fff; z-index:9; position:absolute; width:43px; left:-50px; cursor:pointer;}
+#left .recently{ padding:5px 20px 5px 20px;}
+#left .ico_recently{ background-position:-140px -45px; padding-left:20px; width:10px;}
+
+
+#right{ width:736px;}
+#right .titleinfo{ width:198px; height:31px; line-height:31px; background-position:-270px 0; padding-left:25px;}
+#right .box_tell{ padding:10px 20px 10px 20px;}
+#right .navcity{ padding-top:6px; padding-right:30px;}
+#right .navcity_out{ padding-left:5px; padding-right:5px; height:28px; line-height:28px; margin:0 5px 0 5px;}
+#right .navcity_on{ padding-left:15px; padding-right:8px; height:28px; line-height:28px; margin:0 0px 0 5px; background-position:0 -80px;}
+#right .navcity_on_right{ background-position:-100px -80px; width:10px; height:28px; line-height:28px;}
+#right .titlehot{ line-height:32px; height:32px; padding-left:25px; padding-right:20px;width:690px;}
+#right .main{ margin:0 20px 0 25px; width:690px;}
+#right .main_left{ width:330px;}
+#right .main_right{ width:340px;}
+#right .main_name{ width:200px; overflow: hidden; height:22px; line-height:22px;}
+#right .main_morny{ width:60px; overflow:hidden;height:22px; line-height:22px;}
+#right .main_give{ background-position:-60px -45px; width:35px; padding-left:32px;height:22px; line-height:22px;}
+#right .brand{ text-align:center; padding:5px 0 3px 10px;}
+#right .brandli{ width:100px; line-height:18px;}
+
+.spot_status,.spot_status_two,.spot_status_three,.spot_status_four,.spot_status_five{ background:url(../images/status_spot.png);}
+.spot_line_status,.spot_line_status_two,.spot_line_status_three,.spot_line_status_four,.spot_line_status_five{ background:url(../images/status_line.png);}
+.status,.status_two,.status_three,.status_four,.status_five{ background:url(../images/status_hotel.png);}
+
+#list{ width:736px;}
+#list .ico_hotel{ background-position:-170px -43px; padding-left:55px; padding-top:15px;}
+#list .status{ width:356px; height:36px;}
+#list .status_two{width:356px; height:36px; background-position:0 -42px}
+#list .status_three{width:356px; height:36px;background-position:0 -83px}
+#list .status_four{width:356px; height:36px; background-position:0 -119px}
+#list .status_five{width:356px; height:36px; background-position:0 -160px}
+
+#list .spot_status{ width:356px; height:36px;}
+#list .spot_status_two{width:356px; height:36px; background-position:0 -42px}
+#list .spot_status_three{width:356px; height:36px;background-position:0 -83px}
+#list .spot_status_four{width:356px; height:36px; background-position:0 -119px}
+#list .spot_status_five{width:356px; height:36px; background-position:0 -160px}
+
+#list .spot_line_status{ width:356px; height:36px;}
+#list .spot_line_status_two{width:356px; height:36px; background-position:0 -42px}
+#list .spot_line_status_three{width:356px; height:36px;background-position:0 -83px}
+#list .spot_line_status_four{width:356px; height:36px; background-position:0 -119px}
+#list .spot_line_status_five{width:356px; height:36px; background-position:0 -160px}
+
+#list .conditionwall{ width:510px;}
+#list .conditionwall ul{ position:absolute}
+#list .condition{ background-position:0 -110px; padding:0 5px 0 8px; margin-top:5px; height:22px; line-height:22px;}
+#list .del_condition{ background-position:-140px -110px; margin-top:5px; width:23px; height:22px; line-height:22px;}
+#list .nohuan{ padding-right:10px;}
+#list .sealist{}
+#list .sealist ul{ padding:5px 20px 3px 20px; line-height:22px; width:695px;}
+#list .sealist_first{ width:60px; overflow:hidden;}
+#list .sealist_all{ width:50px; text-align:center; margin-right:10px;}
+#list .sealist_li{ width:107px;}
+#list .sealist_onall{ background:#267dff; color:#fff; padding:1px 5px 2px 6px; height:20px; line-height:20px;}
+#list .sealist_on{ background:#267dff; color:#fff; padding:1px 5px 4px 6px; height:18px; margin-left:-5px;}
+#list .sealist_ondel{background:#267dff; color:#fff; padding:0px 5px 0px 6px;}
+#list .ico_del{ background-position:-120px -71px; padding-left:11px; padding-top:10px; margin-left:2px;}
+#list .openall{position:absolute; background:#fff; padding:0 20px 0 20px; margin-left:270px; border-top:none; top:0px;}
+#list .list_on{ width:74px; height:26px; line-height:26px; background-position:-170px -90px; text-align:center; }
+#list .list_out{ width:74px; height:26px; line-height:26px; background-position:-250px -90px; text-align:center; cursor:pointer;}
+#list .list_line{height:3px; line-height:3px;  width:100%;}
+#list .query{ height:29px; line-height:29px; background-position:0 -10px;}
+#list .queryno{ height:29px; line-height:29px;}
+#list .sort{ width:120px; padding-left:10px;}
+#list .sorter{ width:176px; padding-left:10px;}
+#list .ico_recommendation{ background-position:-230px -42px; width:22px;}
+#list .ico_morny{ background-position:-255px -42px; width:22px;}
+#list .ico_star{ background-position:-280px -42px; width:22px;}
+#list .ico_praise{ background-position:-305px -42px; width:22px;}
+#list .ico_bonus{ background-position:-330px -42px; width:18px;}
+#list .ico_mornyup{ background-position:-355px -42px; width:22px;}
+#list .ico_mornydown{ background-position:-380px -42px; width:22px;}
+#list .ico_starup{ background-position:-405px -42px; width:22px;}
+#list .ico_stardown{ background-position:-430px -42px; width:22px;}
+#list .ico_praiseup{ background-position:-455px -42px; width:22px;}
+#list .ico_bonusup{ background-position:-480px -42px; width:22px;}
+#list .sort_pp{ padding:0 7px 0 7px;}
+#list .sort_on{ background:#fff;}
+#list .ico_subscript{ background-position:-230px -70px; padding-left:14px;}
+#list .sort_float{ position:absolute; top:28px; left:-1px; width:130px; background:#fff; }
+#list .sort_float ul{}
+#list .sort_float ul li{padding-left:10px;}
+#list .list_bg{ background-position:0 -50px;}
+#list .list_top{ padding:0 10px 0 10px; line-height:36px; width:696px; height:45px;}
+#list .list_top_left{ width:10px; background-position:-350px -71px; height:43px;}
+#list .list_top_right{ width:10px; background-position:-360px -71px;height:43px;}
+#list .list_img{ width:93px; padding-top:3px; height:83px; padding-left:3px; background-position:-380px -70px; margin-left:20px;}
+#list .list_main{ width:450px; margin-left:22px; line-height:22px;}
+#list .ico_map{ background-position:-480px -90px; padding-left:15px;}
+#list .ico_tell{ background-position:-480px -68px; padding-left:10px;}
+#list .list_right{ text-align:right; padding-right:10px;}
+#list .list_table{ text-align:center;}
+#list .list_table td{ border:1px solid #DADADA;}
+#list .main_give{ background-position:-60px -45px; width:35px; padding-left:32px;height:22px; line-height:22px;}
+#list .ico_room{ background-position:-480px -115px; padding-left:18px;}
+#list .float_room{ position:absolute; width:130px; top:24px; left:15px;  }
+#list .ico_tips{ background-position:-480px -133px; padding-left:15px; margin-left:15px;}
+#list .bnt{ background-position:0 -140px; width:61px; height:25px; border:none; cursor:pointer}
+#list .allshow{ background-position:-90px -142px; padding-left:10px;}
+#list .allnoshow{ background-position:-70px -142px; padding-left:10px;}
+#list .details_tille{ height:26px; overflow:hidden;}
+#list .details_tille_on{ background-position:-120px -140px; width:64px; height:26px; line-height:26px; text-align:center; margin:0 10px 0 0px; }
+#list .details_tille_out{background-position:-200px -140px;width:64px; height:26px; line-height:26px; text-align:center; margin:0 10px 0 0px;}
+#list .introduction_left{ width:470px; margin:10px 0 0 20px; display:inline;}
+#list .introduction_left p{ text-indent:2em;}
+#list .ico_start{ background-position:-180px -120px; padding-left:15px; margin-left:20px;}
+#list .ico_phone{ background-position:-280px -140px; padding-left:13px; margin-left:20px; padding-top:5px;}
+#list .comment{ background:#f6f6f6; margin:1px;}
+#list .comment_left{ margin:20px 0 20px 20px; display:inline;}
+#list .comment_line{ display:block; width:108px; height:15px; background-position:0 -176px; margin:0 10px 0 10px;}
+#list .comment_star{display:block; width:108px; height:13px; background-position:-120px -170px; margin:0 10px 0 12px;}
+#list .comment_right{ width:300px;}
+#list .hotel_img{ margin:10px 10px 0 0}
+#list .bnt_new{ background-position:-320px -140px; width:52px; height:22px; line-height:22px; text-align:center; border:none; margin-top:-3px;_margin-top:4px;}
+#list .service{ padding:0 20px 0 20px; line-height:32px;}
+#list .number{ background-position:-330px -80px; width:13px; padding-left:3px; line-height:32px; margin-right:5px;}
+#list .bonus{ width:110px; margin-left:25px;}
+#list .bonus_main{ background-position:0 -200px; width:76px; height:64px; line-height:40px; padding-right:10px; text-align:center; }
+#list .evaluate{ padding-top:20px; width:100%;}
+#list .ecaluate_right{ width:560px;}
+#list .ecaluate_main{ height:46px; line-height:46px; font-family:"黑体"}
+#list .booking_table{ }
+#list .booking_table th{ font-weight:100; color:#999;}
+#list .booking_table td{ text-align:center; line-height:20px;}
+#list .time{display:block; font-size:9px; color:#999; font-weight:100; line-height:12px;}
+#list .total{ height:32px; line-height:30px; width:97.5%; margin-left:7px; padding:1px;}
+#list .total_main{ padding-left:35px; background:#f0f0f0;}
+#list .ico_tipsed{ background-position:-200px -183px; }
+#list .tips_total{ position:absolute; right:20px; top:25px; background:#fff; width:230px; padding:10px; line-height:20px;}
+#list .check_one{ line-height:36px;}
+#list .check_tips{ border:1px solid #fda71f; background:#fff2e0; width:520px; line-height:24px; margin-left:120px; padding:5px 0px 5px 10px; color:#a03513;}
+#list .booking_line{ width:660px; margin:0 auto;}
+#list .booking_bnt{ height:80px; padding-top:10px; text-align:center;}
+#list .booking_bntton{ width:96px; height:33px; line-height:33px; text-align:center; border:none; background-position:-100px -200px; cursor:pointer;}
+#list .tsico{ float:left; margin:10px 0 0 20px; width:65px; height:65px; background-position:-240px -180px;}
+#list .order{ float:left; width:640px; height:110px; margin:10px 0 0 20px; display:inline;}
+#list .over{ width:96%; margin:0 auto;}
+#list .order_bnt{height:50px; padding-top:30px; padding-left:110px;}
+#list .order_box{width:80%; margin:0 auto;}
+
+
+#list .sorry{ padding:20px 0 0 70px;}
+#list .ico_sorry{ background-position:-320px -180px; padding-left:60px; padding-top:28px;}
+#list .sorry_title{ line-height:20px;}
+#list .filter{ padding-left:60px; padding-right:240px;}
+#list .sorry_bnt{ width:196px; height:33px; border:none; background-position:0 -280px; cursor:pointer;}
+#list .content{ padding:10px 20px 10px 15px; z-index:-3; line-height:24px;}
+#list .content ul{ width:48%;}
+#list .content_lh{ height:20px;*height:25px!important;_height:20px; line-height:20px;}
+#list .number_li{ background-position:0 -45px; width:14px; padding-left:9px; line-height:22px;}
+#list .bnt_see{ width:49px; height:20px; line-height:20px; border:none; cursor:pointer; background-position:-100px -240px; margin-top:4px;}
+#list .numberone{ background-position:-210px -240px; width:23px; margin-top:3px; padding-left:6px; line-height:13px; height:24px; font-size:12px; font-weight:bold; color:#0995e2}
+#list .list_map{ line-height:22px;}
+#list .write_review{border:1px solid #fda71f; background:#fff2e0;  line-height:24px; margin:15px 20px 0px 20px; padding:5px 10px 5px 10px; color:#a03513;}
+#list .hotelimage{ padding:20px 0 0 13px;}
+#list .landmark{ padding:10px 10px 10px 15px;}
+#list .content_landmark{ padding:10px 10px 10px 20px;  line-height:24px;}
+#list .content_landmark ul{ width:31%; margin-right:9px;}
+#list .content_landmark_lh{ height:20px;*height:25px!important;_height:20px; line-height:20px;}
+#list .ico_landmark{ background-position:-160px -240px; padding-left:20px;}

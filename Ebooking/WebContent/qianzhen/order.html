@@ -1,0 +1,360 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>预订填写订单</title>
+<link href="css/cube_min.css" type="text/css" rel="stylesheet" />
+<link href="css/top_bottom.css" type="text/css" rel="stylesheet" />
+<link href="css/order.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div class="crumb">
+  <div class="breadCrumb">
+    <ul>
+      <li><a href="#">首页</a>&nbsp;&gt;&nbsp;<a target="_self" href="#">会员中心</a>&nbsp;&gt;&nbsp;<span>购物车</span></li>
+    </ul>
+  </div>
+</div>
+<form action="../doaction.php" method="post" name="myorder" id="myorder">
+  <div class="order_main">
+  <div class="product">
+  <div class="buy_clear"><a href="../doaction.php?enews=ClearBuycar" target="_self">清空购物车</a></div>
+<table width="100%">
+  <tr class="buy_header">
+    <td width="45%"><div align="center">&nbsp;&nbsp;&nbsp;&nbsp;名称</div></td>
+    <td width="15%"><div align="center">价格</div></td>
+    <td width="15%"><div align="center">数量</div></td>
+    <td width="15%"><div align="center">小计</div></td>
+    <td width="10%"><div align="center">操作</div></td>
+  </tr>
+    <tr class="" id="buy-31-402">
+    <td>
+    <div class="buy_title fix">
+    <img alt="加拿大国旗" src="image/Canada.png" />
+    <dl>
+    <dt><a href="#" target="_blank">加拿大旅游签证 简化手续 (上海领区)</a></dt>
+    <dd>有效期：180&nbsp;停留期：30&nbsp;工作日：15</dd>
+    </dl>
+    </div></td>
+    <td ><div class="buy_price">￥1299.00</div></td>
+    <td><div class="buycar_num">
+        <a class="buycar_num_add" href="javascript:setBuycarAdd('31-402','add');" target="_self"></a>
+        <input type="text" id="num-31-402" name="num-31-402" value="1">
+        <a class="buycar_num_reduce" href="javascript:setBuycarAdd('31-402','reduce');" target="_self"></a>
+      </div></td>
+    <td><div class="buy_total">￥<span id="thistotal-31-402">1299</span></div>
+      </td>
+    <td><div class="buy_del"><a href="javascript:setBuycarAdd('31-402','del');" target="_self">删除</a></div></td>
+  </tr>
+      <tr>
+    <td colspan="5"><div class="totalmoney">合计：<strong>￥</strong><span id="totalmoney">1299</span>
+        </div></td>
+  </tr>
+  </table>  </div>
+  <div class="buycar_info"><span>填写订单信息</span>
+      <input name="ddno" type="hidden" id="ddno" value="139510436193">
+    </div>
+  <div class="address_box fix">
+  <div class="address left">
+    <ul>
+    <li><span>上门取件地址</span>
+        
+    </li>
+    </ul>
+    <dl class="fix">
+     <dt><span>真实姓名：*</span></dt>
+     <dd>     
+     <input name="truename" class="i_truename" type="text" id="truename" value="">   
+     </dd>
+    </dl>
+    <dl class="fix">
+     <dt><span>移动电话：*</span></dt>
+     <dd><input name="phone" class="i_phone" type="text" id="phone" value="">
+     </dd>
+    </dl>
+    <dl class="fix">
+     <dt><span>联系邮箱：*</span></dt>
+     <dd><input name="email" class="i_email" type="text" id="email" value="">
+     </dd>
+    </dl>
+    <dl class="fix">
+     <dt><span>联系地址：*</span></dt>
+     <dd>
+     <input name="address" class="i_address" type="text" id="address" value="">
+     </dd>
+    </dl>
+    <dl class="fix">
+     <dt>回邮地址：</dt>
+     <dd><input type="radio" value="0" name="huiyou" id="xiangtong" checked=""> 相同　<input type="radio" value="1" name="huiyou" id="butong"> 不相同</dd>
+    </dl>
+    <dl class="fix">
+     <dt><span>备注信息：</span></dt>
+     <dd><textarea name="bz" class="i_bz" id="bz"></textarea></dd>
+    </dl>    
+  </div>
+  <div class="address right" id="g_add" style="display: none;">
+    <ul>
+    <li><span>快递递回地址</span></li>
+    </ul>
+    <dl class="fix">
+     <dt><span>真实姓名：</span></dt>
+     <dd><input name="g_truename" class="g_truename" type="text" id="g_truename" value="">
+     </dd>
+    </dl>
+    <dl class="fix">
+     <dt><span>移动电话：</span></dt>
+     <dd><input name="g_phone" class="g_phone" type="text" id="g_phone" value="">
+     </dd>
+    </dl>
+    <dl class="fix">
+     <dt><span>联系邮箱：</span></dt>
+     <dd><input name="g_email" class="g_email" type="text" id="g_email" value="">
+     </dd>
+    </dl>
+    <dl class="fix">
+     <dt><span>联系地址：</span></dt>
+     <dd><input name="g_address" class="g_address" type="text" id="g_address" value="">
+     </dd>
+    </dl>   
+  </div>
+  </div>
+    <div class="express">
+            <ul>
+       <li><span>选择配送方式</span></li>
+      </ul>
+      <ul><li><input type="radio" name="psid" value="1" checked>自送自取　<strong>邮费:￥0.00</strong></li></ul><hr /><ul><li><input type="radio" name="psid" value="2">同城/顺丰快递费（往返）26元+回邮快递保价费2元（单程）　<strong>邮费:￥28.00</strong></li></ul><hr /><ul><li><input type="radio" name="psid" value="3">外埠/顺丰快递费（往返）44元+回邮快递保价费2元（单程）　<strong>邮费:￥46.00</strong></li></ul> 
+    </div>
+    <div class="invoice">
+    </div>
+    <div class="payment">
+          <ul>
+     <li><span>选择支付方式</span></li> 
+    </ul>
+    <ul><li><input type=radio name=payfsid value='1'><em>【支付宝】在线支付</em></li><li><p id="alipay">由阿里巴巴集团创办，致力于为中国电子商务提供&ldquo;简单、安全、快速&rdquo;的在线支付解决方案。</p></li></ul><hr /><ul><li><input type=radio name=payfsid value='2' checked><em>【银行汇款】线下支付</em></li><li><p><img width="750" height="39" src="image/card.png" alt="银行卡" /></p></li></ul>          </div>
+        <div class="preferential"> 优惠码：
+      <input name="precode" type="text" id="precode" disabled="true" readOnly="true">
+      <input name="userid" type="hidden" id="userid" value="">
+      <em>会员登录后可以使用优惠码</em>
+      
+    </div>
+        <div class="submit_box">
+    <ul class="fix">
+     <li><input type="submit" class="submit_but" id="submit_but" name="Submit" value=""></li>
+     <!--<a title="提交订单" onclick="doSubmit();" href="#totalmoney">提交订单</a>-->
+     <li><span>应付总额：</span><em id="allprice">1299</em></li>
+    </ul>
+        <input type=hidden name=enews value=AddDd>    <input name="alltotal" type="hidden" id="alltotal" value="1299">
+    <input name="alltotalfen" type="hidden" id="alltotalfen" value="0">
+    <input name="laiyuan" type="hidden" id="laiyuan" value="1" />
+  </div>
+  </div>
+</form>
+<script charset="utf-8" type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+<script charset="utf-8" type="text/javascript" src="js/artDialog/4.1.7/jquery.artDialog.js?skin=pure"></script>
+<script charset="utf-8" type="text/javascript" src="js/ailvxing.min.js"></script>
+<script charset="utf-8" type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	//页面载入快递方式费用
+	setPs();
+    //验证表单
+    $("#myorder").validate({  
+           errorElement: "em",
+            rules: {               
+            truename: {
+				required: true,
+                minlength: 2,
+                maxlength: 12,
+				userName: true
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			phone: {
+				required: true,
+				number: true,
+                isMobile: true
+			},
+            address: {
+                required: true
+            },
+            g_truename: {
+				required: true,
+                minlength: 2,
+                maxlength: 12,
+				userName: true
+			},
+			g_email: {
+				required: true,
+				email: true
+			},
+			g_phone: {
+				required: true,
+				number: true,
+                isMobile: true
+			},
+            g_address: {
+                required: true
+            }
+		},
+		messages: {
+			truename: {
+				required: "姓名不能为空",
+                minlength: jQuery.format("姓名不足 {0} 位字符!"),
+                maxlength: jQuery.format("姓名大于 {0} 位字符!")				
+			},
+            email: {
+				required: "email不允许为空",
+				email: "邮件地址格式错误!"
+			},
+            phone: {
+				required: "手机号不允许为空",
+                number: "手机号码只能是数字"				
+			},
+            address: {
+                required: ""
+            },
+            g_truename: {
+				required: "姓名不能为空",
+                minlength: jQuery.format("姓名不足 {0} 位字符!"),
+                maxlength: jQuery.format("姓名大于 {0} 位字符!")				
+			},
+            g_email: {
+				required: "email不允许为空",
+				email: "邮件地址格式错误!"
+			},
+            g_phone: {
+				required: "手机号不允许为空",
+                number: "手机号码只能是数字"				
+			},
+            g_address: {
+                required: ""
+            }
+		} 
+       });
+	//回邮地址显示
+	if ($("input[name='huiyou']:checked").val() == "1") {
+		$("#g_add").show();
+	} else {
+		$("#g_add").hide();
+	}
+	$("input[name='huiyou']").click(function() {
+		if ($("input[name='huiyou']:checked").val() == "1") {
+			$("#g_add").show();
+		} else {
+			$("#g_add").hide();
+		}
+	});
+	//显示隐藏删除产品XX
+	$("div[id^=box-]").hover(
+	function() {
+		$(this).children().last().show();
+	},
+	function() {
+		$(this).children().last().hide();
+	}
+	);
+    //提交按钮
+    $("#submit_but").hover(
+	function() {
+		$(this).addClass("submit_but_hover");
+	},
+	function() {
+		$(this).removeClass("submit_but_hover");
+	}
+	);
+
+	//radio兼容ie触发
+	if ($.browser.msie) {
+		$('input:radio').click(function() {
+			this.blur();
+			this.focus();
+		});
+	};
+	//选择配送方式    
+	$("input[name='psid']").change(function() {
+		setPs();
+	});
+	//优惠码
+	$("#precode").focusout(function() { //失去焦点
+		var userid = $("#userid").val();
+        var precode = $("#precode").val();
+        var psid = $("input[name='psid']:checked").val();     
+		if (userid != '') {
+			$.ajax({
+				type: "GET",
+				url: "../class/UpdateOrder.php",
+                dataType: 'json',
+				data: "enews=precode&precode="+precode+"&psid="+psid,
+				success: function(data) {
+                    if (data.precodeinfo) { //提示信息判断
+                        $("#precode").siblings("em").html(data.precodeinfo);
+                        $("#allprice").html(data.allprice);
+                    } else {
+                        $("#precode").siblings("em").html("优惠码可减免购物费用 ");
+                        $("#allprice").html(data.allprice);
+                    }
+				}
+			});
+		}
+	});
+});
+//更新选取配送方式
+function setPs() {
+	var psid = $("input[name='psid']:checked").val();
+    var precode = $("#precode").val();
+	$.ajax({
+		type: "GET",
+		url: "../class/UpdateOrder.php",
+        dataType: 'json',
+		data: "enews=updateps"+"&precode="+precode+"&psid=" + psid,
+		success: function(data) {
+			$("#allprice").html(data.allprice);
+		},
+        cache: false
+	});
+}
+//增加减少商品数及删除商品
+function setBuycarAdd(cid, enews) {
+	var psid = $("input[name='psid']:checked").val();
+    var precode = $("#precode").val();
+	$.ajax({
+		type: "GET",
+		url: "../class/UpdateOrder.php",
+        dataType: 'json',
+		data: "enews="+enews+"&precode="+precode+"&cid="+cid+"&psid="+psid,
+		success: function(data) {
+			$("#num-" + cid).attr("value", data.pnum);
+			$("#thistotal-" + cid).html(data.thistotal);
+			$("#totalmoney").html(data.totalmoney);
+			$("#allprice").html(data.allprice);
+            if (data.precodeinfo) {
+                $("#precode").siblings("em").html(data.precodeinfo);
+            } else {
+                $("#precode").siblings("em").html("优惠码可减免购物费用 ");
+            }
+			if (data.delid) { //判断删除商品
+				var delsub = $("#buy-" + data.delid);
+				delsub.siblings(".buycar").last().removeClass("buycar_hr");
+				delsub.remove();
+			}
+		},
+        cache: false
+	});
+}
+
+// 手机号码验证    
+jQuery.validator.addMethod("isMobile", function(value, element) {    
+  var length = value.length;    
+  return this.optional(element) || (length == 11 && /^(((13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(value));    
+}, "请正确填写您的手机号码!");
+
+// 用户名字符验证    
+jQuery.validator.addMethod("userName", function(value, element) {    
+  return this.optional(element) || /^[\u0391-\uFFE5\w]+$/.test(value);    
+}, "只能包含中文字、字母、数字!");  
+</script>
+</body>
+</html>

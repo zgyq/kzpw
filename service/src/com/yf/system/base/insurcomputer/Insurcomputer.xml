@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Insurcomputer">
+  
+  <typeAlias alias="Insurcomputer" type="com.yf.system.base.insurcomputer.Insurcomputer"/>
+  
+
+  <resultMap id="resultInsurcomputerMap" class="Insurcomputer">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="computerid" column="C_COMPUTERID"/>
+  
+     <result property="computername" column="C_COMPUTERNAME"/>
+  
+     <result property="insuranttype" column="C_INSURANTTYPE"/>
+  
+     <result property="insurantno" column="C_INSURANTNO"/>
+  
+     <result property="insurantcontent" column="C_INSURANTCONTENT"/>
+  
+     <result property="insurtime" column="C_INSURTIME"/>
+  
+     <result property="insurmoney" column="C_INSURMONEY"/>
+  
+     <result property="scmoney" column="C_SCMONEY"/>
+  
+     <result property="status" column="C_STATUS"/>
+  
+     <result property="createid" column="C_CREATEID"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllInsurcomputer"  resultMap="resultInsurcomputerMap"  parameterClass="java.util.Map">
+  
+    select * from T_INSURCOMPUTER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllInsurcomputerBySql"  resultMap="resultInsurcomputerMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteInsurcomputerBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countInsurcomputerBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_INSURCOMPUTER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findInsurcomputer" parameterClass="long" resultClass="Insurcomputer">
+    select 
+    	ID as id,
+	  			C_COMPUTERID as computerid,
+	  			C_COMPUTERNAME as computername,
+	  			C_INSURANTTYPE as insuranttype,
+	  			C_INSURANTNO as insurantno,
+	  			C_INSURANTCONTENT as insurantcontent,
+	  			C_INSURTIME as insurtime,
+	  			C_INSURMONEY as insurmoney,
+	  			C_SCMONEY as scmoney,
+	  			C_STATUS as status,
+	  			C_CREATEID as createid,
+	  			C_CREATETIME as createtime 
+     from T_INSURCOMPUTER
+    where ID = #id#
+  </select>
+   
+  <insert id="createInsurcomputer" parameterClass="Insurcomputer">
+    insert into T_INSURCOMPUTER ( 
+    	ID,
+	  			C_COMPUTERID,
+	  			C_COMPUTERNAME,
+	  			C_INSURANTTYPE,
+	  			C_INSURANTNO,
+	  			C_INSURANTCONTENT,
+	  			C_INSURTIME,
+	  			C_INSURMONEY,
+	  			C_SCMONEY,
+	  			C_STATUS,
+	  			C_CREATEID,
+	  			C_CREATETIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#computerid#,
+	  					
+	  						#computername#,
+	  					
+							#insuranttype:DECIMAL#,
+						
+	  						#insurantno#,
+	  					
+	  						#insurantcontent#,
+	  					
+							#insurtime:DECIMAL#,
+						
+	  						#insurmoney#,
+	  					
+	  						#scmoney#,
+	  					
+							#status:DECIMAL#,
+						
+	  						#createid#,
+	  					
+	  						#createtime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteInsurcomputer" parameterClass="long">
+    delete from T_INSURCOMPUTER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateInsurcomputer" parameterClass="Insurcomputer">
+    update T_INSURCOMPUTER 
+    set 
+    	C_COMPUTERID = #computerid#,
+	  					C_COMPUTERNAME = #computername#,
+	  					C_INSURANTTYPE = #insuranttype:DECIMAL#,
+						C_INSURANTNO = #insurantno#,
+	  					C_INSURANTCONTENT = #insurantcontent#,
+	  					C_INSURTIME = #insurtime:DECIMAL#,
+						C_INSURMONEY = #insurmoney#,
+	  					C_SCMONEY = #scmoney#,
+	  					C_STATUS = #status:DECIMAL#,
+						C_CREATEID = #createid#,
+	  					C_CREATETIME = #createtime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

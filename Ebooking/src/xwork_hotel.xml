@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "xwork-1.0.dtd">
+<xwork>
+  <package name="hotel" extends="default">
+   
+	<action name="hotel" class="com.yf.website.web.action.HotelAction">
+		<result name="success" type="dispatcher">
+				<param name="location">hotel/hotelindex.jsp</param>
+			</result>
+			<result name="toindex" type="dispatcher">
+				<param name="location">hotel/hotelindex.jsp</param>
+			</result>
+			<result name="tolist" type="dispatcher">
+				<param name="location">hotel/hotellist.jsp</param>
+			</result>
+			<result name="toHotelInfo" type="dispatcher">
+				<param name="location">hotel/hotelinfo.jsp</param>
+			</result>
+			<result name="tobook" type="dispatcher">
+				<param name="location">hotel/hotelbook.jsp</param>
+			</result>
+			<result name="toallimages" type="dispatcher">
+				<param name="location">hotel/hotelimages.jsp</param>
+			</result>
+			<result name="tosuccess" type="dispatcher">
+				<param name="location">hotel/hotelsuccess.jsp</param>
+			</result>
+			<result name="toErr" type="dispatcher">
+				<param name="location">hotel/hotelerr.jsp</param>
+			</result>
+			<result name="toorder" type="redirect">
+				<param name="location">/${forword}</param>
+			</result>
+			<result name="toLogin" type="dispatcher">
+				<param name="location">member/quick_login.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+	</action>
+		<action name="spotticket" class="com.yf.website.web.action.SpotTicketAction">
+			<result name="index" type="dispatcher">
+				<param name="location">spotticket/index.jsp</param>
+			</result>
+			<result name="tolist" type="dispatcher">
+				<param name="location">spotticket/list.jsp</param>
+			</result>
+			<result name="toinfo" type="dispatcher">
+				<param name="location">spotticket/info.jsp</param>
+			</result>
+			<result name="tobook" type="dispatcher">
+				<param name="location">spotticket/book.jsp</param>
+			</result>
+			<result name="toShowOrder" type="dispatcher">
+				<param name="location">spotticket/showok.jsp</param>
+			</result>
+			<result name="toorder" type="redirect">
+				<param name="location">/${forword}</param>
+			</result>
+			<result name="toLogin" type="dispatcher">
+				<param name="location">member/quick_login.jsp</param>
+			</result>
+			<result name="toErr" type="dispatcher">
+				<param name="location">spotticket.jspx</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+	</action>
+	<action name="spotline" class="com.yf.website.web.action.SpotLineAction">
+			<result name="index" type="dispatcher">
+				<param name="location">spotline/index.jsp</param>
+			</result>
+			<result name="tolist" type="dispatcher">
+				<param name="location">spotline/list.jsp</param>
+			</result>
+			<result name="toinfo" type="dispatcher">
+				<param name="location">spotline/info.jsp</param>
+			</result>
+			<result name="tobook" type="dispatcher">
+				<param name="location">spotline/book.jsp</param>
+			</result>
+			<result name="toShowOrder" type="dispatcher">
+				<param name="location">spotline/showok.jsp</param>
+			</result>
+			<result name="toorder" type="redirect">
+				<param name="location">/${forword}</param>
+			</result>
+			<result name="toLogin" type="dispatcher">
+				<param name="location">member/quick_login.jsp</param>
+			</result>
+			<result name="toErr" type="dispatcher">
+				<param name="location">spotline.jspx</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+	</action>
+	<action name="buying" class="com.yf.website.web.action.BuyingAction">
+			<result name="index" type="dispatcher">
+				<param name="location">buying/index.jsp</param>
+			</result>
+			<result name="tolist" type="dispatcher">
+				<param name="location">buying/list.jsp</param>
+			</result>
+			<result name="toinfo" type="dispatcher">
+				<param name="location">buying/info.jsp</param>
+			</result>
+			<result name="tobook" type="dispatcher">
+				<param name="location">buying/book.jsp</param>
+			</result>
+			<result name="toShowOrder" type="dispatcher">
+				<param name="location">buying/showok.jsp</param>
+			</result>
+			<result name="toorder" type="redirect">
+				<param name="location">/${forword}</param>
+			</result>
+			<result name="toLogin" type="dispatcher">
+				<param name="location">member/quick_login.jsp</param>
+			</result>
+			<result name="toErr" type="dispatcher">
+				<param name="location">buying.jspx</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+	</action>
+  </package>
+</xwork>
+

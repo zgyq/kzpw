@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Spotcity">
+  
+  <typeAlias alias="Spotcity" type="com.yf.system.base.spotcity.Spotcity"/>
+  
+
+  <resultMap id="resultSpotcityMap" class="Spotcity">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="outid" column="C_OUTID"/>
+  
+     <result property="parentid" column="C_PARENTID"/>
+  
+     <result property="parentidstr" column="C_PARENTIDSTR"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllSpotcity"  resultMap="resultSpotcityMap"  parameterClass="java.util.Map">
+  
+    select * from T_SPOTCITY
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSpotcityBySql"  resultMap="resultSpotcityMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSpotcityBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSpotcityBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SPOTCITY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSpotcity" parameterClass="long" resultClass="Spotcity">
+    select 
+    	ID as id,
+	  			C_OUTID as outid,
+	  			C_PARENTID as parentid,
+	  			C_PARENTIDSTR as parentidstr,
+	  			C_NAME as name,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state 
+     from T_SPOTCITY
+    where ID = #id#
+  </select>
+   
+  <insert id="createSpotcity" parameterClass="Spotcity">
+    insert into T_SPOTCITY ( 
+    	ID,
+	  			C_OUTID,
+	  			C_PARENTID,
+	  			C_PARENTIDSTR,
+	  			C_NAME,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#outid#,
+	  					
+	  						#parentid#,
+	  					
+	  						#parentidstr#,
+	  					
+	  						#name#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSpotcity" parameterClass="long">
+    delete from T_SPOTCITY
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSpotcity" parameterClass="Spotcity">
+    update T_SPOTCITY 
+    set 
+    	C_OUTID = #outid#,
+	  					C_PARENTID = #parentid#,
+	  					C_PARENTIDSTR = #parentidstr#,
+	  					C_NAME = #name#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OTResponse>
+	<SType>SearchAir</SType>
+	<Sdate>2015-04-28</Sdate>
+	<FromCity>SHA</FromCity>
+	<ToCity>CAN</ToCity>
+	<Code>OK</Code>
+	<ErrInfo></ErrInfo>
+	<Flights>
+		<Flight shzl='1' ehzl='' scity='SHA' ecity='CAN'
+			stime='2015-04-28 07:15:00.0' etime='2015-04-28 09:35:00.0'
+			airtype='A320' airno='9C8835' airportfuee='50' fuelfee='0'
+			Yprice='1280.0'>
+			<Cabins>
+				<cabin code='X' price='700.0' sunm='0' discount='55.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='Q' price='830.0' sunm='0' discount='65.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='K' price='1100.0' sunm='0' discount='86.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='H' price='1240.0' sunm='0' discount='97.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='Y1' price='1350.0' sunm='0'
+					discount='105.0' baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='S' price='1300.0' sunm='0' discount='102.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+			</Cabins>
+		</Flight>
+		<Flight shzl='1' ehzl='' scity='SHA' ecity='CAN'
+			stime='2015-04-28 12:50:00.0' etime='2015-04-28 15:15:00.0'
+			airtype='A320' airno='9C8855' airportfuee='50' fuelfee='0'
+			Yprice='1280.0'>
+			<Cabins>
+				<cabin code='X' price='700.0' sunm='0' discount='55.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='Q' price='830.0' sunm='0' discount='65.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='K' price='1100.0' sunm='0' discount='86.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='H' price='1240.0' sunm='0' discount='97.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='Y1' price='1350.0' sunm='0'
+					discount='105.0' baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='S' price='1300.0' sunm='0' discount='102.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+			</Cabins>
+		</Flight>
+		<Flight shzl='1' ehzl='' scity='SHA' ecity='CAN'
+			stime='2015-04-28 17:45:00.0' etime='2015-04-28 20:00:00.0'
+			airtype='A320' airno='9C8931' airportfuee='50' fuelfee='0'
+			Yprice='1280.0'>
+			<Cabins>
+				<cabin code='X' price='700.0' sunm='0' discount='55.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='Q' price='830.0' sunm='0' discount='65.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='K' price='1100.0' sunm='0' discount='86.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='H' price='1240.0' sunm='0' discount='97.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='Y1' price='1350.0' sunm='0'
+					discount='105.0' baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='S' price='1300.0' sunm='0' discount='102.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+			</Cabins>
+		</Flight>
+		<Flight shzl='1' ehzl='' scity='SHA' ecity='CAN'
+			stime='2015-04-28 22:05:00.0' etime='2015-04-29 00:30:00.0'
+			airtype='A320' airno='9C8929' airportfuee='50' fuelfee='0'
+			Yprice='1280.0'>
+			<Cabins>
+				<cabin code='E' price='560.0' sunm='0' discount='44.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='Q' price='830.0' sunm='0' discount='65.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='K' price='1100.0' sunm='0' discount='86.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='H' price='1240.0' sunm='0' discount='97.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='Y1' price='1350.0' sunm='0'
+					discount='105.0' baoxian='30' xuanzuo='10' zratevalue='1' />
+				<cabin code='S' price='1300.0' sunm='0' discount='102.0'
+					baoxian='30' xuanzuo='10' zratevalue='1' />
+			</Cabins>
+		</Flight>
+	</Flights>
+</OTResponse>

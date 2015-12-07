@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 通知记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Noterecorder createNoterecorder(Noterecorder noterecorder) throws SQLException;
+	
+	/**
+	 * 删除 通知记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteNoterecorder(long id);
+	
+	
+	/**
+	 * 修改 通知记录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateNoterecorder(Noterecorder noterecorder);
+
+		
+	/**
+	 * 修改 通知记录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateNoterecorderIgnoreNull(Noterecorder noterecorder);
+		
+	
+	/**
+	 * 查找 通知记录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllNoterecorder(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 通知记录
+	 * @param id
+	 * @return
+	 */
+	public Noterecorder findNoterecorder(long id);
+	
+	/**
+	 * 查找 通知记录 by language
+	 * @param id
+	 * @return
+	 */
+	public Noterecorder findNoterecorderbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 通知记录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllNoterecorderForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找通知记录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllNoterecorderBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 通知记录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteNoterecorderBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countNoterecorderBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private INoterecorderComponent noterecorderComponent;
+	  
+ 	
+ 	public INoterecorderComponent getNoterecorderComponent() {
+		return noterecorderComponent;
+	}
+	public void setNoterecorderComponent(INoterecorderComponent  noterecorderComponent) {
+		this.noterecorderComponent = noterecorderComponent;
+	}
+	/**
+	 * 创建 通知记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Noterecorder createNoterecorder(Noterecorder noterecorder) throws SQLException{
+	
+		return noterecorderComponent.createNoterecorder(noterecorder);
+	}
+	/**
+	 * 删除 通知记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteNoterecorder(long id){
+	
+		return noterecorderComponent.deleteNoterecorder(id);
+	}
+	
+	
+	/**
+	 * 修改 通知记录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateNoterecorder(Noterecorder noterecorder){
+		return noterecorderComponent.updateNoterecorder(noterecorder);
+	
+	}
+
+		
+	/**
+	 * 修改 通知记录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateNoterecorderIgnoreNull(Noterecorder noterecorder){
+			return noterecorderComponent.updateNoterecorderIgnoreNull(noterecorder);
+	
+	}
+	
+	/**
+	 * 查找 通知记录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllNoterecorder(String where, String orderby,int limit,int offset){
+		return noterecorderComponent.findAllNoterecorder(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 通知记录
+	 * @param id
+	 * @return
+	 */
+	public Noterecorder findNoterecorder(long id){
+		return noterecorderComponent.findNoterecorder(id);
+	}
+	
+	/**
+	 * 查找 通知记录
+	 * @param id
+	 * @return
+	 */
+	public Noterecorder findNoterecorderbylanguage(long id,Integer language){
+		return noterecorderComponent.findNoterecorderbylanguage(id,language);
+	}
+	/** 
+	 * 查找 通知记录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllNoterecorderForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return noterecorderComponent.findAllNoterecorder(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找通知记录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllNoterecorderBySql(String sql,int limit,int offset){
+		return noterecorderComponent.findAllNoterecorder(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 通知记录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteNoterecorderBySql(String sql){
+		return noterecorderComponent.excuteNoterecorderBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countNoterecorderBySql(String sql){
+		return noterecorderComponent.countNoterecorderBySql(sql);
+	}
+	
+	
+

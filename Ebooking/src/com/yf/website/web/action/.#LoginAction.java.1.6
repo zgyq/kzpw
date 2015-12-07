@@ -1,0 +1,1264 @@
+package com.yf.website.web.action;
+
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import com.ccservice.b2b2c.base.aircompany.Aircompany;
+import com.ccservice.b2b2c.base.cityairport.Cityairport;
+import com.ccservice.b2b2c.base.customercredit.Customercredit;
+import com.ccservice.b2b2c.base.customerpassenger.Customerpassenger;
+import com.ccservice.b2b2c.base.customeruser.Customeruser;
+import com.ccservice.b2b2c.base.orderinfo.Orderinfo;
+import com.ccservice.b2b2c.base.passenger.Passenger;
+import com.ccservice.b2b2c.base.segmentinfo.Segmentinfo;
+import com.ccservice.b2b2c.base.util.PageInfo;
+import com.ccservice.b2b2c.base.util.Util;
+import com.yf.website.web.server.Server;
+import com.opensymphony.webwork.ServletActionContext;
+import com.opensymphony.xwork.ActionContext;
+
+public class LoginAction extends B2b2cbackAction {
+	private Customeruser customeruser = new Customeruser();
+	private Customerpassenger customerpassenger = new Customerpassenger();// 机票常用旅客
+	private List<Customercredit> ListCustomercredit;// 机票证件list
+	private List<Customerpassenger> ListCustomerpassenger;// 常用旅客LIST
+
+	// 机票订单列表
+	private List<Orderinfo> ListOrderinfo;
+	private List<Segmentinfo> ListSegmentinfo;
+	private List<Passenger> ListPassenger;
+	// 机票订单ID
+	private long OrderinfoId;
+	private Orderinfo orderinfo = new Orderinfo();
+	private Segmentinfo segmentinfo = new Segmentinfo();
+	private Passenger passenger = new Passenger();
+
+	// 判断是否是国内机票还是国际机票
+	private int istype;// 0=国内 1=国际
+
+	// 批量操作ID数组
+	private int[] selectid;
+	// 批量操作选项
+	private int opt;
+
+	// 验证码
+	private String validateImg;
+	// 跳转用
+	private String forword;
+	// 修改密码用
+	private String oldpassword;// 旧密码
+	private String newpassword;// 新密码
+	private String Vnewpassword;// 再次输入的
+	// 完善信息用字段
+	private String sheng;// 省
+	private String shi;// 市
+	private String address;// 具体地址
+	private String areacode;// 区号
+	private String telephone;// 座机号
+	private String c_birthday;// 生日
+	private String c_postalcode;// 邮政编码
+	private String c_membername;// 姓名
+	private String c_membersex;// 性别
+	// 机票常用旅客用字段
+	private String c_passname;// 姓名
+	private String c_passtype;// 乘机人类型
+	private String c_mobile;// 乘机人电话
+	private String c_staus;// 乘机人状态
+	private String s_idtype;// 乘机人证件类型
+	private String s_idnumber;// 乘机人证件号码
+	private String s_staus;// 证件状态
+	// 机票常用旅客检索字段
+	private String c_name;// 姓名
+	private String c_number;// 证件号码
+	private String c_idtype;// 证件类型
+	private String s_passtype;// 证件类型
+	private String s_mobile;// 手机号码
+	private String c_stste;// 状态
+	// 机票订单状态字段
+	private int complete;// 已经完成的
+	private int Cancel;// 已经取消的
+	private int ToBePaid;// 待支付
+	// 机票订单检索用字段
+	private String ordercode;// 订单编号
+	private String aircode;// 航空公司
+	private String c_scityname;// 出发城市
+	private String c_endcityname;// 到达城市
+	private String c_endtime;// 到达时间
+	private String c_stime;// 起飞时间
+	private long passengerid;
+
+	public String DeletePassenger() throws Exception {
+
+		Server.getInstance().getMemberService().deleteCustomerpassenger(
+				passengerid);
+		String sql = " delete FROM " + Customercredit.TABLE + " where "
+				+ Customercredit.COL_refid + " =" + passengerid;
+		int si = Server.getInstance().getMemberService()
+				.excuteCustomercreditBySql(sql);
+		System.out.println("delete了" + si + "行");
+		return "DeletePassenger";
+	}
+
+	public String AddPassenger() throws Exception {
+
+		customeruser = (Customeruser) ActionContext.getContext().getSession()
+				.get("loginuser");
+		if (customeruser == null) {
+			return this.toLogin();
+		}
+		Customerpassenger customerpassenger = new Customerpassenger();
+		if (passengerid > 0) {
+			System.out.println("editpass");
+
+			customerpassenger = Server.getInstance().getMemberService()
+					.findCustomerpassenger(passengerid);
+
+		} else {
+
+			System.out.println("addpass");
+		}
+
+		customerpassenger.setMobile(c_mobile);
+		customerpassenger.setCustomeruserid(getLoginUser().getId());
+		customerpassenger.setUsername(c_passname);
+		customerpassenger.setType(Integer.parseInt(c_passtype));
+		customerpassenger.setCreatetime(new Timestamp(System
+				.currentTimeMillis()));
+		customerpassenger.setState(Integer.parseInt(c_staus));
+		if (passengerid > 0) {
+			Server.getInstance().getMemberService()
+					.updateCustomerpassengerIgnoreNull(customerpassenger);
+		} else {
+
+			customerpassenger = Server.getInstance().getMemberService()
+					.createCustomerpassenger(customerpassenger);
+		}
+
+		String[] intypes = s_idtype.split(",");
+		String[] innumbers = s_idnumber.split(",");
+		String[] innstaus = s_staus.split(",");
+
+		String sql = "  delete from " + Customercredit.TABLE + " where "
+				+ Customercredit.COL_refid + " =" + customerpassenger.getId();
+		Server.getInstance().getMemberService().excuteCustomercreditBySql(sql);
+
+		for (int i = 0; i < intypes.length; i++) {
+
+			if (intypes[i] != null && !intypes[i].toString().equals(" ")
+					&& innumbers[i] != null
+					&& !innumbers[i].toString().equals(" ")) {
+				Customercredit customercredit = new Customercredit();
+				customercredit.setCreatetime(new Timestamp(System
+						.currentTimeMillis()));
+				customercredit.setCreateuser(getLoginUser().getLoginname());
+				customercredit.setRefid(customerpassenger.getId());
+				customercredit.setType(0);
+				customercredit.setStaus(Integer.parseInt(innstaus[i]));
+				customercredit.setCredittypeid(Integer.parseInt(intypes[i]));
+				customercredit.setCreditnumber(innumbers[i]);
+				Server.getInstance().getMemberService().createCustomercredit(
+						customercredit);
+			}
+
+		}
+
+		// return this.toPassenger();
+
+		return "AddPassenger";
+	}
+
+	public String EditUser() throws Exception {
+		customeruser = (Customeruser) ActionContext.getContext().getSession()
+				.get("loginuser");
+		if (customeruser == null) {
+			return this.toLogin();
+		}
+		System.out.println("完善会员信息!!!");
+		String chinaaddress = sheng + "@" + shi + "@" + address;
+		String linkother = areacode + "@" + telephone;
+		customeruser = getLoginUser();
+		customeruser.setLinkother(linkother);
+		customeruser.setChinaaddress(chinaaddress);// 地址
+		customeruser.setBirthday(dateToTimestamp(c_birthday));
+		customeruser.setPostalcode(c_postalcode);
+		customeruser.setMembersex(c_membersex);
+		customeruser.setMembername(c_membername);
+		Server.getInstance().getMemberService().updateCustomeruserIgnoreNull(
+				customeruser);
+
+		return "EditUser";
+
+	}
+
+	public String toRegsit() throws Exception {
+
+		System.out.println("来到了注册页面!!!");
+
+		return "toRegsit";
+
+	}
+
+	public String Regsit() throws Exception {
+		System.out.println("注册!!!");
+		ActionContext.getContext().getSession().remove("loginuser");
+		customeruser.setLoginname(customeruser.getLoginname());
+		customeruser.setLogpassword(Util.MD5(customeruser.getLogpassword()));
+		if (customeruser.getMemberemail() != null
+				&& customeruser.getMemberemail().length() > 0) {
+			customeruser.setMemberemail(customeruser.getMemberemail());
+		}
+		customeruser.setMembername(customeruser.getMembername());
+		customeruser.setMembersex(customeruser.getMembersex());
+		customeruser.setMobile(customeruser.getMobile());
+		customeruser.setMembertype(1);
+		customeruser.setState(1);
+
+		customeruser.setIsweb(1);
+		customeruser.setAgentid(getagentId());
+		customeruser.setCreatetime(new Timestamp(System.currentTimeMillis()));
+		customeruser = Server.getInstance().getMemberService()
+				.createCustomeruser(customeruser);
+		String cNO = customeruser.getId() + "";
+		String cNOid = "";
+		if (cNO.length() < 8) {
+			if (cNO.length() == 1) {
+				cNOid = "0000000" + cNO;
+			}
+			if (cNO.length() == 2) {
+				cNOid = "000000" + cNO;
+			}
+			if (cNO.length() == 3) {
+				cNOid = "00000" + cNO;
+			}
+			if (cNO.length() == 4) {
+				cNOid = "0000" + cNO;
+			}
+			if (cNO.length() == 5) {
+				cNOid = "000" + cNO;
+			}
+			if (cNO.length() == 6) {
+				cNOid = "00" + cNO;
+			}
+			if (cNO.length() == 7) {
+				cNOid = "0" + cNO;
+			}
+			if (cNO.length() == 8) {
+				cNOid = cNO;
+			}
+		}
+		customeruser.setCardnumber(cNOid);
+		Server.getInstance().getMemberService().updateCustomeruserIgnoreNull(
+				customeruser);
+		ActionContext.getContext().getSession().put("loginuser", customeruser);
+
+		return "Regsit";
+
+	}
+
+	public String toLogin() throws Exception {
+
+		System.out.println("来到了登陆页面!!!");
+
+		return "toLogin";
+
+	}
+
+	public String loginout() throws Exception {
+
+		System.out.println("来到了注销方法");
+		ActionContext.getContext().getSession().remove("loginuser");
+		ActionContext.getContext().getSession().remove("orderUrl");
+
+		return "loginout";
+
+	}
+
+	public String Login() throws Exception {
+
+		HttpServletRequest request = ServletActionContext.getRequest();
+		StringBuffer ur = request.getRequestURL();
+		System.out.println("URL===" + ur);
+		ActionContext.getContext().getSession().remove("loginuser");
+
+		String vali = (String) ServletActionContext.getContext().getSession()
+				.get("validate");
+		System.out.println(vali);
+		System.out.println(validateImg);
+		System.out.println(customeruser.getLoginname() + "------"
+				+ customeruser.getLogpassword());
+
+		if (!validateImg.toLowerCase().equals(vali)) {
+			// 验证否
+			this.addActionMessage("验证码错误,请重新登录!");
+			this.addFieldError("validate", "验证码错误!");
+			return "toLogin";
+		}
+		List list = null;
+		if (customeruser.getLoginname() != null
+				&& ((customeruser.getLoginname().indexOf(' ') < 0) && (customeruser
+						.getLoginname().indexOf('|') < 0))) {
+			list = Server.getInstance().getMemberService().findAllCustomeruser(
+					" where " + Customeruser.COL_membertype + " =1 and "
+							+ Customeruser.COL_loginname + " = '"
+							+ customeruser.getLoginname() + "' OR "
+							+ Customeruser.COL_mobile + " ='"
+							+ customeruser.getLoginname() + "' OR "
+							+ Customeruser.COL_cardnumber + " ='"
+							+ customeruser.getLoginname() + "'", "", 1, 0);
+			if (list.isEmpty()) {
+				this.addActionMessage("用户名错误,请重新登录!");
+				this.addFieldError("username", "用户名错误!");
+				return "toLogin";
+			}
+
+		} else {
+			this.addActionMessage("用户名错误,请重新登录!");
+			this.addFieldError("username", "用户名错误!");
+			return "toLogin";
+		}
+
+		if (customeruser.getLogpassword() != null) {
+			if (!Util.MD5(customeruser.getLogpassword()).equals(
+					((Customeruser) (list.get(0))).getLogpassword())) {
+
+				this.addActionMessage("密码错误,请重新登录!");
+				this.addFieldError("password", "密码错误!");
+
+				return "toLogin";
+
+			}
+
+		} else {
+			this.addActionMessage("密码错误,请重新登录!");
+			this.addFieldError("password", "密码错误!");
+			return "toLogin";
+		}
+		ActionContext.getContext().getSession().put("loginuser", list.get(0));
+		customeruser = getLogin();
+		return "Login";
+	}
+
+	public String toMyCenter() throws Exception {
+		System.out.println("来到了个人中心!!!");
+		customeruser = (Customeruser) ActionContext.getContext().getSession()
+				.get("loginuser");
+		if (customeruser == null) {
+
+			return "toLogin";
+		}
+		if (customeruser.getChinaaddress() != null
+				&& customeruser.getChinaaddress().length() > 0
+				&& customeruser.getChinaaddress().indexOf("@") != -1) {
+
+			sheng = customeruser.getChinaaddress().split("@")[0];
+			shi = customeruser.getChinaaddress().split("@")[1];
+			if(customeruser.getChinaaddress().split("@").length>2){
+			address = customeruser.getChinaaddress().split("@")[2];
+			}
+		}
+		if (customeruser.getLinkother() != null
+				&& customeruser.getLinkother().length() > 0
+				&& customeruser.getLinkother().indexOf("@") != -1) {
+
+			areacode = customeruser.getLinkother().split("@")[0];
+			telephone = customeruser.getLinkother().split("@")[1];
+		}
+
+		System.out.println("customeruser==" + customeruser);
+		return "toMyCenter";
+
+	}
+
+	public String toPassenger() throws Exception {
+		customeruser = (Customeruser) ActionContext.getContext().getSession()
+				.get("loginuser");
+		if (customeruser == null) {
+
+			return "toLogin";
+		}
+
+		System.out.println("来到了乘机人列表!!!");
+		// ListCustomerpassenger
+		String where = "where 1=1 and " + Customerpassenger.COL_customeruserid
+				+ " =" + getLoginUser().getId();
+
+		if (c_name != null && c_name.trim().length() != 0) {
+
+			where += " and " + Customerpassenger.COL_username + " like '%"
+					+ c_name.trim() + "%'";
+		}
+		if (s_passtype != null && s_passtype.trim().length() != 0
+				&& !s_passtype.equals("0")) {
+
+			where += " and " + Customerpassenger.COL_type + " =" + s_passtype;
+		}
+		if (s_mobile != null && s_mobile.trim().length() != 0) {
+
+			where += " and " + Customerpassenger.COL_mobile + " like '%"
+					+ s_mobile.trim() + "%'";
+		}
+		if (c_stste != null && c_stste.trim().length() != 0
+				&& !c_stste.equals("-1")) {
+
+			where += " and " + Customerpassenger.COL_state + " =" + c_stste;
+		}
+		if (c_number != null && c_number.trim().length() != 0) {
+
+			where += " and " + Customerpassenger.COL_id + " in ( SELECT "
+					+ Customercredit.COL_refid + " FROM "
+					+ Customercredit.TABLE + " where "
+					+ Customercredit.COL_creditnumber + " like '%"
+					+ c_number.trim() + "%')";
+		}
+		if (c_idtype != null && c_idtype.trim().length() != 0) {
+
+			where += " and " + Customerpassenger.COL_id + " in ( SELECT "
+					+ Customercredit.COL_refid + " FROM "
+					+ Customercredit.TABLE + " where "
+					+ Customercredit.COL_credittypeid + " =" + c_idtype.trim()
+					+ ")";
+		}
+		System.out.println("where=" + where);
+		List list = Server.getInstance().getMemberService()
+				.findAllCustomerpassengerForPageinfo(where,
+						" ORDER BY ID DESC", pageinfo);
+		pageinfo = (PageInfo) list.remove(0);
+		ListCustomerpassenger = list;
+		if (pageinfo.getTotalrow() > 0 && ListCustomerpassenger.size() == 0) {
+			pageinfo.setPagenum(1);
+			list = Server.getInstance().getMemberService()
+					.findAllCustomerpassengerForPageinfo(where,
+							" ORDER BY ID DESC", pageinfo);
+			pageinfo = (PageInfo) list.remove(0);
+			ListCustomerpassenger = list;
+		}
+		System.out.println("ListCustomerpassenger==" + ListCustomerpassenger);
+
+		return "toPassenger";
+
+	}
+
+	public String toTicktOrder() throws Exception {
+		customeruser = (Customeruser) ActionContext.getContext().getSession()
+				.get("loginuser");
+		if (customeruser == null) {
+
+			return "toLogin";
+		}
+		System.out.println("来到了国内机票列表!!!");
+		// String where = " where 1=1 and " + Orderinfo.COL_customeruserid
+		// + " =62 and " + Orderinfo.COL_internal + "=0";
+		String where = " where 1=1  and " + Orderinfo.COL_internal
+				+ " is not null";
+
+		if (ordercode != null && ordercode.length() > 0) {
+
+			where += " and " + Orderinfo.COL_ordernumber + " like '%"
+					+ ordercode + "%'";
+		}
+		if (c_scityname != null && c_scityname.length() > 0) {
+
+			where += " and " + Orderinfo.COL_id
+					+ " in ( SELECT C_ORDERID from T_SEGMENTINFO where "
+					+ Segmentinfo.COL_startairport
+					+ " in ( SELECT C_AIRPORTCODE from T_CITYAIRPORT where "
+					+ Cityairport.COL_cityname + " like '%" + c_scityname
+					+ "%'" + " or " + Cityairport.COL_pinyin + " like '%"
+					+ c_scityname + "%'" + "or " + Cityairport.COL_shortpinyin
+					+ " like '%" + c_scityname + "%'" + " or "
+					+ Cityairport.COL_airportcode + " like '%" + c_scityname
+					+ "%'" + " or " + Cityairport.COL_airportname + " like '%"
+					+ c_scityname + "%'))";
+		}
+		if (c_endcityname != null && c_endcityname.length() > 0) {
+
+			where += " and " + Orderinfo.COL_id
+					+ " in ( SELECT C_ORDERID from T_SEGMENTINFO where "
+					+ Segmentinfo.COL_endairport
+					+ " in ( SELECT C_AIRPORTCODE from T_CITYAIRPORT where  "
+					+ Cityairport.COL_cityname + " like '%" + c_endcityname
+					+ "%'" + " or " + Cityairport.COL_pinyin + " like '%"
+					+ c_endcityname + "%'" + "or "
+					+ Cityairport.COL_shortpinyin + " like '%" + c_endcityname
+					+ "%'" + " or " + Cityairport.COL_airportcode + " like '%"
+					+ c_endcityname + "%'" + " or "
+					+ Cityairport.COL_airportname + " like '%" + c_endcityname
+					+ "%'))";
+		}
+		if (c_endtime != null && c_endtime.length() > 0) {
+			where += " and " + Orderinfo.COL_id
+					+ " in ( SELECT C_ORDERID FROM T_SEGMENTINFO WHERE "
+					+ Segmentinfo.COL_arrivaltime + " >'" + c_endtime + "')";
+		}
+		if (c_stime != null && c_stime.length() > 0) {
+			where += " and " + Orderinfo.COL_id
+					+ " in ( SELECT C_ORDERID FROM T_SEGMENTINFO WHERE "
+					+ Segmentinfo.COL_departtime + " >'" + c_stime + "')";
+		}
+		if (aircode != null && aircode.length() > 0) {
+			where += " and " + Orderinfo.COL_id
+					+ " in (SELECT C_ORDERID FROM T_SEGMENTINFO WHERE "
+					+ Segmentinfo.COL_aircomapnycode
+					+ " in (SELECT C_AIRCOMCODE FROM T_AIRCOMPANY WHERE)"
+					+ Aircompany.COL_aircomcode + " like '%" + aircode + "%'"
+					+ Aircompany.COL_aircomcnname + " like '%" + aircode
+					+ "%')" + Aircompany.COL_aircomjname + " like '%" + aircode
+					+ "%')" + Aircompany.COL_aircomenname + " like '%"
+					+ aircode + "%')";
+		}
+		System.out.println("where==" + where);
+		// String where=" where 1=1 and "+Orderinfo.COL_customeruserid+"
+		// ="+getLoginUser().getId();
+		// ListOrderinfo
+		// =Server.getInstance().getAirService().findAllOrderinfo(where, "ORDER
+		// BY ID DESC ", -1, 0);
+		List list = Server.getInstance().getAirService()
+				.findAllOrderinfoForPageinfo(where, " ORDER BY ID DESC",
+						pageinfo);
+		pageinfo = (PageInfo) list.remove(0);
+		ListOrderinfo = list;
+		if (pageinfo.getTotalrow() > 0 && ListOrderinfo.size() == 0) {
+			pageinfo.setPagenum(1);
+			list = Server.getInstance().getAirService()
+					.findAllOrderinfoForPageinfo(where, " ORDER BY ID DESC",
+							pageinfo);
+			pageinfo = (PageInfo) list.remove(0);
+			ListOrderinfo = list;
+		}
+
+		System.out.println("ListOrderinfo==" + ListOrderinfo.size());
+		int quxiao = 0;
+		int wancheng = 0;
+		int daizhifu = 0;
+
+		for (int a = 0; a < ListOrderinfo.size(); a++) {
+
+			if (ListOrderinfo.get(a).getOrderstatus() == 6) {
+
+				quxiao++;
+			}
+			if (ListOrderinfo.get(a).getOrderstatus() == 10) {
+
+				wancheng++;
+			}
+			if (ListOrderinfo.get(a).getPaystatus() == 0) {
+
+				daizhifu++;
+			}
+
+		}
+		Cancel = quxiao;
+		ToBePaid = daizhifu;
+		complete = wancheng;
+
+		istype = 0;
+
+		return "toTicktOrder";
+
+	}
+
+	public String toTicktOrderInfo() throws Exception {
+		System.out.println("来到了国内机票订单详细信息页面!!!");
+		customeruser = (Customeruser) ActionContext.getContext().getSession()
+				.get("loginuser");
+		if (customeruser == null) {
+
+			return "toLogin";
+		}
+		orderinfo = Server.getInstance().getAirService().findOrderinfo(
+				OrderinfoId);
+		// 验证当前订单是否是当前登陆者
+		/*
+		 * if(orderinfo==null||orderinfo.getCustomeruserid()!=getLoginUser().getId()){
+		 * 
+		 * return "ToTicktOrder"; }
+		 */
+		String wherepass = " where 1=1 and " + Passenger.COL_orderid + " ="
+				+ OrderinfoId;
+		ListPassenger = Server.getInstance().getAirService().findAllPassenger(
+				wherepass, " ORDER BY ID DESC ", -1, 0);
+		if (ListPassenger.size() > 0) {
+			passenger = ListPassenger.get(0);
+		}
+		String whereseg = " where 1=1 and " + Segmentinfo.COL_orderid + " ="
+				+ OrderinfoId;
+		ListSegmentinfo = Server.getInstance().getAirService()
+				.findAllSegmentinfo(whereseg, " ORDER BY ID DESC ", -1, 0);
+		if (ListSegmentinfo.size() > 0) {
+			segmentinfo = ListSegmentinfo.get(0);
+
+		}
+		istype = Integer.parseInt(orderinfo.getInternal() + "");
+
+		return "toTicktOrderInfo";
+
+	}
+
+	public String toInterTicktOrder() throws Exception {
+		customeruser = (Customeruser) ActionContext.getContext().getSession()
+				.get("loginuser");
+		if (customeruser == null) {
+
+			return "toLogin";
+		}
+		System.out.println("来到了国际机票列表!!!");
+		String where = " where 1=1 and " + Orderinfo.COL_customeruserid
+				+ " =62 and " + Orderinfo.COL_internal + "=1";
+
+		// String where=" where 1=1 and "+Orderinfo.COL_customeruserid+"
+		// ="+getLoginUser().getId();
+		// ListOrderinfo
+		// =Server.getInstance().getAirService().findAllOrderinfo(where, "ORDER
+		// BY ID DESC ", -1, 0);
+		List list = Server.getInstance().getAirService()
+				.findAllOrderinfoForPageinfo(where, " ORDER BY ID DESC",
+						pageinfo);
+		pageinfo = (PageInfo) list.remove(0);
+		ListOrderinfo = list;
+		if (pageinfo.getTotalrow() > 0 && ListOrderinfo.size() == 0) {
+			pageinfo.setPagenum(1);
+			list = Server.getInstance().getAirService()
+					.findAllOrderinfoForPageinfo(where, " ORDER BY ID DESC",
+							pageinfo);
+			pageinfo = (PageInfo) list.remove(0);
+			ListOrderinfo = list;
+		}
+
+		System.out.println("ListOrderinfo==" + ListOrderinfo.size());
+		int quxiao = 0;
+		int wancheng = 0;
+		int daizhifu = 0;
+
+		for (int a = 0; a < ListOrderinfo.size(); a++) {
+
+			if (ListOrderinfo.get(a).getOrderstatus() == 6) {
+
+				quxiao++;
+			}
+			if (ListOrderinfo.get(a).getOrderstatus() == 10) {
+
+				wancheng++;
+			}
+			if (ListOrderinfo.get(a).getPaystatus() == 0) {
+
+				daizhifu++;
+			}
+
+		}
+		Cancel = quxiao;
+		ToBePaid = daizhifu;
+		complete = wancheng;
+
+		istype = 1;
+
+		return "toTicktOrder";
+
+	}
+
+	public String toChangePassword() throws Exception {
+
+		System.out.println("来到了修改密码页面!!!");
+
+		return "toChangePassword";
+
+	}
+
+	public String ChangePasswoed() throws Exception {
+		customeruser = getLoginUser();
+
+		if (customeruser == null) {
+
+			return this.toLogin();
+		}
+
+		System.out.println("修改密码!!!新密码是==" + newpassword);
+
+		if (newpassword != null && Vnewpassword != null
+				&& newpassword.equals(Vnewpassword)) {
+
+			if (customeruser.getLogpassword().equals(Util.MD5(newpassword))) {
+
+				customeruser.setLogpassword(Util.MD5(newpassword));
+				customeruser.setModifytime(new Timestamp(System
+						.currentTimeMillis()));
+				Server.getInstance().getMemberService()
+						.updateCustomeruserIgnoreNull(customeruser);
+				this.addActionMessage("操作成功!!");
+				this.addFieldError("validate", "操作成功,你的密码已经修改!");
+				return "toChangePassword";
+
+			} else {
+
+				this.addActionMessage("密码错误!请从新输入!");
+				this.addFieldError("validate", "密码错误!");
+				return "toChangePassword";
+			}
+
+		}
+
+		this.addActionMessage("密码错误!请从新输入!");
+		this.addFieldError("validate", "密码错误!");
+
+		return "toChangePassword";
+
+	}
+
+	public String toAddPassenger() throws Exception {
+		customeruser = (Customeruser) ActionContext.getContext().getSession()
+				.get("loginuser");
+		if (customeruser == null) {
+
+			return "toLogin";
+		}
+		System.out.println("来到了添加常用登机人页面!!!");
+
+		return "toAddPassenger";
+
+	}
+
+	public String toEditPassenger() throws Exception {
+		customeruser = (Customeruser) ActionContext.getContext().getSession()
+				.get("loginuser");
+		if (customeruser == null) {
+
+			return "toLogin";
+		}
+		System.out.println("来到了修改常用登机人页面!!!");
+
+		customerpassenger = Server.getInstance().getMemberService()
+				.findCustomerpassenger(passengerid);
+		if (customerpassenger == null) {
+
+			return "AddPassenger";
+		}
+		if (customerpassenger.getCustomeruserid() != getLoginUser().getId()) {
+
+			return "AddPassenger";
+		}
+		String where = " where 1=1 and " + Customercredit.COL_refid + " ="
+				+ customerpassenger.getId();
+		ListCustomercredit = Server.getInstance().getMemberService()
+				.findAllCustomercredit(where, " ORDER BY ID ", -1, 0);
+
+		System.out.println("customerpassenger==" + customerpassenger);
+		System.out.println("ListCustomercredit==" + ListCustomercredit);
+		return "toAddPassenger";
+
+	}
+
+	public String GetCustomerCreditNumber(long id) {
+
+		List<Customercredit> list = Server.getInstance().getMemberService()
+				.findAllCustomercredit(
+						" WHERE 1=1 AND " + Customercredit.COL_refid + " ="
+								+ id, "ORDER BY ID DESC ", -1, 0);
+		if (list.size() > 0) {
+
+			return list.get(0).getCreditnumber();
+		}
+
+		return "";
+	}
+
+	public String GetCustomerCredittype(long id) {
+
+		List<Customercredit> list = Server.getInstance().getMemberService()
+				.findAllCustomercredit(
+						" WHERE 1=1 AND " + Customercredit.COL_refid + " ="
+								+ id, "ORDER BY ID DESC ", -1, 0);
+		if (list.size() > 0) {
+			int typeid = list.get(0).getCredittypeid();
+
+			return GetTypeNameByTypeId(typeid + "");
+		}
+
+		return "";
+	}
+	//包机订单列表
+	public String tocharterlist()throws Exception{
+		
+		return "tocharterlist";
+	}
+	
+
+	public String GetTypeNameByTypeId(String type) {
+
+		if (type.equals("1")) {
+
+			return "身份证";
+		}
+		if (type.equals("3")) {
+
+			return "护照";
+		}
+		if (type.equals("4")) {
+
+			return "港澳通行证";
+		}
+		if (type.equals("5")) {
+
+			return "台湾通行证";
+		}
+		if (type.equals("6")) {
+
+			return "台胞证";
+		}
+		if (type.equals("7")) {
+
+			return "回乡证";
+		}
+
+		return "";
+	}
+
+	/**
+	 * 批量操作
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String batch() throws Exception {
+		if (selectid != null && selectid.length > 0) {
+
+			switch (opt) {
+			case 1: // delete
+
+				for (int i : selectid) {
+					Server.getInstance().getMemberService()
+							.deleteCustomerpassenger(i);
+					String sql = " delete FROM " + Customercredit.TABLE
+							+ " where " + Customercredit.COL_refid + " =" + i;
+					int si = Server.getInstance().getMemberService()
+							.excuteCustomercreditBySql(sql);
+					System.out.println("delete了" + si + "行");
+
+				}
+
+				break;
+			default:
+				break;
+
+			}
+		}
+		return "batch";
+	}
+
+	public Customeruser getCustomeruser() {
+		return customeruser;
+	}
+
+	public void setCustomeruser(Customeruser customeruser) {
+		this.customeruser = customeruser;
+	}
+
+	@Override
+	public Object getModel() {
+		// TODO Auto-generated method stub
+		return customeruser;
+	}
+
+	public String getValidateImg() {
+		return validateImg;
+	}
+
+	public void setValidateImg(String validateImg) {
+		this.validateImg = validateImg;
+	}
+
+	public String getForword() {
+		return forword;
+	}
+
+	public void setForword(String forword) {
+		this.forword = forword;
+	}
+
+	public String getOldpassword() {
+		return oldpassword;
+	}
+
+	public void setOldpassword(String oldpassword) {
+		this.oldpassword = oldpassword;
+	}
+
+	public String getNewpassword() {
+		return newpassword;
+	}
+
+	public void setNewpassword(String newpassword) {
+		this.newpassword = newpassword;
+	}
+
+	public String getVnewpassword() {
+		return Vnewpassword;
+	}
+
+	public void setVnewpassword(String vnewpassword) {
+		Vnewpassword = vnewpassword;
+	}
+
+	public String getSheng() {
+		return sheng;
+	}
+
+	public void setSheng(String sheng) {
+		this.sheng = sheng;
+	}
+
+	public String getShi() {
+		return shi;
+	}
+
+	public void setShi(String shi) {
+		this.shi = shi;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getAreacode() {
+		return areacode;
+	}
+
+	public void setAreacode(String areacode) {
+		this.areacode = areacode;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	public String getC_birthday() {
+		return c_birthday;
+	}
+
+	public void setC_birthday(String c_birthday) {
+		this.c_birthday = c_birthday;
+	}
+
+	public String getC_postalcode() {
+		return c_postalcode;
+	}
+
+	public void setC_postalcode(String c_postalcode) {
+		this.c_postalcode = c_postalcode;
+	}
+
+	public String getC_membername() {
+		return c_membername;
+	}
+
+	public void setC_membername(String c_membername) {
+		this.c_membername = c_membername;
+	}
+
+	public String getC_membersex() {
+		return c_membersex;
+	}
+
+	public void setC_membersex(String c_membersex) {
+		this.c_membersex = c_membersex;
+	}
+
+	public Customerpassenger getCustomerpassenger() {
+		return customerpassenger;
+	}
+
+	public void setCustomerpassenger(Customerpassenger customerpassenger) {
+		this.customerpassenger = customerpassenger;
+	}
+
+	public List<Customercredit> getListCustomercredit() {
+		return ListCustomercredit;
+	}
+
+	public void setListCustomercredit(List<Customercredit> listCustomercredit) {
+		ListCustomercredit = listCustomercredit;
+	}
+
+	public List<Customerpassenger> getListCustomerpassenger() {
+		return ListCustomerpassenger;
+	}
+
+	public void setListCustomerpassenger(
+			List<Customerpassenger> listCustomerpassenger) {
+		ListCustomerpassenger = listCustomerpassenger;
+	}
+
+	public String getC_passname() {
+		return c_passname;
+	}
+
+	public void setC_passname(String c_passname) {
+		this.c_passname = c_passname;
+	}
+
+	public String getC_passtype() {
+		return c_passtype;
+	}
+
+	public void setC_passtype(String c_passtype) {
+		this.c_passtype = c_passtype;
+	}
+
+	public String getC_mobile() {
+		return c_mobile;
+	}
+
+	public void setC_mobile(String c_mobile) {
+		this.c_mobile = c_mobile;
+	}
+
+	public String getC_staus() {
+		return c_staus;
+	}
+
+	public void setC_staus(String c_staus) {
+		this.c_staus = c_staus;
+	}
+
+	public String getS_idtype() {
+		return s_idtype;
+	}
+
+	public void setS_idtype(String s_idtype) {
+		this.s_idtype = s_idtype;
+	}
+
+	public String getS_idnumber() {
+		return s_idnumber;
+	}
+
+	public void setS_idnumber(String s_idnumber) {
+		this.s_idnumber = s_idnumber;
+	}
+
+	public String getC_name() {
+		return c_name;
+	}
+
+	public void setC_name(String c_name) {
+		this.c_name = c_name;
+	}
+
+	public String getC_number() {
+		return c_number;
+	}
+
+	public void setC_number(String c_number) {
+		this.c_number = c_number;
+	}
+
+	public String getC_idtype() {
+		return c_idtype;
+	}
+
+	public void setC_idtype(String c_idtype) {
+		this.c_idtype = c_idtype;
+	}
+
+	public long getPassengerid() {
+		return passengerid;
+	}
+
+	public void setPassengerid(long passengerid) {
+		this.passengerid = passengerid;
+	}
+
+	public String getS_staus() {
+		return s_staus;
+	}
+
+	public void setS_staus(String s_staus) {
+		this.s_staus = s_staus;
+	}
+
+	public String getS_passtype() {
+		return s_passtype;
+	}
+
+	public void setS_passtype(String s_passtype) {
+		this.s_passtype = s_passtype;
+	}
+
+	public int[] getSelectid() {
+		return selectid;
+	}
+
+	public void setSelectid(int[] selectid) {
+		this.selectid = selectid;
+	}
+
+	public int getOpt() {
+		return opt;
+	}
+
+	public void setOpt(int opt) {
+		this.opt = opt;
+	}
+
+	public String getS_mobile() {
+		return s_mobile;
+	}
+
+	public void setS_mobile(String s_mobile) {
+		this.s_mobile = s_mobile;
+	}
+
+	public String getC_stste() {
+		return c_stste;
+	}
+
+	public void setC_stste(String c_stste) {
+		this.c_stste = c_stste;
+	}
+
+	public List<Orderinfo> getListOrderinfo() {
+		return ListOrderinfo;
+	}
+
+	public void setListOrderinfo(List<Orderinfo> listOrderinfo) {
+		ListOrderinfo = listOrderinfo;
+	}
+
+	public List<Segmentinfo> getListSegmentinfo() {
+		return ListSegmentinfo;
+	}
+
+	public void setListSegmentinfo(List<Segmentinfo> listSegmentinfo) {
+		ListSegmentinfo = listSegmentinfo;
+	}
+
+	public List<Passenger> getListPassenger() {
+		return ListPassenger;
+	}
+
+	public void setListPassenger(List<Passenger> listPassenger) {
+		ListPassenger = listPassenger;
+	}
+
+	public int getComplete() {
+		return complete;
+	}
+
+	public void setComplete(int complete) {
+		this.complete = complete;
+	}
+
+	public int getCancel() {
+		return Cancel;
+	}
+
+	public void setCancel(int cancel) {
+		Cancel = cancel;
+	}
+
+	public int getToBePaid() {
+		return ToBePaid;
+	}
+
+	public void setToBePaid(int toBePaid) {
+		ToBePaid = toBePaid;
+	}
+
+	public long getOrderinfoId() {
+		return OrderinfoId;
+	}
+
+	public void setOrderinfoId(long orderinfoId) {
+		OrderinfoId = orderinfoId;
+	}
+
+	public Orderinfo getOrderinfo() {
+		return orderinfo;
+	}
+
+	public void setOrderinfo(Orderinfo orderinfo) {
+		this.orderinfo = orderinfo;
+	}
+
+	public Segmentinfo getSegmentinfo() {
+		return segmentinfo;
+	}
+
+	public void setSegmentinfo(Segmentinfo segmentinfo) {
+		this.segmentinfo = segmentinfo;
+	}
+
+	public Passenger getPassenger() {
+		return passenger;
+	}
+
+	public void setPassenger(Passenger passenger) {
+		this.passenger = passenger;
+	}
+
+	public int getIstype() {
+		return istype;
+	}
+
+	public void setIstype(int istype) {
+		this.istype = istype;
+	}
+
+	public String getOrdercode() {
+		return ordercode;
+	}
+
+	public void setOrdercode(String ordercode) {
+		this.ordercode = ordercode;
+	}
+
+	public String getAircode() {
+		return aircode;
+	}
+
+	public void setAircode(String aircode) {
+		this.aircode = aircode;
+	}
+
+	public String getC_scityname() {
+		return c_scityname;
+	}
+
+	public void setC_scityname(String c_scityname) {
+		this.c_scityname = c_scityname;
+	}
+
+	public String getC_endcityname() {
+		return c_endcityname;
+	}
+
+	public void setC_endcityname(String c_endcityname) {
+		this.c_endcityname = c_endcityname;
+	}
+
+	public String getC_endtime() {
+		return c_endtime;
+	}
+
+	public void setC_endtime(String c_endtime) {
+		this.c_endtime = c_endtime;
+	}
+
+	public String getC_stime() {
+		return c_stime;
+	}
+
+	public void setC_stime(String c_stime) {
+		this.c_stime = c_stime;
+	}
+
+}

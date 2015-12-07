@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Conferencehotel">
+  
+  <typeAlias alias="Conferencehotel" type="com.yf.system.base.conferencehotel.Conferencehotel"/>
+  
+
+  <resultMap id="resultConferencehotelMap" class="Conferencehotel">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="star" column="C_STAR"/>
+  
+     <result property="hallnum" column="C_HALLNUM"/>
+  
+     <result property="city" column="C_CITY"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="phone" column="C_PHONE"/>
+  
+     <result property="desc" column="C_DESC"/>
+  
+     <result property="pic" column="C_PIC"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllConferencehotel"  resultMap="resultConferencehotelMap"  parameterClass="java.util.Map">
+  
+    select * from T_CONFERENCEHOTEL
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllConferencehotelBySql"  resultMap="resultConferencehotelMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteConferencehotelBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countConferencehotelBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CONFERENCEHOTEL
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findConferencehotel" parameterClass="long" resultClass="Conferencehotel">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_STAR as star,
+	  			C_HALLNUM as hallnum,
+	  			C_CITY as city,
+	  			C_ADDRESS as address,
+	  			C_PHONE as phone,
+	  			C_DESC as [desc],
+	  			C_PIC as pic,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_CONFERENCEHOTEL
+    where ID = #id#
+  </select>
+   
+  <insert id="createConferencehotel" parameterClass="Conferencehotel">
+    insert into T_CONFERENCEHOTEL ( 
+    	ID,
+	  			C_NAME,
+	  			C_STAR,
+	  			C_HALLNUM,
+	  			C_CITY,
+	  			C_ADDRESS,
+	  			C_PHONE,
+	  			C_DESC,
+	  			C_PIC,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#star#,
+	  					
+							#hallnum:DECIMAL#,
+						
+	  						#city#,
+	  					
+	  						#address#,
+	  					
+	  						#phone#,
+	  					
+	  						#desc#,
+	  					
+	  						#pic#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteConferencehotel" parameterClass="long">
+    delete from T_CONFERENCEHOTEL
+    where ID = #id#
+  </delete>
+	
+  <update id="updateConferencehotel" parameterClass="Conferencehotel">
+    update T_CONFERENCEHOTEL 
+    set 
+    	C_NAME = #name#,
+	  					C_STAR = #star#,
+	  					C_HALLNUM = #hallnum:DECIMAL#,
+						C_CITY = #city#,
+	  					C_ADDRESS = #address#,
+	  					C_PHONE = #phone#,
+	  					C_DESC = #desc#,
+	  					C_PIC = #pic#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

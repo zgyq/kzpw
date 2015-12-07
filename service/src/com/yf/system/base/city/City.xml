@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="City">
+  
+  <typeAlias alias="City" type="com.yf.system.base.city.City"/>
+  
+
+  <resultMap id="resultCityMap" class="City">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="enname" column="C_ENNAME"/>
+  
+     <result property="sname" column="C_SNAME"/>
+  
+     <result property="sort" column="C_SORT"/>
+  
+     <result property="provinceid" column="C_PROVINCEID"/>
+  
+     <result property="areacode" column="C_AREACODE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+  
+     <result property="countryid" column="C_COUNTRYID"/>
+     
+     <result property="type" column="C_TYPE"/>
+     
+     <result property="carcode" column="C_CARCODE"/>
+     
+     <result property="iscode" column="C_ISCODE"/>
+   
+  </resultMap>
+  
+  <select id="findAllCity"  resultMap="resultCityMap"  parameterClass="java.util.Map">
+  
+    select * from T_CITY
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCityBySql"  resultMap="resultCityMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCityBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCityBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CITY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCity" parameterClass="long" resultClass="City">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_ENNAME as enname,
+	  			C_SNAME as sname,
+	  			C_SORT as sort,
+	  			C_PROVINCEID as provinceid,
+	  			C_AREACODE as areacode,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language,
+	  			C_TYPE as type,
+	  			C_CARCODE as carcode,
+	  			C_ISCODE as iscode,
+	  			C_COUNTRYID as countryid 
+     from T_CITY
+    where ID = #id#
+  </select>
+   
+  <insert id="createCity" parameterClass="City">
+    insert into T_CITY ( 
+    	ID,
+	  			C_NAME,
+	  			C_ENNAME,
+	  			C_SNAME,
+	  			C_SORT,
+	  			C_PROVINCEID,
+	  			C_AREACODE,
+	  			C_UCODE,
+	  			C_LANGUAGE,
+	  			C_TYPE,
+	  			C_CARCODE,
+	  			C_ISCODE,
+	  			C_COUNTRYID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#enname#,
+	  					
+	  						#sname#,
+	  					
+							#sort:DECIMAL#,
+						
+							#provinceid:DECIMAL#,
+						
+	  						#areacode#,
+	  					
+							#ucode:DECIMAL#,
+						
+							#language:DECIMAL#,
+							
+							#type:DECIMAL#,
+							
+							#carcode:DECIMAL#,
+							
+							#iscode:DECIMAL#,
+						
+  							#countryid:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCity" parameterClass="long">
+    delete from T_CITY
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCity" parameterClass="City">
+    update T_CITY 
+    set 
+    	C_NAME = #name#,
+	  					C_ENNAME = #enname#,
+	  					C_SNAME = #sname#,
+	  					C_SORT = #sort:DECIMAL#,
+						C_PROVINCEID = #provinceid:DECIMAL#,
+						C_AREACODE = #areacode#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_CARCODE = #carcode:DECIMAL#,
+						C_ISCODE = #iscode:DECIMAL#,
+						C_COUNTRYID = #countryid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

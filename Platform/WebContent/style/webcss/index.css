@@ -1,0 +1,26 @@
+
+
+#main_1{ margin-top:10px;}
+#main_1 .search { width:400px; }
+#main_1 .nav_sea{ background:url(../images/bj_quan.gif); height:32px; line-height:32px; padding-left:30px;  }
+#main_1 .nav_sea ul{}
+#main_1 .nav_sea ul li{margin-top:1px; width:99px; height:31px; line-height:31px;   text-align:center; font-weight:bold; float:left;}
+#main_1 .nav_sea ul li a{ color:#479AF0;font-size:14px;}
+#main_1 .sea_tab{line-height:28px; background:#DDECF3;  color:#6E6E6E; height:188px; }
+#main_1 .ad{ width:271px; margin-left:10px; padding:1px; line-height:25px; }
+#main_1 .youhui{ width:303px;  height:221px;}
+#main_1 .yh_tab{margin: 0 auto; line-height:24px; padding:10px 0 }
+
+
+#main_2{ margin-top:10px;}
+#main_2 .left{ width:686px;}
+#main_2 .nav_city{ height:22px; line-height:22px; margin-top:5px; }
+#main_2 .nav_city ul{}
+#main_2 .nav_city ul li{ width:58px; height:22px; line-height:22px; margin-right:5px; background:url(../images/nav_city_b.gif); float:left; text-align:center; font-size:12px; font-weight:100;}
+#main_2 .nav_city ul li a{ color:#000;}
+
+#main_2 .right{ width:304px;}
+#main_2 .yh_tab{margin: 0 auto; line-height:24px; padding:10px 0 }
+#main_2 .tianqi{ text-align:center;  padding:20px;}
+#main_2 .tianqi ul{}
+#main_2 .tianqi ul li{ height:45px;}

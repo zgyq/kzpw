@@ -1,0 +1,715 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Orderinfo">
+  
+  <typeAlias alias="Orderinfo" type="com.yf.system.base.orderinfo.Orderinfo"/>
+  
+
+  <resultMap id="resultOrderinfoMap" class="Orderinfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="ordernumber" column="C_ORDERNUMBER"/>
+  
+     <result property="buyagentid" column="C_BUYAGENTID"/>
+  
+     <result property="policyid" column="C_POLICYID"/>
+  
+     <result property="contactname" column="C_CONTACTNAME"/>
+  
+     <result property="contactmobile" column="C_CONTACTMOBILE"/>
+  
+     <result property="memo" column="C_MEMO"/>
+  
+     <result property="receipt" column="C_RECEIPT"/>
+  
+     <result property="addresa" column="C_ADDRESA"/>
+  
+     <result property="orderstatus" column="C_ORDERSTATUS"/>
+  
+     <result property="totalfuelfee" column="C_TOTALFUELFEE"/>
+  
+     <result property="totalairportfee" column="C_TOTALAIRPORTFEE"/>
+  
+     <result property="totalticketprice" column="C_TOTALTICKETPRICE"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="relationorderid" column="C_RELATIONORDERID"/>
+  
+     <result property="tuistatus" column="C_TUISTATUS"/>
+  
+     <result property="contacttel" column="C_CONTACTTEL"/>
+  
+     <result property="pnr" column="C_PNR"/>
+  
+     <result property="paystatus" column="C_PAYSTATUS"/>
+  
+     <result property="paymethod" column="C_PAYMETHOD"/>
+  
+     <result property="saleagentid" column="C_SALEAGENTID"/>
+  
+     <result property="customeruserid" column="C_CUSTOMERUSERID"/>
+  
+     <result property="notetype" column="C_NOTETYPE"/>
+  
+     <result property="contactemail" column="C_CONTACTEMAIL"/>
+  
+     <result property="contactfax" column="C_CONTACTFAX"/>
+  
+     <result property="printtime" column="C_PRINTTIME"/>
+  
+     <result property="ratevalue" column="C_RATEVALUE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+  
+  
+     <result property="postmoney" column="C_POSTMONEY"/>
+  
+     <result property="postname" column="C_POSTNAME"/>
+  
+     <result property="postmobile" column="C_POSTMOBILE"/>
+  
+     <result property="userid" column="C_USERID"/>
+     
+     <result property="operatingstate" column="C_OPERATINGSTATE"/>
+      
+     <result property="updatetime" column="C_UPDATETIME"/>
+     
+      <result property="fenxiaouserid" column="C_FENXIAOUSERID"/>
+     
+     <result property="fenxiaooperstate" column="C_FENXIAOOPERSTATE"/>
+      
+     <result property="fenxiaoupdatetime" column="C_FENXIAOUPDATETIME"/>
+       
+     <result property="postcode" column="C_POSTCODE"/>
+  
+     <result property="ordertype" column="C_ORDERTYPE"/>
+     
+     <result property="bigpnr" column="C_BIGPNR"/>
+     
+     <result property="gaiorderid" column="C_GAIORDERID"/>
+   
+    <result property="fxssuotime" column="C_FXSSUOTIME"/>
+      
+     <result property="gyssuotime" column="C_GYSSUOTIME"/>
+     
+     <result property="quxiaotime" column="C_QUXIAOTIME"/>
+     
+     <result property="peisongrenid" column="C_PEISONGRENID"/>
+     
+     <result property="peisongstatus" column="C_PEISONGSTATUS"/>
+     
+     <result property="pickonename" column="C_PICKONENAME"/>
+     
+     <result property="pickonephone" column="C_PICKONEPHONE"/>
+     
+     <result property="busystatus" column="C_BUSYSTATUS"/>
+     
+     <result property="guazhangrenid" column="C_GUAZHANGRENID"/>
+     
+     <result property="peisongdate" column="C_PEISONGDATE"/>
+     
+     <result property="newpnr" column="C_NEWPNR"/>
+     
+     <result property="newticnum" column="C_NEWTICNUM"/>
+     
+      <result property="newordernum" column="C_NEWORDERNUM"/>
+      
+      <result property="customeragentid" column="C_CUSTOMERAGENTID"/>
+      
+      
+      <result property="extpolicyid" column="C_EXTPOLICYID"/>
+     
+     <result property="policyagentid" column="C_POLICYAGENTID"/>
+     
+     <result property="extorderid" column="C_EXTORDERID"/>
+     
+     <result property="newextorderid" column="C_NEWEXTORDERID"/>
+     
+     <result property="extorderstatus" column="C_EXTORDERSTATUS"/>
+     <result property="extorderstatusstr" column="extorderstatusstr"/>
+     
+     <result property="extorderpolicyid" column="C_EXTORDERPOLICYID"/>
+     
+     <result property="extorderepolicyid" column="C_EXTORDEREPOLICYID"/>
+     
+     <result property="extorderprice" column="C_EXTORDERPRICE"/>
+     
+     <result property="extordercreatetime" column="C_EXTORDERCREATETIME"/>
+     
+     <result property="fenxiaoshangfandian" column="C_FENXIAOSHANGFANDIAN"/>
+     <result property="creditcardid" column="C_CREDITCARDID"/>
+     
+      <result property="shengcangorderid" column="C_SHENGCANGORDERID"/>
+      
+     <result property="fkmethod" column="C_FKMETHOD"/>
+     
+     <result property="shengcangoldtn" column="C_SHENGCANGOLDTN"/>
+     
+     <result property="isshengcang" column="C_ISSHENGCANG"/>
+     
+     <result property="totalanjian" column="C_TOTALANJIAN"/>
+     
+     <result property="totalotherfee" column="C_TOTALOTHERFEE"/>
+     
+     <result property="internal" column="C_INTERNAL"/>
+     
+     <result property="cashier" column="C_CASHIER"/>
+     
+     <result property="zhekoujine" column="C_ZHEKOUJINE"/>
+     <result property="isprint" column="C_ISPRINT"/>
+     
+     <result property="ismutily" column="C_ISMULITY"/>
+     
+
+     <result property="oldorderstatus" column="C_OLDORDERSTATUS"/>
+     
+     <result property="contactmsgtype" column="C_CONTACTMSGTYPE"/>
+     
+     <result property="returnprice" column="C_RETURNPRICE"/>
+     
+
+     <result property="rebatemoney" column="C_REBATEMONEY"/>
+     
+     <result property="operateagent" column="C_OPERATEAGENT"/>
+     
+     <result property="backpointinfo" column="C_BACKPOINTINFO"/>
+     
+     <result property="paymenturl" column="C_PAYMENTURL"/>
+     
+
+	 <result property="currplatfee" column="C_CURRPLATFEE"/>
+	 <result property="isbackinsur" column="C_ISBACKINSUR"/>
+	 <result property="extreturnprice" column="C_EXTRETURNPRICE"/>
+	 
+	 <result property="pnrtxt" column="C_PNRTXT"/>
+	 
+	 <result property="pattxt" column="C_PATTXT"/>
+	 
+	 <result property="cclientpayprice" column="C_CCLIENTPAYPRICE"/>
+	 
+	 <result property="b2cprofit" column="C_B2CPROFIT"/>
+     
+  </resultMap>
+ 
+  
+  <select id="findAllOrderinfo"  resultMap="resultOrderinfoMap"  parameterClass="java.util.Map">
+  
+    select *,
+    (SELECT C_STATEMEMO FROM T_OUTORDERSTATE  WHERE C_AGENTID=3 AND C_STATEID=T.C_EXTORDERSTATUS) AS extorderstatusstr
+      from T_ORDERINFO T
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllOrderinfoBySql"  resultMap="resultOrderinfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteOrderinfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countOrderinfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_ORDERINFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findOrderinfo" parameterClass="long" resultClass="Orderinfo">
+    select 
+    	ID as id,
+	  			C_ORDERNUMBER as ordernumber,
+	  			C_BUYAGENTID as buyagentid,
+	  			C_POLICYID as policyid,
+	  			C_CONTACTNAME as contactname,
+	  			C_CONTACTMOBILE as contactmobile,
+	  			C_MEMO as memo,
+	  			C_CCLIENTPAYPRICE as cclientpayprice,
+	  			C_B2CPROFIT as b2cprofit,
+	  			C_RECEIPT as receipt,
+	  			C_ADDRESA as addresa,
+	  			C_ORDERSTATUS as orderstatus,
+	  			C_OLDORDERSTATUS as oldorderstatus,
+	  			C_TOTALFUELFEE as totalfuelfee,
+	  			C_TOTALAIRPORTFEE as totalairportfee,
+	  			C_TOTALTICKETPRICE as totalticketprice,
+	  			C_CREATETIME as createtime,
+	  			C_RELATIONORDERID as relationorderid,
+	  			C_TUISTATUS as tuistatus,
+	  			C_CONTACTTEL as contacttel,
+	  			C_PNR as pnr,
+	  			C_PNRTXT as pnrtxt,
+	  			C_PATTXT as pattxt,
+	  			C_PAYSTATUS as paystatus,
+	  			C_PAYMETHOD as paymethod,
+	  			C_SALEAGENTID as saleagentid,
+	  			C_CUSTOMERUSERID as customeruserid,
+	  			C_NOTETYPE as notetype,
+	  			C_CONTACTEMAIL as contactemail,
+	  			C_CONTACTFAX as contactfax,
+	  			C_PRINTTIME as printtime,
+	  			C_RATEVALUE as ratevalue,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language,
+	  			C_POSTMONEY as postmoney,
+	  			C_POSTNAME as postname,
+	  			C_POSTMOBILE as postmobile,
+	  			C_USERID as userid,
+	  			C_OPERATINGSTATE as operatingstate,
+	  			C_UPDATETIME as updatetime,
+	  			C_FENXIAOUSERID as fenxiaouserid,
+	  			C_FENXIAOOPERSTATE as fenxiaooperstate,
+	  			C_FENXIAOUPDATETIME as fenxiaoupdatetime,
+	  			C_POSTCODE as postcode,
+	  			C_ORDERTYPE as ordertype,
+	  			C_GAIORDERID as gaiorderid,
+	  			C_FXSSUOTIME as fxssuotime,
+	  			C_GYSSUOTIME as gyssuotime,
+	  			C_QUXIAOTIME as quxiaotime,
+	  			C_BIGPNR as bigpnr,
+	  			C_PEISONGSTATUS as peisongstatus,
+	  			C_PEISONGRENID as peisongrenid,
+	  			C_PICKONENAME as pickonename,
+	  			C_PICKONEPHONE as pickonephone,
+	  			C_BUSYSTATUS as busystatus,
+	  			C_GUAZHANGRENID as guazhangrenid,
+	  			C_PEISONGDATE as peisongdate,
+	  			C_NEWPNR as newpnr,
+	  			C_NEWTICNUM as newticnum,
+	  			C_NEWORDERNUM as newordernum,
+	  			C_CUSTOMERAGENTID as customeragentid,
+	  			C_EXTPOLICYID as extpolicyid,
+	  			C_POLICYAGENTID as policyagentid,
+	  			C_EXTORDERID as extorderid,
+	  			C_NEWEXTORDERID as newextorderid,
+	  			C_EXTORDERSTATUS as extorderstatus,
+	  			C_EXTORDERPOLICYID as extorderpolicyid,
+	  			C_EXTORDEREPOLICYID as extorderepolicyid,
+	  			C_EXTORDERPRICE as extorderprice,
+	  			C_EXTORDERCREATETIME as extordercreatetime,
+	  			C_FENXIAOSHANGFANDIAN as fenxiaoshangfandian,
+	  			C_CREDITCARDID as creditcardid,
+	  			C_SHENGCANGORDERID as shengcangorderid,
+	  			C_FKMETHOD as fkmethod,
+	  			C_SHENGCANGOLDTN as shengcangoldtn,
+	  			C_ISSHENGCANG as isshengcang,
+	  			C_TOTALANJIAN as totalanjian,
+	  			C_TOTALOTHERFEE as totalotherfee,
+	  			C_INTERNAL as internal,
+	  			C_CASHIER AS cashier,
+	  			C_ZHEKOUJINE as zhekoujine,
+	  			C_ISPRINT as isprint,
+
+	  			C_ISMULITY as ismutily,
+	  			C_RETURNPRICE as returnprice,
+	  			C_CONTACTMSGTYPE as contactmsgtype,
+
+	  			
+	  			C_REBATEMONEY as rebatemoney,
+	  			
+	  			C_OPERATEAGENT as operateagent,
+	  			
+	  			C_BACKPOINTINFO as backpointinfo,
+	  			
+	  			C_PAYMENTURL as paymenturl,
+	  			
+	  			(SELECT C_STATEMEMO FROM T_OUTORDERSTATE  WHERE C_AGENTID=3 AND C_STATEID=T.C_EXTORDERSTATUS) AS extorderstatusstr,
+
+				C_CURRPLATFEE as currplatfee,
+				
+			    C_ISBACKINSUR as isbackinsur,
+			   C_EXTRETURNPRICE AS  extreturnprice			
+	  			
+     from T_ORDERINFO T
+    where ID = #id#
+  </select>
+   
+  <insert id="createOrderinfo" parameterClass="Orderinfo">
+   <selectKey resultClass="long" type="pre" keyProperty="id">
+      SELECT ISNULL(MAX(ID),0)+1 AS VALUE FROM T_ORDERINFO
+    </selectKey>
+    insert into T_ORDERINFO ( 
+    	ID,
+	  			C_ORDERNUMBER,
+	  			C_BUYAGENTID,
+	  			C_POLICYID,
+	  			C_CONTACTNAME,
+	  			C_CONTACTMOBILE,
+	  			C_MEMO,
+	  			C_B2CPROFIT,
+	  			C_CCLIENTPAYPRICE,
+	  			C_RECEIPT,
+	  			C_ADDRESA,
+	  			C_ORDERSTATUS,
+	  			C_OLDORDERSTATUS,
+	  			C_TOTALFUELFEE,
+	  			C_TOTALAIRPORTFEE,
+	  			C_TOTALTICKETPRICE,
+	  			C_CREATETIME,
+	  			C_RELATIONORDERID,
+	  			C_TUISTATUS,
+	  			C_CONTACTTEL,
+	  			C_PNR,
+	  			C_PNRTXT,
+	  			C_PATTXT,
+	  			C_PAYSTATUS,
+	  			C_PAYMETHOD,
+	  			C_SALEAGENTID,
+	  			C_CUSTOMERUSERID,
+	  			C_NOTETYPE,
+	  			C_CONTACTEMAIL,
+	  			C_CONTACTFAX,
+	  			C_PRINTTIME,
+	  			C_RATEVALUE,
+	  			C_UCODE,
+	  			C_LANGUAGE,
+	  			C_POSTMONEY,
+	  			C_POSTNAME,
+	  			C_POSTMOBILE,
+	  			C_USERID,
+	  			C_OPERATINGSTATE,
+	  			C_UPDATETIME,
+	  			C_FENXIAOUSERID,
+	  			C_FENXIAOOPERSTATE,
+	  			C_FENXIAOUPDATETIME,
+	  			C_POSTCODE,
+	  			C_ORDERTYPE,
+	  			C_GAIORDERID,
+	  			C_FXSSUOTIME,
+	  			C_GYSSUOTIME,
+	  			C_QUXIAOTIME,
+	  			C_BIGPNR,
+	  			C_PEISONGSTATUS,
+	  			C_PEISONGRENID,
+	  			C_PICKONENAME,
+	  			C_PICKONEPHONE,
+	  			C_BUSYSTATUS,
+	  			C_GUAZHANGRENID,
+	  			C_PEISONGDATE,
+	  			C_NEWPNR,
+	  			C_NEWTICNUM,
+	  			C_NEWORDERNUM,
+	  			C_CUSTOMERAGENTID,
+	  			
+	  			C_EXTPOLICYID,
+	  			C_POLICYAGENTID,
+	  			C_EXTORDERID,
+	  			C_NEWEXTORDERID,
+	  			C_EXTORDERSTATUS,
+	  			C_EXTORDERPOLICYID,
+	  			C_EXTORDEREPOLICYID,
+	  			C_EXTORDERPRICE,
+	  			C_EXTORDERCREATETIME,
+	  			C_FENXIAOSHANGFANDIAN,
+	  			C_CREDITCARDID,
+	  			C_SHENGCANGORDERID,
+	  			C_FKMETHOD,
+	  			C_SHENGCANGOLDTN,
+	  			C_ISSHENGCANG,
+	  			C_TOTALANJIAN,
+	  			C_TOTALOTHERFEE,
+	  			C_INTERNAL,
+	  			C_CASHIER,
+	  			C_ZHEKOUJINE,
+	  			C_ISPRINT,
+
+	  			C_ISMULITY,
+	  			 C_RETURNPRICE,
+	  			 C_CONTACTMSGTYPE,
+	  			C_REBATEMONEY,
+	  			C_OPERATEAGENT,
+	  			C_BACKPOINTINFO,
+	  			C_PAYMENTURL,
+
+				C_CURRPLATFEE,
+				C_ISBACKINSUR,
+				C_EXTRETURNPRICE
+
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						'A'+convert(NVARCHAR,(#id#+10000)),
+	  					
+							#buyagentid:DECIMAL#,
+						
+							#policyid:DECIMAL#,
+						
+	  						#contactname#,
+	  					
+	  						#contactmobile#,
+	  					
+	  						#memo#,
+	  						
+	  						#b2cprofit:DECIMAL#,
+	  						
+	  						#cclientpayprice:DECIMAL#,
+	  					
+							#receipt:DECIMAL#,
+						
+	  						#addresa#,
+	  					
+							#orderstatus:DECIMAL#,
+							#oldorderstatus:DECIMAL#,
+						
+							#totalfuelfee:DECIMAL#,
+						
+							#totalairportfee:DECIMAL#,
+						
+							#totalticketprice:DECIMAL#,
+						
+	  						#createtime#,
+	  					
+							#relationorderid:DECIMAL#,
+						
+							#tuistatus:DECIMAL#,
+						
+	  						#contacttel#,
+	  					
+	  						#pnr#,
+	  						
+	  						#pnrtxt#,
+	  						
+	  						#pattxt#,
+	  					
+							#paystatus:DECIMAL#,
+						
+							#paymethod:DECIMAL#,
+						
+							#saleagentid:DECIMAL#,
+						
+							#customeruserid:DECIMAL#,
+						
+							#notetype:DECIMAL#,
+						
+	  						#contactemail#,
+	  					
+	  						#contactfax#,
+	  					
+	  						#printtime#,
+	  					
+							#ratevalue:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+							#language:DECIMAL#,
+						
+						
+						
+							#postmoney:DECIMAL#,
+						
+	  						#postname#,
+	  					
+	  						#postmobile#,
+	  						
+	  						#userid#,
+	  						
+	  						#operatingstate#,
+	  						
+	  						#updatetime#,
+	  						
+	  						#fenxiaouserid#,
+	  						
+	  						#fenxiaooperstate#,
+	  						
+	  						#fenxiaoupdatetime#,
+	  					
+	  						#postcode#,
+	  					
+  							#ordertype:DECIMAL#,
+  							
+  							#gaiorderid#,
+  							
+  							#fxssuotime#,
+	  						
+	  						#gyssuotime#,
+	  						
+	  						#quxiaotime#,
+  							
+  							#bigpnr#,
+  							#peisongstatus:DECIMAL#,
+  							#peisongrenid:DECIMAL#,
+  							#pickonename#,
+  							#pickonephone#,
+  							#busystatus#,
+  							#guazhangrenid#,
+  							#peisongdate#,
+  							#newpnr#,
+  							#newticnum#,
+  							#newordernum#,
+  							#customeragentid#,
+  							#extpolicyid#,
+  							#policyagentid#,
+  							#extorderid#,
+  							#newextorderid#,
+  							#extorderstatus#,
+  							#extorderpolicyid#,
+  							#extorderepolicyid#,
+  							#extorderprice:DECIMAL#,
+  							#extordercreatetime#,
+  							#fenxiaoshangfandian:DECIMAL#,
+  							#creditcardid#,
+  							#shengcangorderid#,
+  							#fkmethod#,
+  							#shengcangoldtn#,
+  							#isshengcang#,
+  							#totalanjian#,
+  							#totalotherfee#,
+  							#internal#,
+  							#cashier#,
+  							#zhekoujine:DECIMAL#,
+  							#isprint#,
+
+  							#ismutily#,
+  							#returnprice#,
+  							#contactmsgtype#,
+  							#rebatemoney:DECIMAL#,
+  							#operateagent#,
+  							#backpointinfo#,
+  							#paymenturl#,
+
+							#currplatfee#,
+							#isbackinsur#,
+							#extreturnprice#
+    )
+  </insert>
+  
+  <delete id="deleteOrderinfo" parameterClass="long">
+    delete from T_ORDERINFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateOrderinfo" parameterClass="Orderinfo">
+    update T_ORDERINFO 
+    set 
+    	C_ORDERNUMBER = #ordernumber#,
+	  					C_BUYAGENTID = #buyagentid:DECIMAL#,
+						C_POLICYID = #policyid:DECIMAL#,
+						C_CONTACTNAME = #contactname#,
+	  					C_CONTACTMOBILE = #contactmobile#,
+	  					C_MEMO = #memo#,
+	  					C_RECEIPT = #receipt:DECIMAL#,
+						C_ADDRESA = #addresa#,
+	  					C_ORDERSTATUS = #orderstatus:DECIMAL#,
+	  					C_OLDORDERSTATUS = #oldorderstatus:DECIMAL#,
+						C_TOTALFUELFEE = #totalfuelfee:DECIMAL#,
+						C_TOTALAIRPORTFEE = #totalairportfee:DECIMAL#,
+						C_TOTALTICKETPRICE = #totalticketprice:DECIMAL#,
+						C_CREATETIME = #createtime#,
+	  					C_RELATIONORDERID = #relationorderid:DECIMAL#,
+						C_TUISTATUS = #tuistatus:DECIMAL#,
+						C_CONTACTTEL = #contacttel#,
+	  					C_PNR = #pnr#,
+	  					C_PNRTXT = #pnrtxt#,
+	  					C_PATTXT = #pattxt#,
+	  					C_PAYSTATUS = #paystatus:DECIMAL#,
+						C_PAYMETHOD = #paymethod:DECIMAL#,
+						C_SALEAGENTID = #saleagentid:DECIMAL#,
+						C_CUSTOMERUSERID = #customeruserid:DECIMAL#,
+						C_NOTETYPE = #notetype:DECIMAL#,
+						C_CONTACTEMAIL = #contactemail#,
+	  					C_CONTACTFAX = #contactfax#,
+	  					C_PRINTTIME = #printtime#,
+	  					C_RATEVALUE = #ratevalue:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_POSTMONEY = #postmoney:DECIMAL#,
+						C_POSTNAME = #postname#,
+	  					C_POSTMOBILE = #postmobile#,
+	  					C_USERID = #userid#,
+	  					C_OPERATINGSTATE = #operatingstate#,
+	  					C_UPDATETIME = #updatetime#,
+	  					C_FENXIAOUSERID = #fenxiaouserid#,
+	  					C_FENXIAOOPERSTATE = #fenxiaooperstate#,
+	  					C_FENXIAOUPDATETIME = #fenxiaoupdatetime#,
+	  					C_POSTCODE = #postcode#,
+	  					C_ORDERTYPE = #ordertype:DECIMAL#,
+	  					C_GAIORDERID = #gaiorderid#,
+	  					C_FXSSUOTIME = #fxssuotime#,
+	  					C_GYSSUOTIME = #gyssuotime#,
+	  					C_QUXIAOTIME = #quxiaotime#,
+	  					C_BIGPNR = #bigpnr#,
+	  					C_PEISONGSTATUS=#peisongstatus#,
+	  					C_PEISONGRENID=#peisongrenid#,
+	  					C_PICKONENAME=#pickonename#,
+	  					C_PICKONEPHONE=#pickonephone#,
+	  					C_BUSYSTATUS=#busystatus#,
+	  					C_GUAZHANGRENID=#guazhangrenid#,
+	  					C_PEISONGDATE=#peisongdate#,
+	  					C_NEWPNR=#newpnr#,
+	  					C_NEWTICNUM=#newticnum#,
+	  					C_NEWORDERNUM=#newordernum#,
+	  					C_CUSTOMERAGENTID=#customeragentid#,
+	  					C_EXTPOLICYID=#extpolicyid#,
+	  					C_POLICYAGENTID=#policyagentid#,
+	  					C_EXTORDERID=#extorderid#,
+	  					C_NEWEXTORDERID=#newextorderid#,
+	  					C_EXTORDERSTATUS=#extorderstatus#,
+  						C_EXTORDERPOLICYID=#extorderpolicyid#,
+  						C_EXTORDEREPOLICYID=#extorderepolicyid#,
+  						C_EXTORDERPRICE=#extorderprice:DECIMAL#,
+  						C_EXTORDERCREATETIME=#extordercreatetime#,
+  						C_FENXIAOSHANGFANDIAN=#fenxiaoshangfandian#,
+  						C_CREDITCARDID=#creditcardid#,
+  						C_SHENGCANGORDERID=#shengcangorderid#,
+  						C_FKMETHOD=#fkmethod#,
+  						C_SHENGCANGOLDTN=#shengcangoldtn#,
+  						C_ISSHENGCANG=#isshengcang#,
+  						C_TOTALANJIAN=#totalanjian#,
+  						C_TOTALOTHERFEE=#totalotherfee#,
+  						C_INTERNAL=#internal#,
+  						C_CASHIER=#cashier#,
+  						C_ZHEKOUJINE=#zhekoujine#,
+  						C_ISPRINT=#isprint#,
+  						
+						C_CCLIENTPAYPRICE = #cclientpayprice:DECIMAL#,
+						C_B2CPROFIT = #b2cprofit:DECIMAL#,
+						
+  						C_ISMULITY=#ismutily#,
+  						C_RETURNPRICE=#returnprice#,
+  						C_CONTACTMSGTYPE=#contactmsgtype#,
+  						C_REBATEMONEY=#rebatemoney#,
+  						C_OPERATEAGENT=#operateagent#,
+  						C_BACKPOINTINFO=#backpointinfo#,
+  						C_PAYMENTURL=#paymenturl#,
+  						C_CURRPLATFEE=#currplatfee#,
+  						C_ISBACKINSUR=#isbackinsur#,
+  						C_EXTRETURNPRICE=#extreturnprice#
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

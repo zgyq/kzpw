@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 系统角色权限关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Sysroleright createSysroleright(Sysroleright sysroleright) throws SQLException;
+	
+	/**
+	 * 删除 系统角色权限关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSysroleright(long id);
+	
+	
+	/**
+	 * 修改 系统角色权限关联
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSysroleright(Sysroleright sysroleright);
+
+		
+	/**
+	 * 修改 系统角色权限关联但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSysrolerightIgnoreNull(Sysroleright sysroleright);
+		
+	
+	/**
+	 * 查找 系统角色权限关联
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSysroleright(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 系统角色权限关联
+	 * @param id
+	 * @return
+	 */
+	public Sysroleright findSysroleright(long id);
+	
+	
+	/** 
+	 * 查找 系统角色权限关联
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSysrolerightForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找系统角色权限关联
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSysrolerightBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 系统角色权限关联
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSysrolerightBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSysrolerightBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISysrolerightComponent sysrolerightComponent;
+	  
+ 	
+ 	public ISysrolerightComponent getSysrolerightComponent() {
+		return sysrolerightComponent;
+	}
+	public void setSysrolerightComponent(ISysrolerightComponent  sysrolerightComponent) {
+		this.sysrolerightComponent = sysrolerightComponent;
+	}
+	/**
+	 * 创建 系统角色权限关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Sysroleright createSysroleright(Sysroleright sysroleright) throws SQLException{
+	
+		return sysrolerightComponent.createSysroleright(sysroleright);
+	}
+	/**
+	 * 删除 系统角色权限关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSysroleright(long id){
+	
+		return sysrolerightComponent.deleteSysroleright(id);
+	}
+	
+	
+	/**
+	 * 修改 系统角色权限关联
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSysroleright(Sysroleright sysroleright){
+		return sysrolerightComponent.updateSysroleright(sysroleright);
+	
+	}
+
+		
+	/**
+	 * 修改 系统角色权限关联但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSysrolerightIgnoreNull(Sysroleright sysroleright){
+			return sysrolerightComponent.updateSysrolerightIgnoreNull(sysroleright);
+	
+	}
+	
+	/**
+	 * 查找 系统角色权限关联
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSysroleright(String where, String orderby,int limit,int offset){
+		return sysrolerightComponent.findAllSysroleright(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 系统角色权限关联
+	 * @param id
+	 * @return
+	 */
+	public Sysroleright findSysroleright(long id){
+		return sysrolerightComponent.findSysroleright(id);
+	}
+	
+	/** 
+	 * 查找 系统角色权限关联
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSysrolerightForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return sysrolerightComponent.findAllSysroleright(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找系统角色权限关联
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSysrolerightBySql(String sql,int limit,int offset){
+		return sysrolerightComponent.findAllSysroleright(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 系统角色权限关联
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSysrolerightBySql(String sql){
+		return sysrolerightComponent.excuteSysrolerightBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSysrolerightBySql(String sql){
+		return sysrolerightComponent.countSysrolerightBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Department">
+  
+  <typeAlias alias="Department" type="com.yf.b2b2g.bean.Department"/>
+  <resultMap id="resultDepartmentMap" class="Department">
+  <result property="id" column="ID" />
+  <result property="comid" column="C_COMID" />
+  <result property="deptname" column="C_DEPTNAME" />
+  <result property="deptid" column="C_DEPTID" />
+  <result property="parentid" column="C_PARENTID" />
+  <result property="parentstr" column="C_PARENTSTR" />
+  <result property="note" column="C_NOTE" />
+  </resultMap>
+  <select id="findDepartment" parameterClass="long" resultMap="resultDepartmentMap">
+    SELECT * FROM T_B2GDEPT where ID = #id#
+  </select>
+  <select id="findAllDepartmentByComid" parameterClass="long" resultMap="resultDepartmentMap">  
+    SELECT * FROM T_B2GDEPT WHERE C_COMID=#value#
+  </select>
+  
+  <select id="findAllDepartmentByParentid" parameterClass="long" resultMap="resultDepartmentMap">  
+    SELECT * FROM T_B2GDEPT WHERE CHARINDEX(','+CONVERT(NVARCHAR,#value#)+',',','+C_PARENTSTR+',')>0
+  </select>
+  <select id="findUnderDeptByParentid" parameterClass="long" resultMap="resultDepartmentMap">  
+    SELECT * FROM T_B2GDEPT WHERE C_PARENTID=#value#
+  </select>
+  
+  <select id="findParentDeptByid" parameterClass="long" resultMap="resultDepartmentMap">  
+   SELECT * FROM T_B2GDEPT WHERE C_COMID=(SELECT C_COMID FROM T_B2GDEPT WHERE ID=#id#) AND CHARINDEX (','+CONVERT(NVARCHAR,ID)+',',(SELECT ','+C_PARENTSTR+',' FROM T_B2GDEPT WHERE ID=#id#))>0  AND ID!=#id#
+  </select>
+  
+    <insert id="createDepartment" parameterClass="Department"  >
+    <selectKey resultClass="long" type="pre" keyProperty="id">
+      SELECT ISNULL(MAX(ID),0)+1 AS VALUE FROM T_B2GDEPT
+    </selectKey>
+   INSERT INTO T_B2GDEPT (ID,C_COMID,C_DEPTNAME,C_DEPTID,C_PARENTID,C_NOTE)
+   VALUES(#id#,#comid#,#deptname#,#deptid#,#parentid#,#note#)
+   </insert>
+  
+  <update id="updateDepartment"  parameterClass="Department" >
+     UPDATE T_B2GDEPT 
+     <dynamic prepend="SET">
+      <isNotNull prepend="," property="deptname">C_DEPTNAME=#deptname#</isNotNull>
+      <isNotNull prepend="," property="deptid">C_DEPTID=#deptid#</isNotNull>
+      <isNotNull prepend="," property="note">C_NOTE=#note#</isNotNull>
+     </dynamic>
+     WHERE ID=#id#
+  </update>
+ 
+ <delete id="deleteDepartment" parameterClass="long">
+ DELETE T_B2GDEPT WHERE ID=#id#
+ </delete>
+  
+   
+ 
+</sqlMap>
+ 
+ 

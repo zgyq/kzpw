@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Scenicspot">
+  
+  <typeAlias alias="Scenicspot" type="com.yf.system.base.scenicspot.Scenicspot"/>
+  
+
+  <resultMap id="resultScenicspotMap" class="Scenicspot">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="image" column="C_IMAGE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="sort" column="C_SORT"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+  
+     <result property="regionid" column="C_REGIONID"/>
+  
+     <result property="cityid" column="C_CITYID"/>
+     
+      <result property="price" column="C_PRICE"/>
+   
+  </resultMap>
+  
+  <select id="findAllScenicspot"  resultMap="resultScenicspotMap"  parameterClass="java.util.Map">
+  
+    select * from T_SCENICSPOT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllScenicspotBySql"  resultMap="resultScenicspotMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteScenicspotBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countScenicspotBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SCENICSPOT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findScenicspot" parameterClass="long" resultClass="Scenicspot">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_DESCRIPTION as description,
+	  			C_IMAGE as image,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_SORT as sort,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language,
+	  			C_REGIONID as regionid,
+	  			C_PRICE as price,
+	  			C_CITYID as cityid 
+     from T_SCENICSPOT
+    where ID = #id#
+  </select>
+   
+  <insert id="createScenicspot" parameterClass="Scenicspot">
+    insert into T_SCENICSPOT ( 
+    	ID,
+	  			C_NAME,
+	  			C_DESCRIPTION,
+	  			C_IMAGE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_SORT,
+	  			C_UCODE,
+	  			C_PRICE,
+	  			C_LANGUAGE,
+	  			C_REGIONID,
+	  			C_CITYID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#description#,
+	  					
+	  						#image#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#sort:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+							#price:DECIMAL#,
+						
+							#language:DECIMAL#,
+						
+							#regionid:DECIMAL#,
+						
+  							#cityid:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteScenicspot" parameterClass="long">
+    delete from T_SCENICSPOT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateScenicspot" parameterClass="Scenicspot">
+    update T_SCENICSPOT 
+    set 
+    	C_NAME = #name#,
+	  					C_DESCRIPTION = #description#,
+	  					C_IMAGE = #image#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_SORT = #sort:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_PRICE = #price:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_REGIONID = #regionid:DECIMAL#,
+						C_CITYID = #cityid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

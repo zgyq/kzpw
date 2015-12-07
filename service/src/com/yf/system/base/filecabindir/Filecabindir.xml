@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Filecabindir">
+  
+  <typeAlias alias="Filecabindir" type="com.yf.system.base.filecabindir.Filecabindir"/>
+  
+
+  <resultMap id="resultFilecabindirMap" class="Filecabindir">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="parentid" column="C_PARENTID"/>
+  
+     <result property="parentidstr" column="C_PARENTIDSTR"/>
+  
+     <result property="descrition" column="C_DESCRITION"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="right" column="C_RIGHT"/>
+  
+     <result property="craeteid" column="C_CREATEID"/>
+   
+  </resultMap>
+  
+  <select id="findAllFilecabindir"  resultMap="resultFilecabindirMap"  parameterClass="java.util.Map">
+  
+    select * from T_FILECABINDIR
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllFilecabindirBySql"  resultMap="resultFilecabindirMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteFilecabindirBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countFilecabindirBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_FILECABINDIR
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findFilecabindir" parameterClass="long" resultClass="Filecabindir">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_PARENTID as parentid,
+	  			C_PARENTIDSTR as parentidstr,
+	  			C_DESCRITION as descrition,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_RIGHT as [right],
+	  			C_CREATEID as craeteid 
+     from T_FILECABINDIR
+    where ID = #id#
+  </select>
+   
+  <insert id="createFilecabindir" parameterClass="Filecabindir">
+    insert into T_FILECABINDIR ( 
+    	ID,
+	  			C_NAME,
+	  			C_PARENTID,
+	  			C_PARENTIDSTR,
+	  			C_DESCRITION,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_RIGHT,
+	  			C_CREATEID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+							#parentid#,
+						
+	  						#parentidstr#,
+	  					
+	  						#descrition#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+	  						#right#,
+	  					
+  							#craeteid#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteFilecabindir" parameterClass="long">
+    delete from T_FILECABINDIR
+    where ID = #id#
+  </delete>
+	
+  <update id="updateFilecabindir" parameterClass="Filecabindir">
+    update T_FILECABINDIR 
+    set 
+    	C_NAME = #name#,
+	  					C_PARENTID = #parentid:DECIMAL#,
+						C_PARENTIDSTR = #parentidstr#,
+	  					C_DESCRITION = #descrition#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_RIGHT = #right#,
+	  					C_CREATEID = #craeteid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

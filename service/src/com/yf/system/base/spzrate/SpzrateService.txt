@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 特价政策表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spzrate createSpzrate(Spzrate spzrate) throws SQLException;
+	
+	/**
+	 * 删除 特价政策表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpzrate(long id);
+	
+	
+	/**
+	 * 修改 特价政策表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpzrate(Spzrate spzrate);
+
+		
+	/**
+	 * 修改 特价政策表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpzrateIgnoreNull(Spzrate spzrate);
+		
+	
+	/**
+	 * 查找 特价政策表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpzrate(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 特价政策表
+	 * @param id
+	 * @return
+	 */
+	public Spzrate findSpzrate(long id);
+	
+	/**
+	 * 查找 特价政策表 by language
+	 * @param id
+	 * @return
+	 */
+	public Spzrate findSpzratebylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 特价政策表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpzrateForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找特价政策表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpzrateBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 特价政策表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpzrateBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpzrateBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISpzrateComponent spzrateComponent;
+	  
+ 	
+ 	public ISpzrateComponent getSpzrateComponent() {
+		return spzrateComponent;
+	}
+	public void setSpzrateComponent(ISpzrateComponent  spzrateComponent) {
+		this.spzrateComponent = spzrateComponent;
+	}
+	/**
+	 * 创建 特价政策表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spzrate createSpzrate(Spzrate spzrate) throws SQLException{
+	
+		return spzrateComponent.createSpzrate(spzrate);
+	}
+	/**
+	 * 删除 特价政策表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpzrate(long id){
+	
+		return spzrateComponent.deleteSpzrate(id);
+	}
+	
+	
+	/**
+	 * 修改 特价政策表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpzrate(Spzrate spzrate){
+		return spzrateComponent.updateSpzrate(spzrate);
+	
+	}
+
+		
+	/**
+	 * 修改 特价政策表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpzrateIgnoreNull(Spzrate spzrate){
+			return spzrateComponent.updateSpzrateIgnoreNull(spzrate);
+	
+	}
+	
+	/**
+	 * 查找 特价政策表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpzrate(String where, String orderby,int limit,int offset){
+		return spzrateComponent.findAllSpzrate(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 特价政策表
+	 * @param id
+	 * @return
+	 */
+	public Spzrate findSpzrate(long id){
+		return spzrateComponent.findSpzrate(id);
+	}
+	
+	/**
+	 * 查找 特价政策表
+	 * @param id
+	 * @return
+	 */
+	public Spzrate findSpzratebylanguage(long id,Integer language){
+		return spzrateComponent.findSpzratebylanguage(id,language);
+	}
+	/** 
+	 * 查找 特价政策表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpzrateForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return spzrateComponent.findAllSpzrate(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找特价政策表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpzrateBySql(String sql,int limit,int offset){
+		return spzrateComponent.findAllSpzrate(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 特价政策表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpzrateBySql(String sql){
+		return spzrateComponent.excuteSpzrateBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpzrateBySql(String sql){
+		return spzrateComponent.countSpzrateBySql(sql);
+	}
+	
+	
+

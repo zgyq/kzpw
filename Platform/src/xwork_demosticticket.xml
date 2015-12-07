@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="demosticticket" extends="default">
+	 <action name="demosticticket" class="com.yf.system.back.action.B2bDemosticTicket">
+      <result name="success" type="dispatcher">
+        <param name="location">domesticticket/ticket.jsp</param>
+      </result>
+      <result name="tolist" type="dispatcher">
+        <param name="location">domesticticket/list.jsp</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+  </package>
+</xwork>

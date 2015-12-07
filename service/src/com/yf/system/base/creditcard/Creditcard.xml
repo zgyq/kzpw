@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Creditcard">
+  
+  <typeAlias alias="Creditcard" type="com.yf.system.base.creditcard.Creditcard"/>
+  
+
+  <resultMap id="resultCreditcardMap" class="Creditcard">
+  
+     <result property="ID" column="ID"/>
+  
+     <result property="customeruserid" column="C_CUSTOMERUSERID"/>
+  
+     <result property="creditbank" column="C_CREDITBANK"/>
+  
+     <result property="creditnumber" column="C_CREDITNUMBER"/>
+  
+     <result property="creditexpiry" column="C_CREDITEXPIRY"/>
+  
+     <result property="creditcheckcode" column="C_CREDITCHECKCODE"/>
+     
+     <result property="hotelorderid" column="C_HOTELORDERID"/>
+     
+     <result property="cardyear" column="C_CARDYEAR"/>
+     
+     <result property="cardmonth" column="C_CARDMONTH"/>
+     
+     <result property="cardname" column="C_CARDNAME"/>
+     
+     <result property="idtype" column="C_IDTYPE"/>
+     
+     <result property="idno" column="C_IDNO"/>
+   
+  </resultMap>
+  
+  <select id="findAllCreditcard"  resultMap="resultCreditcardMap"  parameterClass="java.util.Map">
+  
+    select * from T_CREDITCARD
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCreditcardBySql"  resultMap="resultCreditcardMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCreditcardBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCreditcardBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CREDITCARD
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCreditcard" parameterClass="long" resultClass="Creditcard">
+    select 
+    	ID as ID,
+	  			C_CUSTOMERUSERID as customeruserid,
+	  			C_CREDITBANK as creditbank,
+	  			C_CREDITNUMBER as creditnumber,
+	  			C_CREDITEXPIRY as creditexpiry,
+	  			C_IDNO as idno,
+	  			C_IDTYPE as idtype,
+	  			C_CARDNAME as cardname,
+	  			C_CARDMONTH as cardmonth,
+	  			C_CARDYEAR as cardyear,
+	  			C_HOTELORDERID as hotelorderid,
+	  			C_CREDITCHECKCODE as creditcheckcode 
+     from T_CREDITCARD
+    where ID = #id#
+  </select>
+   
+  <insert id="createCreditcard" parameterClass="Creditcard">
+    insert into T_CREDITCARD ( 
+    	ID,
+	  			C_CUSTOMERUSERID,
+	  			C_CREDITBANK,
+	  			C_CREDITNUMBER,
+	  			C_CREDITEXPIRY,
+	  			C_HOTELORDERID,
+	  			C_CARDYEAR,
+	  			C_CARDMONTH,
+	  			C_CARDNAME,
+	  			C_IDTYPE,
+	  			C_IDNO,
+	  			C_CREDITCHECKCODE 
+    )
+    values (
+    	
+	  						#ID#,
+	  					
+	  						#customeruserid#,
+	  					
+	  						#creditbank#,
+	  					
+	  						#creditnumber#,
+	  					
+	  						#creditexpiry#,
+	  						
+	  						#hotelorderid#,
+	  					
+	  						#cardyear#,
+	  						
+	  						#cardmonth#,
+	  						
+	  						#cardname#,
+	  						
+	  						#idtype#,
+	  						
+	  						#idno#,
+	  					
+	  						#creditcheckcode#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCreditcard" parameterClass="long">
+    delete from T_CREDITCARD
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCreditcard" parameterClass="Creditcard">
+    update T_CREDITCARD 
+    set 
+    	ID = #ID#,
+	  					C_CUSTOMERUSERID = #customeruserid#,
+	  					C_CREDITBANK = #creditbank#,
+	  					C_CREDITNUMBER = #creditnumber#,
+	  					C_CREDITEXPIRY = #creditexpiry#,
+	  					C_IDNO = #idno#,
+			  			C_IDTYPE = #idtype#,
+			  			C_CARDNAME = #cardname#,
+			  			C_CARDMONTH = #cardmonth#,
+			  			C_CARDYEAR = #cardyear#,
+			  			C_HOTELORDERID = #hotelorderid#,
+	  					C_CREDITCHECKCODE = #creditcheckcode#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

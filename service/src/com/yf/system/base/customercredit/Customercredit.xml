@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Customercredit">
+  
+  <typeAlias alias="Customercredit" type="com.yf.system.base.customercredit.Customercredit"/>
+  
+
+  <resultMap id="resultCustomercreditMap" class="Customercredit">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="credittypeid" column="C_CREDITTYPEID"/>
+  
+     <result property="creditnumber" column="C_CREDITNUMBER"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="refid" column="C_REFID"/>
+  
+     <result property="passportvalidity" column="C_PASSPORTVALIDITY"/>
+  
+     <result property="nationality" column="C_NATIONALITY"/>
+  
+     <result property="issuingauthority" column="C_ISSUINGAUTHORITY"/>
+     
+     <result property="staus" column="C_STAUS"/>
+   
+  </resultMap>
+  
+  <select id="findAllCustomercredit"  resultMap="resultCustomercreditMap"  parameterClass="java.util.Map">
+  
+    select * from T_CUSTOMERCREDIT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCustomercreditBySql"  resultMap="resultCustomercreditMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCustomercreditBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCustomercreditBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CUSTOMERCREDIT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCustomercredit" parameterClass="long" resultClass="Customercredit">
+    select 
+    	ID as id,
+	  			C_CREDITTYPEID as credittypeid,
+	  			C_CREDITNUMBER as creditnumber,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_TYPE as type,
+	  			C_REFID as refid,
+	  			C_PASSPORTVALIDITY as passportvalidity,
+	  			C_NATIONALITY as nationality,
+	  			C_STAUS as staus,
+	  			C_ISSUINGAUTHORITY as issuingauthority 
+     from T_CUSTOMERCREDIT
+    where ID = #id#
+  </select>
+   
+  <insert id="createCustomercredit" parameterClass="Customercredit">
+    insert into T_CUSTOMERCREDIT ( 
+    	ID,
+	  			C_CREDITTYPEID,
+	  			C_CREDITNUMBER,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_TYPE,
+	  			C_REFID,
+	  			C_PASSPORTVALIDITY,
+	  			C_NATIONALITY,
+	  			C_STAUS,
+	  			C_ISSUINGAUTHORITY 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#credittypeid:DECIMAL#,
+						
+	  						#creditnumber#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#type:DECIMAL#,
+						
+							#refid:DECIMAL#,
+						
+	  						#passportvalidity#,
+	  					
+	  						#nationality#,
+	  						
+	  						#staus#,
+	  					
+	  						#issuingauthority#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCustomercredit" parameterClass="long">
+    delete from T_CUSTOMERCREDIT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCustomercredit" parameterClass="Customercredit">
+    update T_CUSTOMERCREDIT 
+    set 
+    	C_CREDITTYPEID = #credittypeid:DECIMAL#,
+						C_CREDITNUMBER = #creditnumber#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_TYPE = #type:DECIMAL#,
+	  					C_STAUS = #staus:DECIMAL#,
+						C_REFID = #refid:DECIMAL#,
+						C_PASSPORTVALIDITY = #passportvalidity#,
+	  					C_NATIONALITY = #nationality#,
+	  					C_ISSUINGAUTHORITY = #issuingauthority#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

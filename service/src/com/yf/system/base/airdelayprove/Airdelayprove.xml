@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Airdelayprove">
+  
+  <typeAlias alias="Airdelayprove" type="com.yf.system.base.airdelayprove.Airdelayprove"/>
+  
+
+  <resultMap id="resultAirdelayproveMap" class="Airdelayprove">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="airnum" column="C_AIRNUM"/>
+  
+     <result property="angentid" column="C_ANGENTID"/>
+  
+     <result property="pnr" column="C_PNR"/>
+  
+     <result property="stime" column="C_STIME"/>
+  
+     <result property="descinfo" column="C_DESCINFO"/>
+  
+     <result property="remark" column="C_REMARK"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="urldesc" column="C_URLDESC"/>
+   
+  </resultMap>
+  
+  <select id="findAllAirdelayprove"  resultMap="resultAirdelayproveMap"  parameterClass="java.util.Map">
+  
+    select * from T_AIRDELAYPROVE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllAirdelayproveBySql"  resultMap="resultAirdelayproveMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteAirdelayproveBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countAirdelayproveBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_AIRDELAYPROVE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findAirdelayprove" parameterClass="long" resultClass="Airdelayprove">
+    select 
+    	ID as id,
+	  			C_AIRNUM as airnum,
+	  			C_ANGENTID as angentid,
+	  			C_PNR as pnr,
+	  			C_STIME as stime,
+	  			C_DESCINFO as descinfo,
+	  			C_REMARK as remark,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state,
+	  			C_MEMBERID as memberid,
+	  			C_URLDESC as urldesc 
+     from T_AIRDELAYPROVE
+    where ID = #id#
+  </select>
+   
+  <insert id="createAirdelayprove" parameterClass="Airdelayprove">
+    insert into T_AIRDELAYPROVE ( 
+    	ID,
+	  			C_AIRNUM,
+	  			C_ANGENTID,
+	  			C_PNR,
+	  			C_STIME,
+	  			C_DESCINFO,
+	  			C_REMARK,
+	  			C_CREATETIME,
+	  			C_STATE,
+	  			C_MEMBERID,
+	  			C_URLDESC 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#airnum#,
+	  					
+							#angentid:DECIMAL#,
+						
+	  						#pnr#,
+	  					
+	  						#stime#,
+	  					
+	  						#descinfo#,
+	  					
+	  						#remark#,
+	  					
+	  						#createtime#,
+	  					
+							#state:DECIMAL#,
+						
+							#memberid:DECIMAL#,
+						
+	  						#urldesc#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteAirdelayprove" parameterClass="long">
+    delete from T_AIRDELAYPROVE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateAirdelayprove" parameterClass="Airdelayprove">
+    update T_AIRDELAYPROVE 
+    set 
+    	C_AIRNUM = #airnum#,
+	  					C_ANGENTID = #angentid:DECIMAL#,
+						C_PNR = #pnr#,
+	  					C_STIME = #stime#,
+	  					C_DESCINFO = #descinfo#,
+	  					C_REMARK = #remark#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#,
+						C_MEMBERID = #memberid:DECIMAL#,
+						C_URLDESC = #urldesc#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

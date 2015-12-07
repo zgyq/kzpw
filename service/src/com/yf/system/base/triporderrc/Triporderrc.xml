@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Triporderrc">
+  
+  <typeAlias alias="Triporderrc" type="com.yf.system.base.triporderrc.Triporderrc"/>
+  
+
+  <resultMap id="resultTriporderrcMap" class="Triporderrc">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="handleuser" column="C_HANDLEUSER"/>
+  
+     <result property="content" column="C_CONTENT"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="linktell" column="C_LINKTELL"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllTriporderrc"  resultMap="resultTriporderrcMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRIPORDERRC
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTriporderrcBySql"  resultMap="resultTriporderrcMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTriporderrcBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTriporderrcBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRIPORDERRC
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTriporderrc" parameterClass="long" resultClass="Triporderrc">
+    select 
+    	ID as id,
+	  			C_ORDERID as orderid,
+	  			C_HANDLEUSER as handleuser,
+	  			C_CONTENT as content,
+	  			C_CREATETIME as createtime,
+	  			C_DESCRIPTION as description,
+	  			C_LINKTELL as linktell,
+	  			C_STATE as state,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_TRIPORDERRC
+    where ID = #id#
+  </select>
+   
+  <insert id="createTriporderrc" parameterClass="Triporderrc">
+    insert into T_TRIPORDERRC ( 
+    	ID,
+	  			C_ORDERID,
+	  			C_HANDLEUSER,
+	  			C_CONTENT,
+	  			C_CREATETIME,
+	  			C_DESCRIPTION,
+	  			C_LINKTELL,
+	  			C_STATE,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#orderid:DECIMAL#,
+						
+	  						#handleuser#,
+	  					
+	  						#content#,
+	  					
+	  						#createtime#,
+	  					
+	  						#description#,
+	  					
+	  						#linktell#,
+	  					
+							#state:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTriporderrc" parameterClass="long">
+    delete from T_TRIPORDERRC
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTriporderrc" parameterClass="Triporderrc">
+    update T_TRIPORDERRC 
+    set 
+    	C_ORDERID = #orderid:DECIMAL#,
+						C_HANDLEUSER = #handleuser#,
+	  					C_CONTENT = #content#,
+	  					C_CREATETIME = #createtime#,
+	  					C_DESCRIPTION = #description#,
+	  					C_LINKTELL = #linktell#,
+	  					C_STATE = #state:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

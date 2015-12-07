@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Intermanager">
+  
+  <typeAlias alias="Intermanager" type="com.yf.system.base.intermanager.Intermanager"/>
+  
+
+  <resultMap id="resultIntermanagerMap" class="Intermanager">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="interurl" column="C_INTERURL"/>
+  
+     <result property="resourceip" column="C_RESOURCEIP"/>
+  
+     <result property="limittype" column="C_LIMITTYPE"/>
+  
+     <result property="limittimes" column="C_LIMITTIMES"/>
+  
+     <result property="effecttimes" column="C_EFFECTTIMES"/>
+  
+     <result property="starttime" column="C_STARTTIME"/>
+  
+     <result property="endtime" column="C_ENDTIME"/>
+  
+     <result property="curtime" column="C_CURTIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  
+  
+   <parameterMap id="spparametermap" class="java.util.HashMap" >    
+	    <parameter property="tblname" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>    
+	    <parameter property="strgetfields" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	    <parameter property="fldname" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	    <parameter property="pagesize" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+	    <parameter property="pageindex" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+	    <parameter property="ordertype" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>
+	    <parameter property="strwhere" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	    <parameter property="total" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>   
+	</parameterMap>  
+   <procedure id="sp_mypagenation"   resultClass="java.util.HashMap" remapResults="true" parameterMap="spparametermap">    
+    {call sp_mypagenation(?, ?, ?, ?, ?, ?, ?, ?)}    
+   </procedure>
+  
+  
+  <select id="findAllIntermanager"  resultMap="resultIntermanagerMap"  parameterClass="java.util.Map">
+  
+    select * from T_INTERMANAGER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+  
+  
+  
+   <select id="findAllIntermanagerBySql"  resultMap="resultIntermanagerMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteIntermanagerBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countIntermanagerBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_INTERMANAGER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findIntermanager" parameterClass="long" resultClass="Intermanager">
+    select 
+    	ID as id,
+	  			C_INTERURL as interurl,
+	  			C_RESOURCEIP as resourceip,
+	  			C_LIMITTYPE as limittype,
+	  			C_LIMITTIMES as limittimes,
+	  			C_EFFECTTIMES as effecttimes,
+	  			C_STARTTIME as starttime,
+	  			C_ENDTIME as endtime,
+	  			C_CURTIME as curtime,
+	  			C_STATE as state 
+     from T_INTERMANAGER
+    where ID = #id#
+  </select>
+   
+  <insert id="createIntermanager" parameterClass="Intermanager">
+    insert into T_INTERMANAGER ( 
+    	ID,
+	  			C_INTERURL,
+	  			C_RESOURCEIP,
+	  			C_LIMITTYPE,
+	  			C_LIMITTIMES,
+	  			C_EFFECTTIMES,
+	  			C_STARTTIME,
+	  			C_ENDTIME,
+	  			C_CURTIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#interurl#,
+	  					
+	  						#resourceip#,
+	  					
+							#limittype:DECIMAL#,
+						
+							#limittimes:DECIMAL#,
+						
+							#effecttimes:DECIMAL#,
+						
+	  						#starttime#,
+	  					
+	  						#endtime#,
+	  					
+	  						#curtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteIntermanager" parameterClass="long">
+    delete from T_INTERMANAGER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateIntermanager" parameterClass="Intermanager">
+    update T_INTERMANAGER 
+    set 
+    	C_INTERURL = #interurl#,
+	  					C_RESOURCEIP = #resourceip#,
+	  					C_LIMITTYPE = #limittype:DECIMAL#,
+						C_LIMITTIMES = #limittimes:DECIMAL#,
+						C_EFFECTTIMES = #effecttimes:DECIMAL#,
+						C_STARTTIME = #starttime#,
+	  					C_ENDTIME = #endtime#,
+	  					C_CURTIME = #curtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+  
+  <select id= "findMapResultBySql"   resultClass="java.util.HashMap" remapResults="true" parameterClass="java.util.Map"> 
+	$sql$
+  </select> 
+  
+  <procedure id= "findMapResultByProcedure"   resultClass= "java.util.HashMap" remapResults= "true" parameterClass="java.util.Map"> 
+	{call $procedure$}
+  </procedure> 
+  
+ 
+  
+ 
+</sqlMap>
+ 
+ 

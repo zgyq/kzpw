@@ -1,0 +1,102 @@
+@CHARSET "UTF-8";
+body
+{
+	margin: 0px;
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.tbA_btborder
+{
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #9BA3AD;
+}
+.tbB_allborder
+{
+	border: 1px solid #C0C0C0;
+	background-color: #F2F6FB;
+	color: #024291;
+}
+.inputA_default
+{
+
+	width: 80px;
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.inputB_submit
+{
+	display: block;
+    background-image: url('/images/SearchBut2.gif');
+    width: 91px;
+    height: 26px;
+    border: 0px;
+}
+.div_errmsg
+{
+	font-size:10pt;
+    color:#0055AA;
+    border: 0px;
+    width:300px;
+    height: 66px;
+    background-image: url('/images/PromptInfo.jpg');
+}
+.tdA_copyright
+{
+    font-family: Arial;
+    color: #8C8C8C;
+}
+
+
+.FontA01 {
+	font-family: "宋体";
+	font-size: 16px;
+	font-weight: bold;
+}
+.FontA02 {
+	font-family: "宋体";
+	font-size: 13px;
+}
+.FontA03
+{
+	font-family: "宋体";
+	font-size: 14px;
+	color: #064A9F;
+}
+.FontA04
+{
+	font-family: "宋体";
+	font-size: 12px;
+	color: #064A9F;
+}
+.tdbg01 {
+	background-color: #F2F7FB;
+}
+.tdbg02 {
+	background-color: #F1EFF0;
+}
+.tbS_bgborder
+{
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #024291;
+	background-color: #F2F6FB;
+}
+
+a.lnk1:link
+{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0044DD;
+}
+a.lnk1:visited
+{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0044DD;
+}
+a.lnk1:hover
+{
+    color: #FF6700;
+    text-decoration: underline;
+}

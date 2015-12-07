@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Sellreport">
+  
+  <typeAlias alias="Sellreport" type="com.yf.system.base.sellreport.Sellreport"/>
+  
+
+  <resultMap id="resultSellreportMap" class="Sellreport">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="rttime" column="C_RTTIME"/>
+  
+     <result property="ordercode" column="C_ORDERCODE"/>
+  
+     <result property="xiaolv" column="C_XIAOLV"/>
+  
+     <result property="username" column="C_USERNAME"/>
+  
+     <result property="pnr" column="C_PNR"/>
+  
+     <result property="number" column="C_NUMBER"/>
+  
+     <result property="recognizance" column="C_RECOGNIZANCE"/>
+  
+     <result property="subprice" column="C_SUBPRICE"/>
+  
+     <result property="jingjia" column="C_JINGJIA"/>
+  
+     <result property="jijianranyou" column="C_JIJIANRANYOU"/>
+  
+     <result property="poundage" column="C_POUNDAGE"/>
+  
+     <result property="pactprice" column="C_PACTPRICE"/>
+  
+     <result property="paytype" column="C_PAYTYPE"/>
+  
+     <result property="ordertype" column="C_ORDERTYPE"/>
+  
+     <result property="tickettype" column="C_TICKETTYPE"/>
+  
+     <result property="journeytype" column="C_JOURNEYTYPE"/>
+  
+     <result property="chupiaotype" column="C_CHUPIAOTYPE"/>
+  
+     <result property="office" column="C_OFFICE"/>
+  
+     <result property="passenger" column="C_PASSENGER"/>
+  
+     <result property="usertype" column="C_USERTYPE"/>
+  
+     <result property="startcity" column="C_STARTCITY"/>
+  
+     <result property="endcity" column="C_ENDCITY"/>
+  
+     <result property="sail" column="C_SAIL"/>
+  
+     <result property="aircompany" column="C_AIRCOMPANY"/>
+  
+     <result property="flightnumber" column="C_FLIGHTNUMBER"/>
+  
+     <result property="flighttime" column="C_FLIGHTTIME"/>
+  
+     <result property="cabin" column="C_CABIN"/>
+  
+     <result property="policy" column="C_POLICY"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="leafletsnet" column="C_LEAFLETSNET"/>
+  
+     <result property="jijian" column="C_JIJIAN"/>
+  
+     <result property="ranyou" column="C_RANYOU"/>
+  
+     <result property="jiesuanprice" column="C_JIESUANPRICE"/>
+  
+     <result property="payaircompany" column="C_PAYAIRCOMPANY"/>
+  
+     <result property="zhifuleixing" column="C_ZHIFULEIXING"/>
+  
+     <result property="laiyuan" column="C_LAIYUAN"/>
+  
+     <result property="houfan" column="C_HOUFAN"/>
+  
+     <result property="shijilirun" column="C_SHIJILIRUN"/>
+  
+     <result property="fuwufei" column="C_FUWUFEI"/>
+  
+     <result property="remark" column="C_REMARK"/>
+  
+     <result property="piaohao" column="C_PIAOHAO"/>
+   
+  </resultMap>
+  
+  <select id="findAllSellreport"  resultMap="resultSellreportMap"  parameterClass="java.util.Map">
+  
+    select * from T_SELLREPORT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSellreportBySql"  resultMap="resultSellreportMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSellreportBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSellreportBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SELLREPORT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSellreport" parameterClass="long" resultClass="Sellreport">
+    select 
+    	ID as id,
+	  			C_RTTIME as rttime,
+	  			C_ORDERCODE as ordercode,
+	  			C_XIAOLV as xiaolv,
+	  			C_USERNAME as username,
+	  			C_PNR as pnr,
+	  			C_NUMBER as number,
+	  			C_RECOGNIZANCE as recognizance,
+	  			C_SUBPRICE as subprice,
+	  			C_JINGJIA as jingjia,
+	  			C_JIJIANRANYOU as jijianranyou,
+	  			C_POUNDAGE as poundage,
+	  			C_PACTPRICE as pactprice,
+	  			C_PAYTYPE as paytype,
+	  			C_ORDERTYPE as ordertype,
+	  			C_TICKETTYPE as tickettype,
+	  			C_JOURNEYTYPE as journeytype,
+	  			C_CHUPIAOTYPE as chupiaotype,
+	  			C_OFFICE as office,
+	  			C_PASSENGER as passenger,
+	  			C_USERTYPE as usertype,
+	  			C_STARTCITY as startcity,
+	  			C_ENDCITY as endcity,
+	  			C_SAIL as sail,
+	  			C_AIRCOMPANY as aircompany,
+	  			C_FLIGHTNUMBER as flightnumber,
+	  			C_FLIGHTTIME as flighttime,
+	  			C_CABIN as cabin,
+	  			C_POLICY as policy,
+	  			C_PRICE as price,
+	  			C_LEAFLETSNET as leafletsnet,
+	  			C_JIJIAN as jijian,
+	  			C_RANYOU as ranyou,
+	  			C_JIESUANPRICE as jiesuanprice,
+	  			C_PAYAIRCOMPANY as payaircompany,
+	  			C_ZHIFULEIXING as zhifuleixing,
+	  			C_LAIYUAN as laiyuan,
+	  			C_HOUFAN as houfan,
+	  			C_SHIJILIRUN as shijilirun,
+	  			C_FUWUFEI as fuwufei,
+	  			C_REMARK as remark,
+	  			C_PIAOHAO as piaohao 
+     from T_SELLREPORT
+    where ID = #id#
+  </select>
+   
+  <insert id="createSellreport" parameterClass="Sellreport">
+    insert into T_SELLREPORT ( 
+    	ID,
+	  			C_RTTIME,
+	  			C_ORDERCODE,
+	  			C_XIAOLV,
+	  			C_USERNAME,
+	  			C_PNR,
+	  			C_NUMBER,
+	  			C_RECOGNIZANCE,
+	  			C_SUBPRICE,
+	  			C_JINGJIA,
+	  			C_JIJIANRANYOU,
+	  			C_POUNDAGE,
+	  			C_PACTPRICE,
+	  			C_PAYTYPE,
+	  			C_ORDERTYPE,
+	  			C_TICKETTYPE,
+	  			C_JOURNEYTYPE,
+	  			C_CHUPIAOTYPE,
+	  			C_OFFICE,
+	  			C_PASSENGER,
+	  			C_USERTYPE,
+	  			C_STARTCITY,
+	  			C_ENDCITY,
+	  			C_SAIL,
+	  			C_AIRCOMPANY,
+	  			C_FLIGHTNUMBER,
+	  			C_FLIGHTTIME,
+	  			C_CABIN,
+	  			C_POLICY,
+	  			C_PRICE,
+	  			C_LEAFLETSNET,
+	  			C_JIJIAN,
+	  			C_RANYOU,
+	  			C_JIESUANPRICE,
+	  			C_PAYAIRCOMPANY,
+	  			C_ZHIFULEIXING,
+	  			C_LAIYUAN,
+	  			C_HOUFAN,
+	  			C_SHIJILIRUN,
+	  			C_FUWUFEI,
+	  			C_REMARK,
+	  			C_PIAOHAO 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#rttime#,
+	  					
+	  						#ordercode#,
+	  					
+	  						#xiaolv#,
+	  					
+	  						#username#,
+	  					
+	  						#pnr#,
+	  					
+							#number:DECIMAL#,
+						
+							#recognizance:DECIMAL#,
+						
+							#subprice:DECIMAL#,
+						
+							#jingjia:DECIMAL#,
+						
+							#jijianranyou:DECIMAL#,
+						
+							#poundage:DECIMAL#,
+						
+							#pactprice:DECIMAL#,
+						
+	  						#paytype#,
+	  					
+	  						#ordertype#,
+	  					
+	  						#tickettype#,
+	  					
+	  						#journeytype#,
+	  					
+	  						#chupiaotype#,
+	  					
+	  						#office#,
+	  					
+	  						#passenger#,
+	  					
+	  						#usertype#,
+	  					
+	  						#startcity#,
+	  					
+	  						#endcity#,
+	  					
+	  						#sail#,
+	  					
+	  						#aircompany#,
+	  					
+	  						#flightnumber#,
+	  					
+	  						#flighttime#,
+	  					
+	  						#cabin#,
+	  					
+	  						#policy#,
+	  					
+							#price:DECIMAL#,
+						
+							#leafletsnet:DECIMAL#,
+						
+							#jijian:DECIMAL#,
+						
+							#ranyou:DECIMAL#,
+						
+							#jiesuanprice:DECIMAL#,
+						
+	  						#payaircompany#,
+	  					
+	  						#zhifuleixing#,
+	  					
+	  						#laiyuan#,
+	  					
+							#houfan:DECIMAL#,
+						
+							#shijilirun:DECIMAL#,
+						
+							#fuwufei:DECIMAL#,
+						
+	  						#remark#,
+	  					
+	  						#piaohao#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSellreport" parameterClass="long">
+    delete from T_SELLREPORT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSellreport" parameterClass="Sellreport">
+    update T_SELLREPORT 
+    set 
+    	C_RTTIME = #rttime#,
+	  					C_ORDERCODE = #ordercode#,
+	  					C_XIAOLV = #xiaolv#,
+	  					C_USERNAME = #username#,
+	  					C_PNR = #pnr#,
+	  					C_NUMBER = #number:DECIMAL#,
+						C_RECOGNIZANCE = #recognizance:DECIMAL#,
+						C_SUBPRICE = #subprice:DECIMAL#,
+						C_JINGJIA = #jingjia:DECIMAL#,
+						C_JIJIANRANYOU = #jijianranyou:DECIMAL#,
+						C_POUNDAGE = #poundage:DECIMAL#,
+						C_PACTPRICE = #pactprice:DECIMAL#,
+						C_PAYTYPE = #paytype#,
+	  					C_ORDERTYPE = #ordertype#,
+	  					C_TICKETTYPE = #tickettype#,
+	  					C_JOURNEYTYPE = #journeytype#,
+	  					C_CHUPIAOTYPE = #chupiaotype#,
+	  					C_OFFICE = #office#,
+	  					C_PASSENGER = #passenger#,
+	  					C_USERTYPE = #usertype#,
+	  					C_STARTCITY = #startcity#,
+	  					C_ENDCITY = #endcity#,
+	  					C_SAIL = #sail#,
+	  					C_AIRCOMPANY = #aircompany#,
+	  					C_FLIGHTNUMBER = #flightnumber#,
+	  					C_FLIGHTTIME = #flighttime#,
+	  					C_CABIN = #cabin#,
+	  					C_POLICY = #policy#,
+	  					C_PRICE = #price:DECIMAL#,
+						C_LEAFLETSNET = #leafletsnet:DECIMAL#,
+						C_JIJIAN = #jijian:DECIMAL#,
+						C_RANYOU = #ranyou:DECIMAL#,
+						C_JIESUANPRICE = #jiesuanprice:DECIMAL#,
+						C_PAYAIRCOMPANY = #payaircompany#,
+	  					C_ZHIFULEIXING = #zhifuleixing#,
+	  					C_LAIYUAN = #laiyuan#,
+	  					C_HOUFAN = #houfan:DECIMAL#,
+						C_SHIJILIRUN = #shijilirun:DECIMAL#,
+						C_FUWUFEI = #fuwufei:DECIMAL#,
+						C_REMARK = #remark#,
+	  					C_PIAOHAO = #piaohao#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

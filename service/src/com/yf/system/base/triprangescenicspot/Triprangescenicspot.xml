@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Triprangescenicspot">
+  
+  <typeAlias alias="Triprangescenicspot" type="com.yf.system.base.triprangescenicspot.Triprangescenicspot"/>
+  
+
+  <resultMap id="resultTriprangescenicspotMap" class="Triprangescenicspot">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="triprangeid" column="C_TRIPRANGEID"/>
+  
+     <result property="scenicspotid" column="C_SCENICSPOTID"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllTriprangescenicspot"  resultMap="resultTriprangescenicspotMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRIPRANGESCENICSPOT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTriprangescenicspotBySql"  resultMap="resultTriprangescenicspotMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTriprangescenicspotBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTriprangescenicspotBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRIPRANGESCENICSPOT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTriprangescenicspot" parameterClass="long" resultClass="Triprangescenicspot">
+    select 
+    	ID as id,
+	  			C_TRIPRANGEID as triprangeid,
+	  			C_SCENICSPOTID as scenicspotid,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_TRIPRANGESCENICSPOT
+    where ID = #id#
+  </select>
+   
+  <insert id="createTriprangescenicspot" parameterClass="Triprangescenicspot">
+    insert into T_TRIPRANGESCENICSPOT ( 
+    	ID,
+	  			C_TRIPRANGEID,
+	  			C_SCENICSPOTID,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#triprangeid:DECIMAL#,
+						
+							#scenicspotid:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTriprangescenicspot" parameterClass="long">
+    delete from T_TRIPRANGESCENICSPOT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTriprangescenicspot" parameterClass="Triprangescenicspot">
+    update T_TRIPRANGESCENICSPOT 
+    set 
+    	C_TRIPRANGEID = #triprangeid:DECIMAL#,
+						C_SCENICSPOTID = #scenicspotid:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

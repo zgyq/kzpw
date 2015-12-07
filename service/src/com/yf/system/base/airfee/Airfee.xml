@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Airfee">
+  
+  <typeAlias alias="Airfee" type="com.yf.system.base.airfee.Airfee"/>
+  
+
+  <resultMap id="resultAirfeeMap" class="Airfee">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="adultairportfee" column="C_ADULTAIRPORTFEE"/>
+  
+     <result property="chdairportfee" column="C_CHDAIRPORTFEE"/>
+  
+     <result property="babyairportfee" column="C_BABYAIRPORTFEE"/>
+  
+     <result property="nearadultairpotyfee" column="C_NEARADULTAIRPOTYFEE"/>
+  
+     <result property="nearchdairpotyfee" column="C_NEARCHDAIRPOTYFEE"/>
+  
+     <result property="nearbabyairportfee" column="C_NEARBABYAIRPORTFEE"/>
+  
+     <result property="adultfuelfee" column="C_ADULTFUELFEE"/>
+  
+     <result property="chdfuelfee" column="C_CHDFUELFEE"/>
+  
+     <result property="babyfuelfee" column="C_BABYFUELFEE"/>
+  
+     <result property="nearadultfuelfee" column="C_NEARADULTFUELFEE"/>
+  
+     <result property="nearchdfuelfee" column="C_NEARCHDFUELFEE"/>
+  
+     <result property="nearbabyfuelfee" column="C_NEARBABYFUELFEE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllAirfee"  resultMap="resultAirfeeMap"  parameterClass="java.util.Map">
+  
+    select * from T_AIRFEE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllAirfeeBySql"  resultMap="resultAirfeeMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteAirfeeBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countAirfeeBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_AIRFEE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findAirfee" parameterClass="long" resultClass="Airfee">
+    select 
+    	ID as id,
+	  			C_ADULTAIRPORTFEE as adultairportfee,
+	  			C_CHDAIRPORTFEE as chdairportfee,
+	  			C_BABYAIRPORTFEE as babyairportfee,
+	  			C_NEARADULTAIRPOTYFEE as nearadultairpotyfee,
+	  			C_NEARCHDAIRPOTYFEE as nearchdairpotyfee,
+	  			C_NEARBABYAIRPORTFEE as nearbabyairportfee,
+	  			C_ADULTFUELFEE as adultfuelfee,
+	  			C_CHDFUELFEE as chdfuelfee,
+	  			C_BABYFUELFEE as babyfuelfee,
+	  			C_NEARADULTFUELFEE as nearadultfuelfee,
+	  			C_NEARCHDFUELFEE as nearchdfuelfee,
+	  			C_NEARBABYFUELFEE as nearbabyfuelfee,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_AIRFEE
+    where ID = #id#
+  </select>
+   
+  <insert id="createAirfee" parameterClass="Airfee">
+    insert into T_AIRFEE ( 
+    	ID,
+	  			C_ADULTAIRPORTFEE,
+	  			C_CHDAIRPORTFEE,
+	  			C_BABYAIRPORTFEE,
+	  			C_NEARADULTAIRPOTYFEE,
+	  			C_NEARCHDAIRPOTYFEE,
+	  			C_NEARBABYAIRPORTFEE,
+	  			C_ADULTFUELFEE,
+	  			C_CHDFUELFEE,
+	  			C_BABYFUELFEE,
+	  			C_NEARADULTFUELFEE,
+	  			C_NEARCHDFUELFEE,
+	  			C_NEARBABYFUELFEE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#adultairportfee:DECIMAL#,
+						
+							#chdairportfee:DECIMAL#,
+						
+							#babyairportfee:DECIMAL#,
+						
+							#nearadultairpotyfee:DECIMAL#,
+						
+							#nearchdairpotyfee:DECIMAL#,
+						
+							#nearbabyairportfee:DECIMAL#,
+						
+							#adultfuelfee:DECIMAL#,
+						
+							#chdfuelfee:DECIMAL#,
+						
+							#babyfuelfee:DECIMAL#,
+						
+							#nearadultfuelfee:DECIMAL#,
+						
+							#nearchdfuelfee:DECIMAL#,
+						
+							#nearbabyfuelfee:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteAirfee" parameterClass="long">
+    delete from T_AIRFEE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateAirfee" parameterClass="Airfee">
+    update T_AIRFEE 
+    set 
+    	C_ADULTAIRPORTFEE = #adultairportfee:DECIMAL#,
+						C_CHDAIRPORTFEE = #chdairportfee:DECIMAL#,
+						C_BABYAIRPORTFEE = #babyairportfee:DECIMAL#,
+						C_NEARADULTAIRPOTYFEE = #nearadultairpotyfee:DECIMAL#,
+						C_NEARCHDAIRPOTYFEE = #nearchdairpotyfee:DECIMAL#,
+						C_NEARBABYAIRPORTFEE = #nearbabyairportfee:DECIMAL#,
+						C_ADULTFUELFEE = #adultfuelfee:DECIMAL#,
+						C_CHDFUELFEE = #chdfuelfee:DECIMAL#,
+						C_BABYFUELFEE = #babyfuelfee:DECIMAL#,
+						C_NEARADULTFUELFEE = #nearadultfuelfee:DECIMAL#,
+						C_NEARCHDFUELFEE = #nearchdfuelfee:DECIMAL#,
+						C_NEARBABYFUELFEE = #nearbabyfuelfee:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

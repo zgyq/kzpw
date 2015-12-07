@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+  <sqlMap namespace="Employee">  
+  <typeAlias alias="Employee" type="com.yf.b2b2g.bean.Employee"/>
+  <resultMap id="resultEmployeeMap" class="Employee">
+  <result property="id" column="ID" />
+  <result property="comid" column="C_COMID" />
+  <result property="username" column="C_USERNAME" />
+  <result property="ename" column="C_ENAME" />
+  <result property="sex" column="C_SEX" />
+  <result property="birthday" column="C_BIRTHDAY" />
+  <result property="phone" column="C_PHONE" />
+  <result property="emile" column="C_EMILE" />
+  <result property="connecttel" column="C_CONNECTTEL" />
+  <result property="deptid" column="C_DEPTID" />
+  <result property="job" column="C_JOB" />
+  <result property="costcenterid" column="C_COSTCENTERID" />
+  <result property="accountno" column="C_ACCOUNTNO" />
+  <result property="accountstate" column="C_ACCOUNTSTATE" />
+  <result property="accountstate" column="C_ACCOUNTSTATE" />
+  <result property="isapprove" column="C_ISAPPROVE" />
+  <result property="loginname" column="C_LOGINNAME" />
+  <result property="password" column="C_PASSWORD" />    
+  <result property="department.deptname" column="DEPTNAME" />    
+  <result property="roles" column="ID" select="findRolesByEid" /> 
+  </resultMap>
+  
+  <select id="findRolesByEid" parameterClass="long" resultClass="com.yf.b2b2g.bean.Role">
+    SELECT ID id,C_NAME name FROM T_B2GROLE WHERE ID IN (SELECT C_ROLEID FROM T_B2GUSERROLE WHERE C_EMPID=#value#)
+  </select>
+  
+  <sql id="wheresql">
+  <dynamic prepend="WHERE">
+    <isGreaterThan prepend="AND" property="comid" compareValue="0">
+     E.C_COMID=#comid#
+    </isGreaterThan>
+    <isGreaterThan prepend="AND" property="deptid" compareValue="0">
+     E.C_DEPTID=#deptid#
+    </isGreaterThan>
+    <isNotEmpty prepend="AND" property="username">
+     C_USERNAME LIKE '%'+#username#+'%'
+    </isNotEmpty>
+    <isNotEmpty prepend="AND" property="ename">
+     C_ENAME LIKE '%'+#ename#+'%'
+    </isNotEmpty>
+    <isNotEmpty prepend="AND" property="phone">
+     C_PHONE =#phone#
+    </isNotEmpty>
+    </dynamic>	
+  </sql>
+  
+   <select id="findAllEmployee" parameterClass="Employee" resultMap="resultEmployeeMap"  >  
+     SELECT E.*,D.C_DEPTNAME DEPTNAME FROM  T_EMPLOYEE E LEFT JOIN T_B2GDEPT D ON E.C_DEPTID=D.ID
+    <include refid="wheresql"/>
+   </select>
+  
+   <select id="countEmployee" parameterClass="Employee" resultClass="int" >
+      SELECT COUNT(*) FROM T_EMPLOYEE E
+     <include refid="wheresql" />
+   </select>
+      
+ 
+  <select id="findEmployee" parameterClass="long" resultMap="resultEmployeeMap">
+   SELECT E.*,D.C_DEPTNAME DEPTNAME  FROM T_EMPLOYEE E LEFT JOIN T_B2GDEPT D ON E.C_DEPTID=D.ID
+    where E.ID = #id#
+  </select>
+  <select id="findEmployeeByNameAndPwd" parameterClass="Employee" resultMap="resultEmployeeMap">
+   SELECT E.*,D.C_DEPTNAME DEPTNAME FROM  T_EMPLOYEE E LEFT JOIN T_B2GDEPT D ON E.C_DEPTID=D.ID
+     where C_LOGINNAME=#loginname# AND C_PASSWORD=#password#
+  </select>
+     
+  <insert id="createEmployee" parameterClass="Employee">
+    <selectKey resultClass="long" type="pre" keyProperty="id">
+      SELECT ISNULL(MAX(ID),0)+1 AS VALUE FROM T_EMPLOYEE
+    </selectKey>
+    insert into T_EMPLOYEE ( 
+    	     ID,
+    	     C_COMID,
+	         C_USERNAME,
+	         C_ENAME,
+	         C_SEX,
+	         C_BIRTHDAY,
+	         C_PHONE,
+	         C_EMILE,
+	         C_CONNECTTEL,
+	         C_DEPTID,
+	         C_JOB,
+	         C_COSTCENTERID,
+	         C_ACCOUNTNO,
+	         C_ACCOUNTSTATE,
+	         C_ISAPPROVE,
+	         C_LOGINNAME,
+	         C_PASSWORD
+	         )values (
+    	#id#,
+    	     #comid#,
+	         #username#,
+	         #ename#,
+	         #sex#,
+	         #birthday#,
+	         #phone#,
+	         #emile#,
+	         #connecttel#,
+	         #deptid#,
+	         #job#,
+	         #costcenterid#,
+	         #accountno#,
+	         1,
+	         #isapprove#,
+	         #loginname#,
+	         #password#)
+  </insert>
+  
+  <delete id="deleteEmployee" parameterClass="long">
+    delete from T_EMPLOYEE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateEmployee" parameterClass="Employee">
+    UPDATE T_EMPLOYEE 
+    <dynamic prepend="SET">
+	    <isNotNull prepend="," property="username">C_USERNAME =#username#</isNotNull>
+	    <isNotNull prepend="," property="ename">C_ENAME=#ename#</isNotNull>
+	    <isGreaterThan prepend="," property="sex" compareValue="-1">C_SEX =#sex#</isGreaterThan>
+	    <isNotNull prepend="," property="birthday">C_BIRTHDAY =#birthday#</isNotNull>
+	    <isNotNull prepend="," property="phone">C_PHONE =#phone#</isNotNull>
+	    <isNotNull prepend="," property="emile">C_EMILE =#emile#</isNotNull>
+	    <isNotNull prepend="," property="connecttel">C_CONNECTTEL =#connecttel#</isNotNull>
+	    <isGreaterThan prepend="," property="deptid" compareValue="0">C_DEPTID =#deptid#</isGreaterThan>
+	    <isNotNull prepend="," property="job">C_JOB =#job#</isNotNull>
+	    <isGreaterThan prepend="," property="deptid" compareValue="0">C_COSTCENTERID =#costcenterid#</isGreaterThan>
+	    <isNotNull prepend="," property="accountno">C_ACCOUNTNO =#accountno#</isNotNull>
+	    <isGreaterThan prepend="," property="accountstate" compareValue="-1">C_ACCOUNTSTATE=#accountstate#</isGreaterThan>
+	    <isGreaterThan prepend="," property="isapprove" compareValue="-1">C_ISAPPROVE=#isapprove#</isGreaterThan>	   
+	    <isNotNull prepend="," property="password">C_PASSWORD =#password#</isNotNull>
+    </dynamic>
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

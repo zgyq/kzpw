@@ -1,0 +1,1264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="hotel" extends="default">
+	
+	<action name="hotelpass" class="com.yf.system.back.action.HotelpassAction">
+      <result name="success" type="dispatcher">
+        <param name="location">member/hotelpass.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">member/hotelpass_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">hotelpass_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">hotelpass.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    
+    <!--  
+	<action name="hotelstar" class="com.yf.system.back.action.HotelstarAction">
+      <result name="success" type="dispatcher">
+        <param name="location">hotelfan/hotelstar.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">hotelfan/hotelstar_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">hotelfan/hotelstar_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">hotelstar.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>-->
+	<action name="hotelagent" class="com.yf.system.back.action.HotelagentAction">
+      <result name="success" type="dispatcher">
+        <param name="location">hotelfan/hotelagent.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">hotelfan/hotelagent_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">hotelfan/hotelagent_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">hotelagent.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    
+
+<!-- 
+	 <action name="dcampaign" class="com.yf.system.back.action.DcampaignAction">
+      <result name="success" type="dispatcher">
+        <param name="location">change/dcampaign.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">change/dcampaign_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">change/dcampaign_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">dcampaign.action</param>
+      </result>
+      	<interceptor-ref name="upload" />
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+ -->
+	<action name="sysmessage"
+			class="com.yf.system.back.action.SysmessageAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotel/sysmessage.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">hotel/sysmessage_edit.jsp</param>
+			</result>
+			<result name="detail" type="dispatcher">
+				<param name="location">hotel/sysmessage_detail.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotel/sysmessage_check.jsp</param>
+			</result>
+			<result name="list" type="redirect">
+				<param name="location">sysmessage.action</param>
+			</result>
+			<result name="receiveMsgList" type="dispatcher">
+				<param name="location">hotel/receivemsglist.jsp</param>
+			</result>
+			<result name="sendMsgList" type="dispatcher">
+				<param name="location">hotel/sendmsglist.jsp</param>
+			</result>
+			<result name="sendMsg" type="dispatcher">
+				<param name="location">hotel/sendMsg.jsp</param>
+			</result>
+			<result name="toMsgList" type="redirect">
+				<param name="location">sysmessage!mySendMsg.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		
+	<action name="paymentrecorder"
+			class="com.yf.system.back.action.PaymentrecorderAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotel/paymentrecorder.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					hotel/paymentrecorder_edit.jsp
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					hotel/paymentrecorder_check.jsp
+				</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">paymentrecorder.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		
+	<action name="hoteluserbook"
+			class="com.yf.system.back.action.HoteluserbookAction">
+			<result name="success" type="dispatcher">
+				<param name="location">seachhotel/hotel.jsp</param>
+			</result>
+			<result name="sousuo" type="dispatcher">
+				<param name="location">seachhotel/hotellist.jsp</param>
+			</result>
+			<result name="sousuobrad" type="dispatcher">
+				<param name="location">brandhotel/bradhotellist.jsp</param>
+			</result>
+			<result name="zhuceqiday" type="dispatcher">
+				<param name="location">zhuceqiday.jsp</param>
+			</result>
+			<result name="userlogin" type="dispatcher">
+				<param name="location">login.jsp</param>
+			</result>
+			<result name="detail" type="dispatcher">
+				<param name="location">seachhotel/hotel_detail.jsp</param>
+			</result>
+			<result name="took" type="redirect">
+				<param name="location">/${forword}</param>
+			</result>
+			<result name="ok" type="dispatcher">
+				<param name="location">seachhotel/hotel_order_success.jsp</param>
+			</result>
+			<result name="shibai" type="dispatcher">
+				<param name="location">seachhotel/hotel_error.jsp</param>
+			</result>
+			<result name="quxiao" type="dispatcher">
+				<param name="location">login!tohotel_order.jspx</param>
+			</result>
+			<result name="yudingok" type="dispatcher">
+				<param name="location">seachhotel/hotel_ok.jsp</param>
+			</result>
+			<result name="toyuding" type="dispatcher">
+				<param name="location">seachhotel/hotel_yuding.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		
+	<action name="hotelfan" class="com.yf.system.back.action.HotelfanAction">
+      <result name="success" type="dispatcher">
+        <param name="location">hotelfan/hotelfan.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">hotelfan/hotelfan_edit.jsp</param>
+      </result>
+      <result name="ok" type="dispatcher">
+        <param name="location">hotelfan.action</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">hotelfan/hotelfan_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">hotel.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    
+		<action name="hotelreport"
+			class="com.yf.system.back.action.HotelreportAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotelreport/hotel_earnings.jsp</param>
+			</result>
+			<result name="tofan" type="dispatcher">
+				<param name="location">hotelreport/hotel_fan.jsp</param>
+			</result>
+			<result name="hotelreportsum" type="dispatcher">
+				<param name="location">
+					hotelreport/hotelreportsum.jsp
+				</param>
+			</result>
+			<result name="hotelreportsumprice" type="dispatcher">
+				<param name="location">
+					hotelreport/hotelreportsumprice.jsp
+				</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+
+	<!-- 
+		<action name="subscribehotel"
+			class="com.yf.system.back.action.SubscribeHotelAction">
+			<result name="success" type="dispatcher">
+				<param name="location">subscribehotel/hotel.jsp</param>
+			</result>
+			<result name="orderuserlogin" type="dispatcher">
+				<param name="location">
+					login!getMemberByOrder.action
+				</param>
+			</result>
+			<result name="sousuo" type="dispatcher">
+				<param name="location">
+					subscribehotel/hotellist.jsp
+				</param>
+			</result>
+			<result name="userlogin" type="dispatcher">
+				<param name="location">login.jsp</param>
+			</result>
+			<result name="detail" type="dispatcher">
+				<param name="location">
+					subscribehotel/hotel_detail.jsp
+				</param>
+			</result>
+			<result name="took" type="redirect">
+				<param name="location">/${forword}</param>
+			</result>
+			<result name="ok" type="dispatcher">
+				<param name="location">
+					subscribehotel/hotel_order_success.jsp
+				</param>
+			</result>
+			<result name="toyuding" type="dispatcher">
+				<param name="location">
+					subscribehotel/hotel_yuding.jsp
+				</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+ -->
+		<action name="city"
+			class="com.yf.system.back.action.CityAction">
+			<result name="success" type="dispatcher">
+				<param name="location">city.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">city_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">city_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">city.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="landmark"
+			class="com.yf.system.back.action.LandmarkAction">
+			<result name="success" type="dispatcher">
+				<param name="location">landmark.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">landmark_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">landmark_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">landmark.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="province"
+			class="com.yf.system.back.action.ProvinceAction">
+			<result name="success" type="dispatcher">
+				<param name="location">province.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">province_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">province_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">province.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="region"
+			class="com.yf.system.back.action.RegionAction">
+			<result name="success" type="dispatcher">
+				<param name="location">region.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">region_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">region_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">region.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="guest"
+			class="com.yf.system.back.action.GuestAction">
+			<result name="success" type="dispatcher">
+				<param name="location">guest.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">guest_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">guest_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">guest.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<!-- 酒店基本信息操作： 增删改 -->
+		<action name="hotel"
+			class="com.yf.system.back.action.HotelAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotel_manager.jsp</param>
+			</result>
+			<result name="interhotel" type="dispatcher">
+				<param name="location">interhotel_manager.jsp</param>
+			</result>
+			<result name="topiliang" type="dispatcher">
+				<param name="location">hotel_list.jsp</param>
+			</result>
+			<result name="tofan" type="dispatcher">
+				<param name="location">hotel_list_fan.jsp</param>
+			</result>
+			<result name="toout" type="dispatcher">
+				<param name="location">hotel_out.jsp</param>
+			</result>
+			<result name="piliang" type="dispatcher">
+				<param name="location">hotel_piliang.jsp</param>
+			</result>
+			<result name="toaddfan" type="dispatcher">
+				<param name="location">hotelfan_edit.jsp</param>
+			</result>
+			<result name="toinfo" type="dispatcher">
+				<param name="location">zhutuihotel_info.jsp</param>
+			</result>
+			<result name="editzhutui" type="dispatcher">
+				<param name="location">hotel!tozhutui.action</param>
+			</result>
+			<result name="tozhutui" type="dispatcher">
+				<param name="location">hotellist.jsp</param>
+			</result>
+			<result name="bordereaux" type="dispatcher">
+				<param name="location">
+					hotel/hotel_bordereaux.jsp
+				</param>
+			</result>
+			<result name="bordereaux_fan" type="dispatcher">
+				<param name="location">
+					hotelreport/hotel_fan.jsp
+				</param>
+			</result>
+			<result name="toorder" type="dispatcher">
+				<param name="location">
+					hotelorder/hotelorderlist.jsp
+				</param>
+			</result>
+			<result name="add" type="dispatcher">
+				<param name="location">hotel_add.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">hotel_tabs.jsp</param>
+			</result>
+			<result name="details" type="dispatcher">
+				<param name="location">hotel_look_tabs.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotel_check_tabs.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">hotel.action</param>
+			</result>
+			<result name="addsuccess" type="dispatcher">
+				<param name="location">
+					hotel_tabs.jsp?remotetabs=2
+				</param>
+			</result>
+			<result name="to_shows" type="dispatcher">
+				<param name="location">
+					hotel_look_tabs.jsp?remotetabs=10
+				</param>
+			</result>
+			<result name="price_check" type="dispatcher">
+				<param name="location">
+					hotel_check_tabs.jsp?remotetabs=10
+				</param>
+			</result>
+			<result name="show" type="dispatcher">
+				<param name="location">hotelprice_look.jsp</param>
+			</result>
+			<result name="checkshow" type="dispatcher">
+				<param name="location">hotelprice_check.jsp</param>
+			</result>
+			<result name="topricelist" type="dispatcher">
+				<param name="location">hotel_pricelists.jsp</param>
+			</result>
+			<result name="topricechecklist" type="dispatcher">
+				<param name="location">
+					hotel_pricelists_check.jsp
+				</param>
+			</result>
+			<result name="import" type="dispatcher">
+				<param name="location">hotel/hotel_import.jsp</param>
+			</result>
+			<result name="ebookinghotels" type="dispatcher">
+				<param name="location">ebooking/select_hotel.jsp</param>
+			</result>
+			<result name="toaddebookinguser" type="dispatcher">
+				<param name="location">customeruser!toSupplyUsersList.action</param>
+			</result>
+			<interceptor-ref name="upload" />
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<!-- 酒店基本信息操作： 增删改 -->
+
+		<action name="hotelbasicinfo"
+			class="com.yf.system.back.action.HotelBasicInfoAction">
+			<result name="edit" type="dispatcher">
+				<param name="location">hotel_info.jsp</param>
+			</result>
+			<result name="look" type="dispatcher">
+				<param name="location">hotel_look_info.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotel_info_check.jsp</param>
+			</result>
+			<result name="addsuccess" type="dispatcher">
+				<param name="location">
+					hotel_tabs.jsp?remotetabs=2
+				</param>
+			</result>
+			<result name="addsuccess1" type="dispatcher">
+				<param name="location">
+					hotel_tabs.jsp?remotetabs=1
+				</param>
+			</result>
+			<result name="add" type="redirect">
+				<param name="location">${forword}</param>
+			</result>
+			<result name="edit2" type="dispatcher">
+				<param name="location">hotel_tabs.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+
+		<!-- 酒店状态 -->
+		<action name="hotelstate"
+			class="com.yf.system.back.action.HotelStateAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotelstate.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">hotelstate_edit.jsp</param>
+			</result>
+			<result name="editsuccess" type="dispatcher">
+				<param name="location">
+					hotel_tabs.jsp?remotetabs=9
+				</param>
+			</result>
+			<result name="tabs" type="dispatcher">
+				<param name="location">hotel_tabs.jsp</param>
+			</result>
+			<result name="look" type="dispatcher">
+				<param name="location">hotelstate_look.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotelstate_check.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<!-- 酒店图片 -->
+
+		<action name="hotelimage"
+			class="com.yf.system.back.action.HotelimageAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotelimage.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">hotelimage_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotelimage_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">
+					hotel_tabs.jsp?remotetabs=8
+				</param>
+			</result>
+			<result name="forward" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<result name="forward2" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<result name="tabs" type="dispatcher">
+				<param name="location">hotel_tabs.jsp</param>
+			</result>
+			<result name="look" type="dispatcher">
+				<param name="location">hotelimage_look.jsp</param>
+			</result>
+			<interceptor-ref name="upload" />
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+
+		<!-- 酒店地标 -->
+		<action name="hotellandmark"
+			class="com.yf.system.back.action.HotellandmarkAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotellandmark.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">hotellandmark_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotellandmark_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">
+					hotel_tabs.jsp?remotetabs=6
+				</param>
+			</result>
+			<result name="forward" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<result name="forward2" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<result name="tabs" type="dispatcher">
+				<param name="location">hotel_tabs.jsp</param>
+			</result>
+			<result name="look" type="dispatcher">
+				<param name="location">hotellandmark_look.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+
+		<action name="hotelnoauditingorder"
+			class="com.yf.system.back.action.HotelNoAuditingOrderAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotelnoauditingorder.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">hotelorder_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotelorder_auditing.jsp</param>
+			</result>
+			<result name="list" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="hotelnoconfirmorder"
+			class="com.yf.system.back.action.HotelNoConfirmOrderAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotelnoconfirmorder.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">
+					hotelordermodify!toedit.action
+				</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotelorder_confirm.jsp</param>
+			</result>
+			<result name="list" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="hotelnoputupconfirmorder"
+			class="com.yf.system.back.action.HotelNoPutupConfirmOrderAction">
+			<result name="success" type="dispatcher">
+				<param name="location">
+					hotelnoputupconfirmorder.jsp
+				</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">hotelorder_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">
+					hotelorder_putupconfirm.jsp
+				</param>
+			</result>
+			<result name="list" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="hotelquestionorder"
+			class="com.yf.system.back.action.HotelQuestionOrderAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotelquestionorder.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotelorder_question.jsp</param>
+			</result>
+			<result name="list" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="hotelwholeorder"
+			class="com.yf.system.back.action.HotelWholeOrderAction">
+			<result name="toxunjiahan" type="dispatcher">
+				<param name="location">chuanzheng/xunjiahan.jsp</param>
+			</result>
+			<result name="tointerdetails" type="dispatcher">
+				<param name="location">interhotelorder_info.jsp</param>
+			</result>
+			
+			<result name="toshangjin" type="dispatcher">
+				<param name="location">chuanzheng/shangjin.jsp</param>
+			</result>
+			<result name="shibai" type="dispatcher">
+				<param name="location">hotel/shibai.jsp</param>
+			</result>
+			<result name="toauditing" type="dispatcher">
+				<param name="location">hotelauditing.jsp</param>
+			</result>
+			<result name="totianjin" type="dispatcher">
+				<param name="location">
+					chuanzheng/tianjinbinjiang.jsp
+				</param>
+			</result>
+			<result name="toyft" type="dispatcher">
+				<param name="location">
+					chuanzheng/yuanfengtong.jsp
+				</param>
+			</result>
+			<result name="tojiudian" type="dispatcher">
+				<param name="location">
+					chuanzheng/jiudianyuding.jsp
+				</param>
+			</result>
+			
+			<result name="tointerorder" type="dispatcher">
+				<param name="location">
+					interhotelorderlist.jsp
+				</param>
+			</result>
+			
+			<result name="success" type="dispatcher">
+				<param name="location">hotelwhileorder.jsp</param>
+			</result>
+			<result name="xianjie" type="dispatcher">
+				<param name="location">hotelorderlist_jie.jsp</param>
+			</result>
+			<result name="yihui" type="dispatcher">
+				<param name="location">hotelorderlist_yihui.jsp</param>
+			</result>
+			<result name="yujie" type="dispatcher">
+				<param name="location">
+					yufuhotelorderlist_jie.jsp
+				</param>
+			</result>
+			<result name="yuyihui" type="dispatcher">
+				<param name="location">
+					hotelorderlist_yuyihui.jsp
+				</param>
+			</result>
+			<result name="toorder" type="dispatcher">
+				<param name="location">hotelorderlist.jsp</param>
+			</result>
+			<result name="toyufu" type="dispatcher">
+				<param name="location">yufuhotelorderlist.jsp</param>
+			</result>
+			<result name="tochuanzhen" type="dispatcher">
+				<param name="location">chuanzhen.jsp</param>
+			</result>
+			<result name="todetails" type="dispatcher">
+				<param name="location">hotelorder_details.jsp</param>
+			</result>
+			<result name="toyeshen" type="dispatcher">
+				<param name="location">hotelorder_yeshen.jsp</param>
+			</result>
+			<result name="toyufudetails" type="dispatcher">
+				<param name="location">
+					yufuhotelorder_details.jsp
+				</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">hotelorder_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotelorder_whole.jsp</param>
+			</result>
+			<result name="list" type="redirect">
+				<param name="location">/${forward}</param>
+			</result>
+
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="hotelordermodify"
+			class="com.yf.system.back.action.HotelOrderModifyAction">
+			<result name="edit" type="dispatcher">
+				<param name="location">hotelorder_edit.jsp</param>
+			</result>
+			<result name="list" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<!-- 酒店价格维护 -->
+
+		<action name="hotelprice"
+			class="com.yf.system.back.action.HotelpriceAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotelprice.jsp</param>
+			</result>
+			<result name="update" type="dispatcher">
+				<param name="location">hotelprice_update.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">hotelprice_add.jsp</param>
+			</result>
+
+			<result name="topricelist" type="dispatcher">
+				<param name="location">hotel_price_lists.jsp</param>
+			</result>
+			<result name="to_tab" type="dispatcher">
+				<param name="location">
+					hotel_price_tabs.jsp?remotetabs=1
+				</param>
+			</result>
+
+			<result name="to_query" type="dispatcher">
+				<param name="location">
+					hotel_price_tabs.jsp?remotetabs=7
+				</param>
+			</result>
+
+			<result name="update_tab" type="dispatcher">
+				<param name="location">
+					hotel_price_tabs.jsp?remotetabs=3
+				</param>
+			</result>
+
+			<result name="show_tab" type="dispatcher">
+				<param name="location">
+					hotel_price_tabs.jsp?remotetabs=7
+				</param>
+			</result>
+
+			<result name="tba_update" type="dispatcher">
+				<param name="location">
+					hotel_price_tabs.jsp?remotetabs=3
+				</param>
+			</result>
+
+			<result name="show" type="dispatcher">
+				<param name="location">hotelprice_show.jsp</param>
+			</result>
+			<result name="batchlock" type="dispatcher">
+				<param name="location">hotelprice_batchlock.jsp</param>
+			</result>
+			<result name="unlock" type="dispatcher">
+				<param name="location">hotelprice_qiyong.jsp</param>
+			</result>
+
+			<result name="qiyong" type="dispatcher">
+				<param name="location">hotelprice_qiyong.jsp</param>
+			</result>
+			<result name="yanqi" type="dispatcher">
+				<param name="location">hotelprice_yanqi.jsp</param>
+			</result>
+			<result name="search" type="dispatcher">
+				<param name="location">hotelprice_search.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotelprice_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">hotelprice.action</param>
+			</result>
+			<result name="add" type="dispatcher">
+				<param name="location">hotelprice_tsadd.jsp</param>
+			</result>
+			<result name="add1" type="dispatcher">
+				<param name="location">hotelprice_addsuccess.jsp</param>
+			</result>
+			<result name="detail" type="dispatcher">
+				<param name="location">
+					hotelprice_details_edit.jsp
+				</param>
+			</result>
+			<result name="vindicatePrice" type="dispatcher">
+				<param name="location">hotelprice_show.jsp</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+
+
+		<!-- 酒店合同 -->
+		<action name="hotelcontract"
+			class="com.yf.system.back.action.HotelcontractAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotelcontract.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">hotelcontract_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotelcontract_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">
+					hotel_tabs.jsp?remotetabs=2
+				</param>
+			</result>
+			<result name="forward" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<result name="forward2" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<result name="look" type="dispatcher">
+				<param name="location">hotelcontract_look.jsp</param>
+			</result>
+			<result name="tabs" type="dispatcher">
+				<param name="location">hotel_tabs.jsp</param>
+			</result>
+			<interceptor-ref name="upload" />
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<!-- 酒店注意事项 -->
+		<action name="hotelspec"
+			class="com.yf.system.back.action.HotelspecAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotelspec.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">hotelspec_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotelspec_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">
+					hotel_tabs.jsp?remotetabs=5
+				</param>
+			</result>
+			<result name="tabs" type="dispatcher">
+				<param name="location">hotel_tabs.jsp</param>
+			</result>
+			<result name="look" type="dispatcher">
+				<param name="location">hotelspec_look.jsp</param>
+			</result>
+			<result name="forward" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<result name="forward2" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<!--房态-->
+		<action name="roomstate"
+			class="com.yf.system.back.action.RoomstateAction">
+			<result name="success" type="dispatcher">
+				<param name="location">roomstate.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">roomstate_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">roomstate_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">
+					hotel_tabs.jsp?remotetabs=4
+				</param>
+			</result>
+			<result name="tabs" type="dispatcher">
+				<param name="location">hotel_tabs.jsp</param>
+			</result>
+			<result name="look" type="dispatcher">
+				<param name="location">roomstate_look.jsp</param>
+			</result>
+			<result name="forward" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<result name="forward2" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<!-- 酒店房型 -->
+		<action name="roomtype"
+			class="com.yf.system.back.action.RoomtypeAction">
+			<result name="success" type="dispatcher">
+				<param name="location">roomtype.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">roomtype_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">roomtype_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">
+					hotel_tabs.jsp?remotetabs=3
+				</param>
+			</result>
+			<result name="look" type="dispatcher">
+				<param name="location">roomtype_look.jsp</param>
+			</result>
+			<result name="tabs" type="dispatcher">
+				<param name="location">hotel_tabs.jsp</param>
+			</result>
+			<result name="forward" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<result name="forward2" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<!-- 酒店联系人 -->
+		<action name="hotellinkman"
+			class="com.yf.system.back.action.HotellinkmanAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotellinkman.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">hotellinkman_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotellinkman_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">
+					hotel_tabs.jsp?remotetabs=7
+				</param>
+			</result>
+			<result name="tabs" type="dispatcher">
+				<param name="location">hotel_tabs.jsp</param>
+			</result>
+			<result name="look" type="dispatcher">
+				<param name="location">hotellinkman_look.jsp</param>
+			</result>
+			<result name="forward" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<result name="forward2" type="redirect">
+				<param name="location">${forward}</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="roomstateback"
+			class="com.yf.system.back.action.RoomstatebackAction">
+			<result name="success" type="dispatcher">
+				<param name="location">roomstateback.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">roomstateback_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">roomstateback_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">roomstateback.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="roomstateback"
+			class="com.yf.system.back.action.RoomstatebackAction">
+			<result name="success" type="dispatcher">
+				<param name="location">roomstateback.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">roomstateback_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">roomstateback_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">roomstateback.action</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+
+		<!-- 酒店预订  -->
+		<action name="hotelsubscribe"
+			class="com.yf.system.back.action.HotelSubscribeAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotel_subscribe_list.jsp</param>
+			</result>
+			<result name="detail" type="dispatcher">
+				<param name="location">
+					hotel_subscribe_detail.jsp
+				</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<!-- 酒店订单  -->
+		<action name="hotelbook"
+			class="com.yf.system.back.action.HotelBookAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotel_book.jsp</param>
+			</result>
+			<result name="tobrowse" type="dispatcher">
+				<param name="location">hotel_browser.jsp</param>
+			</result>
+			<result name="booksuccess" type="dispatcher">
+				<param name="location">hotel_book_success.jsp</param>
+			</result>
+			<result name="orderuserlogin" type="dispatcher">
+				<param name="location">
+					login!getMemberByOrder.action
+				</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<!-- 酒店订单查询  -->
+		<action name="hotelordersearch"
+			class="com.yf.system.back.action.HotelOrderSearchAction">
+			<result name="success" type="dispatcher">
+				<param name="location">
+					hotelorder_search_list.jsp
+				</param>
+			</result>
+			<result name="detail" type="dispatcher">
+				<param name="location">
+					hotelorder_search_detail.jsp
+				</param>
+			</result>
+			<result name="hotelbordereaux" type="dispatcher">
+				<param name="location">
+					hotel/hotel_bordereaux_list.jsp
+				</param>
+			</result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		<action name="chaininfo"
+			class="com.yf.system.back.action.ChaininfoAction">
+			<result name="success" type="dispatcher">
+				<param name="location">hotel/chaininfo.jsp</param>
+			</result>
+			<result name="edit" type="dispatcher">
+				<param name="location">hotel/chaininfo_edit.jsp</param>
+			</result>
+			<result name="check" type="dispatcher">
+				<param name="location">hotel/chaininfo_check.jsp</param>
+			</result>
+			<result name="list" type="dispatcher">
+				<param name="location">chaininfo.action</param>
+			</result>
+			<interceptor-ref name="fileUpload"/>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+		
+		<!-- 星级 -->
+    <action name="hotelstar" class="com.yf.system.back.action.HotelstarAction">
+      <result name="success" type="dispatcher">
+        <param name="location">hotelfan/hotelstar.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">hotelfan/hotelstar_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">hotelfan/hotelstar_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">hotelstar.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+      <!-- 星级返点 -->
+    <action name="hotelstart" class="com.yf.system.back.action.HotelstartAction">
+      <result name="success" type="dispatcher">
+        <param name="location">hotelstart/hotelstart.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">hotelstart/hotelstart_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">hotelstart/hotelstart_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">hotelstart.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <!-- 酒店数据提供商 -->
+    <action name="dataprovide" class="com.yf.system.back.action.DataprovideAction">
+      <result name="success" type="dispatcher">
+        <param name="location">hotelstart/dataprovide.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">hotelstart/dataprovide_edit.jsp</param>
+      </result>
+       <result name="toaddstar" type="dispatcher">
+        <param name="location">hotelstart/hotelstart_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">hotelstart/dataprovide_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">dataprovide.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    
+    <action name="starrecord" class="com.yf.system.back.action.StarrecordAction">
+      <result name="success" type="dispatcher">
+        <param name="location">hotelstart/starrecord.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">hotelstart/starrecord_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">hotelstart/starrecord_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">starrecord.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="starreinfo" class="com.yf.system.back.action.StarreinfoAction">
+      <result name="success" type="dispatcher">
+        <param name="location">hotelstart/starreinfo.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">hotelstart/starreinfo_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">hotelstart/starreinfo_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">starreinfo.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="starsettlementtype" class="com.yf.system.back.action.StarsettlementtypeAction">
+      <result name="success" type="dispatcher">
+        <param name="location">hotelstart/starsettlementtype.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">hotelstart/starsettlementtype_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">hotelstart/starsettlementtype_check.jsp</param>
+      </result>
+       <result name="toAgentType" type="dispatcher">
+        <param name="location">hotelstart/angent_settlemtype.jsp</param>
+      </result>
+      <result name="addAngentType" type="dispatcher">
+        <param name="location">${forword}</param>
+      </result>
+      
+      <result name="list" type="dispatcher">
+        <param name="location">starsettlementtype.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+	</package>
+</xwork>

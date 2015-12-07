@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 信息类型
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Infotype createInfotype(Infotype infotype) throws SQLException;
+	
+	/**
+	 * 删除 信息类型
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteInfotype(long id);
+	
+	
+	/**
+	 * 修改 信息类型
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateInfotype(Infotype infotype);
+
+		
+	/**
+	 * 修改 信息类型但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateInfotypeIgnoreNull(Infotype infotype);
+		
+	
+	/**
+	 * 查找 信息类型
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInfotype(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 信息类型
+	 * @param id
+	 * @return
+	 */
+	public Infotype findInfotype(long id);
+	
+	
+	/** 
+	 * 查找 信息类型
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllInfotypeForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找信息类型
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInfotypeBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 信息类型
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteInfotypeBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countInfotypeBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IInfotypeComponent infotypeComponent;
+	  
+ 	
+ 	public IInfotypeComponent getInfotypeComponent() {
+		return infotypeComponent;
+	}
+	public void setInfotypeComponent(IInfotypeComponent  infotypeComponent) {
+		this.infotypeComponent = infotypeComponent;
+	}
+	/**
+	 * 创建 信息类型
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Infotype createInfotype(Infotype infotype) throws SQLException{
+	
+		return infotypeComponent.createInfotype(infotype);
+	}
+	/**
+	 * 删除 信息类型
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteInfotype(long id){
+	
+		return infotypeComponent.deleteInfotype(id);
+	}
+	
+	
+	/**
+	 * 修改 信息类型
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateInfotype(Infotype infotype){
+		return infotypeComponent.updateInfotype(infotype);
+	
+	}
+
+		
+	/**
+	 * 修改 信息类型但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateInfotypeIgnoreNull(Infotype infotype){
+			return infotypeComponent.updateInfotypeIgnoreNull(infotype);
+	
+	}
+	
+	/**
+	 * 查找 信息类型
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInfotype(String where, String orderby,int limit,int offset){
+		return infotypeComponent.findAllInfotype(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 信息类型
+	 * @param id
+	 * @return
+	 */
+	public Infotype findInfotype(long id){
+		return infotypeComponent.findInfotype(id);
+	}
+	
+	/** 
+	 * 查找 信息类型
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllInfotypeForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return infotypeComponent.findAllInfotype(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找信息类型
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInfotypeBySql(String sql,int limit,int offset){
+		return infotypeComponent.findAllInfotype(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 信息类型
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteInfotypeBySql(String sql){
+		return infotypeComponent.excuteInfotypeBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countInfotypeBySql(String sql){
+		return infotypeComponent.countInfotypeBySql(sql);
+	}
+	
+	
+

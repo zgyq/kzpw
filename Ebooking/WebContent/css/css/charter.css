@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+.search,.searchbot{ background:url(../images/base.png) no-repeat;}
+#main{width:1004px; margin:0 auto; margin-top:10px;}
+
+#left{ width:733px;}
+#left .bnt{ text-align:center; height:60px; padding-top:10px;}
+#charter{ width:260px;}
+#charter .search{ width:220px; height:31px; line-height:31px; background-position:0 -90px; padding-left:40px;}
+#charter .searchbot{ background-position:0 -300px; height:5px; line-height:5px; overflow:hidden}
+#charter .searchlist{ padding:10px 20px 10px 30px;}
+#charter .searchlist ul{}
+#charter .searchlist ul li{}
+#charter .searchbot{background-position:0 -300px; height:5px; line-height:5px; overflow:hidden}
+#charter .charterlist{ padding:10px 20px 10px 20px;}
+#charter .charterlist ul{}
+#charter .charterlist ul li{}

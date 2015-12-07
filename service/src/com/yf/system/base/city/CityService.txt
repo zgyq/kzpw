@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 地级市
+	 * @param id
+	 * @return deleted count 
+	 */
+	public City createCity(City city) throws SQLException;
+	
+	/**
+	 * 删除 地级市
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCity(long id);
+	
+	
+	/**
+	 * 修改 地级市
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCity(City city);
+
+		
+	/**
+	 * 修改 地级市但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCityIgnoreNull(City city);
+		
+	
+	/**
+	 * 查找 地级市
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCity(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 地级市
+	 * @param id
+	 * @return
+	 */
+	public City findCity(long id);
+	
+	/**
+	 * 查找 地级市 by language
+	 * @param id
+	 * @return
+	 */
+	public City findCitybylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 地级市
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCityForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找地级市
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCityBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 地级市
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCityBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCityBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ICityComponent cityComponent;
+	  
+ 	
+ 	public ICityComponent getCityComponent() {
+		return cityComponent;
+	}
+	public void setCityComponent(ICityComponent  cityComponent) {
+		this.cityComponent = cityComponent;
+	}
+	/**
+	 * 创建 地级市
+	 * @param id
+	 * @return deleted count 
+	 */
+	public City createCity(City city) throws SQLException{
+	
+		return cityComponent.createCity(city);
+	}
+	/**
+	 * 删除 地级市
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCity(long id){
+	
+		return cityComponent.deleteCity(id);
+	}
+	
+	
+	/**
+	 * 修改 地级市
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCity(City city){
+		return cityComponent.updateCity(city);
+	
+	}
+
+		
+	/**
+	 * 修改 地级市但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCityIgnoreNull(City city){
+			return cityComponent.updateCityIgnoreNull(city);
+	
+	}
+	
+	/**
+	 * 查找 地级市
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCity(String where, String orderby,int limit,int offset){
+		return cityComponent.findAllCity(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 地级市
+	 * @param id
+	 * @return
+	 */
+	public City findCity(long id){
+		return cityComponent.findCity(id);
+	}
+	
+	/**
+	 * 查找 地级市
+	 * @param id
+	 * @return
+	 */
+	public City findCitybylanguage(long id,Integer language){
+		return cityComponent.findCitybylanguage(id,language);
+	}
+	/** 
+	 * 查找 地级市
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCityForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return cityComponent.findAllCity(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找地级市
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCityBySql(String sql,int limit,int offset){
+		return cityComponent.findAllCity(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 地级市
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCityBySql(String sql){
+		return cityComponent.excuteCityBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCityBySql(String sql){
+		return cityComponent.countCityBySql(sql);
+	}
+	
+	
+

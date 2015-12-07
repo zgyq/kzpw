@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 大客户关联金额表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Biguser createBiguser(Biguser biguser) throws SQLException;
+	
+	/**
+	 * 删除 大客户关联金额表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteBiguser(long id);
+	
+	
+	/**
+	 * 修改 大客户关联金额表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateBiguser(Biguser biguser);
+
+		
+	/**
+	 * 修改 大客户关联金额表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateBiguserIgnoreNull(Biguser biguser);
+		
+	
+	/**
+	 * 查找 大客户关联金额表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllBiguser(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 大客户关联金额表
+	 * @param id
+	 * @return
+	 */
+	public Biguser findBiguser(long id);
+	
+	
+	/** 
+	 * 查找 大客户关联金额表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllBiguserForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找大客户关联金额表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllBiguserBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 大客户关联金额表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteBiguserBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countBiguserBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IBiguserComponent biguserComponent;
+	  
+ 	
+ 	public IBiguserComponent getBiguserComponent() {
+		return biguserComponent;
+	}
+	public void setBiguserComponent(IBiguserComponent  biguserComponent) {
+		this.biguserComponent = biguserComponent;
+	}
+	/**
+	 * 创建 大客户关联金额表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Biguser createBiguser(Biguser biguser) throws SQLException{
+	
+		return biguserComponent.createBiguser(biguser);
+	}
+	/**
+	 * 删除 大客户关联金额表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteBiguser(long id){
+	
+		return biguserComponent.deleteBiguser(id);
+	}
+	
+	
+	/**
+	 * 修改 大客户关联金额表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateBiguser(Biguser biguser){
+		return biguserComponent.updateBiguser(biguser);
+	
+	}
+
+		
+	/**
+	 * 修改 大客户关联金额表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateBiguserIgnoreNull(Biguser biguser){
+			return biguserComponent.updateBiguserIgnoreNull(biguser);
+	
+	}
+	
+	/**
+	 * 查找 大客户关联金额表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllBiguser(String where, String orderby,int limit,int offset){
+		return biguserComponent.findAllBiguser(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 大客户关联金额表
+	 * @param id
+	 * @return
+	 */
+	public Biguser findBiguser(long id){
+		return biguserComponent.findBiguser(id);
+	}
+	
+	/** 
+	 * 查找 大客户关联金额表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllBiguserForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return biguserComponent.findAllBiguser(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找大客户关联金额表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllBiguserBySql(String sql,int limit,int offset){
+		return biguserComponent.findAllBiguser(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 大客户关联金额表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteBiguserBySql(String sql){
+		return biguserComponent.excuteBiguserBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countBiguserBySql(String sql){
+		return biguserComponent.countBiguserBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Noterecorder">
+  
+  <typeAlias alias="Noterecorder" type="com.yf.system.base.noterecorder.Noterecorder"/>
+  
+
+  <resultMap id="resultNoterecorderMap" class="Noterecorder">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="sender" column="C_SENDER"/>
+  
+     <result property="reciver" column="C_RECIVER"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="content" column="C_CONTENT"/>
+  
+     <result property="title" column="C_TITLE"/>
+  
+     <result property="templateid" column="C_TEMPLATEID"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllNoterecorder"  resultMap="resultNoterecorderMap"  parameterClass="java.util.Map">
+  
+    select * from T_NOTERECORDER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllNoterecorderBySql"  resultMap="resultNoterecorderMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteNoterecorderBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countNoterecorderBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_NOTERECORDER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findNoterecorder" parameterClass="long" resultClass="Noterecorder">
+    select 
+    	ID as id,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_SENDER as sender,
+	  			C_RECIVER as reciver,
+	  			C_TYPE as type,
+	  			C_STATE as state,
+	  			C_CONTENT as content,
+	  			C_TITLE as title,
+	  			C_TEMPLATEID as templateid,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_NOTERECORDER
+    where ID = #id#
+  </select>
+   
+  <insert id="createNoterecorder" parameterClass="Noterecorder">
+    insert into T_NOTERECORDER ( 
+    	ID,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_SENDER,
+	  			C_RECIVER,
+	  			C_TYPE,
+	  			C_STATE,
+	  			C_CONTENT,
+	  			C_TITLE,
+	  			C_TEMPLATEID,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+	  						#sender#,
+	  					
+	  						#reciver#,
+	  					
+							#type:DECIMAL#,
+						
+							#state:DECIMAL#,
+						
+	  						#content#,
+	  					
+	  						#title#,
+	  					
+							#templateid:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteNoterecorder" parameterClass="long">
+    delete from T_NOTERECORDER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateNoterecorder" parameterClass="Noterecorder">
+    update T_NOTERECORDER 
+    set 
+    	C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_SENDER = #sender#,
+	  					C_RECIVER = #reciver#,
+	  					C_TYPE = #type:DECIMAL#,
+						C_STATE = #state:DECIMAL#,
+						C_CONTENT = #content#,
+	  					C_TITLE = #title#,
+	  					C_TEMPLATEID = #templateid:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

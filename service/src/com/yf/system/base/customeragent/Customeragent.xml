@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap 
+ PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="agent">
+  
+  <typeAlias alias="customeragent" type="com.yf.system.base.customeragent.Customeragent"/>
+  <typeAlias alias="bussiness" type="com.yf.system.base.bussiness.Bussiness"/>
+  
+
+  <resultMap id="resultBussinessMap" class="bussiness">  
+     <result property="id" column="ID"/>
+     <result property="name" column="C_NAME"/>  
+  </resultMap>
+  
+  <resultMap id="resultCustomeragentMap" class="customeragent">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="code" column="C_CODE"/>
+     
+     <result property="beizhu" column="C_BEIZHU"/>
+     
+     <result property="searchnum" column="C_SEARCHNUM"/>
+     
+     <result property="searchtoall" column="C_SEARCHTOALL"/>
+  
+     <result property="agenttype" column="C_AGENTTYPE"/>
+  
+     <result property="agentvsdate" column="C_AGENTVSDATE"/>
+  
+     <result property="agentvedate" column="C_AGENTVEDATE"/>
+  
+     <result property="agentcompanyname" column="C_AGENTCOMPANYNAME"/>
+  
+     <result property="agentshortname" column="C_AGENTSHORTNAME"/>
+  
+     <result property="agentcityid" column="C_AGENTCITYID"/>
+  
+     <result property="agenttel" column="C_AGENTTEL"/>
+  
+     <result property="agentaddress" column="C_AGENTADDRESS"/>
+  
+     <result property="agentpostcode" column="C_AGENTPOSTCODE"/>
+  
+     <result property="agentcontactname" column="C_AGENTCONTACTNAME"/>
+  
+     <result property="agentemail" column="C_AGENTEMAIL"/>
+  
+     <result property="agentcheckstatus" column="C_AGENTCHECKSTATUS"/>
+  
+     <result property="agentisenable" column="C_AGENTISENABLE"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="parentid" column="C_PARENTID"/>
+  
+     <result property="parentstr" column="C_PARENTSTR"/>
+  
+     <result property="brokenum" column="C_BROKENUM"/>
+  
+     <result property="childbrokenum" column="C_CHILDBROKENUM"/>
+  
+     <result property="alipayaccount" column="C_ALIPAYACCOUNT"/>
+  
+     <result property="tenpayaccount" column="C_TENPAYACCOUNT"/>
+  
+     <result property="kuaibillaccount" column="C_KUAIBILLACCOUNT"/>
+  
+     <result property="msnqq" column="C_MSNQQ"/>
+  
+     <result property="website" column="C_WEBSITE"/>
+     
+      <result property="bigtype" column="C_BIGTYPE"/>
+      
+      <result property="userid" column="C_USERID"/>
+      
+       <result property="cacode" column="C_CACODE"/>
+       
+       <result property="czcode" column="C_CZCODE"/>
+       
+       <result property="mucode" column="C_MUCODE"/>
+       
+      <result property="runtype" column="C_RUNTYPE"/>
+      
+      <result property="runvalue" column="C_RUNVALUE"/>
+      
+       <result property="agentphone" column="C_AGENTPHONE"/>
+  
+     <result property="agenrfax" column="C_AGENRFAX"/>
+  
+     <result property="agentmobile" column="C_AGENTMOBILE"/>
+  
+     <result property="agentother" column="C_AGENTOTHER"/>
+  
+     <result property="industry" column="C_INDUSTRY"/>
+  
+     <result property="financename" column="C_FINANCENAME"/>
+  
+     <result property="financephone" column="C_FINANCEPHONE"/>
+  
+     <result property="financefax" column="C_FINANCEFAX"/>
+  
+     <result property="financemobile" column="C_FINANCEMOBILE"/>
+  
+     <result property="financeemail" column="C_FINANCEEMAIL"/>
+     
+     <result property="airportcode" column="C_AIRPORTCODE"/>
+     
+     <result property="ismodifyret" column="C_ISMODIFYRET"/>
+     
+     <result property="worktimebegin" column="C_WORKTIMEBEGIN"/>
+     
+     <result property="smsmoney" column="C_SMSMONEY"/>
+      <result property="agentjibie" column="C_AGENTJIBIE"/>
+      
+      <result property="cityid" column="C_CITYID"/>
+      
+      <result property="vmoney"  column="C_VMONEY"/>
+      
+       <result property="type"  column="C_TYPE"/>
+       
+       <result property="fixedvalue"  column="C_FIXEDVALUE"/>
+      
+      <result property="worktimeend" column="C_WORKTIMEEND"/>
+            
+      <result property="isallowmonthpay" column="C_ISALLOWMONTHPAY"/>
+      <result property="allowlevelcount" column="C_ALLOWLEVELCOUNT"/>
+      <result property="allowproxycount" column="C_ALLOWPROXYCOUNT"/>
+      <result property="outticketmantel" column="C_OUTTICKETMANTEL"/>
+      <result property="outticketmanmsnqq" column="C_OUTTICKETMANMSNQQ"/>
+      <result property="backticketmantel" column="C_BACKTICKETMANTEL"/>
+      <result property="backticketmanmsnqq" column="C_BACKTICKETMANMSNQQ"/>
+      <!--  
+      以下配置为单向多对多 获取业务List-->
+     <result property="bussinesslist"  column="ID" select="getBussinessById" /> 
+        
+  </resultMap>
+  
+   <select id="getBussinessById" parameterClass="long" resultMap="resultBussinessMap">  
+   
+     select *  from T_BUSSINESS where ID IN (SELECT C_BUSSINESSID FROM T_AGENTREFBUSSINESS WHERE C_AGENTID = #value#)   
+     
+   </select>
+    <select id="findCustomeragent" parameterClass="long" resultMap="resultCustomeragentMap">
+    select *
+     from T_CUSTOMERAGENT  where ID = #id#
+  </select>
+  
+  
+  <select id="findAllCustomeragent" resultClass="customeragent"  parameterClass="java.util.Map">
+  
+    select 
+    	ID as id,
+	  			C_CODE as code,
+	  			C_AGENTTYPE as agenttype,
+	  			C_AGENTVSDATE as agentvsdate,
+	  			C_AGENTVEDATE as agentvedate,
+	  			C_AGENTCOMPANYNAME as agentcompanyname,
+	  			C_AGENTSHORTNAME as agentshortname,
+	  			C_AGENTCITYID as agentcityid,
+	  			C_AGENTTEL as agenttel,
+	  			C_AGENTADDRESS as agentaddress,
+	  			C_AGENTPOSTCODE as agentpostcode,
+	  			C_AGENTCONTACTNAME as agentcontactname,
+	  			C_AGENTEMAIL as agentemail,
+	  			C_AGENTCHECKSTATUS as agentcheckstatus,
+	  			C_AGENTISENABLE as agentisenable,
+	  			C_MODIFYTIME as modifytime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_CREATETIME as createtime,
+	  			C_CREATEUSER as createuser,
+	  			C_PARENTID as parentid,
+	  			C_PARENTSTR as parentstr,
+	  			C_BROKENUM as brokenum,
+	  			C_CHILDBROKENUM as childbrokenum,
+	  			C_ALIPAYACCOUNT as alipayaccount,
+	  			C_TENPAYACCOUNT as tenpayaccount,
+	  			C_KUAIBILLACCOUNT as kuaibillaccount,
+	  			C_MSNQQ as msnqq,
+	  			C_BIGTYPE as bigtype,
+	  			C_USERID as userid,
+	  			C_CACODE as cacode,
+	  			C_CZCODE as czcode,
+	  			C_MUCODE as mucode,
+	  			C_RUNTYPE as runtype,
+	  			C_RUNVALUE as runvalue,
+	  			C_WEBSITE as website,
+	  			C_AGENTPHONE as agentphone,
+	  			C_AGENRFAX as agenrfax,
+	  			C_AGENTMOBILE as agentmobile,
+	  			C_AGENTOTHER as agentother,
+	  			C_INDUSTRY as industry,
+	  			C_FINANCENAME as financename,
+	  			C_FINANCEPHONE as financephone,
+	  			C_FINANCEFAX as financefax,
+	  			C_FINANCEMOBILE as financemobile,
+	  			C_FINANCEEMAIL as financeemail,
+	  			C_SELFCODE as selfcode,
+	  			C_AIRPORTCODE as airportcode,
+	  			C_ISMODIFYRET as ismodifyret,
+	  			C_WORKTIMEBEGIN as worktimebegin,
+	  			C_SMSMONEY as smsmoney,
+	  			C_AGENTJIBIE as agentjibie,
+	  			C_CITYID as cityid,
+	  			C_WORKTIMEEND as worktimeend,
+	  			C_VMONEY as vmoney,
+	  			C_ISALLOWMONTHPAY as isallowmonthpay,
+	  			C_ALLOWLEVELCOUNT as allowlevelcount,
+	  			C_ALLOWPROXYCOUNT as allowproxycount,
+	  			C_OUTTICKETMANTEL as outticketmantel,
+	  			C_OUTTICKETMANMSNQQ as outticketmanmsnqq,
+	  			C_BACKTICKETMANTEL as backticketmantel,
+	  			C_TYPE as type,
+	  			C_FIXEDVALUE as fixedvalue,
+	  			C_SEARCHTOALL as searchtoall,
+	  			C_SEARCHNUM as searchnum,
+	  			C_BEIZHU as beizhu,
+	  			C_BACKTICKETMANMSNQQ as backticketmanmsnqq
+	 
+	  			
+     from T_CUSTOMERAGENT C
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findCustomeragentBySql"  resultClass="customeragent"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   <select id="findAllCustomeragentBySql"  resultMap="resultCustomeragentMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCustomeragentBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCustomeragentBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CUSTOMERAGENT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+ 
+   
+  <insert id="createCustomeragent" parameterClass="customeragent">
+   <selectKey resultClass="long" type="pre" keyProperty="id">
+      SELECT ISNULL(MAX(ID),0)+1 AS VALUE FROM T_CUSTOMERAGENT
+    </selectKey>
+    insert into T_CUSTOMERAGENT ( 
+    	ID,
+	  			C_CODE,
+	  			C_AGENTTYPE,
+	  			C_AGENTVSDATE,
+	  			C_AGENTVEDATE,
+	  			C_AGENTCOMPANYNAME,
+	  			C_AGENTSHORTNAME,
+	  			C_AGENTCITYID,
+	  			C_AGENTTEL,
+	  			C_AGENTADDRESS,
+	  			C_AGENTPOSTCODE,
+	  			C_AGENTCONTACTNAME,
+	  			C_AGENTEMAIL,
+	  			C_AGENTCHECKSTATUS,
+	  			C_AGENTISENABLE,
+	  			C_MODIFYTIME,
+	  			C_MODIFYUSER,
+	  			C_CREATETIME,
+	  			C_CREATEUSER,
+	  			C_PARENTID,
+	  			C_PARENTSTR,
+	  			C_BROKENUM,
+	  			C_CHILDBROKENUM,
+	  			C_ALIPAYACCOUNT,
+	  			C_TENPAYACCOUNT,
+	  			C_KUAIBILLACCOUNT,
+	  			C_MSNQQ,
+	  			C_BIGTYPE,
+	  			C_USERID,
+	  			C_CACODE,
+	  			C_CZCODE,
+	  			C_MUCODE,
+	  			C_RUNTYPE,
+	  			C_RUNVALUE,
+	  			C_WEBSITE,
+	  			C_AGENTPHONE,
+	  			C_AGENRFAX,
+	  			C_AGENTMOBILE,
+	  			C_AGENTOTHER,
+	  			C_INDUSTRY,
+	  			C_FINANCENAME,
+	  			C_FINANCEPHONE,
+	  			C_FINANCEFAX,
+	  			C_FINANCEMOBILE,
+	  			C_FINANCEEMAIL,
+	  		
+	  			C_AIRPORTCODE,
+	  			C_ISMODIFYRET,
+	  			C_WORKTIMEBEGIN,
+	  			C_SMSMONEY,
+	  		
+	  			C_AGENTJIBIE,
+	  			C_CITYID,
+	  			C_WORKTIMEEND,
+	  			C_ISALLOWMONTHPAY,
+	  			C_ALLOWLEVELCOUNT,
+	  		    C_ALLOWPROXYCOUNT,
+	  		    C_OUTTICKETMANTEL,
+	  		    C_OUTTICKETMANMSNQQ,
+	  		    C_BACKTICKETMANTEL,
+	  		    C_BACKTICKETMANMSNQQ,
+	  		    C_TYPE,
+	  		    C_FIXEDVALUE,
+	  		    C_BEIZHU,
+	  		    C_SEARCHTOALL,
+	  		    C_SEARCHNUM,
+	  		    C_VMONEY
+	
+	  		
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#code#,
+	  					
+							#agenttype:DECIMAL#,
+						
+	  						#agentvsdate#,
+	  					
+	  						#agentvedate#,
+	  					
+	  						#agentcompanyname#,
+	  					
+	  						#agentshortname#,
+	  					
+							#agentcityid:DECIMAL#,
+						
+	  						#agenttel#,
+	  					
+	  						#agentaddress#,
+	  					
+	  						#agentpostcode#,
+	  					
+	  						#agentcontactname#,
+	  					
+	  						#agentemail#,
+	  					
+							#agentcheckstatus:DECIMAL#,
+						
+							#agentisenable:DECIMAL#,
+						
+	  						#modifytime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#createuser#,
+	  					
+							#parentid:DECIMAL#,
+						
+	  						#parentstr#,
+	  					
+							#brokenum:DECIMAL#,
+						
+							#childbrokenum:DECIMAL#,
+						
+	  						#alipayaccount#,
+	  					
+	  						#tenpayaccount#,
+	  					
+	  						#kuaibillaccount#,
+	  					
+	  						#msnqq#,
+	  						
+	  						#bigtype#,
+	  						
+	  						#userid#,
+	  						
+	  						#cacode#,
+	  						
+	  						#czcode#,
+	  						
+	  						#mucode#,
+	  						
+	  						#runtype#,
+	  						
+	  						#runvalue#,
+	  						
+	  						#website#,
+	  					
+	  						#agentphone#,
+	  					
+	  						#agenrfax#,
+	  					
+	  						#agentmobile#,
+	  					
+	  						#agentother#,
+	  					
+	  						#industry#,
+	  					
+	  						#financename#,
+	  					
+	  						#financephone#,
+	  					
+	  						#financefax#,
+	  					
+	  						#financemobile#,
+	  					
+	  						#financeemail#,  					
+	  						
+	  						#airportcode#,
+	  						
+	  						#ismodifyret#,
+	  						
+	  						#worktimebegin#,
+	  						
+	  						#smsmoney:DECIMAL#,
+	  						
+	 
+	  						
+	  						#agentjibie#,
+	  						
+	  						#cityid#,
+	  						
+	  						#worktimeend#,
+	  						
+	  						
+	  						#isallowmonthpay#,
+	  						#allowlevelcount#,
+	  					    #allowproxycount#,
+	  					    #outticketmantel#,
+	  					    #outticketmanmsnqq#,
+	  					    #backticketmantel#,
+	  					    #backticketmanmsnqq#,
+	  					    #type#,
+	  					    #fixedvalue#,
+	  					    #beizhu#,
+	  					    #searchtoall#,
+	  					    #searchnum#,
+	  					    #vmoney#
+	  					    
+	  		
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCustomeragent" parameterClass="long">
+    delete from T_CUSTOMERAGENT
+    where ID = #id#
+  </delete>
+	<!-- C_AGENTTYPE 一次定义，不可修改 故此修改中不包含C_AGENTTYPE -->
+  <update id="updateCustomeragent" parameterClass="customeragent">
+    update T_CUSTOMERAGENT 
+    set 
+    	C_CODE = #code#,
+						C_AGENTVSDATE = #agentvsdate#,
+	  					C_AGENTVEDATE = #agentvedate#,
+	  					C_AGENTCOMPANYNAME = #agentcompanyname#,
+	  					C_AGENTSHORTNAME = #agentshortname#,
+	  					C_AGENTCITYID = #agentcityid:DECIMAL#,
+						C_AGENTTEL = #agenttel#,
+	  					C_AGENTADDRESS = #agentaddress#,
+	  					C_AGENTPOSTCODE = #agentpostcode#,
+	  					C_AGENTCONTACTNAME = #agentcontactname#,
+	  					C_AGENTEMAIL = #agentemail#,
+	  					C_AGENTCHECKSTATUS = #agentcheckstatus:DECIMAL#,
+						C_AGENTISENABLE = #agentisenable:DECIMAL#,
+						C_MODIFYTIME = #modifytime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_PARENTID = #parentid:DECIMAL#,
+						C_PARENTSTR = #parentstr#,
+	  					C_BROKENUM = #brokenum:DECIMAL#,
+						C_CHILDBROKENUM = #childbrokenum:DECIMAL#,
+						C_ALIPAYACCOUNT = #alipayaccount#,
+	  					C_TENPAYACCOUNT = #tenpayaccount#,
+	  					C_KUAIBILLACCOUNT = #kuaibillaccount#,
+	  					C_MSNQQ = #msnqq#,
+	  					C_BIGTYPE = #bigtype#,
+	  					C_USERID = #userid#,
+	  					C_CACODE = #cacode#,
+	  					C_CZCODE = #czcode#,
+	  					C_MUCODE = #mucode#,
+	  					C_RUNTYPE = #runtype#,
+	  					C_RUNVALUE = #runvalue#,
+	  					C_WEBSITE = #website#,
+	  					C_TYPE = #type#,
+	  					C_FIXEDVALUE = #fixedvalue#,
+	  					C_AGENTPHONE = #agentphone#,
+	  					C_AGENRFAX = #agenrfax#,
+	  					C_AGENTMOBILE = #agentmobile#,
+	  					C_AGENTOTHER = #agentother#,
+	  					C_INDUSTRY = #industry#,
+	  					C_FINANCENAME = #financename#,
+	  					C_FINANCEPHONE = #financephone#,
+	  					C_FINANCEFAX = #financefax#,
+	  					C_FINANCEMOBILE = #financemobile#,
+	  					C_FINANCEEMAIL = #financeemail#,
+	  					C_AIRPORTCODE=#airportcode#,
+	  					C_ISMODIFYRET=#ismodifyret#,
+	  					C_WORKTIMEBEGIN=#worktimebegin#,
+	  					C_SMSMONEY=#smsmoney#,
+	  					C_AGENTJIBIE=#agentjibie#,
+	  					C_CITYID=#cityid#,
+	  					C_WORKTIMEEND=#worktimeend#,
+	  					C_ISALLOWMONTHPAY=#isallowmonthpay#,
+	  					C_ALLOWLEVELCOUNT=#allowlevelcount#,
+	  					C_ALLOWPROXYCOUNT=#allowproxycount#,
+	  					C_OUTTICKETMANTEL=#outticketmantel#,
+	  					C_OUTTICKETMANMSNQQ=#outticketmanmsnqq#,
+	  					C_BACKTICKETMANTEL=#backticketmantel#,
+	  					C_BACKTICKETMANMSNQQ=#backticketmanmsnqq#,
+	  					C_BEIZHU=#beizhu#,
+	  					C_SEARCHTOALL=#searchtoall#,
+	  					C_SEARCHNUM=#searchnum#,
+	  					C_VMONEY =#vmoney#
+	  					
+	  				
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

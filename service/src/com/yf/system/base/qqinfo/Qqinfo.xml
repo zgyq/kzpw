@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Qqinfo">
+  
+  <typeAlias alias="Qqinfo" type="com.yf.system.base.qqinfo.Qqinfo"/>
+  
+
+  <resultMap id="resultQqinfoMap" class="Qqinfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="qqnumber" column="C_QQNUMBER"/>
+  
+     <result property="qqtype" column="C_QQTYPE"/>
+  
+     <result property="qqnumberindex" column="C_QQNUMBERINDEX"/>
+   
+  </resultMap>
+  
+  <select id="findAllQqinfo"  resultMap="resultQqinfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_QQINFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllQqinfoBySql"  resultMap="resultQqinfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteQqinfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countQqinfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_QQINFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findQqinfo" parameterClass="long" resultClass="Qqinfo">
+    select 
+    	ID as id,
+	  			C_QQNUMBER as qqnumber,
+	  			C_QQTYPE as qqtype,
+	  			C_QQNUMBERINDEX as qqnumberindex 
+     from T_QQINFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createQqinfo" parameterClass="Qqinfo">
+    insert into T_QQINFO ( 
+    	ID,
+	  			C_QQNUMBER,
+	  			C_QQTYPE,
+	  			C_QQNUMBERINDEX 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#qqnumber#,
+	  					
+							#qqtype:DECIMAL#,
+						
+  							#qqnumberindex:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteQqinfo" parameterClass="long">
+    delete from T_QQINFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateQqinfo" parameterClass="Qqinfo">
+    update T_QQINFO 
+    set 
+    	C_QQNUMBER = #qqnumber#,
+	  					C_QQTYPE = #qqtype:DECIMAL#,
+						C_QQNUMBERINDEX = #qqnumberindex:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

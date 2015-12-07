@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 订单表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Insurorder createInsurorder(Insurorder insurorder) throws SQLException;
+	
+	/**
+	 * 删除 订单表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteInsurorder(long id);
+	
+	
+	/**
+	 * 修改 订单表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateInsurorder(Insurorder insurorder);
+
+		
+	/**
+	 * 修改 订单表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateInsurorderIgnoreNull(Insurorder insurorder);
+		
+	
+	/**
+	 * 查找 订单表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInsurorder(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 订单表
+	 * @param id
+	 * @return
+	 */
+	public Insurorder findInsurorder(long id);
+	
+	
+	/** 
+	 * 查找 订单表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllInsurorderForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找订单表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInsurorderBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 订单表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteInsurorderBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countInsurorderBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IInsurorderComponent insurorderComponent;
+	  
+ 	
+ 	public IInsurorderComponent getInsurorderComponent() {
+		return insurorderComponent;
+	}
+	public void setInsurorderComponent(IInsurorderComponent  insurorderComponent) {
+		this.insurorderComponent = insurorderComponent;
+	}
+	/**
+	 * 创建 订单表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Insurorder createInsurorder(Insurorder insurorder) throws SQLException{
+	
+		return insurorderComponent.createInsurorder(insurorder);
+	}
+	/**
+	 * 删除 订单表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteInsurorder(long id){
+	
+		return insurorderComponent.deleteInsurorder(id);
+	}
+	
+	
+	/**
+	 * 修改 订单表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateInsurorder(Insurorder insurorder){
+		return insurorderComponent.updateInsurorder(insurorder);
+	
+	}
+
+		
+	/**
+	 * 修改 订单表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateInsurorderIgnoreNull(Insurorder insurorder){
+			return insurorderComponent.updateInsurorderIgnoreNull(insurorder);
+	
+	}
+	
+	/**
+	 * 查找 订单表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInsurorder(String where, String orderby,int limit,int offset){
+		return insurorderComponent.findAllInsurorder(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 订单表
+	 * @param id
+	 * @return
+	 */
+	public Insurorder findInsurorder(long id){
+		return insurorderComponent.findInsurorder(id);
+	}
+	
+	/** 
+	 * 查找 订单表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllInsurorderForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return insurorderComponent.findAllInsurorder(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找订单表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInsurorderBySql(String sql,int limit,int offset){
+		return insurorderComponent.findAllInsurorder(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 订单表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteInsurorderBySql(String sql){
+		return insurorderComponent.excuteInsurorderBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countInsurorderBySql(String sql){
+		return insurorderComponent.countInsurorderBySql(sql);
+	}
+	
+	
+

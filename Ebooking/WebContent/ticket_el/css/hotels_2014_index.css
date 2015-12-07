@@ -1,0 +1,361 @@
+﻿.c9{color:#999}
+.cf{color:#fff}
+.cf60{color:#f60}
+.cf93{color:#f93}
+.cf09{color:#090}
+.fw{font-weight:bold}
+.f14{font-size:14px}
+.fa{font-family:Arial}
+.cp{cursor:pointer}
+.dx{display:inline-block;width:60px;height:12px;background:url(../images/comBg.png) no-repeat;overflow:hidden;margin-left:10px;*vertical-align:middle}
+.dx1{background-position:-48px -65px}
+.dx2{background-position:-36px -65px}
+.dx3{background-position:-24px -65px}
+.dx4{background-position:-12px -65px}
+.dx5{background-position:0 -65px}
+.medal{display:inline-block;width:60px;height:12px;background:url(../images/comBg.png) no-repeat;overflow:hidden;margin-left:10px;*vertical-align:middle}
+.me-0{background-position:-60px -105px}
+.me-10{background-position:-48px -105px}
+.me-20{background-position:-36px -105px}
+.me-30{background-position:-24px -105px}
+.me-40{background-position:-12px -105px}
+.me-50{background-position:0 -105px}
+.me-5{background-position:-60px -85px}
+.me-15{background-position:-48px -85px}
+.me-25{background-position:-36px -85px}
+.me-35{background-position:-24px -85px}
+.me-45{background-position:-12px -85px}
+.fanIcon{height:13px;border:1px solid #ffb027;display:inline-block;background:url(../images/comBg.png) no-repeat -137px -125px;color:#f80;font-size:11px;text-align:right;padding-left:15px;padding-right:2px;line-height:13px;margin-top:3px;cursor:default}
+.grid{margin:0 auto;padding-top:10px;width:1000px;clear:both}
+.grid .main{float:right;width:600px}
+.grid .sidebar{float:left;width:380px}
+.sidebar .search{width:380px;background:url(../images/hotel_index_2013.png) no-repeat 0 0;}
+.sidebar .search h1{float:left;display:block;width:135px;height:26px;margin:25px 0 15px 65px;_margin-left:33px;background:url(../images/hotel_index_2013.png) no-repeat -400px 0;text-indent:-9999em}
+.sidebar .search ul{margin-left:30px}
+.sidebar .search ul li{position:relative; height:auto;}
+.sidebar .search ul li .title{display:inline-block;width:65px;margin-right:10px;text-align:right;font:14px "Microsoft Yahei",Simsun;color:#ba8a49}
+.sidebar .search .intxt{width:228px;height:18px;padding:5px;line-height:18px;font-size:14px;border:1px solid #d8d8d8;box-shadow:inset 1px 1px 2px #e9e9e9;*vertical-align:middle}
+.sidebar .search .checkin{background:#fff url(../images/hotel_index_2013.png) no-repeat 217px -454px}
+.sidebar .search .checkout{background:#fff url(../images/hotel_index_2013.png) no-repeat 217px -480px}
+.sidebar .search input:focus,.sidebar .search .on{border:1px solid #0ea0ef;box-shadow:0 0 5px #09f;outline:0}
+.sidebar .search ul li .date{color:#999;font-size:14px;position:absolute;top:5px;top:7px\9;left:165px}
+.sidebar .search .pos_btn{margin-left:75px;width:240px;*width:auto;*margin-left:45px;display:inline}
+.sidebar .search .btn{float:left;display:block;width:150px;height:34px;background:url(../images/hotel_index_2013.png) no-repeat -400px -40px;color:#fff;text-indent:-9999em}
+.sidebar .search .btn:hover,.sidebar .search .btn_on{background-position:-400px -80px;color:#fff;text-decoration:none}
+.sidebar .search .btn_map{float:left;display:block;width:80px;height:34px;background:url(../images/hotel_index_2013.png) no-repeat -400px -120px;color:#fff;text-indent:-9999em}
+.sidebar .search .btn_map:hover{background-position:-400px -16 0;color:#fff;text-decoration:none}
+.sidebar .search .search_bottom{display:inline-block;width:380px;height:26px;background:url(../images/hotel_index_2013.png) no-repeat 0 -404px}
+.sidebar .whyus{font:14px "Microsoft Yahei",Simsun;color:#666;margin:15px 0}
+.sidebar .whyus h3{font-size:24px;color:#a25005;margin-bottom:15px}
+.sidebar .whyus dt{height:30px;line-height:30px;font-size:16px;color:#e27720;font-weight:700}
+.sidebar .whyus dt i{display:inline-block;width:26px;height:26px;margin-right:5px;background:url(../images/hotel_index_2013.png) no-repeat -30px -460px;vertical-align:-5px}
+.sidebar .whyus dd{padding-left:31px;margin-bottom:10px}
+.sidebar .hotcity{padding-top:10px;font-family:"Microsoft Yahei",Simsun}
+.sidebar .hotcity h2{font-size:24px;color:#333;margin-bottom:15px;padding:10px;background:#f3f3f3;border-bottom:1px solid #dbdada;position:relative}
+.sidebar .hotcity h2 i{display:inline-block;width:17px;height:9px;background:url(../images/hotel_index_2013.png) no-repeat -70px -460px;position:absolute;bottom:-9px;left:45px}
+.sidebar .hotcity .hotcity_list{height:90px;padding:10px;border-bottom:1px dotted #ccc;overflow:hidden}
+.sidebar .hotcity .hotcity_list:hover,.sidebar .hotcity .hotcity_list_on{background:#f0f4fb}
+.sidebar .hotcity .hotcity_list .info{width:230px;margin-left:10px;position:relative}
+.sidebar .hotcity .hotcity_list .info h4{font-size:24px}
+.sidebar .hotcity .hotcity_list .info h4 a:hover{color:#f60;text-decoration:none}
+.sidebar .hotcity .hotcity_list .info .goto{display:inline-block;width:45px;height:65px;background:url(../images/hotel_index_2013.png) no-repeat -500px -120px;position:absolute;top:13px;right:10px}
+.sidebar .hotcity .hotcity_list .info .goto:hover,.sidebar .hotcity .hotcity_list:hover .info .goto,.sidebar .hotcity .hotcity_list_on .info .goto{background-position:-500px -190px}
+.sidebar .hotcity .more{float:right;display:inline-block;padding:3px 5px;font:400 14px \5b8b\4f53,sans-serif;color:#36c;cursor:pointer}
+.sidebar .hotcity .more:hover{background:#36c;color:#fff}
+.sidebar .hotcity h2 .more{margin-top:7px}
+.sidebar .hotcity .btn_wrap{padding:20px 10px;overflow:hidden}
+.main .hotellist .switch{margin-bottom:20px;border:1px solid #d9d9d9}
+.main .hotellist .switch .list{float:left;margin-left:10px;_display:inline}
+.main .hotellist .switch .list li{float:left;display:inline-block;padding:7px 0;border-top:1px solid #fff;font-size:14px}
+.main .hotellist .switch .list li a{display:block;padding:2px 10px}
+.main .hotellist .switch .list li a:hover{color:#fff;background:#58c;text-decoration:none}
+.main .hotellist .switch .list li.on{border-top:2px solid #58c;_border-top:3px solid #58c;margin-top:-1px;font-weight:700}
+.main .hotellist .switch .list li.on a,.main .hotellist .switch .list li.on a:hover{color:#555;background:#fff;text-decoration:none;cursor:default}
+.main .hotellist .switch .more{float:right;width:110px;height:40px;line-height:40px;color:#36c;background:url(../images/hotel_index_2013.png) no-repeat right -360px;cursor:pointer}
+.main .hotellist .switch .more:hover{text-decoration:underline}
+.main .hotellist .tab{height:45px;margin-bottom:15px;border-top:2px solid #58c}
+.main .hotellist .tab .page-tab li{float:left}
+.page-tab .flash,.page-tab .groupon,.page-tab .hotsale{display:block;width:200px;height:45px;text-indent:-9999em;background:url(../images/hotel_index_2013.png) no-repeat;outline:0}
+.page-tab .flash{background-position:0 -610px}
+.page-tab .groupon{background-position:-200px -610px}
+.page-tab .hotsale{background-position:-400px -610px;width:200px}
+.page-tab .flash:hover{background-position:0 -660px}
+.page-tab .groupon:hover{background-position:-200px -660px}
+.page-tab .hotsale:hover{background-position:-400px -660px;width:200px}
+.page-tab .flash_a,.page-tab .flash_a:hover{background-position:0 -560px}
+.page-tab .groupon_a,.page-tab .groupon_a:hover{background-position:-200px -560px}
+.page-tab .hotsale_a,.page-tab .hotsale_a:hover{background-position:-400px -560px;width:200px}
+.product_onecol li{height:100px;_height:120px;padding:10px;border-bottom:1px dotted #ccc}
+.product_onecol li:hover,.product_onecol li.on{background:#f0f4fb}
+.product_onecol li .left{width:270px;overflow:hidden}
+.product_onecol li .right{width:160px;overflow:hidden}
+.product_onecol li .pic{float:left;width:100px;height:100px;margin-right:10px;position:relative;z-index:0}
+.product_onecol li .pic img.thumb{max-width:100px;_width:100px}
+.product_onecol li .pic .com_bigpic{position:absolute;left:110px;top:-45%;border:2px solid #ccc;padding:3px;background:#fff;box-shadow:2px 2px 6px #aaa;z-index:1000}
+.product_onecol li .pic .com_bigpic img{width:auto!important;height:auto!important}
+.product_onecol li .name{display:block;width:270px;font-size:14px;font-weight:700;margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.product_onecol li .name a:hover{color:#f60;text-decoration:none}
+.product_onecol li .name a.max{display:inline-block;width:200px;vertical-align:middle;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.product_onecol li .area,.product_onecol li .review{margin-bottom:5px}
+.product_onecol li .area a{color:#666}
+.product_onecol li .area a:hover{color:#f60}
+.product_onecol li .review a{color:#999}
+.product_onecol li .review a:hover{color:#f60}
+.product_onecol li .quote{color:#999}
+.product_onecol li .quote span{display:inline-block;max-width:220px;_width:220px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.product_onecol li .quote .start,.product_onecol li .quote .end{display:inline-block;width:12px;height:9px;background:url(../images/hotel_index_2013.png) no-repeat}
+.product_onecol li .quote .start{background-position:-430px -460px;margin-right:5px;vertical-align:3px}
+.product_onecol li .quote .end{background-position:-445px -460px;margin-left:5px;vertical-align:-3px}
+.product_onecol li .price{font:700 34px Arial;color:#f60;cursor:pointer}
+.product_onecol li .price .pfh{font-size:14px;vertical-align:15px;color:#666}
+.product_onecol li .price .lijian{font-size:18px}
+.product_onecol li .fanIcon{vertical-align:10px}
+.product_onecol li .btn_view{display:none;width:60px;height:26px;margin-top:9px;background:url(../images/city_index_2013.png) no-repeat -160px 0;text-align:center;color:#fff;font:14px/24px Microsoft Yahei,Simsun,sans-serif}
+.product_onecol li .btn_view:hover{background-position:-160px -40px;color:#fff;text-decoration:none}
+.product_onecol li .btn_view:active{background-position:-160px -80px;color:#fff;text-decoration:none}
+.product_onecol li:hover .btn_view,.product_onecol li.on .btn_view{display:inline-block}
+.product_twocol li{float:left;width:262px;padding:5px;margin-bottom:15px;border:1px solid #e5e5e5}
+.product_twocol li:hover,.product_twocol li.on{padding:2px;border:4px solid #ffe64f;box-shadow:0 0 5px rgba(255,230,79,0.5)}
+.product_twocol li .pic{width:262px;height:165px;overflow:hidden;text-align:center;margin-bottom:10px}
+.product_twocol li .pic img{max-width:262px;_width:262px}
+.product_twocol li .info .name{height:38px;margin-bottom:10px;overflow:hidden}
+.product_twocol li .info .name a{color:#666}
+.product_twocol li .info .name a:hover{color:#f60;text-decoration:none}
+.product_twocol li .info .name .flash_hotel,.product_twocol li .info .name .flash_room{display:inline-block;width:250px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.product_twocol li .info .name .flash_hotel{width:170px;font-size:14px;font-weight:700;color:#333;vertical-align:middle}
+.product_twocol li .info .name .flash_hotel:hover,.product_twocol li .info .name a:hover .flash_hotel{color:#f60}
+.product_twocol li .info .price{font:700 34px Arial;color:#f60}
+.product_twocol li .info .price .pfh{font-size:14px;color:#666}
+.product_twocol li .info .ori_price{color:#666;margin-left:5px}
+.product_twocol li .info .ori_price em{text-decoration:line-through;font-family:arial}
+.product_twocol li .info .btn_view,.product_twocol li .info .btn_view_fs{display:none;width:70px;height:30px;margin-top:4px;background:url(../images/hotel_index_2013.png) no-repeat -400px -200px;text-indent:-9999em}
+.product_twocol li .info .btn_view:hover{background-position:-400px -240px}
+.product_twocol li .info .btn_view_fs{background-position:-400px -280px}
+.product_twocol li .info .btn_view_fs:hover{background-position:-400px -32z0px}
+.product_twocol li:hover .info .btn_view,.product_twocol li:hover .info .btn_view_fs,.product_twocol li.on .info .btn_view,.product_twocol li.on .info .btn_view_fs{display:block}
+.product_twocol li .info .fanIcon_old{vertical-align:4px}
+.product_twocol li .bt1{border-top:1px dotted #ccc}
+.product_twocol li .bb1{border-bottom:1px dotted #ccc;padding-bottom:10px}
+.product_twocol li.right{margin-right:48px}
+.getmore{text-align:center;padding:20px 0}
+.getmore .btn{display:block;width:200px;height:30px;margin:0 auto;background:url(../images/hotel_index_2013.png) no-repeat -120px -460px;color:#fff;text-decoration:none;font:400 14px/28px Microsoft Yahei,\5b8b\4f53;overflow:hidden}
+.getmore .btn:hover{background-position:-120px -490px;color:#fff;text-decoration:none}
+.getmore .btn_slide{display:inline-block;height:30px;margin:0 auto;padding-right:10px;background:url(../images/city_index_2013.png) no-repeat right -120px;color:#fff;text-decoration:none;font:400 16px/28px Microsoft Yahei,\5b8b\4f53;overflow:hidden}
+.getmore .btn_slide span{display:inline-block;width:12px;height:30px;background:url(../images/city_index_2013.png) no-repeat}
+.getmore .btn_slide .before{float:left;background-position:left -120px}
+.getmore .btn_slide:hover{background-position:right -161px;color:#fff;text-decoration:none}
+.getmore .btn_slide:hover .before{background-position:left -161px}
+.getmore .btn_slide:active{background-position:right -205px;color:#fff;text-decoration:none}
+.getmore .btn_slide:active .before{background-position:left -205px}
+.no_result{text-align:center;padding:50px 0}
+.no_result p{font:18px "Microsoft Yahei",Simsun;color:#666}
+.no_result tt{display:inline-block;width:40px;height:40px;background:url(../images/popuploading.gif) no-repeat}
+.sidebar .viewed{margin-bottom:20px;border-top:1px solid #bdbdbd;margin-top:20px}
+.sidebar .viewed h2{padding:7px 10px;font:400 18px Microsoft Yahei,\5b8b\4f53;background:#f8f8f8}
+.sidebar .viewed h2 tt{display:inline-block;width:25px;height:17px;margin-right:5px;background:url(../images/hotel_index_2013.png) no-repeat -400px -360px;vertical-align:-2px;*vertical-align:2px;_vertical-align:-1px}
+.sidebar .viewed h2 .collapse,.sidebar .viewed h2 .expand{float:right;display:block;width:20px;height:20px;margin-top:2px;background:url(../images/hotel_index_2013.png) no-repeat;text-indent:-9999em;outline:0;overflow:hidden;cursor:pointer}
+.sidebar .viewed h2 .collapse{background-position:-400px -380px}
+.sidebar .viewed h2 .collapse:hover{background-position:-400px -400px}
+.sidebar .viewed h2 .expand{background-position:-420px -380px}
+.sidebar .viewed h2 .expand:hover{background-position:-420px -400px}
+.sidebar .viewed ul{padding:10px}
+.sidebar .viewed ul li{padding:8px 0}
+.sidebar .viewed ul li.border{border-bottom:1px dotted #d6d6d6}
+.sidebar .viewed ul li .name{float:left;width:260px;font-size:14px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.sidebar .viewed ul li .price{float:left;font:400 14px Arial;color:#f60}
+.sidebar .viewed ul li .price .pfh,.sidebar .viewed ul li .price .pfb{font-size:12px;color:#666}
+.sidebar .viewed ul li .del{float:right;width:15px;height:15px;display:inline-block;color:#999;background:url(../images/hotel_index_2013.png) no-repeat -397px -428px;cursor:pointer}
+.sidebar .viewed ul li .del:hover{color:#333;background:url(../images/hotel_index_2013.png) no-repeat -412px -428px}
+.subscribe{margin-top:20px;padding:20px 0;background:#dee7f1;border:1px solid #d5dee8;text-align:center;box-shadow:inset 0 0 5px #d5dee8}
+.subscribe div{width:560px;margin:0 auto}
+.subscribe span{float:left;font:24px "Microsoft Yahei",Simsun;color:#7186b3;margin-right:10px;vertical-align:middle}
+.subscribe span i{display:inline-block;width:32px;height:21px;margin-right:5px;background:url(../images/hotel_index_2013.png) no-repeat -430px -475px;vertical-align:-3px;*vertical-align:middle;overflow:hidden}
+.subscribe .intxt{float:left;width:258px;height:18px;padding:7px 5px;line-height:18px;font-size:14px;border:1px solid #8dadd8;box-shadow:inset 1px 1px 2px #e9e9e9;vertical-align:middle}
+.subscribe input:focus,.subscribe .on{border:1px solid #0ea0ef;box-shadow:0 0 5px #09f;outline:0}
+.subscribe .submit{float:left;width:90px;height:34px;border:0;background:url(../images/hotel_index_2013.png) no-repeat -330px -460px;text-indent:-9999em;vertical-align:middle;cursor:pointer}
+.subscribe .submit:focus,.subscribe .submit:active{background-position:-330px -5 00px}
+.city_index h1.breadcrumb{display:inline}
+.city_index .sidebar .search h2{float:left;width:305px;margin:25px 0 15px 25px;font:24px/30px Microsoft Yahei,Simsun,sans-serif;color:#a25005;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.city_index .sidebar .search h2 a{color:#a25005;text-decoration:none}
+.city_index .sidebar .search h2 a:hover{text-decoration:underline}
+.city_index .sidebar .search ul{margin-left:25px}
+.city_index .sidebar .search ul li .title{width:45px}
+.city_index .sidebar .search .intxt{width:263px}
+.city_index .sidebar .search .checkin{width:98px;background-position:87px -454px}
+.city_index .sidebar .search .checkout{width:98px;background-position:87px -480px}
+.city_index .sidebar .search .pos_btn{float:right;margin:0 25px 0 0;_display:inline}
+.city_index .city_btn{float:left;display:block;width:82px;padding-left:68px;height:34px;background:url(../images/city_index_2013.png) no-repeat 0 0;color:#fff;font:18px/32px Microsoft Yahei,Simsun,sans-serif}
+.city_index .city_btn:hover{background-position:0 -40px;color:#fff;text-decoration:none}
+.city_index .city_btn:active{background-position:0 -80px;color:#fff;text-decoration:none}
+.sidebar .com_wrap h2{padding:0 10px;height:33px;background:#f8f8f8;border-top:1px solid #bdbdbd;font:18px/32px Microsoft Yahei,Simsun,sans-serif;color:#555;overflow:hidden}
+.sidebar .com_wrap h2 tt{display:inline-block;width:22px;height:28px;margin-right:5px;background:url(../images/city_index_2013.png) no-repeat;overflow:hidden;vertical-align:-7px;*vertical-align:middle}
+.sidebar .fast_poi h2 tt{background-position:0 -340px}
+.sidebar .new_booking h2 tt{background-position:-30px -340px}
+.sidebar .com_wrap ul li{width:370px;padding-left:10px;height:40px;line-height:40px;border-bottom:1px dashed #d9d9d9}
+.sidebar .com_wrap ul .on{background:#36c;border-bottom:1px solid #36c}
+.sidebar .com_wrap ul .last{border-bottom:0!important}
+.sidebar .com_wrap ul li span{float:left;display:inline-block;height:40px;color:#666}
+.sidebar .com_wrap ul li span i{color:#999;font-style:normal}
+.sidebar .com_wrap ul .on span{color:#fff}
+.sidebar .com_wrap ul .on span i{color:#8aa6dd}
+.sidebar .fast_poi ul li span tt{display:inline-block;width:20px;height:20px;margin-right:2px;background:url(../images/city_index_2013.png) no-repeat;overflow:hidden;vertical-align:-6px;*vertical-align:middle}
+.sidebar .fast_poi ul li span .ico_transport{background-position:0 -290px}
+.sidebar .fast_poi ul li span .ico_district{background-position:-20px -290px}
+.sidebar .fast_poi ul li span .ico_sight{background-position:-40px -290px}
+.sidebar .fast_poi ul li span .ico_subway{background-position:-60px -290px}
+.sidebar .fast_poi ul li span .ico_brand{background-position:-80px -290px}
+.sidebar .fast_poi ul .on span .ico_transport{background-position:0 -310px}
+.sidebar .fast_poi ul .on span .ico_district{background-position:-20px -310px}
+.sidebar .fast_poi ul .on span .ico_sight{background-position:-40px -310px}
+.sidebar .fast_poi ul .on span .ico_subway{background-position:-60px -310px}
+.sidebar .fast_poi ul .on span .ico_brand{background-position:-80px -310px}
+.sidebar .fast_poi ul li .title{width:85px;_padding-top:10px;_height:30px}
+.sidebar .fast_poi ul li .mask{width:263px;overflow:hidden}
+.sidebar .fast_poi ul li a{display:inline-block;float:left}
+.sidebar .fast_poi ul .on a{color:#fff}
+.sidebar .fast_poi ul li .more i{display:inline-block;width:22px;height:22px;margin-top:9px;background:url(../images/city_index_2013.png) no-repeat 0 -375px;overflow:hidden;cursor:pointer}
+.sidebar .fast_poi ul li .more i:hover{background-position:-30px -375px}
+.sidebar .fast_poi ul .on .more i{background-position:-30px -375px}
+.sidebar .new_booking ul li .hotel{width:245px;*width:240px;margin-right:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sidebar .new_booking ul li .time{color:#090}
+.small_search .intxt{width:168px;height:18px;padding:5px;line-height:18px;font-size:12px;border:1px solid #d8d8d8;box-shadow:inset 1px 1px 2px #e9e9e9;*vertical-align:middle}
+.small_search .btn{width:50px;height:30px;border:0;background:url(../images/city_index_2013.png) no-repeat -230px 0;cursor:pointer}
+.small_search .btn:hover{background-position:-230px -40px}
+.small_search input{float:left}
+.small_search input:focus,.small_search .on{border:1px solid #0ea0ef;box-shadow:0 0 5px #09f;outline:0}
+.sidebar .map{width:380px;height:120px;background:url(../images/city_index_bg_map.jpg) no-repeat 0 0;overflow:hidden;position:relative;z-index:0}
+.sidebar .map .btn{display:inline-block;width:225px;height:20px;padding:14px 50px 15px 25px;background:url(../images/city_index_map.png) no-repeat 0 0;_background:url(../images/city_index_map_ie6.png) no-repeat 0 0;font:700 16px/20px Simsun,sans-serif;color:#fff;text-align:center;overflow:hidden;position:absolute;top:35px;left:40px}
+.sidebar .map .btn:hover{background-position:0 -50px;color:#fff;text-decoration:none}
+.main .banner{width:600px;height:220px;background:#f3f3f3;overflow:hidden;position:relative;z-index:0}
+.main .banner h2{font:40px Microsoft Yahei,Simsun,sans-serif;color:#fff}
+.main .banner h2 .small{font-size:20px;margin-left:5px}
+.main .banner h2 a{display:block;padding:10px 0 110px 15px;color:#fff;background:url(../images/city_index_2013.png) no-repeat 1000px 500px}
+.main .banner h2 a:hover{color:#fff;text-decoration:underline}
+.main .banner ul{position:absolute;bottom:0}
+.main .banner ul li{float:left;margin-right:1px}
+.main .banner ul li a{display:block;width:150px;height:40px;padding:0 10px;line-height:40px;color:#fff;text-align:center;text-decoration:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#99000000',endColorstr='#99000000');background:rgba(0,0,0,0.6);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+:root .main .banner ul li a{filter:none}
+.main .banner ul li a:hover{background:#36c;color:#fff}
+.main .banner ul .last{margin-right:0}
+.main .banner ul .last a{width:67px}
+.main .banner img{position:absolute;top:0;left:0;z-index:-1}
+.main .hot_sale h2{padding:0 10px;height:39px;background:#f6f6f6;border-bottom:1px dashed #d4d4d4;font:18px/38px Microsoft Yahei,Simsun,sans-serif;color:#555;overflow:hidden}
+.main .hot_sale h2 tt{display:inline-block;width:22px;height:28px;margin-right:5px;background:url(../images/city_index_2013.png) no-repeat -60px -340px;overflow:hidden;vertical-align:-7px;*vertical-align:middle}
+.main .hot_sale h2 a{float:right;display:block;margin-top:9px;padding:3px 7px;font:14px Simsun,sans-serif;text-decoration:none}
+.main .hot_sale h2 a:hover{background:#36c;color:#fff}
+.poi_popup{width:500px;border:1px solid #d9d9d9;border-top:2px solid #bbb;box-shadow:2px 2px 5px rgba(0,0,0,0.1)}
+.poi_popup h2{padding:0 10px;height:40px;background:#f7f7f7 url(../images/city_index_2013.png) no-repeat right -247px;font:18px/38px Microsoft Yahei,Simsun,sans-serif;color:#555;overflow:hidden}
+.poi_popup .catemod{background:#fff}
+.poi_popup .cate_more{width:468px}
+.poi_popup .cate_more li{width:88px}
+.poi_popup .cate_area{width:468px}
+.poi_popup .cate_area li{width:100px}
+.com_results .tuijian{border-bottom:1px dotted #dadada;padding-bottom:5px}
+.com_results .tuijian p{padding:4px 5px 4px 10px;height:20px;line-height:20px;cursor:pointer;overflow:hidden}
+.com_results .tuijian p:hover{background:#316ac5;color:#fff}
+.com_results .tuijian strong{font-weight:bold}
+.com_results .tuijian tt{display:inline-block;width:10px;height:13px;margin-right:3px;overflow:hidden;background:url(../images/comBg.png) no-repeat;vertical-align:-1px;*vertical-align:middle}
+.com_results .tuijian tt.poi{background-position:0 -265px}
+.com_results .tuijian tt.name{background-position:-10px -265px}
+.com_results .tuijian p:hover tt.poi{background-position:0 -280px}
+.com_results .tuijian p:hover tt.name{background-position:-10px -280px}
+.com_results .ac_odd{background-color:#fff}
+.com_results .ac_odd:hover{background-color:#316AC5;color:white}
+.fast_search{width:598px;float:left;border:1px solid #d9d9d9;border-top:0;position:relative;margin-bottom:20px}
+.fast_search .tuan_title h3{height:25px;background:#f8f8f8;border-top:2px solid #bbb;color:#555;padding:5px 10px;font:18px Microsoft Yahei,\5b8b\4f53;font-weight:400}
+.fast_search .tuan_title .inputCity{width:55px;height:20px;line-height:20px;padding-left:5px;padding-right:20px;cursor:pointer;background:#fff url(../images/newindex.png) no-repeat 60px -302px;border:1px solid #dcdcdc;margin-top:5px;position:absolute;left:170px;top:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fast_search .tuan_title .inputCity:hover{background-position:60px -322px}
+.city_switch a.select,.city_switch a.select:hover,.city_switch a.select_on,.city_switch a.select_on:hover,.fast_search_tab .turn_left,.fast_search_tab .turn_right,.fast_search_mod li,.catemod i{background:url(../images/select.png) no-repeat}
+.city_switch{position:relative;z-index:2;float:left}
+.city_switch a.select{display:block;width:85px;height:22px;margin:10px;color:#666;background-position:0 0;cursor:pointer;position:relative;z-index:6}
+.city_switch a.select .value{position:absolute;top:1px;left:12px}
+.city_switch a.select:hover{background-position:0 -23px;text-decoration:none}
+.city_switch a.select:hover .value{color:#fff;text-decoration:none}
+.city_switch a.select_on,.city_switch a.select_on:hover{background-position:0 -46px}
+.city_switch a.select_on .value,.city_switch a.select_on:hover .value{color:#666}
+.city_switch .list{width:240px;padding:10px;border:2px solid #4f89cf;background:#fff;position:absolute;top:30px;left:10px;z-index:5;box-shadow:1px 1px 5px rgba(0,0,0,0.2)}
+.city_switch .list li{float:left}
+.city_switch .list li a{display:block;width:60px;color:#3c8ad0;padding:3px 0;text-align:center}
+.city_switch .list li a:hover{color:#fff;background:#3c8ad0;text-decoration:none}
+.city_switch .page-tab li{float:left}
+.fast_search_mod ul{float:left;margin:15px auto}
+.fast_search_mod li{float:left;margin:0 2px;padding:65px 0 0;width:70px;cursor:pointer}
+.fast_search_mod li a{display:block;height:27px;line-height:27px;text-align:center;color:#666;text-decoration:none;outline:0}
+.fast_search_mod .cate-1{background-position:-8px -164px}
+.fast_search_mod .cate-2{background-position:-8px -259px;width:72px}
+.fast_search_mod .cate-3{background-position:-8px -354px}
+.fast_search_mod .cate-4{background-position:-8px -449px}
+.fast_search_mod .cate-5{background-position:-8px -544px}
+.fast_search_mod .cate-6{background-position:-8px -639px}
+.fast_search_mod .cate-7{background-position:-8px -803px}
+.fast_search_mod .cate-8{background-position:-8px -898px}
+.fast_search_mod .cate-1:hover,.fast_search_mod .cate-1on{background-position:-148px -164px}
+.fast_search_mod .cate-2:hover,.fast_search_mod .cate-2on{background-position:-148px -259px}
+.fast_search_mod .cate-3:hover,.fast_search_mod .cate-3on{background-position:-148px -354px}
+.fast_search_mod .cate-4:hover,.fast_search_mod .cate-4on{background-position:-148px -449px}
+.fast_search_mod .cate-5:hover,.fast_search_mod .cate-5on{background-position:-148px -544px}
+.fast_search_mod .cate-6:hover,.fast_search_mod .cate-6on{background-position:-148px -639px}
+.fast_search_mod .cate-7:hover,.fast_search_mod .cate-7on{background-position:-148px -803px}
+.fast_search_mod .cate-8:hover,.fast_search_mod .cate-8on{background-position:-148px -898px}
+.fast_search_mod .cate-1:hover a,.fast_search_mod .cate-1on a,.fast_search_mod .cate-2:hover a,.fast_search_mod .cate-2on a,.fast_search_mod .cate-3:hover a,.fast_search_mod .cate-3on a,.fast_search_mod .cate-4:hover a,.fast_search_mod .cate-4on a,.fast_search_mod .cate-5:hover a,.fast_search_mod .cate-5on a,.fast_search_mod .cate-6:hover a,.fast_search_mod .cate-6on a,.fast_search_mod .cate-7:hover a,.fast_search_mod .cate-7on a,.fast_search_mod .cate-8:hover a,.fast_search_mod .cate-8on a{color:#36c;font-weight:400}
+.fast_search_mod .cate-1on a,.fast_search_mod .cate-2on a,.fast_search_mod .cate-3on a,.fast_search_mod .cate-4on a,.fast_search_mod .cate-5on a,.fast_search_mod .cate-6on a,.fast_search_mod .cate-7on a,.fast_search_mod .cate-8on a{font-weight:700}
+.fast_search_mod .cate-1:active{background-position:-218px -164px}
+.fast_search_mod .cate-2:active{background-position:-218px -259px}
+.fast_search_mod .cate-3:active{background-position:-218px -354px}
+.fast_search_mod .cate-4:active{background-position:-218px -449px}
+.fast_search_mod .cate-5:active{background-position:-218px -544px}
+.fast_search_mod .cate-6:active{background-position:-218px -639px}
+.fast_search_mod .cate-7:active{background-position:-218px -803px}
+.fast_search_mod .cate-8:active{background-position:-218px -898px}
+.fast_search_mod .cate-1a{background-position:-78px -164px}
+.fast_search_mod .cate-2a{background-position:-78px -259px}
+.fast_search_mod .cate-3a{background-position:-78px -354px}
+.fast_search_mod .cate-4a{background-position:-78px -449px}
+.fast_search_mod .cate-5a{background-position:-78px -544px}
+.fast_search_mod .cate-6a{background-position:-78px -639px}
+.fast_search_mod .cate-7a{background-position:-78px -803px}
+.fast_search_mod .cate-8a{background-position:-78px -898px}
+.fast_search_mod .cate-1a,.fast_search_mod .cate-2a,.fast_search_mod .cate-3a,.fast_search_mod .cate-4a,.fast_search_mod .cate-5a,.fast_search_mod .cate-6a,.fast_search_mod .cate-7a,.fast_search_mod .cate-8a,.fast_search_mod .cate-1a a,.fast_search_mod .cate-2a a,.fast_search_mod .cate-3a a,.fast_search_mod .cate-4a a,.fast_search_mod .cate-5a a,.fast_search_mod .cate-6a a,.fast_search_mod .cate-7a a,.fast_search_mod .cate-8a a{cursor:not-allowed}
+.fast_search_mod .cate-1a a:hover,.fast_search_mod .cate-2a a:hover,.fast_search_mod .cate-3a a:hover,.fast_search_mod .cate-4a a:hover,.fast_search_mod .cate-5a a:hover,.fast_search_mod .cate-6a a:hover,.fast_search_mod .cate-7a a:hover,.fast_search_mod .cate-8a a:hover{color:#666}
+.fast_search_tab .tips{padding:41px 0;text-align:center}
+.fast_search_tab .tips p{font:18px "Microsoft Yahei",Simsun;color:#666}
+.fast_search_tab .tips tt{display:inline-block;width:40px;height:40px;background:url(../images/popuploading.gif) no-repeat}
+.catemod{position:relative;padding:16px;float:left;border-top:1px solid #d9d9d9;background:#f7f7f7}
+.catemod i{position:absolute;width:21px;height:11px;display:block;background-position:0 -73px}
+.catemod i.action01{top:-11px;left:30px}
+.catemod i.action02{top:-11px;left:105px}
+.catemod i.action03{top:-11px;left:180px}
+.catemod i.action04{top:-11px;left:255px}
+.catemod i.action05{top:-11px;left:330px}
+.catemod i.action06{top:-11px;left:402px}
+.catemod i.action07{top:-11px;left:475px}
+.catemod i.action08{top:-11px;left:550px}
+.cate_more{width:565px;overflow:hidden;zoom:1;padding:0 0 7px;border-bottom:1px solid #d9d9d9}
+.cate_more li{float:left;padding:0 5px 3px 0;width:88px;height:22px;line-height:22px}
+.cate_more li a{display:inline-block;padding:0 8px;color:#666;text-decoration:none}
+.cate_more .cur a,.cate_more li a:hover{background:#36c;color:#fff;text-decoration:none}
+.cate_area{width:565px;padding:8px 0 0;overflow:hidden;zoom:1}
+.cate_area li{float:left;padding:0 0 0 8px;width:100px;height:25px;line-height:25px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.cate_area li a{color:#36c;text-decoration:none}
+.cate_area li a:hover{text-decoration:underline}
+.main .hotCity{width:598px;padding-bottom:10px;border:1px solid #d9d9d9;border-top:2px solid #ed9274;float:left;position:relative;margin-bottom:20px}
+.main .hotCity h2{background:#f8f8f8;color:#555;padding:5px 10px;font:18px Microsoft Yahei,\5b8b\4f53;font-weight:400}
+.main .hotCity h2 span{font-family:Arial;font-size:18px;font-weight:800;margin:0 5px}
+.main .hotCity .more{float:right;margin-top:-28px;margin-right:10px;text-decoration:none;color:#36c;outline:0;cursor:pointer}
+.main .hotCity .more:hover{color:#f60}
+.main .hotCity .cityBox{display:inline;width:180px;height:115px;float:left;margin:10px 0 0 15px}
+.main .hotCity .cityBox img{float:left}
+.imgbg:hover{opacity:.8;filter:alpha(opacity=80)}
+.main .hotCity .cityBox a.link{width:180px;height:30px;float:left;line-height:30px;color:#36c;text-decoration:none}
+.main .hotCity .cityBox a.link:hover{color:#f60}
+.main .hotCity .cityBox a.link:hover span{color:#f60}
+.main .hotCity .cityBox a.link span{color:#666;margin-left:3px}
+.allserchBut{width:240px;height:34px;background:url(../images/newindex.png) no-repeat 0 -785px;cursor:pointer;border:0}
+.allserchBut:hover{background-position:0 -819px}
+.hotelserchBut{width:130px;background-position:-110px -362px}
+.hotelserchBut:hover{background-position:-110px -396px}
+.mapserchBut{width:100px;height:34px;margin-right:10px;background:url(../images/newindex.png) no-repeat 0 -362px;cursor:pointer;border:0}
+.mapserchBut:hover{background-position:0 -396px}
+.hotelserchButlod{float:right;width:128px;_width:126px;height:32px;background:#dcdcdc;border:1px solid #bbb;text-align:center;color:#999;font:14px/32px "Microsoft Yahei",Simsun;cursor:not-allowed;_padding-top:5px;_height:27px}
+.hotelserchButlod span{width:16px;height:16px;background:url(../images/lc_loading.gif) no-repeat;display:inline-block;vertical-align:middle;margin-left:5px}
+.sidebar .search input.mapserchBut:focus,.sidebar .search input.allserchBut:focus{border:0;box-shadow:none;outline:0}

@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 星级返点设置关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Starreinfo createStarreinfo(Starreinfo starreinfo) throws SQLException;
+	
+	/**
+	 * 删除 星级返点设置关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteStarreinfo(long id);
+	
+	
+	/**
+	 * 修改 星级返点设置关联
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateStarreinfo(Starreinfo starreinfo);
+
+		
+	/**
+	 * 修改 星级返点设置关联但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateStarreinfoIgnoreNull(Starreinfo starreinfo);
+		
+	
+	/**
+	 * 查找 星级返点设置关联
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllStarreinfo(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 星级返点设置关联
+	 * @param id
+	 * @return
+	 */
+	public Starreinfo findStarreinfo(long id);
+	
+	
+	/** 
+	 * 查找 星级返点设置关联
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllStarreinfoForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找星级返点设置关联
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllStarreinfoBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 星级返点设置关联
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteStarreinfoBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countStarreinfoBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IStarreinfoComponent starreinfoComponent;
+	  
+ 	
+ 	public IStarreinfoComponent getStarreinfoComponent() {
+		return starreinfoComponent;
+	}
+	public void setStarreinfoComponent(IStarreinfoComponent  starreinfoComponent) {
+		this.starreinfoComponent = starreinfoComponent;
+	}
+	/**
+	 * 创建 星级返点设置关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Starreinfo createStarreinfo(Starreinfo starreinfo) throws SQLException{
+	
+		return starreinfoComponent.createStarreinfo(starreinfo);
+	}
+	/**
+	 * 删除 星级返点设置关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteStarreinfo(long id){
+	
+		return starreinfoComponent.deleteStarreinfo(id);
+	}
+	
+	
+	/**
+	 * 修改 星级返点设置关联
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateStarreinfo(Starreinfo starreinfo){
+		return starreinfoComponent.updateStarreinfo(starreinfo);
+	
+	}
+
+		
+	/**
+	 * 修改 星级返点设置关联但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateStarreinfoIgnoreNull(Starreinfo starreinfo){
+			return starreinfoComponent.updateStarreinfoIgnoreNull(starreinfo);
+	
+	}
+	
+	/**
+	 * 查找 星级返点设置关联
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllStarreinfo(String where, String orderby,int limit,int offset){
+		return starreinfoComponent.findAllStarreinfo(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 星级返点设置关联
+	 * @param id
+	 * @return
+	 */
+	public Starreinfo findStarreinfo(long id){
+		return starreinfoComponent.findStarreinfo(id);
+	}
+	
+	/** 
+	 * 查找 星级返点设置关联
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllStarreinfoForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return starreinfoComponent.findAllStarreinfo(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找星级返点设置关联
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllStarreinfoBySql(String sql,int limit,int offset){
+		return starreinfoComponent.findAllStarreinfo(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 星级返点设置关联
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteStarreinfoBySql(String sql){
+		return starreinfoComponent.excuteStarreinfoBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countStarreinfoBySql(String sql){
+		return starreinfoComponent.countStarreinfoBySql(sql);
+	}
+	
+	
+

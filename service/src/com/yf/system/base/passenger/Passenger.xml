@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Passenger">
+  
+  <typeAlias alias="Passenger" type="com.yf.system.base.passenger.Passenger"/>
+  
+
+  <resultMap id="resultPassengerMap" class="Passenger">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="ptype" column="C_PTYPE"/>
+  
+     <result property="idtype" column="C_IDTYPE"/>
+  
+     <result property="idnumber" column="C_IDNUMBER"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="fuelprice" column="C_FUELPRICE"/>
+  
+     <result property="airportfee" column="C_AIRPORTFEE"/>
+  
+     <result property="discount" column="C_DISCOUNT"/>
+  
+     <result property="ticketnum" column="C_TICKETNUM"/>
+  
+     <result property="fet" column="C_FET"/>
+  
+     <result property="ei" column="C_EI"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="tuifee" column="C_TUIFEE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+  
+     <result property="insurprice" column="C_INSURPRICE"/>
+  
+     <result property="rttime" column="C_RTTIME"/>
+  
+     <result property="tuitime" column="C_TUITIME"/>
+  
+     <result property="tuipiaoshouxufee" column="C_TUIPIAOSHOUXUFEE"/>
+  
+     <result property="hkstate" column="C_HKSTATE"/>
+  
+     <result property="yihai" column="C_YIHAI"/>
+  
+     <result property="haiqian" column="C_HAIQIAN"/>
+  
+     <result property="tuifeiyuanyi" column="C_TUIFEIYUANYI"/>
+  
+     <result property="iscabinsite" column="C_ISCABINSITE"/>
+  
+     <result property="tuifeidesc" column="C_TUIFEIDESC"/>
+  
+     <result property="beizhu" column="C_BEIZHU"/>
+  
+     <result property="tuifeitime" column="C_TUIFEITIME"/>
+  
+     <result property="notuidesc" column="C_NOTUIDESC"/>
+  
+     <result property="tuiorfei" column="C_TUIORFEI"/>
+     
+     <result property="changedate" column="C_CHANGEDATE"/>
+     
+     <result property="changeflight" column="C_CHANGEFLIGHT"/>
+     
+     <result property="changecabin" column="C_CHANGECABIN"/>
+     
+     <result property="changepnr" column="C_CHANGEPNR"/>
+     
+     <result property="mobile" column="C_MOBILE"/>
+     
+     <result property="repaytime" column="C_REPAYTIME"/>
+     
+     <result property="tuipiaobili" column="C_TUIPIAOBILI"/>
+     
+     <result property="anjianfee" column="C_ANJIANFEE"/>
+     
+     <result property="otherfee" column="C_OTHERFEE"/>
+     
+     <result property="tickettypeid" column="C_TICKETTYPEID"/>
+     
+      <result property="yuanprice" column="C_YUANPRICE"/>
+      
+      <result property="hkmethod" column="C_HKMETHOD"/>
+      
+       <result property="msgtype" column="C_MSGTYPE"/>
+       
+       <result property="isstudent" column="C_ISSTUDENT"/>
+       
+      <result property="cardvaliddate" column="C_CARDVALIDDATE"/>
+      
+      <result property="country" column="C_COUNTRY"/>
+      
+      <result property="birthday" column="C_BIRTHDAY"/>
+      
+      <result property="destzipcode" column="C_DESTZIPCODE"/>
+      
+      <result property="destadress" column="C_DESTADDRESS"/>
+      
+      <result property="liveaddress" column="C_LIVEADDRESS"/>
+      
+      <result property="lirun" column="C_LIRUN"/>
+      
+   
+  </resultMap>
+  
+  <select id="findAllPassenger"  resultMap="resultPassengerMap"  parameterClass="java.util.Map">
+  
+    select * from T_PASSENGER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllPassengerBySql"  resultMap="resultPassengerMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excutePassengerBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countPassengerBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_PASSENGER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findPassenger" parameterClass="long" resultClass="Passenger">
+    select 
+    	ID as id,
+	  			C_ORDERID as orderid,
+	  			C_NAME as name,
+	  			C_PTYPE as ptype,
+	  			C_IDTYPE as idtype,
+	  			C_IDNUMBER as idnumber,
+	  			C_PRICE as price,
+	  			C_FUELPRICE as fuelprice,
+	  			C_AIRPORTFEE as airportfee,
+	  			C_DISCOUNT as discount,
+	  			C_TICKETNUM as ticketnum,
+	  			C_FET as fet,
+	  			C_EI as ei,
+	  			C_STATE as state,
+	  			C_TUIFEE as tuifee,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language,
+	  			C_INSURPRICE as insurprice,
+	  			C_RTTIME as rttime,
+	  			C_TUITIME as tuitime,
+	  			C_TUIPIAOSHOUXUFEE as tuipiaoshouxufee,
+	  			C_HKSTATE as hkstate,
+	  			C_YIHAI as yihai,
+	  			C_HAIQIAN as haiqian,
+	  			C_TUIFEIYUANYI as tuifeiyuanyi,
+	  			C_ISCABINSITE as iscabinsite,
+	  			C_TUIFEIDESC as tuifeidesc,
+	  			C_BEIZHU as beizhu,
+	  			C_TUIFEITIME as tuifeitime,
+	  			C_NOTUIDESC as notuidesc,
+	  			C_TUIORFEI as tuiorfei,
+	  			C_CHANGEDATE as changedate,
+	  			C_CHANGEFLIGHT as changeflight,
+	  			C_CHANGECABIN as changecabin,
+	  			C_CHANGEPNR as changepnr,
+	  			C_MOBILE as mobile,
+	  			C_REPAYTIME as repaytime,
+	  			C_TUIPIAOBILI as tuipiaobili,
+	  			C_ANJIANFEE as anjianfee,
+	  			C_OTHERFEE as otherfee,
+	  			C_TICKETTYPEID as tickettypeid,
+	  			C_YUANPRICE as yuanprice,
+	  			C_HKMETHOD as hkmethod,
+	  			C_MSGTYPE as msgtype,
+	  			C_ISSTUDENT as issutdent,
+	  			C_CARDVALIDDATE as cardvaliddate,
+	  			C_COUNTRY as country,
+	  			C_BIRTHDAY as birthday,
+	  			C_DESTZIPCODE as destzipcode,
+	  			C_DESTADDRESS as destaddress,
+	  			C_LIVEADDRESS as liveaddress,
+	  			C_LIRUN as lirun
+	  			
+     from T_PASSENGER
+    where ID = #id#
+  </select>
+   
+  <insert id="createPassenger" parameterClass="Passenger">
+   <selectKey resultClass="long" type="pre" keyProperty="id">
+     SELECT ISNULL(MAX(ID),0)+1 AS VALUE FROM T_PASSENGER
+    </selectKey>
+    insert into T_PASSENGER ( 
+    	ID,
+	  			C_ORDERID,
+	  			C_NAME,
+	  			C_PTYPE,
+	  			C_IDTYPE,
+	  			C_IDNUMBER,
+	  			C_PRICE,
+	  			C_FUELPRICE,
+	  			C_AIRPORTFEE,
+	  			C_DISCOUNT,
+	  			C_TICKETNUM,
+	  			C_FET,
+	  			C_EI,
+	  			C_STATE,
+	  			C_TUIFEE,
+	  			C_UCODE,
+	  			C_LANGUAGE,
+	  			C_INSURPRICE,
+	  			C_RTTIME,
+	  			C_TUITIME,
+	  			C_TUIPIAOSHOUXUFEE,
+	  			C_HKSTATE,
+	  			C_YIHAI,
+	  			C_HAIQIAN,
+	  			C_TUIFEIYUANYI,
+	  			C_ISCABINSITE,
+	  			C_TUIFEIDESC,
+	  			C_BEIZHU,
+	  			C_TUIFEITIME,
+	  			C_NOTUIDESC,
+	  			C_TUIORFEI,
+	  			C_CHANGEDATE,
+	  			C_CHANGEFLIGHT,
+	  			C_CHANGECABIN,
+	  			C_CHANGEPNR,
+	  			C_MOBILE ,
+	  			C_REPAYTIME,
+	  			C_TUIPIAOBILI,
+	  			C_ANJIANFEE,
+	  			C_OTHERFEE ,
+	  			C_TICKETTYPEID,
+	  			C_YUANPRICE,
+	  			C_hkmethod,
+	  			C_MSGTYPE,
+	  			C_ISSTUDENT,
+	  			C_CARDVALIDDATE,
+	  			C_COUNTRY,
+	  			C_BIRTHDAY,
+	  			C_DESTZIPCODE,
+	  			C_DESTADDRESS,
+	  			C_LIVEADDRESS,
+	  			C_LIRUN
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#orderid:DECIMAL#,
+						
+	  						#name#,
+	  					
+							#ptype:DECIMAL#,
+						
+							#idtype:DECIMAL#,
+						
+	  						#idnumber#,
+	  					
+							#price:DECIMAL#,
+						
+							#fuelprice:DECIMAL#,
+						
+							#airportfee:DECIMAL#,
+						
+							#discount:DECIMAL#,
+						
+	  						#ticketnum#,
+	  					
+	  						#fet#,
+	  					
+	  						#ei#,
+	  					
+							#state:DECIMAL#,
+						
+							#tuifee:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+							#language:DECIMAL#,
+						
+							#insurprice#,
+						
+	  						#rttime#,
+	  					
+	  						#tuitime#,
+	  					
+							#tuipiaoshouxufee:DECIMAL#,
+						
+							#hkstate:DECIMAL#,
+						
+							#yihai:DECIMAL#,
+						
+							#haiqian:DECIMAL#,
+						
+							#tuifeiyuanyi:DECIMAL#,
+						
+							#iscabinsite:DECIMAL#,
+						
+	  						#tuifeidesc#,
+	  					
+	  						#beizhu#,
+	  					
+	  						#tuifeitime#,
+	  					
+	  						#notuidesc#,
+	  					
+  							#tuiorfei:DECIMAL#,
+  							#changedate#,
+  							#changeflight#,
+  							#changecabin#,
+  							#changepnr#,
+  							#mobile#,
+  							#repaytime#,
+  							#tuipiaobili#,
+  							#anjianfee:DECIMAL#,
+  							#otherfee:DECIMAL#,
+  							#tickettypeid#,
+  							#yuanprice#,
+  							#hkmethod#,
+  							#msgtype#,
+  							#isstudent:DECIMAL#,
+  							#cardvaliddate#,
+  							#country#,
+  							#birthday#,
+  							#destzipcode#,
+  							#destadress#,
+  							#liveaddress#,
+  							#lirun#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deletePassenger" parameterClass="long">
+    delete from T_PASSENGER
+    where ID = #id#
+  </delete>
+	
+  <update id="updatePassenger" parameterClass="Passenger">
+    update T_PASSENGER 
+    set 
+    	C_ORDERID = #orderid:DECIMAL#,
+						C_NAME = #name#,
+	  					C_PTYPE = #ptype:DECIMAL#,
+						C_IDTYPE = #idtype:DECIMAL#,
+						C_IDNUMBER = #idnumber#,
+	  					C_PRICE = #price:DECIMAL#,
+						C_FUELPRICE = #fuelprice:DECIMAL#,
+						C_AIRPORTFEE = #airportfee:DECIMAL#,
+						C_DISCOUNT = #discount:DECIMAL#,
+						C_TICKETNUM = #ticketnum#,
+	  					C_FET = #fet#,
+	  					C_EI = #ei#,
+	  					C_STATE = #state:DECIMAL#,
+						C_TUIFEE = #tuifee:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_INSURPRICE = #insurprice#,
+						C_RTTIME = #rttime#,
+	  					C_TUITIME = #tuitime#,
+	  					C_TUIPIAOSHOUXUFEE = #tuipiaoshouxufee:DECIMAL#,
+						C_HKSTATE = #hkstate:DECIMAL#,
+						C_YIHAI = #yihai:DECIMAL#,
+						C_HAIQIAN = #haiqian:DECIMAL#,
+						C_TUIFEIYUANYI = #tuifeiyuanyi:DECIMAL#,
+						C_ISCABINSITE = #iscabinsite:DECIMAL#,
+						C_TUIFEIDESC = #tuifeidesc#,
+	  					C_BEIZHU = #beizhu#,
+	  					C_TUIFEITIME = #tuifeitime#,
+	  					C_NOTUIDESC = #notuidesc#,
+	  					C_TUIORFEI = #tuiorfei:DECIMAL#,
+	  					C_CHANGEDATE=#changedate#,
+	  					C_CHANGEFLIGHT=#changeflight#,
+	  					C_CHANGECABIN=#changecabin#,
+	  					C_CHANGEPNR=#changepnr#,
+	  					C_MOBILE=#mobile#,
+	  					C_REPAYTIME=#repaytime#,
+	  					C_TUIPIAOBILI=#tuipiaobili#,
+	  					C_ANJIANFEE=#anjianfee#,
+	  					C_OTHERFEE=#otherfee#,
+	  					C_TICKETTYPEID=#tickettypeid#,
+	  					C_YUANPRICE=#yuanprice#,
+	  					C_HKMETHOD=#hkmethod#,
+	  					C_MSGTYPE=#msgtype#,
+	  					C_BIRTHDAY=#birthday#,
+	  					C_LIVEADDRESS=#liveaddress#,
+	  					C_LIRUN=#lirun:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

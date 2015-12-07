@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Flightmodel">
+  
+  <typeAlias alias="Flightmodel" type="com.yf.system.base.flightmodel.Flightmodel"/>
+  
+
+  <resultMap id="resultFlightmodelMap" class="Flightmodel">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="modelnum" column="C_MODELNUM"/>
+  
+     <result property="modelname" column="C_MODELNAME"/>
+  
+     <result property="ridenum" column="C_RIDENUM"/>
+  
+     <result property="modeldesc" column="C_MODELDESC"/>
+  
+     <result property="isbig" column="C_ISBIG"/>
+  
+     <result property="picpath" column="C_PICPATH"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllFlightmodel"  resultMap="resultFlightmodelMap"  parameterClass="java.util.Map">
+  
+    select * from T_FLIGHTMODEL
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllFlightmodelBySql"  resultMap="resultFlightmodelMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteFlightmodelBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countFlightmodelBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_FLIGHTMODEL
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findFlightmodel" parameterClass="long" resultClass="Flightmodel">
+    select 
+    	ID as id,
+	  			C_MODELNUM as modelnum,
+	  			C_MODELNAME as modelname,
+	  			C_RIDENUM as ridenum,
+	  			C_MODELDESC as modeldesc,
+	  			C_ISBIG as isbig,
+	  			C_PICPATH as picpath,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_FLIGHTMODEL
+    where ID = #id#
+  </select>
+   
+  <insert id="createFlightmodel" parameterClass="Flightmodel">
+    insert into T_FLIGHTMODEL ( 
+    	ID,
+	  			C_MODELNUM,
+	  			C_MODELNAME,
+	  			C_RIDENUM,
+	  			C_MODELDESC,
+	  			C_ISBIG,
+	  			C_PICPATH,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#modelnum#,
+	  					
+	  						#modelname#,
+	  					
+	  						#ridenum#,
+	  					
+	  						#modeldesc#,
+	  					
+							#isbig:DECIMAL#,
+						
+	  						#picpath#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteFlightmodel" parameterClass="long">
+    delete from T_FLIGHTMODEL
+    where ID = #id#
+  </delete>
+	
+  <update id="updateFlightmodel" parameterClass="Flightmodel">
+    update T_FLIGHTMODEL 
+    set 
+    	C_MODELNUM = #modelnum#,
+	  					C_MODELNAME = #modelname#,
+	  					C_RIDENUM = #ridenum#,
+	  					C_MODELDESC = #modeldesc#,
+	  					C_ISBIG = #isbig:DECIMAL#,
+						C_PICPATH = #picpath#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

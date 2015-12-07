@@ -1,0 +1,1870 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+  
+  <bean id="cityairportManager" class="com.yf.system.base.cityairport.CityairportManager" >
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="cityairportComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.cityairport.CityairportComponent" >
+	        <property name="cityairportManager" ref="cityairportManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ 
+ <bean id="aircompanyManager" class="com.yf.system.base.aircompany.AircompanyManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="aircompanyComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.aircompany.AircompanyComponent">
+	        <property name="aircompanyManager" ref="aircompanyManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  
+  <bean id="airbasepriceManager" class="com.yf.system.base.airbaseprice.AirbasepriceManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="airbasepriceComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.airbaseprice.AirbasepriceComponent">
+	        <property name="airbasepriceManager" ref="airbasepriceManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ 
+  <bean id="airfeeManager" class="com.yf.system.base.airfee.AirfeeManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="airfeeComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.airfee.AirfeeComponent">
+	        <property name="airfeeManager" ref="airfeeManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ <bean id="airflightManager" class="com.yf.system.base.airflight.AirflightManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="airflightComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.airflight.AirflightComponent">
+	        <property name="airflightManager" ref="airflightManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+<bean id="backpointManager" class="com.yf.system.base.backpoint.BackpointManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="backpointComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.backpoint.BackpointComponent">
+	        <property name="backpointManager" ref="backpointManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+<bean id="cabinManager" class="com.yf.system.base.cabin.CabinManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="cabinComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.cabin.CabinComponent">
+	        <property name="cabinManager" ref="cabinManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  <bean id="customeraircardManager" class="com.yf.system.base.customeraircard.CustomeraircardManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="customeraircardComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.customeraircard.CustomeraircardComponent">
+	        <property name="customeraircardManager" ref="customeraircardManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+<bean id="flightstopManager" class="com.yf.system.base.flightstop.FlightstopManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="flightstopComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.flightstop.FlightstopComponent">
+	        <property name="flightstopManager" ref="flightstopManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+<bean id="noterecorderManager" class="com.yf.system.base.noterecorder.NoterecorderManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="noterecorderComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.noterecorder.NoterecorderComponent">
+	        <property name="noterecorderManager" ref="noterecorderManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  <bean id="orderinfoManager" class="com.yf.system.base.orderinfo.OrderinfoManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="orderinfoComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.orderinfo.OrderinfoComponent">
+	        <property name="orderinfoManager" ref="orderinfoManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ <bean id="orderinforcManager" class="com.yf.system.base.orderinforc.OrderinforcManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="orderinforcComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.orderinforc.OrderinforcComponent">
+	        <property name="orderinforcManager" ref="orderinforcManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+<bean id="passengerManager" class="com.yf.system.base.passenger.PassengerManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="passengerComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.passenger.PassengerComponent">
+	        <property name="passengerManager" ref="passengerManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ <bean id="paymentrecorderManager" class="com.yf.system.base.paymentrecorder.PaymentrecorderManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="paymentrecorderComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.paymentrecorder.PaymentrecorderComponent">
+	        <property name="paymentrecorderManager" ref="paymentrecorderManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ <bean id="policyperiodManager" class="com.yf.system.base.policyperiod.PolicyperiodManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="policyperiodComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.policyperiod.PolicyperiodComponent">
+	        <property name="policyperiodManager" ref="policyperiodManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+<bean id="segmentinfoManager" class="com.yf.system.base.segmentinfo.SegmentinfoManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="segmentinfoComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.segmentinfo.SegmentinfoComponent">
+	        <property name="segmentinfoManager" ref="segmentinfoManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+
+   <bean id="spzrateManager" class="com.yf.system.base.spzrate.SpzrateManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="spzrateComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.spzrate.SpzrateComponent">
+	        <property name="spzrateManager" ref="spzrateManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+
+  <bean id="sysmessageManager" class="com.yf.system.base.sysmessage.SysmessageManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="sysmessageComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.sysmessage.SysmessageComponent">
+	        <property name="sysmessageManager" ref="sysmessageManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ 
+  <bean id="templateManager" class="com.yf.system.base.template.TemplateManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="templateComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.template.TemplateComponent">
+	        <property name="templateManager" ref="templateManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+<bean id="zrateManager" class="com.yf.system.base.zrate.ZrateManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="zrateComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.zrate.ZrateComponent">
+	        <property name="zrateManager" ref="zrateManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+
+ <bean id="flightmodelManager" class="com.yf.system.base.flightmodel.FlightmodelManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="flightmodelComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.flightmodel.FlightmodelComponent">
+	        <property name="flightmodelManager" ref="flightmodelManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+
+  
+  <bean id="servicecenterManager" class="com.yf.system.base.servicecenter.ServicecenterManager">
+  <property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+ 
+  <bean id="servicecenterComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.servicecenter.ServicecenterComponent">
+	        <property name="servicecenterManager" ref="servicecenterManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  
+  <bean id="specialpriceManager" class="com.yf.system.base.specialprice.SpecialpriceManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="specialpriceComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.specialprice.SpecialpriceComponent">
+	        <property name="specialpriceManager" ref="specialpriceManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ <bean id="cpzrateManager" class="com.yf.system.base.cpzrate.CpzrateManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="cpzrateComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.cpzrate.CpzrateComponent">
+	        <property name="cpzrateManager" ref="cpzrateManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean> 
+  
+  <bean id="teamapplyManager" class="com.yf.system.base.teamapply.TeamapplyManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="teamapplyComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.teamapply.TeamapplyComponent">
+	        <property name="teamapplyManager" ref="teamapplyManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+
+ <bean id="supteamManager" class="com.yf.system.base.supteam.SupteamManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="supteamComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.supteam.SupteamComponent">
+	        <property name="supteamManager" ref="supteamManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  
+  <bean id="kweifabuManager" class="com.yf.system.base.kweifabu.KweifabuManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="kweifabuComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.kweifabu.KweifabuComponent">
+	        <property name="kweifabuManager" ref="kweifabuManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+   <bean id="kweisqManager" class="com.yf.system.base.kweisq.KweisqManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="kweisqComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.kweisq.KweisqComponent">
+	        <property name="kweisqManager" ref="kweisqManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  
+  <bean id="jinribaobiaoManager" class="com.yf.system.base.jinribaobiao.JinribaobiaoManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="jinribaobiaoComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.jinribaobiao.JinribaobiaoComponent">
+	        <property name="jinribaobiaoManager" ref="jinribaobiaoManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  
+  <bean id="tuipiaoManager" class="com.yf.system.base.tuipiao.TuipiaoManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="tuipiaoComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.tuipiao.TuipiaoComponent">
+	        <property name="tuipiaoManager" ref="tuipiaoManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  <bean id="sellreportManager" class="com.yf.system.base.sellreport.SellreportManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="sellreportComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.sellreport.SellreportComponent">
+	        <property name="sellreportManager" ref="sellreportManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ <bean id="scangManager" class="com.yf.system.base.scang.ScangManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="scangComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.scang.ScangComponent">
+	        <property name="scangManager" ref="scangManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+	<bean id="rperformanceManager" class="com.yf.system.base.rperformance.RperformanceManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="rperformanceComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.rperformance.RperformanceComponent">
+	        <property name="rperformanceManager" ref="rperformanceManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+<bean id="rsectorManager" class="com.yf.system.base.rsector.RsectorManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="rsectorComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.rsector.RsectorComponent">
+	        <property name="rsectorManager" ref="rsectorManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ <bean id="perworkloadManager" class="com.yf.system.base.perworkload.PerworkloadManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="perworkloadComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.perworkload.PerworkloadComponent">
+	        <property name="perworkloadManager" ref="perworkloadManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+   <bean id="rdepartmentManager" class="com.yf.system.base.rdepartment.RdepartmentManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="rdepartmentComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.rdepartment.RdepartmentComponent">
+	        <property name="rdepartmentManager" ref="rdepartmentManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ <bean id="rgroupcustomersManager" class="com.yf.system.base.rgroupcustomers.RgroupcustomersManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="rgroupcustomersComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.rgroupcustomers.RgroupcustomersComponent">
+	        <property name="rgroupcustomersManager" ref="rgroupcustomersManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ <bean id="rzhixiaoManager" class="com.yf.system.base.rzhixiao.RzhixiaoManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="rzhixiaoComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.rzhixiao.RzhixiaoComponent">
+	        <property name="rzhixiaoManager" ref="rzhixiaoManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  
+  
+<bean id="fcountryManager" class="com.yf.system.base.fcountry.FcountryManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  <bean id="fcountryComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.fcountry.FcountryComponent">
+	        <property name="fcountryManager" ref="fcountryManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  
+   <bean id="passengerrepayrcManager" class="com.yf.system.base.passengerrepayrc.PassengerrepayrcManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="passengerrepayrcComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.passengerrepayrc.PassengerrepayrcComponent">
+	        <property name="passengerrepayrcManager" ref="passengerrepayrcManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  
+  <bean id="lowestpriceManager" class="com.yf.system.base.lowestprice.LowestpriceManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="lowestpriceComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.lowestprice.LowestpriceComponent">
+	        <property name="lowestpriceManager" ref="lowestpriceManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  
+   <bean id="ticketappManager" class="com.yf.system.base.ticketapp.TicketappManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="ticketappComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.ticketapp.TicketappComponent">
+	        <property name="ticketappManager" ref="ticketappManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  <!-- 包机订单开始 -->
+  <bean id="charterorderManager" class="com.yf.system.base.charterorder.CharterorderManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="charterorderComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.charterorder.CharterorderComponent">
+	        <property name="charterorderManager" ref="charterorderManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  <!-- 包机订单结束 -->
+  
+  
+  <!-- 服务公司信息表开始 赵晓晓-->
+  <bean id="insurcomputerManager" class="com.yf.system.base.insurcomputer.InsurcomputerManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="insurcomputerComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.insurcomputer.InsurcomputerComponent">
+	        <property name="insurcomputerManager" ref="insurcomputerManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  <!-- 服务公司表结束 -->
+  <!-- 保险单表开始 赵晓晓-->
+  
+  <bean id="insurorderManager" class="com.yf.system.base.insurorder.InsurorderManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="insurorderComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.insurorder.InsurorderComponent">
+	        <property name="insurorderManager" ref="insurorderManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  <!-- 保险单表结束 -->
+  <!-- 被保人信息表开始  赵晓晓-->
+   <bean id="insuruserManager" class="com.yf.system.base.insuruser.InsuruserManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="insuruserComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.insuruser.InsuruserComponent">
+	        <property name="insuruserManager" ref="insuruserManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ 
+ <bean id="limitcabinManager" class="com.yf.system.base.limitcabin.LimitcabinManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="limitcabinComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.limitcabin.LimitcabinComponent">
+	        <property name="limitcabinManager" ref="limitcabinManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+<bean id="changpassManager" class="com.yf.system.base.changpass.ChangpassManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="changpassComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.changpass.ChangpassComponent">
+	        <property name="changpassManager" ref="changpassManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ <!-- 行程单 -->
+ <bean id="xcdnoManager" class="com.yf.system.base.xcdno.XcdnoManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="xcdnoComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.xcdno.XcdnoComponent">
+	        <property name="xcdnoManager" ref="xcdnoManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  <bean id="xcdnoinfoManager" class="com.yf.system.base.xcdnoinfo.XcdnoinfoManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="xcdnoinfoComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.xcdnoinfo.XcdnoinfoComponent">
+	        <property name="xcdnoinfoManager" ref="xcdnoinfoManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  <bean id="xcdorderManager" class="com.yf.system.base.xcdorder.XcdorderManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="xcdorderComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.xcdorder.XcdorderComponent">
+	        <property name="xcdorderManager" ref="xcdorderManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  <bean id="peisongManager" class="com.yf.system.base.peisong.PeisongManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="peisongComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.peisong.PeisongComponent">
+	        <property name="peisongManager" ref="peisongManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  
+   <bean id="zhefanManager" class="com.yf.system.base.zhefan.ZhefanManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="zhefanComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.zhefan.ZhefanComponent">
+	        <property name="zhefanManager" ref="zhefanManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  <!-- 被保人信息表结束 -->
+  
+  <bean id="nfdpriceManager" class="com.yf.system.base.nfdprice.NfdpriceManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="nfdpriceComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.nfdprice.NfdpriceComponent">
+	        <property name="nfdpriceManager" ref="nfdpriceManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+  
+   <bean id="airliencabinManager" class="com.yf.system.base.airliencabin.AirliencabinManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="airliencabinComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.airliencabin.AirliencabinComponent">
+	        <property name="airliencabinManager" ref="airliencabinManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ 
+ <bean id="airlienManager" class="com.yf.system.base.airlien.AirlienManager">
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  <bean id="airlienComponentProxy"
+  	class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+  	<property name="transactionManager">
+  		<ref bean="transactionManager" />
+  	</property>
+  	<property name="target">
+	  	 <bean class="com.yf.system.base.airlien.AirlienComponent">
+	        <property name="airlienManager" ref="airlienManager"/>
+	      </bean>
+  	</property>
+  	<property name="transactionAttributes">
+  		<props>
+  			<prop key="create*">PROPAGATION_REQUIRED</prop>
+  			<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+  			<prop key="excute*">PROPAGATION_REQUIRED</prop>
+  			<prop key="update*">PROPAGATION_REQUIRED</prop>
+  			<prop key="count*">PROPAGATION_REQUIRED,readOnly</prop>
+  		</props>
+  	</property>
+  </bean>
+ 
+   <bean id="airService" class="com.yf.system.base.service.AirService" scope="singleton">
+    <property name="cache" value="true"/>
+ 	<property name="cityairportComponent" ref="cityairportComponentProxy"/>	
+ 	<property name="aircompanyComponent" ref="aircompanyComponentProxy"/>
+ 	<property name="airbasepriceComponent" ref="airbasepriceComponentProxy"/>
+ 	<property name="airfeeComponent" ref="airfeeComponentProxy"/>	
+ 	<property name="airflightComponent" ref="airflightComponentProxy"/>	
+ 	<property name="backpointComponent" ref="backpointComponentProxy"/>	
+ 	<property name="cabinComponent" ref="cabinComponentProxy"/>
+ 	<property name="customeraircardComponent" ref="customeraircardComponentProxy"/>	
+ 	<property name="flightstopComponent" ref="flightstopComponentProxy"/>	
+ 	<property name="noterecorderComponent" ref="noterecorderComponentProxy"/>
+ 	<property name="orderinfoComponent" ref="orderinfoComponentProxy"/>	
+ 	<property name="orderinforcComponent" ref="orderinforcComponentProxy"/>	
+ 	<property name="passengerComponent" ref="passengerComponentProxy"/>	
+ 	<property name="paymentrecorderComponent" ref="paymentrecorderComponentProxy"/>	
+ 	<property name="policyperiodComponent" ref="policyperiodComponentProxy"/>
+ 	<property name="segmentinfoComponent" ref="segmentinfoComponentProxy"/>	
+ 	<property name="spzrateComponent" ref="spzrateComponentProxy"/>	
+ 	<property name="sysmessageComponent" ref="sysmessageComponentProxy"/>
+ 	<property name="templateComponent" ref="templateComponentProxy"/>	
+ 	<property name="zrateComponent" ref="zrateComponentProxy"/>	
+ 	<property name="flightmodelComponent" ref="flightmodelComponentProxy"/>	
+ 	<property name="specialpriceComponent" ref="specialpriceComponentProxy"/>	
+ 	<property name="cpzrateComponent" ref="cpzrateComponentProxy"/>	
+ 	<property name="teamapplyComponent" ref="teamapplyComponentProxy"/>	
+ 	<property name="supteamComponent" ref="supteamComponentProxy"/>	
+ 	<property name="kweifabuComponent" ref="kweifabuComponentProxy"/>	
+ 	<property name="kweisqComponent" ref="kweisqComponentProxy"/>
+ 	<property name="jinribaobiaoComponent" ref="jinribaobiaoComponentProxy"/>
+ 	<property name="tuipiaoComponent" ref="tuipiaoComponentProxy"/>		
+ 	<property name="sellreportComponent" ref="sellreportComponentProxy"/>	
+ 	<property name="scangComponent" ref="scangComponentProxy"/>	
+ 	<property name="rperformanceComponent" ref="rperformanceComponentProxy"/>
+ 	<property name="rsectorComponent" ref="rsectorComponentProxy"/>	
+ 	<property name="perworkloadComponent" ref="perworkloadComponentProxy"/>
+ 	<property name="rdepartmentComponent" ref="rdepartmentComponentProxy"/>	
+ 	<property name="rgroupcustomersComponent" ref="rgroupcustomersComponentProxy"/>	
+ 	<property name="rzhixiaoComponent" ref="rzhixiaoComponentProxy"/>		
+ 	<property name="fcountryComponent" ref="fcountryComponentProxy"/>	
+ 	<property name="passengerrepayrcComponent" ref="passengerrepayrcComponentProxy"/>	
+ 	<property name="lowestpriceComponent" ref="lowestpriceComponentProxy"/>	
+ 	<property name="ticketappComponent" ref="ticketappComponentProxy"/>		
+ 	<!-- 包机订单开始 -->
+ 	<property name="charterorderComponent" ref="charterorderComponentProxy"/>
+ 	<!-- 包机订单结束 -->				
+ 	<!-- 服务公司表开始 -->
+ 	<property name="insurcomputerComponent" ref="insurcomputerComponentProxy"/>	
+ 	<!-- 服务公司表结束 -->
+ 	<!-- 保险单 -->
+ 	<property name="insurorderComponent" ref="insurorderComponentProxy"/>
+ 	<!-- 被保人信息 -->
+ 	<property name="insuruserComponent" ref="insuruserComponentProxy"/>	
+ 	<!-- 限制舱位 -->
+ 	<property name="limitcabinComponent" ref="limitcabinComponentProxy"/>	
+ 	
+ 	<property name="changpassComponent" ref="changpassComponentProxy"/>	
+ 	<!-- 行程单 -->
+ 	<property name="xcdnoComponent" ref="xcdnoComponentProxy"/>
+ 	<property name="xcdnoinfoComponent" ref="xcdnoinfoComponentProxy"/>
+ 	<property name="xcdorderComponent" ref="xcdorderComponentProxy"/>
+ 	<!-- 配送 -->
+ 	<property name="peisongComponent" ref="peisongComponentProxy"/>
+ 	<property name="zhefanComponent" ref="zhefanComponentProxy"/>
+ 	
+ 	<property name="nfdpriceComponent" ref="nfdpriceComponentProxy"/>
+ 	
+ 	
+ 	<property name="airliencabinComponent" ref="airliencabinComponentProxy"/>
+ 	<property name="airlienComponent" ref="airlienComponentProxy"/>
+ 	
+   </bean>
+	
+	<bean name="/IAirService"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<property name="service" ref="airService" />
+		<property name="serviceInterface"
+			value="com.yf.system.base.service.IAirService" />
+	</bean>
+	
+	<bean id="servicecenterService" class="com.yf.system.base.service.ServicecenterService" scope="singleton">
+   		<property name="servicecenterComponent" ref="servicecenterComponentProxy"/>
+  </bean>
+ 
+  <bean name="/IServicecenterService" class="org.springframework.remoting.caucho.HessianServiceExporter">
+	    <property name="service" ref="servicecenterService"/>
+	    <property name="serviceInterface" value="com.yf.system.base.service.IServicecenterService"/>
+  </bean>
+ 
+</beans>

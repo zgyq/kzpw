@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Specialprice">
+  
+  <typeAlias alias="Specialprice" type="com.yf.system.base.specialprice.Specialprice"/>
+  
+
+  <resultMap id="resultSpecialpriceMap" class="Specialprice">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="startport" column="C_STARTPORT"/>
+  
+     <result property="arrivalport" column="C_ARRIVALPORT"/>
+  
+     <result property="starttime" column="C_STARTTIME"/>
+  
+     <result property="discount" column="C_DISCOUNT"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="updatetime" column="C_UPDATETIME"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+     
+     <result property="isinternal" column="C_ISINTERNAL"/>
+   
+  </resultMap>
+  
+  <select id="findAllSpecialprice"  resultMap="resultSpecialpriceMap"  parameterClass="java.util.Map">
+  
+    select * from T_SPECIALPRICE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSpecialpriceBySql"  resultMap="resultSpecialpriceMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSpecialpriceBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSpecialpriceBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SPECIALPRICE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSpecialprice" parameterClass="long" resultClass="Specialprice">
+    select 
+    	ID as id,
+	  			C_STARTPORT as startport,
+	  			C_ARRIVALPORT as arrivalport,
+	  			C_STARTTIME as starttime,
+	  			C_DISCOUNT as discount,
+	  			C_PRICE as price,
+	  			C_UPDATETIME as updatetime,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_ISINTERNAL as isinternal 
+     from T_SPECIALPRICE
+    where ID = #id#
+  </select>
+   
+  <insert id="createSpecialprice" parameterClass="Specialprice">
+    insert into T_SPECIALPRICE ( 
+    	ID,
+	  			C_STARTPORT,
+	  			C_ARRIVALPORT,
+	  			C_STARTTIME,
+	  			C_DISCOUNT,
+	  			C_PRICE,
+	  			C_UPDATETIME,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_ISINTERNAL 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#startport#,
+	  					
+	  						#arrivalport#,
+	  					
+	  						#starttime#,
+	  					
+							#discount:DECIMAL#,
+						
+							#price:DECIMAL#,
+						
+	  						#updatetime#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  						
+	  						#isinternal#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSpecialprice" parameterClass="long">
+    delete from T_SPECIALPRICE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSpecialprice" parameterClass="Specialprice">
+    update T_SPECIALPRICE 
+    set 
+    	C_STARTPORT = #startport#,
+	  					C_ARRIVALPORT = #arrivalport#,
+	  					C_STARTTIME = #starttime#,
+	  					C_DISCOUNT = #discount:DECIMAL#,
+						C_PRICE = #price:DECIMAL#,
+						C_UPDATETIME = #updatetime#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_ISINTERNAL=#isinternal#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

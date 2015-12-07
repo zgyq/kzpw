@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>国祥商旅酒店预定系统</title>
+<link href="../skin/blue/css/base.css" rel="stylesheet" type="text/css" />
+<link href="../skin/blue/css/font.css" rel="stylesheet" type="text/css" />
+<link href="../skin/blue/css/hotel.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+ <div class="center"><iframe src="../top.html" scrolling="no" hspace="0" frameborder="0" width="1004" height="160"></iframe></div>
+ <!--includ top 直接替换掉整个DIV-->
+</div>  
+<!--top over-->
+<div id="hotel">
+      <div id="left" class="f">
+          <div class="search"><font class="black">国内机票搜索</font></div>
+          <form action="list.html" method="get">
+          <div class="box_sea searchlist">
+             <ul>
+           <li class="searchall mt10">入住城市：<input type="text" class="text_search"  /></li>
+           <li class="searchall">入住时间：<input type="text" class="text_search"  /></li>
+           <li class="searchall">离店时间：<input type="text" class="text_search"  /></li>
+           <li class="searchall">酒店星级：<select name="" class="sel_search"><option>-------所有星级-------</option></select></li>
+           <li class="searchall">价额范围：<input type="text" class="text_searchwf"  /><input type="text" class="text_searchwf"  /></li>
+              <li class="searchall">关&nbsp;&nbsp;键&nbsp;字：<input type="text" class="text_search" value="酒店名称/地址/地标"  /></li>
+              <li class="but">
+               <span class="f">全国<font class="f90">650个</font>城市，<br/><font class="f90">19000</font>余家酒店。</span>
+               <span class="r mr25"><input type="submit"  class="button_sea_ticket" value="立即搜索"  /></span>
+               <span class="c"></span>
+              </li>
+             </ul>
+          </div>
+          </form>
+          <div class="searchbot"></div>
+          <div class="mt7"><img src="../images/ad_260_60.jpg" width="260" height="60" title="地图上找酒店，精彩尽在于此。" /> </div>
+          <div class="mt7">
+             <div class="titlenew">
+                  <font class="black f">您最近浏览过的酒店</font>
+                  <div class="c"></div>  
+               </div>
+               <div class="box recently"><span class="f ico_recently">&nbsp;</span>您最近没有浏览过任何酒店。</div>
+                 <div class="box content" style="display:none">
+                 <ul class="box_botm_xu">
+                     <li>
+                         <span class="f number font_fff_09">1</span>
+                         <a href="#" class="f">北京如家快捷酒店</a>
+                         <font class="r font_f60_c">&yen;333</font>
+                         <div class="c"></div>
+                     </li>
+                     <li class="content_lh">
+                       <span class="f pf25">共<font class="f90">98条</font>评论</span>
+                       <span class="r pr20"><font class="f90">99%</font>满意度</span>
+                       <div class="c"></div>
+                     </li>
+                     <div class="nohave6 c">&nbsp;</div>
+                 </ul>
+                 <ul class="mt7 box_botm_xu">
+                     <li>
+                         <span class="f number font_fff_09">1</span>
+                         <a href="#" class="f">北京如家快捷酒店</a>
+                         <font class="r font_f60_c">&yen;333</font>
+                         <div class="c"></div>
+                     </li>
+                     <li class="content_lh">
+                       <span class="f pf25">共<font class="f90">98条</font>评论</span>
+                       <span class="r pr20"><font class="f90">99%</font>满意度</span>
+                       <div class="c"></div>
+                     </li>
+                     <div class="nohave6 c">&nbsp;</div>
+                 </ul>
+                 <ul class="mt7">
+                     <li>
+                         <span class="f number font_fff_09">1</span>
+                         <a href="#" class="f">北京如家快捷酒店</a>
+                         <font class="r font_f60_c">&yen;333</font>
+                         <div class="c"></div>
+                     </li>
+                     <li class="content_lh">
+                       <span class="f pf25">共<font class="f90">98条</font>评论</span>
+                       <span class="r pr20"><font class="f90">99%</font>满意度</span>
+                       <div class="c"></div>
+                     </li>
+                     <div class="nohave6 c">&nbsp;</div>
+                 </ul>
+                </div> 
+          </div>  
+           <div class="mt7"><img src="../images/ad_260_100.jpg" width="260" height="100" /></div>   
+      </div>
+ <div id="list" class="r">
+    <div>
+       <span class="f ico_hotel">&nbsp;</span><font class="f biger000">选择酒店（北京）</font>
+       <span class="r status">&nbsp;</span>
+       <div class="c"></div>
+    </div>
+    <div class="box mt3">
+             <div class="title">
+                  <font class="black low f mr5">筛选条件</font>
+                  <div class="f pf20 conditionwall floatall">
+                       <ul>
+                       <li class="f mr5">
+                          <span class="condition f a41300">套房</span>
+                          <span class="del_condition f">&nbsp;</span>
+                          <div class="c"></div>
+                       </li>
+                       <li class="f mr5">
+                          <span class="condition f a41300">五星级/豪华型</span>
+                          <span class="del_condition f">&nbsp;</span>
+                          <div class="c"></div>
+                       </li>
+                       <li class="f mr5">
+                          <span class="condition f a41300">机场接送</span>
+                          <span class="del_condition f">&nbsp;</span>
+                          <div class="c"></div>
+                       </li>
+                       <li class="f mr5">
+                          <span class="condition f a41300">五星级/豪华型</span>
+                          <span class="del_condition f">&nbsp;</span>
+                          <div class="c"></div>
+                       </li>
+                       <li class="f mr5">
+                          <span class="condition f a41300">机场接送</span>
+                          <span class="del_condition f">&nbsp;</span>
+                          <div class="c"></div>
+                       </li>
+                       <li class="nohuan"></li>
+                       </ul>
+                  </div>
+                  <div class="r nohuan"><a href="#" class=" l06c" >>>清除筛选条件</a></div>
+                  <div class="c"></div>  
+            </div>
+            <div class="c sealist">
+               <ul class="box_botm_xu c">
+                <li class="f sealist_first l267dff">酒店价格：</li>
+                <li class="f sealist_all"><span class="sealist_onall">全部</span></li>
+                <li class="f sealist_li">¥600以上</li>
+                <li class="f sealist_li">¥600-¥300</li>
+                <li class="f sealist_li">¥300-¥150</li>
+                <div class="c"></div>
+               </ul>
+               <div class="c"></div>
+               <ul class="box_botm_xu c">
+                <li class="f sealist_first l267dff">酒店星级：</li>
+                <li class="f sealist_all"><span class="sealist_onall">全部</span></li>
+                <li class="f sealist_li">五星级/豪华</li>
+                <li class="f sealist_li">四星级/高档</li>
+                <li class="f sealist_li">三星级/舒适</li>
+                <li class="f sealist_li">二星级/经济</li>
+                <div class="c"></div>
+               </ul>
+               <ul class="box_botm_xu c">
+                <li class="f sealist_first l267dff">酒店品牌：</li>
+                <li class="f sealist_all">全部</li>
+                <li class="f sealist_li">7天连锁</li>
+                <li class="f sealist_li">
+                <span class="sealist_on">格林豪泰<span class="ico_del">&nbsp;</span></span>               
+                </li>
+                <li class="f sealist_li">如家</li>
+                <li class="f sealist_li">斯克莱星</li>
+                <li class="f sealist_li">斯克莱星</li>
+                <li><a href="#" class="unc09fx">更多</a></li>
+                <div class="c"></div>
+               </ul>
+               <ul class="box_botm_xu c">
+                <li class="f sealist_first l267dff">酒店区域：</li>
+                <li class="f sealist_all"><span class="sealist_onall">全部</span></li>
+                <li class="f sealist_li">长安街</li>
+                <li class="f sealist_li">广安门</li>
+                <li class="f sealist_li">天安门</li>
+                <li class="f sealist_li">鸟巢</li>
+                <li class="f sealist_li">古城</li>
+                <li><a href="#" class="unc09fx" >更多</a></li>
+                <div class="c"></div>
+               </ul>
+               <ul class="box_botm_xu c">
+                <li class="f sealist_first l267dff">酒店设施：</li>
+                <li class="f sealist_all"><span class="sealist_onall">全部</span></li>
+                <li class="f sealist_li">宽带</li>
+                <li class="f sealist_li">上网</li>
+                <li class="f sealist_li">机场接送</li>
+                <li class="f sealist_li">餐厅服务</li>
+                <li class="f sealist_li">游泳池</li>
+                <div class="c"></div>
+               </ul>
+               <ul class="c">
+                <li class="f sealist_first l267dff">酒店床型：</li>
+                <li class="f sealist_all"><span class="sealist_onall">全部</span></li>
+                <li class="f sealist_li">一张床</li>
+                <li class="f sealist_li">两张床</li>
+                <li class="f sealist_li">三张床</li>
+                <li class="f sealist_li">套房</li>
+                <div class="c"></div>
+               </ul>
+               <div class="floatall"><div class="box openall">显示全部筛选条件</div></div>
+            </div>
+    </div>
+    
+    <div class="mt7" style="height:28px; line-height:26px;">
+      <div class="f mr5 list_out ">酒店列表</a></div>
+      <div class="f list_on"><a href="#" class="fff">电子地图</a></div>
+      <div class="r">(共1228家酒店)&nbsp;2/82页&nbsp;上一页<font class="mlr">|</font>下一页</div>
+      <div class="c list_line">&nbsp;</div>
+    </div>
+
+   
+    <div class="box_ccc">
+       <div class="f box_right_c" style=" width:546px;"><img src="../images/mapp.png" width="546" height="480" /> </div>
+       <div class="r"> 
+       <div class=" floatall box_botno">
+          <ul class="query">
+          <li class="f sorter" ><span class="ico_recommendation f">&nbsp;</span><font class="f l06c">网站推荐排序</font><span class="ico_subscript mf5">&nbsp;</span></li>      
+          </ul>
+              <div class="sort_float box_ccc" style="display:none;">
+                 <ul>
+                 <li class="box_botm"><span class="ico_mornyup f ">&nbsp;</span>价格由低到高</li>
+                 <li class="box_botm"><span class="ico_mornydown f">&nbsp;</span>价格由高到低</li>
+                 <li class="box_botm"><span class="ico_starup f">&nbsp;</span>星级由高到低</li>
+                 <li class="box_botm"><span class="ico_stardown f">&nbsp;</span>星级由高到低</li>
+                 <li class="box_botm"><span class="ico_praiseup f">&nbsp;</span>价格由高到低</li>
+                 <li class="box_botm"><span class="ico_bonusup f">&nbsp;</span>价格由高到低</li>
+                 <li class="l06c"><span class="ico_recommendation f">&nbsp;</span>网站推荐排序</li>
+                 </ul>
+              </div>
+        </div>
+        <div class="list_map">
+           <ul class="box_botm">
+            <li class=" pf5"><span class="numberone f">1</span>北京迎春农家院</li>
+            <li class="pf25 pr10"><span class="f f90">1个好评</span><span class="r">星级：<font class="l06c">二星级</font></span><div class="c"></div></li>
+           </ul>
+           <ul class="box_botm">
+            <li class=" pf5"><span class="numberone f">2</span>北京迎春农家院</li>
+            <li class="pf25 pr10"><span class="f f90">1个好评</span><span class="r">星级：<font class="l06c">二星级</font></span><div class="c"></div></li>
+           </ul>
+           <ul class="box_botm">
+            <li class=" pf5"><span class="numberone f">3</span>北京迎春农家院</li>
+            <li class="pf25 pr10"><span class="f f90">1个好评</span><span class="r">星级：<font class="l06c">二星级</font></span><div class="c"></div></li>
+           </ul>
+           <ul class="box_botm">
+            <li class=" pf5"><span class="numberone f">4</span>北京迎春农家院</li>
+            <li class="pf25 pr10"><span class="f f90">1个好评</span><span class="r">星级：<font class="l06c">二星级</font></span><div class="c"></div></li>
+           </ul>
+           <ul class="box_botm">
+            <li class=" pf5"><span class="numberone f">5</span>北京迎春农家院</li>
+            <li class="pf25 pr10"><span class="f f90">1个好评</span><span class="r">星级：<font class="l06c">二星级</font></span><div class="c"></div></li>
+           </ul>
+           <ul class="box_botm">
+            <li class=" pf5"><span class="numberone f">6</span>北京迎春农家院</li>
+            <li class="pf25 pr10"><span class="f f90">1个好评</span><span class="r">星级：<font class="l06c">二星级</font></span><div class="c"></div></li>
+           </ul>
+           <ul class="box_botm">
+            <li class=" pf5"><span class="numberone f">7</span>北京迎春农家院</li>
+            <li class="pf25 pr10"><span class="f f90">1个好评</span><span class="r">星级：<font class="l06c">二星级</font></span><div class="c"></div></li>
+           </ul>
+           <ul class="box_botm">
+            <li class=" pf5"><span class="numberone f">8</span>北京迎春农家院</li>
+            <li class="pf25 pr10"><span class="f f90">1个好评</span><span class="r">星级：<font class="l06c">二星级</font></span><div class="c"></div></li>
+           </ul>
+           <ul class="box_botm">
+            <li class=" pf5"><span class="numberone f">9</span>北京迎春农家院</li>
+            <li class="pf25 pr10"><span class="f f90">1个好评</span><span class="r">星级：<font class="l06c">二星级</font></span><div class="c"></div></li>
+           </ul>
+           <ul>
+           <li class="text_center c999">(共有1228家酒店)2/82页</li>
+           <li class="text_center" >上一页<font class=" mf5">1</font><font class="font_f60_c mf5">2</font><font class=" mf5">3</font><font class=" mf5">4</font><font class=" mf5">5</font><font class=" mlr">...</font>下一页</li>
+           </ul>
+        </div>
+       </div>
+       <div class="c"></div>
+    </div>
+ </div>
+ <!--list over-->
+ <div class="c"></div>
+</div>
+ <iframe src="../footer.html" scrolling="no" hspace="0" frameborder="0" width="100%" height="126"></iframe>
+</body>
+</html>

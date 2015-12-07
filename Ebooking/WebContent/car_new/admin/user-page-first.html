@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../css/init.css" />
+<link rel="stylesheet" type="text/css" href="../css/vipCenter.css" />
+<script type="text/javascript" src="../js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		$(".vipMenu li:first").addClass("vipMenuClick")
+		$(".vipMenu h3").click(function(){
+			$(this).parent().toggleClass("vipMenuClick");
+		})
+	})
+</script>
+</head>
+<body>
+<!--vipHeader-->
+<div class="vipHeader vipCenter">
+	<p><a href="#">返回官网首页</a><a href="#">车友俱乐部</a><span><a>会员中心</a></span></p>
+</div>
+<!--vipHeader end-->
+<!--你现在的位置-->
+<div class="currentLocation"><p class="vipCenter">你的位置：<a href="#">首页</a>><a href="#">投资者关系</a></p></div>
+<!--你现在的位置 end-->
+<!--vipContent-->
+<div class="vipContent">
+	<div style="background:url(images/vipContentBg.jpg) repeat-x top center;" class="vipContentBg">
+    <div class="vipCenter">
+        <div class="vipContentLeft">
+        	<div class="vipName">
+            	<p class="vipNameTitle"><span>merisa</span>你好！</p>
+                <p class="youDo">待处理事项:<i>3</i></p>
+            </div>
+            <img src="images/vipHelloBottom_bg.png" height="4" width="220" class="vipHelloImg" />
+            <ul class="vipMenu">
+            	<li>
+                	<h3>定制我的页面</h3>
+                    <div>
+                    	<a href="#" class="vipMenuaFocus">我的页面</a>
+                        <a href="#">定制页面</a>
+                    </div>
+                </li>
+                <li>
+                	<h3>会员信息</h3>
+                    <div>
+                    	<a href="#">我的资料</a>
+                        <a href="#">编辑资料</a>
+                        <a href="#">修改密码</a>
+                        <a href="#">简历与留言<span><i>1</i></span></a>
+                    </div>
+                </li>
+                <li><a href="#">系统消息</a></li>
+                <li>
+                	<h3>预约信息</h3>
+                    <div>
+                    	<a href="#">预约试驾</a>
+                        <a href="#">预约服务</a>
+                        <a href="#">预约活动</a>
+                    </div>
+                </li>
+                <li>
+                	<h3>在线订车</h3>
+                    <div>
+                    	<a href="#">订单信息</a>
+                    </div>
+                </li>
+                <li><a href="#">我的CLUB</a></li>
+                <li><a href="#">意见反馈</a></li>
+            </ul>
+            <img src="images/vipMenuBottom_bg.png" height="5" width="200" class="vipMenuImg" />
+            <ul class="vipContentTips">
+            	<li><a href="#"><img src="images/dingche.png" height="23" width="22" />我关注的车型</a></li>
+                <li><a href="#"><img src="images/wangdian.png" height="23" width="22" />在线咨询</a></li>
+            </ul>
+            <img src="images/vipHelloBottom_bg.png" height="4" width="220" class="vipHelloImg" />
+        </div>
+        <div class="vipContentRight">
+        	<div class="dingzhi">
+            	<!--ad-->
+                <div class="bigAd">
+                	<a href="#"><img src="images/ad1.jpg" height="94" width="666" /></a>
+                </div>
+                <!--greetings-->
+                <p class="dingzhiGreetings">尊敬的merisa你好！欢迎你首次进入江淮汽车用户中心，我们推荐你完成以下操作，以便得到更多优质服务和有效信息，预祝你在此有一个愉快的浏览体验！</p>
+                <!--threefoot-->
+                <div class="threeFoot">
+                	<p>3步定制您的专属页面，无需四处寻找，你需要的信息一览无余。</p>
+                    <img src="images/threeFootImg.jpg" width="666" height="141" usemap="#Map" />
+                    <map name="Map">
+                      <area shape="rect" coords="296,102,370,127" href="#">
+                    </map>
+                </div>
+            </div>
+            <img src="images/vipContentRightBottom.png" height="10" width="700" class="vipContentRightImg" />
+            <!--编辑资料-->
+            <div class="dingzhi dingzhiJianju">
+            	<a href="#" class="dingzhiImg"><img src="images/dingzhiImg.jpg" height="76" width="72" /></a>
+                <div class="perfectInformation">
+                    <p class="perfectInformationTip">完善资料，获得更优质的服务</p>
+                    <p>完善资料，获更多惊喜……</p>
+                    <p><a href="#">编辑资料</a></p>
+                </div>
+                <div class="clearBox"></div>
+            </div>
+            <img src="images/vipContentRightBottom.png" height="10" width="700" class="vipContentRightImg" />
+            <!--在线订车-->
+            <div class="dingzhi onlineDingzhi dingzhiJianju">
+            	<ul class="smallAd">
+                	<Li><a href="#"><img src="images/smallAdImg.jpg" height="67" width="256" /></a></Li>
+                    <Li><a href="#"><img src="images/smallAdImg.jpg" height="67" width="256" /></a></Li>
+                </ul>
+                <p class="onlineTitle">在线订车</p>
+                <p>江淮为你提供便捷的线上订车服务，轻点鼠标，爱车开回家！</p>
+                <P><a href="#">在线订车</a></P>
+                <div class="clearBox"></div>
+            </div>
+            <img src="images/vipContentRightBottom.png" height="10" width="700" class="vipContentRightImg" />
+        </div>
+        <div class="clearBox"></div>
+    </div>
+    </div>
+</div>
+<!--vipContent end-->
+</body>
+</html>

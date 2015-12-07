@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 汽车列表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Cars createCars(Cars cars) throws SQLException;
+	
+	/**
+	 * 删除 汽车列表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCars(long id);
+	
+	
+	/**
+	 * 修改 汽车列表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCars(Cars cars);
+
+		
+	/**
+	 * 修改 汽车列表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCarsIgnoreNull(Cars cars);
+		
+	
+	/**
+	 * 查找 汽车列表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCars(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 汽车列表
+	 * @param id
+	 * @return
+	 */
+	public Cars findCars(long id);
+	
+	
+	/** 
+	 * 查找 汽车列表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCarsForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找汽车列表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarsBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 汽车列表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCarsBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCarsBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ICarsComponent carsComponent;
+	  
+ 	
+ 	public ICarsComponent getCarsComponent() {
+		return carsComponent;
+	}
+	public void setCarsComponent(ICarsComponent  carsComponent) {
+		this.carsComponent = carsComponent;
+	}
+	/**
+	 * 创建 汽车列表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Cars createCars(Cars cars) throws SQLException{
+	
+		return carsComponent.createCars(cars);
+	}
+	/**
+	 * 删除 汽车列表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCars(long id){
+	
+		return carsComponent.deleteCars(id);
+	}
+	
+	
+	/**
+	 * 修改 汽车列表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCars(Cars cars){
+		return carsComponent.updateCars(cars);
+	
+	}
+
+		
+	/**
+	 * 修改 汽车列表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCarsIgnoreNull(Cars cars){
+			return carsComponent.updateCarsIgnoreNull(cars);
+	
+	}
+	
+	/**
+	 * 查找 汽车列表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCars(String where, String orderby,int limit,int offset){
+		return carsComponent.findAllCars(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 汽车列表
+	 * @param id
+	 * @return
+	 */
+	public Cars findCars(long id){
+		return carsComponent.findCars(id);
+	}
+	
+	/** 
+	 * 查找 汽车列表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCarsForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return carsComponent.findAllCars(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找汽车列表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarsBySql(String sql,int limit,int offset){
+		return carsComponent.findAllCars(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 汽车列表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCarsBySql(String sql){
+		return carsComponent.excuteCarsBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCarsBySql(String sql){
+		return carsComponent.countCarsBySql(sql);
+	}
+	
+	
+

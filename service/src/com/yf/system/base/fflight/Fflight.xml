@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Fflight">
+  
+  <typeAlias alias="Fflight" type="com.yf.system.base.fflight.Fflight"/>
+  
+
+  <resultMap id="resultFflightMap" class="Fflight">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="totalfare" column="C_TOTALFARE"/>
+  
+     <result property="totaltax" column="C_TOTALTAX"/>
+  
+     <result property="policymark" column="C_POLICYMARK"/>
+  
+     <result property="aircom" column="C_AIRCOM"/>
+  
+     <result property="cw" column="C_CW"/>
+  
+     <result property="fromairport" column="C_FROMAIRPORT"/>
+  
+     <result property="toairport" column="C_TOAIRPORT"/>
+  
+     <result property="fromdate" column="C_FROMDATE"/>
+  
+     <result property="flightnumber" column="C_FLIGHTNUMBER"/>
+     
+      <result property="todate" column="C_TODATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllFflight"  resultMap="resultFflightMap"  parameterClass="java.util.Map">
+  
+    select * from T_FFLIGHT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllFflightBySql"  resultMap="resultFflightMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteFflightBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countFflightBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_FFLIGHT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findFflight" parameterClass="long" resultClass="Fflight">
+    select 
+    	ID as id,
+	  			C_ORDERID as orderid,
+	  			C_TOTALFARE as totalfare,
+	  			C_TOTALTAX as totaltax,
+	  			C_POLICYMARK as policymark,
+	  			C_AIRCOM as aircom,
+	  			C_CW as cw,
+	  			C_FROMAIRPORT as fromairport,
+	  			C_TOAIRPORT as toairport,
+	  			C_FROMDATE as fromdate,
+	  			C_FLIGHTNUMBER as flightnumber,
+	  			C_TODATE as todate 
+     from T_FFLIGHT
+    where ID = #id#
+  </select>
+   
+  <insert id="createFflight" parameterClass="Fflight">
+    insert into T_FFLIGHT ( 
+    	ID,
+	  			C_ORDERID,
+	  			C_TOTALFARE,
+	  			C_TOTALTAX,
+	  			C_POLICYMARK,
+	  			C_AIRCOM,
+	  			C_CW,
+	  			C_FROMAIRPORT,
+	  			C_TOAIRPORT,
+	  			C_FROMDATE,
+	  			C_FLIGHTNUMBER,
+	  			C_TODATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#orderid:DECIMAL#,
+						
+							#totalfare:DECIMAL#,
+						
+							#totaltax:DECIMAL#,
+						
+	  						#policymark#,
+	  					
+	  						#aircom#,
+	  					
+	  						#cw#,
+	  					
+	  						#fromairport#,
+	  					
+	  						#toairport#,
+	  					
+	  						#fromdate#,
+	  					
+	  						#flightnumber#,
+	  						
+	  						#todate#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteFflight" parameterClass="long">
+    delete from T_FFLIGHT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateFflight" parameterClass="Fflight">
+    update T_FFLIGHT 
+    set 
+    	C_ORDERID = #orderid:DECIMAL#,
+						C_TOTALFARE = #totalfare:DECIMAL#,
+						C_TOTALTAX = #totaltax:DECIMAL#,
+						C_POLICYMARK = #policymark#,
+	  					C_AIRCOM = #aircom#,
+	  					C_CW = #cw#,
+	  					C_FROMAIRPORT = #fromairport#,
+	  					C_TOAIRPORT = #toairport#,
+	  					C_FROMDATE = #fromdate#,
+	  					C_FLIGHTNUMBER = #flightnumber#,
+	  					C_TODATE=#todate#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

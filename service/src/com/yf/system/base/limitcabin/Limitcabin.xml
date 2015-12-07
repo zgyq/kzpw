@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Limitcabin">
+  
+  <typeAlias alias="Limitcabin" type="com.yf.system.base.limitcabin.Limitcabin"/>
+  
+
+  <resultMap id="resultLimitcabinMap" class="Limitcabin">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="cabin" column="C_CABIN"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="stime" column="C_STIME"/>
+  
+     <result property="endtime" column="C_ENDTIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllLimitcabin"  resultMap="resultLimitcabinMap"  parameterClass="java.util.Map">
+  
+    select * from T_LIMITCABIN
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllLimitcabinBySql"  resultMap="resultLimitcabinMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteLimitcabinBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countLimitcabinBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_LIMITCABIN
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findLimitcabin" parameterClass="long" resultClass="Limitcabin">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_CABIN as cabin,
+	  			C_CREATETIME as createtime,
+	  			C_STIME as stime,
+	  			C_ENDTIME as endtime,
+	  			C_STATE as state 
+     from T_LIMITCABIN
+    where ID = #id#
+  </select>
+   
+  <insert id="createLimitcabin" parameterClass="Limitcabin">
+    insert into T_LIMITCABIN ( 
+    	ID,
+	  			C_NAME,
+	  			C_CABIN,
+	  			C_CREATETIME,
+	  			C_STIME,
+	  			C_ENDTIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#cabin#,
+	  					
+	  						#createtime#,
+	  					
+	  						#stime#,
+	  					
+	  						#endtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteLimitcabin" parameterClass="long">
+    delete from T_LIMITCABIN
+    where ID = #id#
+  </delete>
+	
+  <update id="updateLimitcabin" parameterClass="Limitcabin">
+    update T_LIMITCABIN 
+    set 
+    	C_NAME = #name#,
+	  					C_CABIN = #cabin#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STIME = #stime#,
+	  					C_ENDTIME = #endtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

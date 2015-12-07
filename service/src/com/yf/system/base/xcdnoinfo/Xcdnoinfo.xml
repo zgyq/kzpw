@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Xcdnoinfo">
+  
+  <typeAlias alias="Xcdnoinfo" type="com.yf.system.base.xcdnoinfo.Xcdnoinfo"/>
+  
+
+  <resultMap id="resultXcdnoinfoMap" class="Xcdnoinfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="sno" column="C_SNO"/>
+  
+     <result property="endno" column="C_ENDNO"/>
+  
+     <result property="xcdid" column="C_XCDID"/>
+  
+     <result property="xcdinfo" column="C_XCDINFO"/>
+  
+     <result property="officecode" column="C_OFFICECODE"/>
+  
+     <result property="companyname" column="C_COMPANYNAME"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="userid" column="C_USERID"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllXcdnoinfo"  resultMap="resultXcdnoinfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_XCDNOINFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllXcdnoinfoBySql"  resultMap="resultXcdnoinfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteXcdnoinfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countXcdnoinfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_XCDNOINFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findXcdnoinfo" parameterClass="long" resultClass="Xcdnoinfo">
+    select 
+    	ID as id,
+	  			C_SNO as sno,
+	  			C_ENDNO as endno,
+	  			C_XCDID as xcdid,
+	  			C_XCDINFO as xcdinfo,
+	  			C_OFFICECODE as officecode,
+	  			C_COMPANYNAME as companyname,
+	  			C_AGENTID as agentid,
+	  			C_USERID as userid,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state 
+     from T_XCDNOINFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createXcdnoinfo" parameterClass="Xcdnoinfo">
+    insert into T_XCDNOINFO ( 
+    	ID,
+	  			C_SNO,
+	  			C_ENDNO,
+	  			C_XCDID,
+	  			C_XCDINFO,
+	  			C_OFFICECODE,
+	  			C_COMPANYNAME,
+	  			C_AGENTID,
+	  			C_USERID,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#sno#,
+	  					
+	  						#endno#,
+	  					
+							#xcdid:DECIMAL#,
+						
+	  						#xcdinfo#,
+	  					
+	  						#officecode#,
+	  					
+	  						#companyname#,
+	  					
+							#agentid:DECIMAL#,
+						
+							#userid:DECIMAL#,
+						
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteXcdnoinfo" parameterClass="long">
+    delete from T_XCDNOINFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateXcdnoinfo" parameterClass="Xcdnoinfo">
+    update T_XCDNOINFO 
+    set 
+    	C_SNO = #sno#,
+	  					C_ENDNO = #endno#,
+	  					C_XCDID = #xcdid:DECIMAL#,
+						C_XCDINFO = #xcdinfo#,
+	  					C_OFFICECODE = #officecode#,
+	  					C_COMPANYNAME = #companyname#,
+	  					C_AGENTID = #agentid:DECIMAL#,
+						C_USERID = #userid:DECIMAL#,
+						C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

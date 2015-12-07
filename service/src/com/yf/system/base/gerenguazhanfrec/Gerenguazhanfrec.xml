@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Gerenguazhanfrec">
+  
+  <typeAlias alias="Gerenguazhanfrec" type="com.yf.system.base.gerenguazhanfrec.Gerenguazhanfrec"/>
+  
+
+  <resultMap id="resultGerenguazhanfrecMap" class="Gerenguazhanfrec">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="employeeid" column="C_EMPLOYEEID"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="midifyuser" column="C_MIDIFYUSER"/>
+  
+     <result property="midifytime" column="C_MIDIFYTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllGerenguazhanfrec"  resultMap="resultGerenguazhanfrecMap"  parameterClass="java.util.Map">
+  
+    select * from T_GERENGUAZHANFREC
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllGerenguazhanfrecBySql"  resultMap="resultGerenguazhanfrecMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteGerenguazhanfrecBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countGerenguazhanfrecBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_GERENGUAZHANFREC
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findGerenguazhanfrec" parameterClass="long" resultClass="Gerenguazhanfrec">
+    select 
+    	ID as id,
+	  			C_ORDERID as orderid,
+	  			C_EMPLOYEEID as employeeid,
+	  			C_STATE as state,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MIDIFYUSER as midifyuser,
+	  			C_MIDIFYTIME as midifytime 
+     from T_GERENGUAZHANFREC
+    where ID = #id#
+  </select>
+   
+  <insert id="createGerenguazhanfrec" parameterClass="Gerenguazhanfrec">
+    insert into T_GERENGUAZHANFREC ( 
+    	ID,
+	  			C_ORDERID,
+	  			C_EMPLOYEEID,
+	  			C_STATE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MIDIFYUSER,
+	  			C_MIDIFYTIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#orderid:DECIMAL#,
+						
+							#employeeid:DECIMAL#,
+						
+							#state:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#midifyuser#,
+	  					
+	  						#midifytime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteGerenguazhanfrec" parameterClass="long">
+    delete from T_GERENGUAZHANFREC
+    where ID = #id#
+  </delete>
+	
+  <update id="updateGerenguazhanfrec" parameterClass="Gerenguazhanfrec">
+    update T_GERENGUAZHANFREC 
+    set 
+    	C_ORDERID = #orderid:DECIMAL#,
+						C_EMPLOYEEID = #employeeid:DECIMAL#,
+						C_STATE = #state:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MIDIFYUSER = #midifyuser#,
+	  					C_MIDIFYTIME = #midifytime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 景区线路详细信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotlineinfo createSpotlineinfo(Spotlineinfo spotlineinfo) throws SQLException;
+	
+	/**
+	 * 删除 景区线路详细信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotlineinfo(long id);
+	
+	
+	/**
+	 * 修改 景区线路详细信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotlineinfo(Spotlineinfo spotlineinfo);
+
+		
+	/**
+	 * 修改 景区线路详细信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotlineinfoIgnoreNull(Spotlineinfo spotlineinfo);
+		
+	
+	/**
+	 * 查找 景区线路详细信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineinfo(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 景区线路详细信息
+	 * @param id
+	 * @return
+	 */
+	public Spotlineinfo findSpotlineinfo(long id);
+	
+	
+	/** 
+	 * 查找 景区线路详细信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotlineinfoForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找景区线路详细信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineinfoBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 景区线路详细信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotlineinfoBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotlineinfoBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISpotlineinfoComponent spotlineinfoComponent;
+	  
+ 	
+ 	public ISpotlineinfoComponent getSpotlineinfoComponent() {
+		return spotlineinfoComponent;
+	}
+	public void setSpotlineinfoComponent(ISpotlineinfoComponent  spotlineinfoComponent) {
+		this.spotlineinfoComponent = spotlineinfoComponent;
+	}
+	/**
+	 * 创建 景区线路详细信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotlineinfo createSpotlineinfo(Spotlineinfo spotlineinfo) throws SQLException{
+	
+		return spotlineinfoComponent.createSpotlineinfo(spotlineinfo);
+	}
+	/**
+	 * 删除 景区线路详细信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotlineinfo(long id){
+	
+		return spotlineinfoComponent.deleteSpotlineinfo(id);
+	}
+	
+	
+	/**
+	 * 修改 景区线路详细信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotlineinfo(Spotlineinfo spotlineinfo){
+		return spotlineinfoComponent.updateSpotlineinfo(spotlineinfo);
+	
+	}
+
+		
+	/**
+	 * 修改 景区线路详细信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotlineinfoIgnoreNull(Spotlineinfo spotlineinfo){
+			return spotlineinfoComponent.updateSpotlineinfoIgnoreNull(spotlineinfo);
+	
+	}
+	
+	/**
+	 * 查找 景区线路详细信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineinfo(String where, String orderby,int limit,int offset){
+		return spotlineinfoComponent.findAllSpotlineinfo(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 景区线路详细信息
+	 * @param id
+	 * @return
+	 */
+	public Spotlineinfo findSpotlineinfo(long id){
+		return spotlineinfoComponent.findSpotlineinfo(id);
+	}
+	
+	/** 
+	 * 查找 景区线路详细信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotlineinfoForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return spotlineinfoComponent.findAllSpotlineinfo(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找景区线路详细信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineinfoBySql(String sql,int limit,int offset){
+		return spotlineinfoComponent.findAllSpotlineinfo(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 景区线路详细信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotlineinfoBySql(String sql){
+		return spotlineinfoComponent.excuteSpotlineinfoBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotlineinfoBySql(String sql){
+		return spotlineinfoComponent.countSpotlineinfoBySql(sql);
+	}
+	
+	
+

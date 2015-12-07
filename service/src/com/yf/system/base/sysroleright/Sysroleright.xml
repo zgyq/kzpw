@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Sysroleright">
+  
+  <typeAlias alias="Sysroleright" type="com.yf.system.base.sysroleright.Sysroleright"/>
+  
+
+  <resultMap id="resultSysrolerightMap" class="Sysroleright">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="roleid" column="C_ROLEID"/>
+  
+     <result property="rightid" column="C_RIGHTID"/>
+   
+  </resultMap>
+  
+  <select id="findAllSysroleright"  resultMap="resultSysrolerightMap"  parameterClass="java.util.Map">
+  
+    select * from T_SYSROLERIGHT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSysrolerightBySql"  resultMap="resultSysrolerightMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSysrolerightBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSysrolerightBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SYSROLERIGHT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSysroleright" parameterClass="long" resultClass="Sysroleright">
+    select 
+    	ID as id,
+	  			C_ROLEID as roleid,
+	  			C_RIGHTID as rightid 
+     from T_SYSROLERIGHT
+    where ID = #id#
+  </select>
+   
+  <insert id="createSysroleright" parameterClass="Sysroleright">
+    insert into T_SYSROLERIGHT ( 
+    	ID,
+	  			C_ROLEID,
+	  			C_RIGHTID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#roleid:DECIMAL#,
+						
+  							#rightid:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSysroleright" parameterClass="long">
+    delete from T_SYSROLERIGHT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSysroleright" parameterClass="Sysroleright">
+    update T_SYSROLERIGHT 
+    set 
+    	C_ROLEID = #roleid:DECIMAL#,
+						C_RIGHTID = #rightid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

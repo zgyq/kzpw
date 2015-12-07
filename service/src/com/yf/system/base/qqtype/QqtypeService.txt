@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 QQ类型
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Qqtype createQqtype(Qqtype qqtype) throws SQLException;
+	
+	/**
+	 * 删除 QQ类型
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteQqtype(long id);
+	
+	
+	/**
+	 * 修改 QQ类型
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateQqtype(Qqtype qqtype);
+
+		
+	/**
+	 * 修改 QQ类型但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateQqtypeIgnoreNull(Qqtype qqtype);
+		
+	
+	/**
+	 * 查找 QQ类型
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllQqtype(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 QQ类型
+	 * @param id
+	 * @return
+	 */
+	public Qqtype findQqtype(long id);
+	
+	
+	/** 
+	 * 查找 QQ类型
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllQqtypeForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找QQ类型
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllQqtypeBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql QQ类型
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteQqtypeBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countQqtypeBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IQqtypeComponent qqtypeComponent;
+	  
+ 	
+ 	public IQqtypeComponent getQqtypeComponent() {
+		return qqtypeComponent;
+	}
+	public void setQqtypeComponent(IQqtypeComponent  qqtypeComponent) {
+		this.qqtypeComponent = qqtypeComponent;
+	}
+	/**
+	 * 创建 QQ类型
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Qqtype createQqtype(Qqtype qqtype) throws SQLException{
+	
+		return qqtypeComponent.createQqtype(qqtype);
+	}
+	/**
+	 * 删除 QQ类型
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteQqtype(long id){
+	
+		return qqtypeComponent.deleteQqtype(id);
+	}
+	
+	
+	/**
+	 * 修改 QQ类型
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateQqtype(Qqtype qqtype){
+		return qqtypeComponent.updateQqtype(qqtype);
+	
+	}
+
+		
+	/**
+	 * 修改 QQ类型但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateQqtypeIgnoreNull(Qqtype qqtype){
+			return qqtypeComponent.updateQqtypeIgnoreNull(qqtype);
+	
+	}
+	
+	/**
+	 * 查找 QQ类型
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllQqtype(String where, String orderby,int limit,int offset){
+		return qqtypeComponent.findAllQqtype(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 QQ类型
+	 * @param id
+	 * @return
+	 */
+	public Qqtype findQqtype(long id){
+		return qqtypeComponent.findQqtype(id);
+	}
+	
+	/** 
+	 * 查找 QQ类型
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllQqtypeForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return qqtypeComponent.findAllQqtype(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找QQ类型
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllQqtypeBySql(String sql,int limit,int offset){
+		return qqtypeComponent.findAllQqtype(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql QQ类型
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteQqtypeBySql(String sql){
+		return qqtypeComponent.excuteQqtypeBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countQqtypeBySql(String sql){
+		return qqtypeComponent.countQqtypeBySql(sql);
+	}
+	
+	
+

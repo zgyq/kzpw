@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 积分管理
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Integral createIntegral(Integral integral) throws SQLException;
+	
+	/**
+	 * 删除 积分管理
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteIntegral(long id);
+	
+	
+	/**
+	 * 修改 积分管理
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateIntegral(Integral integral);
+
+		
+	/**
+	 * 修改 积分管理但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateIntegralIgnoreNull(Integral integral);
+		
+	
+	/**
+	 * 查找 积分管理
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllIntegral(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 积分管理
+	 * @param id
+	 * @return
+	 */
+	public Integral findIntegral(long id);
+	
+	
+	/** 
+	 * 查找 积分管理
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllIntegralForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找积分管理
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllIntegralBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 积分管理
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteIntegralBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countIntegralBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IIntegralComponent integralComponent;
+	  
+ 	
+ 	public IIntegralComponent getIntegralComponent() {
+		return integralComponent;
+	}
+	public void setIntegralComponent(IIntegralComponent  integralComponent) {
+		this.integralComponent = integralComponent;
+	}
+	/**
+	 * 创建 积分管理
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Integral createIntegral(Integral integral) throws SQLException{
+	
+		return integralComponent.createIntegral(integral);
+	}
+	/**
+	 * 删除 积分管理
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteIntegral(long id){
+	
+		return integralComponent.deleteIntegral(id);
+	}
+	
+	
+	/**
+	 * 修改 积分管理
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateIntegral(Integral integral){
+		return integralComponent.updateIntegral(integral);
+	
+	}
+
+		
+	/**
+	 * 修改 积分管理但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateIntegralIgnoreNull(Integral integral){
+			return integralComponent.updateIntegralIgnoreNull(integral);
+	
+	}
+	
+	/**
+	 * 查找 积分管理
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllIntegral(String where, String orderby,int limit,int offset){
+		return integralComponent.findAllIntegral(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 积分管理
+	 * @param id
+	 * @return
+	 */
+	public Integral findIntegral(long id){
+		return integralComponent.findIntegral(id);
+	}
+	
+	/** 
+	 * 查找 积分管理
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllIntegralForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return integralComponent.findAllIntegral(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找积分管理
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllIntegralBySql(String sql,int limit,int offset){
+		return integralComponent.findAllIntegral(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 积分管理
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteIntegralBySql(String sql){
+		return integralComponent.excuteIntegralBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countIntegralBySql(String sql){
+		return integralComponent.countIntegralBySql(sql);
+	}
+	
+	
+

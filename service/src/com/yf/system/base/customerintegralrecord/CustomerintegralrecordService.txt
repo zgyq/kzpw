@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 会员积分记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Customerintegralrecord createCustomerintegralrecord(Customerintegralrecord customerintegralrecord) throws SQLException;
+	
+	/**
+	 * 删除 会员积分记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCustomerintegralrecord(long id);
+	
+	
+	/**
+	 * 修改 会员积分记录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCustomerintegralrecord(Customerintegralrecord customerintegralrecord);
+
+		
+	/**
+	 * 修改 会员积分记录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCustomerintegralrecordIgnoreNull(Customerintegralrecord customerintegralrecord);
+		
+	
+	/**
+	 * 查找 会员积分记录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomerintegralrecord(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 会员积分记录
+	 * @param id
+	 * @return
+	 */
+	public Customerintegralrecord findCustomerintegralrecord(long id);
+	
+	
+	/** 
+	 * 查找 会员积分记录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCustomerintegralrecordForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找会员积分记录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomerintegralrecordBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 会员积分记录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCustomerintegralrecordBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCustomerintegralrecordBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ICustomerintegralrecordComponent customerintegralrecordComponent;
+	  
+ 	
+ 	public ICustomerintegralrecordComponent getCustomerintegralrecordComponent() {
+		return customerintegralrecordComponent;
+	}
+	public void setCustomerintegralrecordComponent(ICustomerintegralrecordComponent  customerintegralrecordComponent) {
+		this.customerintegralrecordComponent = customerintegralrecordComponent;
+	}
+	/**
+	 * 创建 会员积分记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Customerintegralrecord createCustomerintegralrecord(Customerintegralrecord customerintegralrecord) throws SQLException{
+	
+		return customerintegralrecordComponent.createCustomerintegralrecord(customerintegralrecord);
+	}
+	/**
+	 * 删除 会员积分记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCustomerintegralrecord(long id){
+	
+		return customerintegralrecordComponent.deleteCustomerintegralrecord(id);
+	}
+	
+	
+	/**
+	 * 修改 会员积分记录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCustomerintegralrecord(Customerintegralrecord customerintegralrecord){
+		return customerintegralrecordComponent.updateCustomerintegralrecord(customerintegralrecord);
+	
+	}
+
+		
+	/**
+	 * 修改 会员积分记录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCustomerintegralrecordIgnoreNull(Customerintegralrecord customerintegralrecord){
+			return customerintegralrecordComponent.updateCustomerintegralrecordIgnoreNull(customerintegralrecord);
+	
+	}
+	
+	/**
+	 * 查找 会员积分记录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomerintegralrecord(String where, String orderby,int limit,int offset){
+		return customerintegralrecordComponent.findAllCustomerintegralrecord(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 会员积分记录
+	 * @param id
+	 * @return
+	 */
+	public Customerintegralrecord findCustomerintegralrecord(long id){
+		return customerintegralrecordComponent.findCustomerintegralrecord(id);
+	}
+	
+	/** 
+	 * 查找 会员积分记录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCustomerintegralrecordForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return customerintegralrecordComponent.findAllCustomerintegralrecord(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找会员积分记录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCustomerintegralrecordBySql(String sql,int limit,int offset){
+		return customerintegralrecordComponent.findAllCustomerintegralrecord(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 会员积分记录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCustomerintegralrecordBySql(String sql){
+		return customerintegralrecordComponent.excuteCustomerintegralrecordBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCustomerintegralrecordBySql(String sql){
+		return customerintegralrecordComponent.countCustomerintegralrecordBySql(sql);
+	}
+	
+	
+

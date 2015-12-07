@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 连锁酒店类型
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Chaininfo createChaininfo(Chaininfo chaininfo) throws SQLException;
+	
+	/**
+	 * 删除 连锁酒店类型
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteChaininfo(long id);
+	
+	
+	/**
+	 * 修改 连锁酒店类型
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateChaininfo(Chaininfo chaininfo);
+
+		
+	/**
+	 * 修改 连锁酒店类型但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateChaininfoIgnoreNull(Chaininfo chaininfo);
+		
+	
+	/**
+	 * 查找 连锁酒店类型
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllChaininfo(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 连锁酒店类型
+	 * @param id
+	 * @return
+	 */
+	public Chaininfo findChaininfo(long id);
+	
+	
+	/** 
+	 * 查找 连锁酒店类型
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllChaininfoForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找连锁酒店类型
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllChaininfoBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 连锁酒店类型
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteChaininfoBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countChaininfoBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IChaininfoComponent chaininfoComponent;
+	  
+ 	
+ 	public IChaininfoComponent getChaininfoComponent() {
+		return chaininfoComponent;
+	}
+	public void setChaininfoComponent(IChaininfoComponent  chaininfoComponent) {
+		this.chaininfoComponent = chaininfoComponent;
+	}
+	/**
+	 * 创建 连锁酒店类型
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Chaininfo createChaininfo(Chaininfo chaininfo) throws SQLException{
+	
+		return chaininfoComponent.createChaininfo(chaininfo);
+	}
+	/**
+	 * 删除 连锁酒店类型
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteChaininfo(long id){
+	
+		return chaininfoComponent.deleteChaininfo(id);
+	}
+	
+	
+	/**
+	 * 修改 连锁酒店类型
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateChaininfo(Chaininfo chaininfo){
+		return chaininfoComponent.updateChaininfo(chaininfo);
+	
+	}
+
+		
+	/**
+	 * 修改 连锁酒店类型但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateChaininfoIgnoreNull(Chaininfo chaininfo){
+			return chaininfoComponent.updateChaininfoIgnoreNull(chaininfo);
+	
+	}
+	
+	/**
+	 * 查找 连锁酒店类型
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllChaininfo(String where, String orderby,int limit,int offset){
+		return chaininfoComponent.findAllChaininfo(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 连锁酒店类型
+	 * @param id
+	 * @return
+	 */
+	public Chaininfo findChaininfo(long id){
+		return chaininfoComponent.findChaininfo(id);
+	}
+	
+	/** 
+	 * 查找 连锁酒店类型
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllChaininfoForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return chaininfoComponent.findAllChaininfo(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找连锁酒店类型
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllChaininfoBySql(String sql,int limit,int offset){
+		return chaininfoComponent.findAllChaininfo(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 连锁酒店类型
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteChaininfoBySql(String sql){
+		return chaininfoComponent.excuteChaininfoBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countChaininfoBySql(String sql){
+		return chaininfoComponent.countChaininfoBySql(sql);
+	}
+	
+	
+

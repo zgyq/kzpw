@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Roomstate">
+  
+  <typeAlias alias="Roomstate" type="com.yf.system.base.roomstate.Roomstate"/>
+  
+
+  <resultMap id="resultRoomstateMap" class="Roomstate">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="roomtypeid" column="C_ROOMTYPEID"/>
+  
+     <result property="startdate" column="C_STARTDATE"/>
+  
+     <result property="enddate" column="C_ENDDATE"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="confirmmethod" column="C_CONFIRMMETHOD"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="num" column="C_NUM"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllRoomstate"  resultMap="resultRoomstateMap"  parameterClass="java.util.Map">
+  
+    select * from T_ROOMSTATE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllRoomstateBySql"  resultMap="resultRoomstateMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteRoomstateBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countRoomstateBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_ROOMSTATE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findRoomstate" parameterClass="long" resultClass="Roomstate">
+    select 
+    	ID as id,
+	  			C_ROOMTYPEID as roomtypeid,
+	  			C_STARTDATE as startdate,
+	  			C_ENDDATE as enddate,
+	  			C_STATE as state,
+	  			C_CONFIRMMETHOD as confirmmethod,
+	  			C_TYPE as type,
+	  			C_NUM as num,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_ROOMSTATE
+    where ID = #id#
+  </select>
+   
+  <insert id="createRoomstate" parameterClass="Roomstate">
+    insert into T_ROOMSTATE ( 
+    	ID,
+	  			C_ROOMTYPEID,
+	  			C_STARTDATE,
+	  			C_ENDDATE,
+	  			C_STATE,
+	  			C_CONFIRMMETHOD,
+	  			C_TYPE,
+	  			C_NUM,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#roomtypeid:DECIMAL#,
+						
+	  						#startdate#,
+	  					
+	  						#enddate#,
+	  					
+							#state:DECIMAL#,
+						
+							#confirmmethod:DECIMAL#,
+						
+							#type:DECIMAL#,
+						
+							#num:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteRoomstate" parameterClass="long">
+    delete from T_ROOMSTATE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateRoomstate" parameterClass="Roomstate">
+    update T_ROOMSTATE 
+    set 
+    	C_ROOMTYPEID = #roomtypeid:DECIMAL#,
+						C_STARTDATE = #startdate#,
+	  					C_ENDDATE = #enddate#,
+	  					C_STATE = #state:DECIMAL#,
+						C_CONFIRMMETHOD = #confirmmethod:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_NUM = #num:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

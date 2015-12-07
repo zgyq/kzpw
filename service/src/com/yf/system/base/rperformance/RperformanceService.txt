@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 绩效合约统计
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Rperformance createRperformance(Rperformance rperformance) throws SQLException;
+	
+	/**
+	 * 删除 绩效合约统计
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRperformance(long id);
+	
+	
+	/**
+	 * 修改 绩效合约统计
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRperformance(Rperformance rperformance);
+
+		
+	/**
+	 * 修改 绩效合约统计但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRperformanceIgnoreNull(Rperformance rperformance);
+		
+	
+	/**
+	 * 查找 绩效合约统计
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRperformance(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 绩效合约统计
+	 * @param id
+	 * @return
+	 */
+	public Rperformance findRperformance(long id);
+	
+	
+	/** 
+	 * 查找 绩效合约统计
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRperformanceForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找绩效合约统计
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRperformanceBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 绩效合约统计
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRperformanceBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRperformanceBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IRperformanceComponent rperformanceComponent;
+	  
+ 	
+ 	public IRperformanceComponent getRperformanceComponent() {
+		return rperformanceComponent;
+	}
+	public void setRperformanceComponent(IRperformanceComponent  rperformanceComponent) {
+		this.rperformanceComponent = rperformanceComponent;
+	}
+	/**
+	 * 创建 绩效合约统计
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Rperformance createRperformance(Rperformance rperformance) throws SQLException{
+	
+		return rperformanceComponent.createRperformance(rperformance);
+	}
+	/**
+	 * 删除 绩效合约统计
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRperformance(long id){
+	
+		return rperformanceComponent.deleteRperformance(id);
+	}
+	
+	
+	/**
+	 * 修改 绩效合约统计
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRperformance(Rperformance rperformance){
+		return rperformanceComponent.updateRperformance(rperformance);
+	
+	}
+
+		
+	/**
+	 * 修改 绩效合约统计但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRperformanceIgnoreNull(Rperformance rperformance){
+			return rperformanceComponent.updateRperformanceIgnoreNull(rperformance);
+	
+	}
+	
+	/**
+	 * 查找 绩效合约统计
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRperformance(String where, String orderby,int limit,int offset){
+		return rperformanceComponent.findAllRperformance(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 绩效合约统计
+	 * @param id
+	 * @return
+	 */
+	public Rperformance findRperformance(long id){
+		return rperformanceComponent.findRperformance(id);
+	}
+	
+	/** 
+	 * 查找 绩效合约统计
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRperformanceForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return rperformanceComponent.findAllRperformance(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找绩效合约统计
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRperformanceBySql(String sql,int limit,int offset){
+		return rperformanceComponent.findAllRperformance(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 绩效合约统计
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRperformanceBySql(String sql){
+		return rperformanceComponent.excuteRperformanceBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRperformanceBySql(String sql){
+		return rperformanceComponent.countRperformanceBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,27 @@
+#getplatform {
+	BORDER-RIGHT: #2f7495 1px solid; BORDER-TOP: #2f7495 1px solid; VISIBILITY: hidden; BORDER-LEFT: #2f7495 1px solid; CURSOR: pointer; COLOR: #0099ff; BORDER-BOTTOM: #2f7495 1px solid; LIST-STYLE-TYPE: none; POSITION: absolute; BACKGROUND-COLOR: #cbdee7
+}
+.hint {
+	PADDING-LEFT: 6px; FONT-SIZE: 12px; BACKGROUND: #ffffff; COLOR: #656565; BORDER-BOTTOM: #c1c1c1 1px dashed
+}
+.mover {
+	BORDER-TOP: #808080 1px dotted; PADDING-LEFT: 6px; FONT-SIZE: 12px; BACKGROUND: #e7f1fd; CURSOR: pointer; COLOR: #21407d; LINE-HEIGHT: 120%; BORDER-BOTTOM: #808080 1px dotted
+}
+.mout {
+	BORDER-TOP: #ffffff 1px solid; PADDING-LEFT: 6px; FONT-SIZE: 12px; BACKGROUND: #ffffff; COLOR: #21407d; LINE-HEIGHT: 120%; BORDER-BOTTOM: #ffffff 1px solid
+}
+.selected {
+	BORDER-TOP: #dfeeff 1px dotted; PADDING-LEFT: 6px; FONT-SIZE: 12px; BACKGROUND: #c8e3fc; COLOR: #21407d; LINE-HEIGHT: 120%; BORDER-BOTTOM: #dfeeff 1px dotted
+}
+.tdleft {
+	PADDING-LEFT: 6px; FONT-SIZE: 12px
+}
+.tdright {
+	PADDING-RIGHT: 4px
+}
+td{
+	cursor:pointer;	
+}
+td label{
+	cursor:pointer;	
+}

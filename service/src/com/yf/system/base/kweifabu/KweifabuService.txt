@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 K位特价发布表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Kweifabu createKweifabu(Kweifabu kweifabu) throws SQLException;
+	
+	/**
+	 * 删除 K位特价发布表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteKweifabu(long id);
+	
+	
+	/**
+	 * 修改 K位特价发布表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateKweifabu(Kweifabu kweifabu);
+
+		
+	/**
+	 * 修改 K位特价发布表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateKweifabuIgnoreNull(Kweifabu kweifabu);
+		
+	
+	/**
+	 * 查找 K位特价发布表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllKweifabu(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 K位特价发布表
+	 * @param id
+	 * @return
+	 */
+	public Kweifabu findKweifabu(long id);
+	
+	
+	/** 
+	 * 查找 K位特价发布表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllKweifabuForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找K位特价发布表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllKweifabuBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql K位特价发布表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteKweifabuBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countKweifabuBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IKweifabuComponent kweifabuComponent;
+	  
+ 	
+ 	public IKweifabuComponent getKweifabuComponent() {
+		return kweifabuComponent;
+	}
+	public void setKweifabuComponent(IKweifabuComponent  kweifabuComponent) {
+		this.kweifabuComponent = kweifabuComponent;
+	}
+	/**
+	 * 创建 K位特价发布表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Kweifabu createKweifabu(Kweifabu kweifabu) throws SQLException{
+	
+		return kweifabuComponent.createKweifabu(kweifabu);
+	}
+	/**
+	 * 删除 K位特价发布表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteKweifabu(long id){
+	
+		return kweifabuComponent.deleteKweifabu(id);
+	}
+	
+	
+	/**
+	 * 修改 K位特价发布表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateKweifabu(Kweifabu kweifabu){
+		return kweifabuComponent.updateKweifabu(kweifabu);
+	
+	}
+
+		
+	/**
+	 * 修改 K位特价发布表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateKweifabuIgnoreNull(Kweifabu kweifabu){
+			return kweifabuComponent.updateKweifabuIgnoreNull(kweifabu);
+	
+	}
+	
+	/**
+	 * 查找 K位特价发布表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllKweifabu(String where, String orderby,int limit,int offset){
+		return kweifabuComponent.findAllKweifabu(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 K位特价发布表
+	 * @param id
+	 * @return
+	 */
+	public Kweifabu findKweifabu(long id){
+		return kweifabuComponent.findKweifabu(id);
+	}
+	
+	/** 
+	 * 查找 K位特价发布表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllKweifabuForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return kweifabuComponent.findAllKweifabu(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找K位特价发布表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllKweifabuBySql(String sql,int limit,int offset){
+		return kweifabuComponent.findAllKweifabu(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql K位特价发布表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteKweifabuBySql(String sql){
+		return kweifabuComponent.excuteKweifabuBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countKweifabuBySql(String sql){
+		return kweifabuComponent.countKweifabuBySql(sql);
+	}
+	
+	
+

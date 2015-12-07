@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Hotelfan">
+  
+  <typeAlias alias="Hotelfan" type="com.yf.system.base.hotelfan.Hotelfan"/>
+  
+
+  <resultMap id="resultHotelfanMap" class="Hotelfan">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="starttime" column="C_STARTTIME"/>
+  
+     <result property="endtime" column="C_ENDTIME"/>
+  
+     <result property="startprice" column="C_STARTPRICE"/>
+  
+     <result property="endprice" column="C_ENDPRICE"/>
+  
+     <result property="fan" column="C_FAN"/>
+  
+     <result property="ifvoucher" column="C_IFVOUCHER"/>
+  
+     <result property="hotelid" column="C_HOTELID"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="status" column="C_STATUS"/>
+   
+  </resultMap>
+  
+  <select id="findAllHotelfan"  resultMap="resultHotelfanMap"  parameterClass="java.util.Map">
+  
+    select * from T_HOTELFAN
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllHotelfanBySql"  resultMap="resultHotelfanMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteHotelfanBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countHotelfanBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_HOTELFAN
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findHotelfan" parameterClass="long" resultClass="Hotelfan">
+    select 
+    	ID as id,
+	  			C_CREATETIME as createtime,
+	  			C_STARTTIME as starttime,
+	  			C_ENDTIME as endtime,
+	  			C_STARTPRICE as startprice,
+	  			C_ENDPRICE as endprice,
+	  			C_FAN as fan,
+	  			C_IFVOUCHER as ifvoucher,
+	  			C_HOTELID as hotelid,
+	  			C_MEMBERID as memberid,
+	  			C_STATUS as status 
+     from T_HOTELFAN
+    where ID = #id#
+  </select>
+   
+  <insert id="createHotelfan" parameterClass="Hotelfan">
+    insert into T_HOTELFAN ( 
+    	ID,
+	  			C_CREATETIME,
+	  			C_STARTTIME,
+	  			C_ENDTIME,
+	  			C_STARTPRICE,
+	  			C_ENDPRICE,
+	  			C_FAN,
+	  			C_IFVOUCHER,
+	  			C_HOTELID,
+	  			C_MEMBERID,
+	  			C_STATUS 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#createtime#,
+	  					
+	  						#starttime#,
+	  					
+	  						#endtime#,
+	  					
+							#startprice:DECIMAL#,
+						
+							#endprice:DECIMAL#,
+						
+	  						#fan#,
+	  					
+							#ifvoucher:DECIMAL#,
+						
+							#hotelid:DECIMAL#,
+						
+							#memberid:DECIMAL#,
+						
+  							#status:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteHotelfan" parameterClass="long">
+    delete from T_HOTELFAN
+    where ID = #id#
+  </delete>
+	
+  <update id="updateHotelfan" parameterClass="Hotelfan">
+    update T_HOTELFAN 
+    set 
+    	C_CREATETIME = #createtime#,
+	  					C_STARTTIME = #starttime#,
+	  					C_ENDTIME = #endtime#,
+	  					C_STARTPRICE = #startprice:DECIMAL#,
+						C_ENDPRICE = #endprice:DECIMAL#,
+						C_FAN = #fan#,
+	  					C_IFVOUCHER = #ifvoucher:DECIMAL#,
+						C_HOTELID = #hotelid:DECIMAL#,
+						C_MEMBERID = #memberid:DECIMAL#,
+						C_STATUS = #status:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

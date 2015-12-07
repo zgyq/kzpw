@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Qzchanpin">
+  
+  <typeAlias alias="Qzchanpin" type="com.yf.system.base.qzchanpin.Qzchanpin"/>
+  
+
+  <resultMap id="resultQzchanpinMap" class="Qzchanpin">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="outid" column="C_OUTID"/>
+  
+     <result property="title" column="C_TITLE"/>
+  
+     <result property="titleurl" column="C_TITLEURL"/>
+  
+     <result property="category" column="C_CATEGORY"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="sprice" column="C_SPRICE"/>
+  
+     <result property="qprice" column="C_QPRICE"/>
+  
+     <result property="dealcity" column="C_DEALCITY"/>
+  
+     <result property="area" column="C_AREA"/>
+  
+     <result property="confine" column="C_CONFINE"/>
+  
+     <result property="feeinfo" column="C_FEEINFO"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllQzchanpin"  resultMap="resultQzchanpinMap"  parameterClass="java.util.Map">
+  
+    select * from T_QZCHANPIN
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllQzchanpinBySql"  resultMap="resultQzchanpinMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteQzchanpinBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countQzchanpinBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_QZCHANPIN
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findQzchanpin" parameterClass="long" resultClass="Qzchanpin">
+    select 
+    	ID as id,
+	  			C_OUTID as outid,
+	  			C_TITLE as title,
+	  			C_TITLEURL as titleurl,
+	  			C_CATEGORY as category,
+	  			C_PRICE as price,
+	  			C_SPRICE as sprice,
+	  			C_QPRICE as qprice,
+	  			C_DEALCITY as dealcity,
+	  			C_AREA as area,
+	  			C_CONFINE as confine,
+	  			C_FEEINFO as feeinfo,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state 
+     from T_QZCHANPIN
+    where ID = #id#
+  </select>
+   
+  <insert id="createQzchanpin" parameterClass="Qzchanpin">
+    insert into T_QZCHANPIN ( 
+    	ID,
+	  			C_OUTID,
+	  			C_TITLE,
+	  			C_TITLEURL,
+	  			C_CATEGORY,
+	  			C_PRICE,
+	  			C_SPRICE,
+	  			C_QPRICE,
+	  			C_DEALCITY,
+	  			C_AREA,
+	  			C_CONFINE,
+	  			C_FEEINFO,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#outid#,
+	  					
+	  						#title#,
+	  					
+	  						#titleurl#,
+	  					
+	  						#category#,
+	  					
+	  						#price#,
+	  					
+	  						#sprice#,
+	  					
+	  						#qprice#,
+	  					
+	  						#dealcity#,
+	  					
+	  						#area#,
+	  					
+	  						#confine#,
+	  					
+	  						#feeinfo#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteQzchanpin" parameterClass="long">
+    delete from T_QZCHANPIN
+    where ID = #id#
+  </delete>
+	
+  <update id="updateQzchanpin" parameterClass="Qzchanpin">
+    update T_QZCHANPIN 
+    set 
+    	C_OUTID = #outid#,
+	  					C_TITLE = #title#,
+	  					C_TITLEURL = #titleurl#,
+	  					C_CATEGORY = #category#,
+	  					C_PRICE = #price#,
+	  					C_SPRICE = #sprice#,
+	  					C_QPRICE = #qprice#,
+	  					C_DEALCITY = #dealcity#,
+	  					C_AREA = #area#,
+	  					C_CONFINE = #confine#,
+	  					C_FEEINFO = #feeinfo#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

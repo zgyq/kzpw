@@ -1,0 +1,76 @@
+﻿html {height:100%;}
+body {margin:0;height:100%;padding:0;background:#FFF;
+	font-size:12px;color:#333333;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	line-height:25px;
+	text-align:center;
+	/*word-break:break-all;*/
+	word-wrap:break-word;	
+	}
+div{margin:0;padding:0;height:auto;}
+img {border:0;}
+table {font-size:12px;}
+input {font-family:Arial,Helvetica,sans-serif; font-size: 12px;}
+p {margin:0;}
+ul {margin:0px;padding:0px;width:100%;margin:0;overflow:hidden;}
+li {list-style:none;padding:0;overflow:hidden;margin:0;}
+
+h1{font-weight:bold;margin:0px;padding:0;font-size:16px;color:#181818;font-family:Microsoft YaHei,Verdana, Arial, Helvetica, sans-serif;}
+h2{font-weight:bold;margin:0px;padding:0;font-size:16px;color:#06549E;font-family:Microsoft YaHei,Verdana, Arial, Helvetica, sans-serif;}
+h3{font-weight:bold;margin:0px;padding:0;font-size:14px;color:#181818;}
+h4{font-weight:bold;margin:0px;padding:0;font-size:14px;color:#181818;}
+
+/*---------Form Table------------------*/
+form{ margin: 0;padding: 0;}
+.inputbox {font-size:12px;height:20px;padding:5px 0 0 10px;border:1px solid #808080;}
+.submit_search{padding:0;border:0;width:51px;height:22px;line-height:35px;color:#FFFFFF;font-weight:bold;font-size:14px;cursor:hand;background:url(../images/submit_search.gif) top left no-repeat;}
+
+#table_xingchengdan{position:relative;width:813px;height:375px; overflow:hidden;background:url(../images/table_xingchengdan.gif) top left no-repeat;}
+#table_xingchengdan .tbox{position:absolute;color:#000;font-family:TEC;font-size:22px;display:inline-block;_display:inline;overflow:hidden;text-align:left;}
+#table_xingchengdan .t1{width:160px;height:30px;top:20px;left:630px;font-family:Microsoft YaHei;}
+#table_xingchengdan .tbinput{width:160px; margin:0;padding:0;border:0;height:30px;background:none;font-size:20px;font-family:Microsoft YaHei;}
+
+#table_xingchengdan .t2{width:175px;height:30px;top:68px;left:35px;}
+#table_xingchengdan .t3{width:230px;height:30px;top:68px;left:213px;}
+#table_xingchengdan .t4{width:161px;height:30px;top:68px;left:455px;}
+#table_xingchengdan .t5{width:161px;height:30px;top:98px;left:35px;}
+
+#table_xingchengdan .t6{width:110px;height:40px;top:130px;left:70px;}
+#table_xingchengdan .t6_1{width:110px;height:40px;top:170px;left:70px;}
+#table_xingchengdan .t6_2{width:110px;height:40px;top:200px;left:70px;}
+#table_xingchengdan .t7{width:45px;height:100px;top:130px;left:190px;}
+#table_xingchengdan .t8{width:65px;height:100px;top:130px;left:240px;}
+#table_xingchengdan .t9{width:30px;height:100px;top:130px;left:310px;}
+#table_xingchengdan .t10{width:110px;height:35px;top:130px;left:330px;}
+#table_xingchengdan .t11{width:110px;height:35px;top:130px;left:440px;}
+#table_xingchengdan .t12{width:100px;height:35px;top:130px;left:533px;}
+#table_xingchengdan .t12_1{width:60px;height:100px;top:130px;left:597px;}
+#table_xingchengdan .t12_2{width:60px;height:100px;top:130px;left:657px;}
+#table_xingchengdan .t13{width:50px;height:35px;top:130px;left:720px;}
+
+#table_xingchengdan .t14{width:103px;height:35px;top:253px;left:193px;}
+#table_xingchengdan .t15{width:103px;height:35px;top:253px;left:306px;}
+#table_xingchengdan .t16{width:103px;height:35px;top:253px;left:400px;}
+#table_xingchengdan .t17{width:103px;height:35px;top:253px;left:502px;}
+#table_xingchengdan .t18{width:168px;height:35px;top:253px;left:600px;}
+
+#table_xingchengdan .t19{width:50px;height:35px;top:253px;left:400px;}
+
+
+#table_xingchengdan .t20{width:150px;height:35px;top:283px;left:97px;}
+#table_xingchengdan .t21{width:90px;height:35px;top:283px;left:278px;}
+#table_xingchengdan .t22{width:240px;height:35px;top:283px;left:425px;}
+#table_xingchengdan .t23{width:60px;height:35px;top:283px;left:707px;}
+
+#table_xingchengdan .t24{width:150px;height:35px;top:305px;left:97px;}
+#table_xingchengdan .t25{width:150px;height:35px;top:315px;left:320px;}
+#table_xingchengdan .t26{width:110px;height:35px;top:315px;left:650px;}
+#table_xingchengdan .t27{width:150px;height:35px;top:325px;left:97px;}
+
+
+
+#table_print{width:813px;height:30px;padding:10px 0;overflow:hidden;}
+#table_print .tbprint{ float:right;width:120px;height:30px;line-height:30px;font-size:14px;color:#FFF;background:#015E9B;text-decoration:none;cursor:pointer;display:inline-block;_display:inline;}
+#table_print .tbprint:hover{background:#FF2A00;}
+
+

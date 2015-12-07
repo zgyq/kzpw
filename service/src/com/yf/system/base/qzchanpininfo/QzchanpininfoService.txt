@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 签证产品详细信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Qzchanpininfo createQzchanpininfo(Qzchanpininfo qzchanpininfo) throws SQLException;
+	
+	/**
+	 * 删除 签证产品详细信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteQzchanpininfo(long id);
+	
+	
+	/**
+	 * 修改 签证产品详细信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateQzchanpininfo(Qzchanpininfo qzchanpininfo);
+
+		
+	/**
+	 * 修改 签证产品详细信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateQzchanpininfoIgnoreNull(Qzchanpininfo qzchanpininfo);
+		
+	
+	/**
+	 * 查找 签证产品详细信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllQzchanpininfo(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 签证产品详细信息
+	 * @param id
+	 * @return
+	 */
+	public Qzchanpininfo findQzchanpininfo(long id);
+	
+	
+	/** 
+	 * 查找 签证产品详细信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllQzchanpininfoForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找签证产品详细信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllQzchanpininfoBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 签证产品详细信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteQzchanpininfoBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countQzchanpininfoBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IQzchanpininfoComponent qzchanpininfoComponent;
+	  
+ 	
+ 	public IQzchanpininfoComponent getQzchanpininfoComponent() {
+		return qzchanpininfoComponent;
+	}
+	public void setQzchanpininfoComponent(IQzchanpininfoComponent  qzchanpininfoComponent) {
+		this.qzchanpininfoComponent = qzchanpininfoComponent;
+	}
+	/**
+	 * 创建 签证产品详细信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Qzchanpininfo createQzchanpininfo(Qzchanpininfo qzchanpininfo) throws SQLException{
+	
+		return qzchanpininfoComponent.createQzchanpininfo(qzchanpininfo);
+	}
+	/**
+	 * 删除 签证产品详细信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteQzchanpininfo(long id){
+	
+		return qzchanpininfoComponent.deleteQzchanpininfo(id);
+	}
+	
+	
+	/**
+	 * 修改 签证产品详细信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateQzchanpininfo(Qzchanpininfo qzchanpininfo){
+		return qzchanpininfoComponent.updateQzchanpininfo(qzchanpininfo);
+	
+	}
+
+		
+	/**
+	 * 修改 签证产品详细信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateQzchanpininfoIgnoreNull(Qzchanpininfo qzchanpininfo){
+			return qzchanpininfoComponent.updateQzchanpininfoIgnoreNull(qzchanpininfo);
+	
+	}
+	
+	/**
+	 * 查找 签证产品详细信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllQzchanpininfo(String where, String orderby,int limit,int offset){
+		return qzchanpininfoComponent.findAllQzchanpininfo(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 签证产品详细信息
+	 * @param id
+	 * @return
+	 */
+	public Qzchanpininfo findQzchanpininfo(long id){
+		return qzchanpininfoComponent.findQzchanpininfo(id);
+	}
+	
+	/** 
+	 * 查找 签证产品详细信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllQzchanpininfoForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return qzchanpininfoComponent.findAllQzchanpininfo(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找签证产品详细信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllQzchanpininfoBySql(String sql,int limit,int offset){
+		return qzchanpininfoComponent.findAllQzchanpininfo(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 签证产品详细信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteQzchanpininfoBySql(String sql){
+		return qzchanpininfoComponent.excuteQzchanpininfoBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countQzchanpininfoBySql(String sql){
+		return qzchanpininfoComponent.countQzchanpininfoBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 酒店图片
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Hotelimage createHotelimage(Hotelimage hotelimage) throws SQLException;
+	
+	/**
+	 * 删除 酒店图片
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteHotelimage(long id);
+	
+	
+	/**
+	 * 修改 酒店图片
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateHotelimage(Hotelimage hotelimage);
+
+		
+	/**
+	 * 修改 酒店图片但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateHotelimageIgnoreNull(Hotelimage hotelimage);
+		
+	
+	/**
+	 * 查找 酒店图片
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelimage(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 酒店图片
+	 * @param id
+	 * @return
+	 */
+	public Hotelimage findHotelimage(long id);
+	
+	/**
+	 * 查找 酒店图片 by language
+	 * @param id
+	 * @return
+	 */
+	public Hotelimage findHotelimagebylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 酒店图片
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllHotelimageForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找酒店图片
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelimageBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 酒店图片
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteHotelimageBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countHotelimageBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IHotelimageComponent hotelimageComponent;
+	  
+ 	
+ 	public IHotelimageComponent getHotelimageComponent() {
+		return hotelimageComponent;
+	}
+	public void setHotelimageComponent(IHotelimageComponent  hotelimageComponent) {
+		this.hotelimageComponent = hotelimageComponent;
+	}
+	/**
+	 * 创建 酒店图片
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Hotelimage createHotelimage(Hotelimage hotelimage) throws SQLException{
+	
+		return hotelimageComponent.createHotelimage(hotelimage);
+	}
+	/**
+	 * 删除 酒店图片
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteHotelimage(long id){
+	
+		return hotelimageComponent.deleteHotelimage(id);
+	}
+	
+	
+	/**
+	 * 修改 酒店图片
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateHotelimage(Hotelimage hotelimage){
+		return hotelimageComponent.updateHotelimage(hotelimage);
+	
+	}
+
+		
+	/**
+	 * 修改 酒店图片但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateHotelimageIgnoreNull(Hotelimage hotelimage){
+			return hotelimageComponent.updateHotelimageIgnoreNull(hotelimage);
+	
+	}
+	
+	/**
+	 * 查找 酒店图片
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelimage(String where, String orderby,int limit,int offset){
+		return hotelimageComponent.findAllHotelimage(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 酒店图片
+	 * @param id
+	 * @return
+	 */
+	public Hotelimage findHotelimage(long id){
+		return hotelimageComponent.findHotelimage(id);
+	}
+	
+	/**
+	 * 查找 酒店图片
+	 * @param id
+	 * @return
+	 */
+	public Hotelimage findHotelimagebylanguage(long id,Integer language){
+		return hotelimageComponent.findHotelimagebylanguage(id,language);
+	}
+	/** 
+	 * 查找 酒店图片
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllHotelimageForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return hotelimageComponent.findAllHotelimage(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找酒店图片
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelimageBySql(String sql,int limit,int offset){
+		return hotelimageComponent.findAllHotelimage(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 酒店图片
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteHotelimageBySql(String sql){
+		return hotelimageComponent.excuteHotelimageBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countHotelimageBySql(String sql){
+		return hotelimageComponent.countHotelimageBySql(sql);
+	}
+	
+	
+

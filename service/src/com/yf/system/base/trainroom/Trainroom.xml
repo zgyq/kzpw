@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Trainroom">
+  
+  <typeAlias alias="Trainroom" type="com.yf.system.base.trainroom.Trainroom"/>
+  
+
+  <resultMap id="resultTrainroomMap" class="Trainroom">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="tel" column="C_TEL"/>
+  
+     <result property="opentime" column="C_OPENTIME"/>
+     
+     <result property="closetime" column="C_CLOSETIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllTrainroom"  resultMap="resultTrainroomMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRAINROOM
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTrainroomBySql"  resultMap="resultTrainroomMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTrainroomBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTrainroomBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRAINROOM
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTrainroom" parameterClass="long" resultClass="Trainroom">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_ADDRESS as address,
+	  			C_TEL as tel,
+	  			C_OPENTIME as opentime,
+	  			C_CLOSETIME as closetime 
+     from T_TRAINROOM
+    where ID = #id#
+  </select>
+   
+  <insert id="createTrainroom" parameterClass="Trainroom">
+    insert into T_TRAINROOM ( 
+    	ID,
+	  			C_NAME,
+	  			C_ADDRESS,
+	  			C_TEL,
+	  			C_OPENTIME,
+	  			C_CLOSETIME
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#address#,
+	  					
+	  						#tel#,
+	  					
+	  						#opentime#,
+	  						#closetime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTrainroom" parameterClass="long">
+    delete from T_TRAINROOM
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTrainroom" parameterClass="Trainroom">
+    update T_TRAINROOM 
+    set 
+    	C_NAME = #name#,
+	  					C_ADDRESS = #address#,
+	  					C_TEL = #tel#,
+	  					C_OPENTIME = #opentime#,
+	  					C_CLOSETIME = #closetime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

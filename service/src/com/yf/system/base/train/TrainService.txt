@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 火车时刻表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Train createTrain(Train train) throws SQLException;
+	
+	/**
+	 * 删除 火车时刻表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTrain(long id);
+	
+	
+	/**
+	 * 修改 火车时刻表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTrain(Train train);
+
+		
+	/**
+	 * 修改 火车时刻表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTrainIgnoreNull(Train train);
+		
+	
+	/**
+	 * 查找 火车时刻表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTrain(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 火车时刻表
+	 * @param id
+	 * @return
+	 */
+	public Train findTrain(long id);
+	
+	
+	/** 
+	 * 查找 火车时刻表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTrainForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找火车时刻表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTrainBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 火车时刻表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTrainBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTrainBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITrainComponent trainComponent;
+	  
+ 	
+ 	public ITrainComponent getTrainComponent() {
+		return trainComponent;
+	}
+	public void setTrainComponent(ITrainComponent  trainComponent) {
+		this.trainComponent = trainComponent;
+	}
+	/**
+	 * 创建 火车时刻表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Train createTrain(Train train) throws SQLException{
+	
+		return trainComponent.createTrain(train);
+	}
+	/**
+	 * 删除 火车时刻表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTrain(long id){
+	
+		return trainComponent.deleteTrain(id);
+	}
+	
+	
+	/**
+	 * 修改 火车时刻表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTrain(Train train){
+		return trainComponent.updateTrain(train);
+	
+	}
+
+		
+	/**
+	 * 修改 火车时刻表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTrainIgnoreNull(Train train){
+			return trainComponent.updateTrainIgnoreNull(train);
+	
+	}
+	
+	/**
+	 * 查找 火车时刻表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTrain(String where, String orderby,int limit,int offset){
+		return trainComponent.findAllTrain(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 火车时刻表
+	 * @param id
+	 * @return
+	 */
+	public Train findTrain(long id){
+		return trainComponent.findTrain(id);
+	}
+	
+	/** 
+	 * 查找 火车时刻表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTrainForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return trainComponent.findAllTrain(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找火车时刻表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTrainBySql(String sql,int limit,int offset){
+		return trainComponent.findAllTrain(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 火车时刻表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTrainBySql(String sql){
+		return trainComponent.excuteTrainBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTrainBySql(String sql){
+		return trainComponent.countTrainBySql(sql);
+	}
+	
+	
+

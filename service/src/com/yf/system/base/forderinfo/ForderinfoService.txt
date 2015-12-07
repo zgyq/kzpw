@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 国际机票订单表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Forderinfo createForderinfo(Forderinfo forderinfo) throws SQLException;
+	
+	/**
+	 * 删除 国际机票订单表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteForderinfo(long id);
+	
+	
+	/**
+	 * 修改 国际机票订单表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateForderinfo(Forderinfo forderinfo);
+
+		
+	/**
+	 * 修改 国际机票订单表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateForderinfoIgnoreNull(Forderinfo forderinfo);
+		
+	
+	/**
+	 * 查找 国际机票订单表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllForderinfo(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 国际机票订单表
+	 * @param id
+	 * @return
+	 */
+	public Forderinfo findForderinfo(long id);
+	
+	
+	/** 
+	 * 查找 国际机票订单表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllForderinfoForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找国际机票订单表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllForderinfoBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 国际机票订单表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteForderinfoBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countForderinfoBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IForderinfoComponent forderinfoComponent;
+	  
+ 	
+ 	public IForderinfoComponent getForderinfoComponent() {
+		return forderinfoComponent;
+	}
+	public void setForderinfoComponent(IForderinfoComponent  forderinfoComponent) {
+		this.forderinfoComponent = forderinfoComponent;
+	}
+	/**
+	 * 创建 国际机票订单表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Forderinfo createForderinfo(Forderinfo forderinfo) throws SQLException{
+	
+		return forderinfoComponent.createForderinfo(forderinfo);
+	}
+	/**
+	 * 删除 国际机票订单表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteForderinfo(long id){
+	
+		return forderinfoComponent.deleteForderinfo(id);
+	}
+	
+	
+	/**
+	 * 修改 国际机票订单表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateForderinfo(Forderinfo forderinfo){
+		return forderinfoComponent.updateForderinfo(forderinfo);
+	
+	}
+
+		
+	/**
+	 * 修改 国际机票订单表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateForderinfoIgnoreNull(Forderinfo forderinfo){
+			return forderinfoComponent.updateForderinfoIgnoreNull(forderinfo);
+	
+	}
+	
+	/**
+	 * 查找 国际机票订单表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllForderinfo(String where, String orderby,int limit,int offset){
+		return forderinfoComponent.findAllForderinfo(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 国际机票订单表
+	 * @param id
+	 * @return
+	 */
+	public Forderinfo findForderinfo(long id){
+		return forderinfoComponent.findForderinfo(id);
+	}
+	
+	/** 
+	 * 查找 国际机票订单表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllForderinfoForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return forderinfoComponent.findAllForderinfo(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找国际机票订单表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllForderinfoBySql(String sql,int limit,int offset){
+		return forderinfoComponent.findAllForderinfo(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 国际机票订单表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteForderinfoBySql(String sql){
+		return forderinfoComponent.excuteForderinfoBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countForderinfoBySql(String sql){
+		return forderinfoComponent.countForderinfoBySql(sql);
+	}
+	
+	
+

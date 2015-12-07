@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Hotelagent">
+  
+  <typeAlias alias="Hotelagent" type="com.yf.system.base.hotelagent.Hotelagent"/>
+  
+
+  <resultMap id="resultHotelagentMap" class="Hotelagent">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="starttime" column="C_STARTTIME"/>
+  
+     <result property="endtime" column="C_ENDTIME"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="customeragentid" column="C_CUSTOMERAGENTID"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+   
+  </resultMap>
+  
+  <select id="findAllHotelagent"  resultMap="resultHotelagentMap"  parameterClass="java.util.Map">
+  
+    select * from T_HOTELAGENT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllHotelagentBySql"  resultMap="resultHotelagentMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteHotelagentBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countHotelagentBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_HOTELAGENT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findHotelagent" parameterClass="long" resultClass="Hotelagent">
+    select 
+    	ID as id,
+	  			C_CREATETIME as createtime,
+	  			C_STARTTIME as starttime,
+	  			C_ENDTIME as endtime,
+	  			C_STATE as state,
+	  			C_CUSTOMERAGENTID as customeragentid,
+	  			C_MEMBERID as memberid 
+     from T_HOTELAGENT
+    where ID = #id#
+  </select>
+   
+  <insert id="createHotelagent" parameterClass="Hotelagent">
+    insert into T_HOTELAGENT ( 
+    	ID,
+	  			C_CREATETIME,
+	  			C_STARTTIME,
+	  			C_ENDTIME,
+	  			C_STATE,
+	  			C_CUSTOMERAGENTID,
+	  			C_MEMBERID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#createtime#,
+	  					
+	  						#starttime#,
+	  					
+	  						#endtime#,
+	  					
+							#state:DECIMAL#,
+						
+							#customeragentid:DECIMAL#,
+						
+  							#memberid:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteHotelagent" parameterClass="long">
+    delete from T_HOTELAGENT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateHotelagent" parameterClass="Hotelagent">
+    update T_HOTELAGENT 
+    set 
+    	C_CREATETIME = #createtime#,
+	  					C_STARTTIME = #starttime#,
+	  					C_ENDTIME = #endtime#,
+	  					C_STATE = #state:DECIMAL#,
+						C_CUSTOMERAGENTID = #customeragentid:DECIMAL#,
+						C_MEMBERID = #memberid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

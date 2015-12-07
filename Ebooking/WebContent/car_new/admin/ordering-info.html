@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../css/init.css" />
+<link rel="stylesheet" type="text/css" href="../css/vipCenter.css" />
+<script type="text/javascript" src="../js/jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		//这部分是设置那一个vipMenu显示的部分
+		$(".vipMenu li:eq(3)").addClass("vipMenuClick")
+		$(".vipMenu h3").click(function(){
+			$(this).parent().toggleClass("vipMenuClick");
+		})
+	})
+</script>
+</head>
+<body>
+<!--vipHeader-->
+<div class="vipHeader vipCenter">
+	<p><a href="#">返回官网首页</a><a href="#">车友俱乐部</a><span><a>会员中心</a></span></p>
+</div>
+<!--vipHeader end-->
+<!--你现在的位置-->
+<div class="currentLocation"><p class="vipCenter">你的位置：<a href="#">首页</a>><a href="#">投资者关系</a></p></div>
+<!--你现在的位置 end-->
+<!--vipContent-->
+<div class="vipContent">
+	<div style="background:url(images/vipContentBg.jpg) repeat-x top center;" class="vipContentBg">
+    <div class="vipCenter">
+        <div class="vipContentLeft">
+        	<div class="vipName">
+            	<p class="vipNameTitle"><span>merisa</span>你好！</p>
+                <p class="youDo">待处理事项:<i>3</i></p>
+            </div>
+            <img src="images/vipHelloBottom_bg.png" height="4" width="220" class="vipHelloImg" />
+            <ul class="vipMenu">
+            	<li>
+                	<h3>定制我的页面</h3>
+                    <div>
+                    	<a href="#">我的页面</a>
+                        <a href="#">定制页面</a>
+                    </div>
+                </li>
+                <li>
+                	<h3>会员信息</h3>
+                    <div>
+                    	<a href="#">我的资料</a>
+                        <a href="#">编辑资料</a>
+                        <a href="#">修改密码</a>
+                        <a href="#">简历与留言<span><i>1</i></span></a>
+                    </div>
+                </li>
+                <li><a href="#">系统消息</a></li>
+                <li>
+                	<h3>预约信息</h3>
+                    <div>
+                    	<a href="#">预约试驾</a>
+                        <a href="#">预约服务</a>
+                        <a href="#">预约活动</a>
+                    </div>
+                </li>
+                <li>
+                	<h3>在线订车</h3>
+                    <div>
+                    	<a href="#"  class="vipMenuaFocus">订单信息</a>
+                    </div>
+                </li>
+                <li><a href="#">我的CLUB</a></li>
+                <li><a href="#">意见反馈</a></li>
+            </ul>
+            <img src="images/vipMenuBottom_bg.png" height="5" width="200" class="vipMenuImg" />
+            <ul class="vipContentTips">
+            	<li><a href="#"><img src="images/dingche.png" height="23" width="22" />我关注的车型</a></li>
+                <li><a href="#"><img src="images/wangdian.png" height="23" width="22" />在线咨询</a></li>
+            </ul>
+            <img src="images/vipHelloBottom_bg.png" height="4" width="220" class="vipHelloImg" />
+        </div>
+        <div class="vipContentRight">
+        	<div class="vipContentRightBg">
+            	<div class="member onlineOrdering">
+                	<p class="memberTips">我的订单信息</p>
+                    <p class="onlineOrderingBtn"><a href="#">在线订车</a></p>
+                    <ul class="membership">
+                    	<li class="membershipFocus"><a href="#">全部订单</a></li>
+                    </ul>
+                    <ul class="orderList">
+                    	<li>
+                        	<p class="orderListTitle"><span>状态：已提交</span><span>下单时间：2013-08-08</span>订单号：0000000000</p>
+                        	<div class="orderState">已提交</div>
+                            <div class="orderDetails"><a href="#" class="orderListImg"><img src="images/orderDetailsImg.jpg" height="63" width="80" /></a><p><a href="#">江淮康铃</a><br />推荐经销商：北京中汽福瑞<br />经销商电话：400  800  6000</p></div>
+                        </li>
+                        <li>
+                        	<p class="orderListTitle"><span>状态：未提交</span><span>下单时间：2013-08-08</span>订单号：0000000000</p>
+                        	<div class="orderState"><a href="#">提交</a></div>
+                            <div class="orderDetails"><a href="#" class="orderListImg"><img src="images/orderDetailsImg.jpg" height="63" width="80" /></a><p><a href="#">江淮康铃</a><br />推荐经销商：北京中汽福瑞<br />经销商电话：400  800  6000</p></div>
+                        </li>
+                        <li>
+                        	<p class="orderListTitle"><span>状态：已过期</span><span>下单时间：2013-08-08</span>订单号：0000000000</p>
+                        	<div class="orderState">已过期</div>
+                            <div class="orderDetails"><a href="#" class="orderListImg"><img src="images/orderDetailsImg.jpg" height="63" width="80" /></a><p><a href="#">江淮康铃</a><br />推荐经销商：北京中汽福瑞<br />经销商电话：400  800  6000</p></div>
+                        </li>
+                    </ul>
+                    <div class="clearBox"></div>
+                </div>   
+            </div>
+            <img src="images/vipContentRightBottom.png" height="10" width="700" class="vipContentRightImg" />
+        </div>
+        <div class="clearBox"></div>
+    </div>
+    </div>
+</div>
+<!--vipContent end-->
+</body>
+</html>

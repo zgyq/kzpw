@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Jinribaobiao">
+  
+  <typeAlias alias="Jinribaobiao" type="com.yf.system.base.jinribaobiao.Jinribaobiao"/>
+  
+
+  <resultMap id="resultJinribaobiaoMap" class="Jinribaobiao">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="ordertime" column="C_ORDERTIME"/>
+  
+     <result property="pnr" column="C_PNR"/>
+  
+     <result property="ticketcode" column="C_TICKETCODE"/>
+  
+     <result property="ordercode" column="C_ORDERCODE"/>
+  
+     <result property="username" column="C_USERNAME"/>
+  
+     <result property="startcity" column="C_STARTCITY"/>
+  
+     <result property="endcity" column="C_ENDCITY"/>
+  
+     <result property="startcityszm" column="C_STARTCITYSZM"/>
+  
+     <result property="endcityszm" column="C_ENDCITYSZM"/>
+  
+     <result property="flightnumber" column="C_FLIGHTNUMBER"/>
+  
+     <result property="cabincode" column="C_CABINCODE"/>
+  
+     <result property="flightdate" column="C_FLIGHTDATE"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="fandian" column="C_FANDIAN"/>
+  
+     <result property="jijianranyou" column="C_JIJIANRANYOU"/>
+  
+     <result property="number" column="C_NUMBER"/>
+  
+     <result property="submoney" column="C_SUBMONEY"/>
+  
+     <result property="shouxufei" column="C_SHOUXUFEI"/>
+  
+     <result property="tuikuan" column="C_TUIKUAN"/>
+  
+     <result property="yingshou" column="C_YINGSHOU"/>
+  
+     <result property="lirun" column="C_LIRUN"/>
+  
+     <result property="paymethod" column="C_PAYMETHOD"/>
+  
+     <result property="paytime" column="C_PAYTIME"/>
+  
+     <result property="feitime" column="C_FEITIME"/>
+  
+     <result property="rttime" column="C_RTTIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllJinribaobiao"  resultMap="resultJinribaobiaoMap"  parameterClass="java.util.Map">
+  
+    select * from T_JINRIBAOBIAO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllJinribaobiaoBySql"  resultMap="resultJinribaobiaoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteJinribaobiaoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countJinribaobiaoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_JINRIBAOBIAO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findJinribaobiao" parameterClass="long" resultClass="Jinribaobiao">
+    select 
+    	ID as id,
+	  			C_ORDERTIME as ordertime,
+	  			C_PNR as pnr,
+	  			C_TICKETCODE as ticketcode,
+	  			C_ORDERCODE as ordercode,
+	  			C_USERNAME as username,
+	  			C_STARTCITY as startcity,
+	  			C_ENDCITY as endcity,
+	  			C_STARTCITYSZM as startcityszm,
+	  			C_ENDCITYSZM as endcityszm,
+	  			C_FLIGHTNUMBER as flightnumber,
+	  			C_CABINCODE as cabincode,
+	  			C_FLIGHTDATE as flightdate,
+	  			C_PRICE as price,
+	  			C_FANDIAN as fandian,
+	  			C_JIJIANRANYOU as jijianranyou,
+	  			C_NUMBER as number,
+	  			C_SUBMONEY as submoney,
+	  			C_SHOUXUFEI as shouxufei,
+	  			C_TUIKUAN as tuikuan,
+	  			C_YINGSHOU as yingshou,
+	  			C_LIRUN as lirun,
+	  			C_PAYMETHOD as paymethod,
+	  			C_PAYTIME as paytime,
+	  			C_FEITIME as feitime,
+	  			C_RTTIME as rttime,
+	  			C_STATE as state 
+     from T_JINRIBAOBIAO
+    where ID = #id#
+  </select>
+   
+  <insert id="createJinribaobiao" parameterClass="Jinribaobiao">
+    insert into T_JINRIBAOBIAO ( 
+    	ID,
+	  			C_ORDERTIME,
+	  			C_PNR,
+	  			C_TICKETCODE,
+	  			C_ORDERCODE,
+	  			C_USERNAME,
+	  			C_STARTCITY,
+	  			C_ENDCITY,
+	  			C_STARTCITYSZM,
+	  			C_ENDCITYSZM,
+	  			C_FLIGHTNUMBER,
+	  			C_CABINCODE,
+	  			C_FLIGHTDATE,
+	  			C_PRICE,
+	  			C_FANDIAN,
+	  			C_JIJIANRANYOU,
+	  			C_NUMBER,
+	  			C_SUBMONEY,
+	  			C_SHOUXUFEI,
+	  			C_TUIKUAN,
+	  			C_YINGSHOU,
+	  			C_LIRUN,
+	  			C_PAYMETHOD,
+	  			C_PAYTIME,
+	  			C_FEITIME,
+	  			C_RTTIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#ordertime#,
+	  					
+	  						#pnr#,
+	  					
+	  						#ticketcode#,
+	  					
+	  						#ordercode#,
+	  					
+	  						#username#,
+	  					
+	  						#startcity#,
+	  					
+	  						#endcity#,
+	  					
+	  						#startcityszm#,
+	  					
+	  						#endcityszm#,
+	  					
+	  						#flightnumber#,
+	  					
+	  						#cabincode#,
+	  					
+	  						#flightdate#,
+	  					
+							#price:DECIMAL#,
+						
+							#fandian:DECIMAL#,
+						
+							#jijianranyou:DECIMAL#,
+						
+							#number:DECIMAL#,
+						
+							#submoney:DECIMAL#,
+						
+							#shouxufei:DECIMAL#,
+						
+							#tuikuan:DECIMAL#,
+						
+							#yingshou:DECIMAL#,
+						
+							#lirun:DECIMAL#,
+						
+	  						#paymethod#,
+	  					
+	  						#paytime#,
+	  					
+	  						#feitime#,
+	  					
+	  						#rttime#,
+	  					
+	  						#state#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteJinribaobiao" parameterClass="long">
+    delete from T_JINRIBAOBIAO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateJinribaobiao" parameterClass="Jinribaobiao">
+    update T_JINRIBAOBIAO 
+    set 
+    	C_ORDERTIME = #ordertime#,
+	  					C_PNR = #pnr#,
+	  					C_TICKETCODE = #ticketcode#,
+	  					C_ORDERCODE = #ordercode#,
+	  					C_USERNAME = #username#,
+	  					C_STARTCITY = #startcity#,
+	  					C_ENDCITY = #endcity#,
+	  					C_STARTCITYSZM = #startcityszm#,
+	  					C_ENDCITYSZM = #endcityszm#,
+	  					C_FLIGHTNUMBER = #flightnumber#,
+	  					C_CABINCODE = #cabincode#,
+	  					C_FLIGHTDATE = #flightdate#,
+	  					C_PRICE = #price:DECIMAL#,
+						C_FANDIAN = #fandian:DECIMAL#,
+						C_JIJIANRANYOU = #jijianranyou:DECIMAL#,
+						C_NUMBER = #number:DECIMAL#,
+						C_SUBMONEY = #submoney:DECIMAL#,
+						C_SHOUXUFEI = #shouxufei:DECIMAL#,
+						C_TUIKUAN = #tuikuan:DECIMAL#,
+						C_YINGSHOU = #yingshou:DECIMAL#,
+						C_LIRUN = #lirun:DECIMAL#,
+						C_PAYMETHOD = #paymethod#,
+	  					C_PAYTIME = #paytime#,
+	  					C_FEITIME = #feitime#,
+	  					C_RTTIME = #rttime#,
+	  					C_STATE = #state#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

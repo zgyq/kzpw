@@ -1,0 +1,137 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, li {
+    list-style: none
+}
+
+.nav {
+    width: 100%;
+    height: 500px;
+    background: url("../img/bg.jpg") no-repeat center;
+    overflow: hidden;
+    *margin-top: -50px;
+}
+
+.nav .searchBox {
+    width: 730px;
+    margin: 320px auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.51);
+    padding: 10px;
+    height: 40px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    *background: transparent;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff, endColorstr=#7fffffff);
+    overflow: hidden;
+
+}
+
+.searchBox ul li {
+    float: left;
+    margin-right: 10px;
+}
+
+.searchBox ul .td1 input {
+    width: 270px;
+    height: 39px;
+    border: 1px solid #c0c0c0;
+    border-radius: 3px;
+    color: #636363;
+    font-size: 14px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.searchBox ul .td2 input {
+    width: 150px;
+    height: 39px;
+    border: 1px solid #c0c0c0;
+    border-radius: 3px;
+    color: #636363;
+    font-size: 14px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.searchBox ul .td3 input {
+    width: 150px;
+    height: 39px;
+    border: 1px solid #c0c0c0;
+    border-radius: 3px;
+    color: #636363;
+    font-size: 14px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+.font_yahei{font-family: "Hiragino Sans GB", "Microsoft YaHei", \9ED1\4F53, \5b8b\4f53, sans-serif}
+.searchBox ul .td4 a {
+    display: inline-block;
+    width: 84px;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #f26622;
+    color: #fff;
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", \9ED1\4F53, \5b8b\4f53, sans-serif;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.mid{width: 100%;overflow: hidden;background-color: #f4f4f4;padding-bottom: 10px;}
+.goodness{width: 1000px;height: 70px;margin: 50px auto;}
+.goodness .td{width: 300px;height: 70px;float: left;margin-right: 50px;}
+.goodness .td .p1{font-size: 19px;color: #f26622;display: inline-block;width: 225px;float: right;margin-bottom: 5px;
+font-family: "Hiragino Sans GB", "Microsoft YaHei", \9ED1\4F53, \5b8b\4f53, sans-serif}
+.goodness .td .p2{font-size: 12px;color: #333;display: inline-block;width: 225px;float: right;line-height: 17px;}
+.goodness .td1{background: url("../img/icons.png") no-repeat -2px -344px;}
+.goodness .td2{background: url("../img/icons.png") no-repeat 0px -463px;}
+.goodness .td3{background: url("../img/icons.png") no-repeat 0px -602px;margin-right: 0px;}
+/**/
+.mid .tittle{width: 1000px;background: url("../img/titleBg.png") center;height: 35px;margin: 20px auto;}
+.tittle p{display:block;width: 200px;height: 35px;line-height: 35px;background-color: #f4f4f4;font-size: 24px;text-align: center;margin: 0 auto;}
+
+.mid .hotList{width: 1000px;overflow: hidden;margin:0 auto}
+.hotList ul{width: 1000px;overflow: hidden;margin-bottom: 20px;}
+.hotList ul li{width: 212px;height: 133px;position: relative;margin-right: 50px;float: left;}
+.hotList ul li a{background-color: #f4f4f4;text-decoration: none}
+.hotList ul .last{margin-right: 0px;}
+.hotList ul li span{position: absolute;bottom: 5px;left: 5px;font-size: 20px;color: #fff;}
+/**/
+.saleList{width: 1000px;margin: 40px auto;overflow: hidden;}
+.saleList p{display: block;width: 200px;float: left;height: 35px;line-height: 35px;font-size: 18px;color: #333;}
+.saleList .cityTab{width: 600px;height: 30px;line-height: 30px;margin-bottom: 10px;}
+.saleList .cityTab a{padding: 2px 5px 3px 5px;text-decoration: none;font-size: 12px;color: #0075b8}
+.saleList .cityTab .active{background-color: #65b17f;color: #fff;border-radius: 3px;}
+.saleList .listContent{width: 1000px;overflow: auto}
+.listContent ul{width: 490px;overflow: hidden;float: left;display: block}
+.listContent ul li{width: 490px;height: 30px;line-height: 30px;color: #323232;font-size: 12px;}
+.listContent ul li span{float: right;margin-right: 5px;*margin-top: -30px;}
+.listContent ul li .oldPrice{text-decoration: line-through;}
+.listContent ul li .newPrice{font-weight: bold;color: #f63;font-size: 14px;}
+.listContent .line{width: 1px;height: 120px;background-color: #ececec;margin: 0px 9px;float: left}
+/**/
+.popularBox{width: 1000px;margin: 40px auto;overflow: hidden;}
+.popularBox p{display: block;width: 200px;float: left;height: 35px;line-height: 35px;font-size: 18px;color: #333;margin-bottom: 10px;}
+.popularBox ul{width: 1000px;overflow: hidden;margin: 10px 0px;}
+.popularBox ul li{float: left;width: 220px;height: 300px;border: 1px solid #ddd;  box-shadow: 0px 0px 1px #ddd;position: relative;margin-right: 36px;}
+.popularBox ul li img{width: 220px;}
+.popularBox ul li a{color: #0073b6;font-size: 14px;text-decoration: none;padding-left: 5px;display: inline-block;margin-top: 5px;margin-bottom: 20px;}
+.popularBox ul li a:hover{text-decoration: underline}
+.popularBox ul li p{padding-left: 5px;font-size: 14px;color: #636363;height: 20px;line-height: 20px;margin-bottom: 10px;}
+.popularBox ul li .rank{display: inline-block;font-size: 12px;width: 125px;background: url("../img/icons.png") no-repeat -193px -88px;margin-left: 5px;}
+.popularBox ul li .rank span{float: right;}
+.popularBox ul li .btn_xq{display: inline-block;width: 190px;height: 30px;line-height: 30px;color: #fff;background-color: #6db08d;font-size: 16px;margin-left: 10px;text-align: center  ;
+border-radius: 5px;  box-shadow: 0px 1px 1px #aaa}
+.popularBox ul li .btn_xq:hover{text-decoration: none;}
+.popularBox ul li .price{position: absolute;width: 146px;height: 38px;background: url("../img/icons.png") no-repeat -185px -21px;top: 95px;right: -4px;display: block;
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", \9ED1\4F53, \5b8b\4f53, sans-serif;
+}
+.popularBox ul li .price em{color: #fff;font-style: normal;display: inline-block;width: 45px;height: 38px;text-align: right;line-height: 46px;font-size: 14px;}
+.popularBox ul li .price i{font-style: normal;display: inline-block;width: 40px;height: 38px;text-align: center;line-height: 46px;color: #fff;font-size: 14px;}
+.popularBox ul li .price .oldPrice{text-decoration: line-through}
+.popularBox ul li .price .newPrice{font-size: 16px;text-align: left}
+.popularBox ul .last{margin-right: 0px;}

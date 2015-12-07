@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Dnsmaintenance">
+  
+  <typeAlias alias="Dnsmaintenance" type="com.yf.system.base.dnsmaintenance.Dnsmaintenance"/>
+  
+
+  <resultMap id="resultDnsmaintenanceMap" class="Dnsmaintenance">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="companyname" column="COMPANYNAME"/>
+     <result property="loginpage" column="C_LOGINPAGE"/>
+     <result property="address" column="C_ADDRESS"/>
+     <result property="serviceline" column="C_SERVICELINE"/>
+  	 <result property="icpnum" column="C_ICPNUM"/>
+  	 <result property="dizhi" column="C_DIZHI"/>
+  	 <result property="back1" column="C_BACK1"/>
+  	 <result property="back2" column="C_BACK2"/>
+     <result property="dnsname" column="C_DNSNAME"/>
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="logosrc" column="C_LOGOSRC"/>
+     <result property="logologinsrc" column="C_LOGOLOGINSRC"/>
+   
+  </resultMap>
+  
+  <select id="findAllDnsmaintenance"  resultMap="resultDnsmaintenanceMap"  parameterClass="java.util.Map">
+  
+    select *,
+    (SELECT C_AGENTCOMPANYNAME   FROM T_CUSTOMERAGENT WHERE ID=DNS.C_AGENTID)AS COMPANYNAME
+     from T_DNSMAINTENANCE AS DNS
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllDnsmaintenanceBySql"  resultMap="resultDnsmaintenanceMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteDnsmaintenanceBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countDnsmaintenanceBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_DNSMAINTENANCE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findDnsmaintenance" parameterClass="long" resultClass="Dnsmaintenance">
+    select 
+    	ID as id,
+    	C_AGENTID as agentid,
+	  			C_ADDRESS as address,
+	  			C_DIZHI as dizhi,
+	  			C_ICPNUM as icpnum,
+	  			C_BACK1 as back1,
+	  			C_BACK2 as back2,
+	  			C_SERVICELINE as serviceline,
+	  			C_LOGINPAGE as loginpage,
+	  			C_DNSNAME as dnsname,
+	  			C_LOGOLOGINSRC as logologinsrc, 
+	  			C_LOGOSRC as logosrc ,
+	  			( SELECT C_AGENTCOMPANYNAME   FROM T_CUSTOMERAGENT WHERE ID=DNS.C_AGENTID)AS COMPANYNAME
+     from T_DNSMAINTENANCE AS DNS 
+    where ID = #id#
+  </select>
+   
+  <insert id="createDnsmaintenance" parameterClass="Dnsmaintenance">
+   <selectKey resultClass="long" type="pre" keyProperty="id">
+      SELECT ISNULL(MAX(ID),0)+1 AS VALUE FROM T_DNSMAINTENANCE
+    </selectKey>
+    insert into T_DNSMAINTENANCE ( 
+    	ID,
+    	C_AGENTID,
+	  			C_DNSNAME,
+	  			C_ADDRESS,
+	  			C_DIZHI,
+	  			C_ICPNUM,
+	  			C_BACK1,
+	  			C_BACK2,
+	  			C_SERVICELINE,
+	  			C_LOGOLOGINSRC,
+	  			C_LOGOSRC,
+	  			C_LOGINPAGE
+    )
+    values (
+    	
+	  						#id#,
+	  						#agentid#,
+	  						#dnsname#,
+	  						#address#,
+	  						#dizhi#,
+	  						#icpnum#,
+	  						#back1#,
+	  						#back2#,
+	  						#serviceline#,
+	  						
+	  						#logologinsrc#,
+	  						#logosrc#,
+	  						#loginpage#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteDnsmaintenance" parameterClass="long">
+    delete from T_DNSMAINTENANCE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateDnsmaintenance" parameterClass="Dnsmaintenance">
+    update T_DNSMAINTENANCE 
+    set 
+        C_AGENTID =#agentid#,
+	  					C_DNSNAME = #dnsname#,
+	  					C_ADDRESS = #address#,
+	  					C_DIZHI = #dizhi#,
+	  					C_ICPNUM = #icpnum#,
+	  					C_BACK1 = #back1#,
+	  					C_BACK2 = #back2#,
+	  					C_SERVICELINE = #serviceline#,
+	  					C_LOGOLOGINSRC = #logologinsrc#,
+	  					C_LOGOSRC = #logosrc#,
+	  					C_LOGINPAGE=#loginpage#
+	  					 
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

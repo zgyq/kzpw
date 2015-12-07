@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0; padding:0;text-decoration:none; list-style:none;}
+body{font-size:12px; color:#000;margin:0;padding:0; font-family:Tahoma, Geneva, sans-serif; background:#cccccc;}
+li ul ol{
+margin:0;
+padding:0;
+list-style-type:none;
+}  
+img{border:none; vertical-align:top;)
+}
+input{vertical-align:top; border:none; cursor:pointer;}
+a{ color:#000;
+   font-size:12px;
+   text-decoration:none;
+   cursor:pointer;
+}
+a:hover{color:#f48000;
+        text-decoration:underline;
+}
+.mt8{ margin-top:8px;}
+.mt18{ margin-top:18px;}
+.mr4{ margin-right:4px;}
+.f{ float:left}
+.r{ float:right}
+.c:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.c{clear:both;} 
+.box{border:1px solid #ccc}
+.input{ background:url(../home_images/input.gif) no-repeat; width:134px; height:38px; line-height:36px; padding:4px 6px 0 10px; }
+.input_d{ background:url(../home_images/input_d.gif) no-repeat; width:72px; height:38px; line-height:36px; padding:4px 6px 0 20px;word-spacing:3px; letter-spacing:3px; }
+.button{background:url(../home_images/button.gif); width:95px; height:27px; line-height:27px; border:none; cursor:pointer; text-align:center; margin:10px;}
+
+
+#content{ width:985px; margin:0 auto; background:url(../home_images/bj.gif); padding-left:17px; }
+#content .logo{margin-top:20px; width:302px; height:78px; }
+#content .cooperation{ margin:10px 30px;}
+#content .cooperation a{ color:#000;}
+#content .cooperation a:hover{ color:#06F; text-decoration:underline;}
+#content .left{ width:588px; overflow:hidden;}
+#content .word{ margin:10px 0 0 300px; background:url(../home_images/word.png); width:236px; height:25px;  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale, src="home_images/word.png"),sizingMethod="crop";
+_ background-image: none;}
+#content .ad{ border:1px solid #ccc; padding:1px; background:#fff; width:585px; margin-top:10px;}
+#content .partner{ margin-top:26px; height:44px;}
+#content .partner ul{}
+#content .partner ul li{ float:left; margin-right:12px;}
+#content .daili{ line-height:70px; padding-left:50px;}
+
+#content .right{ width:396px; overflow:hidden;}
+#content .member{ background:url(../home_images/bj_member.png) no-repeat; width:282px; height:262px; padding:110px 0 0 0;}
+#content .ad_r{ margin-top:45px; width:114px; overflow:hidden}
+#content .ann{ line-height:27px; padding-left:30px;}
+#content .annimg{ width:104px; height:116px; background:url(..//home_images/ann.png);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale, src="home_images/ann.png"),sizingMethod="crop";
+_ background-image: none;}
+#content .bottom{ line-height:24px; padding:10px 0  0 10px;}
+
+.font-red{ color:#f00;}
+.font-f60{ color:#f60; font-size:12px;}
+.font-06f{ color:#06f}

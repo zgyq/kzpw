@@ -1,0 +1,497 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/init.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<style>
+.RDfooter {
+	margin-top: 0px;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/sildeBanner.js"></script>
+<script type="text/javascript" src="js/RDfunction.js"></script>
+<script type="text/javascript" src="js/provinceandcity.js"></script>
+<script language="javascript" type="text/javascript"
+	src="js/My97DatePicker/WdatePicker.js"></script>
+</head>
+
+<body>
+<div class="RDpublickheader">
+<div class="RDheader">
+<div class="RDcenter">
+<div class="RDheaderLeft">
+<div><span>北京</span>
+<ul>
+	<li><a href="#">天津</a></li>
+	<li><a href="#">上海</a></li>
+	<li><a href="#">广州</a></li>
+</ul>
+</div>
+</div>
+<ul class="RDheaderRight">
+	<li class="yuyanChange">Language
+	<div><a href="#">中文</a><a href="#">Language</a></div>
+	</li>
+	<li><a href="#">活动</a></li>
+	<li><a href="#">资讯</a></li>
+	<li><a href="#">投资者关系</a></li>
+	<li><a href="#">人才招聘</a></li>
+	<li><a href="#">企业与责任</a></li>
+	<li><input type="text" value="瑞风S5" class="searchText" /><input
+		type="submit" value="" class="searchBtn" /></li>
+</ul>
+</div>
+</div>
+<!--logo RDnav-->
+<div class="RDheader2">
+<div class="RDcenter"><a href="#" class="RDlogo"><img
+	src="images/logo.png" width="214" height="28" alt="江淮汽车" /></a>
+<ul class="RDnav">
+	<li class="RDnavFocus"><a href="#">品牌中心</a></li>
+	<li><a href="#">购车指南</a></li>
+	<li><a href="#">贴心服务</a></li>
+	<li><a href="#">JAC车友俱乐部</a></li>
+</ul>
+<div class="clearBox"></div>
+</div>
+</div>
+<!--logo RDnav end--></div>
+<!--你现在的位置-->
+<div class="currentLocation">
+<p class="RDcenter">你的位置：<a href="#">首页</a>><a href="#">投资者关系</a></p>
+</div>
+<!--你现在的位置 end-->
+<!--fenleiMore-->
+<div class="fenleiMore"></div>
+<!--fenleiMore end-->
+<!--yuyueshijia-->
+<div class="appointmentDrive">
+<div class="appointmentDriveBg">
+<div class="appointmentDriveContent">
+<div class="appointmentDriveTitle">
+<p>在线订车</p>
+</div>
+<p>感谢你对江淮汽车的关注与支持，请填写以下信息，我们专业的服务人员会第一时间与你联系，根据你的实际情况提供详细、周到的选车服务。（
+<span>*</span> 为必填）</p>
+<ul class="vehicleInformation">
+	<li><span class="vehicleInformationLeft">意向车型</span>
+	<dl>
+		<dt><i>*</i>预订车型：</dt>
+		<dd>
+		<span><input type="radio" name="brandnamer" checked="checked" value="瑞风" onclick="ChangeCarCode('RF','瑞风');" />瑞风</span>
+		<span><input type="radio" name="brandnamer" value="和悦" onclick="ChangeCarCode('HR','和悦');" />和悦</span>
+		<span><input type="radio" name="brandnamer" value="星锐" onclick="ChangeCarCode('XR','星锐');" />星锐</span>
+		<span><input type="radio" name="brandnamer" value="帅铃" onclick="ChangeCarCode('SL','帅铃');" />帅铃</span>
+		<span><input type="radio" name="brandnamer" value="骏铃" onclick="ChangeCarCode('JL','骏铃');" />骏铃</span>
+		<span><input type="radio" name="brandnamer" value="好运" onclick="ChangeCarCode('HY','好运');" />好运</span>
+		<span><input type="radio" name="brandnamer" value="格尔发" onclick="ChangeCarCode('GRF','格尔发');" />格尔发</span>
+		<span><input type="radio" name="brandnamer" value="锐捷特" onclick="ChangeCarCode('RJT','锐捷特');" />锐捷特</span>
+		<input type="hidden" id="brandname" name="brandname" value="瑞风" />
+			</dd>
+		<div class="clearBox"></div>
+		<dt>车型：</dt>
+		<dd><select name='modelname' id="CarHtml">
+			
+		</select></dd>
+		<div class="clearBox"></div>
+		<dt>预定时间：</dt>
+		<dd><input type="text" class="textInput Wdate" name="pretime" id="pretime" value="" onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',minDate:'%y-%M-%d'})"  />
+		</dd>
+		<div class="clearBox"></div>
+		<dt><i>*</i>希望联系的经销商：</dt>
+		<dd><select id="selProvince" name="userprince"  onchange="getCity(this.options[this.selectedIndex].value)">
+		</select>
+		<select  id="selCity" name="usercity">
+		</select><select name="dealername" id="dealername">
+		<option value="经销商">经销商</option>
+		<option value="江淮专卖">江淮专卖</option>
+		</select><em>010-64888125</em></dd>
+		<div class="clearBox"></div>
+	</dl>
+	</li>
+	<li style="height: 375px;"><span class="vehicleInformationLeft">基本信息</span>
+	<dl>
+		<dt><i>*</i>姓名：</dt>
+	<dd><input type="text" class="textInput" name="login" id="login" /></dd>
+		<div class="clearBox"></div>
+		<dt><i>*</i>称谓：</dt>
+		<dd><span><input type="radio" checked="checked" id="men"  name="sex" value="男" />男</span><span><input
+			type="radio" id="women"  name="sex" value="女" />女</span></dd>
+		<div class="clearBox"></div>
+		<dt><i>*</i>手机：</dt>
+		<dd><input type="text" class="textInput" name="phone" id="phone" /></dd>
+		<div class="clearBox"></div>
+		<dt>电子邮箱：</dt>
+		<dd><input type="text" class="textInput" name="email" id="email" /></dd>
+		<div class="clearBox"></div>
+		<dt>所在省市：</dt>
+		<dd><select id="selProvince2" name="userprince"  onchange="getCity2(this.options[this.selectedIndex].value)">
+			
+		</select>
+		
+		<select  id="selCity2" name="usercity">
+			
+		</select><input type="text"  name="addr" id="addr" width="250px;"/></dd>
+		
+		
+		<div class="clearBox"></div>
+		<dt>备注说明：</dt>
+		<dd><textarea name="description" id="description">输入文本.....</textarea></dd>
+		<div class="clearBox"></div>
+	</dl>
+	</li>
+</ul>
+<p class="beizhu">注：你可点击在线咨询进行在线提问或投诉，也可直接拨打乘用车服务热线4008-889933
+，轻卡4008-009933，星锐4008-003366，重卡4008-006633，<br />
+瑞铃4000-277771，瑞驰4008-878576，将有专门的客服人员为你解答相关问题。</p>
+<p><a href="javascript:FormSub();" id="FormSub" class="baocun">保 存</a></p>
+</div>
+</div>
+</div>
+<!--yuyueshijia end-->
+<!--RDfooter-->
+<div class="RDfooter">
+<div class="RDfooter1">
+<div class="RDcenter"><a href="javascript:void(0);"
+	class="yincangBtn"><img src="images/jia.png" height="16" width="25" /></a>
+<div class="RDfooterFuWu"><img src="images/julebu.png" height="45"
+	width="175" />
+<dl>
+	<dt>24小时贵宾服务热线</dt>
+	<dd>4008-889933 乘用车</dd>
+	<dd>4008-009933 轻卡</dd>
+	<dd>4008-003366 星锐</dd>
+	<dd>4008-006633 重卡</dd>
+	<dd>4000-277771 瑞铃</dd>
+	<dd>4008-878576 瑞驰</dd>
+</dl>
+</div>
+<dl>
+	<dt>品牌中心</dt>
+	<dd><a href="#">和悦</a></dd>
+	<dd><a href="#">帅铃</a></dd>
+	<dd><a href="#">骏铃</a></dd>
+	<dd><a href="#">好运</a></dd>
+	<dd><a href="#">格尔发</a></dd>
+	<dd><a href="#">锐捷特</a></dd>
+	<dd><a href="#">江淮底盘</a></dd>
+</dl>
+<dl>
+	<dt>购车指南</dt>
+	<dd><a href="#">个性化定制</a></dd>
+	<dd><a href="#">车型对比</a></dd>
+	<dd><a href="#">预约试驾</a></dd>
+	<dd><a href="#">价格试算</a></dd>
+	<dd><a href="#">购车流程</a></dd>
+	<dd><a href="#">金融服务</a></dd>
+	<dd><a href="#">贷款计算器</a></dd>
+	<dd><a href="#">查找经销商</a></dd>
+	<dd><a href="#">在线购车</a></dd>
+	<dd><a href="#">最新活动</a></dd>
+</dl>
+<dl>
+	<dt>贴心服务</dt>
+	<dd><a href="#">服务承诺</a></dd>
+	<dd><a href="#">服务网点</a></dd>
+	<dd><a href="#">配件供应</a></dd>
+	<dd><a href="#">在线咨询</a></dd>
+</dl>
+<dl>
+	<dt>活动</dt>
+	<dd><a href="#">品牌活动</a></dd>
+	<dd><a href="#">促销活动</a></dd>
+	<dd><a href="#">往期活动</a></dd>
+</dl>
+<dl>
+	<dt>资讯</dt>
+	<dd><a href="#">企业新闻</a></dd>
+	<dd><a href="#">媒体报道</a></dd>
+	<dd><a href="#">记者专区</a></dd>
+</dl>
+<dl>
+	<dt>投资者关系</dt>
+	<dd><a href="#">产销报告</a></dd>
+	<dd><a href="#">临时公告</a></dd>
+	<dd><a href="#">定期报告</a></dd>
+</dl>
+<dl>
+	<dt>人才招聘</dt>
+	<dd><a href="#">员工福利</a></dd>
+	<dd><a href="#">校园招聘</a></dd>
+	<dd><a href="#">社会招聘</a></dd>
+	<dd><a href="#">员工风采</a></dd>
+</dl>
+<dl>
+	<dt>企业与责任</dt>
+	<dd><a href="#">公司介绍</a></dd>
+	<dd><a href="#">领导风采</a></dd>
+	<dd><a href="#">发展历程</a></dd>
+	<dd><a href="#">新能源</a></dd>
+	<dd><a href="#">底盘科技</a></dd>
+	<dd><a href="#">动力总成</a></dd>
+	<dd><a href="#">社会责任</a></dd>
+</dl>
+<dl>
+	<dt>精彩下载</dt>
+	<dd><a href="#">江淮汽车TV</a></dd>
+	<dd><a href="#">精美壁纸</a></dd>
+</dl>
+<div class="clearBox"></div>
+</div>
+</div>
+<div class="RDfooter2">
+<div class="RDcenter">
+<ul>
+	<li><a href="#">版权信息</a>|</li>
+	<li><a href="#">使用说明</a>|</li>
+	<li><a href="#">联系我们</a>|</li>
+	<li><a href="#">网站地图</a>|</li>
+	<li><a href="#">合作伙伴专区</a></li>
+</ul>
+<p>江淮汽车2013版权所有 皖ICP备 05005596</p>
+</div>
+</div>
+</div>
+<!--RDfooter end-->
+
+<!--rightFloat-->
+<div class="rightFloat"><a href="" class="gotoTop"><img
+	src="images/goTop.jpg" height="33" width="88" /></a>
+<p><a href="#cimuIframe" title="关闭" class="boxy">登录</a><a
+	href="#registIframe" class="boxy" title="关闭">注册</a></p>
+<ul>
+	<li><a href="#"><img src="images/8-1.png" height="38"
+		width="38" /><img class="hoverImg" src="images/8.png" height="38"
+		width="38" /><span>在线咨询</span></a></li>
+	<li><a href="#"><img src="images/7-1.png" height="38"
+		width="38" /><img class="hoverImg" src="images/7.png" height="38"
+		width="38" /><span>预约试驾</span></a></li>
+	<li><a href="#"><img src="images/6-1.png" height="38"
+		width="38" /><img class="hoverImg" src="images/6.png" height="38"
+		width="38" /><span>在线订车</span></a></li>
+	<li><a href="#"><img src="images/5-1.png" height="38"
+		width="38" /><img class="hoverImg" src="images/5.png" height="38"
+		width="38" /><span>预约维修</span></a></li>
+	<li><a href="#"><img src="images/4-1.png" height="38"
+		width="38" /><img class="hoverImg" src="images/4.png" height="38"
+		width="38" /><span>经销商查询</span></a></li>
+	<li><a href="#"><img src="images/3-1.png" height="38"
+		width="38" /><img class="hoverImg" src="images/3.png" height="38"
+		width="38" /><span>服务商查询</span></a></li>
+	<li><a href="#"><img src="images/2-1.png" height="38"
+		width="38" /><img class="hoverImg" src="images/2.png" height="38"
+		width="38" /><span>关注微信</span></a></li>
+	<li><a href="#"><img src="images/1-1.png" height="38"
+		width="38" /><img class="hoverImg" src="images/1.png" height="38"
+		width="38" /><span>江淮微博</span></a></li>
+</ul>
+</div>
+<!--rightFloat end-->
+</body>
+</html>
+<script>
+
+
+//表单提交
+function FormSub(){
+//判断预计购车时间
+var pretime=$("#pretime").val();
+if(pretime==''){
+alert("请选择预计购车时间");
+$("#pretime").focus();
+return;
+}
+
+
+
+
+
+
+//验证姓名
+var passname=$("#login").val();
+if(passname==''){
+alert("请输入姓名");
+$("#login").focus();
+return;
+}
+//验证手机号不能为空
+var phone=$("#phone").val();
+if(phone==''){
+alert("请输入手机号");
+$("#phone").focus();
+return;
+}
+//验证手机号格式
+if(!phone.match(/^1[3|4|5|8][0-9]\d{4,8}$/)){ 
+   // $("#moileMsg").html("<font color='red'>手机号码格式不正确！请重新输入！</font>"); 
+    alert("手机格式有误");
+    $("#phone").focus(); 
+    return; 
+ } 
+ 
+
+//验证邮箱不为空
+if($("#email").val()!=""){ 
+   //验证邮箱格式
+	if(!$("#email").val().match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)){ 
+	   alert("邮箱格式错误");
+	    $("#email").focus(); 
+	    return; 
+	  }
+}
+
+
+//取省值  ns_sen
+
+
+
+var selProvince=$("#selProvince").val();
+//alert(selProvince);
+
+if(selProvince==''||selProvince=='-1'){
+alert("请选择省份");
+$("#selProvince").focus();
+return;
+}
+var selCity=$("#selCity").val();
+//alert(selCity);
+if(selCity==''||selCity=='-1'){
+alert("请选择城市");
+$("#selCity").focus();
+return;
+}
+
+//性别
+var ismenorwomen= document.getElementById("men").checked;// 1男  2女
+var ismen="1";
+if(ismenorwomen==true){
+ismen="1";
+}else{
+ismen="2";
+}
+
+//所有都验证了..开始表单提交
+//alert("开始提交");
+$.ajax({
+      type:"GET",
+      url:"/testdriver",
+      data:{brandname:$("#brandname").val(),modelname:$("#CarHtml").val(),pretime:$("#pretime").val(),prince:$("#selProvince").val(),city:$("#selCity").val(),dealername:$("#dealername").val(),
+      login:$("#login").val(),sex:ismen,phone:$("#phone").val(),email:$("#email").val(),
+      userprince:$("#selProvince2").val(),usercity:$("#selCity2").val(),addr:$("#addr").val(),
+      description:$("#description").val()
+      },
+      success:function(data){
+	     //var data="{'status':1,'timestamp':1376466864}";
+			var dataObj=eval("("+data+")");//转换为json对象 
+		   //输出每个root子对象的名称和值 
+		    //alert("status:"+dataObj.status+",timestamp:"+dataObj.timestamp); 
+		    if(dataObj.status=='1'){
+		     alert("提交成功");
+		    }else{
+		      alert("提交失败");
+		    }
+     
+      }            
+      }); 
+      
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+function IsHaveCra(code){
+if(code=='1'){
+//$("#HaveCraCode").show();
+$("#HaveCraDiv").show();
+//alert("show");
+}else{
+//$("#HaveCraCode").hide();
+$("#HaveCraDiv").hide();
+//alert("hide");
+}
+}
+
+
+
+
+
+function ChangeCarCode(code,cname){
+$("#brandname").val(cname);
+var carHTML="";
+
+//carHTML+="<select name='modelname' id='modelname'>";
+if(code=='RF'){
+carHTML+="<option value='瑞风S5'>瑞风S5</option>";
+carHTML+="<option value='瑞风M5'>瑞风M5</option>";
+carHTML+="<option value='瑞风穿梭'>瑞风穿梭</option>";
+carHTML+="<option value='瑞风祥和'>瑞风祥和</option>";
+}
+if(code=='HR'){
+carHTML+="<option value='2014款和悦'>2014款和悦</option>";
+carHTML+="<option value='和悦A30'>和悦A30</option>";
+carHTML+="<option value='和悦RS'>和悦RS</option>";
+carHTML+="<option value='和悦A13'>和悦A13</option>";
+carHTML+="<option value='悦悦'>悦悦</option>";
+carHTML+="<option value='和悦iEV'>和悦iEV</option>";
+}
+if(code=='XR'){
+carHTML+="<option value='星锐客车'>星锐客车</option>";
+carHTML+="<option value='星锐厢式车'>星锐厢式车</option>";
+carHTML+="<option value='星锐改装车'>星锐改装车</option>";
+}	
+
+if(code=='SL'){
+carHTML+="<option value='帅铃W系'>帅铃W系</option>";
+carHTML+="<option value='帅铃Z系'>帅铃Z系</option>";
+carHTML+="<option value='帅铃N系'>帅铃N系</option>";
+}
+if(code=='JL'){
+carHTML+="<option value='骏铃W系'>骏铃W系</option>";
+carHTML+="<option value='骏铃M系'>骏铃M系</option>";
+carHTML+="<option value='骏铃N系'>骏铃N系</option>";
+}
+if(code=='HY'){
+carHTML+="<option value='好运W系'>好运W系</option>";
+carHTML+="<option value='好运M系'>好运M系</option>";
+carHTML+="<option value='好运N系'>好运N系</option>";
+}
+if(code=='GRF'){
+carHTML+="<option value='格尔发载货车'>格尔发载货车</option>";
+carHTML+="<option value='格尔发牵引车'>格尔发牵引车</option>";
+carHTML+="<option value='格尔发工程车'>格尔发工程车</option>";
+carHTML+="<option value='格尔发专用车'>格尔发专用车</option>";
+carHTML+="<option value='格尔发LNG重卡'>格尔发LNG重卡</option>";
+}
+if(code=='RJT'){
+carHTML+="<option value='4GA平台'>4GA平台</option>";
+carHTML+="<option value='4GB平台'>4GB平台</option>";
+carHTML+="<option value='4GC平台'>4GC平台</option>";
+carHTML+="<option value='4DB平台'>4DB平台</option>";
+}	
+//carHTML+="</select>";
+
+//alert(carHTML);
+$("#CarHtml").html(carHTML);
+
+}
+//第一次加载
+ChangeCarCode('RF','瑞风');
+getSheng();
+getCity();
+getSheng2();
+getCity2();
+</script>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Perworkload">
+  
+  <typeAlias alias="Perworkload" type="com.yf.system.base.perworkload.Perworkload"/>
+  
+
+  <resultMap id="resultPerworkloadMap" class="Perworkload">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="usernumber" column="C_USERNUMBER"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="ticketnumber" column="C_TICKETNUMBER"/>
+  
+     <result property="ticketmoney" column="C_TICKETMONEY"/>
+  
+     <result property="tuinumber" column="C_TUINUMBER"/>
+  
+     <result property="tuimoney" column="C_TUIMONEY"/>
+  
+     <result property="department" column="C_DEPARTMENT"/>
+  
+     <result property="datetime" column="C_DATETIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllPerworkload"  resultMap="resultPerworkloadMap"  parameterClass="java.util.Map">
+  
+    select * from T_PERWORKLOAD
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllPerworkloadBySql"  resultMap="resultPerworkloadMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excutePerworkloadBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countPerworkloadBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_PERWORKLOAD
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findPerworkload" parameterClass="long" resultClass="Perworkload">
+    select 
+    	ID as id,
+	  			C_USERNUMBER as usernumber,
+	  			C_NAME as name,
+	  			C_TICKETNUMBER as ticketnumber,
+	  			C_TICKETMONEY as ticketmoney,
+	  			C_TUINUMBER as tuinumber,
+	  			C_TUIMONEY as tuimoney,
+	  			C_DEPARTMENT as department,
+	  			C_DATETIME as datetime 
+     from T_PERWORKLOAD
+    where ID = #id#
+  </select>
+   
+  <insert id="createPerworkload" parameterClass="Perworkload">
+    insert into T_PERWORKLOAD ( 
+    	ID,
+	  			C_USERNUMBER,
+	  			C_NAME,
+	  			C_TICKETNUMBER,
+	  			C_TICKETMONEY,
+	  			C_TUINUMBER,
+	  			C_TUIMONEY,
+	  			C_DEPARTMENT,
+	  			C_DATETIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#usernumber#,
+	  					
+	  						#name#,
+	  					
+							#ticketnumber:DECIMAL#,
+						
+							#ticketmoney:DECIMAL#,
+						
+							#tuinumber:DECIMAL#,
+						
+							#tuimoney:DECIMAL#,
+						
+							#department:DECIMAL#,
+						
+	  						#datetime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deletePerworkload" parameterClass="long">
+    delete from T_PERWORKLOAD
+    where ID = #id#
+  </delete>
+	
+  <update id="updatePerworkload" parameterClass="Perworkload">
+    update T_PERWORKLOAD 
+    set 
+    	C_USERNUMBER = #usernumber#,
+	  					C_NAME = #name#,
+	  					C_TICKETNUMBER = #ticketnumber:DECIMAL#,
+						C_TICKETMONEY = #ticketmoney:DECIMAL#,
+						C_TUINUMBER = #tuinumber:DECIMAL#,
+						C_TUIMONEY = #tuimoney:DECIMAL#,
+						C_DEPARTMENT = #department:DECIMAL#,
+						C_DATETIME = #datetime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Importmureport">
+  
+  <typeAlias alias="Importmureport" type="com.yf.system.base.importmureport.Importmureport"/>
+  
+
+  <resultMap id="resultImportmureportMap" class="Importmureport">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="ticketnumber" column="C_TICKETNUMBER"/>
+  
+     <result property="payall" column="C_PAYALL"/>
+  
+     <result property="pnr" column="C_PNR"/>
+  
+     <result property="number" column="C_NUMBER"/>
+  
+     <result property="chengren" column="C_CHENGREN"/>
+  
+     <result property="ertong" column="C_ERTONG"/>
+  
+     <result property="voyage" column="C_VOYAGE"/>
+  
+     <result property="cabin" column="C_CABIN"/>
+  
+     <result property="ticketprice" column="C_TICKETPRICE"/>
+  
+     <result property="fee" column="C_FEE"/>
+  
+     <result property="payprice" column="C_PAYPRICE"/>
+  
+     <result property="daiprice" column="C_DAIPRICE"/>
+  
+     <result property="paybank" column="C_PAYBANK"/>
+  
+     <result property="banknumber" column="C_BANKNUMBER"/>
+  
+     <result property="time" column="C_TIME"/>
+  
+     <result property="storageid" column="C_STORAGEID"/>
+  
+     <result property="chupiaoid" column="C_CHUPIAOID"/>
+  
+     <result property="compstate" column="C_COMPSTATE"/>
+  
+     <result property="ticketstate" column="C_TICKETSTATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllImportmureport"  resultMap="resultImportmureportMap"  parameterClass="java.util.Map">
+  
+    select * from T_IMPORTMUREPORT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllImportmureportBySql"  resultMap="resultImportmureportMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteImportmureportBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countImportmureportBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_IMPORTMUREPORT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findImportmureport" parameterClass="long" resultClass="Importmureport">
+    select 
+    	ID as id,
+	  			C_TICKETNUMBER as ticketnumber,
+	  			C_PAYALL as payall,
+	  			C_PNR as pnr,
+	  			C_NUMBER as number,
+	  			C_CHENGREN as chengren,
+	  			C_ERTONG as ertong,
+	  			C_VOYAGE as voyage,
+	  			C_CABIN as cabin,
+	  			C_TICKETPRICE as ticketprice,
+	  			C_FEE as fee,
+	  			C_PAYPRICE as payprice,
+	  			C_DAIPRICE as daiprice,
+	  			C_PAYBANK as paybank,
+	  			C_BANKNUMBER as banknumber,
+	  			C_TIME as time,
+	  			C_STORAGEID as storageid,
+	  			C_CHUPIAOID as chupiaoid,
+	  			C_COMPSTATE as compstate,
+	  			C_TICKETSTATE as ticketstate 
+     from T_IMPORTMUREPORT
+    where ID = #id#
+  </select>
+   
+  <insert id="createImportmureport" parameterClass="Importmureport">
+    insert into T_IMPORTMUREPORT ( 
+    	ID,
+	  			C_TICKETNUMBER,
+	  			C_PAYALL,
+	  			C_PNR,
+	  			C_NUMBER,
+	  			C_CHENGREN,
+	  			C_ERTONG,
+	  			C_VOYAGE,
+	  			C_CABIN,
+	  			C_TICKETPRICE,
+	  			C_FEE,
+	  			C_PAYPRICE,
+	  			C_DAIPRICE,
+	  			C_PAYBANK,
+	  			C_BANKNUMBER,
+	  			C_TIME,
+	  			C_STORAGEID,
+	  			C_CHUPIAOID,
+	  			C_COMPSTATE,
+	  			C_TICKETSTATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#ticketnumber#,
+	  					
+	  						#payall#,
+	  					
+	  						#pnr#,
+	  					
+							#number:DECIMAL#,
+						
+							#chengren:DECIMAL#,
+						
+							#ertong:DECIMAL#,
+						
+	  						#voyage#,
+	  					
+	  						#cabin#,
+	  					
+							#ticketprice:DECIMAL#,
+						
+							#fee:DECIMAL#,
+						
+							#payprice:DECIMAL#,
+						
+							#daiprice:DECIMAL#,
+						
+	  						#paybank#,
+	  					
+	  						#banknumber#,
+	  					
+	  						#time#,
+	  					
+	  						#storageid#,
+	  					
+	  						#chupiaoid#,
+	  					
+							#compstate:DECIMAL#,
+						
+  							#ticketstate:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteImportmureport" parameterClass="long">
+    delete from T_IMPORTMUREPORT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateImportmureport" parameterClass="Importmureport">
+    update T_IMPORTMUREPORT 
+    set 
+    	C_TICKETNUMBER = #ticketnumber#,
+	  					C_PAYALL = #payall#,
+	  					C_PNR = #pnr#,
+	  					C_NUMBER = #number:DECIMAL#,
+						C_CHENGREN = #chengren:DECIMAL#,
+						C_ERTONG = #ertong:DECIMAL#,
+						C_VOYAGE = #voyage#,
+	  					C_CABIN = #cabin#,
+	  					C_TICKETPRICE = #ticketprice:DECIMAL#,
+						C_FEE = #fee:DECIMAL#,
+						C_PAYPRICE = #payprice:DECIMAL#,
+						C_DAIPRICE = #daiprice:DECIMAL#,
+						C_PAYBANK = #paybank#,
+	  					C_BANKNUMBER = #banknumber#,
+	  					C_TIME = #time#,
+	  					C_STORAGEID = #storageid#,
+	  					C_CHUPIAOID = #chupiaoid#,
+	  					C_COMPSTATE = #compstate:DECIMAL#,
+						C_TICKETSTATE = #ticketstate:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

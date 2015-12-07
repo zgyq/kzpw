@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="css/Common1.css" rel="stylesheet" type="text/css" />
+</head>
+
+<script type="text/javascript" language="javascript">
+    var LastLeftID = "";
+    function menuFix() {
+        if (document.getElementById("nav")) {
+            var obj = document.getElementById("nav").getElementsByTagName("li");
+
+            for (var i = 0; i < obj.length; i++) {
+                obj[i].onmouseover = function() {
+                    this.className += (this.className.length > 0 ? " " : "") + "sfhover";
+                }
+                obj[i].onMouseDown = function() {
+                    this.className += (this.className.length > 0 ? " " : "") + "sfhover";
+                }
+                obj[i].onMouseUp = function() {
+                    this.className += (this.className.length > 0 ? " " : "") + "sfhover";
+                }
+                obj[i].onmouseout = function() {
+                    this.className = this.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
+                }
+            }
+        }
+    }
+    function DoMenu(emid) {
+        var obj = document.getElementById(emid);
+        obj.className = (obj.className.toLowerCase() == "expanded" ? "collapsed" : "expanded");
+        if ((LastLeftID != "") && (emid != LastLeftID)) //关闭上一个Menu
+        {
+            document.getElementById(LastLeftID).className = "collapsed";
+        }
+        LastLeftID = emid;
+    }
+    function GetMenuID() {
+        var MenuID = "";
+        var _paramStr = new String(window.location.href);
+        var _sharpPos = _paramStr.indexOf("#");
+
+        if (_sharpPos >= 0 && _sharpPos < _paramStr.length - 1) {
+            _paramStr = _paramStr.substring(_sharpPos + 1, _paramStr.length);
+        }
+        else {
+            _paramStr = "";
+        }
+
+        if (_paramStr.length > 0) {
+            var _paramArr = _paramStr.split("&");
+            if (_paramArr.length > 0) {
+                var _paramKeyVal = _paramArr[0].split("=");
+                if (_paramKeyVal.length > 0) {
+                    MenuID = _paramKeyVal[1];
+                }
+            }
+            /*
+            if (_paramArr.length>0)
+            {
+            var _arr = new Array(_paramArr.length);
+            }
+  
+  //取所有#后面的，菜单只需用到Menu
+            //for (var i = 0; i < _paramArr.length; i++)
+            {
+            var _paramKeyVal = _paramArr[i].split('=');
+   
+   if (_paramKeyVal.length>0)
+            {
+            _arr[_paramKeyVal[0]] = _paramKeyVal[1];
+            }  
+            }
+            */
+        }
+
+        if (MenuID != "") {
+            DoMenu(MenuID)
+        }
+    }
+    GetMenuID(); //*这两个function的顺序要注意一下，不然在Firefox里GetMenuID()不起效果
+    menuFix();
+</script>
+
+<body>
+<div class="help-bk2"><img src="images/help1.gif" /></div>
+
+<div id="PARENT">
+
+<ul id="nav">
+
+
+
+<li><a href="#Menu=ChildMenu2" onclick="DoMenu('ChildMenu2')">+ 采购商流程</a>
+  <ul id="ChildMenu2" class="collapsed">
+ <li><a href="help-cgcp1.html" target="main">&#8226; 采购商采购流程</a></li>
+ <li style="display: none"><a href="help-cgcp3.html" target="main">&#8226; 采购商退改签流程</a></li>
+ </ul>
+</li>
+
+
+<li><a href="#Menu=ChildMenu3" onclick="DoMenu('ChildMenu3')">+ 支付宝支付</a>
+  <ul id="ChildMenu3" class="collapsed">
+ <li><a href="help-zf.html" target="main">&#8226; 支付宝支付</a></li>
+ </ul>
+</li>
+
+<li><a href="#Menu=ChildMenu4" onclick="DoMenu('ChildMenu4')">+ 信用卡大额支付</a>
+  <ul id="ChildMenu4" class="collapsed">
+ <li><a href="help-dezf.html" target="main">&#8226; 信用卡大额支付</a></li>
+ <li><a href="help-detk.html" target="main">&#8226; 信用卡大额支付退款</a></li>
+ </ul>
+</li>
+
+
+<li><a href="#Menu=ChildMenu5" onclick="DoMenu('ChildMenu5')">+ 特价查询预订</a>
+  <ul id="ChildMenu5" class="collapsed">
+ <li><a href="help-tjcx.html" target="main">&#8226; 特价查询预订</a></li>
+ </ul>
+</li>
+
+</ul>
+</div>
+</body>
+</html>

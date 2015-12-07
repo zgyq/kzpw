@@ -1,0 +1,250 @@
+package com.yf.system.base.service;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.yf.system.base.country.Country;
+import com.yf.system.base.country.ICountryComponent;
+import com.yf.system.base.incity.IIncityComponent;
+import com.yf.system.base.incity.Incity;
+import com.yf.system.base.util.PageInfo;
+
+public class InterhotelSercice implements IInterhotelService {
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IIncityComponent incityComponent;
+	  
+ 	
+ 	public IIncityComponent getIncityComponent() {
+		return incityComponent;
+	}
+	public void setIncityComponent(IIncityComponent  incityComponent) {
+		this.incityComponent = incityComponent;
+	}
+	/**
+	 * 创建 国际城市表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Incity createIncity(Incity incity) throws SQLException{
+	
+		return incityComponent.createIncity(incity);
+	}
+	/**
+	 * 删除 国际城市表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteIncity(long id){
+	
+		return incityComponent.deleteIncity(id);
+	}
+	
+	
+	/**
+	 * 修改 国际城市表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateIncity(Incity incity){
+		return incityComponent.updateIncity(incity);
+	
+	}
+
+		
+	/**
+	 * 修改 国际城市表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateIncityIgnoreNull(Incity incity){
+			return incityComponent.updateIncityIgnoreNull(incity);
+	
+	}
+	
+	/**
+	 * 查找 国际城市表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllIncity(String where, String orderby,int limit,int offset){
+		return incityComponent.findAllIncity(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 国际城市表
+	 * @param id
+	 * @return
+	 */
+	public Incity findIncity(long id){
+		return incityComponent.findIncity(id);
+	}
+	
+	/** 
+	 * 查找 国际城市表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllIncityForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return incityComponent.findAllIncity(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找国际城市表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllIncityBySql(String sql,int limit,int offset){
+		return incityComponent.findAllIncity(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 国际城市表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteIncityBySql(String sql){
+		return incityComponent.excuteIncityBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countIncityBySql(String sql){
+		return incityComponent.countIncityBySql(sql);
+	}
+	
+	
+
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ICountryComponent countryComponent;
+	  
+ 	
+ 	public ICountryComponent getCountryComponent() {
+		return countryComponent;
+	}
+	public void setCountryComponent(ICountryComponent  countryComponent) {
+		this.countryComponent = countryComponent;
+	}
+	/**
+	 * 创建 国家表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Country createCountry(Country country) throws SQLException{
+	
+		return countryComponent.createCountry(country);
+	}
+	/**
+	 * 删除 国家表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCountry(long id){
+	
+		return countryComponent.deleteCountry(id);
+	}
+	
+	
+	/**
+	 * 修改 国家表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCountry(Country country){
+		return countryComponent.updateCountry(country);
+	
+	}
+
+		
+	/**
+	 * 修改 国家表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCountryIgnoreNull(Country country){
+			return countryComponent.updateCountryIgnoreNull(country);
+	
+	}
+	
+	/**
+	 * 查找 国家表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCountry(String where, String orderby,int limit,int offset){
+		return countryComponent.findAllCountry(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 国家表
+	 * @param id
+	 * @return
+	 */
+	public Country findCountry(long id){
+		return countryComponent.findCountry(id);
+	}
+	
+	/** 
+	 * 查找 国家表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCountryForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return countryComponent.findAllCountry(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找国家表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCountryBySql(String sql,int limit,int offset){
+		return countryComponent.findAllCountry(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 国家表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCountryBySql(String sql){
+		return countryComponent.excuteCountryBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCountryBySql(String sql){
+		return countryComponent.countCountryBySql(sql);
+	}
+	
+	
+
+
+}

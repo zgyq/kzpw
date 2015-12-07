@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 旅行线路
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Tripline createTripline(Tripline tripline) throws SQLException;
+	
+	/**
+	 * 删除 旅行线路
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTripline(long id);
+	
+	
+	/**
+	 * 修改 旅行线路
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTripline(Tripline tripline);
+
+		
+	/**
+	 * 修改 旅行线路但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTriplineIgnoreNull(Tripline tripline);
+		
+	
+	/**
+	 * 查找 旅行线路
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTripline(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 旅行线路
+	 * @param id
+	 * @return
+	 */
+	public Tripline findTripline(long id);
+	
+	/**
+	 * 查找 旅行线路 by language
+	 * @param id
+	 * @return
+	 */
+	public Tripline findTriplinebylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 旅行线路
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTriplineForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找旅行线路
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriplineBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 旅行线路
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTriplineBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTriplineBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITriplineComponent triplineComponent;
+	  
+ 	
+ 	public ITriplineComponent getTriplineComponent() {
+		return triplineComponent;
+	}
+	public void setTriplineComponent(ITriplineComponent  triplineComponent) {
+		this.triplineComponent = triplineComponent;
+	}
+	/**
+	 * 创建 旅行线路
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Tripline createTripline(Tripline tripline) throws SQLException{
+	
+		return triplineComponent.createTripline(tripline);
+	}
+	/**
+	 * 删除 旅行线路
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTripline(long id){
+	
+		return triplineComponent.deleteTripline(id);
+	}
+	
+	
+	/**
+	 * 修改 旅行线路
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTripline(Tripline tripline){
+		return triplineComponent.updateTripline(tripline);
+	
+	}
+
+		
+	/**
+	 * 修改 旅行线路但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTriplineIgnoreNull(Tripline tripline){
+			return triplineComponent.updateTriplineIgnoreNull(tripline);
+	
+	}
+	
+	/**
+	 * 查找 旅行线路
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTripline(String where, String orderby,int limit,int offset){
+		return triplineComponent.findAllTripline(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 旅行线路
+	 * @param id
+	 * @return
+	 */
+	public Tripline findTripline(long id){
+		return triplineComponent.findTripline(id);
+	}
+	
+	/**
+	 * 查找 旅行线路
+	 * @param id
+	 * @return
+	 */
+	public Tripline findTriplinebylanguage(long id,Integer language){
+		return triplineComponent.findTriplinebylanguage(id,language);
+	}
+	/** 
+	 * 查找 旅行线路
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTriplineForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return triplineComponent.findAllTripline(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找旅行线路
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriplineBySql(String sql,int limit,int offset){
+		return triplineComponent.findAllTripline(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 旅行线路
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTriplineBySql(String sql){
+		return triplineComponent.excuteTriplineBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTriplineBySql(String sql){
+		return triplineComponent.countTriplineBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Scang">
+  
+  <typeAlias alias="Scang" type="com.yf.system.base.scang.Scang"/>
+  
+
+  <resultMap id="resultScangMap" class="Scang">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="passengerid" column="C_PASSENGERID"/>
+  
+     <result property="startcode" column="C_STARTCODE"/>
+  
+     <result property="endcode" column="C_ENDCODE"/>
+  
+     <result property="ordercode" column="C_Ordercode"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="flight" column="C_FLIGHT"/>
+  
+     <result property="pnr" column="C_PNR"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="transacttime" column="C_TRANSACTTIME"/>
+  
+     <result property="xiaolv" column="C_XIAOLV"/>
+  
+     <result property="states" column="C_STATE"/>
+  
+     <result property="status" column="C_STATUS"/>
+  
+     <result property="applyid" column="C_APPLYID"/>
+  
+     <result property="updateid" column="C_UPDATEID"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="newpnr" column="C_NEWPNR"/>
+   
+  </resultMap>
+  
+  <select id="findAllScang"  resultMap="resultScangMap"  parameterClass="java.util.Map">
+  
+    select * from T_SCANG
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllScangBySql"  resultMap="resultScangMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteScangBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countScangBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SCANG
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findScang" parameterClass="long" resultClass="Scang">
+    select 
+    	ID as id,
+	  			C_PASSENGERID as passengerid,
+	  			C_STARTCODE as startcode,
+	  			C_ENDCODE as endcode,
+	  			C_Ordercode as ordercode,
+	  			C_ORDERID as orderid,
+	  			C_FLIGHT as flight,
+	  			C_PNR as pnr,
+	  			C_CREATETIME as createtime,
+	  			C_TRANSACTTIME as transacttime,
+	  			C_XIAOLV as xiaolv,
+	  			C_STATE as states,
+	  			C_STATUS as status,
+	  			C_APPLYID as applyid,
+	  			C_UPDATEID as updateid,
+	  			C_COMMENT as comment,
+	  			C_PRICE as price,
+	  			C_NEWPNR as newpnr 
+     from T_SCANG
+    where ID = #id#
+  </select>
+   
+  <insert id="createScang" parameterClass="Scang">
+    insert into T_SCANG ( 
+    	ID,
+	  			C_PASSENGERID,
+	  			C_STARTCODE,
+	  			C_ENDCODE,
+	  			C_Ordercode,
+	  			C_ORDERID,
+	  			C_FLIGHT,
+	  			C_PNR,
+	  			C_CREATETIME,
+	  			C_TRANSACTTIME,
+	  			C_XIAOLV,
+	  			C_STATE,
+	  			C_STATUS,
+	  			C_APPLYID,
+	  			C_UPDATEID,
+	  			C_COMMENT,
+	  			C_PRICE,
+	  			C_NEWPNR 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#passengerid:DECIMAL#,
+						
+	  						#startcode#,
+	  					
+	  						#endcode#,
+	  					
+	  						#ordercode#,
+	  					
+							#orderid:DECIMAL#,
+						
+	  						#flight#,
+	  					
+	  						#pnr#,
+	  					
+	  						#createtime#,
+	  					
+	  						#transacttime#,
+	  					
+	  						#xiaolv#,
+	  					
+							#states:DECIMAL#,
+						
+							#status:DECIMAL#,
+						
+							#applyid:DECIMAL#,
+						
+							#updateid:DECIMAL#,
+						
+	  						#comment#,
+	  					
+							#price:DECIMAL#,
+						
+	  						#newpnr#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteScang" parameterClass="long">
+    delete from T_SCANG
+    where ID = #id#
+  </delete>
+	
+  <update id="updateScang" parameterClass="Scang">
+    update T_SCANG 
+    set 
+    	C_PASSENGERID = #passengerid:DECIMAL#,
+						C_STARTCODE = #startcode#,
+	  					C_ENDCODE = #endcode#,
+	  					C_Ordercode = #ordercode#,
+	  					C_ORDERID = #orderid:DECIMAL#,
+						C_FLIGHT = #flight#,
+	  					C_PNR = #pnr#,
+	  					C_CREATETIME = #createtime#,
+	  					C_TRANSACTTIME = #transacttime#,
+	  					C_XIAOLV = #xiaolv#,
+	  					C_STATE = #states:DECIMAL#,
+						C_STATUS = #status:DECIMAL#,
+						C_APPLYID = #applyid:DECIMAL#,
+						C_UPDATEID = #updateid:DECIMAL#,
+						C_COMMENT = #comment#,
+	  					C_PRICE = #price:DECIMAL#,
+						C_NEWPNR = #newpnr#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

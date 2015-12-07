@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root><result>
+<error>null</error>
+<request_time>06:56:32</request_time>
+<request_from>承德东</request_from>
+<request_to>南郊机场</request_to>
+<date>2014-07-03</date>
+<from_stop_id>TR_1812</from_stop_id>
+<to_stop_id>PL_40</to_stop_id>
+	<itineraries>
+		<total_duration>15:12:00 -1D</total_duration>
+		<startTime>20:22:56</startTime>
+		<endTime>12:54:24 +1D</endTime>
+		<numberoflegs>4</numberoflegs>
+		<direct_trip>no</direct_trip>
+		<leg>
+			<from_stop_id>TR_1812</from_stop_id>
+			<from>承德东</from>
+			<to_stop_id>TR_1811</to_stop_id>
+			<to>承德</to>
+			<mode>RAIL</mode>
+			<startTime>21:02:40</startTime>
+			<endTime>21:14:40</endTime>
+			<routeId>2066</routeId>
+			<tripId>2066</tripId>
+			<agencyId>KL</agencyId>
+			<agencyName>KLT</agencyName>
+			<agencyUrl>http://www.kuai-lai.com</agencyUrl>
+			<leg_number>1</leg_number>
+			<leg_duration>00:12:00 -1D</leg_duration>
+		</leg>
+		<leg>
+			<from_stop_id>TR_1811</from_stop_id>
+			<from>承德</from>
+			<to_stop_id>TR_1676</to_stop_id>
+			<to>北京</to>
+			<mode>RAIL</mode>
+			<startTime>22:00:48</startTime>
+			<endTime>03:30:40 +1D</endTime>
+			<routeId>K7744</routeId>
+			<tripId>K7744</tripId>
+			<agencyId>KL</agencyId>
+			<agencyName>KLT</agencyName>
+			<agencyUrl>http://www.kuai-lai.com</agencyUrl>
+			<leg_number>2</leg_number>
+			<leg_duration>05:29:52 -1D</leg_duration>
+		</leg>
+		<leg>
+			<from_stop_id>TR_1676</from_stop_id>
+			<from>北京</from>
+			<to_stop_id>PL_99</to_stop_id>
+			<to>北京首都</to>
+			<mode>WALK</mode>
+			<startTime>03:30:40 +1D</startTime>
+			<endTime>05:58:24 +1D</endTime>
+			<routeId>NO ROUTE ID</routeId>
+			<tripId>NO TRIP ID</tripId>
+			<agencyId>NO AGENCY ID</agencyId>
+			<agencyName>NO AGENCY NAME</agencyName>
+			<agencyUrl>NO AGENCY URL</agencyUrl>
+			<leg_number>3</leg_number>
+			<leg_duration>02:27:44 -1D</leg_duration>
+			<transfer_detail>▒车</transfer_detail>
+		</leg>
+		<leg>
+			<from_stop_id>PL_99</from_stop_id>
+			<from>北京首都</from>
+			<to_stop_id>PL_40</to_stop_id>
+			<to>南郊机场</to>
+			<mode>AIRPLANE</mode>
+			<startTime>08:40:00 +1D</startTime>
+			<endTime>11:34:56 +1D</endTime>
+			<routeId>CA1451</routeId>
+			<tripId>CA1451</tripId>
+			<agencyId>KL</agencyId>
+			<agencyName>KLT</agencyName>
+			<agencyUrl>http://www.kuai-lai.com</agencyUrl>
+			<leg_number>4</leg_number>
+			<leg_duration>02:54:56 -1D</leg_duration>
+		</leg>
+	</itineraries>
+</result>
+<result>
+<error>null</error>
+<request_time>06:56:32</request_time>
+<request_from>承德</request_from>
+<request_to>绵阳</request_to>
+<date>2014-07-03</date>
+<from_stop_id>TR_1811</from_stop_id>
+<to_stop_id>TR_2943</to_stop_id>
+<itineraries><total_duration>15:39:44 -1D</total_duration>
+<startTime>07:05:04</startTime>
+<endTime>23:24:32</endTime>
+<numberoflegs>5</numberoflegs>
+<direct_trip>no</direct_trip>
+<leg>
+<from_stop_id>TR_1811</from_stop_id>
+<from>承德</from>
+<to_stop_id>TR_1676</to_stop_id>
+<to>北京</to>
+<mode>RAIL</mode>
+<startTime>07:44:48</startTime>
+<endTime>13:11:44</endTime>
+<routeId>K7718</routeId>
+<tripId>K7718</tripId>
+<agencyId>KL</agencyId>
+<agencyName>KLT</agencyName>
+<agencyUrl>http://www.kuai-lai.com</agencyUrl>
+<leg_number>1</leg_number>
+<leg_duration>05:26:56 -1D</leg_duration>
+</leg>
+<leg>
+<from_stop_id>TR_1676</from_stop_id>
+<from>北京</from>
+<to_stop_id>PL_153</to_stop_id>
+<to>北京南苑</to>
+<mode>WALK</mode>
+<startTime>13:11:44</startTime>
+<endTime>15:30:56</endTime>
+<routeId>NO ROUTE ID</routeId>
+<tripId>NO TRIP ID</tripId>
+<agencyId>NO AGENCY ID</agencyId>
+<agencyName>NO AGENCY NAME</agencyName>
+<agencyUrl>NO AGENCY URL</agencyUrl>
+<leg_number>2</leg_number>
+<leg_duration>02:19:12 -1D</leg_duration>
+<transfer_detail>租车</transfer_detail>
+</leg>
+<leg>
+<from_stop_id>PL_153</from_stop_id>
+<from>北京南苑</from>
+<to_stop_id>PL_97</to_stop_id>
+<to>双流国际</to>
+<mode>AIRPLANE</mode>
+<startTime>16:04:48</startTime>
+<endTime>18:59:44</endTime>
+<routeId>KN5215</routeId>
+<tripId>KN5215</tripId>
+<agencyId>KL</agencyId>
+<agencyName>KLT</agencyName>
+<agencyUrl>http://www.kuai-lai.com</agencyUrl>
+<leg_number>3</leg_number>
+<leg_duration>02:54:56 -1D</leg_duration>
+</leg>
+<leg>
+<from_stop_id>PL_97</from_stop_id>
+<from>双流国际</from>
+<to_stop_id>TR_1807</to_stop_id>
+<to>成都</to>
+<mode>WALK</mode>
+<startTime>18:59:44</startTime>
+<endTime>21:07:44</endTime>
+<routeId>NO ROUTE ID</routeId>
+<tripId>NO TRIP ID</tripId>
+<agencyId>NO AGENCY ID</agencyId>
+<agencyName>NO AGENCY NAME</agencyName>
+<agencyUrl>NO AGENCY URL</agencyUrl>
+<leg_number>4</leg_number>
+<leg_duration>02:08:00 -1D</leg_duration>
+<transfer_detail>▒▒：出租车</transfer_detail>
+</leg>
+<leg>
+<from_stop_id>TR_1807</from_stop_id>
+<from>成都</from>
+<to_stop_id>TR_2943</to_stop_id>
+<to>绵阳</to>
+<mode>RAIL</mode>
+<startTime>21:13:52</startTime>
+<endTime>22:44:48</endTime>
+<routeId>K6</routeId>
+<tripId>K6</tripId>
+<agencyId>KL</agencyId>
+<agencyName>KLT</agencyName>
+<agencyUrl>http://www.kuai-lai.com</agencyUrl>
+<leg_number>5</leg_number>
+<leg_duration>01:30:56 -1D</leg_duration>
+</leg>
+</itineraries>
+</result>
+<result>
+<error>null</error>
+<request_time>06:56:32</request_time>
+<request_from>承德</request_from>
+<request_to>南郊机场</request_to>
+<date>2014-07-03</date>
+<from_stop_id>TR_1811</from_stop_id>
+<to_stop_id>PL_40</to_stop_id>
+<itineraries><total_duration>13:59:44 -1D</total_duration>
+<startTime>07:05:04</startTime>
+<endTime>22:24:16</endTime>
+<numberoflegs>3</numberoflegs>
+<direct_trip>no</direct_trip>
+<leg>
+<from_stop_id>TR_1811</from_stop_id>
+<from>承德</from>
+<to_stop_id>TR_1676</to_stop_id>
+<to>北京</to>
+<mode>RAIL</mode>
+<startTime>07:44:48</startTime>
+<endTime>13:11:44</endTime>
+<routeId>K7718</routeId>
+<tripId>K7718</tripId>
+<agencyId>KL</agencyId>
+<agencyName>KLT</agencyName>
+<agencyUrl>http://www.kuai-lai.com</agencyUrl>
+<leg_number>1</leg_number>
+<leg_duration>05:26:56 -1D</leg_duration>
+</leg>
+<leg>
+<from_stop_id>TR_1676</from_stop_id>
+<from>北京</from>
+<to_stop_id>PL_99</to_stop_id>
+<to>北京首都</to>
+<mode>WALK</mode>
+<startTime>13:11:44</startTime>
+<endTime>15:39:28</endTime>
+<routeId>NO ROUTE ID</routeId>
+<tripId>NO TRIP ID</tripId>
+<agencyId>NO AGENCY ID</agencyId>
+<agencyName>NO AGENCY NAME</agencyName>
+<agencyUrl>NO AGENCY URL</agencyUrl>
+<leg_number>2</leg_number>
+<leg_duration>02:27:44 -1D</leg_duration>
+<transfer_detail>▒车</transfer_detail>
+</leg>
+<leg>
+<from_stop_id>PL_99</from_stop_id>
+<from>北京首都</from>
+<to_stop_id>PL_40</to_stop_id>
+<to>南郊机场</to>
+<mode>AIRPLANE</mode>
+<startTime>18:09:52</startTime>
+<endTime>21:04:48</endTime>
+<routeId>CA1455</routeId>
+<tripId>CA1455</tripId>
+<agencyId>KL</agencyId>
+<agencyName>KLT</agencyName>
+<agencyUrl>http://www.kuai-lai.com</agencyUrl>
+<leg_number>3</leg_number>
+<leg_duration>02:54:56 -1D</leg_duration>
+</leg>
+</itineraries>
+</result>
+</root>

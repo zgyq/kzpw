@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Rperformance">
+  
+  <typeAlias alias="Rperformance" type="com.yf.system.base.rperformance.Rperformance"/>
+  
+
+  <resultMap id="resultRperformanceMap" class="Rperformance">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="low" column="C_LOW"/>
+  
+     <result property="normal" column="C_NORMAL"/>
+  
+     <result property="high" column="C_HIGH"/>
+  
+     <result property="department" column="C_DEPARTMENT"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="datetime" column="C_DATETIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllRperformance"  resultMap="resultRperformanceMap"  parameterClass="java.util.Map">
+  
+    select * from T_RPERFORMANCE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllRperformanceBySql"  resultMap="resultRperformanceMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteRperformanceBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countRperformanceBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_RPERFORMANCE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findRperformance" parameterClass="long" resultClass="Rperformance">
+    select 
+    	ID as id,
+	  			C_LOW as low,
+	  			C_NORMAL as normal,
+	  			C_HIGH as high,
+	  			C_DEPARTMENT as department,
+	  			C_TYPE as type,
+	  			C_DATETIME as datetime 
+     from T_RPERFORMANCE
+    where ID = #id#
+  </select>
+   
+  <insert id="createRperformance" parameterClass="Rperformance">
+    insert into T_RPERFORMANCE ( 
+    	ID,
+	  			C_LOW,
+	  			C_NORMAL,
+	  			C_HIGH,
+	  			C_DEPARTMENT,
+	  			C_TYPE,
+	  			C_DATETIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#low:DECIMAL#,
+						
+							#normal:DECIMAL#,
+						
+							#high:DECIMAL#,
+						
+							#department:DECIMAL#,
+						
+							#type:DECIMAL#,
+						
+	  						#datetime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteRperformance" parameterClass="long">
+    delete from T_RPERFORMANCE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateRperformance" parameterClass="Rperformance">
+    update T_RPERFORMANCE 
+    set 
+    	C_LOW = #low:DECIMAL#,
+						C_NORMAL = #normal:DECIMAL#,
+						C_HIGH = #high:DECIMAL#,
+						C_DEPARTMENT = #department:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_DATETIME = #datetime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Hotelspec">
+  
+  <typeAlias alias="Hotelspec" type="com.yf.system.base.hotelspec.Hotelspec"/>
+  
+
+  <resultMap id="resultHotelspecMap" class="Hotelspec">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="startdate" column="C_STARTDATE"/>
+  
+     <result property="enddate" column="C_ENDDATE"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="hotelid" column="C_HOTELID"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllHotelspec"  resultMap="resultHotelspecMap"  parameterClass="java.util.Map">
+  
+    select * from C_HOTELSPEC
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllHotelspecBySql"  resultMap="resultHotelspecMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteHotelspecBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countHotelspecBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from C_HOTELSPEC
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findHotelspec" parameterClass="long" resultClass="Hotelspec">
+    select 
+    	ID as id,
+	  			C_STARTDATE as startdate,
+	  			C_ENDDATE as enddate,
+	  			C_STATE as state,
+	  			C_HOTELID as hotelid,
+	  			C_DESCRIPTION as description,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from C_HOTELSPEC
+    where ID = #id#
+  </select>
+   
+  <insert id="createHotelspec" parameterClass="Hotelspec">
+    insert into C_HOTELSPEC ( 
+    	ID,
+	  			C_STARTDATE,
+	  			C_ENDDATE,
+	  			C_STATE,
+	  			C_HOTELID,
+	  			C_DESCRIPTION,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#startdate#,
+	  					
+	  						#enddate#,
+	  					
+							#state:DECIMAL#,
+						
+							#hotelid:DECIMAL#,
+						
+	  						#description#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteHotelspec" parameterClass="long">
+    delete from C_HOTELSPEC
+    where ID = #id#
+  </delete>
+	
+  <update id="updateHotelspec" parameterClass="Hotelspec">
+    update C_HOTELSPEC 
+    set 
+    	C_STARTDATE = #startdate#,
+	  					C_ENDDATE = #enddate#,
+	  					C_STATE = #state:DECIMAL#,
+						C_HOTELID = #hotelid:DECIMAL#,
+						C_DESCRIPTION = #description#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

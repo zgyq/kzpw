@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 保险服务公司信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Insurcomputer createInsurcomputer(Insurcomputer insurcomputer) throws SQLException;
+	
+	/**
+	 * 删除 保险服务公司信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteInsurcomputer(long id);
+	
+	
+	/**
+	 * 修改 保险服务公司信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateInsurcomputer(Insurcomputer insurcomputer);
+
+		
+	/**
+	 * 修改 保险服务公司信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateInsurcomputerIgnoreNull(Insurcomputer insurcomputer);
+		
+	
+	/**
+	 * 查找 保险服务公司信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInsurcomputer(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 保险服务公司信息
+	 * @param id
+	 * @return
+	 */
+	public Insurcomputer findInsurcomputer(long id);
+	
+	
+	/** 
+	 * 查找 保险服务公司信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllInsurcomputerForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找保险服务公司信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInsurcomputerBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 保险服务公司信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteInsurcomputerBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countInsurcomputerBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IInsurcomputerComponent insurcomputerComponent;
+	  
+ 	
+ 	public IInsurcomputerComponent getInsurcomputerComponent() {
+		return insurcomputerComponent;
+	}
+	public void setInsurcomputerComponent(IInsurcomputerComponent  insurcomputerComponent) {
+		this.insurcomputerComponent = insurcomputerComponent;
+	}
+	/**
+	 * 创建 保险服务公司信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Insurcomputer createInsurcomputer(Insurcomputer insurcomputer) throws SQLException{
+	
+		return insurcomputerComponent.createInsurcomputer(insurcomputer);
+	}
+	/**
+	 * 删除 保险服务公司信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteInsurcomputer(long id){
+	
+		return insurcomputerComponent.deleteInsurcomputer(id);
+	}
+	
+	
+	/**
+	 * 修改 保险服务公司信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateInsurcomputer(Insurcomputer insurcomputer){
+		return insurcomputerComponent.updateInsurcomputer(insurcomputer);
+	
+	}
+
+		
+	/**
+	 * 修改 保险服务公司信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateInsurcomputerIgnoreNull(Insurcomputer insurcomputer){
+			return insurcomputerComponent.updateInsurcomputerIgnoreNull(insurcomputer);
+	
+	}
+	
+	/**
+	 * 查找 保险服务公司信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInsurcomputer(String where, String orderby,int limit,int offset){
+		return insurcomputerComponent.findAllInsurcomputer(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 保险服务公司信息
+	 * @param id
+	 * @return
+	 */
+	public Insurcomputer findInsurcomputer(long id){
+		return insurcomputerComponent.findInsurcomputer(id);
+	}
+	
+	/** 
+	 * 查找 保险服务公司信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllInsurcomputerForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return insurcomputerComponent.findAllInsurcomputer(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找保险服务公司信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInsurcomputerBySql(String sql,int limit,int offset){
+		return insurcomputerComponent.findAllInsurcomputer(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 保险服务公司信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteInsurcomputerBySql(String sql){
+		return insurcomputerComponent.excuteInsurcomputerBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countInsurcomputerBySql(String sql){
+		return insurcomputerComponent.countInsurcomputerBySql(sql);
+	}
+	
+	
+

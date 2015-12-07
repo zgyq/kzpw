@@ -1,0 +1,1143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/init.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" href="css/datepicker.css" type="text/css" />
+<link href="css/boxy.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/sildeBanner.js"></script>
+<script type="text/javascript" src="js/RDfunction.js"></script>
+<script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+<script src="js/jquery.boxy.js"></script>
+<script>
+$(function(){
+	//设置tr的最后一个td右边框为0
+	$(".fillResume table tr").each(function(index) {
+		$(this).children("td:last").css("border-right","0")	
+    });
+	$(".fillResume .personalInformation table tr").each(function(index) {
+		$(this).children("td:last").css("border-right","1px solid #dbdfde")	
+    });
+	$(".fillResume .personalInformation table tr:eq(1) td:last").css("border-right","0px solid #dbdfde")	
+	//设置login弹出层
+	$(".boxy").boxy({ modal: true });
+})
+</script>
+</head>
+
+<body>
+<div class="RDpublickheader">
+	<div class="RDheader">
+        <div class="RDcenter">
+            <div class="RDheaderLeft">
+            	<div>
+                    <span>北京</span>
+                        <ul>
+                            <li><a href="#">天津</a></li>
+                            <li><a href="#">上海</a></li>
+                            <li><a href="#">广州</a></li>
+                        </ul>
+                </div>
+            </div>
+            <ul class="RDheaderRight">
+            	<li class="yuyanChange">Language<div><a href="#">中文</a><a href="#">Language</a></div></li>
+                <li><a href="#">活动</a></li>
+                <li><a href="#">资讯</a></li>
+                <li><a href="#">投资者关系</a></li>
+                <li><a href="#">人才招聘</a></li>
+                <li><a href="#">企业与责任</a></li>
+                <li><input type="text" value="瑞风S5" class="searchText" /><input type="submit" value="" class="searchBtn" /></li>
+            </ul>
+        </div>
+    </div>
+    <!--logo RDnav-->
+    <div class="RDheader2">
+        <div class="RDcenter">
+            
+            <a href="#" class="RDlogo"><img src="images/logo.png" width="214" height="28" alt="江淮汽车" /></a>
+            <ul class="RDnav">
+                <li class="RDnavFocus"><a href="#">品牌中心</a></li>
+                <li><a href="#">购车指南</a></li>
+                <li><a href="#">贴心服务</a></li>
+                <li><a href="#">JAC车友俱乐部</a></li>
+            </ul>
+            <div class="clearBox"></div>
+        </div>
+    </div>
+    <!--logo RDnav end-->
+</div>
+<!--你现在的位置-->
+<div class="currentLocation"><p class="RDcenter">你的位置：<a href="#">首页</a>><a href="#">投资者关系</a></p></div>
+<!--你现在的位置 end-->
+<!--xingxiangImages-->
+<div style=" background:rgb(232, 232, 232) url(images/zhaopin.jpg) no-repeat center;" class="xingxiangImages"></div>
+<!--xingxiangImages-->
+<!--fenleiMore-->
+<div class="fenleiMore">
+	<ul>
+    	<li><a href="#">招聘流程</a></li>
+        <li class="fenleiMoreFocus"><a href="#">社会招聘</a></li>
+        <li><a href="#">校园招聘</a></li>
+        <li><a href="#">员工福利</a></li>
+        <li><a href="#">员工风采</a></li>
+        <li><a href="#">员工职业生涯发展</a></li>
+        <li><a href="#">问题答疑</a></li>
+    </ul>
+</div>
+<!--fenleiMore end-->
+<!--yuyueshijia-->
+<form action="" name="userjianli" id="userjianli">
+<div class="recruitment_bg">
+	<div class="recruitment">
+    	<!--qa-->
+        <p class="qaTitle">个人简历填写<span><i>*</i>标记项目为必填项</span></p>
+        <div class="fillResume">
+        	<!--个人基本信息-->
+        	<div class="personalInformation">
+                <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th colspan="7">个人基本信息</th>
+                    </tr>
+                    <tr>
+                        <td style="width:85px; text-align:left;padding-left:13px;"><i>*</i>姓名</td>
+                        <td style="width:208px;"><input type="text" name="login" id="login" /></td>
+                        <td style="width:76px; text-align:left;padding-left:0px;"><i>*</i>性别</td>
+                        <td class="tableXiala" style="width:208px;"><select name="sex"><option value="男">男</option><option value="女">女</option></select></td>
+                        <td style="width:98px;"><i>*</i>出生年月</td>
+                        <td style="width:160px;"><input type="text" class="Wdate" value="" name="borndate" id="birthday"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',disabledDates:['%y-%M-%d {%H-1}\:..\:..','%y-%M-%d {%H+1}\:..\:..']})" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',disabledDates:['%y-%M-%d {%H-1}\:..\:..','%y-%M-%d {%H+1}\:..\:..']})" /></td>
+                        <td rowspan="4" style="padding-top:10px;"><a href="#"><img src="images/personalInformationImg.jpg" /></a></td>
+                    </tr>
+                    <tr>
+                        <td><i>*</i>联系方式</td>
+                        <td><input type="text" name="contact" id="tel" /></td>
+                        <td>E-mail</td>
+                        <td><input type="text" name="email" id="email" /></td>
+                        <td><i>*</i>现居住地</td>
+                        <td class="tableXiala"><input type="text" name="mycity" id="dizhi" /></td>
+                    </tr>
+                    <tr>
+                        <td><i>*</i>政治面貌</td>
+                        <td class="tableXiala"><select name="polistate"><option value="党员">党员</option><option value="团员">团员</option></select></td>
+                        <td style="text-align:left;padding-left:13px;">婚姻状况</td>
+                        <td class="tableXiala"><select name="mastate"><option value="未婚">未婚</option><option value="已婚">已婚</option></select></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!--教育背景-->
+            <div class="educationBackground" >
+            	<div id="jiaoyuediv111">
+                <table border="0" width="100%"  cellspacing="0" cellpadding="0">
+                    <tr><th colspan="8"><i>*</i>教育背景（请从高中开始填起）</th></tr>
+                  	<tr>
+                  	<td colspan="8">
+                  	<table id="jiaoyuediv1" >
+                  		<tr>
+                        <td style="width:98px;">时间</td>
+                        <td style="width:208px;"><input type='text' class='textInput Wdate' name='tech_starttime' id='stime_1' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+                        <td style="width:76px;">到</td>
+                        <td style="width:208px;"><input type='text' class='textInput Wdate' name='tech_endtime' id='endtime_1' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+                        <td style="width:98px;">学校</td>
+                        <td style="width:160px;"><input type="text" name='tech_school' id='xuexiao_1' /></td>
+                        <td style="width:78px;">学历</td>
+                        <td style="width:109px;"><select name='tech_edu'><option value='无'>无</option><option value='高中'>高中</option><option value='大专'>大专</option><option value='本科'>本科</option><option value='硕士'>硕士</option><option value='博士'>博士</option><option value='其他'>其他</option></select></td>
+                    </tr>
+                    <tr>
+                    	<td>专业</td>
+                        <td><input type="text" name='tech_spech' id='zhuanye_1' /></td>
+                        <td>在校职务</td>
+                        <td><input type="text" name='tech_post' id='zhiwu_1' /></td>
+                        <td></td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <!--在校活动-->
+                    <tr>
+                    	<td>在校活动</td>
+                        <td colspan="7"><input type="text" class="bigInput" name='tech_play' id='huodong_1' /></td>
+                    </tr>
+                  	</table>
+                  	<table id="jiaoyuediv2" style="display: none" >
+                  		<tr>
+                        <td style="width:98px;">时间</td>
+                        <td style="width:208px;"><input type='text' class='textInput Wdate' name='tech_starttime' id='stime_2' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+                        <td style="width:76px;">到</td>
+                        <td style="width:208px;"><input type='text' class='textInput Wdate' name='tech_endtime' id='endtime_2' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+                        <td style="width:98px;">学校</td>
+                        <td style="width:160px;"><input type="text" name='tech_school' id='xuexiao_2' /></td>
+                        <td style="width:78px;">学历</td>
+                        <td style="width:109px;"><select name='tech_edu'><option value='无'>无</option><option value='高中'>高中</option><option value='大专'>大专</option><option value='本科'>本科</option><option value='硕士'>硕士</option><option value='博士'>博士</option><option value='其他'>其他</option></select></td>
+                    </tr>
+                    <tr>
+                    	<td>专业</td>
+                        <td><input type="text" name='tech_spech' id='zhuanye_2' /></td>
+                        <td>在校职务</td>
+                        <td><input type="text" name='tech_post' id='zhiwu_2' /></td>
+                        <td></td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <!--在校活动-->
+                    <tr>
+                    	<td>在校活动</td>
+                        <td colspan="7"><input type="text" class="bigInput" name='tech_play' id='huodong_2' /></td>
+                    </tr>
+                  	</table>
+                  	<table id="jiaoyuediv3" style="display: none" >
+                  		<tr>
+                        <td style="width:98px;">时间</td>
+                        <td style="width:208px;"><input type='text' class='textInput Wdate' name='tech_starttime' id='stime_3' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+                        <td style="width:76px;">到</td>
+                        <td style="width:208px;"><input type='text' class='textInput Wdate' name='tech_endtime' id='endtime_3' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+                        <td style="width:98px;">学校</td>
+                        <td style="width:160px;"><input type="text" name='tech_school' id='xuexiao_3' /></td>
+                        <td style="width:78px;">学历</td>
+                        <td style="width:109px;"><select name='tech_edu'><option value='无'>无</option><option value='高中'>高中</option><option value='大专'>大专</option><option value='本科'>本科</option><option value='硕士'>硕士</option><option value='博士'>博士</option><option value='其他'>其他</option></select></td>
+                    </tr>
+                    <tr>
+                    	<td>专业</td>
+                        <td><input type="text" name='tech_spech' id='zhuanye_3' /></td>
+                        <td>在校职务</td>
+                        <td><input type="text" name='tech_post' id='zhiwu_3' /></td>
+                        <td></td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <!--在校活动-->
+                    <tr>
+                    	<td>在校活动</td>
+                        <td colspan="7"><input type="text" class="bigInput" name='tech_play' id='huodong_3' /></td>
+                    </tr>
+                  	</table>
+                  	<table id="jiaoyuediv4" style="display: none" >
+                  		<tr>
+                        <td style="width:98px;">时间</td>
+                        <td style="width:208px;"><input type='text' class='textInput Wdate' name='tech_starttime' id='stime_4' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+                        <td style="width:76px;">到</td>
+                        <td style="width:208px;"><input type='text' class='textInput Wdate' name='tech_endtime' id='endtime_4' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+                        <td style="width:98px;">学校</td>
+                        <td style="width:160px;"><input type="text" name='tech_school' id='xuexiao_4' /></td>
+                        <td style="width:78px;">学历</td>
+                        <td style="width:109px;"><select name='tech_edu'><option value='无'>无</option><option value='高中'>高中</option><option value='大专'>大专</option><option value='本科'>本科</option><option value='硕士'>硕士</option><option value='博士'>博士</option><option value='其他'>其他</option></select></td>
+                    </tr>
+                    <tr>
+                    	<td>专业</td>
+                        <td><input type="text" name='tech_spech' id='zhuanye_4' /></td>
+                        <td>在校职务</td>
+                        <td><input type="text" name='tech_post' id='zhiwu_4' /></td>
+                        <td></td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <!--在校活动-->
+                    <tr>
+                    	<td>在校活动</td>
+                        <td colspan="7"><input type="text" class="bigInput" name='tech_play' id='huodong_4' /></td>
+                    </tr>
+                  	</table>
+                  	<table id="jiaoyuediv5" style="display: none" >
+                  		<tr>
+                        <td style="width:98px;">时间</td>
+                        <td style="width:208px;"><input type='text' class='textInput Wdate' name='tech_starttime' id='stime_5' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+                        <td style="width:76px;">到</td>
+                        <td style="width:208px;"><input type='text' class='textInput Wdate' name='tech_endtime' id='endtime_5' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+                        <td style="width:98px;">学校</td>
+                        <td style="width:160px;"><input type="text" name='tech_school' id='xuexiao_5' /></td>
+                        <td style="width:78px;">学历</td>
+                        <td style="width:109px;"><select name='tech_edu'><option value='无'>无</option><option value='高中'>高中</option><option value='大专'>大专</option><option value='本科'>本科</option><option value='硕士'>硕士</option><option value='博士'>博士</option><option value='其他'>其他</option></select></td>
+                    </tr>
+                    <tr>
+                    	<td>专业</td>
+                        <td><input type="text" name='tech_spech' id='zhuanye_5' /></td>
+                        <td>在校职务</td>
+                        <td><input type="text" name='tech_post' id='zhiwu_5' /></td>
+                        <td></td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <!--在校活动-->
+                    <tr>
+                    	<td>在校活动</td>
+                        <td colspan="7"><input type="text" class="bigInput" name='tech_play' id='huodong_5' /></td>
+                    </tr>
+                  	</table>
+                  	</td></tr>
+                 
+                    
+                    
+                    
+                    
+                </table>
+                </div>
+                
+                 <p>
+                 <input type="hidden" id="hidjiaoyuenum" value="1" />
+                 <a href='#' onclick='addjiaoyu();return false;'>继续添加</a></p>
+            </div>
+            
+            <!--工作经历-->
+            <div class="workExperience">
+                <table border="0" width="100%"  cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th colspan="8"><i>*</i>工作经历</th>
+                    </tr>
+                    <tr>
+                  	<td colspan="8">
+                  	<table id="gongzuodiv1">
+                  	  <tr><td style='width:98px;'>时间</td>
+				       <td style='width:208px;'><input type='text' class='textInput Wdate' name='work_start' id='stime_gz_1' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+				       <td style='width:76px;'>到</td>
+				       <td style='width:208px;'><input type='text' class='textInput Wdate' name='work_end' id='endtime_gz_1' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+				       <td style='width:98px;'>公司</td>
+				       <td style='width:160px;'><input type='text' name='work_comp' id='gongsi_1' /></td>
+				       <td style='width:78px;'>学历</td>
+				       <td style='width:69px;'><select name='work_edu'><option value='无'>无</option><option value='高中'>高中</option><option value='大专'>大专</option><option value='本科'>本科</option><option value='硕士'>硕士</option><option value='博士'>博士</option><option value='其他'>其他</option></select></td>
+				      </tr>
+				       <tr><td>工作职责</td><td colspan='7'><input type='text' class='bigInput' name='work_duty' id='gzzhize_1' /></td></tr>
+				      <tr><td>项目经历</td><td colspan='7'><input type='text' class='bigInput' name='work_project' id='xmjl_1' /></td></tr>
+                  	</table>
+                  	<table id="gongzuodiv2" style="display: none">
+                  	  <tr><td style='width:98px;'>时间</td>
+				       <td style='width:208px;'><input type='text' class='textInput Wdate' name='work_start' id='stime_gz_2' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+				       <td style='width:76px;'>到</td>
+				       <td style='width:208px;'><input type='text' class='textInput Wdate' name='work_end' id='endtime_gz_2' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+				       <td style='width:98px;'>公司</td>
+				       <td style='width:160px;'><input type='text' name='work_comp' id='gongsi_2' /></td>
+				       <td style='width:78px;'>学历</td>
+				       <td style='width:69px;'><select name='work_edu'><option value='无'>无</option><option value='高中'>高中</option><option value='大专'>大专</option><option value='本科'>本科</option><option value='硕士'>硕士</option><option value='博士'>博士</option><option value='其他'>其他</option></select></td>
+				      </tr>
+				       <tr><td>工作职责</td><td colspan='7'><input type='text' class='bigInput' name='work_duty' id='gzzhize_2' /></td></tr>
+				      <tr><td>项目经历</td><td colspan='7'><input type='text' class='bigInput' name='work_project' id='xmjl_2' /></td></tr>
+                  	</table>
+                  	<table id="gongzuodiv3" style="display: none">
+                  	  <tr><td style='width:98px;'>时间</td>
+				       <td style='width:208px;'><input type='text' class='textInput Wdate' name='work_start' id='stime_gz_3' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+				       <td style='width:76px;'>到</td>
+				       <td style='width:208px;'><input type='text' class='textInput Wdate' name='work_end' id='endtime_gz_3' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+				       <td style='width:98px;'>公司</td>
+				       <td style='width:160px;'><input type='text' name='work_comp' id='gongsi_3' /></td>
+				       <td style='width:78px;'>学历</td>
+				       <td style='width:69px;'><select name='work_edu'><option value='无'>无</option><option value='高中'>高中</option><option value='大专'>大专</option><option value='本科'>本科</option><option value='硕士'>硕士</option><option value='博士'>博士</option><option value='其他'>其他</option></select></td>
+				      </tr>
+				       <tr><td>工作职责</td><td colspan='7'><input type='text' class='bigInput' name='work_duty' id='gzzhize_3' /></td></tr>
+				      <tr><td>项目经历</td><td colspan='7'><input type='text' class='bigInput' name='work_project' id='xmjl_3' /></td></tr>
+                  	</table>
+                  	<table id="gongzuodiv4" style="display: none">
+                  	  <tr><td style='width:98px;'>时间</td>
+				       <td style='width:208px;'><input type='text' class='textInput Wdate' name='work_start' id='stime_gz_4' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+				       <td style='width:76px;'>到</td>
+				       <td style='width:208px;'><input type='text' class='textInput Wdate' name='work_end' id='endtime_gz_4' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+				       <td style='width:98px;'>公司</td>
+				       <td style='width:160px;'><input type='text' name='work_comp' id='gongsi_4' /></td>
+				       <td style='width:78px;'>学历</td>
+				       <td style='width:69px;'><select name='work_edu'><option value='无'>无</option><option value='高中'>高中</option><option value='大专'>大专</option><option value='本科'>本科</option><option value='硕士'>硕士</option><option value='博士'>博士</option><option value='其他'>其他</option></select></td>
+				      </tr>
+				       <tr><td>工作职责</td><td colspan='7'><input type='text' class='bigInput' name='work_duty' id='gzzhize_4' /></td></tr>
+				      <tr><td>项目经历</td><td colspan='7'><input type='text' class='bigInput' name='work_project' id='xmjl_4' /></td></tr>
+                  	</table>
+                  	<table id="gongzuodiv5" style="display: none">
+                  	  <tr><td style='width:98px;'>时间</td>
+				       <td style='width:208px;'><input type='text' class='textInput Wdate' name='work_start' id='stime_gz_5' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+				       <td style='width:76px;'>到</td>
+				       <td style='width:208px;'><input type='text' class='textInput Wdate' name='work_end' id='endtime_gz_5' value='' onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})"  /></td>
+				       <td style='width:98px;'>公司</td>
+				       <td style='width:160px;'><input type='text' name='work_comp' id='gongsi_5' /></td>
+				       <td style='width:78px;'>学历</td>
+				       <td style='width:69px;'><select name='work_edu'><option value='无'>无</option><option value='高中'>高中</option><option value='大专'>大专</option><option value='本科'>本科</option><option value='硕士'>硕士</option><option value='博士'>博士</option><option value='其他'>其他</option></select></td>
+				      </tr>
+				       <tr><td>工作职责</td><td colspan='7'><input type='text' class='bigInput' name='work_duty' id='gzzhize_5' /></td></tr>
+				      <tr><td>项目经历</td><td colspan='7'><input type='text' class='bigInput' name='work_project' id='xmjl_5' /></td></tr>
+                  	</table>
+                  	</td>
+                  	</tr>
+                  	
+                   
+                   
+                   
+                
+                </table>
+                 <p>
+                 <input type="hidden" id="hidgongzuonum" value="1" />
+                 <a href="#" onclick='addgongzuo();return false;'>继续添加</a>
+                 </p>
+            </div>
+            
+            <!--证书信息-->
+            <div class="certificateInformation">
+                <table border="0" width="100%"  cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th colspan="8">证书信息</th>
+                    </tr>
+                  	<tr>
+                  	<td colspan="8">
+                  	<table id="zhengshudiv1" width="100%">
+                  	 <tr><td style='width:98px;'>证书名称</td><td style='width:208px;'><input type='text' name='cert_name' id='zhengshuname_1' /></td>
+                   <td style='width:76px;'>等级</td><td style='width:208px;'><input type='text' name='cert_level' id='zhengshujibie_1' /></td>
+                  <td style='width:98px;'>获奖时间</td><td style='width:160px;'><input type='text' name='cert_date' id='zhengshutime_1' /></td>
+                   <td style='width:95px;'>描述</td><td><input type='text' name='cert_desc' id='zhengshudesc_1'/></td></tr>
+                  	</table>
+                  	<table id="zhengshudiv2" width="100%" style="display: none">
+                  	 <tr><td style='width:98px;'>证书名称</td><td style='width:208px;'><input type='text' name='cert_name' id='zhengshuname_2' /></td>
+                   <td style='width:76px;'>等级</td><td style='width:208px;'><input type='text' name='cert_level' id='zhengshujibie_2' /></td>
+                  <td style='width:98px;'>获奖时间</td><td style='width:160px;'><input type='text' name='cert_date' id='zhengshutime_2' /></td>
+                   <td style='width:95px;'>描述</td><td><input type='text' name='cert_desc' id='zhengshudesc_2'/></td></tr>
+                  	</table>
+                  	<table id="zhengshudiv3" width="100%" style="display: none">
+                  	 <tr><td style='width:98px;'>证书名称</td><td style='width:208px;'><input type='text' name='cert_name' id='zhengshuname_3' /></td>
+                   <td style='width:76px;'>等级</td><td style='width:208px;'><input type='text' name='cert_level' id='zhengshujibie_3' /></td>
+                  <td style='width:98px;'>获奖时间</td><td style='width:160px;'><input type='text' name='cert_date' id='zhengshutime_3' /></td>
+                   <td style='width:95px;'>描述</td><td><input type='text' name='cert_desc' id='zhengshudesc_3'/></td></tr>
+                  	</table>
+                  	<table id="zhengshudiv4" width="100%" style="display: none">
+                  	 <tr><td style='width:98px;'>证书名称</td><td style='width:208px;'><input type='text' name='cert_name' id='zhengshuname_4' /></td>
+                   <td style='width:76px;'>等级</td><td style='width:208px;'><input type='text' name='cert_level' id='zhengshujibie_4' /></td>
+                  <td style='width:98px;'>获奖时间</td><td style='width:160px;'><input type='text' name='cert_date' id='zhengshutime_4' /></td>
+                   <td style='width:95px;'>描述</td><td><input type='text' name='cert_desc' id='zhengshudesc_4'/></td></tr>
+                  	</table>
+                  	<table id="zhengshudiv5" width="100%" style="display: none">
+                  	 <tr><td style='width:98px;'>证书名称</td><td style='width:208px;'><input type='text' name='cert_name' id='zhengshuname_5' /></td>
+                   <td style='width:76px;'>等级</td><td style='width:208px;'><input type='text' name='cert_level' id='zhengshujibie_5' /></td>
+                  <td style='width:98px;'>获奖时间</td><td style='width:160px;'><input type='text' name='cert_date' id='zhengshutime_5' /></td>
+                   <td style='width:95px;'>描述</td><td><input type='text' name='cert_desc' id='zhengshudesc_5'/></td></tr>
+                  	</table>
+                  	</td>
+                  	</tr>
+                  	
+                  	
+                  	<!--
+                    <tr>
+                        <td style="width:98px;">证书名称</td><td style="width:208px;"><input type="text" name="zhengshuname" id="zhengshuname" /></td>
+                        <td style="width:76px;">等级</td><td style="width:208px;"><input type="text" name="zhengshujibie" id="zhengshujibie" /></td>
+                        <td style="width:98px;">获奖时间</td><td style="width:160px;"><input type="text" name="huojiangtime" id="huojiangtime" /></td>
+                        <td style="width:95px;">描述</td><td><input type="text" name="zhengshudesc" id="zhengshudesc"/></td>
+                    </tr>
+                -->
+                </table>
+                
+                <p>
+                <input type="hidden" id="hidzhengshunum" value="1" />
+                <a href="#" onclick='addzhengshu();return false;'>继续添加</a></p>
+            </div>
+            
+            <!--获奖经历-->
+            <div class="winningExperience">
+                <table border="0" width="100%"  cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th colspan="8">获奖经历</th>
+                    </tr>
+                    
+                    <tr>
+                  	<td colspan="8">
+                  	<table id="huojiangdiv1" width="100%">
+                  	<tr><td style='width:98px;'>证书名称</td><td style='width:208px;'><input type='text' name='priz_name' id='huojiangname_1' /></td>
+			       <td style='width:76px;'>等级</td><td style='width:208px;'><input type='text' name='priz_level' id='huojiangjibie_1' /></td>
+			       <td style='width:98px;'>获奖时间</td><td style='width:160px;'><input type='text' name='priz_date' id='huojiangtimev_1' /></td>
+			       <td style='width:95px;'>描述</td><td><input type='text' name='priz_desc' id='huojiangdesc_1'/></td></tr>
+                  	</table>
+                  	<table id="huojiangdiv2" width="100%" style="display: none">
+                  	<tr><td style='width:98px;'>证书名称</td><td style='width:208px;'><input type='text' name='priz_name' id='huojiangname_2' /></td>
+			       <td style='width:76px;'>等级</td><td style='width:208px;'><input type='text' name='priz_level' id='huojiangjibie_2' /></td>
+			       <td style='width:98px;'>获奖时间</td><td style='width:160px;'><input type='text' name='priz_date' id='huojiangtimev_2' /></td>
+			       <td style='width:95px;'>描述</td><td><input type='text' name='priz_desc' id='huojiangdesc_2'/></td></tr>
+                  	</table>
+                  	<table id="huojiangdiv3" width="100%" style="display: none">
+                  	<tr><td style='width:98px;'>证书名称</td><td style='width:208px;'><input type='text' name='priz_name' id='huojiangname_3' /></td>
+			       <td style='width:76px;'>等级</td><td style='width:208px;'><input type='text' name='priz_level' id='huojiangjibie_3' /></td>
+			       <td style='width:98px;'>获奖时间</td><td style='width:160px;'><input type='text' name='priz_date' id='huojiangtimev_3' /></td>
+			       <td style='width:95px;'>描述</td><td><input type='text' name='priz_desc' id='huojiangdesc_3'/></td></tr>
+                  	</table>
+                  	<table id="huojiangdiv4" width="100%" style="display: none">
+                  	<tr><td style='width:98px;'>证书名称</td><td style='width:208px;'><input type='text' name='priz_name' id='huojiangname_4' /></td>
+			       <td style='width:76px;'>等级</td><td style='width:208px;'><input type='text' name='priz_level' id='huojiangjibie_4' /></td>
+			       <td style='width:98px;'>获奖时间</td><td style='width:160px;'><input type='text' name='priz_date' id='huojiangtimev_4' /></td>
+			       <td style='width:95px;'>描述</td><td><input type='text' name='priz_desc' id='huojiangdesc_4'/></td></tr>
+                  	</table>
+                  	<table id="huojiangdiv5" width="100%" style="display: none">
+                  	<tr><td style='width:98px;'>证书名称</td><td style='width:208px;'><input type='text' name='priz_name' id='huojiangname_5' /></td>
+			       <td style='width:76px;'>等级</td><td style='width:208px;'><input type='text' name='priz_level' id='huojiangjibie_5' /></td>
+			       <td style='width:98px;'>获奖时间</td><td style='width:160px;'><input type='text' name='priz_date' id='huojiangtimev_5' /></td>
+			       <td style='width:95px;'>描述</td><td><input type='text' name='priz_desc' id='huojiangdesc_5'/></td></tr>
+                  	</table>
+                  	</td>
+                  	</tr>
+                  	<!--
+                    <tr>
+                        <td style="width:98px;">证书名称</td><td style="width:208px;"><input type="text" /></td>
+                        <td style="width:76px;">等级</td><td style="width:208px;"><input type="text" /></td>
+                        <td style="width:98px;">获奖时间</td><td style="width:160px;"><input type="text" /></td>
+                        <td style="width:95px;">描述</td><td><input type="text" /></td>
+                    </tr>
+               		 -->
+                </table>
+                <p><input type="hidden" id="hidhuojiangnum" value="1" />
+                <a href="#" onclick='addhuojiang();return false;'>继续添加</a></p>
+            </div>
+            
+            <!--语言能力-->
+            <div class="languageAbility">
+                <table border="0" width="100%"  cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th colspan="4">语言能力</th>
+                    </tr>
+                    <tr>
+                  	<td colspan="8">
+                  	<table id="yuyandiv1" width="100%">
+                  	 <tr><td style='width:98px;'>外语语种</td><td style='width:208px;'><input type='text' name='fori_name' id='yuzhong_1' /></td>
+      					<td style='width:76px;'>水平</td><td><input type='text' name='fori_level' id='shuiping_1' /></td></tr>    
+                  	</table>
+                  	<table id="yuyandiv2" width="100%" style="display: none">
+                  	 <tr><td style='width:98px;'>外语语种</td><td style='width:208px;'><input type='text' name='fori_name' id='yuzhong_2' /></td>
+      					<td style='width:76px;'>水平</td><td><input type='text' name='fori_level' id='shuiping_2' /></td></tr>    
+                  	</table>
+                  	<table id="yuyandiv3" width="100%" style="display: none">
+                  	 <tr><td style='width:98px;'>外语语种</td><td style='width:208px;'><input type='text' name='fori_name' id='yuzhong_3' /></td>
+      					<td style='width:76px;'>水平</td><td><input type='text' name='fori_level' id='shuiping_3' /></td></tr>    
+                  	</table>
+                  	</td>
+                  	</tr>
+                  	
+                    <!--<tr><td style="width:98px;">外语语种</td><td style="width:208px;"><input type="text" name="yuzhong" id="yuzhong" /></td>
+                    <td style="width:76px;">水平</td><td><input type="text" name="shuiping" id="shuiping" /></td></tr>
+                --></table>
+                <p>
+                <input type="hidden" id="hidyuyannum" value="1" />
+                <a href="#" onclick='addyuyan();return false;'>继续添加</a></p>
+            </div>
+            
+            <!--求职意向-->
+            <div class="objective">
+                <table border="0" width="100%"  cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th colspan="8">求职意向</th>
+                    </tr>
+                    <tr>
+                        <td style="width:98px;"><i>*</i>行业</td>
+                        <td style="width:208px;"><input type="text" name="resu_nature" id="resu_nature" /></td>
+                        <td style="width:76px;"><i>*</i>地点</td>
+                        <td class="tableXiala" style="width:208px;">
+                        <select name="resu_city">
+                        <option value="合肥">合肥</option>
+                        <option value="北京">北京</option>
+                        <option value="上海">上海</option>
+                        <option value="广州">广州</option>
+                        <option value="深圳">深圳</option>
+                        <option value="武汉">武汉</option>
+                        </select></td>
+                        <td style="width:98px;"><i>*</i>到岗时间</td>
+                        <td style="width:160px;">
+                        <select name="resu_date">
+                        <option value="一星期内">一星期内</option>
+                        <option value="一个星期">一个星期</option>
+                        <option value="半个月内">半个月内</option>
+                        <option value="一个月">一个月</option>
+                        <option value="超过三个月">超过三个月</option>
+                       
+                        </select></td>
+                        <td style="width:95px;">&nbsp;</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><i>*</i>期望职位</td>
+                        <td><input type="text" name="resu_work" id="resu_work" /></td>
+                        <td>目前月薪</td>
+                        <td><input type="text" name="resu_salary" id="resu_salary" /></td>
+                        <td></td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td>期望月薪</td>
+                        <td><select name="resu_hsalary">
+                        <option value="3000以下">3000以下</option>
+                        <option value="3000-5000">3000-5000</option>
+                        <option value="5000-7000">5000-7000</option>
+                        <option value="7000-9000">7000-9000</option>
+                        <option value="10000以上">10000以上</option>
+                        </select></td>
+                        <td colspan="6"></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!--个人自述-->
+            <div class="personalAccount">
+                <table border="0" width="100%"  cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th>个人自述</th>
+                    </tr>
+                    <tr>
+                        <td><textarea name="resu_desc"  id="userdesc">个人自述</textarea></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!--保存修改-->
+            <p class="resumeOk"><a href="#">保存</a><a href="#">修改</a><a href="javascript:FormSub();" id="FormSub">提交</a></p>
+        </div>
+        <!--qa end-->
+    </div>
+</div>
+</form>
+<!--yuyueshijia end-->
+<!--RDfooter-->
+<div class="RDfooter">
+	<div class="RDfooter1">
+    	<div class="RDcenter">
+        	<a href="javascript:void(0);" class="yincangBtn"><img src="images/jia.png" height="16" width="25" /></a>
+            <div class="RDfooterFuWu">
+                <img src="images/julebu.png" height="45" width="175" />
+                <dl>
+                    <dt>24小时贵宾服务热线</dt>
+                    <dd>4008-889933　乘用车</dd>
+                    <dd>4008-009933　轻卡</dd>
+                    <dd>4008-003366　星锐</dd>
+                    <dd>4008-006633　重卡</dd>
+                    <dd>4000-277771　瑞铃</dd>
+                    <dd>4008-878576　瑞驰</dd>
+                </dl>
+            </div>
+            <dl>
+                <dt>品牌中心</dt>
+                <dd><a href="#">和悦</a></dd>
+                <dd><a href="#">帅铃</a></dd>
+                <dd><a href="#">骏铃</a></dd>
+                <dd><a href="#">好运</a></dd>
+                <dd><a href="#">格尔发</a></dd>
+                <dd><a href="#">锐捷特</a></dd>
+                <dd><a href="#">江淮底盘</a></dd>
+            </dl>
+            <dl>
+                <dt>购车指南</dt>
+                <dd><a href="#">个性化定制</a></dd>
+                <dd><a href="#">车型对比</a></dd>
+                <dd><a href="#">预约试驾</a></dd>
+                <dd><a href="#">价格试算</a></dd>
+                <dd><a href="#">购车流程</a></dd>
+                <dd><a href="#">金融服务</a></dd>
+                <dd><a href="#">贷款计算器</a></dd>
+                <dd><a href="#">查找经销商</a></dd>
+                <dd><a href="#">在线购车</a></dd>
+                <dd><a href="#">最新活动</a></dd>
+            </dl>
+            <dl>
+                <dt>贴心服务</dt>
+                <dd><a href="#">服务承诺</a></dd>
+                <dd><a href="#">服务网点</a></dd>
+                <dd><a href="#">配件供应</a></dd>
+                <dd><a href="#">在线咨询</a></dd>
+            </dl>
+            <dl>
+                <dt>活动</dt>
+                <dd><a href="#">品牌活动</a></dd>
+                <dd><a href="#">促销活动</a></dd>
+                <dd><a href="#">往期活动</a></dd>
+            </dl>
+            <dl>
+                <dt>资讯</dt>
+                <dd><a href="#">企业新闻</a></dd>
+                <dd><a href="#">媒体报道</a></dd>
+                <dd><a href="#">记者专区</a></dd>
+            </dl>
+            <dl>
+                <dt>投资者关系</dt>
+                <dd><a href="#">产销报告</a></dd>
+                <dd><a href="#">临时公告</a></dd>
+                <dd><a href="#">定期报告</a></dd>
+            </dl>
+              <dl>
+                <dt>人才招聘</dt>
+                <dd><a href="#">员工福利</a></dd>
+                <dd><a href="#">校园招聘</a></dd>
+                <dd><a href="#">社会招聘</a></dd>
+                <dd><a href="#">员工风采</a></dd>
+            </dl>
+              <dl>
+                <dt>企业与责任</dt>
+                <dd><a href="#">公司介绍</a></dd>
+                <dd><a href="#">领导风采</a></dd>
+                <dd><a href="#">发展历程</a></dd>
+                <dd><a href="#">新能源</a></dd>
+                <dd><a href="#">底盘科技</a></dd>
+                <dd><a href="#">动力总成</a></dd>
+                <dd><a href="#">社会责任</a></dd>
+            </dl>
+              <dl>
+                <dt>精彩下载</dt>
+                <dd><a href="#">江淮汽车TV</a></dd>
+                <dd><a href="#">精美壁纸</a></dd>
+            </dl>
+            <div class="clearBox"></div>
+        </div>
+    </div>
+    <div class="RDfooter2">
+    	<div class="RDcenter">
+        	<ul>
+            	<li><a href="#">版权信息</a>|</li>
+                <li><a href="#">使用说明</a>|</li>
+                <li><a href="#">联系我们</a>|</li>
+                <li><a href="#">网站地图</a>|</li>
+                <li><a href="#">合作伙伴专区</a></li>
+            </ul>
+            <p>江淮汽车2013版权所有 皖ICP备 05005596</p>
+        </div>
+    </div>
+</div>
+<!--RDfooter end-->
+
+<!--rightFloat-->
+<div class="rightFloat">
+    <a href="" class="gotoTop"><img src="images/goTop.jpg" height="33" width="88" /></a>
+    <p><a href="#cimuIframe" title="关闭" class="boxy">登录</a><a href="#registIframe" class="boxy" title="关闭">注册</a></p>
+    <ul>
+        <li><a href="#"><img src="images/8-1.png" height="38" width="38" /><img class="hoverImg" src="images/8.png" height="38" width="38" /><span>在线咨询</span></a></li>
+        <li><a href="#"><img src="images/7-1.png" height="38" width="38" /><img class="hoverImg" src="images/7.png" height="38" width="38" /><span>预约试驾</span></a></li>
+        <li><a href="#"><img src="images/6-1.png" height="38" width="38" /><img class="hoverImg" src="images/6.png" height="38" width="38" /><span>在线订车</span></a></li>
+        <li><a href="#"><img src="images/5-1.png" height="38" width="38" /><img class="hoverImg" src="images/5.png" height="38" width="38" /><span>预约维修</span></a></li>
+        <li><a href="#"><img src="images/4-1.png"  height="38" width="38" /><img class="hoverImg" src="images/4.png" height="38" width="38" /><span>经销商查询</span></a></li>
+        <li><a href="#"><img src="images/3-1.png" height="38" width="38" /><img class="hoverImg" src="images/3.png" height="38" width="38" /><span>服务商查询</span></a></li>
+        <li><a href="#"><img src="images/2-1.png" height="38" width="38" /><img class="hoverImg" src="images/2.png" height="38" width="38" /><span>关注微信</span></a></li>
+        <li><a href="#"><img src="images/1-1.png" height="38" width="38" /><img class="hoverImg" src="images/1.png" height="38" width="38" /><span>江淮微博</span></a></li>
+    </ul>
+</div>
+<!--rightFloat end-->
+<!--login弹出层-->
+<div id="cimuIframe" class="loginDiv" style="padding:0px; display:none;">
+    <iframe src="login.html" width="630" marginwidth="0" marginheight="0" height="460" align="top" scrolling="auto" frameborder="0"></iframe>
+</div>
+<!--login弹出层 end-->
+<!--regist弹出层-->
+<div id="registIframe" class="loginDiv" style="padding:0px; display:none;">
+    <iframe src="regist.html" width="630" marginwidth="0" marginheight="0" height="460" align="top" scrolling="auto" frameborder="0"></iframe>
+</div>
+<!--regist弹出层 end-->
+</body>
+</html>
+<script type="text/javascript">
+var jiaoyunum=1;
+function addjiaoyu()
+{
+		jiaoyunum= $("#hidjiaoyuenum").val();
+	
+		var stime=$("#stime_"+jiaoyunum).val();
+		if(stime==''){
+		alert("开始时间不能为空!");
+		$("#stime_"+jiaoyunum).focus();
+		return;
+		}
+		
+		var endtime=$("#endtime_"+jiaoyunum).val();
+		if(endtime==''){
+		alert("结束时间不能为空!");
+		$("#endtime_"+jiaoyunum).focus();
+		return;
+		}
+		var xuexiao=$("#xuexiao_"+jiaoyunum).val();
+		if(xuexiao==''){
+		alert("学校不能为空!");
+		$("#xuexiao_"+jiaoyunum).focus();
+		return;
+		}
+		var zhuanye=$("#zhuanye_"+jiaoyunum).val();
+		if(zhuanye==''){
+		alert("专业不能为空!");
+		$("#zhuanye_"+jiaoyunum).focus();
+		return;
+		}
+		var zhiwu=$("#zhiwu_"+jiaoyunum).val();
+		if(zhiwu==''){
+		alert("职务不能为空!");
+		$("#zhiwu_"+jiaoyunum).focus();
+		return;
+		}
+		var huodong=$("#huodong_"+jiaoyunum).val();
+		if(huodong==''){
+		alert("活动不能为空!");
+		$("#huodong_"+jiaoyunum).focus();
+		return;
+		}
+	
+		jiaoyunum++;
+	
+	$("#hidjiaoyuenum").val(jiaoyunum);
+		
+
+	$("#jiaoyuediv"+jiaoyunum).show()
+}
+
+
+
+
+
+var gongzuonum=1;
+function addgongzuo()
+{
+	gongzuonum= $("#hidgongzuonum").val();
+	if(gongzuonum>=1){
+		var stime=$("#stime_gz_"+gongzuonum).val();
+		if(stime==''){
+		alert("开始时间不能为空!");
+		$("#stime_gz_"+gongzuonum).focus();
+		return;
+		}
+		
+		var endtime=$("#endtime_gz_"+gongzuonum).val();
+		if(endtime==''){
+		alert("结束时间不能为空!");
+		$("#endtime_gz_"+gongzuonum).focus();
+		return;
+		}
+		var gongsi=$("#gongsi_"+gongzuonum).val();
+		if(gongsi==''){
+		alert("公司不能为空!");
+		$("#gongsi_"+gongzuonum).focus();
+		return;
+		}
+		var gzzhize=$("#gzzhize_"+gongzuonum).val();
+		if(gzzhize==''){
+		alert("工作职责不能为空!");
+		$("#gzzhize_"+gongzuonum).focus();
+		return;
+		}
+		var xmjl=$("#xmjl_"+gongzuonum).val();
+		if(xmjl==''){
+		alert("项目经历不能为空!");
+		$("#xmjl_"+gongzuonum).focus();
+		return;
+		}
+		
+	}
+	
+	gongzuonum++;
+	
+	$("#hidgongzuonum").val(gongzuonum);
+		
+
+	$("#gongzuodiv"+gongzuonum).show()
+	
+}
+
+
+
+var zhengshunum=1;
+function addzhengshu()
+{
+zhengshunum= $("#hidzhengshunum").val();
+
+if(zhengshunum>=1){
+		var zhengshuname=$("#zhengshuname_"+zhengshunum).val();
+		if(zhengshuname==''){
+		alert("证书名称不能为空!");
+		$("#zhengshuname_"+zhengshunum).focus();
+		return;
+		}
+		var zhengshujibie=$("#zhengshujibie_"+zhengshunum).val();
+		if(zhengshujibie==''){
+		alert("等级不能为空!");
+		$("#zhengshujibie_"+zhengshunum).focus();
+		return;
+		}
+		var zhengshutime=$("#zhengshutime_"+zhengshunum).val();
+		if(zhengshutime==''){
+		alert("获奖时间!");
+		$("#zhengshutime_"+zhengshunum).focus();
+		return;
+		}
+		var zhengshudesc=$("#zhengshudesc_"+zhengshunum).val();
+		if(zhengshudesc==''){
+		alert("描述!");
+		$("#zhengshudesc_"+zhengshunum).focus();
+		return;
+		}
+}
+
+	zhengshunum++;
+	
+	$("#hidzhengshunum").val(zhengshunum);
+		
+
+	$("#zhengshudiv"+zhengshunum).show()
+
+
+}
+
+var huojiangnum=1;
+function addhuojiang()
+{
+huojiangnum=$("#hidhuojiangnum").val();
+	if(huojiangnum>=1){
+		var huojiangname=$("#huojiangname_"+huojiangnum).val();
+		if(huojiangname==''){
+		alert("证书名称不能为空!");
+		$("#huojiangname_"+huojiangnum).focus();
+		return;
+		}
+		var huojiangjibie=$("#huojiangjibie_"+huojiangnum).val();
+		if(huojiangjibie==''){
+		alert("等级不能为空!");
+		$("#huojiangjibie_"+huojiangnum).focus();
+		return;
+		}
+		var huojiangtimev=$("#huojiangtimev_"+huojiangnum).val();
+		if(huojiangtimev==''){
+		alert("获奖时间不能为空!");
+		$("#huojiangtimev_"+huojiangnum).focus();
+		return;
+		}
+		var huojiangdesc=$("#huojiangdesc_"+huojiangnum).val();
+		if(huojiangdesc==''){
+		alert("描述不能为空!");
+		$("#huojiangdesc_"+huojiangnum).focus();
+		return;
+		}
+}
+
+	huojiangnum++;
+	
+	$("#hidhuojiangnum").val(huojiangnum);
+		
+
+	$("#huojiangdiv"+huojiangnum).show()
+
+	
+}
+
+var yuyannum=1;
+function addyuyan()
+{
+yuyannum=$("#hidyuyannum").val();
+if(yuyannum>=1){
+		var yuzhong=$("#yuzhong_"+yuyannum).val();
+		if(yuzhong==''){
+		alert("外语语种不能为空!");
+		$("#yuzhong_"+yuyannum).focus();
+		return;
+		}
+		var shuiping=$("#shuiping_"+yuyannum).val();
+		if(shuiping==''){
+		alert("水平不能为空!");
+		$("#shuiping_"+yuyannum).focus();
+		return;
+		}
+}
+		
+		
+	yuyannum++;
+	
+	$("#hidyuyannum").val(yuyannum);
+		
+
+	$("#yuyandiv"+yuyannum).show()
+}
+
+
+//表单提交
+function FormSub(){
+
+if($("#login").val()==''){
+alert("请输入姓名!");
+$("#login").focus();
+return;
+}
+if($("#birthday").val()==''){
+alert("请选择出生年月!");
+$("#birthday").focus();
+return;
+}
+if($("#tel").val()==''){
+alert("请输入联系方式!");
+$("#tel").focus();
+return;
+}
+if($("#email").val()!=''){
+//验证邮箱格式
+	if(!$("#email").val().match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)){ 
+	   alert("邮箱格式错误");
+	    $("#email").focus(); 
+	    return; 
+	  }
+	  
+}
+if($("#dizhi").val()==''){
+alert("请输入现居住地!");
+$("#dizhi").focus();
+return;
+}
+
+//开始验证拼接内容
+	//教育
+	/*
+	var stime=$("#stime_"+jiaoyunum).val();
+		if(stime==''){
+		alert("开始时间不能为空!");
+		$("#stime_"+jiaoyunum).focus();
+		return;
+		}
+		
+		var endtime=$("#endtime_"+jiaoyunum).val();
+		if(endtime==''){
+		alert("结束时间不能为空!");
+		$("#endtime_"+jiaoyunum).focus();
+		return;
+		}
+		var xuexiao=$("#xuexiao_"+jiaoyunum).val();
+		if(xuexiao==''){
+		alert("学校不能为空!");
+		$("#xuexiao_"+jiaoyunum).focus();
+		return;
+		}
+		var zhuanye=$("#zhuanye_"+jiaoyunum).val();
+		if(zhuanye==''){
+		alert("专业不能为空!");
+		$("#zhuanye_"+jiaoyunum).focus();
+		return;
+		}
+		var zhiwu=$("#zhiwu_"+jiaoyunum).val();
+		if(zhiwu==''){
+		alert("职务不能为空!");
+		$("#zhiwu_"+jiaoyunum).focus();
+		return;
+		}
+		var huodong=$("#huodong_"+jiaoyunum).val();
+		if(huodong==''){
+		alert("活动不能为空!");
+		$("#huodong_"+jiaoyunum).focus();
+		return;
+		}
+//工作
+var stime=$("#stime_gz_"+gongzuonum).val();
+		if(stime==''){
+		alert("开始时间不能为空!");
+		$("#stime_gz_"+gongzuonum).focus();
+		return;
+		}
+		
+		var endtime=$("#endtime_gz_"+gongzuonum).val();
+		if(endtime==''){
+		alert("结束时间不能为空!");
+		$("#endtime_gz_"+gongzuonum).focus();
+		return;
+		}
+		var gongsi=$("#gongsi_"+gongzuonum).val();
+		if(gongsi==''){
+		alert("公司不能为空!");
+		$("#gongsi_"+gongzuonum).focus();
+		return;
+		}
+		var gzzhize=$("#gzzhize_"+gongzuonum).val();
+		if(gzzhize==''){
+		alert("工作职责不能为空!");
+		$("#gzzhize_"+gongzuonum).focus();
+		return;
+		}
+		var xmjl=$("#xmjl_"+gongzuonum).val();
+		if(xmjl==''){
+		alert("项目经历不能为空!");
+		$("#xmjl_"+gongzuonum).focus();
+		return;
+		}
+		//证书
+		var zhengshuname=$("#zhengshuname_"+zhengshunum).val();
+		if(zhengshuname==''){
+		alert("证书名称不能为空!");
+		$("#zhengshuname_"+zhengshunum).focus();
+		return;
+		}
+		var zhengshujibie=$("#zhengshujibie_"+zhengshunum).val();
+		if(zhengshujibie==''){
+		alert("等级不能为空!");
+		$("#zhengshujibie_"+zhengshunum).focus();
+		return;
+		}
+		var zhengshutime=$("#zhengshutime_"+zhengshunum).val();
+		if(zhengshutime==''){
+		alert("获奖时间!");
+		$("#zhengshutime_"+zhengshunum).focus();
+		return;
+		}
+		var zhengshudesc=$("#zhengshudesc_"+zhengshunum).val();
+		if(zhengshudesc==''){
+		alert("描述!");
+		$("#zhengshudesc_"+zhengshunum).focus();
+		return;
+		}
+	//获奖
+	var huojiangname=$("#huojiangname_"+huojiangnum).val();
+		if(huojiangname==''){
+		alert("证书名称不能为空!");
+		$("#huojiangname_"+huojiangnum).focus();
+		return;
+		}
+		var huojiangjibie=$("#huojiangjibie_"+huojiangnum).val();
+		if(huojiangjibie==''){
+		alert("等级不能为空!");
+		$("#huojiangjibie_"+huojiangnum).focus();
+		return;
+		}
+		var huojiangtimev=$("#huojiangtimev_"+huojiangnum).val();
+		if(huojiangtimev==''){
+		alert("获奖时间不能为空!");
+		$("#huojiangtimev_"+huojiangnum).focus();
+		return;
+		}
+		var huojiangdesc=$("#huojiangdesc_"+huojiangnum).val();
+		if(huojiangdesc==''){
+		alert("描述不能为空!");
+		$("#huojiangdesc_"+huojiangnum).focus();
+		return;
+		}
+		//语言
+		var yuzhong=$("#yuzhong_"+yuyannum).val();
+		if(yuzhong==''){
+		alert("外语语种不能为空!");
+		$("#yuzhong_"+yuyannum).focus();
+		return;
+		}
+		var shuiping=$("#shuiping_"+yuyannum).val();
+		if(shuiping==''){
+		alert("水平不能为空!");
+		$("#shuiping_"+yuyannum).focus();
+		return;
+		}
+		*/
+	
+if($("#resu_nature").val()==''){
+alert("行业不能为空!");
+$("#resu_nature").focus();
+return;
+}
+if($("#resu_work").val()==''){
+alert("期望职务不能为空!");
+$("#resu_work").focus();
+return;
+}		
+
+		//个人简述
+if($("#userdesc").val()==''){
+alert("个人简述不能为空!");
+$("#userdesc").focus();
+return;
+}
+
+
+		$.ajax({
+                cache: true,
+                type: "POST",
+                url:"",
+               data:$('#userjianli').serialize(),// 你的formid
+                async: false,
+                error: function(request) {
+                    alert("Connection error");
+                },
+                success: function(data) {
+       				//$("#commonLayout_appcreshi").parent().html(data);
+                    alert(data);
+               }
+           });
+
+
+}
+
+
+</script>

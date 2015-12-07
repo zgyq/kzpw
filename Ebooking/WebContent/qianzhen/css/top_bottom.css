@@ -1,0 +1,347 @@
+@charset "utf-8";
+body {	
+    background-color: #F2F2F2 !important;
+    color: #666;
+}
+/*头部background-color: #8fb41b;
+background: transparent url("imgs/main_bg.png") repeat-x scroll center 0;
+*/
+.header{    
+    background: transparent url(../image/header_bg.png) repeat-x 0 0;
+	height: 75px;
+	width: 100%;
+	min-width: 980px;
+}
+.top {
+	width: 980px;
+	height: 75px;
+	margin: 0 auto;
+}
+.logo {
+	padding-top: 20px;
+    float: left;
+	width: 110px;
+}
+/*主导航*/
+.nav {
+    float: left;
+    padding-left: 20px;
+	width: 650px;
+}
+.nav a {
+    line-height: 65px;
+	width: 120px;
+	display: block;
+    text-decoration: none;
+    text-indent: -9999em;
+}
+.nav li {
+	float: left;
+    height: 72px;
+}
+.current_nav_index, .current_nav_visa, .current_nav_news, .current_nav_ask {
+    background: transparent url(imgs/logo_nav.png) repeat-x -653px bottom;
+}
+.nav_index a {
+    background: transparent url(imgs/logo_nav.png) repeat-x -154px 30px;
+}
+.nav_index a:hover {
+    background: transparent url(imgs/logo_nav.png) repeat-x -154px -29px;
+}
+.current_nav_index a {
+    background: transparent url(imgs/logo_nav.png) repeat-x -154px -29px;
+}
+
+.nav_visa a {
+    background: transparent url(imgs/logo_nav.png) repeat-x -294px 30px;
+}
+.nav_visa a:hover {
+    background: transparent url(imgs/logo_nav.png) repeat-x -294px -29px;
+}
+.current_nav_visa a {
+    background: transparent url(imgs/logo_nav.png) repeat-x -294px -30px;
+}
+.nav_news a {
+    background: transparent url(imgs/logo_nav.png) repeat-x -414px 30px;
+}
+.nav_news a:hover {
+    background: transparent url(imgs/logo_nav.png) repeat-x -414px -29px;
+}
+.current_nav_news a {
+    background: transparent url(imgs/logo_nav.png) repeat-x -414px -29px;
+}
+.nav_ask a {
+    background: transparent url(imgs/logo_nav.png) repeat-x -534px 30px;
+}
+.nav_ask a:hover {
+    background: transparent url(imgs/logo_nav.png) repeat-x -534px -29px;
+}
+.current_nav_ask a{
+    background: transparent url(imgs/logo_nav.png) repeat-x -534px -29px;
+}
+/*登录前*/
+.login-before {
+    float: left;
+    width: 200px;
+    margin-top: 26px;
+}
+.login-before li {
+    width: 90px;
+    float: right;
+    padding-left: 10px;
+    background: transparent url(imgs/login_before_bg.png) no-repeat 0 5px;
+	
+}
+.login-before li a, .login-before li span {
+    float: right;
+	padding-left: 7px;
+    display: block;
+    font-size: 14px;
+}
+
+/*登录后*/
+.after-login {
+    float: left;
+    width: 200px;
+    height: 31px;
+    position: relative;
+}
+.loginmenu {
+    padding-bottom: 10px;
+
+}
+.loginmenu dt {
+    padding: 0 20px;
+    text-align: right;
+    line-height: 30px;
+}
+.loginmenu dt span {
+    padding-left: 20px;
+    background: transparent url(imgs/login_before_bg.png) no-repeat 0 2px;
+    cursor: pointer;
+}
+.loginmenu {
+    border: 1px solid transparent;
+    position: absolute;
+    z-index: 9999;
+    top: 20px;
+    right: 0;
+}
+.loginmenu_hover {
+    border: 1px solid #EAEAEA;
+    background-color: #FFF;
+}
+.loginmenu dd {
+    padding-right: 20px;
+}
+.loginmenu dd a {
+    padding-left: 38px;
+    text-align: left;
+    line-height: 30px;
+    display: block;
+    text-decoration: none;
+}
+
+.crumb {
+	width: 100%;
+	min-width: 980px;
+}
+.breadCrumb {
+    background: url("../image/breadCrumb.png") no-repeat scroll 0 19px transparent;
+    margin: 0 auto;
+    width: 955px;
+    line-height: 50px;
+    padding-left: 25px;
+}
+.breadCrumb ul {
+    
+}
+.breadCrumb li {
+    
+}
+.breadCrumb a {    
+    font-size: 14px;
+    color: #666;
+}
+.breadCrumb a:hover {    
+    color: #8FB41B;
+}
+.breadCrumb span {
+    font-size: 14px;
+	color: #999;
+}
+/* ajax登陆 */
+.ajaxlogin_box {
+    
+}
+.ajaxlogin_box li {
+    padding-bottom: 15px;
+}
+.ajaxlogin_box .one {
+    float: left;
+    width: 120px;
+}
+.ajaxlogin_box .two {
+    float: left;
+    width: 220px;
+}
+.ajaxlogin_box .i_text input {
+    border: 1px solid #CCCCCC;
+    color: #666666;
+    height: 16px;
+    padding: 4px;
+    width: 200px;
+}
+.other_login {
+    height: 30px;
+}
+/*尾部*/
+.footer{
+    background-color: #FFF;
+	width: 100%;
+    margin-top: 30px;
+	min-width: 980px;
+}
+.bottom {
+	padding: 8px 0;
+}
+.bottom {
+	width: 980px;
+	margin: 0 auto;
+}
+.bottom_links {
+	width: 980px;
+	padding: 10px 0 20px 0;
+	text-align: left;
+	line-height: 22px;
+}
+.bottom_info {
+	background: url("../image/bottom_bg2.png") repeat-x scroll left top transparent;
+	padding: 20px 0;
+	width: 980px;
+}
+.copyright {
+	float: left;
+	width: 510px;
+	text-align: left;
+	line-height: 22px;
+
+}
+.authentication {
+	float: left;
+	width: 470px;
+}
+.authentication a {
+	margin-left: 6px;
+    float: right;
+	width: 108px;
+	height: 40px;	
+	display: block;
+	text-indent: -9999px;
+}
+.authentication .a1 {
+	background: url("../image/authentication.png") repeat-x scroll 0 bottom transparent;
+}
+.authentication .a1:hover {
+	background: url("../image/authentication.png") repeat-x scroll 0 top transparent;	
+}
+.authentication .a2 {
+	background: url("../image/authentication.png") repeat-x scroll -113px bottom transparent;
+}
+.authentication .a2:hover {
+	background: url("../image/authentication.png") repeat-x scroll -113px top transparent;	
+}
+.authentication .a3 {
+	background: url("../image/authentication.png") repeat-x scroll -226px bottom transparent;
+}
+.authentication .a3:hover {
+	background: url("../image/authentication.png") repeat-x scroll -226px top transparent;	
+}
+.authentication .a4 {
+	background: url("imgs/authentication.png") repeat-x scroll -339px bottom transparent;
+}
+.authentication .a4:hover {
+	background: url("../image/authentication.png") repeat-x scroll -339px top transparent;	
+}
+/* textarea 字数检测 */
+.charleft {
+    text-align: right;
+    padding-left: 10px;
+}
+/*返回顶部*/
+#toTop {
+    display: none;
+    position: fixed;
+    bottom: 180px;
+    left: 50%;
+    margin-left: 249px;
+    width: 46px;
+    height: 46px;
+    background-image: url('../image/totop.png');
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+    text-decoration: none;
+}
+#toTop:hover {
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+/* 添加tags */
+div.tagsinput { border:1px solid #CCC; background: #FFF; padding:5px; overflow-y: auto;}
+div.tagsinput span.tag { border: 1px solid #a5d24a; -moz-border-radius:2px; -webkit-border-radius:2px; display: block; float: left; padding: 2px 5px; text-decoration:none; background: #cde69c; color: #638421; margin-right: 5px; margin-bottom:5px;font-family: helvetica;  font-size:13px;}
+div.tagsinput span.tag a { font-weight: bold; color: #82ad2b; text-decoration:none; font-size: 11px;  } 
+div.tagsinput input { width:80px; margin:0px; font-family: helvetica; font-size: 13px; border:1px solid transparent; padding:5px; background: transparent; color: #000; outline:0px;  margin-right:5px; margin-bottom:5px; }
+div.tagsinput div { display:block; float: left; } 
+.tags_clear { clear: both; width: 100%; height: 0px; }
+.not_valid {background: #FBD8DB !important; color: #90111A !important;}
+/*报错边框*/
+.login-form-error { background:#FFFBFC; border-color:#F00 !important; }
+/* THEMES - feel free to customize them */
+
+/* black - default */
+.minitip-content {
+    font-size: 11px;
+    padding: 8px 10px;
+    color: #fff;
+
+    text-shadow: 0 0 2px #000;
+    background-color: #3C3C3C;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow: 0 0 3px #555;
+    -webkit-box-shadow: 0 0 3px #555;
+    -moz-box-shadow: 0 0 3px #555;
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+/* red */
+.green .minitip-content{
+    background-color: #A8D18B;
+    border: 1px solid rgba(67, 144, 102, 0.25);
+    color: #3C3C3C;
+    text-shadow: 0 0 2px #FAFBF1;
+}
+
+/* blue */
+.blue .minitip-content{
+    background-color: #4FC6E0;
+    border: 1px solid rgba(79, 198, 224, 0.25);
+}
+
+/* blue */
+.red .minitip-content{
+    background-color: #F15A29;
+    border: 1px solid rgba(241, 90, 41, 0.25);
+}
+
+/* yellow */
+.yellow .minitip-content{
+    background-color: #FBF59D;
+    border: 1px solid rgba(251, 245, 157, 0.25);
+    color: #3C3C3C;
+    text-shadow: 0 0 2px #FAFBF1;
+}

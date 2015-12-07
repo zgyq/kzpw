@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Forderinfo">
+  
+  <typeAlias alias="Forderinfo" type="com.yf.system.base.forderinfo.Forderinfo"/>
+  
+
+  <resultMap id="resultForderinfoMap" class="Forderinfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="ordernumber" column="C_ORDERNUMBER"/>
+  
+     <result property="contactname" column="C_CONTACTNAME"/>
+  
+     <result property="contactmobile" column="C_CONTACTMOBILE"/>
+  
+     <result property="contactphone" column="C_CONTACTPHONE"/>
+  
+     <result property="contactemail" column="C_CONTACTEMAIL"/>
+  
+     <result property="contactmark" column="C_CONTACTMARK"/>
+  
+     <result property="orderstatus" column="C_ORDERSTATUS"/>
+  
+     <result property="customerid" column="C_CUSTOMERID"/>
+  
+     <result property="employeeid" column="C_EMPLOYEEID"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="prncode" column="C_PRNCODE"/>
+  
+     <result property="actioncode" column="C_ACTIONCODE"/>
+  
+     <result property="totalticketfare" column="C_TOTALTICKETFARE"/>
+  
+     <result property="totalfax" column="C_TOTALFAX"/>
+  
+     <result property="refundstatus" column="C_REFUNDSTATUS"/>
+  
+     <result property="deliverstatus" column="C_DELIVERSTATUS"/>
+  
+     <result property="paystatus" column="C_PAYSTATUS"/>
+  
+     <result property="ordertype" column="C_ORDERTYPE"/>
+  
+     <result property="paytype" column="C_PAYTYPE"/>
+   
+  </resultMap>
+  
+  <select id="findAllForderinfo"  resultMap="resultForderinfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_FORDERINFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllForderinfoBySql"  resultMap="resultForderinfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteForderinfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countForderinfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_FORDERINFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findForderinfo" parameterClass="long" resultClass="Forderinfo">
+    select 
+    	ID as id,
+	  			C_ORDERNUMBER as ordernumber,
+	  			C_CONTACTNAME as contactname,
+	  			C_CONTACTMOBILE as contactmobile,
+	  			C_CONTACTPHONE as contactphone,
+	  			C_CONTACTEMAIL as contactemail,
+	  			C_CONTACTMARK as contactmark,
+	  			C_ORDERSTATUS as orderstatus,
+	  			C_CUSTOMERID as customerid,
+	  			C_EMPLOYEEID as employeeid,
+	  			C_CREATETIME as createtime,
+	  			C_PRNCODE as prncode,
+	  			C_ACTIONCODE as actioncode,
+	  			C_TOTALTICKETFARE as totalticketfare,
+	  			C_TOTALFAX as totalfax,
+	  			C_REFUNDSTATUS as refundstatus,
+	  			C_DELIVERSTATUS as deliverstatus,
+	  			C_PAYSTATUS as paystatus,
+	  			C_ORDERTYPE as ordertype,
+	  			C_PAYTYPE as paytype 
+     from T_FORDERINFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createForderinfo" parameterClass="Forderinfo">
+    insert into T_FORDERINFO ( 
+    	ID,
+	  			C_ORDERNUMBER,
+	  			C_CONTACTNAME,
+	  			C_CONTACTMOBILE,
+	  			C_CONTACTPHONE,
+	  			C_CONTACTEMAIL,
+	  			C_CONTACTMARK,
+	  			C_ORDERSTATUS,
+	  			C_CUSTOMERID,
+	  			C_EMPLOYEEID,
+	  			C_CREATETIME,
+	  			C_PRNCODE,
+	  			C_ACTIONCODE,
+	  			C_TOTALTICKETFARE,
+	  			C_TOTALFAX,
+	  			C_REFUNDSTATUS,
+	  			C_DELIVERSTATUS,
+	  			C_PAYSTATUS,
+	  			C_ORDERTYPE,
+	  			C_PAYTYPE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#ordernumber#,
+	  					
+	  						#contactname#,
+	  					
+	  						#contactmobile#,
+	  					
+	  						#contactphone#,
+	  					
+	  						#contactemail#,
+	  					
+	  						#contactmark#,
+	  					
+							#orderstatus:DECIMAL#,
+						
+							#customerid:DECIMAL#,
+						
+							#employeeid:DECIMAL#,
+						
+	  						#createtime#,
+	  					
+	  						#prncode#,
+	  					
+	  						#actioncode#,
+	  					
+							#totalticketfare:DECIMAL#,
+						
+	  						#totalfax:DECIMAL#,
+	  					
+							#refundstatus:DECIMAL#,
+						
+							#deliverstatus:DECIMAL#,
+						
+							#paystatus:DECIMAL#,
+						
+							#ordertype:DECIMAL#,
+						
+  							#paytype:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteForderinfo" parameterClass="long">
+    delete from T_FORDERINFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateForderinfo" parameterClass="Forderinfo">
+    update T_FORDERINFO 
+    set 
+    	C_ORDERNUMBER = #ordernumber#,
+	  					C_CONTACTNAME = #contactname#,
+	  					C_CONTACTMOBILE = #contactmobile#,
+	  					C_CONTACTPHONE = #contactphone#,
+	  					C_CONTACTEMAIL = #contactemail#,
+	  					C_CONTACTMARK = #contactmark#,
+	  					C_ORDERSTATUS = #orderstatus:DECIMAL#,
+						C_CUSTOMERID = #customerid:DECIMAL#,
+						C_EMPLOYEEID = #employeeid:DECIMAL#,
+						C_CREATETIME = #createtime#,
+	  					C_PRNCODE = #prncode#,
+	  					C_ACTIONCODE = #actioncode#,
+	  					C_TOTALTICKETFARE = #totalticketfare:DECIMAL#,
+						C_TOTALFAX = #totalfax:DECIMAL#,
+	  					C_REFUNDSTATUS = #refundstatus:DECIMAL#,
+						C_DELIVERSTATUS = #deliverstatus:DECIMAL#,
+						C_PAYSTATUS = #paystatus:DECIMAL#,
+						C_ORDERTYPE = #ordertype:DECIMAL#,
+						C_PAYTYPE = #paytype:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

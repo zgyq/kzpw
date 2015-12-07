@@ -1,0 +1,228 @@
+﻿.bread{color:#999;margin-bottom:4px}
+.bread a{text-decoration:none}
+.bread span{color:#555}
+.train_searchBox{padding:0 20px;background-color:#fffdef;border:1px solid #fff1ae;border-top:2px solid #f7cc00;height:47px}
+.train_searchBox li{float:left;*display:inline;margin-top:8px}
+.train_searchBox li label{line-height:30px;vertical-align:middle;color:#ba8a49;font-size:14px;padding:0 10px;font-family:"微软雅黑","黑体",Arial,Helvetica,sans-serif}
+.train_searchBox li.list_search_input{height:30px;border:1px solid #ccc;background-color:#fff;position:relative;width:230px}
+.train_searchBox li.list_search_input input{border:0;height:20px;vertical-align:middle;line-height:22px;font-size:14px;width:180px;*border:0;position:absolute;left:0;top:0;padding:5px 0 5px 50px;background-color:transparent}
+.train_searchBox li.list_search_block{width:30px;height:30px;text-align:center}
+.train_searchBox li.list_search_block a span.head_arr{width:17px;height:13px;background-position:-136px 0;margin-top:9px}
+.train_searchBox li.list_search_block a:hover span{background-position:-137px -16px}
+.train_searchBox li.list_search_date{height:30px;*height:29px;border:1px solid #ccc;background-color:#fff;padding-right:10px;position:relative;width:245px}
+.train_searchBox li.list_search_date input{border:0;height:20px;*height:18px!important;vertical-align:middle;line-height:20px;font-size:14px;width:140px;*border:0;top:0;padding:5px 35px 5px 80px;background-color:transparent;position:absolute;left:0;z-index:2}
+.train_searchBox li.list_search_date .date{width:21px;height:21px;vertical-align:middle;background-position:-136px -60px;position:absolute;right:5px;top:4px;cursor:pointer;z-index:1}
+.train_searchBox li.list_search_btn{height:32px}
+.train_searchBox li.list_search_btn a{display:block;width:145px;height:32px;background:url("../images/train_list_icon.png") no-repeat 0 -376px}
+.train_searchBox li.list_search_btn a:hover{background-position:0 -408px}
+.leftBox{width:770px;float:left}
+.rightBox{float:right;width:220px;margin-top:10px}
+.list_title h1{line-height:34px;margin-top:20px}
+.list_title h1 a{text-decoration:none}
+.list_title h1 span{color:#999}
+.list_title h1 span span{font-size:24px;line-height:24px;font-family:"微软雅黑","黑体",Arial,Helvetica,sans-serif;color:#555;margin-right:10px}
+.list_dateBox{background-color:#f7f7f7;height:59px;border-bottom:1px solid #ddd;position:relative}
+.list_dateBox .date_leftArr{display:block;position:absolute;width:10px;height:18px;background:url("../images/train_list_icon.png") no-repeat -89px 0;top:20px;left:13px;cursor:pointer}
+.list_dateBox .date_rightArr{display:block;position:absolute;width:10px;height:18px;background:url("../images/train_list_icon.png") no-repeat -102px 0;top:20px;right:14px;cursor:pointer}
+.list_dateBox .date_leftArr:hover{background-position:-77px 0}
+.list_dateBox .date_rightArr:hover{background-position:-113px 0}
+.list_dateBox .disable{visibility:hidden}
+.list_dateBox ul{margin:0 auto;width:694px}
+.list_dateBox ul li{float:left;text-align:center;background-color:#3672bd}
+.list_dateBox ul li a{text-decoration:none;display:block;width:97px;height:51px;border-top:5px solid #f7f7f7;border-left:1px solid #f7f7f7;border-right:1px solid #f7f7f7;position:relative;top:0;color:#999;background-color:#f7f7f7;padding-top:3px}
+.list_dateBox ul li a span{display:block;color:#555;font-size:16px;margin-top:7px}
+.list_dateBox ul li a:hover{border:1px solid #ddd;border-top:0;top:5px;height:51px;background-color:#fbfbfb}
+.list_dateBox ul li a.on{background-color:#fff;border-bottom:1px solid #fff;border-top:0;border-left:1px solid #ddd;border-right:1px solid #ddd;top:5px;height:51px}
+.list_typtBox{width:770px;position:relative;border-bottom:1px solid #ddd}
+.list_typtBox .typeBox{height:36px;line-height:36px;border-bottom:1px dashed #dfdfdf;margin-bottom:-1px;clear:both}
+.list_typtBox .typeBox p{float:left;font-weight:bold;width:32px}
+.list_typtBox .typeBox ul{float:left;width:736px}
+.list_typtBox .typeBox ul li{float:left;width:140px;_height:20px;_margin-top:12px; line-height:35px;}
+.list_typtBox .typeBox ul li .map_btn span{width:11px;height:14px;background-position:-24px 0;vertical-align:middle}
+.list_typtBox .typeBox ul li .map_btn span.type_txt{margin-left:5px}
+.list_typtBox .typeBox ul li.no_lim{width:35px;padding:0 10px;_margin-top:0; line-height:35px;}
+.list_typtBox .typeBox ul li label{position:relative;cursor:pointer}
+.list_typtBox .typeBox ul li label span.ckbox{width:12px;height:13px;vertical-align:middle;background-position:-12px 0;margin-right:5px}
+.list_typtBox .typeBox ul li label input{display:none}
+.list_typtBox .typeBox ul li label:hover span.type_txt{background-color:#36c;color:#fff}
+.list_typtBox .typeBox ul li label.on span{background-position:0 0}
+.list_typtBox .typeBox ul li.no_lim label{padding:3px 5px;text-align:center}
+.list_typtBox .typeBox ul li.no_lim label.on{color:#fff}
+.list_typtBox .typeBox ul li.no_lim label span{margin-right:0}
+.list_typtBox .typeBox ul li.no_lim label.on span{width:100%;height:100%;display:block;position:absolute;background-color:#36c;z-index:-1;top:0;left:0}
+.list_typtBox .type_showAll{position:absolute;right:0;bottom:5px;display:block}
+.list_typtBox .type_showAll span.up{width:9px;height:6px;background-position:-125px 0;margin-left:5px}
+.list_typtBox .type_showAll span.down{width:9px;height:6px;background-position:-125px -7px;margin-left:5px}
+.ticketsBox{margin-top:20px;background-color:#f7f7f7;border-top:2px solid #6c9ad3;padding-bottom:10px}
+.ticketsBox .t_title{height:40px;line-height:40px}
+.ticketsBox .t_title li{float:left;color:#555}
+.ticketsBox .t_title li.t_no{padding-left:25px;width:96px;_width:90px; line-height:35px;}
+.ticketsBox .t_title li a{text-decoration:none;color:#555;display:block;padding:0 5px;border-left:1px solid #f7f7f7;border-right:1px solid #f7f7f7;cursor:pointer;_padding:12px 5px 0 5px;_height:28px}
+.ticketsBox .t_title li a span{width:7px;height:15px;vertical-align:middle;margin-left:3px}
+.ticketsBox .t_title li a:hover{background-color:#fffdef;border-left:1px solid #ffdaa7;border-right:1px solid #ffdaa7}
+.ticketsBox .t_title li.t_go{_width:49px;_white-space:nowrap; line-height:39px;}
+.ticketsBox .t_title li.t_go .on,.ticketsBox .t_title li.t_to .on,.ticketsBox .t_title li.t_time .on,.ticketsBox .t_title li.t_price .on{background-color:#fffdef;border-left:1px solid #ffdaa7;border-right:1px solid #ffdaa7;}
+.ticketsBox .t_title li.t_go span.arr_up,.ticketsBox .t_title li.t_to span.arr_up{background-position:-42px 1px}
+.ticketsBox .t_title li.t_go span.arr_down,.ticketsBox .t_title li.t_to span.arr_down{background-position:-35px 1px}
+.ticketsBox .t_title li.t_go span.arr_nor,.ticketsBox .t_title li.t_to span.arr_nor{background-position:-65px -13px}
+.ticketsBox .t_title li.t_time span.arr_up,.ticketsBox .t_title li.t_price span.arr_up{background-position:-63px 1px}
+.ticketsBox .t_title li.t_time span.arr_down,.ticketsBox .t_title li.t_price span.arr_down{background-position:-70px 1px}
+.ticketsBox .t_title li.t_time .on span.arr_up,.ticketsBox .t_title li.t_price .on span.arr_up{background-position:-49px 1px}
+.ticketsBox .t_title li.t_time .on span.arr_down,.ticketsBox .t_title li.t_price .on span.arr_down{background-position:-56px 1px}
+.ticketsBox .t_title li.t_to{_width:49px;_white-space:nowrap; line-height:39px;}
+.ticketsBox .t_title li.t_sta{width:70px;margin-left:10px; line-height:39px;}
+.ticketsBox .t_title li.t_time{width:110px;text-align:center; line-height:39px;}
+.ticketsBox .t_title li.t_price{width:144px;text-align:center; line-height:39px;}
+.ticketsBox .t_title li.t_num{width:110px;text-align:center; line-height:39px;}
+.ticketsBox .ticketsBox_info{clear:both;border:1px solid #ddd;width:720px;margin:0 auto;background-color:#fff;padding:15px;margin-bottom:10px}
+.ticketsBox .ticketsBox_info:hover{border:1px solid #8be}
+.ticketsBox .ticketsBox_info .t_info{float:left; padding-bottom:10px;}
+.ticketsBox .ticketsBox_info .t_info li{float:left;color:#555}
+.ticketsBox .ticketsBox_info .t_info li.t_no{width:94px}
+.ticketsBox .ticketsBox_info .t_info li.t_no h1{font-size:24px;color:#555;font-weight:bolder;margin-bottom:3px}
+.ticketsBox .ticketsBox_info .t_info li.t_no a span.arr_down{width:9px;height:6px;background-position:-125px -7px;margin-left:2px;vertical-align:middle}
+.ticketsBox .ticketsBox_info .t_info li.t_no a span.arr_up{width:9px;height:6px;background-position:-125px 0;margin-left:2px;vertical-align:middle}
+.ticketsBox .ticketsBox_info .t_info li.t_go{width:30px;height:60px;background:url("../images/train_list_icon.png") no-repeat 21px -28px}
+.ticketsBox .ticketsBox_info .t_info li.t_go p{width:14px;height:14px;background:url("../images/train_list_icon.png") no-repeat 0 -14px;line-height:14px;text-align:center;margin-bottom:17px}
+.ticketsBox .ticketsBox_info .t_info li.t_go p.t_pass{background-position:-14px -14px;color:#3672bd}
+.ticketsBox .ticketsBox_info .t_info li.t_to{width:64px;margin-left:10px}
+.ticketsBox .ticketsBox_info .t_info li.t_to p{margin-bottom:7px;font-size:18px}
+.ticketsBox .ticketsBox_info .t_info li.t_to p.on{font-size:22px;color:#3672bd}
+.ticketsBox .ticketsBox_info .t_info li.t_sta{width:70px}
+.ticketsBox .ticketsBox_info .t_info li.t_sta p{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-bottom:8px}
+.ticketsBox .ticketsBox_info .t_info li.t_time{width:108px;text-align:left;border-left:1px solid #f0f0f0}
+.ticketsBox .ticketsBox_info .t_info li.t_time p{margin-bottom:8px;padding-left:25px}
+.ticketsBox .ticketsBox_info .t_info li.t_price{width:143px;text-align:center;border-left:1px solid #f0f0f0}
+.ticketsBox .ticketsBox_info .t_info li.t_price p{margin-bottom:6px}
+.ticketsBox .ticketsBox_info .t_info li.t_price p span{display:inline-block}
+.ticketsBox .ticketsBox_info .t_info li.t_price p span.t_seat{width:80px;*width:70px;text-align:right;vertical-align:middle}
+.ticketsBox .ticketsBox_info .t_info li.t_price p span.t_price_n{width:60px;text-align:left;color:#f80;font-size:16px;font-family:"微软雅黑","黑体",Arial,Helvetica,sans-serif;vertical-align:middle}
+.ticketsBox .ticketsBox_info .t_info li.t_price p span.t_price_n:first-letter {color:#999;font-size:14px}
+.ticketsBox .ticketsBox_info .t_info li.t_price p span.no_t{color:#999}
+.ticketsBox .ticketsBox_info .t_info li.t_num{width:111px;text-align:center;border-right:1px solid #f0f0f0}
+.ticketsBox .ticketsBox_info .t_info li.t_num p{margin-bottom:6px;color:#999;height:20px}
+.ticketsBox .ticketsBox_info .t_info li.t_num p.alarm{color:#f00}
+.ticketsBox .ticketsBox_info .t_info li.t_ord{width:50px;padding-left:30px}
+.ticketsBox .ticketsBox_info .t_info li.t_ord p{margin-bottom:6px;height:20px;text-align:center;font-size:14px;font-family:"微软雅黑","黑体",Arial,Helvetica,sans-serif;color:#999}
+.ticketsBox .ticketsBox_info .t_info li.t_ord p a{display:block;cursor:pointer;width:50px;height:20px;background:url("../images/train_list_icon.png") no-repeat -68px -32px;float:right;color:#fff}
+.ticketsBox .ticketsBox_info .t_info li.t_ord p a:hover{background-position:-68px -52px}
+.ticketsBox_info .t_place{clear:both;padding-top:10px;border-top:1px dashed #e2e2e2;margin-top:10px}
+.ticketsBox_info .t_place ul li{float:left;text-indent:-2em;text-align:center;height:76px;width:80px;margin-bottom:15px;white-space:nowrap;margin-top:5px}
+.ticketsBox_info .t_place ul li h1{color:#555}
+.ticketsBox_info .t_place ul li p{color:#999}
+.ticketsBox_info .t_place ul li span.line{display:block;height:14px;line-height:14px;background:url(../images/train_list_way.png) repeat-x -58px 0}
+.ticketsBox_info .t_place ul li span.on{background-position:-296px 0}
+.ticketsBox_info .t_place ul li.start span.line{background-position:-216px 0}
+.ticketsBox_info .t_place ul li.over span.line{background-position:-456px 0}
+.ticketsBox_info .t_place ul li.first span.line span{width:14px;height:14px;margin-left:20px;*margin-left:-15px;display:block}
+.ticketsBox_info .t_place ul li.first span.line{background-position:21px -28px;background-repeat:no-repeat}
+.ticketsBox_info .t_place ul li.first span.on{background-position:21px -14px}
+.ticketsBox_info .t_place ul li.last span.line{background-repeat:no-repeat;background-position:-219px -28px}
+.ticketsBox_info .t_place ul li.last span.line span{width:14px;height:14px;margin-left:20px;*margin-left:-15px;display:block}
+.ticketsBox_info .t_place ul li.last span.on{background-position:-219px -14px}
+.plane_hot .hot_title{background:#f0fbff url("../images/train_list_icon.png") no-repeat right -173px;height:40px;padding:15px;border-top:1px solid #d8e9f1;position:relative;z-index:2}
+.plane_hot .hot_title h1{font-family:"微软雅黑","黑体",Arial,Helvetica,sans-serif;font-size:20px;color:#3672bd;padding-bottom:7px}
+.plane_hot .hot_title a span{font-size:14px;color:#555}
+.plane_hot .hot_title a:hover span{font-size:14px;color:#f60}
+.plane_hot ul li{margin-top:-1px}
+.plane_hot ul li a{text-decoration:none;position:relative;display:block;padding:15px 7px;border-top:1px dashed #ddd}
+.plane_hot ul li a span{display:block}
+.plane_hot ul li a span.title{color:#555;font-weight:bolder}
+.plane_hot ul li a span.price{height:40px;text-align:right;position:absolute;right:0;top:15px;font-family:"微软雅黑","黑体",Arial,Helvetica,sans-serif;line-height:22px}
+.plane_hot ul li a span.price span{float:left;background-position:-11px -29px;color:#fff;text-align:left;padding-left:1px;font-size:12px}
+.plane_hot ul li a span.price .icon_sale{width:35px}
+.plane_hot ul li a span.price .icon_low{width:18px;height:22px;background-position:-40px -93px;margin-right:0}
+.plane_hot ul li a span.price .icon_arrow{display:none;width:28px;height:38px;background-position:-70px -92px;margin-left:20px}
+.plane_hot ul li a span.price span.word{font-size:20px;color:#f80}
+.plane_hot ul li a span.price span.word:first-letter {color:#999;font-size:14px;vertical-align:top;*vertical-align:baseline}
+.plane_hot ul li a span.price span.grey{color:#999;font-size:14px;vertical-align:top}
+.plane_hot ul li a span.info{color:#555}
+.plane_hot ul li a:hover{background-color:#DDF4FC}
+.plane_hot ul li a:hover span.price .icon_arrow{background-position:-99px -92px}
+.hotel_hot .hot_title{background:#f0fbff url("../images/train_list_icon.png") no-repeat right -245px;height:40px;padding:15px;border-top:1px solid #d8e9f1;position:relative;z-index:2}
+.hotel_hot .hot_title h1{font-family:"微软雅黑","黑体",Arial,Helvetica,sans-serif;font-size:20px;color:#3672bd;padding-bottom:7px}
+.hotel_hot .hot_title a span{font-size:14px;color:#555}
+.hotel_hot .hot_title a:hover span{font-size:14px;color:#f60}
+.hotel_hot ul li{margin-top:-1px}
+.hotel_hot ul li a{text-decoration:none;position:relative;display:block;padding:15px 7px;border-top:1px dashed #ddd}
+.hotel_hot ul li a span{display:block;color:#999}
+.hotel_hot ul li a span.title{color:#555}
+.hotel_hot ul li a span.price{font-family:"微软雅黑","黑体",Arial,Helvetica,sans-serif}
+.hotel_hot ul li a span.price{text-align:right;position:absolute;right:0;top:30px;overflow:visible}
+.hotel_hot ul li a span.price span.word{float:left;font-size:20px;color:#f80;line-height:22px;*display:inline-block}
+.hotel_hot ul li a span.price .word:first-letter {color:#999;font-size:14px;vertical-align:top}
+.hotel_hot ul li a span.price span.grey{color:#999;font-size:14px;vertical-align:top}
+.hotel_hot ul li a span.price span.icon_sale{position:absolute;background-position:-10px -58px;color:#fff;width:34px;text-align:left;padding-left:12px;font-size:12px;right:0;top:-31px}
+.hotel_hot ul li a span.price .icon_arrow{display:none;float:left;width:28px;height:38px;background-position:-71px -92px;margin-left:20px;margin-top:-10px;_margin-top:-4px}
+.hotel_hot ul li a:hover{background-color:#ddf4fc}
+.hotel_hot ul li a:hover .title{color:#36c}
+.hotel_hot ul li a:hover span.price .icon_arrow{background-position:-100px -92px}
+.tipBox{margin-top:10px}
+.tipBox h1{position:relative;font-size:16px;color:#555;font-family:"微软雅黑","黑体",Arial,Helvetica,sans-serif;line-height:39px;background-color:#f9f9f9;border-top:1px solid #e5e5e5;padding-left:10px}
+.tipBox h1 a{position:absolute;right:5px;top:1px;font-size:12px;*top:-6px}
+.tipBox h1 a:hover{color:#F30}
+.tipBox ul li{clear:both}
+.tipBox ul li p{padding-left:10px;color:#999;font-size:12px;line-height:26px;padding-bottom:5px}
+.tipBox ul li h2{padding-left:10px;font-size:14px;color:#ba8a49;margin-top:5px}
+.hotel_sug{overflow:hidden}
+.hotel_sug ul{padding-top:10px;width:810px;margin-left:-40px}
+.hotel_sug ul li{float:left;width:230px;*display:inline;margin-left:39px;position:relative}
+.hotel_sug ul li.ml0{margin-left:0}
+.hotel_sug ul li .tj{width:33px;height:26px;position:absolute;z-index:10;left:10px;top:-3px;background-position:0 -96px}
+.hotel_sug ul li a{text-decoration:none;position:relative;display:block;height:144px}
+.hotel_sug ul li a img{width:230px;height:144px}
+.hotel_sug ul li a span.txt{position:absolute;bottom:0;display:block;height:26px;line-height:26px;color:#fff;width:100%;background:url(../images/alpha_bg.png) repeat;left:0}
+.hotel_sug ul li a:hover img{opacity:.7;filter:Alpha(opacity=70)}
+.hotel_sug ul li a span.txt span.dis{float:left;padding-left:8px}
+.hotel_sug ul li a span.txt span.time{float:right;padding-right:3px}
+.hotel_sug ul li h1 a{font-size:14px;padding:10px 0 4px 0;height:auto;font-weight:bolder}
+.hotel_sug ul li h1 a:hover{color:#F30}
+.hotel_sug ul li p span.dp{color:#666;float:left}
+.hotel_sug ul li p span.price{float:right;font-family:"微软雅黑","黑体",Arial,Helvetica,sans-serif;color:#555}
+.hotel_sug ul li p span.price:first-letter {font-size:12px;vertical-align:top}
+.hotel_sug ul li p span.price span{font-size:16px;color:#ff6800}
+.mapBox{width:750px;position:relative;border:3px solid #999}
+.mapBox .close{display:block;position:absolute;right:0;top:0;width:25px;height:25px;background:url("../images/train_list_icon.png") no-repeat -131px -32px}
+.mapBox .maptxt ul li{float:left;width:375px;height:33px;line-height:33px;border-bottom:1px solid #e9eff3}
+.mapBox .maptxt ul li p{float:left;padding-left:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mapBox .maptxt ul li p.sta{width:110px}
+.mapBox .maptxt ul li p.dis{width:245px}
+.mapBox .maptxt ul li.on,.mapBox .maptxt ul li:hover{background-color:#f6f6f6}
+.mapBox .maptxt ul li.on p.sta,.mapBox .maptxt ul li:hover p.sta{font-weight:bolder}
+.icon_map{width:29px;height:29px;background:url("../images/mapIcon1.png") no-repeat 0 0;_background-image:url(../images/mapIcon1_ie6.png)}
+.icon_mapon{width:29px;height:29px;background:url("../images/mapIcon2.png") no-repeat 0 0;_background-image:url(../images/mapIcon2_ie6.png)}
+.no_result{width:750px;height:300px;margin:0 auto;background-color:#fff;border:1px solid #ddd;padding-top:180px}
+.trainMapInfo{width:340px;margin:0 auto;padding:10px 0;color:#666;font-size:14px}
+.icon_no{display:inline-block;width:72px;height:72px;float:left;background:url("../images/no_result_icon.jpg") no-repeat;vertical-align:middle}
+.trainMapInfo dd{padding:20px 0 0 10px;float:left;font-size:14px;font-family:"微软雅黑","黑体",Arial,Helvetica,sans-serif}
+.trainMapInfo dd h1{color:#555}
+.trainMapInfo dd p{color:#999}
+.list_tipbox{color:#8f6501;background-color:#fff5d3;border-top:1px solid #ffeba1;line-height:22px;padding:10px;margin-bottom:10px}
+.list_tipbox .icon2{width:18px;height:17px;background-position:right -379px;vertical-align:middle}
+.h-toTop{width:50px;position:fixed;bottom:120px;right:0;_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||120)));z-index:110}
+.h-toTop .but{width:50px;height:50px;margin-top:7px;background-position:0 -500px;cursor:pointer}
+.h-toTop .but:hover{background:url(../images/totop.gif) no-repeat}
+@media(min-width:1200px){#header .header_top{width:1200px}
+#nav{width:1200px}
+.box_type2{width:1200px}
+.leftBox{width:850px}
+.rightBox{width:340px}
+.list_dateBox ul{width:784px}
+.list_dateBox ul li a{width:108px}
+.list_typtBox{width:850px}
+.ticketsBox .ticketsBox_info{width:800px}
+.ticketsBox .t_title li.t_no{width:125px;_width:119px}
+.ticketsBox .ticketsBox_info .t_info li.t_no{width:124px}
+.ticketsBox .t_title li.t_sta{width:110px}
+.ticketsBox .ticketsBox_info .t_info li.t_sta{width:110px}
+.ticketsBox .t_title li.t_time{width:120px}
+.ticketsBox .ticketsBox_info .t_info li.t_time{width:118px}
+.hotel_sug ul{margin:0 auto;width:840px}
+.hotel_sug ul li{margin:0 25px}
+.plane_hot ul li{height:auto;}
+.plane_hot ul li a span.price .icon_arrow{display:block}
+.hotel_hot ul li a span.price .icon_arrow{display:block}
+.tipBox ul li p{float:right;width:260px}
+.tipBox ul li h2{float:left}
+.no_result{width:830px}
+}

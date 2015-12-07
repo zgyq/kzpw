@@ -1,0 +1,44 @@
+@charset "gb2312";
+/* CSS Document */
+body{margin:0px; padding:0px; font-size:12px; font-family:"宋体"; color:#36322f; font-size:12px; line-height:21px; background:#fff}
+a{color:#2577e3;}
+img{border:0px;}
+a:link {text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
+ul, p, dl, dt, dd, li, img, div, p, table {padding:0px; margin:0px;}
+li{list-style-position:outside; list-style-type:none;}
+h1, h2, h3, h4, h5{ padding:0px; margin:0px; font-weight:normal;}
+h2 { font-size:18px;}
+h5 { font-size:14px; line-height:21px;}
+.clearit { clear:both; width:0px; height:0px; overflow:hidden; zoom:1;}
+.space { height:10px; overflow:hidden;}
+img { vertical-align:top;}
+
+
+/头部样式*/
+#wrap{ min-width:1000px; }
+.header .top2{ background:url(../img/top-bg.gif) repeat-x; height:75px; width:100%}
+.header .top2 .logo{ float:left; padding:10px 0 0 10px;}
+.header .top2 .welcome{ float:right; color:#fff; width:200px; padding:30px 80px 0 0}
+.header .top2 .welcome a{ color:#fff;}
+.header .top2 .welcome span{ padding-right:5px;}
+.header .nav2{ height:40px; background:#0e5cc2; border:1px solid #024daf;}
+.header .nav2 li{ float:left; width:85px; line-height:40px; background:url(../img/nav-icon.png) no-repeat; text-indent:25px;}
+.header .nav2 li a{ color:#fff;}
+.header .nav2 li.plane-ticket{ background-position:0 -28px; text-indent:25px;}
+.header .nav2 li.hotel{ background-position:0 -67px; text-indent:30px;width:80px;}
+.header .nav2 li.pass{ background-position:0 -99px; text-indent:30px;width:80px;}
+.header .nav2 li.phone{ background-position:0 -134px; text-indent:30px; width:100px;}
+.header .nav2 li.travel{ background-position:0 -172px; text-indent:30px;width:70px;}
+.header .nav2 li.supply{ background-position:0 -213px; text-indent:30px;width:100px;}
+.header .nav2 li.panter{ background-position:0 -252px; text-indent:30px;width:110px;}
+.header .nav2 li.report{ background-position:0 -298px; text-indent:30px;width:100px;}
+.header .nav2 li.system{ background-position:0 -339px; text-indent:30px;}
+.left{ width:237px; position:absolute; left:0; background:#d8dbdd; border-right:1px solid #dcdfe0;border-bottom:1px solid #dcdfe0}
+.right{ margin-left:237px; background:#fff; }
+
+.guanbi{ float:left; background:#0a428c; width:221px; height:40px; line-height:40px; text-align:center; font-size:12px; color:#fff; cursor:pointer; margin-right:20px; font-weight:bold;}
+.QQ{ float:right; padding:5px 95px 0 0}
+
+

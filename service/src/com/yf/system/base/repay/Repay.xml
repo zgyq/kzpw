@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Repay">
+  
+  <typeAlias alias="Repay" type="com.yf.system.base.repay.Repay"/>
+  
+
+  <resultMap id="resultRepayMap" class="Repay">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="passengerid" column="C_PASSENGERID"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="hkuanprice" column="C_HKUANPRICE"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="updateid" column="C_UPDATEID"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+   
+   	 <result property="pricetype" column="C_PRICETYPE"/>
+    
+  </resultMap>
+  
+  <select id="findAllRepay"  resultMap="resultRepayMap"  parameterClass="java.util.Map">
+  
+    select * from T_REPAY
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllRepayBySql"  resultMap="resultRepayMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteRepayBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countRepayBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_REPAY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findRepay" parameterClass="long" resultClass="Repay">
+    select 
+    	ID as id,
+	  			C_PASSENGERID as passengerid,
+	  			C_AGENTID as agentid,
+	  			C_HKUANPRICE as hkuanprice,
+	  			C_ORDERID as orderid,
+	  			C_CREATETIME as createtime,
+	  			C_UPDATEID as updateid,
+	  			C_PRICETYPE as pricetype,
+	  			C_COMMENT as comment 
+     from T_REPAY
+    where ID = #id#
+  </select>
+   
+  <insert id="createRepay" parameterClass="Repay">
+    insert into T_REPAY ( 
+    	ID,
+	  			C_PASSENGERID,
+	  			C_AGENTID,
+	  			C_HKUANPRICE,
+	  			C_ORDERID,
+	  			C_CREATETIME,
+	  			C_UPDATEID,
+	  			C_PRICETYPE,
+	  			C_COMMENT 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#passengerid:DECIMAL#,
+						
+							#agentid:DECIMAL#,
+						
+							#hkuanprice:DECIMAL#,
+						
+							#orderid:DECIMAL#,
+						
+	  						#createtime#,
+	  					
+							#updateid:DECIMAL#,
+							
+							#pricetype:DECIMAL#,
+						
+	  						#comment#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteRepay" parameterClass="long">
+    delete from T_REPAY
+    where ID = #id#
+  </delete>
+	
+  <update id="updateRepay" parameterClass="Repay">
+    update T_REPAY 
+    set 
+    	C_PASSENGERID = #passengerid:DECIMAL#,
+						C_AGENTID = #agentid:DECIMAL#,
+						C_HKUANPRICE = #hkuanprice:DECIMAL#,
+						C_ORDERID = #orderid:DECIMAL#,
+						C_CREATETIME = #createtime#,
+	  					C_UPDATEID = #updateid:DECIMAL#,
+	  					C_PRICETYPE = #pricetype:DECIMAL#,
+						C_COMMENT = #comment#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

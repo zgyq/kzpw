@@ -1,0 +1,4236 @@
+/*from tccdn minify at 2013-12-26 9:22:11,file：/cn/c/s/2013/search.0.1.2.css,file：/cn/c/home/2013/index.0.1.9.css?v=2013122601*/
+.left_sp,.search_btn,.change_city,.changeHover,.scenicMap_img,.hotelMap_img,.btnMore_img,.wireless_title,.iphone,.android,.phone_weixin,.airplane_sp,.hotel_sp,.yzmErr,.phoneLbl,.wireless_begin,.hkAHotelA,.arrowBoth,.arrowBothHover,.dele_btn,.add_btn,.arrow,.lefSpan,.search_special,.search_submit,.search_special_hover,.search_submit_hover
+	{
+	background:
+		url('http://img1.40017.cn/cn/c/home/2013/cnHomePageSearch_06.png')
+		no-repeat
+}
+
+.search_box_wrapper {
+	width: 450px;
+	height: 350px;
+	float: left
+}
+
+.topMain .search_box {
+	float: left;
+	z-index: 10;
+	border: 5px solid #2a98da;
+	border-radius: 10px;
+	background-color: #fff;
+	width: 490px
+}
+
+#soso_17u div.search_right .color-normal {
+	color: #333
+}
+
+.search_box .search_main {
+	float: left;
+	background-color: #EDF8FF;
+	border-radius: 10px 0 0 10px
+}
+
+.search_main .search_left {
+	width: 120px
+}
+
+.search_main .search_left a {
+	display: block;
+	cursor: pointer;
+	border-bottom: 1px solid #b8dff6;
+	text-align: left;
+	width: 120px;
+	background-color: #edf8ff;
+	color: #010101;
+	font-size: 16px;
+	font-family: Microsoft YaHei;
+	line-height: 49px;
+	border-right: 1px solid #B8DFF6
+}
+
+.search_main .search_left a:hover {
+	text-decoration: none
+}
+
+.search_left .left_sp {
+	width: 22px;
+	height: 21px;
+	float: left;
+	margin: 16px 5px 0 10px
+}
+
+.search_left #top_hotel .left_sp {
+	background-position: 0 0
+}
+
+.search_left #top_airplane .left_sp {
+	background-position: 0 -36px
+}
+
+.search_left #top_scenic .left_sp {
+	background-position: 0 -71px
+}
+
+.search_left #top_selftrip .left_sp {
+	background-position: 0 -110px
+}
+
+.search_left #top_abroad .left_sp {
+	background-position: 0 -145px
+}
+
+.search_left #top_phone .left_sp {
+	background-position: 0 -177px
+}
+
+#top_hotel {
+	border-radius: 10px 0 0 0
+}
+
+.search_main .sp {
+	display: block;
+	width: 120px;
+	height: 45px;
+	border-right: 1px solid #B8DFF6
+}
+
+.search_main .search_left .hotel_at {
+	background-color: white;
+	border-right: 0;
+	color: #ffa73d;
+	width: 121px
+}
+
+.search_main .search_left .atop_hotel {
+	color: #ffa73d
+}
+
+.search_main .search_left .atop_airplane {
+	color: #009cff
+}
+
+.search_main .search_left .atop_scenic {
+	color: #22ade6
+}
+
+.search_main .search_left .atop_selftrip {
+	color: #80bc2b
+}
+
+.search_main .search_left .atop_abroad {
+	color: #2dbda3
+}
+
+.search_main .search_left .atop_phone {
+	color: #9c94ff
+}
+
+.search_main .search_left .airplane_at {
+	background-color: white;
+	border-right: 0;
+	color: #55bdff
+}
+
+.search_main .search_left .scenic_at {
+	background-color: white;
+	border-right: 0;
+	color: #4ebdeb
+}
+
+.search_main .search_left .selftrip_at {
+	background-color: white;
+	border-right: 0;
+	color: #80bc2b
+}
+
+.search_main .search_left .abroadtrip_at {
+	background-color: white;
+	border-right: 0;
+	color: #8fdcce
+}
+
+.search_main .search_left .phone_at {
+	background-color: white;
+	border-right: 0;
+	color: #d1cdff
+}
+
+.search_box .search_right {
+	float: left
+}
+
+.search_box .search_right .tray {
+	padding: 24px 0 0 25px
+}
+
+.search_box .search_right .ariplane_div {
+	padding-top: 14px
+}
+
+.search_box .search_right .hotel_tabdiv {
+	padding-top: 9px
+}
+
+.search_right .tab_hotel_con {
+	width: auto
+}
+
+.tab_hotel_con .list,.tab_airplane_con .list,.tab_phone_con .list,.tab_hotel_con .list_btn_search,.tab_airplane_con .list_btn_search
+	{
+	width: 308px;
+	line-height: 28px;
+	padding-bottom: 14px;
+	height: 28px
+}
+
+.tab_hotel_con .list {
+	_padding-bottom: 10px
+}
+
+.tab_hotel_con .list .list_tit,.tab_airplane_con .list .list_tit,.tab_phone_con .list .list_tit
+	{
+	width: auto;
+	margin-right: 10px;
+	color: #000;
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+	float: left
+}
+
+.tab_hotel_con .list .list_con,.tab_airplane_con .list .list_con,.tab_hotel_con .list_btn_search .list_con,.tab_airplane_con .list_btn_search .list_con,.tab_phone_con .list .list_con,.tab_phone_con .list_btn_search .list_con
+	{
+	float: left
+}
+
+.tab_airplane_con .list .at {
+	float: right
+}
+
+.tab_hotel_con .list .list_con .input02,.tab_airplane_con .list .list_con .input02,.tab_phone_con .list .list_con .input02
+	{
+	width: 236px;
+	height: 27px;
+	border: 1px solid #c9c9c9;
+	color: #999;
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+	line-height: 27px;
+	padding-left: 3px
+}
+
+.tab_hotel_con .list_btn_search .search_btn,.tab_airplane_con .list_btn_search .search_btn,.tab_airplane_con .need_btn_search .search_btn,.tab_scenic_con table tr .scenicBtn .search_btn,.tab_self_con table tr .selfBtn .search_btn,.tab_abroad_con table tr .abroadBtn .search_btn,.tab_phone_con .list_btn_search .search_btn
+	{
+	text-align: center;
+	color: white;
+	font-size: 18px;
+	font-family: Microsoft YaHei;
+	display: inline-Block;
+	cursor: pointer;
+	background-position: 0 -215px;
+	width: 242px;
+	height: 33px;
+	line-height: 33px;
+	border: 0
+}
+
+.tab_hotel_con .list_btn_search .search_btnHover,.tab_airplane_con .list_btn_search .search_btnHover,.tab_airplane_con .need_btn_search .search_btnHover,.tab_scenic_con table tr .scenicBtn .search_btnHover,.tab_self_con table tr .selfBtn .search_btnHover,.tab_abroad_con table tr .abroadBtn .search_btnHover,.tab_phone_con .list_btn_search .search_btnHover
+	{
+	background-position: 0 -263px;
+	border: 0
+}
+
+.tab_hotel_con .list_btn_search .list_tit,.tab_airplane_con .list_btn_search .list_tit,.tab_phone_con .list_btn_search .list_tit
+	{
+	width: 66px;
+	height: 20px;
+	float: left;
+	margin-right: 0
+}
+
+.tab_phone_con .list_btn_search .searchBtnTit {
+	margin-right: 4px
+}
+
+.tab_hotel_con .list_btn_search .search_btn:hover,.tab_airplane_con .list_btn_search .search_btn:hover,.tab_scenic_con table tr .scenicBtn .search_btn:hover,.tab_self_con table tr .selfBtn .search_btn:hover,.tab_abroad_con table tr .abroadBtn .search_btn:hover,.tab_phone_con .list_btn_search .search_btn:hover
+	{
+	text-decoration: none
+}
+
+.tab_hotel_con .hotel_list01,.tab_airplane_con .airplane_list01,.tab_scenic_con .scenic_list01,.tab_scenic_con .scenic_list03,.tab_self_con .self_list01,.tab_abroad_con .abroad_list01,.tab_phone_con .download_list01
+	{
+	border-top: 1px solid #ddd;
+	margin-top: 21px;
+	width: 306px;
+	height: 45px;
+	line-height: 45px
+}
+
+.tab_hotel_con .hotel_list01 {
+	margin-top: 5px
+}
+
+.tab_scenic_con .scenic_list01 {
+	border-top: 0;
+	margin-top: 0
+}
+
+.tab_airplane_con .airBottom {
+	margin-top: 54px;
+	_margin-top: 39px
+}
+
+.tab_airplane_con .airBottomBack {
+	margin-top: 16px;
+	_margin-top: -2px
+}
+
+.tab_hotel_con .hotel_list01 li {
+	float: left;
+	padding-right: 32px
+}
+
+.scenic_list01 a {
+	color: #2183C0
+}
+
+.scenic_list01 a:hover {
+	color: #f60
+}
+
+#otherCtyList {
+	_margin-bottom: 4px
+}
+
+.otcitylist label {
+	font-family: simsun;
+	color: #666;
+	font-size: 12px;
+	margin-right: 29px
+}
+
+#otherCtyList .input04 {
+	_height: 27px
+}
+
+#content .hotel_list01 .hkAHotelA {
+	background-position: -242px -82px;
+	width: 17px;
+	height: 27px;
+	float: left;
+	margin: 10px 10px 0;
+	display: block
+}
+
+#content .hotel_list01 .hkAHotelA:hover {
+	background-position: -242px 7px;
+	text-decoration: none
+}
+
+#content .hotel_list01 .tgHotelA {
+	background-position: 0 -411px;
+	margin-left: 77px;
+	_margin-left: 0
+}
+
+#content .hotel_list01 .tgHotelA:hover {
+	background-position: -110px -411px
+}
+
+#content .hotel_list01 .hkAHotelWord {
+	font-family: "microsoft yahei";
+	font-size: 14px;
+	color: #2a98da;
+	float: left;
+	width: 70px;
+	line-height: 30px;
+	margin-left: 22px
+}
+
+#content .hotel_list01 a:hover .hkAHotelWord {
+	color: #ffa63c
+}
+
+.hotel-warn {
+	color: #333;
+	height: 27px;
+	position: absolute;
+	z-index: 1000000
+}
+
+.hotel-warn .arrow,.hotel-warn .info {
+	float: left;
+	height: 27px
+}
+
+.hotel-warn .arrow {
+	background-position: -49px 0;
+	height: 27px;
+	width: 6px
+}
+
+.hotel-warn .info {
+	border: 1px #ffdf47 solid;
+	border-left: none;
+	background: #ffffe8;
+	color: #f60;
+	line-height: 25px;
+	height: 25px;
+	padding-left: 5px;
+	padding-right: 5px
+}
+
+* html .hotel-warn .arrow,* html .hotel-warn .info {
+	display: inline
+}
+
+.errMasBorder {
+	position: absolute;
+	z-index: 1001;
+	margin-left: 108px;
+	margin-top: -27px;
+	float: left;
+	width: 500px;
+	display: none
+}
+
+* :first-child+html .errMasBorderSpec {
+	margin-left: 10px
+}
+
+.errMasBorder {
+	width: 600px;
+	margin-left: 184px; *
+	margin-left: -150px; *
+	margin-top: 2px
+}
+
+#holidayMasErr1 {
+	margin-top: -27px
+}
+
+.errMasBorder .lefSpan {
+	background-position: -49px 0;
+	float: left;
+	height: 27px;
+	width: 6px
+}
+
+.errMasBorder .rgtSpan {
+	float: left;
+	border: 1px #ffdf47 solid;
+	border-left: none;
+	background: #ffffe8;
+	color: #f60;
+	line-height: 25px;
+	height: 25px;
+	padding-left: 5px;
+	padding-right: 5px
+}
+
+.six_iframe {
+	top: 5px;
+	left: 0;
+	width: 320px;
+	position: absolute;
+	z-index: 9999;
+	opacity: 0;
+	border: none !important;
+	filter: Alpha(Opacity = 0)
+}
+
+.dimCity {
+	position: absolute;
+	z-index: 999; *
+	margin-top: -1px
+}
+
+.soso_tbl {
+	background: #fff;
+	border: 1px #9b9b9b solid;
+	width: 108px;
+	position: absolute;
+	z-index: 99999;
+	font-size: 12px;
+	margin-top: -1px;
+	width: 220px;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2)
+}
+
+.soso_tbl .tbl_td1 {
+	font-family: Simyou;
+	border-bottom: 1px #ddd solid;
+	color: #666;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	color: #999
+}
+
+.soso_tbl .tbl_td11 {
+	font-family: "宋体";
+	border-bottom: 1px #ddd dashed;
+	color: #333;
+	font-size: 14px;
+	font-weight: bold
+}
+
+.soso_tbl .noResult {
+	padding-bottom: 6px;
+	padding-top: 7px
+}
+
+.soso_tbl td {
+	white-space: nowrap;
+	padding: 2px 5px;
+	line-height: 1.6
+}
+
+.soso_tbl img {
+	float: left;
+	width: 9px;
+	height: 11px;
+	padding-top: 4px; *
+	padding-top: 3px
+}
+
+.soso_tbl .aOut {
+	color: #005bb5;
+	cursor: pointer
+}
+
+.soso_tbl .aOut1 {
+	cursor: pointer
+}
+
+.soso_tbl .aHover {
+	color: #fff;
+	cursor: pointer;
+	background: #28e
+}
+
+.soso_tbl .aHover1 {
+	color: #fff;
+	cursor: pointer;
+	background: #28e
+}
+
+.soso_tbl .td_lef {
+	text-align: left
+}
+
+.soso_tbl .td_rgt {
+	text-align: right
+}
+
+li.mNotice-mTab-item {
+	font-weight: 500
+}
+
+.mNotice-mTab-tab-tray li.current {
+	font-weight: bold
+}
+
+div.mNotice-tray {
+	background: #fff;
+	border: 1px solid #9b9b9b
+}
+
+.mNotice-tray .mNotice-head {
+	font-weight: 500;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px
+}
+
+.mNotice-tray .mNotice-normal {
+	padding: 0 5px;
+	margin-top: 5px
+}
+
+.mNotice-tray .mNotice-hover {
+	text-decoration: none;
+	border: 1px solid #ffd5a1;
+	height: 17px;
+	line-height: 17px;
+	padding: 0 4px;
+	background: #fff8ee
+}
+
+div.listbox_se {
+	border: 1px solid #9b9b9b;
+	background-color: #fff;
+	width: 218px;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2)
+}
+
+.listbox_se dl dt {
+	font-size: 12px;
+	font-weight: 500;
+	color: #999;
+	border-bottom: 1px solid #ddd;
+	line-height: 28px
+}
+
+.listbox_se dl dd {
+	line-height: 24px
+}
+
+.search_right .tab_airplane_con {
+	width: auto
+}
+
+.tab_airplane_con .airplane_tab,.tab_hotel_con .hotel_tab { *
+	width: 308px;
+	_width: auto;
+	height: 24px;
+	border-bottom: 2px solid #ddd; *
+	margin: 0 20px 0 0
+}
+
+.tab_hotel_con .hotel_tab {
+	margin-bottom: 10px;
+	_width: 308px
+}
+
+#ileaveCityDiv,#leaveCityDiv {
+	position: relative
+}
+
+.tab_airplane_con .airplane_tab a,.tab_hotel_con .hotel_tab .nor,.tab_hotel_con .hotel_tab .hotelIn
+	{
+	display: block;
+	width: 60px;
+	height: 21px;
+	padding-right: 30px;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	font-size: 14px;
+	font-family: "microsoft yahei";
+	color: #666
+}
+
+.tab_airplane_con .airplane_tab .airpInter,.tab_hotel_con .hotel_tab .hotelIn
+	{
+	color: #2a98da
+}
+
+.tab_airplane_con .airplane_tab a:hover,.tab_hotel_con .hotel_tab .nor:hover,.tab_hotel_con .hotel_tab .hotelIn:hover
+	{
+	text-decoration: none;
+	color: #2A98DA
+}
+
+.tab_airplane_con .airplane_tab a .airplane_sp,.tab_hotel_con .hotel_tab span .hotel_sp
+	{
+	background-position: -90px -83px;
+	width: 60px;
+	height: 9px;
+	display: none;
+	position: absolute; *
+	top: 20px; *
+	left: 0
+}
+
+.tab_airplane_con .airplane_tab .airpInter .airplane_sp,.tab_hotel_con .hotel_tab .hotelIn .hotel_sp
+	{
+	display: block
+}
+
+.tab_airplane_con .airplane_rad {
+	width: auto;
+	padding-top: 20px; *
+	padding-top: 16px;
+	_padding-top: 14px;
+	padding-bottom: 3px
+}
+
+.tab_airplane_con .airplane_rad li {
+	float: left;
+	margin-right: 30px;
+	width: auto;
+	height: 25px;
+	color: #666;
+	font-size: 12px;
+	font-family: simsun;
+	display: inline
+}
+
+.tab_airplane_con .change_city {
+	display: block;
+	background-position: -204px 0;
+	width: 15px;
+	height: 43px;
+	position: absolute;
+	top: 13px;
+	left: 311px;
+	cursor: pointer
+}
+
+.tab_airplane_con .changeHover {
+	background-position: -184px 0
+}
+
+.tab_airplane_con .airplane_list01 li,.tab_scenic_con .scenic_list02 li,.tab_self_con .self_list02 li,.tab_abroad_con .abroad_list02 li
+	{
+	float: left;
+	font-size: 12px;
+	color: #666;
+	font-family: simsun;
+	padding-right: 32px;
+	height: 20px;
+	line-height: 20px;
+	white-space: nowrap
+}
+
+.tab_scenic_con .scenic_list02 li {
+	padding-right: 17px
+}
+
+.tab_scenic_con .selectAim li {
+	width: 54px;
+	padding-right: 0
+}
+
+.tab_scenic_con .hotListRec li {
+	padding-right: 20px
+}
+
+.tab_airplane_con .airplane_list01 li {
+	height: 30px;
+	line-height: 30px
+}
+
+.tab_airplane_con .airplane_list01 li a {
+	padding-left: 5px
+}
+
+.tab_airplane_con .historyA {
+	font-size: 12px;
+	margin-right: 20px;
+	line-height: 22px
+}
+
+.tab_airplane_con .historyBox {
+	width: 306px;
+	margin-top: 14px;
+	_margin-top: 6px;
+	border-top: 1px solid #DDD;
+	padding-bottom: 4px
+}
+
+.flightInterBg {
+	position: absolute;
+	padding-left: 20px;
+	height: 30px;
+	line-height: 30px;
+	bottom: 0;
+	display: block;
+	font-size: 12px;
+	background:
+		url(http://js.40017.cn/cn/public/js/smartSearch/search.1.0.png?v=3)
+		-250px -244px no-repeat #FFF
+}
+
+.historyBox {
+	margin-top: 5px;
+	border-top: 1px dashed #DDD;
+	padding-top: 6px;
+	padding-bottom: 2px
+}
+
+.search_index .historyBox {
+	margin-top: 2px
+}
+
+.arrowBoth {
+	background-position: -48px -32px
+}
+
+.arrowBothHover {
+	background-position: -48px -48px
+}
+
+.historyText {
+	float: left;
+	display: inline-block;
+	color: #666
+}
+
+.autofill_tray .match_div {
+	padding: 2px 6px
+}
+
+.match_right {
+	float: right
+}
+
+.match_left {
+	float: left
+}
+
+.search_right .tab_scenic_con,.search_right .tab_self_con,.search_right .tab_abroad_con,.search_right .tab_phone_con
+	{
+	width: auto
+}
+
+.tab_scenic_con table,.tab_self_con table,.tab_abroad_con table {
+	width: 311px;
+	border-bottom: 1px solid #ddd
+}
+
+.tab_scenic_con table {
+	border-bottom: 0
+}
+
+.tab_scenic_con td.scenicInput,.tab_scenic_con td.scenicBtn,.tab_self_con td.selfInput,.tab_self_con td.selfBtn,.tab_abroad_con td.abroadInput,.tab_abroad_con td.abroadBtn
+	{
+	padding-top: 5px
+}
+
+.tab_scenic_con table tr .scenicTitle,.tab_self_con table tr .selfTitle,.tab_abroad_con table tr .abroadTitle
+	{
+	line-height: 28px;
+	color: #000;
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+	width: auto
+}
+
+.tab_self_con table tr .selfTitle .hotel_ticket {
+	color: #b54800
+}
+
+.tab_scenic_con table tr .scenicMap,.hotel_div {
+	line-height: 28px;
+	color: #2183c0;
+	font-size: 12px;
+	font-family: simsun;
+	text-align: right
+}
+
+.hotel_div {
+	float: right;
+	line-height: 22px;
+	_padding-top: 2px
+}
+
+.searchSenic,.search_hotel {
+	padding-left: 1px; *
+	padding-left: 6px;
+	color: #2084C2
+}
+
+.searchSenic:hover,.search_hotel:hover {
+	color: #f60
+}
+
+.tab_scenic_con table tr .scenicMap .scenicMap_img,.hotelMap_img {
+	background-position: -50px -149px;
+	display: inline-Block;
+	width: 12px;
+	height: 16px;
+	vertical-align: middle
+}
+
+.tab_scenic_con table tr .scenicInput .input02,.tab_self_con table tr .selfInput .input02,.tab_abroad_con table tr .abroadInput .input02
+	{
+	width: 306px;
+	height: 28px;
+	border: 1px solid #c9c9c9;
+	color: #999;
+	font-family: Microsoft YaHei;
+	font-size: 14px;
+	line-height: 28px;
+	padding-left: 3px
+}
+
+.tab_abroad_con table tr .abroadInput .input02 {
+	width: 236px
+}
+
+.tab_scenic_con table tr .scenicBtn,.tab_self_con table tr .selfBtn,.tab_abroad_con table tr .abroadBtn
+	{
+	height: 30px;
+	text-align: right;
+	padding-bottom: 15px
+}
+
+.tab_scenic_con .scenic_list01,.tab_scenic_con .scenic_list03,.tab_self_con .self_list01,.tab_abroad_con .abroad_list01
+	{
+	color: #666;
+	font-family: simsun;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px
+}
+
+.tab_self_con .self_list01 {
+	border-top: 0;
+	margin-top: 4px
+}
+
+.tab_scenic_con .scenic_list03 {
+	border-top: 0;
+	margin-top: 0
+}
+
+.tab_scenic_con .scenic_list02 {
+	width: auto
+}
+
+.tab_scenic_con .scenic_list02 a,.tab_self_con .self_list02 a,.tab_abroad_con .abroad_list02 a
+	{
+	color: #2183c0
+}
+
+.tab_scenic_con .scenic_list02 a:hover,.tab_self_con .self_list02 a:hover,.tab_abroad_con .abroad_list02 a:hover
+	{
+	color: #f60
+}
+
+.tab_scenic_con .scenic_list02 a {
+	display: inline-block;
+	width: 60px;
+	overflow: hidden
+}
+
+.tab_scenic_con .btn_more {
+	line-height: 15px;
+	height: 15px;
+	float: right;
+	cursor: pointer;
+	color: #999b9a;
+	font-size: 12px;
+	font-family: simsun;
+	margin-top: -17px;
+	margin-right: 15px;
+	border: 1px solid #ddd
+}
+
+#seSceDes {
+	border: 0;
+	height: 20px;
+	margin-top: 0;
+	overflow: hidden
+}
+
+#seSceDes li {
+	float: left;
+	height: 20px;
+	line-height: 20px;
+	width: 43px;
+	padding-right: 6px;
+	overflow: hidden
+}
+
+.fdMoreSelf {
+	margin-left: 0
+}
+
+.tab_scenic_con .btn_more .btnMore_img {
+	display: inline-block;
+	background-position: -210px -527px;
+	width: 7px;
+	height: 4px;
+	position: absolute;
+	top: 5px;
+	left: 27px
+}
+
+.citybox .clear {
+	clear: both
+}
+
+#scenicMasErr1 {
+	margin-top: -28px
+}
+
+.scenicInput .cityout {
+	z-index: 999;
+	overflow: hidden;
+	height: auto
+}
+
+.citybox {
+	width: 439px;
+	border: 1px solid #bbdfff;
+	float: left;
+	background: none scroll repeat 0 0 #fff
+}
+
+.citybox .title,.citybox .citylist .hottitle {
+	color: #333;
+	font-weight: 700
+}
+
+.citybox .title {
+	height: 29px;
+	line-height: 29px;
+	padding-left: 10px;
+	font-size: 14px;
+	background: none scroll no-repeat 0 0 #eef7ff
+}
+
+.citybox .title .close {
+	float: right;
+	width: 20px;
+	height: 20px;
+	display: block;
+	cursor: pointer;
+	color: #777;
+	margin-right: 5px;
+	text-decoration: none;
+	background: url(http://js.40017.cn/cn/public/img/searchBox4.png) -383px
+		-113px no-repeat
+}
+
+.citybox .citylist {
+	padding: 0 10px 10px;
+	width: 419px
+}
+
+.citybox .citylist .hottitle {
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	border-bottom: 1px dashed #ccc
+}
+
+.citybox .citylist .hotlist {
+	float: left
+}
+
+.citybox .citylist .hotlist a {
+	float: left;
+	display: block;
+	padding-right: 25px;
+	font-size: 12px;
+	line-height: 25px;
+	white-space: nowrap
+}
+
+#tab_top_scenic .citybox {
+	margin-top: 5px
+}
+
+#tab_top_scenic td.td_lef {
+	line-height: 1.6
+}
+
+.soso_tbl .tbl_none {
+	display: none
+}
+
+.tab_scenic_con .soso_tbl {
+	margin-top: 5px;
+	border-bottom: 1px solid #ddd
+}
+
+.scenery_search_city_more {
+	text-align: center;
+	float: right
+}
+
+.tab_scenic_con .scenery_search_city_more {
+	margin: -21px -19px 0 0
+}
+
+.tab_abroad_con .scenery_search_city_more {
+	margin: -26px 55px 0 0; *
+	margin: -25px 85px 0 0;
+	_margin-right: 45px
+}
+
+.scenery_search_city_more .oteCitySpan {
+	width: 37px;
+	font-family: "宋体";
+	float: left;
+	color: #666;
+	height: 21px;
+	text-align: center;
+	cursor: pointer;
+	padding: 0 5px;
+	border: 1px #fff solid;
+	border-bottom: 0;
+	line-height: 20px;
+	position: relative;
+	background: #fff;
+	z-index: 20
+}
+
+.scenery_search_city_more .oteCity {
+	text-align: center;
+	float: left;
+	color: #2183c0;
+	font-family: "Microsoft YaHei", Arial, sans-serif;
+	line-height: 18px; *
+	line-height: 19px
+}
+
+.scenery_search_city_more .oteCity:hover {
+	text-decoration: none;
+	color: #2183c0
+}
+
+.scenery_search_city_more .oteCitySpan b {
+	float: left;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+	font-size: 0;
+	line-height: 0;
+	border-color: #177bdd transparent transparent transparent;
+	border-style: solid dashed dashed dashed;
+	border-width: 4px;
+	margin: 7px 0 0 5px
+}
+
+.scenery_search_city_more .oteCitySpan_on {
+	border: 1px #bbe0f6 solid;
+	border-bottom: 0
+}
+
+.scenery_search_city_more .oteCitySpan_on b {
+	border-color: transparent transparent #177bdd transparent;
+	border-style: dashed dashed solid dashed;
+	border-width: 4px; *
+	border-width: 5px;
+	margin: 3px 0 0 5px; *
+	margin: 1px 0 0 5px
+}
+
+.scenery_search_city_more .tabs {
+	height: 23px;
+	border-bottom: 1px #bbe0f6 solid;
+	margin-bottom: 10px;
+	padding-left: 7px
+}
+
+.scenery_search_city_more .tabs li {
+	list-style-type: none;
+	float: left;
+	display: block;
+	padding: 0 10px;
+	cursor: pointer;
+	line-height: 23px;
+	height: 23px;
+	color: #2183c0
+}
+
+.scenery_search_city_more .tabs li.current {
+	border: 1px solid #bbe0f6;
+	border-bottom: 0;
+	padding: 0 10px;
+	cursor: default;
+	color: #333;
+	font-weight: bold;
+	background: #fff;
+	position: relative;
+	bottom: -1px;
+	height: 22px
+}
+
+.scenery_search_city_more .mc_content {
+	overflow: hidden
+}
+
+.scenery_search_city_more .mc_content .item {
+	overflow: hidden
+}
+
+.scenery_search_city_more .searchCityIframe {
+	margin-left: 0; *
+	margin-left: -59px;
+	margin-top: 31px;
+	position: absolute;
+	width: 500px;
+	height: 600px
+}
+
+.scenery_search_city_more .box {
+	display: none;
+	margin-left: 0; *
+	margin-left: -49px;
+	_margin-left: -51px;
+	margin-top: 21px;
+	position: absolute;
+	z-index: 10
+}
+
+.scenery_search_city_more .rBox_top_r {
+	background: #fff;
+	border: 1px solid #bbe0f6;
+	overflow: hidden;
+	padding: 10px;
+	width: 390px
+}
+
+.scenery_search_city_more .rBox_top_r_active {
+	display: block
+}
+
+.scenery_search_city_more .rBox_top_r .tt,.rBox_top_r .ct,.rBox_top_r .ct a
+	{
+	background: 0;
+	border: 0;
+	padding: 0;
+	position: static;
+	float: left;
+	width: 0;
+	width: auto;
+	line-height: 20px;
+	height: 0;
+	height: auto;
+	display: block
+}
+
+* html .scenery_search_city_more .rBox_top_r .tt,* html .scenery_search_city_more .rBox_top_r .ct,* html .scenery_search_city_more .rBox_top_r .ct a
+	{
+	display: inline
+}
+
+.scenery_search_city_more .rBox_top_r .tt {
+	margin-right: 1em;
+	color: #f60;
+	font-weight: bold;
+	width: 12px;
+	text-align: center
+}
+
+.scenery_search_city_more .rBox_top_r .ct {
+	margin-left: -5px;
+	width: 390px
+}
+
+.scenery_search_city_more .rBox_top_r .ct a {
+	margin-left: 20px;
+	white-space: nowrap;
+	font-weight: normal
+}
+
+* html .scenery_search_city_more .rBox_top_r .ct a {
+	vertical-align: 2px
+}
+
+.scenery_search_city_more .rBox_top_r a {
+	font-weight: bold;
+	margin-right: 5px;
+	padding-left: 2px;
+	padding-right: 2px;
+	float: left;
+	line-height: 20px;
+	text-decoration: none
+}
+
+.scenery_search_city_more .rBox_top_r .rBox_top_r_active {
+	display: block;
+	position: absolute;
+	z-index: 10;
+	right: 0;
+	top: 27px;
+	width: 241px;
+	background: #fff
+}
+
+.scenery_search_city_more .rBox_top_r_active {
+	width: 379px
+}
+
+.scenery_search_city_more .rBox_top_r_active .item {
+	padding: 0 0 0 10px;
+	width: 347px;
+	float: left;
+	margin-top: 5px;
+	display: block
+}
+
+.scenery_search_city_more .rBox_top_r_active .first_item {
+	margin-top: 0
+}
+
+.scenery_search_city_more .rBox_top_r_active .tt,.scenery_search_city_more .rBox_top_r_active .ct,.scenery_search_city_more .rBox_top_r_active .ct a
+	{
+	background: 0;
+	border: 0;
+	padding: 0;
+	position: static;
+	float: left;
+	width: 0;
+	width: auto;
+	line-height: 20px;
+	height: 0;
+	height: auto
+}
+
+* html .scenery_search_city_more .rBox_top_r_active .tt,* html .scenery_search_city_more .rBox_top_r_active .ct,* html .scenery_search_city_more .rBox_top_r_active .ct a
+	{
+	display: inline
+}
+
+.scenery_search_city_more .rBox_top_r_active .tt {
+	margin-right: 1em;
+	color: #f60;
+	font-weight: bold;
+	width: 12px;
+	text-align: center
+}
+
+.scenery_search_city_more .rBox_top_r_active .ct {
+	width: 356px;
+	padding-left: 10px;
+	margin-left: -20px
+}
+
+.scenery_search_city_more .rBox_top_r_active .ct a {
+	margin-left: 20px;
+	white-space: nowrap;
+	font-weight: normal
+}
+
+* html .scenery_search_city_more .rBox_top_r_active .ct a {
+	vertical-align: 2px
+}
+
+.scenery_search_city_more .rBox_top_r .ct a {
+	border: 1px #fff solid;
+	padding: 0 4px;
+	color: #2183c0
+}
+
+.scenery_search_city_more .rBox_top_r .ct a:hover {
+	background-color: #edf7ff;
+	border: 1px #bddefd solid;
+	color: #2183c0;
+	padding: 0 4px
+}
+
+.zzy_search {
+	width: 350px;
+	overflow: hidden;
+	background: #fff;
+	position: absolute;
+	margin-left: 0;
+	z-index: 1111
+}
+
+.zzy_search .zzy_search_head {
+	width: 350px;
+	height: 27px;
+	background: #2a98da;
+	font-family: "宋体"
+}
+
+.zzy_search .zzy_search_head .tit {
+	color: #fff;
+	font-weight: bold;
+	line-height: 27px;
+	font-size: 12px;
+	float: left;
+	padding: 0 0 0 10px
+}
+
+.zzy_search .zzy_search_head .tit_state {
+	float: left;
+	color: #fff;
+	line-height: 27px
+}
+
+.zzy_search .zzy_search_main {
+	border: 1px #bbe0f6 solid;
+	border-top: 0;
+	padding: 10px
+}
+
+.zzy_search .zzy_info {
+	overflow: hidden
+}
+
+.zzy_search .zzy_info .zzy_info_tit {
+	display: block;
+	height: 22px;
+	background: #f3f3f3;
+	font-weight: bold;
+	text-indent: 10px;
+	line-height: 22px
+}
+
+.zzy_search .zzy_info ul {
+	overflow: hidden;
+	width: 326px;
+	padding-top: 10px
+}
+
+.zzy_search .zzy_info ul li {
+	float: left;
+	padding: 0 15px 0 10px;
+	white-space: nowrap
+}
+
+.zzy_search .zzy_info ul li a {
+	color: #333
+}
+
+.zzy_search .zzy_info ul li a:hover {
+	color: #f60
+}
+
+.nob {
+	font-weight: normal;
+	font-size: 12px
+}
+
+.top_reco {
+	float: left;
+	width: 720px;
+	overflow: hidden
+}
+
+.m_box {
+	float: left;
+	width: 720px
+}
+
+.tab_self_con ul.selfHotList,.tab_abroad_con ul.abroad_list02 {
+	width: 310px
+}
+
+.tab_phone_con {
+	height: auto
+}
+
+.tab_phone_con .wireless_div {
+	width: 312px;
+	height: auto
+}
+
+.tab_phone_con .wireless_div .wireless_begin {
+	background-position: -90px -107px;
+	width: 140px;
+	height: 17px;
+	margin: 12px 0 0 10px;
+	float: left
+}
+
+.tab_phone_con .wireless_title {
+	background-position: -90px -145px;
+	width: 147px;
+	height: 36px;
+	display: inline-block;
+	float: left;
+	padding-bottom: 10px
+}
+
+.tab_phone_con .list_btn_search .search_btn {
+	background-position: 0 -323px;
+	font-size: 14px;
+	height: 31px;
+	line-height: 31px
+}
+
+.tab_phone_con .list_btn_search .search_btnHover {
+	background-position: 0 -377px
+}
+
+.tab_phone_con .list {
+	width: 312px;
+	z-index: 1
+}
+
+.tab_phone_con .list .list_tit {
+	text-align: right;
+	width: 60px
+}
+
+.tab_phone_con .list .list_con .inputShort {
+	width: 76px
+}
+
+.list_btn_search {
+	width: 312px
+}
+
+.list_con .iphone,.list_con .android {
+	display: inline-block;
+	width: 20px;
+	height: 38px;
+	padding-right: 5px;
+	float: left
+}
+
+.list_con .iphone {
+	background-position: -48px -59px
+}
+
+.list_con .android {
+	background-position: -46px -98px
+}
+
+.list_con .iph_word,.list_con .and_word {
+	display: inline-block;
+	padding-right: 15px;
+	font-size: 14px;
+	color: #2a98da;
+	font-family: Microsoft YaHei;
+	float: left;
+	cursor: pointer
+}
+
+.phone_pic {
+	width: 312px;
+	height: 70px;
+	margin-top: 7px; *
+	margin-top: 0;
+	display: inline
+}
+
+.phone_pic .phone_img {
+	width: 238px;
+	height: 70px;
+	float: left
+}
+
+.phone_pic .phone_weixin {
+	background-position: -89px 0;
+	width: 70px;
+	height: 70px;
+	display: inline-block
+}
+
+.yzmErr {
+	background-position: -180px -54px;
+	display: inline;
+	border: 1px solid #ffd5a1;
+	width: 68px;
+	height: 20px;
+	line-height: 20px;
+	color: #000;
+	font-size: 12px;
+	font-family: simsun;
+	padding: 2px 0 0 25px;
+	background-color: #fff8ee;
+	position: absolute;
+	margin-left: 150px;
+	margin-top: -25px; *
+	margin-left: 70px; *
+	margin-top: 2px
+}
+
+.yzmErr {
+	margin-top: 4px\0;
+	margin-left: 80px\0
+}
+
+.phoneErrSp {
+	height: 30px;
+	width: auto
+}
+
+.phoneErr {
+	left: 0;
+	top: 35px;
+	display: inline-block;
+	border: 1px solid #ffd5a1;
+	height: 22px;
+	line-height: 22px;
+	color: #000;
+	font-size: 12px;
+	font-family: simsun;
+	padding: 2px 5px 0 5px;
+	background-color: #fff8ee;
+	position: absolute;
+	z-index: 10000;
+	white-space: nowrap;
+	white-space: nowrap
+}
+
+.phoneLbl {
+	position: absolute;
+	background-position: -50px -182px;
+	display: block;
+	width: 12px;
+	height: 8px;
+	top: 30px;
+	left: 13px;
+	z-index: 10001
+}
+
+.listPhone {
+	z-index: 5;
+	position: relative
+}
+
+.listYzm {
+	z-index: 2
+}
+
+.checkCodeImg {
+	width: 70px;
+	height: 22px;
+	cursor: pointer;
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 0
+}
+
+.dateSp {
+	position: absolute;
+	margin-left: -50px;
+	margin-top: 0;
+	color: #999;
+	font-size: 14px;
+	font-family: Microsoft YaHei
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.dateSp {
+		margin-left: 195px;
+		margin-top: -30px
+	}
+	.checkCodeImg {
+		margin-top: -26px;
+		margin-left: 84px
+	}
+}
+
+body .mNotice-mTab-head {
+	background-color: #2a98da
+}
+
+#soso_17u .input02 {
+	background-color: white;
+	-webkit-box-shadow: 1px 2px 1px #EAEAEA inset;
+	-moz-box-shadow: 1px 2px 1px #EAEAEA inset;
+	-ms-box-shadow: 1px 2px 1px #EAEAEA inset;
+	-o-box-shadow: 1px 2px 1px #EAEAEA inset
+}
+
+#soso_17u .inputHover {
+	border: 1px solid #76bbff;
+	background-color: white;
+	-webkit-box-shadow: 1px 2px 1px #EAEAEA inset;
+	-moz-box-shadow: 1px 2px 1px #EAEAEA inset;
+	-ms-box-shadow: 1px 2px 1px #EAEAEA inset;
+	-o-box-shadow: 1px 2px 1px #EAEAEA inset
+}
+
+.divBag {
+	border: 1px solid #999a9b;
+	background-color: #fff;
+	position: absolute;
+	z-index: 1000;
+	font-size: 12px;
+	width: 198px;
+	padding-bottom: 10px
+}
+
+.divBag table {
+	width: 198px
+}
+
+.singleDiv {
+	overflow: hidden;
+	zoom: 1
+}
+
+.modle caption {
+	padding: 3px 5px;
+	color: #999
+}
+
+.modle tr {
+	cursor: pointer;
+	color: #0092d2
+}
+
+.modle tr.hover_on {
+	color: #fff;
+	background-color: #88C229
+}
+
+.modle tr td {
+	padding: 3px 5px
+}
+
+.pinyin {
+	float: left;
+	display: block;
+	margin-right: 100px
+}
+
+.listContent {
+	float: left
+}
+
+.top_hr {
+	background: #fff;
+	border: 0;
+	height: 1px;
+	line-height: 1px;
+	margin: 0;
+	overflow: hidden;
+	width: 120px
+}
+
+.none {
+	display: none
+}
+
+input[type="button"] ::-moz-focus-inner {
+	border: 0;
+	padding: 0
+}
+
+.need_a {
+	color: #666;
+	font-size: 12px;
+	float: left;
+	font-family: sumsun;
+	padding: 0 0 0 65px;
+	width: 210px
+}
+
+.need_btn_search {
+	width: 308px;
+	height: 33px;
+	margin-bottom: 10px;
+	_margin-bottom: 5px
+}
+
+.tab_airplane_con .need_btn_search .search_btn {
+	margin-left: 65px
+}
+
+.tab_airplane_con .need_btn_dc .search_btn { *
+	margin-left: 42px
+}
+
+.need_btn_dc {
+	width: 360px;
+	float: right;
+	margin-top: 10px
+}
+
+.need_dc_a {
+	padding: 10px 0 10px 55px;
+	float: left
+}
+
+.tab_airplane_con .btn_div {
+	float: right
+}
+
+.airplaneDiv {
+	width: auto;
+	height: auto
+}
+
+.multipass {
+	width: 682px
+}
+
+.iflight_mult .flightLine {
+	height: 60px
+}
+
+.iflight_mult .line_num {
+	margin-right: 5px;
+	margin-top: 20px;
+	line-height: 38px;
+	font-weight: bold;
+	font-size: 14px;
+	float: left
+}
+
+.iflight_mult .iflight_item {
+	margin-left: 10px; *
+	margin-left: 5px; *
+	margin-right: 5px;
+	_margin-right: 0;
+	width: 185px;
+	float: left;
+	display: block;
+	line-height: 26px;
+	font-family: "microsoft yahei";
+	font-size: 14px;
+	color: #333
+}
+
+.iflight_mult .line_num em {
+	font-size: 18px;
+	color: #F60
+}
+
+.iflight_mult .dele_btn {
+	background-position: -242px -197px;
+	padding-left: 12px;
+	margin-left: 10px;
+	margin-top: 29px;
+	line-height: 18px;
+	font-family: simsun;
+	font-size: 12px;
+	float: left
+}
+
+.iflight_mult .dele_btn:hover {
+	text-decoration: none;
+	background-position: -242px -181px
+}
+
+.iflight_mult .add_btn {
+	height: 18px;
+	border: 1px dotted #80bcff;
+	background-position: -239px -164px;
+	padding-left: 15px;
+	margin-left: 54px;
+	margin-top: 5px;
+	line-height: 18px;
+	display: block;
+	font-family: simsun;
+	font-size: 12px;
+	width: 558px
+}
+
+.iflight_mult .add_btn:hover {
+	border: 1px dotted #f8a52d;
+	background-color: #fff8ee;
+	text-decoration: none;
+	background-position: -239px -146px
+}
+
+.iflight_mult .iflight_item input {
+	color: #999;
+	width: 175px;
+	height: 26px;
+	line-height: 26px;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	display: block;
+	font-family: "Microsoft YaHei", Arial, sans-serif;
+	padding: 0 4px
+}
+
+.tab_airplane_con .miniRol {
+	padding: 3px 0 10px;
+	height: 28px;
+	line-height: 28px
+}
+
+.tab_airplane_con .miniRol .list_tit {
+	height: 28px;
+	line-height: 28px
+}
+
+.tab_airplane_con .miniRol .list_con {
+	font-family: "Microsoft YaHei", Arial, sans-serif;
+	margin-top: 0;
+	padding-top: 0;
+	width: auto
+}
+
+.select02 {
+	width: 241px;
+	color: #333;
+	border: 1px solid #ccc;
+	height: 26px;
+	padding: 1px 0
+}
+
+.tab_airplane_con .miniRol .list_con .select02 {
+	width: 240px
+}
+
+.add_border {
+	border-top: 1px dashed #ddd;
+	width: 307px;
+	margin-top: 5px
+}
+
+.high_search {
+	padding-bottom: 5px
+}
+
+.high_search_a {
+	width: 73px;
+	display: block;
+	margin-left: 65px;
+	color: #0073B6;
+	font-family: microsoft yahei;
+	font-size: 14px
+}
+
+.high_search_a:hover {
+	text-decoration: none
+}
+
+.s_icon {
+	display: block;
+	border: 4px solid; *
+	border: 5px solid;
+	height: 0;
+	width: 0;
+	line-height: 0;
+	border-color: #005BB5 #FFFFFF #FFF;
+	float: right;
+	margin-top: 9px; *
+	margin-top: 6px
+}
+
+.high_search_hide .s_icon {
+	display: block;
+	border: 4px solid; *
+	border: 5px solid;
+	height: 0;
+	width: 0;
+	line-height: 0;
+	border-color: #fff #fff #005BB5 #fff;
+	float: right;
+	margin-top: 4px; *
+	margin-top: 1px
+}
+
+body .mNotice-mTab-tab-tray .mNotice-mTab-item {
+	padding: 0 8px
+}
+
+body .mNotice-mTab-content .mNotice-fixWidth {
+	width: 63px
+}
+
+body .mNotice-mTab-content .mNotice-normal {
+	overflow: hidden
+}
+
+body .mNotice-wrap {
+	width: 410px
+}
+
+body .mNotice-mTab-content {
+	width: 384px
+}
+
+.search_warn {
+	color: #333;
+	height: 27px;
+	position: absolute;
+	z-index: 1000000
+}
+
+.search_warn .arrow,.search_warn .info {
+	float: left;
+	height: 27px
+}
+
+.search_warn .arrow {
+	background-position: -49px 0;
+	height: 27px;
+	width: 6px
+}
+
+.search_warn .info {
+	border: 1px #ffdf47 solid;
+	border-left: none;
+	background: #ffffe8;
+	color: #f60;
+	line-height: 25px;
+	height: 25px;
+	padding-left: 5px;
+	padding-right: 5px
+}
+
+* html .search_warn .arrow,* html .search_warn .info {
+	display: inline
+}
+
+.search_box .recom_list {
+	margin-top: 13px
+}
+
+.search_box .tab_self_con .recom_list {
+	width: 335px;
+	overflow: hidden
+}
+
+.search_box .tab_scenic_con .recom_list {
+	border-top: 1px solid #ddd;
+	margin-top: 0;
+	padding-top: 10px
+}
+
+.search_box .recom_list .recom_dt,.search_box .recom_list .recom_dd {
+	height: 25px;
+	line-height: 21px;
+	font-family: simsun;
+	font-size: 12px;
+	overflow: hidden
+}
+
+.search_box .recom_list .recom_dt {
+	color: #666
+}
+
+.search_box .recom_list .recom_dd a {
+	color: #2183c0;
+	padding-right: 16px
+}
+
+@
+-moz-document url-prefix (){ .search_box .recom_list .recom_dd
+	a{padding-right:14px
+	
+}
+
+}
+.search_box .recom_list .recom_dd a:hover {
+	color: #f60
+}
+
+.tab_abroad_con table .abroadTd {
+	width: 64px;
+	color: #000;
+	font-size: 14px;
+	font-family: "microsoft yahei";
+	padding-top: 5px
+}
+
+.tab_abroad_con table tr .abroadBtn {
+	padding-left: 63px; *
+	padding-left: 64px;
+	text-align: left
+}
+
+.selfRelDiv {
+	position: relative;
+	width: 309px;
+	z-index: 1000
+}
+
+#selfInfo_list {
+	display: none;
+	position: absolute;
+	border: 1px solid #ddd;
+	box-shadow: 5px 5px rgba(0, 0, 0, 0.08);
+	width: 100%;
+	z-index: 500;
+	background: #fff;
+	top: 30px;
+	left: 0
+}
+
+#selfInfo_list ul {
+	background:
+		url(http://img1.40017.cn/cn/sl/home/2013/top_search_bar/autocomplete.png)
+		no-repeat 0 0;
+	padding: 34px 0 10px
+}
+
+#selfInfo_list ul li {
+	display: block
+}
+
+#selfInfo_list ul li div {
+	display: block;
+	height: 26px;
+	font: 14px/ 26px \5B8B\4F53;
+	overflow: hidden;
+	padding: 0 0 0 30px;
+	background:
+		url(http://img1.40017.cn/cn/sl/home/2013/top_search_bar/icons.png)
+		no-repeat 6px 0;
+	cursor: pointer
+}
+
+#selfInfo_list ul li div span {
+	color: #B54800
+}
+
+#selfInfo_list ul li.hover div,#selfInfo_list ul li.selected div {
+	background-color: #FFA63C;
+	color: #fff;
+	background-position: 6px -26px
+}
+
+#selfInfo_list ul li.hover div span,#selfInfo_list ul li.selected div span
+	{
+	color: #fff
+}
+
+#selfInfo_list ul li .type_1 {
+	background-position: 6px 0
+}
+
+#selfInfo_list ul li.hover .type_1,#selfInfo_list ul li.selected div {
+	background-position: 6px -26px
+}
+
+#selfInfo_list ul li .type_2 {
+	background-position: 6px -52px
+}
+
+#selfInfo_list ul li.hover .type_2,#selfInfo_list ul li.selected .type_2
+	{
+	background-position: 6px -78px
+}
+
+#selfInfo_list ul li .type_3 {
+	background-position: 6px -104px
+}
+
+#selfInfo_list ul li.hover .type_3,#selfInfo_list ul li.selected .type_3
+	{
+	background-position: 6px -130px
+}
+
+#selfInfo_list ul li .type_4 {
+	background-position: 6px -156px
+}
+
+#selfInfo_list ul li.hover .type_4,#selfInfo_list ul li.selected .type_4
+	{
+	background-position: 6px -182px
+}
+
+.search_special,.search_submit,.search_special_hover,.search_submit_hover
+	{
+	cursor: pointer;
+	height: 32px;
+	display: none;
+	border: 0;
+	color: #fff;
+	font-family: "microsoft yahei";
+	font-size: 18px;
+	text-align: center
+}
+
+.search_special,.search_special_hover {
+	background-position: 0 -450px;
+	width: 117px;
+	padding-left: 13px;
+	margin-right: 5px
+}
+
+.at .search_special,.at .search_special_hover {
+	margin-right: 0
+}
+
+.search_special_hover {
+	background-position: 0 -500px
+}
+
+.search_submit,.search_submit_hover {
+	background-position: -127px -450px;
+	width: 115px
+}
+
+.search_submit_hover {
+	background-position: -127px -500px
+}
+
+#content {
+	width: 1200px;
+	height: auto;
+	margin: 20px auto
+}
+
+#content a {
+	cursor: pointer
+}
+
+.tuanConImg,.tuanConGrayPrevBtn,.tuanConGrayLastBtn,.tuanConBluePrevBtn,.tuanConBlueLastBtn,.tuanConOrgPrevBtn,.tuanConOrgLastBtn,.discount,.toolSp,.playSp,.CityA,.selfBoxCommSp,.listBoxNotesImg,.backTop,.feedBackBtn,.feedBackBtnHover,.flightSpHover,.mapSpHover,.weatherSpHover,.carSpHover,.trainSpHover,.trainSpHover,.interSpHover,.tripSpHover,.senicSpHover,.subsImg,.changeImgSp,.qtyEm,.discountSelf,.issueIcon
+	{
+	background:
+		url('http://img1.40017.cn/cn/c/home/2013/cnHomePageIndex_03.png')
+		no-repeat
+}
+
+.tcQualityMain {
+	background: url('../images/index/dibu.jpg')
+		no-repeat
+}
+
+.topNum {
+	background: url('http://img1.40017.cn/cn/c/home/2013/topStep.png')
+		no-repeat
+}
+
+.lbl_self,.lbl_lst {
+	background: url("http://img1.40017.cn/cn/c/home/2013/cnSelfTip.png")
+		no-repeat
+}
+
+#content .topMain {
+	width: 1200px;
+	height: 360px
+}
+
+.sliderMain {
+	float: right;
+	width: 684px;
+	height: 358px;
+	border: 1px solid #ddd;
+	position: relative
+}
+
+.sliderMain .sliderTab {
+	width: auto;
+	margin-left: 20px
+}
+
+.sliderMain .sliderTab li {
+	float: left;
+	padding-right: 26px;
+	height: 38px;
+	line-height: 38px;
+	position: relative;
+	z-index: 9
+}
+
+.sliderTab .tabA {
+	color: #999;
+	font-size: 14px;
+	font-family: simsun
+}
+
+.sliderTab .tabA:hover {
+	color: #f60;
+	text-decoration: none
+}
+
+.sliderTab .tabAHover {
+	color: #f60
+}
+
+.sliderTab .current .tabA {
+	color: #f60
+}
+
+.sliderTab .sliderSp {
+	width: 0;
+	height: 0;
+	line-height: 0;
+	border-width: 8px;
+	border-color: #ddd transparent transparent;
+	border-style: solid dashed dashed;
+	position: absolute;
+	top: 38px
+}
+
+.sliderSp span {
+	width: 0;
+	height: 0;
+	line-height: 0;
+	display: block;
+	border-width: 8px;
+	border-color: #fff transparent transparent;
+	border-style: solid dashed dashed;
+	position: absolute;
+	top: -8px;
+	left: -7px
+}
+
+.sliderDiv {
+	height: 320px;
+	width: 684px
+}
+
+.sliderCon {
+	height: 320px
+}
+
+.sliderCon li {
+	float: left;
+	height: 320px
+}
+
+.sliderCon .sliderLeftDiv,.sliderCon .sliderRightDiv {
+	float: left;
+	display: block
+}
+
+.sliderCon .sliderLeftDiv {
+	width: 515px;
+	height: 320px;
+	background:
+		url("images/index/transparent_loading_v2.gif")
+		no-repeat scroll center center transparent
+}
+
+.sliderCon .sliderRightDiv .sliderConA {
+	display: block;
+	width: 169px;
+	height: 107px;
+	cursor: pointer;
+	padding-top: 53px
+}
+
+.sliderConA:hover {
+	text-decoration: none
+}
+
+.sliderConTop {
+	background-color: #2e8bef
+}
+
+.sliderConBottom {
+	background-color: #ffa63d
+}
+
+.sliderConPink {
+	background-color: #f87e97
+}
+
+.sliderConBlue {
+	background-color: #2cade4
+}
+
+.sliderConGreen {
+	background-color: #2cbaa2
+}
+
+.sliderConOrange {
+	background-color: #ff8c41
+}
+
+.sliderConOrange {
+	background-color: #ff8c41
+}
+
+.sliderConLigGreen {
+	background-color: #81bc2c
+}
+
+.sliderConCyan {
+	background-color: #30bdf3
+}
+
+.sliderConYellow {
+	background-color: #fea53d
+}
+
+.sliderRightDiv .sliderConSp {
+	text-align: center;
+	color: White;
+	height: 25px;
+	font-size: 20px;
+	font-family: Microsoft YaHei;
+	display: block
+}
+
+.sliderMeng {
+	opacity: .44;
+	filter: Alpha(opacity = 44);
+	position: absolute;
+	background: black;
+	width: 169px;
+	height: 160px;
+	right: 0
+}
+
+.zIndex1 {
+	z-index: 8
+}
+
+.meng1 {
+	top: 38px
+}
+
+.meng2 {
+	top: 198px
+}
+
+.contentMain {
+	width: 1200px;
+	height: auto;
+	margin-top: 20px
+}
+
+.contentMain .leftMain {
+	float: left;
+	width: auto
+}
+
+.leftMain .BoxDiv {
+	margin-bottom: 20px;
+	height: auto;
+	border: 1px solid #ddd;
+	border-top: 0;
+	width: 912px;
+	height: 474px
+}
+
+.leftMain .abroadBox {
+	height: 367px
+}
+
+.leftImgBox {
+	width: 200px;
+	float: left;
+	border-top: 2px solid #22ade6
+}
+
+.senicLeftImgBox {
+	border-top-color: #22ade6
+}
+
+.selfLeftImgBox {
+	border-top-color: #80bc2b
+}
+
+.abroadLeftImgBox {
+	border-top-color: #ffa63c
+}
+
+.imgTop {
+	display: block
+}
+
+.selfLeftImgBox .imgTop {
+	position: relative
+}
+
+.img1 {
+	height: 260px;
+	width: 200px
+}
+
+.img2 {
+	height: 105px;
+	width: 200px;
+	border-bottom: 1px solid #ddd
+}
+
+.img3 {
+	height: 106px;
+	width: 200px
+}
+
+.rightListBox {
+	width: 712px;
+	height: auto;
+	float: left;
+	border-top: 2px solid #22ade6
+}
+
+.selfListBox {
+	border-top-color: #80bc2b
+}
+
+.abroadListBox {
+	border-top-color: #ffa63c
+}
+
+.ListBoxTabDiv {
+	width: auto;
+	height: 38px;
+	line-height: 38px;
+	border-bottom: 1px solid #ddd;
+	position: relative
+}
+
+.scenicBoxTab {
+	background-color: #edf8ff
+}
+
+.selfBoxTab {
+	background-color: #f9ffee
+}
+
+.abroadBoxTab {
+	background-color: #fffbf0
+}
+
+.iThinkSp {
+	font-size: 18px;
+	font-family: "microsoft yahei";
+	padding-left: 13px;
+	float: left
+}
+
+.scenicThinkSp {
+	color: #22ade6
+}
+
+.selfThinkSp {
+	color: #80bc2c
+}
+
+.abroadThinkSp {
+	color: #ffa63c
+}
+
+.pThink {
+	padding-left: 0
+}
+
+.playSp {
+	width: 30px;
+	height: 30px;
+	margin-top: 3px;
+	text-align: center;
+	color: white;
+	font-size: 24px;
+	font-family: "microsoft yahei";
+	line-height: 28px;
+	_line-height: 29px;
+	float: left
+}
+
+.scenicPlaySp {
+	background-position: 0 -70px
+}
+
+.selfPlaySp {
+	background-position: 0 -117px
+}
+
+.abroadPlaySp {
+	background-position: 0 -178px
+}
+
+.ListBoxTabUl {
+	width: 316px;
+	height: 45px;
+	float: left;
+	padding-left: 19px
+}
+
+.listBoxTabLi {
+	float: left
+}
+
+.city {
+	text-align: center;
+	font-size: 12px;
+	color: #666;
+	font-family: simsun;
+	padding-right: 7px;
+	height: 46px;
+	display: inline-block;
+	cursor: pointer
+}
+
+.city:hover {
+	text-decoration: none
+}
+
+.cityShort {
+	width: 43px
+}
+
+.cityMiddle {
+	width: 53px
+}
+
+.cityLong {
+	width: 65px
+}
+
+.CityA {
+	display: block;
+	color: white
+}
+
+.CityA:hover {
+	color: white
+}
+
+.senicCityA1 {
+	background-position: 0 -456px;
+	width: 43px;
+	height: 46px
+}
+
+.senicCityA2 {
+	background-position: -140px -238px;
+	width: 53px;
+	height: 46px
+}
+
+.senicCityA3 {
+	background-position: -213px -238px;
+	width: 65px;
+	height: 46px
+}
+
+.selfCityA1 {
+	background-position: -75px -456px;
+	width: 43px;
+	height: 46px
+}
+
+.selfCityA2 {
+	background-position: -140px -310px;
+	width: 53px;
+	height: 46px
+}
+
+.selfCityA3 {
+	background-position: -213px -750px;
+	width: 65px;
+	height: 46px
+}
+
+.moreViewBtn {
+	color: #999;
+	font-size: 12px;
+	font-family: simsun;
+	width: 68px;
+	float: left
+}
+
+.moreViewBtn:hover {
+	text-decoration: none
+}
+
+.moreCityBtn {
+	padding-right: 15px;
+	color: #2185c1;
+	font-size: 12px;
+	font-family: simsun;
+	overflow: hidden;
+	float: right; *
+	padding-top: 1px
+}
+
+@
+-moz-document url-prefix (){ .
+	moreCityBtn {padding-top: 1px
+}
+
+}
+.moreCityBtn:hover {
+	text-decoration: none
+}
+
+.listBoxTabDv1 {
+	left: 170px;
+	width: auto;
+	position: absolute
+}
+
+.listBoxViewUl {
+	width: 711px;
+	position: relative;
+	left: 2px;
+	top: 2px
+}
+
+.abroadListDiv {
+	position: relative;
+	overflow: hidden;
+	width: 711px;
+	margin: 0
+}
+
+.abroadListLi {
+	width: 711px;
+	float: left
+}
+
+.listBoxViewLi {
+	float: left;
+	padding-top: 11px;
+	padding-left: 11px
+}
+
+.listViewDl {
+	width: 159px;
+	height: 191px;
+	background-color: #F5F5F5;
+	border: 2px solid white
+}
+
+.listViewDlHover {
+	border: 2px solid #ffa63c
+}
+
+.listViewDd {
+	height: 120px;
+	width: 159px;
+	position: relative
+}
+
+.listViewimg {
+	display: block;
+	width: 159px;
+	height: 120px
+}
+
+.listAbroadImg {
+	width: 159px;
+	height: 295px;
+	border: 2px solid #fff;
+	float: left;
+	margin-top: 11px;
+	margin-left: 11px
+}
+
+.listAbroadImg:hover {
+	border: 2px solid #ffa63c
+}
+
+.topNum {
+	background-position: 0 0;
+	width: 42px;
+	height: 24px;
+	left: 3px;
+	top: -2px;
+	position: absolute;
+	text-align: center;
+	color: white;
+	font-size: 12px;
+	font-family: arial
+}
+
+.listViewInf {
+	margin: 13px 10px 0;
+	height: 20px;
+	color: #999;
+	font-family: simsun;
+	font-size: 12px;
+	white-space: nowrap;
+	width: 140px
+}
+
+.listViewBotm {
+	margin-top: 1px
+}
+
+.listViewCon {
+	width: 140px;
+	height: 18px;
+	margin: 3px auto 0;
+	white-space: nowrap;
+	font-size: 12px;
+	color: #f60;
+	font-family: simsun
+}
+
+.senicName {
+	color: #333;
+	font-size: 14px;
+	font-family: simsun;
+	font-weight: bold
+}
+
+.dollar {
+	font-size: 12px;
+	font-family: arial;
+	color: #f60
+}
+
+.price {
+	font-size: 14px;
+	font-family: arial;
+	color: #f60
+}
+
+.discountPref,.discountSelf {
+	font-size: 12px;
+	font-family: arial
+}
+
+.discountPref {
+	text-decoration: line-through;
+	color: #999;
+	float: left;
+	width: 46px
+}
+
+.discountSelf {
+	background-position: 0 -661px;
+	width: 40px;
+	height: 15px;
+	float: right;
+	line-height: 15px;
+	text-align: center;
+	color: white;
+	margin: 4px -3px 0 0; *
+	margin-top: 7px;
+	padding-left: 3px
+}
+
+.selfViewUl {
+	width: 685px;
+	height: auto
+}
+
+.selfBoxViewLi {
+	width: 685px;
+	height: 91px;
+	border-bottom: 1px solid #ddd;
+	padding: 13px 0 1px 0;
+	position: relative;
+	margin-left: 11px; *
+	padding-top: 10px
+}
+
+.c_selfBoxViewLi2 {
+	padding-top: 11px
+}
+
+.c_selfBoxCommWidth {
+	width: 110px;
+	display: inline-block
+}
+
+.selfBoxNoteDiv {
+	float: left;
+	padding-top: 5px;
+	width: 578px;
+	display: inline-block
+}
+
+.nonBorderLi {
+	border-bottom: 0
+}
+
+.selfBoxViewA,.selfBoxNoteDl,.selfPriceDl {
+	float: left
+}
+
+.selfBoxViewA {
+	display: inline-block;
+	width: 100px;
+	height: 75px;
+	border: 2px solid white
+}
+
+.selfBoxViewA:hover {
+	border: 2px solid #ffa63c
+}
+
+.selfBoxNoteDl {
+	width: 437px;
+	height: 70px;
+	padding-left: 14px
+}
+
+.selfBoxNote {
+	height: 25px;
+	color: #999;
+	font-size: 12px;
+	font-family: simsun;
+	width: auto;
+	overflow: hidden;
+	white-space: nowrap
+}
+
+.selfBoxNoteA1 {
+	color: #333;
+	font-size: 14px;
+	font-family: simsun;
+	font-weight: bold
+}
+
+.selfBoxNoteA2 {
+	font-size: 12px;
+	font-family: simsun;
+	color: #999;
+	overflow: hidden;
+	white-space: nowrap
+}
+
+.selfBoxCommSp {
+	display: inline-block;
+	width: 16px;
+	height: 13px;
+	position: relative;
+	top: 3px
+}
+
+.selfBoxCommImg1 {
+	background-position: 0 0; *
+	margin-right: 4px
+}
+
+.selfBoxCommImg2 {
+	background-position: 0 -30px
+}
+
+.fontSp {
+	color: #f60;
+	font-family: simsun;
+	font-size: 12px;
+	cursor: pointer
+}
+
+.personSp {
+	cursor: default
+}
+
+.selfPriceDl {
+	margin-top: 10px;
+	float: right;
+	text-align: right;
+	width: auto
+}
+
+.selfPriceDd1 {
+	line-height: 23px; *
+	line-height: 28px;
+	color: #666;
+	font-family: simsun;
+	font-size: 12px
+}
+
+.selfPriceSp {
+	font-size: 32px;
+	color: #f60;
+	font-family: arial;
+	padding-right: 5px;
+	cursor: pointer
+}
+
+.selfPriceSp:hover {
+	text-decoration: none
+}
+
+.changeImgSp {
+	background-position: -168px -30px;
+	width: 18px;
+	height: 18px;
+	float: left;
+	margin: 9px 0 0 37px
+}
+
+.changeWordSp {
+	color: #ffa63c;
+	font-family: simsun;
+	font-size: 12px;
+	float: left;
+	padding-left: 5px
+}
+
+.changeWordSp:hover {
+	text-decoration: none
+}
+
+.abroadViewUl {
+	width: 300px;
+	height: 20px;
+	float: right;
+	line-height: 20px;
+	margin: 12px auto 0
+}
+
+.abroadViewLi {
+	float: left;
+	width: 38px;
+	height: 15px;
+	line-height: 15px;
+	border-right: 1px solid #999;
+	padding-left: 17px
+}
+
+.abroadViewA {
+	color: #666;
+	white-space: nowrap;
+	overflow: hidden
+}
+
+.abroadViewA:hover {
+	color: #f60
+}
+
+.nonBorderLi {
+	border-right: 0
+}
+
+.wait_mf {
+	text-align: center;
+	padding-top: 180px
+}
+
+.contentMain .rightMain {
+	float: right
+}
+
+.rightMain .tuangouBox,.tripToolBox,.issueBox {
+	width: 268px;
+	height: 968px;
+	border: 1px solid #ddd;
+	border-top: 2px solid #22ade6
+}
+
+.tuangouBox {
+	margin-top: 20px
+}
+
+.cBoxTitle {
+	height: 37px;
+	background-color: white;
+	padding-left: 7px;
+	_padding-bottom: 5px
+}
+
+.c_cBoxTitle2 {
+	border-bottom: 1px solid #DDD
+}
+
+.boxH3 {
+	color: #666;
+	font-size: 18px;
+	font-family: "microsoft yahei";
+	float: left;
+	padding-top: 5px
+}
+
+.btnMore {
+	font-size: 12px;
+	color: #2185c1;
+	font-family: simsun;
+	float: right;
+	margin: 7px 12px 0 0;
+	display: inline-block
+}
+
+.btnMore:hover {
+	text-decoration: none
+}
+
+.tuangouCon {
+	width: 268px
+}
+
+.tuangouConUl li {
+	height: 309px; *
+	height: 308px;
+	background-color: #f5f5f5
+}
+
+.tuangouConLi { *
+	margin-top: -2px;
+	border-top: 1px solid #ddd
+}
+
+.tuangouConUl .hotelTuangou {
+	height: 310px; *
+	height: 308px
+}
+
+.tuangouConUl li .tuanConTitle {
+	height: 37px;
+	line-height: 37px;
+	padding-left: 15px
+}
+
+.tuanConImg {
+	display: block;
+	width: 22px;
+	height: 28px;
+	float: left
+}
+
+.hotelConImg {
+	background-position: -45px -172px
+}
+
+.scenicConImg {
+	background-position: -45px -142px
+}
+
+.tuanConWord {
+	color: #22ade6;
+	font-size: 12px;
+	font-family: simsun;
+	float: left;
+	padding-left: 5px
+}
+
+.btnDiv {
+	width: auto;
+	height: 15px;
+	line-height: 15px;
+	float: right;
+	padding: 10px 0;
+	margin-right: 6px;
+	_margin-right: 3px
+}
+
+.btn01 {
+	display: block;
+	width: 15px;
+	height: 16px;
+	float: left;
+	padding-left: 5px
+}
+
+.tuanConGrayPrevBtn {
+	background-position: -97px -31px
+}
+
+.tuanConGrayLastBtn {
+	background-position: -132px -31px
+}
+
+.tuanConBluePrevBtn {
+	background-position: -97px -70px
+}
+
+.tuanConBlueLastBtn {
+	background-position: -132px -70px
+}
+
+.tuanConBluePrevBtn:hover {
+	background-position: -97px 0
+}
+
+.tuanConBlueLastBtn:hover {
+	background-position: -132px 0
+}
+
+.tuanConSliderDiv {
+	margin: 0 auto;
+	width: 239px;
+	height: 251px;
+	background-color: white;
+	border: 1px solid #ddd
+}
+
+.tuanConSliderDivHover {
+	border: 1px solid white
+}
+
+.tuanConDiv {
+	margin: 0 auto;
+	position: absolute;
+	height: 252px
+}
+
+.tuanConCon {
+	border: 2px solid white;
+	border-bottom-color: #EEF8FF;
+	display: block;
+	width: 235px
+}
+
+.tuanConConHover {
+	border: 2px solid #ffa63c
+}
+
+.tuanConShowImg {
+	width: 220px;
+	margin: 10px auto 0;
+	background:
+		url("images/index/transparent_loading_v2.gif")
+		no-repeat scroll center center transparent
+}
+
+.tuanConShowName {
+	margin: 0 auto;
+	width: 219px;
+	height: 34px;
+	color: #666;
+	font-size: 14px;
+	font-family: simsun;
+	line-height: 34px;
+	overflow: hidden
+}
+
+.tuanConShowName a {
+	color: #333;
+	font-weight: bold
+}
+
+.tuanConShowName a:hover {
+	color: #f60
+}
+
+.tuanConShowPrice {
+	text-align: right;
+	background-color: #eef8ff;
+	height: 38px;
+	line-height: 35px;
+	_height: 34px;
+	_line-height: 30px;
+	width: 162px;
+	color: #999;
+	font-size: 12px;
+	font-family: simsun;
+	position: relative;
+	padding-left: 73px
+}
+
+.discountPrice {
+	font-family: "microsoft yahei"
+}
+
+.afterDiscount {
+	font-family: "microsoft yahei";
+	font-size: 16px;
+	color: #f60;
+	padding-left: 8px
+}
+
+.afterPrice {
+	font-size: 24px;
+	font-family: arial;
+	color: #f60;
+	padding-right: 10px
+}
+
+.discount {
+	font-style: oblique;
+	font-family: "microsoft yahei";
+	idisplay: block;
+	position: absolute;
+	background-position: -92px -117px;
+	width: 64px;
+	height: 37px;
+	text-align: center;
+	line-height: 33px;
+	color: white;
+	top: -3px;
+	left: 9px
+}
+
+.disCoMum {
+	font-size: 18px;
+	font-family: arial
+}
+
+.reportCon {
+	height: 200px;
+	margin: 0 auto;
+	padding: 9px 0 0 7px;
+	_padding: 9px 0;
+	_position: relative;
+	_left: 7px
+}
+
+.tripToolBox {
+	height: 130px;
+	margin-top: 20px;
+	_height: 129px
+}
+
+.reportConA {
+	float: left;
+	margin: 6px 6px 0 0;
+	height: 90px;
+	border: 2px solid white
+}
+
+.reportConA:hover {
+	border: 2px solid #ffa63c
+}
+
+.reportConImg {
+	height: 90px;
+	width: 120px
+}
+
+.tripToolDiv {
+	width: 248px;
+	margin: 13px auto 0
+}
+
+.toolNavMainLi {
+	float: left;
+	width: 259px
+}
+
+.toolNavWrap {
+	float: left;
+	width: 62px;
+	height: 62px;
+	padding-left: 2px;
+	overflow: hidden
+}
+
+.toolA {
+	color: #999;
+	font-size: 12px;
+	font-family: simsun
+}
+
+.toolA:hover {
+	text-decoration: none;
+	color: #ffa63c
+}
+
+.toolSp {
+	display: block;
+	cursor: pointer;
+	width: 37px;
+	height: 38px
+}
+
+.flightSp {
+	background-position: 5px -392px
+}
+
+.flightSpHover {
+	background-position: -63px -394px
+}
+
+.mapSp {
+	background-position: 4px -441px
+}
+
+.mapSpHover {
+	background-position: -59px -441px
+}
+
+.weatherSp {
+	background-position: -144px -443px
+}
+
+.weatherSpHover {
+	background-position: -168px -70px
+}
+
+.carSp {
+	background-position: 0 -494px
+}
+
+.carSpHover {
+	background-position: -61px -494px
+}
+
+.trainSp {
+	background-position: -137px -494px
+}
+
+.trainSpHover {
+	background-position: -161px -111px
+}
+
+.interSp {
+	background-position: 4px -553px
+}
+
+.interSpHover {
+	background-position: -57px -553px
+}
+
+.tripSp {
+	background-position: -138px -555px
+}
+
+.tripSpHover {
+	background-position: -139px -599px
+}
+
+.senicSp {
+	background-position: 4px -601px
+}
+
+.senicSpHover {
+	background-position: -58px -601px
+}
+
+.subsInfBox {
+	width: 268px;
+	height: 48px;
+	line-height: 48px;
+	_line-height: 47px;
+	_height: 47px;
+	border: 1px solid #ddd;
+	border-top: 0
+}
+
+.subsImg {
+	float: left;
+	width: 33px;
+	height: 20px;
+	background-position: -170px -178px;
+	margin: 13px 6px 0 33px
+}
+
+.subsWord {
+	font-size: 18px;
+	font-family: "microsoft yahei";
+	color: #666
+}
+
+.subsWord:hover {
+	text-decoration: none;
+	color: #f60
+}
+
+.issueBox {
+	height: 472px;
+	margin-top: 0
+}
+
+.issueCon {
+	width: 250px;
+	margin: 0 auto;
+	padding-top: 15px
+}
+
+.issueDd {
+	height: 23px;
+	overflow: hidden;
+	margin-bottom: 5px
+}
+
+.issueDd a {
+	color: #333;
+	cursor: pointer;
+	font-family: "microsoft yahei";
+	font-size: 14px
+}
+
+.issueDd .outLookType1 {
+	color: red
+}
+
+.issueDd a:hover {
+	color: #f60
+}
+
+.issueIcon {
+	background-position: -62px -661px;
+	width: 5px;
+	height: 9px;
+	float: left;
+	margin: 6px 5px 0 0
+}
+
+.backTop {
+	display: block;
+	width: 49px;
+	height: 50px;
+	background-position: 0 -312px;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	cursor: pointer;
+	z-index: 6
+}
+
+.backTop:hover {
+	background-position: -65px -312px
+}
+
+.feedBackWrap {
+	width: 50px;
+	height: auto;
+	text-align: center;
+	position: fixed;
+	right: 20px;
+	bottom: 80px;
+	cursor: pointer;
+	z-index: 6
+}
+
+.feedBackWrap:hover {
+	text-decoration: none
+}
+
+.feedBackWrap h3 {
+	color: #22ade6;
+	font-family: "microsoft yahei";
+	font-size: 12px
+}
+
+.feedBackWrap .h3Hover {
+	color: #ffa63c;
+	text-decoration: none
+}
+
+.feedBackBtn {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-position: -65px -238px
+}
+
+.feedBackBtnHover {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-position: 0 -238px
+}
+
+.linka img {
+	width: 515px;
+	height: 320px
+}
+
+.listViewimg img {
+	width: 159px;
+	height: 120px;
+	background:
+		url("images/index/transparent_loading_v2.gif")
+		no-repeat center center #FFF
+}
+
+.selfBoxViewA img {
+	width: 100px;
+	height: 75px;
+	display: block;
+	background:
+		url("images/index/transparent_loading_v2.gif")
+		no-repeat center center #FFF
+}
+
+.listAbroadImg img {
+	width: 159px;
+	height: 295px;
+	display: block;
+	background:
+		url("images/index/transparent_loading_v2.gif")
+		no-repeat center center #FFF
+}
+
+.hotelA {
+	display: block;
+	height: 165px
+}
+
+.hotelA img {
+	width: 220px;
+	height: 165px
+}
+
+body .outBag {
+	background: 0;
+	border: 0
+}
+
+html .bgBag {
+	opacity: .7;
+	filter: alpha(opacity = 70)
+}
+
+.none {
+	display: none
+}
+
+.tcQualityInf {
+	background-color: #63beef;
+	margin: 10px 0 0 0;
+	min-width: 1200px
+}
+
+.tcQualityMain {
+	width: 1200px;
+	height: 48px;
+	margin: 0 auto;
+	background-position: 0 0
+}
+
+.tcQtyWord {
+	font-family: "microsoft yahei";
+	font-size: 18px;
+	color: #fff;
+	float: left;
+	padding-right: 20px
+}
+
+.tcQtyList {
+	float: left;
+	width: 960px;
+	height: 48px;
+	line-height: 48px;
+	padding-left: 34px
+}
+
+.tcQtyList li {
+	float: left;
+	width: 192px;
+	height: 48px
+}
+
+.qtyEm {
+	display: inline-block;
+	margin-bottom: 5px
+}
+
+.hotelQtyEm {
+	background-position: -300px 0;
+	width: 19px;
+	height: 25px;
+	vertical-align: middle
+}
+
+.qtySp,.qtyWord {
+	color: #fff;
+	font-family: "microsoft yahei";
+	font-size: 18px;
+	padding-left: 75px
+}
+
+.qtyWord {
+	font-size: 14px;
+	padding-left: 0
+}
+
+.mail_mainBox {
+	border: 2px solid #ccc;
+	zoom: 1;
+	background-color: #fff;
+	position: absolute
+}
+
+.mmbLong {
+	width: 395px
+}
+
+.mm_header {
+	height: 33px;
+	line-height: 33px;
+	background-color: #f5f5f5;
+	padding: 0 10px
+}
+
+.mm_header h3 {
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+	height: 33px;
+	line-height: 33px
+}
+
+.mm_close {
+	float: right;
+	width: 12px;
+	height: 14px;
+	background:
+		url("http://img1.40017.cn/cn/new_ui/tuangou/images/index/tuan_mail.png?v=2013021901")
+		no-repeat 0 -81px;
+	margin: 10px 0 0 0
+}
+
+.mm_box {
+	padding: 25px 0 25px 60px;
+	zoom: 1
+}
+
+.mm_err_tip {
+	float: left;
+	height: 19px;
+	line-height: 19px;
+	border: 1px solid #ffd5a1;
+	background: #fff8ee
+		url("http://img1.40017.cn/cn/new_ui/tuangou/images/index/tuan_mail.png?v=2013021901")
+		no-repeat 3px -56px;
+	padding: 0 10px 0 20px;
+	margin-bottom: 10px;
+	display: none
+}
+
+.mail_input {
+	clear: both;
+	display: block;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	height: 18px;
+	line-height: 18px;
+	padding: 2px 0;
+	width: 230px;
+	text-indent: 5px
+}
+
+.mlt_login {
+	float: left;
+	width: 71px;
+	height: 23px;
+	text-align: center;
+	line-height: 23px;
+	background: #fff8ee
+		url("http://img1.40017.cn/cn/new_ui/tuangou/images/index/tuan_mail.png?v=2013021901")
+		no-repeat;
+	color: #fff
+}
+
+.mlt_login:hover {
+	background: #fff8ee
+		url("http://img1.40017.cn/cn/new_ui/tuangou/images/index/tuan_mail.png?v=2013021901")
+		no-repeat -79px 0;
+	text-decoration: none
+}
+
+.mlt_tip {
+	float: left;
+	margin: 4px 0 0 10px
+}
+
+.mmbShort {
+	width: 325px
+}
+
+.mm_login_box {
+	padding: 25px 0
+}
+
+.ligon_form table th {
+	width: 60px;
+	text-align: right
+}
+
+.ligon_form table th,.ligon_form table td {
+	padding: 5px 0;
+	vertical-align: middle
+}
+
+.name_in {
+	border: 1px solid #ddd;
+	height: 22px;
+	line-height: 22px;
+	width: 200px
+}
+
+.mr_label {
+	cursor: pointer
+}
+
+.mr_label input {
+	cursor: pointer
+}
+
+.mm_real_login {
+	float: left;
+	width: 71px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	color: #fff;
+	background:
+		url("http://img1.40017.cn/cn/new_ui/tuangou/images/index/tuan_mail.png?v=2013021901")
+		no-repeat 0 -27px;
+	margin-right: 40px
+}
+
+.mm_real_login:hover {
+	text-decoration: none;
+	background:
+		url("http://img1.40017.cn/cn/new_ui/tuangou/images/index/tuan_mail.png?v=2013021901")
+		no-repeat -79px -27px
+}
+
+.get_pass {
+	float: left
+}
+
+.mm_sucess {
+	float: left;
+	width: 49px;
+	height: 48px;
+	background:
+		url("http://img1.40017.cn/cn/new_ui/tuangou/images/index/tuan_mail.png?v=2013021901")
+		no-repeat 0 -240px;
+	margin: 10px 0 0 0
+}
+
+.ms_content {
+	float: left;
+	margin: 10px 0 10px 10px;
+	font-size: 14px
+}
+
+.fixwh {
+	width: 520px;
+	height: 196px
+}
+
+.mc_title {
+	font-weight: bold
+}
+
+.mailtip {
+	margin-top: 15px;
+	color: #666
+}
+
+.lbl_self {
+	background-position: 0 0;
+	border-color: #F00;
+	display: block;
+	height: 54px;
+	position: absolute;
+	right: 10px;
+	top: -4px;
+	width: 52px
+}
+
+.lbl_lst {
+	background-position: 0 -55px;
+	position: absolute;
+	top: 16px; *
+	top: 13px;
+	_top: 14px;
+	left: 1px;
+	width: 77px;
+	height: 20px;
+	display: block;
+	font-family: arial;
+	font-size: 12px;
+	color: #fff;
+	line-height: 22px;
+	text-align: center;
+	z-index: 1
+}
+
+.c_lbl_lst2 {
+	position: absolute;
+	top: 14px;
+	_top: 15px
+}
+
+.lbl_lst span {
+	font-family: simsun;
+	margin-left: 2px
+}
+
+.c_btm_main a,.c_wx_close,.c_load_left label,.c_load_right p a {
+	background: url('http://img1.40017.cn/cn/c/home/2013/cnWXFix_06.png')
+		no-repeat
+}
+
+.c_wx_left {
+	width: 627px
+}
+
+.c_wx_right {
+	z-index: 13;
+	position: relative
+}
+
+.c_wx_rightbg {
+	width: 561px;
+	height: 176px;
+	position: absolute;
+	background-color: #ccc;
+	opacity: .27;
+	filter: Alpha(opacity = 27);
+	z-index: 11;
+	top: 0;
+	right: 41px
+}
+
+.c_wx_left label {
+	background: url('http://img1.40017.cn/cn/c/home/2013/cnWXFix_05.png')
+		no-repeat
+}
+
+.c_wx_fix {
+	margin: 10px 0 0 0;
+	min-width: 1200px;
+	z-index: 10;
+	position: fixed;
+	bottom: 0
+}
+
+.c_wx_bg {
+	background-color: #000;
+	opacity: .68;
+	filter: Alpha(opacity = 68);
+	height: 181px;
+	z-index: 10;
+	min-width: 1593px
+}
+
+.c_wx_btm {
+	background-color: #000
+}
+
+.c_btm_main,.c_wx_main {
+	width: 1265px;
+	margin: 0 auto
+}
+
+.c_wx_main {
+	margin-top: -181px;
+	position: relative;
+	z-index: 12
+}
+
+.c_btm_main {
+	height: 39px;
+	line-height: 39px;
+	color: #fff;
+	font-family: "microsoft yahei";
+	font-size: 16px;
+	text-align: center;
+	background-color: #000
+}
+
+.c_btm_main a {
+	background-position: 0 -50px;
+	width: 94px;
+	height: 26px;
+	line-height: 26px;
+	display: inline-block;
+	text-align: center;
+	color: #fff
+}
+
+.c_btm_main a:hover {
+	color: #fff;
+	text-decoration: none;
+	background-position: 0 -200px
+}
+
+.c_wx_con {
+	float: left;
+	padding-left: 35px
+}
+
+.c_wx_close {
+	float: right;
+	background-position: 0 0;
+	width: 35px;
+	height: 35px;
+	margin-top: 5px
+}
+
+.c_wx_close:hover {
+	background-position: -59px 0
+}
+
+.c_wx_left,.c_wx_left label,.c_wx_inf,.c_wx_right,.c_load_left,.c_load_right
+	{
+	float: left
+}
+
+.c_wx_left label {
+	background-position: 0 0;
+	width: 239px;
+	height: 216px;
+	margin-top: -40px
+}
+
+.c_wx_inf h1 {
+	font-family: "方正兰亭准黑_GBK", "microsoft yahei";
+	font-weight: bold;
+	font-size: 36px;
+	color: #fff;
+	height: 80px;
+	line-height: 75px
+}
+
+.c_wx_inf p {
+	font-family: "microsoft yahei";
+	font-size: 22px;
+	color: #fff;
+	height: 30px;
+	line-height: 30px
+}
+
+.c_wx_inf h1 b,.c_wx_inf p b {
+	color: #f60
+}
+
+.c_load_left,.c_load_right {
+	padding-left: 35px
+}
+
+.c_load_left {
+	width: 90px
+}
+
+.c_btm_main {
+	_padding-top: 5px
+}
+
+.c_load_right {
+	width: 354px;
+	padding-right: 47px
+}
+
+.c_load_left h2,.c_load_right h2 {
+	height: 45px;
+	line-height: 45px;
+	font-family: "microsoft yahei";
+	color: #fff;
+	font-size: 18px
+}
+
+.c_load_right h2 {
+	height: 50px
+}
+
+.c_load_left label {
+	background-position: 0 -100px;
+	width: 91px;
+	height: 92px;
+	display: block
+}
+
+.c_load_right .c_load_p {
+	font-family: "microsoft yahei";
+	font-size: 14px;
+	margin-top: 25px;
+	color: #fff
+}
+
+.c_load_right p a {
+	color: #fff;
+	font-family: "microsoft yahei";
+	font-size: 17px;
+	cursor: pointer;
+	margin-left: 15px;
+	display: inline-block;
+	width: 86px;
+	height: 29px;
+	text-align: center;
+	line-height: 29px;
+	background-position: 0 -250px
+}
+
+.c_load_right p a:hover {
+	color: #fff;
+	text-decoration: none;
+	background-position: 0 -300px
+}
+
+.headerSlider {
+	min-width: 1200px;
+	height: 70px;
+	overflow: hidden
+}
+
+.sliderConDiv {
+	width: 1200px;
+	margin: 0 auto;
+	z-index: 10
+}
+
+.small,.big {
+	width: 1200px;
+	overflow: hidden
+}
+
+.sliderImg1 {
+	width: 1200px;
+	height: 70px;
+	display: block
+}
+
+.sliderImg2 {
+	width: 1200px;
+	height: 300px;
+	display: block
+}
+
+.toggle {
+	display: none
+}
+
+.toggle_down,.toggle_up {
+	display: block;
+	background: url('http://img1.40017.cn/cn/c/home/2013/arrow.png')
+		no-repeat;
+	width: 21px;
+	height: 16px;
+	margin-top: -16px;
+	margin-left: 1200px
+}
+
+.toggle_down {
+	background-position: 0 0
+}
+
+.toggle_down:hover {
+	background-position: 0 -20px
+}
+
+.toggle_up {
+	background-position: 0 -40px
+}
+
+.toggle_up:hover {
+	background-position: 0 -60px
+}
+
+.cnAdapPage .c_wx_main {
+	width: 991px
+}
+
+.cnAdapPage .c_wx_fix {
+	min-width: 960px
+}
+
+.cnAdapPage .c_wx_con {
+	padding-left: 0
+}
+
+.cnAdapPage .c_wx_left {
+	width: 487px
+}
+
+.cnAdapPage .c_wx_left label {
+	background-position: -37px 0;
+	width: 196px
+}
+
+.cnAdapPage .c_load_left,.cnAdapPage .c_load_right {
+	padding-left: 10px
+}
+
+.cnAdapPage .c_load_right {
+	width: 350px;
+	padding-right: 0
+}
+
+.cnAdapPage .c_wx_rightbg {
+	width: 460px;
+	right: 44px
+}
+
+.cnAdapPage #content {
+	width: 960px;
+	min-width: 960px
+}
+
+.cnAdapPage .sliderRightDiv,.cnAdapPage .leftImgBox {
+	display: none
+}
+
+.cnAdapPage #content .topMain,.cnAdapPage .contentMain {
+	width: 960px
+}
+
+.cnAdapPage .sliderMain,.cnAdapPage .sliderCon .sliderLeftDiv,.cnAdapPage .sliderDiv
+	{
+	width: 450px
+}
+
+.cnAdapPage .sliderMain .sliderTab li {
+	padding-right: 12px
+}
+
+.cnAdapPage .linka img {
+	width: 450px
+}
+
+.cnAdapPage .leftMain .BoxDiv,.cnAdapPage .rightListBox {
+	width: 712px
+}
+
+.cnAdapPage .rightMain .tuangouBox,.cnAdapPage .tripToolBox,.cnAdapPage .issueBox,.cnAdapPage .subsInfBox
+	{
+	width: 233px
+}
+
+.cnAdapPage .tripToolBox {
+	_height: 125px
+}
+
+.cnAdapPage .issueCon {
+	width: 217px
+}
+
+.cnAdapPage .reportCon {
+	padding-left: 10px;
+	_padding-left: 3px
+}
+
+.cnAdapPage .reportConA {
+	height: 75px
+}
+
+.cnAdapPage .reportConImg {
+	width: 100px;
+	height: 75px
+}
+
+.cnAdapPage .tuangouCon {
+	width: 233px
+}
+
+.cnAdapPage .tuanConSliderDiv {
+	width: 213px
+}
+
+.cnAdapPage .tuanConCon {
+	width: 209px
+}
+
+.cnAdapPage .tuanConShowImg,.cnAdapPage .tuanConShowName,.cnAdapPage .hotelA img
+	{
+	width: 195px
+}
+
+.cnAdapPage .tripToolDiv {
+	width: 233px
+}
+
+.cnAdapPage .subsImg {
+	margin-left: 27px
+}
+
+.cnAdapPage .tuanConShowPrice {
+	padding-left: 46px
+}
+
+.cnAdapPage .discount {
+	left: 2px
+}
+
+.cnAdapPage .afterDiscount {
+	padding-left: 0
+}
+
+.cnAdapPage .afterPrice {
+	padding-right: 4px
+}
+
+.cnAdapPage .toolNavWrap {
+	width: 58px
+}
+
+.cnAdapPage .tcQualityInf {
+	min-width: 960px
+}
+
+.cnAdapPage .tcQualityMain {
+	width: 960px;
+	height: 38px;
+	background-position: 0 -60px
+}
+
+.cnAdapPage #header,.cnAdapPage #footer,.cnAdapPage #top,.cnAdapPage .headerMenu,.cnAdapPage .inside_top,.cnAdapPage .headerCont,.cnAdapPage .footerMain,.cnAdapPage .tcFootInfo
+	{
+	min-width: 960px
+}
+
+.cnAdapPage .inside_top,.cnAdapPage #header .headerContent,.cnAdapPage #header .headerNav,.cnAdapPage #footer .footerCont,.cnAdapPage .friendLink .friendMain
+	{
+	width: 960px
+}
+
+.cnAdapPage #header .headerNav a.navg {
+	padding: 0 11px
+}
+
+.cnAdapPage #header .headerNav .helpMenu a {
+	padding: 0 12px
+}
+
+.cnAdapPage .tcWebSite {
+	width: 114px
+}
+
+.cnAdapPage .tcAboat,.cnAdapPage .joinTc {
+	width: 82px
+}
+
+.cnAdapPage .contactTc {
+	width: 100px
+}
+
+.cnAdapPage .tcHotline {
+	width: 287px
+}
+
+.cnAdapPage .tcHonour {
+	width: 295px
+}
+
+.cnAdapPage #header .headerNav .tip1 {
+	left: 419px
+}
+
+.cnAdapPage #header .headerNav .tip2 {
+	left: 522px
+}
+
+.cnAdapPage #header .headerNav .tip4 {
+	left: 662px
+}

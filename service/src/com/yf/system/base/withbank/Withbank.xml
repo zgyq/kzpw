@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Withbank">
+  
+  <typeAlias alias="Withbank" type="com.yf.system.base.withbank.Withbank"/>
+  
+
+  <resultMap id="resultWithbankMap" class="Withbank">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="bankname" column="C_BANKNAME"/>
+  
+     <result property="username" column="C_USERNAME"/>
+  
+     <result property="bankno" column="C_BANKNO"/>
+  
+     <result property="userid" column="C_USERID"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="updatetime" column="C_UPDATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllWithbank"  resultMap="resultWithbankMap"  parameterClass="java.util.Map">
+  
+    select * from T_WITHBANK
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllWithbankBySql"  resultMap="resultWithbankMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteWithbankBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countWithbankBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_WITHBANK
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findWithbank" parameterClass="long" resultClass="Withbank">
+    select 
+    	ID as id,
+	  			C_PRICE as price,
+	  			C_BANKNAME as bankname,
+	  			C_USERNAME as username,
+	  			C_BANKNO as bankno,
+	  			C_USERID as userid,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_UPDATETIME as updatetime,
+	  			C_STATE as state 
+     from T_WITHBANK
+    where ID = #id#
+  </select>
+   
+  <insert id="createWithbank" parameterClass="Withbank">
+    insert into T_WITHBANK ( 
+    	ID,
+	  			C_PRICE,
+	  			C_BANKNAME,
+	  			C_USERNAME,
+	  			C_BANKNO,
+	  			C_USERID,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_UPDATETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#price#,
+	  					
+	  						#bankname#,
+	  					
+	  						#username#,
+	  					
+	  						#bankno#,
+	  					
+							#userid:DECIMAL#,
+						
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+	  						#updatetime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteWithbank" parameterClass="long">
+    delete from T_WITHBANK
+    where ID = #id#
+  </delete>
+	
+  <update id="updateWithbank" parameterClass="Withbank">
+    update T_WITHBANK 
+    set 
+    	C_PRICE = #price#,
+	  					C_BANKNAME = #bankname#,
+	  					C_USERNAME = #username#,
+	  					C_BANKNO = #bankno#,
+	  					C_USERID = #userid:DECIMAL#,
+						C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_UPDATETIME = #updatetime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

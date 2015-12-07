@@ -1,0 +1,402 @@
+.txt_login {
+	font-size: 7.5pt;
+	color: #FFFFFF;
+	padding-left: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.txt_role {
+	font-size: 10pt;
+	color: #005a87;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style:strong;
+}
+
+.txt_subtitle {
+	font-size: 12pt;
+	color: #FFFFFF;
+	padding-right: 30px;
+	padding-left: 5px;
+	font-weight: bold;
+}
+
+.txt_version {
+	font-size: 7.5pt;
+	color: #FFFFF;
+	padding-right: 3px;
+	padding-left: 3px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.form_selectList_blue {
+	font-size: 8pt;
+	color: #0E4C7C;
+	font-family: Arial, Helvetica, sans-serif;
+	border: 1px solid #003366;
+	border-top-style: solid;
+}
+
+.txt_title3 {
+	font-size: 10pt;
+	padding-left: 10px;
+	font-weight: bold;
+	color: #004a70;
+}
+
+.txt_title3 a.{
+	color: #004a70;
+	text-decoration: none;
+}
+
+
+.Pane{
+	border: #798c9a 1px solid;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+.Form_header {
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #8e9ba5;
+	text-align: center;
+	vertical-align: middle;
+	height: 30px;
+	line-height: 25px;
+}
+.Table {
+	background-color: #FFFFFF;
+	border: groove #798c9a;
+	margin: 1px;
+	padding: 1px;
+	height: 30px;
+	border: 1px solid #666666;
+}
+
+.trh{
+ 	background-color: #78a9c2;
+	font-size:9pt;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #ffffff;
+	height:28px;
+	border-collapse: collapse;
+	border: 1px solid #798c9a;
+	text-align:  center;
+	font-weight: bold;
+}
+
+
+.tr1{
+	background-color: #FFFFFF;
+	font-size:9pt;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333333;
+	height:28px;
+	border-collapse: collapse;
+	border: 1px solid #798c9a;
+	text-align:  left;
+	font-weight: normal;
+	
+}
+
+.tr2{
+	
+	background-color: #e7e8e9;
+	font-size:9pt;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333333;
+	height:28px;
+	border-collapse: collapse;
+	border: 1px solid #798c9a;
+	text-align:  left;
+	font-weight: normal;
+}
+
+
+.txt_search {
+	font-size: 9pt;
+	color: #707070;
+	font-style:strong;
+	font-weight: bold;
+	text-decoration: none;
+}
+.Form_date {
+	border: #798c9a 1px solid;
+	readonly: ture;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #25729a;
+}
+.txt_link {
+	font-size: 9pt;
+	color: #1c88c0;
+	text-decoration: none;
+}
+
+.pager {
+    font-family: "Arial";
+    font-size: 8pt;
+    color: #64a0bf;
+    text-decoration: underline;
+}
+.pager a:{
+    font-family: "Arial";
+    font-size: 8pt;
+    color: #64a0bf;
+    text-decoration: underline;
+}
+
+
+.currentPage {
+    font-family: "Arial";
+    font-size: 12pt;
+    color: #006ba3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.ButtonImage {
+    font-size: 9pt;
+    font-family: "Arial";
+    text-decoration: none;
+    color: #111111;
+    font-weight: bold;
+    BORDER-RIGHT: #6a6a6a 2px solid;
+    PADDING-RIGHT: 15px;
+    BORDER-TOP: #c5c5c5 1px solid;
+    PADDING-LEFT: 10px;
+    PADDING-BOTTOM: 0px;
+    BORDER-LEFT: #c5c5c5 1px solid;
+    WIDTH: 0px;
+    PADDING-TOP: 0px;
+    BORDER-BOTTOM: #6a6a6a 1px solid;
+    WHITE-SPACE: nowrap;
+    HEIGHT: 0px;
+    BACKGROUND-IMAGE: url(../images/btn_bgmouseoff.gif);
+    word-spacing: 10px;
+    line-height: 18px;
+    word-break: keep-all;
+}
+
+.ButtonImage:a{
+    font-size: 9pt;
+    font-family: "Arial";
+    text-decoration: none;
+    color: #111111;
+    font-weight: bold;
+    BORDER-RIGHT: #6a6a6a 2px solid;
+    PADDING-RIGHT: 15px;
+    BORDER-TOP: #c5c5c5 1px solid;
+    PADDING-LEFT: 10px;
+    PADDING-BOTTOM: 0px;
+    BORDER-LEFT: #c5c5c5 1px solid;
+    WIDTH: 0px;
+    PADDING-TOP: 0px;
+    BORDER-BOTTOM: #6a6a6a 1px solid;
+    WHITE-SPACE: nowrap;
+    HEIGHT: 0px;
+    BACKGROUND-IMAGE: url(../images/btn_bgmouseon.gif);
+    word-spacing: 10px;
+    line-height: 18px;
+    word-break: keep-all;
+}
+
+
+.txt_title4 {
+
+	font-size: 12pt;
+	padding-left: 10px;
+	font-weight: bold;
+	color: #757474;
+}
+
+.border-radius{
+border-top-right-radius : 25px;
+border-bottom-right-radius : 25px;
+border-bottom-left-radius : 25px;
+border-top-left-radius : 25px;
+border-radius : 25px;
+BORDER-TOP: #c5c5c5 1px solid;
+BORDER-BOTTOM: #6a6a6a 1px solid;
+}
+
+
+.smallButton {
+    font-size: 10px;
+  //  font-family: "Arial";
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: normal;
+    BORDER-RIGHT: #6a6a6a 2px solid;
+    PADDING-RIGHT: 15px;
+    BORDER-TOP: #c5c5c5 1px solid;
+    PADDING-LEFT: 10px;
+    PADDING-BOTTOM: 1px;
+    BORDER-LEFT: #c5c5c5 2px solid;
+    WIDTH: 30px;
+    PADDING-TOP: 5px;
+    BORDER-BOTTOM: #6a6a6a 1px solid;
+    WHITE-SPACE: nowrap;
+    HEIGHT: 40px;
+    BACKGROUND-COLOR: #106489;
+    word-spacing: 1em;
+    line-height: 1em;
+    word-break: keep-all;
+}
+
+.smallButton:hover {
+    font-size: 10px;
+   // font-family: "Arial";
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: normal;
+    BORDER-RIGHT: #6a6a6a 2px solid;
+    PADDING-RIGHT: 15px;
+    BORDER-TOP: #c5c5c5 1px solid;
+    PADDING-LEFT: 10px;
+    PADDING-BOTTOM: 1px;
+    BORDER-LEFT: #c5c5c5 2px solid;
+    WIDTH: 0px;
+    PADDING-TOP: 5px;
+    BORDER-BOTTOM: #6a6a6a 1px solid;
+    WHITE-SPACE: nowrap;
+    HEIGHT: 40px;
+    BACKGROUND-COLOR: #78a9c2;
+    word-spacing: 1em;
+    line-height: 1em;
+    word-break: keep-all;
+}
+
+/*-------------------表单按钮样式-----------------------------------*/
+
+input.submit{
+	BORDER-RIGHT: #BBBBBB 1px solid; 
+	PADDING-RIGHT: 2px; 
+	BORDER-TOP: #BBBBBB 1px solid; 
+	PADDING-LEFT: 2px; 
+	FONT-SIZE: 12px; 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde); 
+	BORDER-LEFT: #BBBBBB 1px solid; 
+	CURSOR: hand; 
+	COLOR: black; 
+	PADDING-TOP:2px; 
+	BORDER-BOTTOM: #BBBBBB 1px solid;
+}
+
+input.button{
+	background: #EDEDED;
+	color: #663300;
+	border-top: 1px solid #BBBBBB;
+	border-left: 1px solid #BBBBBB;
+	border-Right: 1px solid #BBBBBB;
+	border-Bottom: 1px solid #BBBBBB;
+}
+
+input.text {
+	border-top: 1px solid #BBBBBB;
+	border-left: 1px solid #BBBBBB;
+	border-Right: 1px solid #BBBBBB;
+	border-Bottom: 1px solid #BBBBBB;
+	background: #EDEDED;
+	font-size: 9px; 
+}
+
+input.password {
+	border-top: 1px solid #BBBBBB;
+	border-left: 1px solid #BBBBBB;
+	border-Right: 1px solid #BBBBBB;
+	border-Bottom: 1px solid #BBBBBB;
+	background: #EDEDED;
+	font-size: 9px; 
+}
+
+textarea.text {
+	border: 1px solid #BBBBBB;
+	background: #EDEDED;
+	background-position: bottom;
+	background-repeat: repeat-x;
+	width: 495px;
+	height: 120px;
+	color: #663300;
+}
+
+body {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	
+}
+
+
+
+/***************************  MenuLevel 1 CSS  ***************************/
+.menu1 a {
+	padding: 18px 5px 13px 5px;
+	font-size: 9pt;
+	color:#FFFFFF;
+	text-decoration: none;
+	background-position: 0 47px;
+	background-image: url(../images/top_menuL1_bg.gif);
+	background-repeat: repeat-x;
+	line-height: 47px;
+	}
+.menu1 a:hover {
+	background-position: 0 -47px;
+	}
+.menu1 a:active {
+	background-position: 0 -47px;
+	}
+
+
+
+
+/***************************  MenuLevel 2 CSS  ***************************/
+#header {
+    font-size:8.5pt;
+    line-height:18px;
+  }
+
+#header ul {
+  margin:0;
+  padding:0px 0px 0;
+  list-style:none;
+  }
+
+#header li {
+  float:left;
+  background:url(../images/top_menuL2_tagOnLeft.gif) no-repeat left top;
+  background-position:0% -23px;
+  margin:0;
+  padding:0 0 0 11px;
+  white-space: nowrap;
+}
+  
+#header a {
+  float:left;
+  display:block;
+  background:url(../images/top_menuL2_tagOnRight.gif) no-repeat right top;
+  background-position:100% -23px;
+  padding:5px 11px 0px 0;
+  text-decoration:none;
+  color:#cdd8de;
+}
+
+
+#header > ul a {width:auto;}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#header a {float:auto;}
+/* End IE5-Mac hack */
+#header a:hover {
+  color:#ffffff;
+  }
+#header li.selected {
+  background-position:0% 0px;
+  border-width:0;
+  }
+#header li.selected a {
+  background-position:100% 0px;
+  padding-bottom:0px;
+  color:#04527a;
+  }

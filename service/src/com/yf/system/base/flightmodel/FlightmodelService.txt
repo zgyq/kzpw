@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 机型信息表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Flightmodel createFlightmodel(Flightmodel flightmodel) throws SQLException;
+	
+	/**
+	 * 删除 机型信息表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteFlightmodel(long id);
+	
+	
+	/**
+	 * 修改 机型信息表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateFlightmodel(Flightmodel flightmodel);
+
+		
+	/**
+	 * 修改 机型信息表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateFlightmodelIgnoreNull(Flightmodel flightmodel);
+		
+	
+	/**
+	 * 查找 机型信息表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFlightmodel(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 机型信息表
+	 * @param id
+	 * @return
+	 */
+	public Flightmodel findFlightmodel(long id);
+	
+	/**
+	 * 查找 机型信息表 by language
+	 * @param id
+	 * @return
+	 */
+	public Flightmodel findFlightmodelbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 机型信息表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllFlightmodelForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找机型信息表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFlightmodelBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 机型信息表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteFlightmodelBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countFlightmodelBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IFlightmodelComponent flightmodelComponent;
+	  
+ 	
+ 	public IFlightmodelComponent getFlightmodelComponent() {
+		return flightmodelComponent;
+	}
+	public void setFlightmodelComponent(IFlightmodelComponent  flightmodelComponent) {
+		this.flightmodelComponent = flightmodelComponent;
+	}
+	/**
+	 * 创建 机型信息表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Flightmodel createFlightmodel(Flightmodel flightmodel) throws SQLException{
+	
+		return flightmodelComponent.createFlightmodel(flightmodel);
+	}
+	/**
+	 * 删除 机型信息表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteFlightmodel(long id){
+	
+		return flightmodelComponent.deleteFlightmodel(id);
+	}
+	
+	
+	/**
+	 * 修改 机型信息表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateFlightmodel(Flightmodel flightmodel){
+		return flightmodelComponent.updateFlightmodel(flightmodel);
+	
+	}
+
+		
+	/**
+	 * 修改 机型信息表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateFlightmodelIgnoreNull(Flightmodel flightmodel){
+			return flightmodelComponent.updateFlightmodelIgnoreNull(flightmodel);
+	
+	}
+	
+	/**
+	 * 查找 机型信息表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFlightmodel(String where, String orderby,int limit,int offset){
+		return flightmodelComponent.findAllFlightmodel(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 机型信息表
+	 * @param id
+	 * @return
+	 */
+	public Flightmodel findFlightmodel(long id){
+		return flightmodelComponent.findFlightmodel(id);
+	}
+	
+	/**
+	 * 查找 机型信息表
+	 * @param id
+	 * @return
+	 */
+	public Flightmodel findFlightmodelbylanguage(long id,Integer language){
+		return flightmodelComponent.findFlightmodelbylanguage(id,language);
+	}
+	/** 
+	 * 查找 机型信息表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllFlightmodelForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return flightmodelComponent.findAllFlightmodel(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找机型信息表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFlightmodelBySql(String sql,int limit,int offset){
+		return flightmodelComponent.findAllFlightmodel(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 机型信息表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteFlightmodelBySql(String sql){
+		return flightmodelComponent.excuteFlightmodelBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countFlightmodelBySql(String sql){
+		return flightmodelComponent.countFlightmodelBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 退票报表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Tuipiao createTuipiao(Tuipiao tuipiao) throws SQLException;
+	
+	/**
+	 * 删除 退票报表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTuipiao(long id);
+	
+	
+	/**
+	 * 修改 退票报表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTuipiao(Tuipiao tuipiao);
+
+		
+	/**
+	 * 修改 退票报表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTuipiaoIgnoreNull(Tuipiao tuipiao);
+		
+	
+	/**
+	 * 查找 退票报表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTuipiao(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 退票报表
+	 * @param id
+	 * @return
+	 */
+	public Tuipiao findTuipiao(long id);
+	
+	
+	/** 
+	 * 查找 退票报表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTuipiaoForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找退票报表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTuipiaoBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 退票报表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTuipiaoBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTuipiaoBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITuipiaoComponent tuipiaoComponent;
+	  
+ 	
+ 	public ITuipiaoComponent getTuipiaoComponent() {
+		return tuipiaoComponent;
+	}
+	public void setTuipiaoComponent(ITuipiaoComponent  tuipiaoComponent) {
+		this.tuipiaoComponent = tuipiaoComponent;
+	}
+	/**
+	 * 创建 退票报表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Tuipiao createTuipiao(Tuipiao tuipiao) throws SQLException{
+	
+		return tuipiaoComponent.createTuipiao(tuipiao);
+	}
+	/**
+	 * 删除 退票报表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTuipiao(long id){
+	
+		return tuipiaoComponent.deleteTuipiao(id);
+	}
+	
+	
+	/**
+	 * 修改 退票报表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTuipiao(Tuipiao tuipiao){
+		return tuipiaoComponent.updateTuipiao(tuipiao);
+	
+	}
+
+		
+	/**
+	 * 修改 退票报表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTuipiaoIgnoreNull(Tuipiao tuipiao){
+			return tuipiaoComponent.updateTuipiaoIgnoreNull(tuipiao);
+	
+	}
+	
+	/**
+	 * 查找 退票报表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTuipiao(String where, String orderby,int limit,int offset){
+		return tuipiaoComponent.findAllTuipiao(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 退票报表
+	 * @param id
+	 * @return
+	 */
+	public Tuipiao findTuipiao(long id){
+		return tuipiaoComponent.findTuipiao(id);
+	}
+	
+	/** 
+	 * 查找 退票报表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTuipiaoForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return tuipiaoComponent.findAllTuipiao(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找退票报表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTuipiaoBySql(String sql,int limit,int offset){
+		return tuipiaoComponent.findAllTuipiao(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 退票报表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTuipiaoBySql(String sql){
+		return tuipiaoComponent.excuteTuipiaoBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTuipiaoBySql(String sql){
+		return tuipiaoComponent.countTuipiaoBySql(sql);
+	}
+	
+	
+

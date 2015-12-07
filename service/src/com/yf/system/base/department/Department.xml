@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Dept">
+  
+  <typeAlias alias="Dept" type="com.yf.system.base.department.Department"/>
+  
+
+  <resultMap id="resultDeptMap" class="Dept">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="parentid" column="C_PARENTID"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+     <result property="type" column="C_TYPE"/>
+     <result property="deptmemo" column="C_DEPTMEMO"/>
+   
+  </resultMap>
+  
+  <select id="findAllDept"  resultMap="resultDeptMap"  parameterClass="java.util.Map">
+  
+    select * from T_DEPARTMENT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllDeptBySql"  resultMap="resultDeptMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteDeptBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countDeptBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_DEPARTMENT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findDept" parameterClass="long" resultClass="Dept">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_PARENTID as parentid,
+	  			C_TYPE as type,
+	  			C_DEPTMEMO as deptmemo,
+	  			C_AGENTID as agentid 
+     from T_DEPARTMENT
+    where ID = #id#
+  </select>
+   
+  <insert id="createDept" parameterClass="Dept">
+    insert into T_DEPARTMENT ( 
+    	ID,
+	  			C_NAME,
+	  			C_PARENTID,
+	  			C_TYPE,
+	  			C_DEPTMEMO,
+	  			C_AGENTID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+							#parentid:DECIMAL#,
+							#type#,
+							#deptmemo#,
+						
+  							#agentid:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteDept" parameterClass="long">
+    delete from T_DEPARTMENT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateDept" parameterClass="Dept">
+    update T_DEPARTMENT 
+    set 
+    	C_NAME = #name#,
+	  					C_PARENTID = #parentid:DECIMAL#,
+	  					C_TYPE = #type#,
+	  					C_DEPTMEMO = #deptmemo#,
+						C_AGENTID = #agentid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

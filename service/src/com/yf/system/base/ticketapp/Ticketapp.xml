@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Ticketapp">
+  
+  <typeAlias alias="Ticketapp" type="com.yf.system.base.ticketapp.Ticketapp"/>
+  
+
+  <resultMap id="resultTicketappMap" class="Ticketapp">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="sname" column="C_SNAME"/>
+  
+     <result property="endname" column="C_ENDNAME"/>
+  
+     <result property="stime" column="C_STIME"/>
+  
+     <result property="copname" column="C_COPNAME"/>
+  
+     <result property="fnub" column="C_FNUB"/>
+  
+     <result property="cnub" column="C_CNUB"/>
+  
+     <result property="pnumber" column="C_PNUMBER"/>
+  
+     <result property="username" column="C_USERNAME"/>
+  
+     <result property="mobile" column="C_MOBILE"/>
+  
+     <result property="memberemail" column="C_MEMBEREMAIL"/>
+  
+     <result property="cardnunber" column="C_CARDNUNBER"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllTicketapp"  resultMap="resultTicketappMap"  parameterClass="java.util.Map">
+  
+    select * from T_TICKETAPP
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTicketappBySql"  resultMap="resultTicketappMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTicketappBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTicketappBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TICKETAPP
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTicketapp" parameterClass="long" resultClass="Ticketapp">
+    select 
+    	ID as id,
+	  			C_SNAME as sname,
+	  			C_ENDNAME as endname,
+	  			C_STIME as stime,
+	  			C_COPNAME as copname,
+	  			C_FNUB as fnub,
+	  			C_CNUB as cnub,
+	  			C_PNUMBER as pnumber,
+	  			C_USERNAME as username,
+	  			C_MOBILE as mobile,
+	  			C_MEMBEREMAIL as memberemail,
+	  			C_CARDNUNBER as cardnunber,
+	  			C_DESCRIPTION as description,
+	  			C_CREATETIME as createtime 
+     from T_TICKETAPP
+    where ID = #id#
+  </select>
+   
+  <insert id="createTicketapp" parameterClass="Ticketapp">
+    insert into T_TICKETAPP ( 
+    	ID,
+	  			C_SNAME,
+	  			C_ENDNAME,
+	  			C_STIME,
+	  			C_COPNAME,
+	  			C_FNUB,
+	  			C_CNUB,
+	  			C_PNUMBER,
+	  			C_USERNAME,
+	  			C_MOBILE,
+	  			C_MEMBEREMAIL,
+	  			C_CARDNUNBER,
+	  			C_DESCRIPTION,
+	  			C_CREATETIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#sname#,
+	  					
+	  						#endname#,
+	  					
+	  						#stime#,
+	  					
+	  						#copname#,
+	  					
+	  						#fnub#,
+	  					
+	  						#cnub#,
+	  					
+	  						#pnumber#,
+	  					
+	  						#username#,
+	  					
+	  						#mobile#,
+	  					
+	  						#memberemail#,
+	  					
+	  						#cardnunber#,
+	  					
+	  						#description#,
+	  					
+	  						#createtime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTicketapp" parameterClass="long">
+    delete from T_TICKETAPP
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTicketapp" parameterClass="Ticketapp">
+    update T_TICKETAPP 
+    set 
+    	C_SNAME = #sname#,
+	  					C_ENDNAME = #endname#,
+	  					C_STIME = #stime#,
+	  					C_COPNAME = #copname#,
+	  					C_FNUB = #fnub#,
+	  					C_CNUB = #cnub#,
+	  					C_PNUMBER = #pnumber#,
+	  					C_USERNAME = #username#,
+	  					C_MOBILE = #mobile#,
+	  					C_MEMBEREMAIL = #memberemail#,
+	  					C_CARDNUNBER = #cardnunber#,
+	  					C_DESCRIPTION = #description#,
+	  					C_CREATETIME = #createtime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

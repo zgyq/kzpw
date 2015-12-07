@@ -1,0 +1,680 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>国内机票</title>
+<link href="css/EL_common.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/cn_list201312.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/ift_index1110.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/cn_list201312.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/index.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<div class="header">
+	<div class="top1 wrap">
+		<div class="logo"><a href="#"><img src="images/logo.jpg" height="120" /></a></div>
+		<div class="top_r">
+			<div class="hot_phone">400-8888-999</div>
+			<div class="t_link">
+				<a href="#" class="wap">手机版</a>|
+				<a href="#">收藏本站</a>|
+				<a href="#">在线客服</a>|
+				<a href="#">帮助</a>|
+				<a href="#">积分广场</a>|
+				<a href="#">礼品卡</a>|
+				<a href="#">English</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="nav">
+		<div class="wrap">
+			<div class="navmain">
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">国内酒店</a></li>
+					<li><a href="#" class="now">预订机票</a></li>
+					<li><a href="#">火车票</a></li>
+				</ul>
+				<ul class="clear"></ul>
+			</div>
+			<div class="m_c">			
+				<a href="#" class="dbg">我的账户</a>
+				<a href="#">免费注册</a>
+				<a href="#" class="dbg">登陆</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<!--end header -->
+
+<!--end banner -->
+<div class="contmain wrap" id="content">
+	<div class="searchbar">
+            <div class="droplist flight_type" idtag="FlightType">
+                <span class="value">
+                    单程</span>
+                <ul class="box">
+                    <li code="0">
+                        单程</li>
+                    <li code="1">
+                        往返</li>
+                </ul>
+            </div>
+            <input type="hidden" id="FlightType" name="FlightType" value="0" />
+            <span class="ml5">
+                出发城市<input id="Round_DepartCity" type="text"
+                    class="intxt ml5" maxlength="20" value="北京"
+                    citythreesign="BJS" citynameen="beijing" /></span>
+            <span id="changecity" method="changecity" class="change_city" title="互换出发到达城市">
+            </span><span class="ml5">
+                到达城市<input id="Round_ArriveCity" type="text"
+                    class="intxt ml5" maxlength="20" value="上海"
+                    citythreesign="SHA" citynameen="shanghai" /></span>
+            <span class="ml5">
+                出发日期<input type="text" class="intxt ml5 depart"
+                    name="DepartDate" maxlength="20" value="2014-07-03"
+                    default="2014-07-03" method="Date" /></span>
+            <span method="Round" class="ml5" style="display:none">
+                返程日期<input type="text" class="intxt ml5 return"
+                    name="BackDate" maxlength="20" value="2014-07-06"
+                    default="2014-07-06" method="Date" /></span>
+            <input class="ml5 searchbtn" id="btnSearch" type="button" />
+        </div>
+	<div class="bookinginfo mt20">预订提示：您的现金账户余额可以部分或全部用来订机票（酒店预付专用卡除外）。</div>
+	<div id="mainnavbox" class="mt10">    
+		<span class="mleft">
+			<h1>北京<span class="ift_f22 ift_f22fc">-&gt;</span>上海</h1>
+		</span>		
+		<span class="mright">06月25日出发&nbsp;共<span  method="flightcount" class="price">51</span>个航班信息</span>
+	</div>
+	
+	<div id="content" class="clx">
+	  <div id="flightlistnav">
+		<div>
+		  <ul id="lowlistnav" class="navcols_ul clx">
+			<li class="navcols_on">
+			  <div class="f_l_nc">
+				<div class="navcols_title">
+				  <p class="title">单程最低</p>
+				  <p class="n_price">&yen;<strong>423</strong></p>
+				</div>
+			  </div>
+			</li>
+			<li id="prev" method="prevweek" class="navcols firstcols">
+			  <div class="f_l_na f_l_na_l"> <em class="enable"></em> </div>
+			</li>
+			<li class="navcols"> <a href="#" rel="nofollow" style="text-decoration: none">
+			  <div method="seachflightbyday" class='f_l_na'> <em value="2014-06-24"> 06-24</em> <em>&nbsp;(周二)</em> <br />
+				<span>&yen;<strong>790</strong></span> </div>
+			  </a> </li>
+			<li class="navcols"> <a href="#" rel="nofollow" style="text-decoration: none">
+			  <div method="seachflightbyday" class='f_l_nb'> <em value="2014-06-25"> 06-25</em> <em>&nbsp;(周三)</em> <br />
+				<span>&yen;<strong>570</strong></span> </div>
+			  </a> </li>
+			<li class="navcols"> <a href="#" rel="nofollow" style="text-decoration: none">
+			  <div method="seachflightbyday" class='f_l_na'> <em value="2014-06-26"> 06-26</em> <em>&nbsp;(周四)</em> <br />
+				<span>&yen;<strong>510</strong></span> </div>
+			  </a> </li>
+			<li class="navcols"> <a href="#" rel="nofollow" style="text-decoration: none">
+			  <div method="seachflightbyday" class='f_l_na'> <em value="2014-06-27"> 06-27</em> <em>&nbsp;(周五)</em> <br />
+				<span>&yen;<strong>510</strong></span> </div>
+			  </a> </li>
+			<li class="navcols"> <a href="#" rel="nofollow" style="text-decoration: none">
+			  <div method="seachflightbyday" class='f_l_na'> <em value="2014-06-28"> 06-28</em> <em>&nbsp;(周六)</em> <br />
+				<span>&yen;<strong>536</strong></span> </div>
+			  </a> </li>
+			<li class="navcols"> <a href="#" rel="nofollow" style="text-decoration: none">
+			  <div method="seachflightbyday" class='f_l_na'> <em value="2014-06-29"> 06-29</em> <em>&nbsp;(周日)</em> <br />
+				<span>&yen;<strong>423</strong></span> </div>
+			  </a> </li>
+			<li class="navcols"> <a href="#" rel="nofollow" style="text-decoration: none">
+			  <div method="seachflightbyday" class='f_l_na'> <em value="2014-06-30"> 06-30</em> <em>&nbsp;(周一)</em> <br />
+				<span>&yen;<strong>570</strong></span> </div>
+			  </a> </li>
+			<li id="next" method="nextweek">
+			  <div class="f_l_na f_l_na_r"> <em></em> </div>
+			</li>
+		  </ul>
+		</div>
+		<div id="fsortbox" method="OrderField"> </div>		
+		<p class="flight_title_line"> </p>
+		
+		
+		<div id="w_content">
+			<div class="">		  
+			  <div class="main">
+				<div class="nav clx">
+				  <dl class="clx">
+					<dt> 起飞时间：</dt>
+					<dd class="on" id="dd0"> <a href="#" code="all" filter="true" filtervalue="" filterby="flighttime"> 不限</a></dd>
+					<dd id="dd4">
+					  <input id="c04" type="checkbox" code="4" filter="true" filtervalue="4" filterby="flighttime">
+					  <label
+							for="c04">凌晨(0-6点)</label>
+					</dd>
+					<dd id="dd1">
+					  <input id="c01" type="checkbox" code="1" filter="true" filtervalue="1" filterby="flighttime">
+					  <label
+							for="c01">上午(6-12点)</label>
+					</dd>
+					<dd id="dd2">
+					  <input id="c02" type="checkbox" code="2" filter="true" filtervalue="2" filterby="flighttime">
+					  <label for="c02"> 下午(12-18点)</label>
+					</dd>
+					<dd id="dd3">
+					  <input id="c03" type="checkbox" code="3" filter="true" filtervalue="3" filterby="flighttime">
+					  <label for="c03"> 晚上(18-24点)</label>
+					</dd>
+				  </dl>
+				  <dl class="clx">
+					<dt> 航空公司：</dt>
+					<dd class="on"> <a filterby="aircorp" filtervalue="" filter="true" code="all" href="#"> 不限</a></dd>
+					<dd>
+					  <input id="a0" type="checkbox" filterby="aircorp" filtervalue="" code="TG"
+							filter="true" />
+					  <label for="a0">泰国航空</label>
+					</dd>
+					<dd>
+					  <input id="a1" type="checkbox" filterby="aircorp" filtervalue="" code="KA"
+							filter="true" />
+					  <label for="a1">港龙航空</label>
+					</dd>
+					<dd>
+					  <input id="a2" type="checkbox" filterby="aircorp" filtervalue="" code="CX"
+							filter="true" />
+					  <label for="a2">国泰航空</label>
+					</dd>
+					<dd>
+					  <input id="a3" type="checkbox" filterby="aircorp" filtervalue="" code="CA"
+							filter="true" />
+					  <label for="a3">中国国航</label>
+					</dd>
+					<dd>
+					  <input id="a4" type="checkbox" filterby="aircorp" filtervalue="" code="CZ"
+							filter="true" />
+					  <label for="a4">南方航空</label>
+					</dd>
+					<dd>
+					  <input id="a5" type="checkbox" filterby="aircorp" filtervalue="" code="MU"
+							filter="true" />
+					  <label for="a5">东方航空</label>
+					</dd>
+					<dd>
+					  <input id="a6" type="checkbox" filterby="aircorp" filtervalue="" code="QF"
+							filter="true" />
+					  <label for="a6">澳洲航空</label>
+					</dd>
+					<dd>
+					  <input id="a7" type="checkbox" filterby="aircorp" filtervalue="" code="D7"
+							filter="true" />
+					  <label for="a7">亚洲航空X</label>
+					</dd>
+				  </dl>
+				  
+				  <div class="clear"> </div>
+				</div>
+				<div class="clear"></div>	
+				
+			  </div>
+			  
+			  
+			  
+			  	<ul class="flight_title clx mt10">
+				  <li method="price" class="sort_price cur"> 票价<i></i></li>
+				  <li method="fly" class="sort_time "> 起飞时间<i></i></li>
+				</ul>
+				
+			</div>
+		</div>
+		
+	  </div>	  
+	</div>	
+		
+	
+	
+	
+	
+	
+	<div id="content">
+		<div class="gjjp_l" id="f_main">			
+			<div class="main" id="DataList">      
+			  <div id="flightlist">
+				<div class="flightlist">
+				  <div class="f-goto-div">
+					<table class="f-goto-table">
+					  <tbody>
+						<tr>
+						  <td class="td1" width="32"><span class="Airlines_MF icon_airline"></span> </td>
+						  <td class="td2" width="120"> 厦门航空&nbsp;MF8150<br>
+							机型<span class="pseudo_link" aircorp="MF" method="PlanType" planetype="738">738</span> </td>
+						  <td class="td3"><p class="time"> 06:50</p>
+							北京首都机场T2 </td>
+						  <td class="td4"><p class="day"></p>
+							<div class="goto"> </div>
+							<p> 2小时5分</p></td>
+						  <td class="td5"><p class="time"> 08:55</p>
+							杭州萧山国际机场 </td>
+						  <td class="l_black"> 民航基金+燃油：50+120元 </td>
+						</tr>
+					  </tbody>
+					</table>
+				  </div>
+				  <div class="fltable-div">
+					<table class="fltable">
+					  <tbody>
+						<tr>
+						  <td class="cols01"></td>
+						  <td class="cols02"><span class="pseudo_link bor" aircorp="MF" mileage="" upgradeleg="" method="Mileage"> 常旅客无积分累积 </span> </td>
+						  <td class="cols03"><span class="pseudo_link" method="flightrule" rule="AirShoppingMF8150R324442412">退改规则</span>
+							<div style="display: none;"></div></td>
+						  <td class="cols04"><div class="li_jia"> ¥<strong>420</strong></div>
+							<span class="tax"> 2.6折经济舱</span> <span class="price">¥<strong>412</strong></span> </td>
+						  <td class="cols05"><div class="icon_bg02 icon_hui"> <span method="promotions" pid="324442" date="Monday, June 23, 2014" presale="0" channel="0">惠</span></div></td>
+						  <td class="cols06"><div style="height: 32px; position: relative">
+							  <input type="button" method="btnBooking" name="direct" class="button" itemid="0" flightnum="MF8150" fareid="0" flightclassnum="R" promotionid="324442" value="预订" onehour="" onFocus="this.blur()" departtime="635396790000000000" channel="AirShopping" price="412" totalfee="170" insuranceproductid="0">
+							</div></td>
+						</tr>
+					  </tbody>
+					  <tbody>
+						<tr method="recommand">
+						  <td class="cols01"></td>
+						  <td class="cols02"><span class="pseudo_link bor" aircorp="MF" mileage="200" upgradeleg="1" method="Mileage"> 常旅客标准里程 ×200% </span> </td>
+						  <td class="cols03"><span class="pseudo_link" method="flightrule" rule="AirShoppingMF8150Y01610">退改规则</span>
+							<div style="display: none;"></div></td>
+						  <td class="cols04"><span class="tax"> 全价经济舱</span> <span class="price">¥<strong>1610</strong></span> </td>
+						  <td class="cols05"><div class="clx">
+							  <div class="icon_bg04" method="promotelist" pid="315211" price="32" iscoupon="1"> <span method="promotelist" promtype="19" pid="315211" price="32" iscoupon="1"> 32元</span> </div>
+							</div></td>
+						  <td class="cols06"><div style="height: 32px; position: relative">
+							  <input type="button" method="btnBooking" name="direct" class="button" itemid="35" flightnum="MF8150" fareid="0" flightclassnum="Y" promotionid="0" value="预订" onehour="" onFocus="this.blur()" departtime="635396790000000000" channel="AirShopping" price="1610" totalfee="170" insuranceproductid="0">
+							</div></td>
+						</tr>
+						<tr method="recommand">
+						  <td class="cols01"></td>
+						  <td class="cols02"><span class="pseudo_link bor" aircorp="MF" mileage="250" upgradeleg="1.5" method="Mileage"> 常旅客标准里程 ×250% </span> </td>
+						  <td class="cols03"><span class="pseudo_link" method="flightrule" rule="AirShoppingMF8150A3244422528">退改规则</span>
+							<div style="display: none;"></div></td>
+						  <td class="cols04"><div class="li_jia"> ¥<strong>2580</strong></div>
+							<span class="icon_bg01 ml5" method="class" flightno="MF8150" flightclass="A" way="1"> 超值 </span> 头等舱 <span class="price">¥<strong>2528</strong></span> </td>
+						  <td class="cols05"><div class="icon_bg02 icon_hui"> <span method="promotions" pid="324442" date="Monday, June 23, 2014" presale="0" channel="0">惠</span></div></td>
+						  <td class="cols06"><div style="height: 32px; position: relative">
+							  <input type="button" method="btnBooking" name="direct-8" class="button" itemid="36" flightnum="MF8150" fareid="0" flightclassnum="A" promotionid="324442" value="预订" onehour="" onFocus="this.blur()" departtime="635396790000000000" channel="AirShopping" price="2528" totalfee="170" insuranceproductid="0">
+							</div></td>
+						</tr>
+					  </tbody>
+					</table>
+					<div method="divMore"> </div>
+					<p class="lh"> <span method="loadding" style="display: none"></span><span class="pseudo_link" method="moreflight" itemid="1" flightno="MF8150" channel="4" flightclass="R" datacache="0" fareid="0" uniquekey="AirShoppingMF8150R324442412"> 更多价格<b>最高返&nbsp;¥81</b></span><span method="spanMore" itemid="1" class="flight_down"></span> </p>
+				  </div>
+				</div>
+				
+				<div class="flightlist">
+				  <div class="f-goto-div">
+					<table class="f-goto-table">
+					  <tbody>
+						<tr>
+						  <td class="td1" width="32"><span class="Airlines_MF icon_airline"></span> </td>
+						  <td class="td2" width="120"> 厦门航空&nbsp;MF8150<br>
+							机型<span class="pseudo_link" aircorp="MF" method="PlanType" planetype="738">738</span> </td>
+						  <td class="td3"><p class="time"> 06:50</p>
+							北京首都机场T2 </td>
+						  <td class="td4"><p class="day"></p>
+							<div class="goto"> </div>
+							<p> 2小时5分</p></td>
+						  <td class="td5"><p class="time"> 08:55</p>
+							杭州萧山国际机场 </td>
+						  <td class="l_black"> 民航基金+燃油：50+120元 </td>
+						</tr>
+					  </tbody>
+					</table>
+				  </div>
+				  <div class="fltable-div">
+					<table class="fltable">
+					  <tbody>
+						<tr>
+						  <td class="cols01"></td>
+						  <td class="cols02"><span class="pseudo_link bor" aircorp="MF" mileage="" upgradeleg="" method="Mileage"> 常旅客无积分累积 </span> </td>
+						  <td class="cols03"><span class="pseudo_link" method="flightrule" rule="AirShoppingMF8150R324442412">退改规则</span>
+							<div style="display: none;"></div></td>
+						  <td class="cols04"><div class="li_jia"> ¥<strong>420</strong></div>
+							<span class="tax"> 2.6折经济舱</span> <span class="price">¥<strong>412</strong></span> </td>
+						  <td class="cols05"><div class="icon_bg02 icon_hui"> <span method="promotions" pid="324442" date="Monday, June 23, 2014" presale="0" channel="0">惠</span></div></td>
+						  <td class="cols06"><div style="height: 32px; position: relative">
+							  <input type="button" method="btnBooking" name="direct" class="button" itemid="0" flightnum="MF8150" fareid="0" flightclassnum="R" promotionid="324442" value="预订" onehour="" onFocus="this.blur()" departtime="635396790000000000" channel="AirShopping" price="412" totalfee="170" insuranceproductid="0">
+							</div></td>
+						</tr>
+					  </tbody>
+					  <tbody>
+						<tr method="recommand">
+						  <td class="cols01"></td>
+						  <td class="cols02"><span class="pseudo_link bor" aircorp="MF" mileage="200" upgradeleg="1" method="Mileage"> 常旅客标准里程 ×200% </span> </td>
+						  <td class="cols03"><span class="pseudo_link" method="flightrule" rule="AirShoppingMF8150Y01610">退改规则</span>
+							<div style="display: none;"></div></td>
+						  <td class="cols04"><span class="tax"> 全价经济舱</span> <span class="price">¥<strong>1610</strong></span> </td>
+						  <td class="cols05"><div class="clx">
+							  <div class="icon_bg04" method="promotelist" pid="315211" price="32" iscoupon="1"> <span method="promotelist" promtype="19" pid="315211" price="32" iscoupon="1"> 32元</span> </div>
+							</div></td>
+						  <td class="cols06"><div style="height: 32px; position: relative">
+							  <input type="button" method="btnBooking" name="direct" class="button" itemid="35" flightnum="MF8150" fareid="0" flightclassnum="Y" promotionid="0" value="预订" onehour="" onFocus="this.blur()" departtime="635396790000000000" channel="AirShopping" price="1610" totalfee="170" insuranceproductid="0">
+							</div></td>
+						</tr>
+						<tr method="recommand">
+						  <td class="cols01"></td>
+						  <td class="cols02"><span class="pseudo_link bor" aircorp="MF" mileage="250" upgradeleg="1.5" method="Mileage"> 常旅客标准里程 ×250% </span> </td>
+						  <td class="cols03"><span class="pseudo_link" method="flightrule" rule="AirShoppingMF8150A3244422528">退改规则</span>
+							<div style="display: none;"></div></td>
+						  <td class="cols04"><div class="li_jia"> ¥<strong>2580</strong></div>
+							<span class="icon_bg01 ml5" method="class" flightno="MF8150" flightclass="A" way="1"> 超值 </span> 头等舱 <span class="price">¥<strong>2528</strong></span> </td>
+						  <td class="cols05"><div class="icon_bg02 icon_hui"> <span method="promotions" pid="324442" date="Monday, June 23, 2014" presale="0" channel="0">惠</span></div></td>
+						  <td class="cols06"><div style="height: 32px; position: relative">
+							  <input type="button" method="btnBooking" name="direct-8" class="button" itemid="36" flightnum="MF8150" fareid="0" flightclassnum="A" promotionid="324442" value="预订" onehour="" onFocus="this.blur()" departtime="635396790000000000" channel="AirShopping" price="2528" totalfee="170" insuranceproductid="0">
+							</div></td>
+						</tr>
+					  </tbody>
+					</table>
+					<div method="divMore"> </div>
+					<p class="lh"> <span method="loadding" style="display: none"></span><span class="pseudo_link" method="moreflight" itemid="1" flightno="MF8150" channel="4" flightclass="R" datacache="0" fareid="0" uniquekey="AirShoppingMF8150R324442412"> 更多价格<b>最高返&nbsp;¥81</b></span><span method="spanMore" itemid="1" class="flight_down"></span> </p>
+				  </div>
+				</div>
+				
+				<div class="flightlist">
+				  <div class="f-goto-div">
+					<table class="f-goto-table">
+					  <tbody>
+						<tr>
+						  <td class="td1" width="32"><span class="Airlines_MF icon_airline"></span> </td>
+						  <td class="td2" width="120"> 厦门航空&nbsp;MF8150<br>
+							机型<span class="pseudo_link" aircorp="MF" method="PlanType" planetype="738">738</span> </td>
+						  <td class="td3"><p class="time"> 06:50</p>
+							北京首都机场T2 </td>
+						  <td class="td4"><p class="day"></p>
+							<div class="goto"> </div>
+							<p> 2小时5分</p></td>
+						  <td class="td5"><p class="time"> 08:55</p>
+							杭州萧山国际机场 </td>
+						  <td class="l_black"> 民航基金+燃油：50+120元 </td>
+						</tr>
+					  </tbody>
+					</table>
+				  </div>
+				  <div class="fltable-div">
+					<table class="fltable">
+					  <tbody>
+						<tr>
+						  <td class="cols01"></td>
+						  <td class="cols02"><span class="pseudo_link bor" aircorp="MF" mileage="" upgradeleg="" method="Mileage"> 常旅客无积分累积 </span> </td>
+						  <td class="cols03"><span class="pseudo_link" method="flightrule" rule="AirShoppingMF8150R324442412">退改规则</span>
+							<div style="display: none;"></div></td>
+						  <td class="cols04"><div class="li_jia"> ¥<strong>420</strong></div>
+							<span class="tax"> 2.6折经济舱</span> <span class="price">¥<strong>412</strong></span> </td>
+						  <td class="cols05"><div class="icon_bg02 icon_hui"> <span method="promotions" pid="324442" date="Monday, June 23, 2014" presale="0" channel="0">惠</span></div></td>
+						  <td class="cols06"><div style="height: 32px; position: relative">
+							  <input type="button" method="btnBooking" name="direct" class="button" itemid="0" flightnum="MF8150" fareid="0" flightclassnum="R" promotionid="324442" value="预订" onehour="" onFocus="this.blur()" departtime="635396790000000000" channel="AirShopping" price="412" totalfee="170" insuranceproductid="0">
+							</div></td>
+						</tr>
+					  </tbody>
+					  <tbody>
+						<tr method="recommand">
+						  <td class="cols01"></td>
+						  <td class="cols02"><span class="pseudo_link bor" aircorp="MF" mileage="200" upgradeleg="1" method="Mileage"> 常旅客标准里程 ×200% </span> </td>
+						  <td class="cols03"><span class="pseudo_link" method="flightrule" rule="AirShoppingMF8150Y01610">退改规则</span>
+							<div style="display: none;"></div></td>
+						  <td class="cols04"><span class="tax"> 全价经济舱</span> <span class="price">¥<strong>1610</strong></span> </td>
+						  <td class="cols05"><div class="clx">
+							  <div class="icon_bg04" method="promotelist" pid="315211" price="32" iscoupon="1"> <span method="promotelist" promtype="19" pid="315211" price="32" iscoupon="1"> 32元</span> </div>
+							</div></td>
+						  <td class="cols06"><div style="height: 32px; position: relative">
+							  <input type="button" method="btnBooking" name="direct" class="button" itemid="35" flightnum="MF8150" fareid="0" flightclassnum="Y" promotionid="0" value="预订" onehour="" onFocus="this.blur()" departtime="635396790000000000" channel="AirShopping" price="1610" totalfee="170" insuranceproductid="0">
+							</div></td>
+						</tr>
+						<tr method="recommand">
+						  <td class="cols01"></td>
+						  <td class="cols02"><span class="pseudo_link bor" aircorp="MF" mileage="250" upgradeleg="1.5" method="Mileage"> 常旅客标准里程 ×250% </span> </td>
+						  <td class="cols03"><span class="pseudo_link" method="flightrule" rule="AirShoppingMF8150A3244422528">退改规则</span>
+							<div style="display: none;"></div></td>
+						  <td class="cols04"><div class="li_jia"> ¥<strong>2580</strong></div>
+							<span class="icon_bg01 ml5" method="class" flightno="MF8150" flightclass="A" way="1"> 超值 </span> 头等舱 <span class="price">¥<strong>2528</strong></span> </td>
+						  <td class="cols05"><div class="icon_bg02 icon_hui"> <span method="promotions" pid="324442" date="Monday, June 23, 2014" presale="0" channel="0">惠</span></div></td>
+						  <td class="cols06"><div style="height: 32px; position: relative">
+							  <input type="button" method="btnBooking" name="direct-8" class="button" itemid="36" flightnum="MF8150" fareid="0" flightclassnum="A" promotionid="324442" value="预订" onehour="" onFocus="this.blur()" departtime="635396790000000000" channel="AirShopping" price="2528" totalfee="170" insuranceproductid="0">
+							</div></td>
+						</tr>
+					  </tbody>
+					</table>
+					<div method="divMore"> </div>
+					<p class="lh"> <span method="loadding" style="display: none"></span><span class="pseudo_link" method="moreflight" itemid="1" flightno="MF8150" channel="4" flightclass="R" datacache="0" fareid="0" uniquekey="AirShoppingMF8150R324442412"> 更多价格<b>最高返&nbsp;¥81</b></span><span method="spanMore" itemid="1" class="flight_down"></span> </p>
+				  </div>
+				</div>
+				
+				<div class="flightlist">
+				  <div class="f-goto-div">
+					<table class="f-goto-table">
+					  <tbody>
+						<tr>
+						  <td class="td1" width="32"><span class="Airlines_MF icon_airline"></span> </td>
+						  <td class="td2" width="120"> 厦门航空&nbsp;MF8150<br>
+							机型<span class="pseudo_link" aircorp="MF" method="PlanType" planetype="738">738</span> </td>
+						  <td class="td3"><p class="time"> 06:50</p>
+							北京首都机场T2 </td>
+						  <td class="td4"><p class="day"></p>
+							<div class="goto"> </div>
+							<p> 2小时5分</p></td>
+						  <td class="td5"><p class="time"> 08:55</p>
+							杭州萧山国际机场 </td>
+						  <td class="l_black"> 民航基金+燃油：50+120元 </td>
+						</tr>
+					  </tbody>
+					</table>
+				  </div>
+				  <div class="fltable-div">
+					<table class="fltable">
+					  <tbody>
+						<tr>
+						  <td class="cols01"></td>
+						  <td class="cols02"><span class="pseudo_link bor" aircorp="MF" mileage="" upgradeleg="" method="Mileage"> 常旅客无积分累积 </span> </td>
+						  <td class="cols03"><span class="pseudo_link" method="flightrule" rule="AirShoppingMF8150R324442412">退改规则</span>
+							<div style="display: none;"></div></td>
+						  <td class="cols04"><div class="li_jia"> ¥<strong>420</strong></div>
+							<span class="tax"> 2.6折经济舱</span> <span class="price">¥<strong>412</strong></span> </td>
+						  <td class="cols05"><div class="icon_bg02 icon_hui"> <span method="promotions" pid="324442" date="Monday, June 23, 2014" presale="0" channel="0">惠</span></div></td>
+						  <td class="cols06"><div style="height: 32px; position: relative">
+							  <input type="button" method="btnBooking" name="direct" class="button" itemid="0" flightnum="MF8150" fareid="0" flightclassnum="R" promotionid="324442" value="预订" onehour="" onFocus="this.blur()" departtime="635396790000000000" channel="AirShopping" price="412" totalfee="170" insuranceproductid="0">
+							</div></td>
+						</tr>
+					  </tbody>
+					  <tbody>
+						<tr method="recommand">
+						  <td class="cols01"></td>
+						  <td class="cols02"><span class="pseudo_link bor" aircorp="MF" mileage="200" upgradeleg="1" method="Mileage"> 常旅客标准里程 ×200% </span> </td>
+						  <td class="cols03"><span class="pseudo_link" method="flightrule" rule="AirShoppingMF8150Y01610">退改规则</span>
+							<div style="display: none;"></div></td>
+						  <td class="cols04"><span class="tax"> 全价经济舱</span> <span class="price">¥<strong>1610</strong></span> </td>
+						  <td class="cols05"><div class="clx">
+							  <div class="icon_bg04" method="promotelist" pid="315211" price="32" iscoupon="1"> <span method="promotelist" promtype="19" pid="315211" price="32" iscoupon="1"> 32元</span> </div>
+							</div></td>
+						  <td class="cols06"><div style="height: 32px; position: relative">
+							  <input type="button" method="btnBooking" name="direct" class="button" itemid="35" flightnum="MF8150" fareid="0" flightclassnum="Y" promotionid="0" value="预订" onehour="" onFocus="this.blur()" departtime="635396790000000000" channel="AirShopping" price="1610" totalfee="170" insuranceproductid="0">
+							</div></td>
+						</tr>
+						<tr method="recommand">
+						  <td class="cols01"></td>
+						  <td class="cols02"><span class="pseudo_link bor" aircorp="MF" mileage="250" upgradeleg="1.5" method="Mileage"> 常旅客标准里程 ×250% </span> </td>
+						  <td class="cols03"><span class="pseudo_link" method="flightrule" rule="AirShoppingMF8150A3244422528">退改规则</span>
+							<div style="display: none;"></div></td>
+						  <td class="cols04"><div class="li_jia"> ¥<strong>2580</strong></div>
+							<span class="icon_bg01 ml5" method="class" flightno="MF8150" flightclass="A" way="1"> 超值 </span> 头等舱 <span class="price">¥<strong>2528</strong></span> </td>
+						  <td class="cols05"><div class="icon_bg02 icon_hui"> <span method="promotions" pid="324442" date="Monday, June 23, 2014" presale="0" channel="0">惠</span></div></td>
+						  <td class="cols06"><div style="height: 32px; position: relative">
+							  <input type="button" method="btnBooking" name="direct-8" class="button" itemid="36" flightnum="MF8150" fareid="0" flightclassnum="A" promotionid="324442" value="预订" onehour="" onFocus="this.blur()" departtime="635396790000000000" channel="AirShopping" price="2528" totalfee="170" insuranceproductid="0">
+							</div></td>
+						</tr>
+					  </tbody>
+					</table>
+					<div method="divMore"> </div>
+					<p class="lh"> <span method="loadding" style="display: none"></span><span class="pseudo_link" method="moreflight" itemid="1" flightno="MF8150" channel="4" flightclass="R" datacache="0" fareid="0" uniquekey="AirShoppingMF8150R324442412"> 更多价格<b>最高返&nbsp;¥81</b></span><span method="spanMore" itemid="1" class="flight_down"></span> </p>
+				  </div>
+				</div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>      
+      <div class="list_seo clx">
+        <h3> 热门城市特价机票</h3>
+        <ul class="clx">
+          <li><a href="#" title="北京特价机票"> 北京特价机票</a></li>
+          <li><a href="#" title="杭州特价机票"> 杭州特价机票</a></li>
+          <li><a href="#" title="北京到杭州往返机票"> 北京到杭州往返机票</a></li>
+        </ul>
+        <h3> 热门航空公司</h3>
+        <ul class="clx">
+          <li><a href="#" title="国际航空">国际航空</a></li>
+          <li><a href="#" title="南方航空">南方航空</a></li>
+          <li><a href="#" title="东方航空">东方航空</a></li>
+          <li><a href="#" title="海南航空">海南航空</a></li>
+          <li><a href="#" title="深圳航空">深圳航空</a></li>
+          <li><a href="#" title="四川航空">四川航空</a></li>
+          <li><a href="#" title="厦门航空">厦门航空</a></li>
+          <li><a href="#" title="吉祥航空">吉祥航空</a></li>
+          <li><a href="#" title="山东航空">山东航空</a></li>
+          <li><a href="#" title="春秋航空">春秋航空</a></li>
+        </ul>
+        <h3> 热门机场</h3>
+        <ul class="clx">
+          <li><a href="#" target="_blank">北京首都机场</a></li>
+          <li><a href="#" target="_blank">上海虹桥机场</a></li>
+          <li><a href="#" target="_blank">上海浦东机场</a></li>
+          <li><a href="#" target="_blank">广州新白云机场</a></li>
+          <li><a href="#" target="_blank">深圳宝安机场</a></li>
+          <li><a href="#" target="_blank">成都双流机场</a></li>
+          <li><a href="#">更多机场&gt;&gt;</a></li>
+        </ul>
+      </div>
+    </div>
+
+		</div>
+		<div class="gjjp_r mt10">
+			<div class="ul_wrap clx">
+            	<h3>返程特惠</h3>
+                	<ul class="clx">                            
+						<li>
+							<a href="#">
+								<span class="cols02">06-26</span>                              
+								<span class="cols01">上海 - 北京</span>
+								<span class="cols03">5.5折</span>
+								<span class="cols04">¥620</span>
+							</a>
+						</li>                            
+                        <li>
+							<a href="#">
+								<span class="cols02">06-26</span>                              
+								<span class="cols01">上海 - 北京</span>
+								<span class="cols03">5.5折</span>
+								<span class="cols04">¥620</span>
+							</a>
+						</li>
+                        <li>
+							<a href="#">
+								<span class="cols02">06-26</span>                              
+								<span class="cols01">上海 - 北京</span>
+								<span class="cols03">5.5折</span>
+								<span class="cols04">¥620</span>
+							</a>
+						</li> 
+						<li>
+							<a href="#">
+								<span class="cols02">06-26</span>                              
+								<span class="cols01">上海 - 北京</span>
+								<span class="cols03">5.5折</span>
+								<span class="cols04">¥620</span>
+							</a>
+						</li> 
+						<li>
+							<a href="#">
+								<span class="cols02">06-26</span>                              
+								<span class="cols01">上海 - 北京</span>
+								<span class="cols03">5.5折</span>
+								<span class="cols04">¥620</span>
+							</a>
+						</li> 
+						<li>
+							<a href="#">
+								<span class="cols02">06-26</span>                              
+								<span class="cols01">上海 - 北京</span>
+								<span class="cols03">5.5折</span>
+								<span class="cols04">¥620</span>
+							</a>
+						</li> 
+						<li>
+							<a href="#">
+								<span class="cols02">06-26</span>                              
+								<span class="cols01">上海 - 北京</span>
+								<span class="cols03">5.5折</span>
+								<span class="cols04">¥620</span>
+							</a>
+						</li> 
+                        </ul>						
+                    </div>
+					<div class="jphelp"><a href="#">北京–上海航班时刻表</a></div>
+			<div class="zaixiankefu"><a href="#"><img src="images/zaixiankefu.jpg" width="268" height="70" /></a></div>
+			<div class="jphelp"><a href="#">机票预订帮忙</a></div>
+			<div class="helptxt mt">
+				<div class="title">途遇爱机票预订保障</div>
+				<div class="tit">超值低价</div>
+				<div class="info">每天上万张低价机票，为您提供最优价格。</div>
+				<div class="tit">安全保障</div>
+				<div class="info">100%航协认证提供在线退票改期申请，随时退改。</div>
+			</div>
+		</div>	
+		<div class="clear"></div>	
+	</div>
+</div>
+
+<!--cont -->
+<div class="footer mt20">
+	<div class="foot1"><img src="images/btn1.png" width="1200" height="40" /></div>
+	<div class="foot_link wrap">
+		<a href="#">关于我们</a>
+		<a href="#">公司地图</a>
+		<a href="#">联系我们</a>
+		<a href="#">服务说明</a>
+		<a href="#">免费注册</a>
+		<a href="#">网站导航</a>
+		<a href="#">隐私条款</a>
+		<a href="#">支付方式</a>
+	</div>
+	<div class="foot2">
+		<ul>
+			<li>Copyright© 2014-2020, tuyui.com. All rights reserved.</li>
+		</ul>
+	</div>
+	<div class="foot3">
+		<a href="#"><img src="images/icp1.jpg" width="90" height="34" /></a>
+		<a href="#"><img src="images/icp2.jpg" width="90" height="34" /></a>
+		<a href="#"><img src="images/icp3.jpg" width="90" height="34" /></a>
+		<a href="#"><img src="images/icp4.jpg" width="90" height="34" /></a>
+	</div>
+</div>
+</body>
+</html>

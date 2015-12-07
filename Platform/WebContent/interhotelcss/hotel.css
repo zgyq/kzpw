@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* CSS Document */
+a{}
+a:hover{ text-decoration: none;}
+#container{ width: 960px; margin: 0 auto; }
+#main{ }
+#main .left{ width:261px; overflow: hidden; } 
+#main .nav{ height:30px; font-size:20px; line-height:30px; }
+#main .sea_main{ height:247px;}
+#main .leixing{padding:0 5px 0 5px; width:270px;  margin:0 auto;}
+#main .xuan{ height:33px; padding-left:60px; padding-top:15px;  }
+#main .searh{padding-top:10px; line-height:18px; width:240px; margin:0 auto; }
+#main .hangban{ background:url(../interhotelimages/side_tit_bg.gif) repeat-x; height:29px; line-height:29px; padding-left:20px; text-align: left;}
+#main .hbdt{ line-height:27px; height:200px;}
+#main .hbdt a{cursor: pointer;}
+#main .xiaochangshi{ height:129px; background:url(../interhotelimages//xiaochangshi.gif); line-height:30px;}
+#main .xiaochangshi ul{}
+#main .xiaochangshi ul li{ float:left; width:100px; padding-left:30px; }
+#main .xcs{ text-align:center}
+#main .ls{ background:url(../interhotelimages//bj_ls.gif) no-repeat; height:124px; width:257px; margin:0 auto; margin-top:8px;}
+#main .box_ad{border:1px solid #CECFD0; padding:3px; width:82px; height:56px; margin-top:5px;}
+#main .jieshao{line-height:15px; text-indent:2em; padding:3px 7px 3px 12px;}
+#main .xiangx{margin-right:8px; margin-top:-13px;}
+
+#main .right{ width:691px; float:right; padding-top:0px; overflow: hidden; }
+#main .air_di{ background:url(../interhotelimages//air_bj.gif);}
+#main .dijia{ background:url(../interhotelimages//air_di.gif); height:37px;}
+#main .city{ margin-top:13px; padding-right:5px;}
+#main .city ul{}
+#main .city ul li{ width:55px; height:22px; line-height:22px; background:url(../interhotelimages//bj_nav1.gif); text-align:center; float:left; margin-right:5px;} 
+#main .city ul li a{color:#0099FF; text-decoration:none}
+#main .ctiy_list{width:320px; height:170px; margin-left:10px; padding-left:5px; line-height:24px; padding-top:5px; display:inline; text-align:left}
+#main .ctiy_listr{width:320px;height:170px;  padding-left:5px; line-height:24px; padding-top:5px;display:inline;text-align:left; }
+
+#main .chang{ background:url(../interhotelimages/info_tit_bg.gif) repeat-x; text-align:left; height:33px; line-height:33px; padding-left:32px;}
+#main .chang ul{}
+#main .chang ul li{ float:left;}
+#main .more{ width:300px; text-align:right}
+#main .widt{ width:120px;}
+#main .xx{ margin-top:3px;*margin-top:0!important;_margin-top:3px; }
+#main .zixun{ line-height:24px; text-align:left; text-indent:1.2em; height:152px; padding-right: 20px; }
+
+
+#list{}
+#list .left{ width:220px; overflow:hidden}
+#list .seat{ height:34px; text-align:center;  line-height:34px; color:#0F99DA; font-size:14px; font-weight:bold;}
+#list .seat ul{padding:9px 0 0 7px; }
+#list .seat ul li{ color:#3399ff;float:left; margin-right:5px; background:url(../interhotelimages//bj_navd.gif) no-repeat; width:93px; height:28px; line-height:28px; text-align:center; font-weight:bold;} 
+#list .seab{ width:241px; height:235px; text-align:left; line-height:25px; color:#336699; background:url(../interhotelimages//bj_seadd.gif) no-repeat; }
+#list .tehui{ background:url(../interhotelimages//tehui_z.gif); text-align:left; padding:3px 20px 3px 10px;}
+#list .tehui ul{ line-height:22px;}
+#list .tehui ul li{ border-bottom:1px dashed #999999}
+#list .tehui ul li a{ color:#999999; text-decoration:none}
+#list .tehui ul li a:hover{ color:#36F;}
+#list .ml20{ margin-left:40px;}
+#list .hangban{background:url(../interhotelimages/side_tit_bg.gif) repeat-x; height:29px; line-height:29px; padding-left:20px; text-align: left;}
+#list .hbdt{ line-height:27px; height:200px;}
+#list .hbdt a{cursor: pointer;}
+#list .seab{ width:220px; height:245px; background:url(../interhotelimages/side_srh_bg.gif) 0px 0}
+#list .sea_d{ height:22px; line-height:22px;background:url(../interhotelimages/side_srh_bg.gif) 0 -500px; }
+                     
+
+#list .no1{ line-height:20px; text-align:left}
+#list .xingqi{ width:680px; margin:0 auto; margin-top:10px;}
+#list .xingqi ul{}
+#list .xingqi ul li{ float:left; background:url(../interhotelimages//xingqi_l.gif); width:86px; height:62px; line-height:20px; text-align:center; color:#fff; padding-top:5px; margin-right:10px; cursor:pointer}
+#list .xingqi ul li a{ color:#fff; text-decoration:none;}
+#list .xingqi ul li a:hover{ font-weight:bold;text-decoration:none;}
+#list .wu{ background:url(../interhotelimages//bj_wu.gif); border:1px solid #EEEEEE; height:23px; line-height:23px; margin-top:5px; padding-right:15px;}
+#list .list_t{ background:url(../interhotelimages//bj_changd.gif); height:31px; line-height:31px; padding-right:20px; margin-top:8px; text-align:left; padding-left:45px;}
+#list .list{ background:url(../interhotelimages//list_z.gif); padding-top:10px; width:730px;}
+
+
+
+#list .yuding{ background:url(../interhotelimages//list_z.gif); line-height:28px; padding-top:5px;}
+#list .ddxx{ background:url(../interhotelimages//bj_dd.gif); height:56px; line-height:28px; border:1px solid #EFEFEF; margin-top:5px;}
+#list .add{width:700px; margin:0 auto;}
+
+#list .chang{background:url(../interhotelimages/info_tit_bg.gif); text-align:left; height:33px; line-height:33px; padding-left:32px;}
+
+
+
+#list .right{ width:734px; float:right; text-align: left;}
+#list .dato{ background:url(../interhotelimages//bj_dato.gif) ; border:1px solid #EEEEEE; height:23px; line-height:23px; margin-top:5px; padding-right:15px;}
+#list .dota{background:url(../interhotelimages//bj_list_h.gif); height:50px; line-height:36px; margin-top:10px; padding-left:20px; padding-right:20px;}
+
+
+#list .yuding{ background:url(../interhotelimages//list_z.gif); line-height:28px; padding-top:5px;}
+#list .ddxx{ background:url(../interhotelimages/bj_dd.gif); height:56px; line-height:28px; border:1px solid #EFEFEF; margin-top:5px;}
+#list .add{width:700px; margin:0 auto;}
+#list .kuang{background:url(../interhotelimages//bj_zongj.gif); width:154px; height:128px;}
+#list .tianming{border-bottom:none; border-right:none; line-height:26px; margin-top:5px;}
+#list .hedui{width:680px; margin:0 auto; margin-top:10px;}
+#list .xiangxi{ width:440px; float:left; overflow:hidden}
+#list .ditu{ width:294px; float:right; padding-top:10px;}
+#list .wenzi{text-indent:2em; padding:10px; line-height:22px; height:187px; width:460px; overflow: hidden}
+#list .meile{ background:url(../interhotelimages//list_z.gif);}
+#list .riqi{line-height:14px; margin-top:-9px; display:block; color:#CCC;}
+#list .next{height:50px; padding-top:15px; text-align:center;}
+
+.lan14{ font-size:14px; font-weight:bold; color:#1290d1}
+.huang_jia{ color:#f48000}
+.lbox{border:1px solid #91c8e5}
+.m10{margin-top: 10px;}
+.xinghao{ color:#f00}
+.button_ddd{background: url(../interhotelimages/button_dd.gif); width:72px; height:26px; line-height:26px; text-align:center; border: none;color:#fff; cursor: pointer; padding-left: 10px; }
+.huangf60_16{color:#f60; font-weight:bold; font-size:16px;}
+.button{background: url(../interhotelimages/but_serch.gif); width:100px; height:27px;
+line-height:27px; border:none; cursor: pointer; font-size:14px; font-weight: bold; color:#fff; }
+
+#preview{ float:none; margin:20px auto; text-align:center; }
+.jqzoom{  height:350px; position:relative; border:1px solid #ccc; padding: 1px;}
+
+.zoomdiv{ left:859px; height:400px; width:400px;}
+.list-h li{ float:left;}
+#spec-n5{width:225px; height:46px; padding-top:6px; overflow:hidden;}
+#spec-left{ background:url(images/left2.gif) no-repeat; width:10px; height:40px; float:left; cursor:pointer;}
+#spec-right{background:url(images/right2.gif) no-repeat; width:10px; height:40px; float:left;cursor:pointer ;}
+#spec-list{ width:188px; float:left; overflow:hidden; margin-left:2px; display:inline;}
+#spec-list ul li{ float:left; margin-right:0px; display:inline; width:60px;}
+#spec-list ul li img{ padding:2px ; border:1px solid #ccc; width:54px; height:40px;}
+
+/*jqzoom*/
+.jqzoom{position:relative;padding:0;}
+.zoomdiv{z-index:100;position:absolute;top:1px;left:0px;width:400px;height:400px;background:url(i/loading.gif) #fff no-repeat center center;border:1px solid #e4e4e4;display:none;text-align:center;overflow: hidden;}
+.bigimg{width:800px;height:800px;}
+.jqZoomPup{z-index:10;visibility:hidden;position:absolute;top:0px;left:0px;width:50px;height:50px;border:1px solid #aaa;background:#FEDE4F 50% top no-repeat;opacity:0.5;-moz-opacity:0.5;-khtml-opacity:0.5;filter:alpha(Opacity=50);cursor:move;}
+#spec-list{ position:relative; width:522px; margin-right:6px;}
+#spec-list div{ margin-top:0;margin-left:-30px; *margin-left:0;}

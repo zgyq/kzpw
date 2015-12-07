@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Airbaseprice">
+  
+  <typeAlias alias="Airbaseprice" type="com.yf.system.base.airbaseprice.Airbaseprice"/>
+  
+
+  <resultMap id="resultAirbasepriceMap" class="Airbaseprice">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="sairportcode" column="C_SAIRPORTCODE"/>
+  
+     <result property="eairportcode" column="C_EAIRPORTCODE"/>
+  
+     <result property="miles" column="C_MILES"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="aircompanycode" column="C_AIRCOMPANYCODE"/>
+  
+     <result property="isenable" column="C_ISENABLE"/>
+  
+     <result property="yqflag" column="C_YQFLAG"/>
+  
+     <result property="startdate" column="C_STARTDATE"/>
+  
+     <result property="enddate" column="C_ENDDATE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllAirbaseprice"  resultMap="resultAirbasepriceMap"  parameterClass="java.util.Map">
+  
+    select * from T_AIRBASEPRICE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllAirbasepriceBySql"  resultMap="resultAirbasepriceMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteAirbasepriceBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countAirbasepriceBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_AIRBASEPRICE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findAirbaseprice" parameterClass="long" resultClass="Airbaseprice">
+    select 
+    	ID as id,
+	  			C_SAIRPORTCODE as sairportcode,
+	  			C_EAIRPORTCODE as eairportcode,
+	  			C_MILES as miles,
+	  			C_PRICE as price,
+	  			C_AIRCOMPANYCODE as aircompanycode,
+	  			C_ISENABLE as isenable,
+	  			C_YQFLAG as yqflag,
+	  			C_STARTDATE as startdate,
+	  			C_ENDDATE as enddate,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_AIRBASEPRICE
+    where ID = #id#
+  </select>
+   
+  <insert id="createAirbaseprice" parameterClass="Airbaseprice">
+    insert into T_AIRBASEPRICE ( 
+    	ID,
+	  			C_SAIRPORTCODE,
+	  			C_EAIRPORTCODE,
+	  			C_MILES,
+	  			C_PRICE,
+	  			C_AIRCOMPANYCODE,
+	  			C_ISENABLE,
+	  			C_YQFLAG,
+	  			C_STARTDATE,
+	  			C_ENDDATE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#sairportcode#,
+	  					
+	  						#eairportcode#,
+	  					
+	  						#miles#,
+	  					
+							#price:DECIMAL#,
+						
+	  						#aircompanycode#,
+	  					
+							#isenable:DECIMAL#,
+						
+							#yqflag:DECIMAL#,
+						
+	  						#startdate#,
+	  					
+	  						#enddate#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteAirbaseprice" parameterClass="long">
+    delete from T_AIRBASEPRICE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateAirbaseprice" parameterClass="Airbaseprice">
+    update T_AIRBASEPRICE 
+    set 
+    	C_SAIRPORTCODE = #sairportcode#,
+	  					C_EAIRPORTCODE = #eairportcode#,
+	  					C_MILES = #miles#,
+	  					C_PRICE = #price:DECIMAL#,
+						C_AIRCOMPANYCODE = #aircompanycode#,
+	  					C_ISENABLE = #isenable:DECIMAL#,
+						C_YQFLAG = #yqflag:DECIMAL#,
+						C_STARTDATE = #startdate#,
+	  					C_ENDDATE = #enddate#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

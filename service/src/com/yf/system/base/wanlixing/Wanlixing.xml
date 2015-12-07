@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Wanlixing">
+  
+  <typeAlias alias="Wanlixing" type="com.yf.system.base.wanlixing.Wanlixing"/>
+  
+
+  <resultMap id="resultWanlixingMap" class="Wanlixing">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="sex" column="C_SEX"/>
+  
+     <result property="chenghu" column="C_CHENGHU"/>
+  
+     <result property="zxing" column="C_ZXING"/>
+  
+     <result property="zming" column="C_ZMING"/>
+  
+     <result property="yxing" column="C_YXING"/>
+  
+     <result property="yming" column="C_YMING"/>
+  
+     <result property="number" column="C_NUMBER"/>
+  
+     <result property="huzhao" column="C_HUZHAO"/>
+  
+     <result property="jun" column="C_JUN"/>
+  
+     <result property="hui" column="C_HUI"/>
+  
+     <result property="qita" column="C_QITA"/>
+  
+     <result property="guoji" column="C_GUOJI"/>
+  
+     <result property="chusheng" column="C_CHUSHENG"/>
+  
+     <result property="yuyan" column="C_YUYAN"/>
+  
+     <result property="password" column="C_PASSWORD"/>
+  
+     <result property="wenti" column="C_WENTI"/>
+  
+     <result property="daan" column="C_DAAN"/>
+  
+     <result property="postbox" column="C_POSTBOX"/>
+  
+     <result property="youtype" column="C_YOUTYPE"/>
+  
+     <result property="youjiguo" column="C_YOUJIGUO"/>
+  
+     <result property="youjisheng" column="C_YOUJISHENG"/>
+  
+     <result property="youbian" column="C_YOUBIAN"/>
+  
+     <result property="shi" column="C_SHI"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="dianhua" column="C_DIANHUA"/>
+  
+     <result property="fax" column="C_FAX"/>
+  
+     <result property="duizhangtype" column="C_DUIZHANGTYPE"/>
+  
+     <result property="mobile" column="C_MOBILE"/>
+  
+     <result property="copname" column="C_COPNAME"/>
+  
+     <result property="jibie" column="C_JIBIE"/>
+  
+     <result property="xingzhi" column="C_XINGZHI"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllWanlixing"  resultMap="resultWanlixingMap"  parameterClass="java.util.Map">
+  
+    select * from T_WANLIXING
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllWanlixingBySql"  resultMap="resultWanlixingMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteWanlixingBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countWanlixingBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_WANLIXING
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findWanlixing" parameterClass="long" resultClass="Wanlixing">
+    select 
+    	ID as id,
+	  			C_SEX as sex,
+	  			C_CHENGHU as chenghu,
+	  			C_ZXING as zxing,
+	  			C_ZMING as zming,
+	  			C_YXING as yxing,
+	  			C_YMING as yming,
+	  			C_NUMBER as number,
+	  			C_HUZHAO as huzhao,
+	  			C_JUN as jun,
+	  			C_HUI as hui,
+	  			C_QITA as qita,
+	  			C_GUOJI as guoji,
+	  			C_CHUSHENG as chusheng,
+	  			C_YUYAN as yuyan,
+	  			C_PASSWORD as password,
+	  			C_WENTI as wenti,
+	  			C_DAAN as daan,
+	  			C_POSTBOX as postbox,
+	  			C_YOUTYPE as youtype,
+	  			C_YOUJIGUO as youjiguo,
+	  			C_YOUJISHENG as youjisheng,
+	  			C_YOUBIAN as youbian,
+	  			C_SHI as shi,
+	  			C_ADDRESS as address,
+	  			C_DIANHUA as dianhua,
+	  			C_FAX as fax,
+	  			C_DUIZHANGTYPE as duizhangtype,
+	  			C_MOBILE as mobile,
+	  			C_COPNAME as copname,
+	  			C_JIBIE as jibie,
+	  			C_XINGZHI as xingzhi,
+	  			C_CREATETIME as createtime 
+     from T_WANLIXING
+    where ID = #id#
+  </select>
+   
+  <insert id="createWanlixing" parameterClass="Wanlixing">
+    insert into T_WANLIXING ( 
+    	ID,
+	  			C_SEX,
+	  			C_CHENGHU,
+	  			C_ZXING,
+	  			C_ZMING,
+	  			C_YXING,
+	  			C_YMING,
+	  			C_NUMBER,
+	  			C_HUZHAO,
+	  			C_JUN,
+	  			C_HUI,
+	  			C_QITA,
+	  			C_GUOJI,
+	  			C_CHUSHENG,
+	  			C_YUYAN,
+	  			C_PASSWORD,
+	  			C_WENTI,
+	  			C_DAAN,
+	  			C_POSTBOX,
+	  			C_YOUTYPE,
+	  			C_YOUJIGUO,
+	  			C_YOUJISHENG,
+	  			C_YOUBIAN,
+	  			C_SHI,
+	  			C_ADDRESS,
+	  			C_DIANHUA,
+	  			C_FAX,
+	  			C_DUIZHANGTYPE,
+	  			C_MOBILE,
+	  			C_COPNAME,
+	  			C_JIBIE,
+	  			C_XINGZHI,
+	  			C_CREATETIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#sex:DECIMAL#,
+						
+							#chenghu:DECIMAL#,
+						
+	  						#zxing#,
+	  					
+	  						#zming#,
+	  					
+	  						#yxing#,
+	  					
+	  						#yming#,
+	  					
+	  						#number#,
+	  					
+	  						#huzhao#,
+	  					
+	  						#jun#,
+	  					
+	  						#hui#,
+	  					
+	  						#qita#,
+	  					
+							#guoji#,
+						
+	  						#chusheng#,
+	  					
+							#yuyan:DECIMAL#,
+						
+	  						#password#,
+	  					
+	  						#wenti#,
+	  					
+	  						#daan#,
+	  					
+	  						#postbox#,
+	  					
+							#youtype:DECIMAL#,
+						
+	  						#youjiguo#,
+	  					
+							#youjisheng:DECIMAL#,
+						
+	  						#youbian#,
+	  					
+	  						#shi#,
+	  					
+	  						#address#,
+	  					
+	  						#dianhua#,
+	  					
+	  						#fax#,
+	  					
+							#duizhangtype:DECIMAL#,
+						
+	  						#mobile#,
+	  					
+	  						#copname#,
+	  					
+							#jibie:DECIMAL#,
+						
+							#xingzhi:DECIMAL#,
+						
+	  						#createtime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteWanlixing" parameterClass="long">
+    delete from T_WANLIXING
+    where ID = #id#
+  </delete>
+	
+  <update id="updateWanlixing" parameterClass="Wanlixing">
+    update T_WANLIXING 
+    set 
+    	C_SEX = #sex:DECIMAL#,
+						C_CHENGHU = #chenghu:DECIMAL#,
+						C_ZXING = #zxing#,
+	  					C_ZMING = #zming#,
+	  					C_YXING = #yxing#,
+	  					C_YMING = #yming#,
+	  					C_NUMBER = #number#,
+	  					C_HUZHAO = #huzhao#,
+	  					C_JUN = #jun#,
+	  					C_HUI = #hui#,
+	  					C_QITA = #qita#,
+	  					C_GUOJI = #guoji:DECIMAL#,
+						C_CHUSHENG = #chusheng#,
+	  					C_YUYAN = #yuyan:DECIMAL#,
+						C_PASSWORD = #password#,
+	  					C_WENTI = #wenti#,
+	  					C_DAAN = #daan#,
+	  					C_POSTBOX = #postbox#,
+	  					C_YOUTYPE = #youtype:DECIMAL#,
+						C_YOUJIGUO = #youjiguo#,
+	  					C_YOUJISHENG = #youjisheng:DECIMAL#,
+						C_YOUBIAN = #youbian#,
+	  					C_SHI = #shi#,
+	  					C_ADDRESS = #address#,
+	  					C_DIANHUA = #dianhua#,
+	  					C_FAX = #fax#,
+	  					C_DUIZHANGTYPE = #duizhangtype:DECIMAL#,
+						C_MOBILE = #mobile#,
+	  					C_COPNAME = #copname#,
+	  					C_JIBIE = #jibie:DECIMAL#,
+						C_XINGZHI = #xingzhi:DECIMAL#,
+						C_CREATETIME = #createtime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Fcountry">
+  
+  <typeAlias alias="Fcountry" type="com.yf.system.base.fcountry.Fcountry"/>
+  
+
+  <resultMap id="resultFcountryMap" class="Fcountry">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="countrycode" column="C_COUNTRYCODE"/>
+  
+     <result property="countryname" column="C_COUNTRYNAME"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllFcountry"  resultMap="resultFcountryMap"  parameterClass="java.util.Map">
+  
+    select * from T_FCOUNTRY
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllFcountryBySql"  resultMap="resultFcountryMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteFcountryBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countFcountryBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_FCOUNTRY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findFcountry" parameterClass="long" resultClass="Fcountry">
+    select 
+    	ID as id,
+	  			C_COUNTRYCODE as countrycode,
+	  			C_COUNTRYNAME as countryname,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_FCOUNTRY
+    where ID = #id#
+  </select>
+   
+  <insert id="createFcountry" parameterClass="Fcountry">
+    insert into T_FCOUNTRY ( 
+    	ID,
+	  			C_COUNTRYCODE,
+	  			C_COUNTRYNAME,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#countrycode#,
+	  					
+	  						#countryname#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteFcountry" parameterClass="long">
+    delete from T_FCOUNTRY
+    where ID = #id#
+  </delete>
+	
+  <update id="updateFcountry" parameterClass="Fcountry">
+    update T_FCOUNTRY 
+    set 
+    	C_COUNTRYCODE = #countrycode#,
+	  					C_COUNTRYNAME = #countryname#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

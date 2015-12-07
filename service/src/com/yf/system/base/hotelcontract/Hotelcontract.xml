@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Hotelcontract">
+  
+  <typeAlias alias="Hotelcontract" type="com.yf.system.base.hotelcontract.Hotelcontract"/>
+  
+
+  <resultMap id="resultHotelcontractMap" class="Hotelcontract">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="hotelid" column="C_HOTELID"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="signdate" column="C_SIGNDATE"/>
+  
+     <result property="enddate" column="C_ENDDATE"/>
+  
+     <result property="hotelsigner" column="C_HOTELSIGNER"/>
+  
+     <result property="compsigner" column="C_COMPSIGNER"/>
+  
+     <result property="content" column="C_CONTENT"/>
+  
+     <result property="filepath" column="C_FILEPATH"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllHotelcontract"  resultMap="resultHotelcontractMap"  parameterClass="java.util.Map">
+  
+    select * from C_HOTELCONTRACT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllHotelcontractBySql"  resultMap="resultHotelcontractMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteHotelcontractBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countHotelcontractBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from C_HOTELCONTRACT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findHotelcontract" parameterClass="long" resultClass="Hotelcontract">
+    select 
+    	ID as id,
+	  			C_HOTELID as hotelid,
+	  			C_CODE as code,
+	  			C_SIGNDATE as signdate,
+	  			C_ENDDATE as enddate,
+	  			C_HOTELSIGNER as hotelsigner,
+	  			C_COMPSIGNER as compsigner,
+	  			C_CONTENT as content,
+	  			C_FILEPATH as filepath,
+	  			C_STATE as state,
+	  			C_DESCRIPTION as description,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from C_HOTELCONTRACT
+    where ID = #id#
+  </select>
+   
+  <insert id="createHotelcontract" parameterClass="Hotelcontract">
+    insert into C_HOTELCONTRACT ( 
+    	ID,
+	  			C_HOTELID,
+	  			C_CODE,
+	  			C_SIGNDATE,
+	  			C_ENDDATE,
+	  			C_HOTELSIGNER,
+	  			C_COMPSIGNER,
+	  			C_CONTENT,
+	  			C_FILEPATH,
+	  			C_STATE,
+	  			C_DESCRIPTION,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#hotelid:DECIMAL#,
+						
+	  						#code#,
+	  					
+	  						#signdate#,
+	  					
+	  						#enddate#,
+	  					
+	  						#hotelsigner#,
+	  					
+	  						#compsigner#,
+	  					
+	  						#content#,
+	  					
+	  						#filepath#,
+	  					
+							#state:DECIMAL#,
+						
+	  						#description#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteHotelcontract" parameterClass="long">
+    delete from C_HOTELCONTRACT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateHotelcontract" parameterClass="Hotelcontract">
+    update C_HOTELCONTRACT 
+    set 
+    	C_HOTELID = #hotelid:DECIMAL#,
+						C_CODE = #code#,
+	  					C_SIGNDATE = #signdate#,
+	  					C_ENDDATE = #enddate#,
+	  					C_HOTELSIGNER = #hotelsigner#,
+	  					C_COMPSIGNER = #compsigner#,
+	  					C_CONTENT = #content#,
+	  					C_FILEPATH = #filepath#,
+	  					C_STATE = #state:DECIMAL#,
+						C_DESCRIPTION = #description#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

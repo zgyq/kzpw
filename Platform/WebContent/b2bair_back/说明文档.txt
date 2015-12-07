@@ -1,0 +1,28 @@
+
+
+   左边副导航框架: left.html
+
+   主页面（搜索）: main.html
+
+   查询结果页 : main-result.html
+
+   订单填写页 : main-dingdan.html
+
+   确认支付页面：main-payfor.html
+
+   订票失败页 : main-erro.html
+
+   所有订单查询： main-order.html
+
+   详细订单展示： main-order.html
+
+
+   链接为：点击主页‘查询’按钮——>进入查询结果页面——>点击查询结果第一条第一个‘预订’按钮——>进入到订单填写页面——>点击最下面的‘下一步’按钮——>进入确认支付页。
+
+   如有不明白随时沟通，谢谢！
+
+   
+
+   
+
+   

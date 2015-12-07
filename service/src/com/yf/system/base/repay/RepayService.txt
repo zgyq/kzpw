@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 大客户还款记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Repay createRepay(Repay repay) throws SQLException;
+	
+	/**
+	 * 删除 大客户还款记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRepay(long id);
+	
+	
+	/**
+	 * 修改 大客户还款记录表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRepay(Repay repay);
+
+		
+	/**
+	 * 修改 大客户还款记录表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRepayIgnoreNull(Repay repay);
+		
+	
+	/**
+	 * 查找 大客户还款记录表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRepay(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 大客户还款记录表
+	 * @param id
+	 * @return
+	 */
+	public Repay findRepay(long id);
+	
+	
+	/** 
+	 * 查找 大客户还款记录表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRepayForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找大客户还款记录表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRepayBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 大客户还款记录表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRepayBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRepayBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IRepayComponent repayComponent;
+	  
+ 	
+ 	public IRepayComponent getRepayComponent() {
+		return repayComponent;
+	}
+	public void setRepayComponent(IRepayComponent  repayComponent) {
+		this.repayComponent = repayComponent;
+	}
+	/**
+	 * 创建 大客户还款记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Repay createRepay(Repay repay) throws SQLException{
+	
+		return repayComponent.createRepay(repay);
+	}
+	/**
+	 * 删除 大客户还款记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRepay(long id){
+	
+		return repayComponent.deleteRepay(id);
+	}
+	
+	
+	/**
+	 * 修改 大客户还款记录表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRepay(Repay repay){
+		return repayComponent.updateRepay(repay);
+	
+	}
+
+		
+	/**
+	 * 修改 大客户还款记录表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRepayIgnoreNull(Repay repay){
+			return repayComponent.updateRepayIgnoreNull(repay);
+	
+	}
+	
+	/**
+	 * 查找 大客户还款记录表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRepay(String where, String orderby,int limit,int offset){
+		return repayComponent.findAllRepay(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 大客户还款记录表
+	 * @param id
+	 * @return
+	 */
+	public Repay findRepay(long id){
+		return repayComponent.findRepay(id);
+	}
+	
+	/** 
+	 * 查找 大客户还款记录表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRepayForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return repayComponent.findAllRepay(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找大客户还款记录表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRepayBySql(String sql,int limit,int offset){
+		return repayComponent.findAllRepay(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 大客户还款记录表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRepayBySql(String sql){
+		return repayComponent.excuteRepayBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRepayBySql(String sql){
+		return repayComponent.countRepayBySql(sql);
+	}
+	
+	
+

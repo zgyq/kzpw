@@ -1,0 +1,33 @@
+BODY {
+}
+TABLE {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+TD {
+	FONT: 12px ËÎÌו
+}
+IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; VERTICAL-ALIGN: bottom; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+A {
+	FONT: 12px ËÎÌו; color:#666666; TEXT-DECORATION: none
+}
+A:hover {
+	color:#061B5E;
+}
+.sec_menu {
+	BORDER-RIGHT: white 1px solid; BACKGROUND: #F6FAFD; OVERFLOW: hidden; BORDER-LEFT: white 1px solid; BORDER-BOTTOM: white 1px solid
+}
+.menu_title {
+
+}
+.menu_title SPAN {
+	POSITION: relative; TOP: 2px; left:20px;
+}
+.menu_title2 {
+
+}
+.menu_title2 SPAN {
+	 POSITION: relative; TOP: 2px; left:20px;
+}
+.white{COLOR: #ffffff;}

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Giftcatalog">
+  
+  <typeAlias alias="Giftcatalog" type="com.yf.system.base.giftcatalog.Giftcatalog"/>
+  
+
+  <resultMap id="resultGiftcatalogMap" class="Giftcatalog">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="parentid" column="C_PARENTID"/>
+  
+     <result property="parentidstr" column="C_PARENTIDSTR"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllGiftcatalog"  resultMap="resultGiftcatalogMap"  parameterClass="java.util.Map">
+  
+    select * from T_GIFTCATALOG
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllGiftcatalogBySql"  resultMap="resultGiftcatalogMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteGiftcatalogBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countGiftcatalogBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_GIFTCATALOG
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findGiftcatalog" parameterClass="long" resultClass="Giftcatalog">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_CODE as code,
+	  			C_PARENTID as parentid,
+	  			C_PARENTIDSTR as parentidstr,
+	  			C_DESCRIPTION as description,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_STATE as state,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_GIFTCATALOG
+    where ID = #id#
+  </select>
+   
+  <insert id="createGiftcatalog" parameterClass="Giftcatalog">
+    insert into T_GIFTCATALOG ( 
+    	ID,
+	  			C_NAME,
+	  			C_CODE,
+	  			C_PARENTID,
+	  			C_PARENTIDSTR,
+	  			C_DESCRIPTION,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_STATE,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#code#,
+	  					
+							#parentid:DECIMAL#,
+						
+	  						#parentidstr#,
+	  					
+	  						#description#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#state:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteGiftcatalog" parameterClass="long">
+    delete from T_GIFTCATALOG
+    where ID = #id#
+  </delete>
+	
+  <update id="updateGiftcatalog" parameterClass="Giftcatalog">
+    update T_GIFTCATALOG 
+    set 
+    	C_NAME = #name#,
+	  					C_CODE = #code#,
+	  					C_PARENTID = #parentid:DECIMAL#,
+						C_PARENTIDSTR = #parentidstr#,
+	  					C_DESCRIPTION = #description#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_STATE = #state:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Rsector">
+  
+  <typeAlias alias="Rsector" type="com.yf.system.base.rsector.Rsector"/>
+  
+
+  <resultMap id="resultRsectorMap" class="Rsector">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="performanceid" column="C_PERFORMANCEID"/>
+  
+     <result property="money" column="C_MONEY"/>
+  
+     <result property="date" column="C_DATE"/>
+  
+     <result property="low" column="C_LOW"/>
+  
+     <result property="normal" column="C_NORMAL"/>
+  
+     <result property="high" column="C_HIGH"/>
+   
+  </resultMap>
+  
+  <select id="findAllRsector"  resultMap="resultRsectorMap"  parameterClass="java.util.Map">
+  
+    select * from T_RSECTOR
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllRsectorBySql"  resultMap="resultRsectorMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteRsectorBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countRsectorBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_RSECTOR
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findRsector" parameterClass="long" resultClass="Rsector">
+    select 
+    	ID as id,
+	  			C_PERFORMANCEID as performanceid,
+	  			C_MONEY as money,
+	  			C_DATE as date,
+	  			C_LOW as low,
+	  			C_NORMAL as normal,
+	  			C_HIGH as high 
+     from T_RSECTOR
+    where ID = #id#
+  </select>
+   
+  <insert id="createRsector" parameterClass="Rsector">
+    insert into T_RSECTOR ( 
+    	ID,
+	  			C_PERFORMANCEID,
+	  			C_MONEY,
+	  			C_DATE,
+	  			C_LOW,
+	  			C_NORMAL,
+	  			C_HIGH 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#performanceid:DECIMAL#,
+						
+							#money:DECIMAL#,
+						
+	  						#date#,
+	  					
+							#low:DECIMAL#,
+						
+							#normal:DECIMAL#,
+						
+  							#high:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteRsector" parameterClass="long">
+    delete from T_RSECTOR
+    where ID = #id#
+  </delete>
+	
+  <update id="updateRsector" parameterClass="Rsector">
+    update T_RSECTOR 
+    set 
+    	C_PERFORMANCEID = #performanceid:DECIMAL#,
+						C_MONEY = #money:DECIMAL#,
+						C_DATE = #date#,
+	  					C_LOW = #low:DECIMAL#,
+						C_NORMAL = #normal:DECIMAL#,
+						C_HIGH = #high:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

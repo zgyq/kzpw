@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" 
+
+href="http://img.union.tieyou.com/code/css/style.css" />
+<link rel="stylesheet" type="text/css" href="http://img3.tieyou.com/css/calendar.css" />
+<!-- 在线预定-4 640*100 star -->
+<div class="b_640_100">
+	<div class="box_con">
+		<form name="chepiaoForm" id="cityForm" method="post" >
+		<ul>
+			<li>
+				<div class="input_box"><input name="from" type="text" 
+
+value="出发城市" id="begin" onfocus="showCity('begin');focusIt(this.id)" onblur="hideCity
+
+()"/><div class="hotcity_ico" onclick="$('#begin').focus();">发站</div></div>
+            	<div class="input_box"><input name="to"   type="text" value="到达城市" 
+
+id="end"   onfocus="showCity('end'  );focusIt(this.id)" onblur="hideCity()"/><div 
+
+class="hotcity_ico" onclick="$('#end'  ).focus();">到站</div></div>
+				<div class="input_box"><input name="date" type="text" 
+
+value="出发日期" id="date"  class="city_text tt trainCalendar"  /><div class="date_ico" 
+
+onclick="$('#date').focus();">日期</div></div>
+			</li>
+			<li>
+				<input type="hidden" value="chenxing1986051" name="c"/>
+				<input type="hidden" value="4154" name="s"/>
+				<input type="hidden" value="275" name="p"/>
+				<input type="hidden" value="yuding" name="type" />
+				<input type="submit" value="立即搜索" class="btn3" />
+				<a href="http://yushouqi.tieyou.com/">火车票预售期</a>
+			</li>
+		</ul>
+		</form>
+	</div>
+</div>
+<br class="clear" />
+<script type="text/javascript" charset="UTF-8" 
+
+src="http://img.union.tieyou.com/code/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" charset="UTF-8" 
+
+src="http://img.union.tieyou.com/code/js/listCity.js"></script>
+<script type="text/javascript" charset="UTF-8" 
+
+src="http://img.union.tieyou.com/code/js/yuding.js"></script>
+<script type="text/javascript" charset="UTF-8" 
+
+src="http://img.union.tieyou.com/code/js/calendar.js"></script>
+</body>
+</html>

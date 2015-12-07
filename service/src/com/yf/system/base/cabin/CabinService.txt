@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 舱位基础信息表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Cabin createCabin(Cabin cabin) throws SQLException;
+	
+	/**
+	 * 删除 舱位基础信息表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCabin(long id);
+	
+	
+	/**
+	 * 修改 舱位基础信息表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCabin(Cabin cabin);
+
+		
+	/**
+	 * 修改 舱位基础信息表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCabinIgnoreNull(Cabin cabin);
+		
+	
+	/**
+	 * 查找 舱位基础信息表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCabin(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 舱位基础信息表
+	 * @param id
+	 * @return
+	 */
+	public Cabin findCabin(long id);
+	
+	/**
+	 * 查找 舱位基础信息表 by language
+	 * @param id
+	 * @return
+	 */
+	public Cabin findCabinbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 舱位基础信息表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCabinForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找舱位基础信息表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCabinBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 舱位基础信息表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCabinBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCabinBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ICabinComponent cabinComponent;
+	  
+ 	
+ 	public ICabinComponent getCabinComponent() {
+		return cabinComponent;
+	}
+	public void setCabinComponent(ICabinComponent  cabinComponent) {
+		this.cabinComponent = cabinComponent;
+	}
+	/**
+	 * 创建 舱位基础信息表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Cabin createCabin(Cabin cabin) throws SQLException{
+	
+		return cabinComponent.createCabin(cabin);
+	}
+	/**
+	 * 删除 舱位基础信息表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCabin(long id){
+	
+		return cabinComponent.deleteCabin(id);
+	}
+	
+	
+	/**
+	 * 修改 舱位基础信息表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCabin(Cabin cabin){
+		return cabinComponent.updateCabin(cabin);
+	
+	}
+
+		
+	/**
+	 * 修改 舱位基础信息表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCabinIgnoreNull(Cabin cabin){
+			return cabinComponent.updateCabinIgnoreNull(cabin);
+	
+	}
+	
+	/**
+	 * 查找 舱位基础信息表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCabin(String where, String orderby,int limit,int offset){
+		return cabinComponent.findAllCabin(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 舱位基础信息表
+	 * @param id
+	 * @return
+	 */
+	public Cabin findCabin(long id){
+		return cabinComponent.findCabin(id);
+	}
+	
+	/**
+	 * 查找 舱位基础信息表
+	 * @param id
+	 * @return
+	 */
+	public Cabin findCabinbylanguage(long id,Integer language){
+		return cabinComponent.findCabinbylanguage(id,language);
+	}
+	/** 
+	 * 查找 舱位基础信息表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCabinForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return cabinComponent.findAllCabin(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找舱位基础信息表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCabinBySql(String sql,int limit,int offset){
+		return cabinComponent.findAllCabin(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 舱位基础信息表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCabinBySql(String sql){
+		return cabinComponent.excuteCabinBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCabinBySql(String sql){
+		return cabinComponent.countCabinBySql(sql);
+	}
+	
+	
+

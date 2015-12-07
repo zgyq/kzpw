@@ -1,0 +1,139 @@
+body{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+
+body,td,th {
+	color: #0356a6;
+	font-family: "宋体", "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	line-height:25px;
+}
+
+th{
+	font-weight: bold;
+	text-align:center;
+}
+
+td{
+	font-family: "宋体";
+	font-size: 12px;
+	font-stretch : normal;
+}
+
+.font-red {
+	font-weight: bold;
+	color: #ff6600;
+}
+.font-grey {
+	color: #666666;
+}
+.font_grey_001{
+	color: #666666;
+	font-size: 12px;
+	line-height: 20px;
+}
+
+a.font_grey_001:link {
+	color: #666666;
+	text-decoration: none;
+}
+a.font_grey_001:visited {
+	text-decoration: none;
+	color: #666666;
+}
+a.font_grey_001:hover {
+	text-decoration: underline;
+	color: #ff6600;
+}
+a.font_grey_001:active {
+	text-decoration: none;
+}
+
+/*灰色链接*/
+.font-blue-cu {
+	font-size: 12.5px;
+	font-weight: bold;
+	color: #0356a6;
+}
+.font-white {
+	font-size: 12.5px;
+	font-weight: bold;
+	color: #ffffff;
+}
+.font-blue-xi {
+	color: #0356a6;
+}
+.border{
+	border: 1px solid #99cbed;
+}
+.alink:link {
+    
+	text-decoration: none;
+	color:#000000;
+}
+.alink:visited {
+	text-decoration: none;
+    color:#000000;
+}
+.alink:hover {
+	text-decoration: none;
+   color:#22763f;
+   FILTER:Dropshadow(color=#cccccc,offX=3,offY=3); 
+   
+}
+.alink:active {
+	text-decoration: none;
+	color:#000000;
+
+}
+
+.beijing5-anniu-lv {
+	padding-top:7px;
+	background-image: url(../images/anniu-xiao.gif);
+	background-repeat:no-repeat;
+	font-size:12px;
+}
+.button00{
+	WIDTH: 76px;
+	CURSOR: pointer;
+	COLOR: #000000;
+	BORDER-TOP-STYLE: none;
+	LINE-HEIGHT: 17px;
+	PADDING-TOP: 3px;
+	BORDER-RIGHT-STYLE: none;
+	BORDER-LEFT-STYLE: none;
+	HEIGHT: 29px;
+	BORDER-BOTTOM-STYLE: none;
+	background: url(../images/anniu-lv.gif);
+	background-repeat: no-repeat;
+}
+
+.lj a{ text-decoration:none; color:#993300;}
+
+
+.font-white {
+	font-size: 12.5px;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.shenhe{background:url(../images/hout2.gif);width:50px; text-align:center;}
+.shanchu{background:url(../images/hout2.gif);width:50px; text-align:center;}
+.xiugai{background:url(../images/hout2.gif);width:50px; text-align:center;}
+.chakan{background:url(../images/hout1.gif); width:90px; text-align:center;}
+.xinzeng{background:url(../images/hout2.gif); width:50px; text-align:center;}
+.quanxian{background:url(../images/hout.gif); width:70px; text-align:center;}
+.button_h{background:url(../images/button.gif) -50px -65px; width:70px; border:none; line-height:25px; text-align:center;cursor:pointer;}
+
+.button{background:url(../images/button.gif) -200px -65px;  width:85px; height:31px; border:none; color:#FFF; font-weight:bold;cursor:pointer;}
+.button_h{background:url(../images/button.gif) -50px -65px; width:70px; border:none; line-height:25px; text-align:center;cursor:pointer;}
+.button_d{background:url(../images/button.gif) -300px -65px; width:97px; border:none; line-height:30px; text-align:center;cursor:pointer;}
+.button_z{background:url(../images/button.gif) -200px -65px; width:90px; border:none; line-height:25px; text-align:center;cursor:pointer;}
+.bg{ background:url(../images/top-bg.png) 0px -120px;}
+.box-bottom{border-bottom:1px solid #99CBED;}
+.add{color:#157FEC; font-weight:bold;}
+a{ text-decoration: none; color:#0000ff;}

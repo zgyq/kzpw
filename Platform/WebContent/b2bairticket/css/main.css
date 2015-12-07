@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+#main{ font-size:12px;}
+#main .sea{ background:#fff; margin:10px; line-height:30px; text-align:left;}
+#main .butt{ background:url(/cn_home/images/demosticTicket/bj_sea.gif); height:35px; line-height:35px; border-top:1px dashed #9c9c9c; padding-left:20px;}
+
+#main .list{ margin:10px;}
+
+#main .biao{margin-top:10px; border-collapse:collapse; line-height:36px;}
+#main .biao th{ line-height:26px; background:url(/cn_home/images/demosticTicket/th.gif); text-align:center; font-weight:100;}
+#main .biao td{ color:#000; border-color:#86b2d1}
+#main .thleft{ border-left:1px solid #f0f6ff}
+#main .tdpadd0{ padding:0px; } 
+#main .tdpadd00{ padding:0px; width:100%;}
+
+#main .tdleft{ background:#cbe2f2; border-left:1px solid #fff; border-top:1px solid #fff;height:26px; padding-top:10px; padding-left:3px; }
+#main .fenye{ background:#cbe2f2; border-left:1px solid #fff; border-top:1px solid #fff; height:30px; line-height:30px; padding-left:3px; color:#003366; }
+#main .fenye ul{}
+#main .fenye ul li{ float:left; margin-right:25px; display:inline;}
+
+#main .yin{margin:0 auto; line-height:24px; border-bottom:none; border-right:none;}
+#main .taitou{background:url(/cn_home/images/demosticTicket/bj_taitoux.gif) repeat-x; height:26px; line-height:26px;}
+

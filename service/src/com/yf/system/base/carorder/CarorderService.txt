@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 租车订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Carorder createCarorder(Carorder carorder) throws SQLException;
+	
+	/**
+	 * 删除 租车订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCarorder(long id);
+	
+	
+	/**
+	 * 修改 租车订单
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCarorder(Carorder carorder);
+
+		
+	/**
+	 * 修改 租车订单但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCarorderIgnoreNull(Carorder carorder);
+		
+	
+	/**
+	 * 查找 租车订单
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarorder(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 租车订单
+	 * @param id
+	 * @return
+	 */
+	public Carorder findCarorder(long id);
+	
+	
+	/** 
+	 * 查找 租车订单
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCarorderForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找租车订单
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarorderBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 租车订单
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCarorderBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCarorderBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ICarorderComponent carorderComponent;
+	  
+ 	
+ 	public ICarorderComponent getCarorderComponent() {
+		return carorderComponent;
+	}
+	public void setCarorderComponent(ICarorderComponent  carorderComponent) {
+		this.carorderComponent = carorderComponent;
+	}
+	/**
+	 * 创建 租车订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Carorder createCarorder(Carorder carorder) throws SQLException{
+	
+		return carorderComponent.createCarorder(carorder);
+	}
+	/**
+	 * 删除 租车订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteCarorder(long id){
+	
+		return carorderComponent.deleteCarorder(id);
+	}
+	
+	
+	/**
+	 * 修改 租车订单
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateCarorder(Carorder carorder){
+		return carorderComponent.updateCarorder(carorder);
+	
+	}
+
+		
+	/**
+	 * 修改 租车订单但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateCarorderIgnoreNull(Carorder carorder){
+			return carorderComponent.updateCarorderIgnoreNull(carorder);
+	
+	}
+	
+	/**
+	 * 查找 租车订单
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarorder(String where, String orderby,int limit,int offset){
+		return carorderComponent.findAllCarorder(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 租车订单
+	 * @param id
+	 * @return
+	 */
+	public Carorder findCarorder(long id){
+		return carorderComponent.findCarorder(id);
+	}
+	
+	/** 
+	 * 查找 租车订单
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllCarorderForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return carorderComponent.findAllCarorder(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找租车订单
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllCarorderBySql(String sql,int limit,int offset){
+		return carorderComponent.findAllCarorder(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 租车订单
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteCarorderBySql(String sql){
+		return carorderComponent.excuteCarorderBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countCarorderBySql(String sql){
+		return carorderComponent.countCarorderBySql(sql);
+	}
+	
+	
+

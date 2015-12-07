@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 景区线路图片信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotlineimg createSpotlineimg(Spotlineimg spotlineimg) throws SQLException;
+	
+	/**
+	 * 删除 景区线路图片信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotlineimg(long id);
+	
+	
+	/**
+	 * 修改 景区线路图片信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotlineimg(Spotlineimg spotlineimg);
+
+		
+	/**
+	 * 修改 景区线路图片信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotlineimgIgnoreNull(Spotlineimg spotlineimg);
+		
+	
+	/**
+	 * 查找 景区线路图片信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineimg(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 景区线路图片信息
+	 * @param id
+	 * @return
+	 */
+	public Spotlineimg findSpotlineimg(long id);
+	
+	
+	/** 
+	 * 查找 景区线路图片信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotlineimgForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找景区线路图片信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineimgBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 景区线路图片信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotlineimgBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotlineimgBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISpotlineimgComponent spotlineimgComponent;
+	  
+ 	
+ 	public ISpotlineimgComponent getSpotlineimgComponent() {
+		return spotlineimgComponent;
+	}
+	public void setSpotlineimgComponent(ISpotlineimgComponent  spotlineimgComponent) {
+		this.spotlineimgComponent = spotlineimgComponent;
+	}
+	/**
+	 * 创建 景区线路图片信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotlineimg createSpotlineimg(Spotlineimg spotlineimg) throws SQLException{
+	
+		return spotlineimgComponent.createSpotlineimg(spotlineimg);
+	}
+	/**
+	 * 删除 景区线路图片信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotlineimg(long id){
+	
+		return spotlineimgComponent.deleteSpotlineimg(id);
+	}
+	
+	
+	/**
+	 * 修改 景区线路图片信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotlineimg(Spotlineimg spotlineimg){
+		return spotlineimgComponent.updateSpotlineimg(spotlineimg);
+	
+	}
+
+		
+	/**
+	 * 修改 景区线路图片信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotlineimgIgnoreNull(Spotlineimg spotlineimg){
+			return spotlineimgComponent.updateSpotlineimgIgnoreNull(spotlineimg);
+	
+	}
+	
+	/**
+	 * 查找 景区线路图片信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineimg(String where, String orderby,int limit,int offset){
+		return spotlineimgComponent.findAllSpotlineimg(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 景区线路图片信息
+	 * @param id
+	 * @return
+	 */
+	public Spotlineimg findSpotlineimg(long id){
+		return spotlineimgComponent.findSpotlineimg(id);
+	}
+	
+	/** 
+	 * 查找 景区线路图片信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotlineimgForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return spotlineimgComponent.findAllSpotlineimg(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找景区线路图片信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotlineimgBySql(String sql,int limit,int offset){
+		return spotlineimgComponent.findAllSpotlineimg(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 景区线路图片信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotlineimgBySql(String sql){
+		return spotlineimgComponent.excuteSpotlineimgBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotlineimgBySql(String sql){
+		return spotlineimgComponent.countSpotlineimgBySql(sql);
+	}
+	
+	
+

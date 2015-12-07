@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Rebaterule">
+  
+  <typeAlias alias="Rebaterule" type="com.yf.system.base.rebaterule.Rebaterule"/>
+  
+
+  <resultMap id="resultRebateruleMap" class="Rebaterule">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="ruletypeid" column="C_RULETYPEID"/>
+  
+     <result property="agenttypeid" column="C_AGENTTYPEID"/>
+  
+     <result property="rebatvalue" column="C_REBATVALUE"/>
+   
+  </resultMap>
+  
+  <select id="findAllRebaterule"  resultMap="resultRebateruleMap"  parameterClass="java.util.Map">
+  
+    select * from T_REBATERULE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllRebateruleBySql"  resultMap="resultRebateruleMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteRebateruleBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countRebateruleBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_REBATERULE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findRebaterule" parameterClass="long" resultClass="Rebaterule">
+    select 
+    	ID as id,
+	  			C_RULETYPEID as ruletypeid,
+	  			C_AGENTTYPEID as agenttypeid,
+	  			C_REBATVALUE as rebatvalue 
+     from T_REBATERULE
+    where ID = #id#
+  </select>
+   
+  <insert id="createRebaterule" parameterClass="Rebaterule">
+    insert into T_REBATERULE ( 
+    	ID,
+	  			C_RULETYPEID,
+	  			C_AGENTTYPEID,
+	  			C_REBATVALUE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#ruletypeid:DECIMAL#,
+						
+							#agenttypeid:DECIMAL#,
+						
+  							#rebatvalue:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteRebaterule" parameterClass="long">
+    delete from T_REBATERULE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateRebaterule" parameterClass="Rebaterule">
+    update T_REBATERULE 
+    set 
+    	C_RULETYPEID = #ruletypeid:DECIMAL#,
+						C_AGENTTYPEID = #agenttypeid:DECIMAL#,
+						C_REBATVALUE = #rebatvalue:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

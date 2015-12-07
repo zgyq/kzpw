@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Sysconfig">
+  
+  <typeAlias alias="Sysconfig" type="com.yf.system.base.sysconfig.Sysconfig"/>
+  
+
+  <resultMap id="resultSysconfigMap" class="Sysconfig">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="value" column="C_VALUE"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+   
+  </resultMap>
+  
+  <select id="findAllSysconfig"  resultMap="resultSysconfigMap"  parameterClass="java.util.Map">
+  
+    select * from T_SYSCONFIG
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSysconfigBySql"  resultMap="resultSysconfigMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSysconfigBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSysconfigBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SYSCONFIG
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSysconfig" parameterClass="long" resultClass="Sysconfig">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_VALUE as value,
+	  			C_DESCRIPTION as description 
+     from T_SYSCONFIG
+    where ID = #id#
+  </select>
+   
+  <insert id="createSysconfig" parameterClass="Sysconfig">
+    insert into T_SYSCONFIG ( 
+    	ID,
+	  			C_NAME,
+	  			C_VALUE,
+	  			C_DESCRIPTION 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#value#,
+	  					
+	  						#description#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSysconfig" parameterClass="long">
+    delete from T_SYSCONFIG
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSysconfig" parameterClass="Sysconfig">
+    update T_SYSCONFIG 
+    set 
+    	C_NAME = #name#,
+	  					C_VALUE = #value#,
+	  					C_DESCRIPTION = #description#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 文件柜目录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Filecabindir createFilecabindir(Filecabindir filecabindir) throws SQLException;
+	
+	/**
+	 * 删除 文件柜目录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteFilecabindir(long id);
+	
+	
+	/**
+	 * 修改 文件柜目录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateFilecabindir(Filecabindir filecabindir);
+
+		
+	/**
+	 * 修改 文件柜目录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateFilecabindirIgnoreNull(Filecabindir filecabindir);
+		
+	
+	/**
+	 * 查找 文件柜目录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFilecabindir(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 文件柜目录
+	 * @param id
+	 * @return
+	 */
+	public Filecabindir findFilecabindir(long id);
+	
+	
+	/** 
+	 * 查找 文件柜目录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllFilecabindirForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找文件柜目录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFilecabindirBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 文件柜目录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteFilecabindirBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countFilecabindirBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IFilecabindirComponent filecabindirComponent;
+	  
+ 	
+ 	public IFilecabindirComponent getFilecabindirComponent() {
+		return filecabindirComponent;
+	}
+	public void setFilecabindirComponent(IFilecabindirComponent  filecabindirComponent) {
+		this.filecabindirComponent = filecabindirComponent;
+	}
+	/**
+	 * 创建 文件柜目录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Filecabindir createFilecabindir(Filecabindir filecabindir) throws SQLException{
+	
+		return filecabindirComponent.createFilecabindir(filecabindir);
+	}
+	/**
+	 * 删除 文件柜目录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteFilecabindir(long id){
+	
+		return filecabindirComponent.deleteFilecabindir(id);
+	}
+	
+	
+	/**
+	 * 修改 文件柜目录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateFilecabindir(Filecabindir filecabindir){
+		return filecabindirComponent.updateFilecabindir(filecabindir);
+	
+	}
+
+		
+	/**
+	 * 修改 文件柜目录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateFilecabindirIgnoreNull(Filecabindir filecabindir){
+			return filecabindirComponent.updateFilecabindirIgnoreNull(filecabindir);
+	
+	}
+	
+	/**
+	 * 查找 文件柜目录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFilecabindir(String where, String orderby,int limit,int offset){
+		return filecabindirComponent.findAllFilecabindir(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 文件柜目录
+	 * @param id
+	 * @return
+	 */
+	public Filecabindir findFilecabindir(long id){
+		return filecabindirComponent.findFilecabindir(id);
+	}
+	
+	/** 
+	 * 查找 文件柜目录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllFilecabindirForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return filecabindirComponent.findAllFilecabindir(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找文件柜目录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllFilecabindirBySql(String sql,int limit,int offset){
+		return filecabindirComponent.findAllFilecabindir(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 文件柜目录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteFilecabindirBySql(String sql){
+		return filecabindirComponent.excuteFilecabindirBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countFilecabindirBySql(String sql){
+		return filecabindirComponent.countFilecabindirBySql(sql);
+	}
+	
+	
+

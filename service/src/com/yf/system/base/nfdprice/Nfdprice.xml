@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Nfdprice">
+  
+  <typeAlias alias="Nfdprice" type="com.yf.system.base.nfdprice.Nfdprice"/>
+  
+
+  <resultMap id="resultNfdpriceMap" class="Nfdprice">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="scity" column="C_SCITY"/>
+  
+     <result property="ecity" column="C_ECITY"/>
+  
+     <result property="aircode" column="C_AIRCODE"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="rtPrice" column="C_RTPRICE"/>
+  
+     <result property="priceleve" column="C_PRICELEVE"/>
+  
+     <result property="stime" column="C_STIME"/>
+  
+     <result property="etime" column="C_ETIME"/>
+  
+     <result property="smday" column="C_SMDAY"/>
+  
+     <result property="bigday" column="C_BIGDAY"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllNfdprice"  resultMap="resultNfdpriceMap"  parameterClass="java.util.Map">
+  
+    select * from T_NFDPRICE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllNfdpriceBySql"  resultMap="resultNfdpriceMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteNfdpriceBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countNfdpriceBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_NFDPRICE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findNfdprice" parameterClass="long" resultClass="Nfdprice">
+    select 
+    	ID as id,
+	  			C_SCITY as scity,
+	  			C_ECITY as ecity,
+	  			C_AIRCODE as aircode,
+	  			C_PRICE as price,
+	  			C_RTPRICE as rtPrice,
+	  			C_PRICELEVE as priceleve,
+	  			C_STIME as stime,
+	  			C_ETIME as etime,
+	  			C_SMDAY as smday,
+	  			C_BIGDAY as bigday,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state 
+     from T_NFDPRICE
+    where ID = #id#
+  </select>
+   
+  <insert id="createNfdprice" parameterClass="Nfdprice">
+    insert into T_NFDPRICE ( 
+    	ID,
+	  			C_SCITY,
+	  			C_ECITY,
+	  			C_AIRCODE,
+	  			C_PRICE,
+	  			C_RTPRICE,
+	  			C_PRICELEVE,
+	  			C_STIME,
+	  			C_ETIME,
+	  			C_SMDAY,
+	  			C_BIGDAY,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#scity#,
+	  					
+	  						#ecity#,
+	  					
+	  						#aircode#,
+	  					
+	  						#price#,
+	  					
+	  						#rtPrice#,
+	  					
+	  						#priceleve#,
+	  					
+	  						#stime#,
+	  					
+	  						#etime#,
+	  					
+	  						#smday#,
+	  					
+	  						#bigday#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteNfdprice" parameterClass="long">
+    delete from T_NFDPRICE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateNfdprice" parameterClass="Nfdprice">
+    update T_NFDPRICE 
+    set 
+    	C_SCITY = #scity#,
+	  					C_ECITY = #ecity#,
+	  					C_AIRCODE = #aircode#,
+	  					C_PRICE = #price#,
+	  					C_RTPRICE = #rtPrice#,
+	  					C_PRICELEVE = #priceleve#,
+	  					C_STIME = #stime#,
+	  					C_ETIME = #etime#,
+	  					C_SMDAY = #smday#,
+	  					C_BIGDAY = #bigday#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

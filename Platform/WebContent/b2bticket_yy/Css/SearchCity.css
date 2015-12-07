@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+#cityletter{width:auto;margin: 0px; padding: 0px;height: 20px;padding-left: 12px;}
+#cityletter li{float: left; letter-spacing:2px; padding: 0px 3px; list-style: none;text-align: center;height: 20px;line-height: 20px;margin-left: 3px;border: solid 1px #ccc;border-bottom-width: 0px;cursor: pointer;}
+#cityletter li.cur{background: #ccc;}
+.citylist{width: 316px;margin: 0px;margin-left:4px;padding: 0px;margin-top: 5px;display: none;}
+.citylist li{float: left;list-style: none;width: 50px;text-align: center;height: 25px;line-height: 25px;margin-left: 1px;margin-top:1px;cursor: pointer;overflow: hidden;}
+.hd{display: none;}
+.citylist li.cur{color:Red; }
+.style1{height: 286px;}
+.bgAHMW{background-color:#FDF5E6  ;} 
+.bgBINX{background-color:#C6E2FF;} 
+.bgCJOY{background-color:#DBDBDB;}
+.bgDKPZ{background-color:#EEE8CD;}
+.bgELQ{background-color:#F0F8FF;}
+.bgFR{background-color:#D1EEEE;}
+.bgGS{background-color:#EEE9E9;}
+.bgT{background-color:#FFE4C4;}  
+.bgMouseOver{ background-color:#FFF68F;}

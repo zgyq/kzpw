@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 门票城市
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotticketcity createSpotticketcity(Spotticketcity spotticketcity) throws SQLException;
+	
+	/**
+	 * 删除 门票城市
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotticketcity(long id);
+	
+	
+	/**
+	 * 修改 门票城市
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotticketcity(Spotticketcity spotticketcity);
+
+		
+	/**
+	 * 修改 门票城市但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotticketcityIgnoreNull(Spotticketcity spotticketcity);
+		
+	
+	/**
+	 * 查找 门票城市
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotticketcity(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 门票城市
+	 * @param id
+	 * @return
+	 */
+	public Spotticketcity findSpotticketcity(long id);
+	
+	
+	/** 
+	 * 查找 门票城市
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotticketcityForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找门票城市
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotticketcityBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 门票城市
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotticketcityBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotticketcityBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISpotticketcityComponent spotticketcityComponent;
+	  
+ 	
+ 	public ISpotticketcityComponent getSpotticketcityComponent() {
+		return spotticketcityComponent;
+	}
+	public void setSpotticketcityComponent(ISpotticketcityComponent  spotticketcityComponent) {
+		this.spotticketcityComponent = spotticketcityComponent;
+	}
+	/**
+	 * 创建 门票城市
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Spotticketcity createSpotticketcity(Spotticketcity spotticketcity) throws SQLException{
+	
+		return spotticketcityComponent.createSpotticketcity(spotticketcity);
+	}
+	/**
+	 * 删除 门票城市
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpotticketcity(long id){
+	
+		return spotticketcityComponent.deleteSpotticketcity(id);
+	}
+	
+	
+	/**
+	 * 修改 门票城市
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpotticketcity(Spotticketcity spotticketcity){
+		return spotticketcityComponent.updateSpotticketcity(spotticketcity);
+	
+	}
+
+		
+	/**
+	 * 修改 门票城市但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpotticketcityIgnoreNull(Spotticketcity spotticketcity){
+			return spotticketcityComponent.updateSpotticketcityIgnoreNull(spotticketcity);
+	
+	}
+	
+	/**
+	 * 查找 门票城市
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotticketcity(String where, String orderby,int limit,int offset){
+		return spotticketcityComponent.findAllSpotticketcity(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 门票城市
+	 * @param id
+	 * @return
+	 */
+	public Spotticketcity findSpotticketcity(long id){
+		return spotticketcityComponent.findSpotticketcity(id);
+	}
+	
+	/** 
+	 * 查找 门票城市
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpotticketcityForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return spotticketcityComponent.findAllSpotticketcity(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找门票城市
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpotticketcityBySql(String sql,int limit,int offset){
+		return spotticketcityComponent.findAllSpotticketcity(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 门票城市
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpotticketcityBySql(String sql){
+		return spotticketcityComponent.excuteSpotticketcityBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpotticketcityBySql(String sql){
+		return spotticketcityComponent.countSpotticketcityBySql(sql);
+	}
+	
+	
+

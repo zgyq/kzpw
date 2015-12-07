@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+html,body{ height:100%;}
+
+#left{  height:100%;}
+#left .frame{ background:url(/cn_home/images/demosticTicket/bj_list.gif); width:188px; margin-left:11px; line-height:26px;  height:100%;}
+*:lang(th) #left .frame{
+    height:99%!important
+}
+#left .frame:empty {
+    height:99%!important
+} 
+#left .telo{ background:url(/cn_home/images/demosticTicket/bj_leftd.gif);  height:26px;  padding-left:20px; font-weight:bold}
+#left .menu{ background:url(/cn_home/images/demosticTicket/bj_add.gif); height:26px; padding-left:30px; color:#3399ff; line-height:26px; cursor:pointer}
+#left .list{ background:url(/cn_home/images/demosticTicket/bj_list.gif); padding:8px 0 8px 0;}
+#left .list ul{}
+#left .list ul li{ background:url(/cn_home/images/demosticTicket/bj_listd.gif); height:26px; line-height:26px; padding-left:40px; }
+#left .tela_less{ background:url(/cn_home/images/demosticTicket/bj_less.gif); height:26px; padding-left:30px; color:#3399ff; line-height:26px; cursor:pointer;}
+#left .lia{ color:#f48000;}
+#left .lib{ color:#9e9e9e;}
+
+#middle{ height:100%;}
+#middle .middle{height:45%; width:6px;}
+#middle .middle_x{width:6px; vertical-align:middle; background:#198bc9}
+
+
+#right{ height:97%; min-width:794px;} 
+#right .kuang{ height:97%; margin-right:11px; background:#f6fafd; overflow-y:auto; overflow-x:hidden; text-align:center;}
+*:lang(th) #right .kuang{
+    height:96%!important
+}
+#right .kuang:empty {
+    height:96%!important
+} 
+
+
+
+#right .lit{ height:28px; background:#198bc9;}
+#right .lit ul{}
+#right .lit ul li{ float:left;}
+#right .lit ul li a{ color:#003399}
+#right .on{ width:88px; height:28px; line-height:28px; text-align:center; background:url(/cn_home/images/demosticTicket/nav_lit.gif);}
+#right .off{ width:88px; height:28px; line-height:28px; text-align:center; background:url(/cn_home/images/demosticTicket/nav_litoff.gif);}
+#right .offd{ width:88px; height:28px; line-height:28px; text-align:center; background:url(/cn_home/images/demosticTicket/nav_litoffd.gif);}
+#right .mbx_main{padding:20px 20px 0 20px;}
+#right .mbx_box{border:1px solid #ffc186; width:49%;}
+#right .mbx_detail{border:3px solid #fff5da}
+#right .mbx_detail ul{}
+#right .mbx_detail ul li{ padding-left:20px;}
+
+.bdmx{ text-align:left; line-height:30px; padding-left:30px; color:#000;}
+
+.button_mbxs{ background:url(/cn_home/images/demosticTicket/button_mbxs.jpg); width:80px; height:28px; border:none; color:#198bc9; font-weight:bold; cursor:pointer;}
+.button_bxtj{ background:url(/cn_home/images/demosticTicket/bxtj.jpg); width:113px; height:33px; line-height:33px; border:none; }
+.button_bctj{ background:url(/cn_home/images/demosticTicket/bctj.jpg); width:84px; height:24px; line-height:24px; border:none; }
+.hc14{font-size:14px; font-weight:bold; color:#f47e07;}
+
+
+.numer{ width:980px; height:50px; margin-top:10px;}
+.numer table{border-collapse:collapse; border:1px solid #ccc; border-bottom:0px solid #ccc }
+.numer span{ color:#5a5a5a; font-weight:bold}
+.numer dl{ color:#fb6600; font-weight:bolder; font-size:14px;}
+.numertd{ border-color:#ccc; text-align:center; background:#f2f9ff; padding-left:0px;}
+.numera{ text-decoration:none}
+.numertdon{ border-color:#ccc; text-align:center; background:#f2f9ff; padding-left:0px;border-bottom:0; border-top:2px solid #fb6600; background:#fff;}
+.ranyou{background:#f1f1f1; line-height:24px; height:24px; color:#666}
+.line_over{height:8px; line-height:8px; border-top:1px solid #83d3d3; margin-top:2px;}
+.line_middle{height:8px; line-height:8px; border-top:1px dashed #ccc}
+.muese{line-height:26px; margin-top:10px; color:#000}
+.muese ul{}
+.muese ul li{ float:left; margin-right:10px;}
+.times{ width:43px; height:25px; line-height:25px; background:url(/cn_home/images/demosticTicket/bj_shijiand.gif) no-repeat; padding-left:8px;}
+.timesg{ width:43px; height:25px; line-height:25px; background:url(/cn_home/images/demosticTicket/bj_shijiang.gif) no-repeat; padding-left:8px;}
+.xianshi{ width:85px; height:25px; line-height:25px; background:url(/cn_home/images/demosticTicket/bj_xianshi.gif) no-repeat; padding-left:8px; position:relative}
+.xianshinr{ position:absolute; background:#f1f1f1; width:75px;left:0px; top:24px; padding-left:8px; border:1px solid #999999;}
+
+
+
+.bagrd{ background:#dcf7fb; line-height:32px; font-weight:bold;}
+.f48000{ color:#f48000; font-weight:bold; font-size:16px;}
+.xf48000{ color:#f48000; font-weight:bold;}
+.font666{ color:#7a7a7a;}
+.ff0000{ color:#ff0000; font-weight:bolder; font-size:18px;}
+.font3797f1{color:#0099ff}

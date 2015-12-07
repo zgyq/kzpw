@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery hover事件鼠标滑过图片半透明标题文字滑动显示隐藏</title>
+<meta name="description" content="jquery hover事件制作产品图片鼠标滑过图片半透明，标题文字从左到右滑动动画移动显示隐藏。" />
+</head>
+
+<body>
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:inline-table;}/* Hides from IE-mac \*/
+*html .clearfix{height:1%;}
+.clearfix{display:block;}/* End hide from IE-mac */
+*+html .clearfix{min-height:1%;}
+/* section */
+.section{width:981px;margin:40px auto 0 auto;overflow:hidden;}
+.section ul{width:996px;}
+.section ul li{float:left;margin-right:14px;margin-bottom:13px;display:inline;width:318px;height:343px;overflow:hidden;position:relative;}
+.section ul li .photo{width:318px;height:343px;overflow:hidden;}
+.section .rsp{width:318px;height:343px;overflow:hidden;position: absolute;background:#000;top:0px;left:0px;}
+.section .text{position:absolute;width:318px;height:343px;left:-318px;top:0px;overflow:hidden;}
+.section .text h3{width:318px;margin-top:130px;height:55px;line-height:55px;text-align:center;color:#FFFFFF;font-family:"microsoft yahei";font-size:26px;}
+</style>
+
+<div class="section">
+	<ul class="clearfix">
+		<li>
+			<div class="photo"><img src="images/banner/111.jpg" width="318" height="343" /></div>
+			<div class="rsp"></div>
+			<div class="text"><h3>布品展示布品展示布品展示布品展示布品展示布品展示布品展示</h3></div>
+		</li>
+		<li>
+			<div class="photo"><img src="images/index_30.jpg" width="318" height="343" /></div>
+			<div class="rsp"></div>
+			<div class="text"><h3>新品纵览</h3></div>
+		</li>
+		<li>
+			<div class="photo"><img src="images/index_32.jpg" width="318" height="343" /></div>
+			<div class="rsp"></div>
+			<div class="text"><h3>灵感街拍</h3></div>
+		</li>
+		<li>
+			<div class="photo"><img src="images/index_36.jpg" width="318" height="343" /></div>
+			<div class="rsp"></div>
+			<div class="text"><h3>公司故事</h3></div>
+		</li>
+		
+	</ul>
+	<div class="clear"></div>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".section ul li .rsp").hide();
+	
+	$(".section	 ul li").hover(function(){
+		$(this).find(".rsp").stop().fadeTo(500,0.5)
+		$(this).find(".text").stop().animate({left:'0'}, {duration: 500})
+	},function(){
+		$(this).find(".rsp").stop().fadeTo(500,0)
+		$(this).find(".text").stop().animate({left:'318'}, {duration: "fast"})
+		$(this).find(".text").animate({left:'-318'}, {duration: 0})
+	});
+
+});
+</script>
+
+</body>
+</html>

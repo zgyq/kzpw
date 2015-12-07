@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 会员积分记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Userintegral createUserintegral(Userintegral userintegral) throws SQLException;
+	
+	/**
+	 * 删除 会员积分记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteUserintegral(long id);
+	
+	
+	/**
+	 * 修改 会员积分记录表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateUserintegral(Userintegral userintegral);
+
+		
+	/**
+	 * 修改 会员积分记录表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateUserintegralIgnoreNull(Userintegral userintegral);
+		
+	
+	/**
+	 * 查找 会员积分记录表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllUserintegral(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 会员积分记录表
+	 * @param id
+	 * @return
+	 */
+	public Userintegral findUserintegral(long id);
+	
+	
+	/** 
+	 * 查找 会员积分记录表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllUserintegralForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找会员积分记录表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllUserintegralBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 会员积分记录表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteUserintegralBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countUserintegralBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IUserintegralComponent userintegralComponent;
+	  
+ 	
+ 	public IUserintegralComponent getUserintegralComponent() {
+		return userintegralComponent;
+	}
+	public void setUserintegralComponent(IUserintegralComponent  userintegralComponent) {
+		this.userintegralComponent = userintegralComponent;
+	}
+	/**
+	 * 创建 会员积分记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Userintegral createUserintegral(Userintegral userintegral) throws SQLException{
+	
+		return userintegralComponent.createUserintegral(userintegral);
+	}
+	/**
+	 * 删除 会员积分记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteUserintegral(long id){
+	
+		return userintegralComponent.deleteUserintegral(id);
+	}
+	
+	
+	/**
+	 * 修改 会员积分记录表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateUserintegral(Userintegral userintegral){
+		return userintegralComponent.updateUserintegral(userintegral);
+	
+	}
+
+		
+	/**
+	 * 修改 会员积分记录表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateUserintegralIgnoreNull(Userintegral userintegral){
+			return userintegralComponent.updateUserintegralIgnoreNull(userintegral);
+	
+	}
+	
+	/**
+	 * 查找 会员积分记录表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllUserintegral(String where, String orderby,int limit,int offset){
+		return userintegralComponent.findAllUserintegral(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 会员积分记录表
+	 * @param id
+	 * @return
+	 */
+	public Userintegral findUserintegral(long id){
+		return userintegralComponent.findUserintegral(id);
+	}
+	
+	/** 
+	 * 查找 会员积分记录表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllUserintegralForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return userintegralComponent.findAllUserintegral(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找会员积分记录表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllUserintegralBySql(String sql,int limit,int offset){
+		return userintegralComponent.findAllUserintegral(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 会员积分记录表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteUserintegralBySql(String sql){
+		return userintegralComponent.excuteUserintegralBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countUserintegralBySql(String sql){
+		return userintegralComponent.countUserintegralBySql(sql);
+	}
+	
+	
+

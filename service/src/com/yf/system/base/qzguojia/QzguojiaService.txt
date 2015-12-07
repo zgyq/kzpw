@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 签证国家
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Qzguojia createQzguojia(Qzguojia qzguojia) throws SQLException;
+	
+	/**
+	 * 删除 签证国家
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteQzguojia(long id);
+	
+	
+	/**
+	 * 修改 签证国家
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateQzguojia(Qzguojia qzguojia);
+
+		
+	/**
+	 * 修改 签证国家但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateQzguojiaIgnoreNull(Qzguojia qzguojia);
+		
+	
+	/**
+	 * 查找 签证国家
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllQzguojia(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 签证国家
+	 * @param id
+	 * @return
+	 */
+	public Qzguojia findQzguojia(long id);
+	
+	
+	/** 
+	 * 查找 签证国家
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllQzguojiaForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找签证国家
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllQzguojiaBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 签证国家
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteQzguojiaBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countQzguojiaBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IQzguojiaComponent qzguojiaComponent;
+	  
+ 	
+ 	public IQzguojiaComponent getQzguojiaComponent() {
+		return qzguojiaComponent;
+	}
+	public void setQzguojiaComponent(IQzguojiaComponent  qzguojiaComponent) {
+		this.qzguojiaComponent = qzguojiaComponent;
+	}
+	/**
+	 * 创建 签证国家
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Qzguojia createQzguojia(Qzguojia qzguojia) throws SQLException{
+	
+		return qzguojiaComponent.createQzguojia(qzguojia);
+	}
+	/**
+	 * 删除 签证国家
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteQzguojia(long id){
+	
+		return qzguojiaComponent.deleteQzguojia(id);
+	}
+	
+	
+	/**
+	 * 修改 签证国家
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateQzguojia(Qzguojia qzguojia){
+		return qzguojiaComponent.updateQzguojia(qzguojia);
+	
+	}
+
+		
+	/**
+	 * 修改 签证国家但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateQzguojiaIgnoreNull(Qzguojia qzguojia){
+			return qzguojiaComponent.updateQzguojiaIgnoreNull(qzguojia);
+	
+	}
+	
+	/**
+	 * 查找 签证国家
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllQzguojia(String where, String orderby,int limit,int offset){
+		return qzguojiaComponent.findAllQzguojia(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 签证国家
+	 * @param id
+	 * @return
+	 */
+	public Qzguojia findQzguojia(long id){
+		return qzguojiaComponent.findQzguojia(id);
+	}
+	
+	/** 
+	 * 查找 签证国家
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllQzguojiaForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return qzguojiaComponent.findAllQzguojia(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找签证国家
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllQzguojiaBySql(String sql,int limit,int offset){
+		return qzguojiaComponent.findAllQzguojia(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 签证国家
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteQzguojiaBySql(String sql){
+		return qzguojiaComponent.excuteQzguojiaBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countQzguojiaBySql(String sql){
+		return qzguojiaComponent.countQzguojiaBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Paymentrecorder">
+  
+  <typeAlias alias="Paymentrecorder" type="com.yf.system.base.paymentrecorder.Paymentrecorder"/>
+  
+
+  <resultMap id="resultPaymentrecorderMap" class="Paymentrecorder">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="ordercode" column="C_ORDERCODE"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="paytype" column="C_PAYTYPE"/>
+  
+     <result property="amount" column="C_AMOUNT"/>
+  
+     <result property="payname" column="C_PAYNAME"/>
+  
+     <result property="retcode" column="C_RETCODE"/>
+  
+     <result property="returl" column="C_RETURL"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="productname" column="C_PRODUCTNAME"/>
+  
+     <result property="productesc" column="C_PRODUCTESC"/>
+  
+     <result property="producturl" column="C_PRODUCTURL"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllPaymentrecorder"  resultMap="resultPaymentrecorderMap"  parameterClass="java.util.Map">
+  
+    select * from T_PAYMENTRECORDER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllPaymentrecorderBySql"  resultMap="resultPaymentrecorderMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excutePaymentrecorderBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countPaymentrecorderBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_PAYMENTRECORDER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findPaymentrecorder" parameterClass="long" resultClass="Paymentrecorder">
+    select 
+    	ID as id,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_ORDERCODE as ordercode,
+	  			C_STATE as state,
+	  			C_PAYTYPE as paytype,
+	  			C_AMOUNT as amount,
+	  			C_PAYNAME as payname,
+	  			C_RETCODE as retcode,
+	  			C_RETURL as returl,
+	  			C_DESCRIPTION as description,
+	  			C_CODE as code,
+	  			C_PRODUCTNAME as productname,
+	  			C_PRODUCTESC as productesc,
+	  			C_PRODUCTURL as producturl,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_PAYMENTRECORDER
+    where ID = #id#
+  </select>
+   
+  <insert id="createPaymentrecorder" parameterClass="Paymentrecorder">
+    insert into T_PAYMENTRECORDER ( 
+    	ID,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_ORDERCODE,
+	  			C_STATE,
+	  			C_PAYTYPE,
+	  			C_AMOUNT,
+	  			C_PAYNAME,
+	  			C_RETCODE,
+	  			C_RETURL,
+	  			C_DESCRIPTION,
+	  			C_CODE,
+	  			C_PRODUCTNAME,
+	  			C_PRODUCTESC,
+	  			C_PRODUCTURL,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+	  						#ordercode#,
+	  					
+							#state:DECIMAL#,
+						
+							#paytype:DECIMAL#,
+						
+							#amount:DECIMAL#,
+						
+	  						#payname#,
+	  					
+	  						#retcode#,
+	  					
+	  						#returl#,
+	  					
+	  						#description#,
+	  					
+	  						#code#,
+	  					
+	  						#productname#,
+	  					
+	  						#productesc#,
+	  					
+	  						#producturl#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deletePaymentrecorder" parameterClass="long">
+    delete from T_PAYMENTRECORDER
+    where ID = #id#
+  </delete>
+	
+  <update id="updatePaymentrecorder" parameterClass="Paymentrecorder">
+    update T_PAYMENTRECORDER 
+    set 
+    	C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_ORDERCODE = #ordercode#,
+	  					C_STATE = #state:DECIMAL#,
+						C_PAYTYPE = #paytype:DECIMAL#,
+						C_AMOUNT = #amount:DECIMAL#,
+						C_PAYNAME = #payname#,
+	  					C_RETCODE = #retcode#,
+	  					C_RETURL = #returl#,
+	  					C_DESCRIPTION = #description#,
+	  					C_CODE = #code#,
+	  					C_PRODUCTNAME = #productname#,
+	  					C_PRODUCTESC = #productesc#,
+	  					C_PRODUCTURL = #producturl#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

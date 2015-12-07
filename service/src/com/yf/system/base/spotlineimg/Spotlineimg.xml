@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Spotlineimg">
+  
+  <typeAlias alias="Spotlineimg" type="com.yf.system.base.spotlineimg.Spotlineimg"/>
+  
+
+  <resultMap id="resultSpotlineimgMap" class="Spotlineimg">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="spotlineid" column="C_SPOTLINEID"/>
+  
+     <result property="imgurl" column="C_IMGURL"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="beizhu" column="C_BEIZHU"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllSpotlineimg"  resultMap="resultSpotlineimgMap"  parameterClass="java.util.Map">
+  
+    select * from T_SPOTLINEIMG
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSpotlineimgBySql"  resultMap="resultSpotlineimgMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSpotlineimgBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSpotlineimgBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SPOTLINEIMG
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSpotlineimg" parameterClass="long" resultClass="Spotlineimg">
+    select 
+    	ID as id,
+	  			C_SPOTLINEID as spotlineid,
+	  			C_IMGURL as imgurl,
+	  			C_NAME as name,
+	  			C_BEIZHU as beizhu,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_STATE as state 
+     from T_SPOTLINEIMG
+    where ID = #id#
+  </select>
+   
+  <insert id="createSpotlineimg" parameterClass="Spotlineimg">
+    insert into T_SPOTLINEIMG ( 
+    	ID,
+	  			C_SPOTLINEID,
+	  			C_IMGURL,
+	  			C_NAME,
+	  			C_BEIZHU,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#spotlineid#,
+	  					
+	  						#imgurl#,
+	  					
+	  						#name#,
+	  					
+	  						#beizhu#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSpotlineimg" parameterClass="long">
+    delete from T_SPOTLINEIMG
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSpotlineimg" parameterClass="Spotlineimg">
+    update T_SPOTLINEIMG 
+    set 
+    	C_SPOTLINEID = #spotlineid#,
+	  					C_IMGURL = #imgurl#,
+	  					C_NAME = #name#,
+	  					C_BEIZHU = #beizhu#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

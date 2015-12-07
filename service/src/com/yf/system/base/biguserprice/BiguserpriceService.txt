@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 大客户还款金额记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Biguserprice createBiguserprice(Biguserprice biguserprice) throws SQLException;
+	
+	/**
+	 * 删除 大客户还款金额记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteBiguserprice(long id);
+	
+	
+	/**
+	 * 修改 大客户还款金额记录表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateBiguserprice(Biguserprice biguserprice);
+
+		
+	/**
+	 * 修改 大客户还款金额记录表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateBiguserpriceIgnoreNull(Biguserprice biguserprice);
+		
+	
+	/**
+	 * 查找 大客户还款金额记录表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllBiguserprice(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 大客户还款金额记录表
+	 * @param id
+	 * @return
+	 */
+	public Biguserprice findBiguserprice(long id);
+	
+	
+	/** 
+	 * 查找 大客户还款金额记录表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllBiguserpriceForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找大客户还款金额记录表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllBiguserpriceBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 大客户还款金额记录表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteBiguserpriceBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countBiguserpriceBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IBiguserpriceComponent biguserpriceComponent;
+	  
+ 	
+ 	public IBiguserpriceComponent getBiguserpriceComponent() {
+		return biguserpriceComponent;
+	}
+	public void setBiguserpriceComponent(IBiguserpriceComponent  biguserpriceComponent) {
+		this.biguserpriceComponent = biguserpriceComponent;
+	}
+	/**
+	 * 创建 大客户还款金额记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Biguserprice createBiguserprice(Biguserprice biguserprice) throws SQLException{
+	
+		return biguserpriceComponent.createBiguserprice(biguserprice);
+	}
+	/**
+	 * 删除 大客户还款金额记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteBiguserprice(long id){
+	
+		return biguserpriceComponent.deleteBiguserprice(id);
+	}
+	
+	
+	/**
+	 * 修改 大客户还款金额记录表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateBiguserprice(Biguserprice biguserprice){
+		return biguserpriceComponent.updateBiguserprice(biguserprice);
+	
+	}
+
+		
+	/**
+	 * 修改 大客户还款金额记录表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateBiguserpriceIgnoreNull(Biguserprice biguserprice){
+			return biguserpriceComponent.updateBiguserpriceIgnoreNull(biguserprice);
+	
+	}
+	
+	/**
+	 * 查找 大客户还款金额记录表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllBiguserprice(String where, String orderby,int limit,int offset){
+		return biguserpriceComponent.findAllBiguserprice(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 大客户还款金额记录表
+	 * @param id
+	 * @return
+	 */
+	public Biguserprice findBiguserprice(long id){
+		return biguserpriceComponent.findBiguserprice(id);
+	}
+	
+	/** 
+	 * 查找 大客户还款金额记录表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllBiguserpriceForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return biguserpriceComponent.findAllBiguserprice(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找大客户还款金额记录表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllBiguserpriceBySql(String sql,int limit,int offset){
+		return biguserpriceComponent.findAllBiguserprice(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 大客户还款金额记录表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteBiguserpriceBySql(String sql){
+		return biguserpriceComponent.excuteBiguserpriceBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countBiguserpriceBySql(String sql){
+		return biguserpriceComponent.countBiguserpriceBySql(sql);
+	}
+	
+	
+

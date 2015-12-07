@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Hotellandmark">
+  
+  <typeAlias alias="Hotellandmark" type="com.yf.system.base.hotellandmark.Hotellandmark"/>
+  
+
+  <resultMap id="resultHotellandmarkMap" class="Hotellandmark">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="landmarkid" column="C_LANDMARKID"/>
+  
+     <result property="hotelid" column="C_HOTELID"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="range" column="C_RANGE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllHotellandmark"  resultMap="resultHotellandmarkMap"  parameterClass="java.util.Map">
+  
+    select * from T_HOTELLANDMARK
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllHotellandmarkBySql"  resultMap="resultHotellandmarkMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteHotellandmarkBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countHotellandmarkBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_HOTELLANDMARK
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findHotellandmark" parameterClass="long" resultClass="Hotellandmark">
+    select 
+    	ID as id,
+	  			C_LANDMARKID as landmarkid,
+	  			C_HOTELID as hotelid,
+	  			C_DESCRIPTION as description,
+	  			C_RANGE as range,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_HOTELLANDMARK
+    where ID = #id#
+  </select>
+   
+  <insert id="createHotellandmark" parameterClass="Hotellandmark">
+    insert into T_HOTELLANDMARK ( 
+    	ID,
+	  			C_LANDMARKID,
+	  			C_HOTELID,
+	  			C_DESCRIPTION,
+	  			C_RANGE,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#landmarkid:DECIMAL#,
+						
+							#hotelid:DECIMAL#,
+						
+	  						#description#,
+	  					
+							#range:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteHotellandmark" parameterClass="long">
+    delete from T_HOTELLANDMARK
+    where ID = #id#
+  </delete>
+	
+  <update id="updateHotellandmark" parameterClass="Hotellandmark">
+    update T_HOTELLANDMARK 
+    set 
+    	C_LANDMARKID = #landmarkid:DECIMAL#,
+						C_HOTELID = #hotelid:DECIMAL#,
+						C_DESCRIPTION = #description#,
+	  					C_RANGE = #range:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

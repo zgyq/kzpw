@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Segmentinfo">
+  
+  <typeAlias alias="Segmentinfo" type="com.yf.system.base.segmentinfo.Segmentinfo"/>
+  
+
+  <resultMap id="resultSegmentinfoMap" class="Segmentinfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="flightnumber" column="C_FLIGHTNUMBER"/>
+  
+     <result property="aircomapnycode" column="C_AIRCOMAPNYCODE"/>
+  
+     <result property="airportfee" column="C_AIRPORTFEE"/>
+  
+     <result property="fuelfee" column="C_FUELFEE"/>
+  
+     <result property="departtime" column="C_DEPARTTIME"/>
+  
+     <result property="arrivaltime" column="C_ARRIVALTIME"/>
+  
+     <result property="cabincode" column="C_CABINCODE"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="discount" column="C_DISCOUNT"/>
+  
+     <result property="yprice" column="C_YPRICE"/>
+  
+     <result property="traveltype" column="C_TRAVELTYPE"/>
+  
+     <result property="isspecial" column="C_ISSPECIAL"/>
+  
+     <result property="startairport" column="C_STARTAIRPORT"/>
+  
+     <result property="endairport" column="C_ENDAIRPORT"/>
+  
+     <result property="rules" column="C_RULES"/>
+  
+     <result property="ratevalue" column="C_RATEVALUE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+  
+     <result property="borderpointat" column="C_BORDERPOINTAT"/>
+  
+     <result property="offpointat" column="C_OFFPOINTAT"/>
+  
+     <result property="parvalue" column="C_PARVALUE"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="zrateid" column="C_ZRATEID"/>
+     
+     <result property="flightmodel" column="C_FLIGHTMODEL"/>
+   
+  </resultMap>
+  
+  <select id="findAllSegmentinfo"  resultMap="resultSegmentinfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_SEGMENTINFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSegmentinfoBySql"  resultMap="resultSegmentinfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSegmentinfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSegmentinfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SEGMENTINFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSegmentinfo" parameterClass="long" resultClass="Segmentinfo">
+    select 
+    	ID as id,
+	  			C_ORDERID as orderid,
+	  			C_FLIGHTNUMBER as flightnumber,
+	  			C_AIRCOMAPNYCODE as aircomapnycode,
+	  			C_AIRPORTFEE as airportfee,
+	  			C_FUELFEE as fuelfee,
+	  			C_DEPARTTIME as departtime,
+	  			C_ARRIVALTIME as arrivaltime,
+	  			C_CABINCODE as cabincode,
+	  			C_PRICE as price,
+	  			C_DISCOUNT as discount,
+	  			C_YPRICE as yprice,
+	  			C_TRAVELTYPE as traveltype,
+	  			C_ISSPECIAL as isspecial,
+	  			C_STARTAIRPORT as startairport,
+	  			C_ENDAIRPORT as endairport,
+	  			C_RULES as rules,
+	  			C_RATEVALUE as ratevalue,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language,
+	  			C_BORDERPOINTAT as borderpointat,
+	  			C_OFFPOINTAT as offpointat,
+	  			C_PARVALUE as parvalue,
+	  			C_AGENTID as agentid,
+	  			C_ZRATEID as zrateid,
+	  			C_FLIGHTMODEL as flightmodel 
+     from T_SEGMENTINFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createSegmentinfo" parameterClass="Segmentinfo">
+    insert into T_SEGMENTINFO ( 
+    	ID,
+	  			C_ORDERID,
+	  			C_FLIGHTNUMBER,
+	  			C_AIRCOMAPNYCODE,
+	  			C_AIRPORTFEE,
+	  			C_FUELFEE,
+	  			C_DEPARTTIME,
+	  			C_ARRIVALTIME,
+	  			C_CABINCODE,
+	  			C_PRICE,
+	  			C_DISCOUNT,
+	  			C_YPRICE,
+	  			C_TRAVELTYPE,
+	  			C_ISSPECIAL,
+	  			C_STARTAIRPORT,
+	  			C_ENDAIRPORT,
+	  			C_RULES,
+	  			C_RATEVALUE,
+	  			C_UCODE,
+	  			C_LANGUAGE,
+	  			C_BORDERPOINTAT,
+	  			C_OFFPOINTAT,
+	  			C_PARVALUE,
+	  			C_AGENTID,
+	  			C_ZRATEID,
+	  			C_FLIGHTMODEL 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#orderid:DECIMAL#,
+						
+	  						#flightnumber#,
+	  					
+	  						#aircomapnycode#,
+	  					
+							#airportfee:DECIMAL#,
+						
+							#fuelfee:DECIMAL#,
+						
+	  						#departtime#,
+	  					
+	  						#arrivaltime#,
+	  					
+	  						#cabincode#,
+	  					
+							#price:DECIMAL#,
+						
+							#discount:DECIMAL#,
+						
+							#yprice:DECIMAL#,
+						
+							#traveltype:DECIMAL#,
+						
+							#isspecial:DECIMAL#,
+						
+	  						#startairport#,
+	  					
+	  						#endairport#,
+	  					
+	  						#rules#,
+	  					
+							#ratevalue:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+							#language:DECIMAL#,
+						
+	  						#borderpointat#,
+	  					
+	  						#offpointat#,
+	  					
+							#parvalue:DECIMAL#,
+						
+							#agentid:DECIMAL#,
+						
+  							#zrateid:DECIMAL#,
+  							
+  							#flightmodel#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSegmentinfo" parameterClass="long">
+    delete from T_SEGMENTINFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSegmentinfo" parameterClass="Segmentinfo">
+    update T_SEGMENTINFO 
+    set 
+    	C_ORDERID = #orderid:DECIMAL#,
+						C_FLIGHTNUMBER = #flightnumber#,
+	  					C_AIRCOMAPNYCODE = #aircomapnycode#,
+	  					C_AIRPORTFEE = #airportfee:DECIMAL#,
+						C_FUELFEE = #fuelfee:DECIMAL#,
+						C_DEPARTTIME = #departtime#,
+	  					C_ARRIVALTIME = #arrivaltime#,
+	  					C_CABINCODE = #cabincode#,
+	  					C_PRICE = #price:DECIMAL#,
+						C_DISCOUNT = #discount:DECIMAL#,
+						C_YPRICE = #yprice:DECIMAL#,
+						C_TRAVELTYPE = #traveltype:DECIMAL#,
+						C_ISSPECIAL = #isspecial:DECIMAL#,
+						C_STARTAIRPORT = #startairport#,
+	  					C_ENDAIRPORT = #endairport#,
+	  					C_RULES = #rules#,
+	  					C_RATEVALUE = #ratevalue:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_BORDERPOINTAT = #borderpointat#,
+	  					C_OFFPOINTAT = #offpointat#,
+	  					C_PARVALUE = #parvalue:DECIMAL#,
+						C_AGENTID = #agentid:DECIMAL#,
+						C_ZRATEID = #zrateid:DECIMAL#,
+						C_FLIGHTMODEL=#flightmodel#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

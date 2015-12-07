@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Fdeliverassign">
+  
+  <typeAlias alias="Fdeliverassign" type="com.yf.system.base.fdeliverassign.Fdeliverassign"/>
+  
+
+  <resultMap id="resultFdeliverassignMap" class="Fdeliverassign">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="assigntype" column="C_ASSIGNTYPE"/>
+  
+     <result property="postname" column="C_POSTNAME"/>
+  
+     <result property="postphone" column="C_POSTPHONE"/>
+  
+     <result property="postcode" column="C_POSTCODE"/>
+  
+     <result property="postaddress" column="C_POSTADDRESS"/>
+  
+     <result property="delivercity" column="C_DELIVERCITY"/>
+   
+  </resultMap>
+  
+  <select id="findAllFdeliverassign"  resultMap="resultFdeliverassignMap"  parameterClass="java.util.Map">
+  
+    select * from T_FDELIVERASSIGN
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllFdeliverassignBySql"  resultMap="resultFdeliverassignMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteFdeliverassignBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countFdeliverassignBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_FDELIVERASSIGN
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findFdeliverassign" parameterClass="long" resultClass="Fdeliverassign">
+    select 
+    	ID as id,
+	  			C_ORDERID as orderid,
+	  			C_ASSIGNTYPE as assigntype,
+	  			C_POSTNAME as postname,
+	  			C_POSTPHONE as postphone,
+	  			C_POSTCODE as postcode,
+	  			C_POSTADDRESS as postaddress,
+	  			C_DELIVERCITY as delivercity 
+     from T_FDELIVERASSIGN
+    where ID = #id#
+  </select>
+   
+  <insert id="createFdeliverassign" parameterClass="Fdeliverassign">
+    insert into T_FDELIVERASSIGN ( 
+    	ID,
+	  			C_ORDERID,
+	  			C_ASSIGNTYPE,
+	  			C_POSTNAME,
+	  			C_POSTPHONE,
+	  			C_POSTCODE,
+	  			C_POSTADDRESS,
+	  			C_DELIVERCITY 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#orderid:DECIMAL#,
+						
+							#assigntype:DECIMAL#,
+						
+	  						#postname#,
+	  					
+	  						#postphone#,
+	  					
+	  						#postcode#,
+	  					
+	  						#postaddress#,
+	  					
+	  						#delivercity#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteFdeliverassign" parameterClass="long">
+    delete from T_FDELIVERASSIGN
+    where ID = #id#
+  </delete>
+	
+  <update id="updateFdeliverassign" parameterClass="Fdeliverassign">
+    update T_FDELIVERASSIGN 
+    set 
+    	C_ORDERID = #orderid:DECIMAL#,
+						C_ASSIGNTYPE = #assigntype:DECIMAL#,
+						C_POSTNAME = #postname#,
+	  					C_POSTPHONE = #postphone#,
+	  					C_POSTCODE = #postcode#,
+	  					C_POSTADDRESS = #postaddress#,
+	  					C_DELIVERCITY = #delivercity#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

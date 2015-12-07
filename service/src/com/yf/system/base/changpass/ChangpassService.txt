@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 变更记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Changpass createChangpass(Changpass changpass) throws SQLException;
+	
+	/**
+	 * 删除 变更记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteChangpass(long id);
+	
+	
+	/**
+	 * 修改 变更记录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateChangpass(Changpass changpass);
+
+		
+	/**
+	 * 修改 变更记录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateChangpassIgnoreNull(Changpass changpass);
+		
+	
+	/**
+	 * 查找 变更记录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllChangpass(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 变更记录
+	 * @param id
+	 * @return
+	 */
+	public Changpass findChangpass(long id);
+	
+	
+	/** 
+	 * 查找 变更记录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllChangpassForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找变更记录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllChangpassBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 变更记录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteChangpassBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countChangpassBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IChangpassComponent changpassComponent;
+	  
+ 	
+ 	public IChangpassComponent getChangpassComponent() {
+		return changpassComponent;
+	}
+	public void setChangpassComponent(IChangpassComponent  changpassComponent) {
+		this.changpassComponent = changpassComponent;
+	}
+	/**
+	 * 创建 变更记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Changpass createChangpass(Changpass changpass) throws SQLException{
+	
+		return changpassComponent.createChangpass(changpass);
+	}
+	/**
+	 * 删除 变更记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteChangpass(long id){
+	
+		return changpassComponent.deleteChangpass(id);
+	}
+	
+	
+	/**
+	 * 修改 变更记录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateChangpass(Changpass changpass){
+		return changpassComponent.updateChangpass(changpass);
+	
+	}
+
+		
+	/**
+	 * 修改 变更记录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateChangpassIgnoreNull(Changpass changpass){
+			return changpassComponent.updateChangpassIgnoreNull(changpass);
+	
+	}
+	
+	/**
+	 * 查找 变更记录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllChangpass(String where, String orderby,int limit,int offset){
+		return changpassComponent.findAllChangpass(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 变更记录
+	 * @param id
+	 * @return
+	 */
+	public Changpass findChangpass(long id){
+		return changpassComponent.findChangpass(id);
+	}
+	
+	/** 
+	 * 查找 变更记录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllChangpassForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return changpassComponent.findAllChangpass(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找变更记录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllChangpassBySql(String sql,int limit,int offset){
+		return changpassComponent.findAllChangpass(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 变更记录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteChangpassBySql(String sql){
+		return changpassComponent.excuteChangpassBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countChangpassBySql(String sql){
+		return changpassComponent.countChangpassBySql(sql);
+	}
+	
+	
+

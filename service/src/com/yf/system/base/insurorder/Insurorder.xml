@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Insurorder">
+  
+  <typeAlias alias="Insurorder" type="com.yf.system.base.insurorder.Insurorder"/>
+  
+
+  <resultMap id="resultInsurorderMap" class="Insurorder">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="liushuno" column="C_LIUSHUINO"/>
+  
+     <result property="orderno" column="C_ORDERNO"/>
+  
+     <result property="insuranttype" column="C_INSURANTTYPE"/>
+  
+     <result property="insurantcount" column="C_INSURANTCOUNT"/>
+  
+     <result property="status" column="C_STATUS"/>
+  
+     <result property="computerid" column="C_COMPUTERID"/>
+  
+     <result property="userid" column="C_USERID"/>
+  
+     <result property="insuruserid" column="C_INSURUSERID"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="time" column="C_TIME"/>
+  
+     <result property="begintime" column="C_BEGINTIME"/>
+  
+     <result property="insurmoney" column="C_INSURMONEY"/>
+  
+     <result property="totalmoney" column="C_TOTALMONEY"/>
+  
+     <result property="endtime" column="C_ENDTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllInsurorder"  resultMap="resultInsurorderMap"  parameterClass="java.util.Map">
+  
+    select * from T_INSURORDER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllInsurorderBySql"  resultMap="resultInsurorderMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteInsurorderBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countInsurorderBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_INSURORDER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findInsurorder" parameterClass="long" resultClass="Insurorder">
+    select 
+    	ID as id,
+	  			C_LIUSHUINO as liushuno,
+	  			C_ORDERNO as orderno,
+	  			C_INSURANTTYPE as insuranttype,
+	  			C_INSURANTCOUNT as insurantcount,
+	  			C_STATUS as status,
+	  			C_COMPUTERID as computerid,
+	  			C_USERID as userid,
+	  			C_INSURUSERID as insuruserid,
+	  			C_AGENTID as agentid,
+	  			C_TIME as time,
+	  			C_BEGINTIME as begintime,
+	  			C_INSURMONEY as insurmoney,
+	  			C_TOTALMONEY as totalmoney,
+	  			C_ENDTIME as endtime 
+     from T_INSURORDER
+    where ID = #id#
+  </select>
+   
+  <insert id="createInsurorder" parameterClass="Insurorder">
+    insert into T_INSURORDER ( 
+    	ID,
+	  			C_LIUSHUINO,
+	  			C_ORDERNO,
+	  			C_INSURANTTYPE,
+	  			C_INSURANTCOUNT,
+	  			C_STATUS,
+	  			C_COMPUTERID,
+	  			C_USERID,
+	  			C_INSURUSERID,
+	  			C_AGENTID,
+	  			C_TIME,
+	  			C_BEGINTIME,
+	  			C_INSURMONEY,
+	  			C_TOTALMONEY,
+	  			C_ENDTIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#liushuno#,
+	  					
+	  						#orderno#,
+	  					
+	  						#insuranttype#,
+	  					
+	  						#insurantcount#,
+	  					
+							#status:DECIMAL#,
+						
+	  						#computerid#,
+	  					
+	  						#userid#,
+	  					
+	  						#insuruserid#,
+	  					
+	  						#agentid#,
+	  					
+	  						#time#,
+	  					
+	  						#begintime#,
+	  					
+							#insurmoney:DECIMAL#,
+						
+							#totalmoney:DECIMAL#,
+						
+	  						#endtime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteInsurorder" parameterClass="long">
+    delete from T_INSURORDER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateInsurorder" parameterClass="Insurorder">
+    update T_INSURORDER 
+    set 
+    	C_LIUSHUINO = #liushuno#,
+	  					C_ORDERNO = #orderno#,
+	  					C_INSURANTTYPE = #insuranttype#,
+	  					C_INSURANTCOUNT = #insurantcount#,
+	  					C_STATUS = #status:DECIMAL#,
+						C_COMPUTERID = #computerid#,
+	  					C_USERID = #userid#,
+	  					C_INSURUSERID = #insuruserid#,
+	  					C_AGENTID = #agentid#,
+	  					C_TIME = #time#,
+	  					C_BEGINTIME = #begintime#,
+	  					C_INSURMONEY = #insurmoney:DECIMAL#,
+						C_TOTALMONEY = #totalmoney:DECIMAL#,
+						C_ENDTIME = #endtime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

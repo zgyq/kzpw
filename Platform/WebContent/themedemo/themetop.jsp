@@ -1,0 +1,46 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="webwork" prefix="ww"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<ww:head name="black"/></head>
+
+<body>
+<div id="header">
+       <div class="top">
+       <span class="wel f">你好！</span><span class="f">欢迎来到国祥商旅网。</span>
+       <span class="f">请<a href="#" class="f90 mlr">登录</a>|<a href="#" class="f90 mlr">注册</a></span>
+       <span class="f mlr15" style="background:#000"><a href="login!towelcome.action?themename=black"   class="fff">black</a></span>
+       <span class="f mlr15" style="background:#39F"><a href="login!towelcome.action?themename=blue">blue</a></span>
+       <span class="r">咨询热线：010-68176515<a href="#"  class="f90 mlr" >个人中心</a></span>
+       <span class="c"></span>
+       </div>
+       <div class="middle">
+          <ul>
+          <li class="f logo"><img src="<%=request.getContextPath() %>/themedemo/images/logo.png" width="260" height="90" alt="国祥商旅网"  /></li>
+          <li class="f adtop"><img src="<%=request.getContextPath() %>/themedemo/images/ad.jpg" width="468" height="60" /></li>
+          <li class="r">
+            <dd class="chinese">中文Chinese</dd>
+            <dd class="english">英文English</dd>
+          </li>
+          </ul>
+          
+       </div>
+       
+       <div class="nav">
+          <ul>
+           <li class="on"><a href="index.html" target="_top" >首页</a></li>
+           <li class="out"><a href="ticket/ticket.html" target="_top" >国内机票</a></li>
+           <li class="out"><a href="#" >国际机票</a></li>
+           <li class="out"><a href="#" >商旅订制</a></li>
+           <li class="out"><a href="#" >包机服务</a></li>
+           <li class="out"><a href="#" >集团首页</a></li>
+           <li class="out"><a href="#" >联系我们</a></li>
+           <li class="out last"><a href="#" >资讯中心</a></li>
+          </ul>
+       </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Rebaterecord">
+  
+  <typeAlias alias="Rebaterecord" type="com.yf.system.base.rebaterecord.Rebaterecord"/>
+  
+
+  <resultMap id="resultRebaterecordMap" class="Rebaterecord">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="yewutype" column="C_YEWUTYPE"/>
+  
+     <result property="ordernumber" column="C_ORDERNUMBER"/>
+  
+     <result property="rebateagentid" column="C_REBATEAGENTID"/>
+     <result property="rebateagentjibie" column="C_REBATEAGENTJIBIE"/>
+  
+     <result property="childagentid" column="C_CHILDAGENTID"/>
+  
+     <result property="rebateagentidstr" column="C_REBATEAGENTIDSTR"/>
+  
+     <result property="rebatemoney" column="C_REBATEMONEY"/>
+     
+     <result property="rebatetype" column="C_REBATETYPE"/>
+     
+     <result property="paystate" column="C_PAYSTATE"/>
+     
+  
+     <result property="rebatetime" column="C_REBATETIME"/>
+  
+     <result property="rebatememo" column="C_REBATEMEMO"/>
+     
+     <result property="customerid" column="C_CUSTOMERID"/>
+     <result property="customername" column="NAME"/>
+     <result property="agentname" column="AGENTNAME"/>
+   
+  </resultMap>
+  
+  <select id="findAllRebaterecord"  resultClass="Rebaterecord"  parameterClass="java.util.Map">
+  
+   select 
+    	ID as id,
+	  			C_YEWUTYPE as yewutype,
+	  			C_ORDERNUMBER as ordernumber,
+	  			C_REBATEAGENTID as rebateagentid,
+	  			C_CHILDAGENTID as childagentid,
+	  			C_REBATEMONEY as rebatemoney,
+	  			C_REBATETYPE as rebatetype,
+	  			C_PAYSTATE as paystate,	  			
+	  			C_REBATETIME as rebatetime,
+	  			C_REBATEMEMO as rebatememo,
+	  			C_CUSTOMERID as customerid ,
+	  		   (SELECT C_MEMBERNAME  FROM T_CUSTOMERUSER  WHERE ID=R.C_CUSTOMERID )AS customername ,
+	  		   (SELECT C_AGENTCOMPANYNAME FROM T_CUSTOMERAGENT WHERE ID=R.C_REBATEAGENTID)AS agentname
+     FROM T_REBATERECORD R
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+	</isNotEmpty>	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllRebaterecordBySql"  resultMap="resultRebaterecordMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteRebaterecordBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countRebaterecordBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_REBATERECORD
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findRebaterecord" parameterClass="long" resultClass="Rebaterecord">
+    select 
+    	ID as id,
+	  			C_YEWUTYPE as yewutype,
+	  			C_ORDERNUMBER as ordernumber,
+	  			C_REBATEAGENTID as rebateagentid,
+	  			C_REBATEAGENTJIBIE as rebateagentjibie,
+	  			C_CHILDAGENTID as childagentid,
+	  			C_REBATEAGENTIDSTR as rebateagentidstr,
+	  			C_REBATEMONEY as rebatemoney,
+	  			
+	  			C_REBATETYPE as rebatetype,
+	  			C_PAYSTATE as paystate,
+	  			
+	  			C_REBATETIME as rebatetime,
+	  			C_REBATEMEMO as rebatememo,
+	  			C_CUSTOMERID as customerid ,
+	  		   (SELECT C_MEMBERNAME  FROM T_CUSTOMERUSER  WHERE ID=R.C_CUSTOMERID )AS customername
+     from T_REBATERECORD R 
+    where ID = #id#
+  </select>
+   
+  <insert id="createRebaterecord" parameterClass="Rebaterecord">
+    insert into T_REBATERECORD ( 
+    	ID,
+	  			C_YEWUTYPE,
+	  			C_ORDERNUMBER,
+	  			C_REBATEAGENTID,
+	  			C_REBATEAGENTJIBIE,
+	  			C_CHILDAGENTID,
+	  			C_REBATEAGENTIDSTR,
+	  			C_REBATEMONEY,
+	  			C_REBATETYPE,
+	  			C_PAYSTATE,
+	  			C_REBATETIME,
+	  			C_REBATEMEMO,
+	  			C_CUSTOMERID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#yewutype#,
+	  					
+	  						#ordernumber#,
+	  					
+	  						#rebateagentid#,
+	  						#rebateagentjibie#,
+	  					
+	  						#childagentid#,
+	  					
+	  						#rebateagentidstr#,
+	  					
+							#rebatemoney:DECIMAL#,
+							
+							#rebatetype#,
+							
+							#paystate#,
+						
+	  						#rebatetime#,
+	  					
+	  						#rebatememo#,
+	  						
+	  						#customerid#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteRebaterecord" parameterClass="long">
+    delete from T_REBATERECORD
+    where ID = #id#
+  </delete>
+	
+  <update id="updateRebaterecord" parameterClass="Rebaterecord">
+    update T_REBATERECORD 
+    set 
+    	C_YEWUTYPE = #yewutype#,
+	  					C_ORDERNUMBER = #ordernumber#,
+	  					C_REBATEAGENTID = #rebateagentid#,
+	  					C_REBATEAGENTJIBIE = #rebateagentjibie#,
+	  					C_CHILDAGENTID = #childagentid#,
+	  					C_REBATEAGENTIDSTR = #rebateagentidstr#,
+	  					C_REBATEMONEY = #rebatemoney:DECIMAL#,
+	  					C_REBATETYPE = #rebatetype#,
+	  					C_PAYSTATE = #paystate#,
+						C_REBATETIME = #rebatetime#,
+	  					C_REBATEMEMO = #rebatememo#,
+	  					C_CUSTOMERID=#customerid#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

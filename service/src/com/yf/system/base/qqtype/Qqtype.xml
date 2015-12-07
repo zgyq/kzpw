@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Qqtype">
+  
+  <typeAlias alias="Qqtype" type="com.yf.system.base.qqtype.Qqtype"/>
+  
+
+  <resultMap id="resultQqtypeMap" class="Qqtype">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="typename" column="C_TYPENAME"/>
+  
+     <result property="index" column="C_INDEX"/>
+   
+  </resultMap>
+  
+  <select id="findAllQqtype"  resultMap="resultQqtypeMap"  parameterClass="java.util.Map">
+  
+    select * from T_QQTYPE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllQqtypeBySql"  resultMap="resultQqtypeMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteQqtypeBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countQqtypeBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_QQTYPE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findQqtype" parameterClass="long" resultClass="Qqtype">
+    select 
+    	ID as id,
+	  			C_TYPENAME as typename,
+	  			C_INDEX as [index] 
+     from T_QQTYPE
+    where ID = #id#
+  </select>
+   
+  <insert id="createQqtype" parameterClass="Qqtype">
+    insert into T_QQTYPE ( 
+    	ID,
+	  			C_TYPENAME,
+	  			C_INDEX 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#typename#,
+	  					
+  							#index:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteQqtype" parameterClass="long">
+    delete from T_QQTYPE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateQqtype" parameterClass="Qqtype">
+    update T_QQTYPE 
+    set 
+    	C_TYPENAME = #typename#,
+	  					C_INDEX = #index:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

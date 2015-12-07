@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Aircompany">
+  
+  <typeAlias alias="Aircompany" type="com.yf.system.base.aircompany.Aircompany"/>
+  
+
+  <resultMap id="resultAircompanyMap" class="Aircompany">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="aircomcode" column="C_AIRCOMCODE"/>
+  
+     <result property="aircomcnname" column="C_AIRCOMCNNAME"/>
+  
+     <result property="aircomjname" column="C_AIRCOMJNAME"/>
+  
+     <result property="aircomenname" column="C_AIRCOMENNAME"/>
+  
+     <result property="aircomlogo" column="C_AIRCOMLOGO"/>
+  
+     <result property="aircomdesc" column="C_AIRCOMDESC"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="isenable" column="C_ISENABLE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+     
+     <result property="isair" column="C_ISAIR"/>
+     
+     <result property="countrycode" column="C_COUNTRYCODE"/>
+   
+  </resultMap>
+  
+  <select id="findAllAircompany"  resultMap="resultAircompanyMap"  parameterClass="java.util.Map">
+  
+    select * from T_AIRCOMPANY
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllAircompanyBySql"  resultMap="resultAircompanyMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteAircompanyBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countAircompanyBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_AIRCOMPANY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findAircompany" parameterClass="long" resultClass="Aircompany">
+    select 
+    	ID as id,
+	  			C_AIRCOMCODE as aircomcode,
+	  			C_AIRCOMCNNAME as aircomcnname,
+	  			C_AIRCOMJNAME as aircomjname,
+	  			C_AIRCOMENNAME as aircomenname,
+	  			C_AIRCOMLOGO as aircomlogo,
+	  			C_AIRCOMDESC as aircomdesc,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_ISENABLE as isenable,
+	  			C_UCODE as ucode,
+	  			C_ISAIR as isair,
+	  			C_LANGUAGE as language,
+	  			C_COUNTRYCODE as countrycode
+	  			 
+     from T_AIRCOMPANY
+    where ID = #id#
+  </select>
+   
+  <insert id="createAircompany" parameterClass="Aircompany">
+    insert into T_AIRCOMPANY ( 
+    	ID,
+	  			C_AIRCOMCODE,
+	  			C_AIRCOMCNNAME,
+	  			C_AIRCOMJNAME,
+	  			C_AIRCOMENNAME,
+	  			C_AIRCOMLOGO,
+	  			C_AIRCOMDESC,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_ISENABLE,
+	  			C_UCODE,
+	  			C_ISAIR,
+	  			C_LANGUAGE,
+	  			C_COUNTRYCODE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#aircomcode#,
+	  					
+	  						#aircomcnname#,
+	  					
+	  						#aircomjname#,
+	  					
+	  						#aircomenname#,
+	  					
+	  						#aircomlogo#,
+	  					
+	  						#aircomdesc#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#isenable:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+							
+							#isair:DECIMAL#,
+						
+  							#language:DECIMAL#,
+  							
+  							#countrycode#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteAircompany" parameterClass="long">
+    delete from T_AIRCOMPANY
+    where ID = #id#
+  </delete>
+	
+  <update id="updateAircompany" parameterClass="Aircompany">
+    update T_AIRCOMPANY 
+    set 
+    	C_AIRCOMCODE = #aircomcode#,
+	  					C_AIRCOMCNNAME = #aircomcnname#,
+	  					C_AIRCOMJNAME = #aircomjname#,
+	  					C_AIRCOMENNAME = #aircomenname#,
+	  					C_AIRCOMLOGO = #aircomlogo#,
+	  					C_AIRCOMDESC = #aircomdesc#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_ISENABLE = #isenable:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_ISAIR = #isair:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_COUNTRYCODE=#countrycode#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

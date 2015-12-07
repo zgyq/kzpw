@@ -1,0 +1,2120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0054)http://www.cxslw.cn/demosticticket!toTicketList.action -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>航班列表-国内</title>
+<link href="left.css" type="text/css" rel="stylesheet">
+<link href="public(2).css" type="text/css" rel="stylesheet">
+<link href="main.css" type="text/css" rel="stylesheet">
+<style type="text/css">
+.none {
+	display: none
+}
+
+.pointer {
+	cursor: pointer
+}
+
+.wenzi {
+	background: #f0f0f0;
+	height: 28px;
+	margin: 1px 0 0 1px;
+	width: 100%;
+}
+</style>
+<link href="http://www.cxslw.cn/skin/blue/css/public.css" rel="stylesheet">
+<link href="WdatePicker.css" rel="stylesheet" type="text/css"></head>
+<body id="mainbody">
+	<div id="right" style="margin-right: 12px; font-family: &#39;微软雅黑&#39;; overflow: auto; height: 100%; position: relative">
+		<div class="list_top" style="height: 36px; line-height: 36px; font-size: 14px; color: #000; background: #ecf0f1; border-top: 1px solid #dddddd; margin: 0 1px 0 1px; background-position: 0 0; padding: 0 15px 0 15px;">
+			<ul>
+				<li style="float: left;">航班列表</li>
+				<li style="float: right" class="mr11">友情提示：由于航空公司折扣及价格经常变动，预订价格按照PAT为准</li>
+			</ul>
+		</div>
+		<div class="c"></div>
+		<div style="background: #fff; padding-left: 15px; padding-top: 10px; padding-right: 15px;">
+			<div class="information">
+				<form action="demosticticket!toTicketList.htm" name="form3" id="form3" method="POST" onsubmit="return CheckData()">
+					<input type="hidden" name="ordermodel" value="1"> <input type="hidden" name="pid" value="0"> <input type="hidden" name="ordercomid" value="0">
+					<table width="100%" border="1" cellspacing="0" cellpadding="0">
+						<tbody><tr class="font-blue-xi" style="display: none;" id="tr_diyicheng">
+							<td colspan="4"><b>请选择第一程</b></td>
+						</tr>
+						<tr class="font-blue-xi">
+							<td width="120" height="28" align="right" style="padding: 0">
+								<div class="wenzi">
+									<label for="arrcity"> 出发城市：</label>
+								</div>
+							</td>
+							<td width="260" align="left"><input id="arrcity" type="text" title="请输入出发城市" autocomplete="off" value="北京" onkeydown="popup_hide();suggest.display(&#39;arrcity&#39;,&#39;city_from_hide&#39;,event);" onblur="showSearch(&#39;arrcity&#39;,&#39;city_from_hide&#39;);" onfocus="popUp(&#39;arrcity&#39;,&#39;city_from_hide&#39;)" onclick="popUp(&#39;arrcity&#39;,&#39;city_from_hide&#39;)" name="s_depcityname" style="border: 1px solid #999999; height: 20px; line-height: 20px; color: #c">&nbsp;<span style="color: red">*</span>
+								<div id="suggest" class="ac_results"></div> <input type="hidden" id="city_from_hide" value="PEK" name="s_depcitycode"></td>
+							<td width="120" height="28" align="right" style="padding: 0">
+								<div class="wenzi">
+									<label for="city2"> 目的城市：</label>
+								</div>
+							</td>
+							<td width="260" align="left"><input id="tocity" type="text" title="请输入目的城市" autocomplete="off" value="昆明" onkeydown="popup_hide();suggest.display(&#39;tocity&#39;,&#39;city_to_hide&#39;,event);" onblur="showSearch(&#39;tocity&#39;,&#39;city_to_hide&#39;);" onfocus="popUp(&#39;tocity&#39;,&#39;city_to_hide&#39;)" onclick="popUp(&#39;tocity&#39;,&#39;city_to_hide&#39;)" style="COLOR: #c1c1c1" name="s_arrcityname">&nbsp;<span style="color: red">*</span>
+								<div id="suggest2" class="ac_results"></div> <input type="hidden" id="city_to_hide" value="KMG" name="s_arrcitycode"></td>
+							<td width="120" align="left"><input type="submit" class="button_sea f" value="立即查询"></td>
+						</tr>
+						<tr class="font-blue-xi">
+							<td height="28" align="right" style="padding: 0">
+								<div class="wenzi">出发日期：</div>
+							</td>
+							<td align="left"><input id="txtStartDate" style="width: 150px" title="请输入出发日期" name="s_startdate" value="2014-11-10" onfocus="WdatePicker({doubleCalendar:true,isShowClear:false,readOnly:true,minDate:&#39;%y-%M-%d&#39;,maxDate:&#39;#F{$dp.$D(\&#39;txtBackDate\&#39;,{d:0})}&#39;,dateFmt:&#39;yyyy-MM-dd&#39;})" class="Wdate">&nbsp;<span style="color: red">*</span></td>
+							<td height="28" align="right" style="padding: 0">
+								<div class="wenzi">
+									<span style="display: none;" id="lblBackDate">返程日期：</span>
+								</div>
+							</td>
+							<td align="left" colspan="2">
+								<div id="divBackDate" style="display: none;">
+									<input title="请输入返程日期" id="txtBackDate" style="width: 150px" name="s_backdate" value="" onfocus="WdatePicker({doubleCalendar:true,isShowClear:false,readOnly:true,minDate:&#39;%y-%M-%d&#39;,minDate:&#39;#F{$dp.$D(\&#39;txtStartDate\&#39;,{d:0})}&#39;,dateFmt:&#39;yyyy-MM-dd&#39;})" class="Wdate">&nbsp;<span style="color: red">*</span>
+								</div>
+							</td>
+						</tr>
+						<tr class="font-blue-xi" style="display: none;" id="tr_diercheng">
+							<td colspan="4"><b>请选择第二程</b></td>
+						</tr>
+						<tr class="font-blue-xi" style="display: none;" id="tr_dierchenginfo">
+							<td width="120" height="28" align="right" style="padding: 0">
+								<div class="wenzi">
+									<label for="arrcity-lc"> 出发城市：</label>
+								</div>
+							</td>
+							<td width="260" align="left"><input id="arrcity-lc" type="text" value="北京" name="s_depcityname_lc" title="请输入第二程出发城市" style="border: 1px solid #999999; height: 20px; line-height: 20px;" onkeydown="popup_hide();suggest.display(&#39;arrcity-lc&#39;,&#39;city_from_hide_lc&#39;,event);" onblur="showSearch(id,1); if(this.value==&#39;&#39;) {this.value=&#39;北京&#39;;};" onfocus="if(this.value=&#39;北京&#39;){this.value=&#39;&#39;;}popUp(&#39;arrcity-lc&#39;,&#39;city_from_hide_lc&#39;)" onclick="popUp(&#39;arrcity-lc&#39;,&#39;city_from_hide_lc&#39;)">&nbsp;<span style="color: red">*</span>
+								<div id="suggest-lc" class="ac_results"></div> <input type="hidden" id="city_from_hide_lc" value="PEK" name="s_depcitycode_lc"></td>
+							<td width="120" height="28" align="right" style="padding: 0">
+								<div class="wenzi">
+									<label for="city2-lc"> 目的城市：</label>
+								</div>
+							</td>
+							<td align="left" colspan="2"><input id="tocity-lc" title="请输入第二程目的城市" type="text" value="" onkeydown="popup_hide();suggest.display(&#39;tocity-lc&#39;,&#39;city_to_hide_lc&#39;,event);" onblur="showSearch(id,1); if(this.value==&#39;&#39;) {this.value=&#39;北京&#39;;};" onfocus="if(this.value=&#39;北京&#39;){this.value=&#39;&#39;;}popUp(&#39;tocity-lc&#39;,&#39;city_to_hide_lc&#39;)" onclick="popUp(&#39;tocity-lc&#39;,&#39;city_to_hide_lc&#39;)" style="COLOR: #c1c1c1; border: 1px solid #999999; height: 20px; line-height: 20px;" name="s_arrcityname_lc">&nbsp;<span style="color: red">*</span>
+								<div id="suggest2-lc" class="ac_results"></div> <input type="hidden" id="city_to_hide_lc" value="" name="s_arrcitycode_lc"></td>
+						</tr>
+						<tr class="font-blue-xi" style="display: none;" id="tr_dierchenginfo_date">
+							<td height="28" align="right" style="padding: 0">
+								<div class="wenzi">出发日期：</div>
+							</td>
+							<td align="left"><input id="txtStartDate-lc" value="" style="width: 150px" title="请输入第二程出发日期" name="s_startdate_lc" onfocus="WdatePicker({doubleCalendar:true,isShowClear:false,readOnly:true,minDate:&#39;%y-%M-%d&#39;,minDate:&#39;#F{$dp.$D(\&#39;txtStartDate\&#39;,{d:0})}&#39;,dateFmt:&#39;yyyy-MM-dd&#39;})" class="Wdate">&nbsp;<span style="color: red">*</span></td>
+							<td height="28" align="right" style="padding: 0" colspan="3"></td>
+						</tr>
+						<tr class="font-blue-xi" style="display: none;" id="tr_diercheng_kongbaihang">
+							<td colspan="4">&nbsp;</td>
+						</tr>
+						<tr class="font-blue-xi">
+							<td height="28" align="right" style="padding: 0">
+								<div class="wenzi">航空公司：</div>
+							</td>
+							<td><select id="ddlAirCom" name="s_aircompanycode" style="width: 154px; border: 1px solid #999999">
+									<option value="">---所有航空公司---</option>
+									<option value="3U">3U 四川航空公司</option>
+									<option value="CA">CA 中国国际航空公司</option>
+									<option value="CZ">CZ 中国南方航空公司</option>
+									<option value="MU">MU 中国东方航空公司</option>
+									<option value="FM">FM 上海航空公司</option>
+									<option value="HU">HU 海南航空股份有限公司</option>
+									<option value="MF">MF 厦门航空公司</option>
+									<option value="SC">SC 山东航空公司</option>
+									<option value="ZH">ZH 深圳航空公司</option>
+									<option value="GS">GS 天津航空公司</option>
+									<option value="HO">HO 上海吉祥航空公司</option>
+									<option value="KN">KN 中国联合航空公司</option>
+									<option value="BK">BK 奥凯航空公司</option>
+									<option value="EU">EU 成都航空公司</option>
+									<option value="JD">JD 中国海航金鹿航空公司</option>
+									<option value="JR">JR 幸福航空公司</option>
+									<option value="8C">8C 武汉东星航空公司</option>
+									<option value="G5">G5 中国华夏航空公司</option>
+									<option value="CN">CN 中国海航大新华航空公司</option>
+									<option value="NS">NS 河北航空公司</option>
+									<option value="VD">VD 中国深航鲲鹏航空公司</option>
+									<option value="8L">8L 祥鹏航空</option>
+									<option value="KY">KY 昆明航空公司</option>
+									<option value="TV">TV 西藏航空有限公司</option>
+									<option value="9C">9C 春秋航空</option>
+									<option value="OQ">OQ 重庆航空</option>
+									<option value="PN">PN 西部航空</option>
+							</select></td>
+							<td height="28" align="right" style="padding: 0">
+								<div class="wenzi">航程类型：</div>
+							</td>
+							<td align="left" colspan="2"><input checked="checked" id="rdoSingle" name="s_traveltype" type="radio" value="1" onclick="showBackDate();">单程&nbsp; <input id="rdoBack" name="s_traveltype" type="radio" value="2" onclick="showBackDate();"> 往返 &nbsp; <input id="rdoLiancheng" name="s_traveltype" type="radio" value="3" onclick="showBackDate();"> 联程</td>
+						</tr>
+					</tbody></table>
+				</form>
+			</div>
+			<div class="numer">
+				<table width="85%" border="1" cellspacing="0" cellpadding="0">
+					<tbody><tr id="quickSelectDate">
+						
+							<td class="numertd" width="34"><a><img src="jtkd_l.gif" width="34" height="48"></a></td><td class="numertd"><a src="javascript:void(0)" onclick="searchotherday(&#39;2014-11-09&#39;);" style="text-decoration: none"><dd>11-09&nbsp;周日</dd><dl class="none">￥0</dl></a></td><td class="numertdon"><a src="javascript:void(0)" style="text-decoration: none"><dd>11-10&nbsp;周一</dd><dl class="none">￥0</dl></a></td><td class="numertd"><a src="javascript:void(0)" onclick="searchotherday(&#39;2014-11-11&#39;);" style="text-decoration: none"><dd>11-11&nbsp;周二</dd><dl class="none">￥0</dl></a></td><td class="numertd"><a src="javascript:void(0)" onclick="searchotherday(&#39;2014-11-12&#39;);" style="text-decoration: none"><dd>11-12&nbsp;周三</dd><dl class="none">￥0</dl></a></td><td class="numertd"><a src="javascript:void(0)" onclick="searchotherday(&#39;2014-11-13&#39;);" style="text-decoration: none"><dd>11-13&nbsp;周四</dd><dl class="none">￥0</dl></a></td><td class="numertd"><a src="javascript:void(0)" onclick="searchotherday(&#39;2014-11-14&#39;);" style="text-decoration: none"><dd>11-14&nbsp;周五</dd><dl class="none">￥0</dl></a></td><td class="numertd"><a src="javascript:void(0)" onclick="searchotherday(&#39;2014-11-15&#39;);" style="text-decoration: none"><dd>11-15&nbsp;周六</dd><dl class="none">￥0</dl></a></td><td class="numertd" width="34"><a><img src="jtkd_r.gif" width="34" height="48"></a></td>
+						
+						
+						
+					</tr>
+				</tbody></table>
+
+			</div>
+			
+			
+			
+			<div class="muese">
+				<ul>
+					<li>单程</li>
+					<li>北京→昆明 &nbsp;  </li>
+					<li>出发时间：<span id="startdate">2014-11-10</span>&nbsp;&nbsp;   &nbsp;&nbsp;
+					</li>
+					<li class="xf48000">（共20个航班）
+					</li>
+					<li class="times pointer" onclick="sortflightlist(&#39;timedesc&#39;)">时间</li>
+					<li class="timesg pointer" onclick="sortflightlist(&#39;timeasc&#39;)">时间</li>
+					<li class="xianshi pointer" onclick="toggle(&#39;lishowZrateSelect&#39;)">显示设置</li>
+					<li style="position: relative" id="lishowZrateSelect" class="none">
+						<div class="xianshinr" style="left: -103px; top: 24px;">
+							<dl>
+								<a href="javascript:void(0)" onclick="showzrate1(0)">显示</a>
+							</dl>
+							<dl>
+								<a href="javascript:void(0)" onclick="showzrate1(1)">不显示</a>
+							</dl>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="c"></div>
+			<div style="width: 100%; border: 1px solid #ccc; margin-top: 10px; color: #000">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" style="line-height: 18px;">
+
+				</table>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" style="line-height: 18px;" id="div_flightlist">
+					<tbody><tr class="bagrd">
+						<td width="16%" height="30">出发/到达</td>
+						<td width="10%">航空公司/机型</td>
+						<td width="10%">舱位/折扣</td>
+						<td width="8%">票面价<img onclick="sortflightlist(&#39;pricedesc&#39;)" src="shangxia.gif"><span id="sortprice" class="none">0</span></td>
+						<td width="8%">总票价<img onclick="sortflightlist(&#39;pricedesc&#39;)" src="shangxia.gif"><span id="sortprice" class="none">0</span></td>
+						<td width="4%">&nbsp;</td>
+						<td width="10%" class="zratecss">返点<img onclick="sortflightlist(&#39;zratedesc&#39;)" src="shangxia.gif"><span id="sortzrate" class="none">0</span></td>
+						<td width="10%" class="zratecss">票面结算价</td>
+						<td width="8%">&nbsp;</td>
+					</tr>
+					
+					
+						</tbody><tbody id="divlowprice_0">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">06:40</font> <span class="none" id="hid_departTime_0">2014-11-10 06:40:00</span>&nbsp; <font class="font666"> <span id="startairportname_0">首都国际机场</span> <span class="none" id="hiddepcitycode_0">PEK</span> (<span id="hid_offpointat_0">T2</span>)
+								</font></td>
+								<td><img src="MU.gif" width="18" height="18"> <span id="airCompanyName_0">东航</span> <span class="none" id="hid_lowaircompany_0">MU</span> <span id="hid_lowflightnumber_0">MU5879</span> <input type="hidden" id="hid_YPrice_0" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_0" value="空中客车A330-300载客256-412人左右#333.jpg"> <input type="hidden" id="hid_lowflighttype_0" value="333"></td>
+								<td><span id="hid_cabintypename_0">头等舱</span>[<span id="hid_lowcabincode_0">F</span>/<span id="hid_discount_0">28.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_0">5070</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_0">5190</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_0"><img src="teshu.gif" width="52" height="21"><input type="hidden" id="hid_lowisspecial_0" value="2"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_0">9.8</span>%</font>(<font class="f48000" id="hid_zrateprice_0">496</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_0">4574</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;0&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_0" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_0" onclick="showallcabin(0,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">09:55</font> <span class="none" id="hid_arrivalTime_0">2014-11-10 09:55:00</span>&nbsp; <font class="font666"> <span id="endairportname_0">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_0">KMG</span> (<span id="hid_borderpointat_0">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:333</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_0" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;0&#39;);" onclick="showrules(&#39;MU&#39;,&#39;F&#39;,&#39;0&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_0">50</span>+￥<span id="hid_fuelFee_0">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时15分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_1">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">07:00</font> <span class="none" id="hid_departTime_1">2014-11-10 07:00:00</span>&nbsp; <font class="font666"> <span id="startairportname_1">首都国际机场</span> <span class="none" id="hiddepcitycode_1">PEK</span> (<span id="hid_offpointat_1">T3</span>)
+								</font></td>
+								<td><img src="CA.gif" width="18" height="18"> <span id="airCompanyName_1">国航</span> <span class="none" id="hid_lowaircompany_1">CA</span> <span id="hid_lowflightnumber_1">CA1403</span> <input type="hidden" id="hid_YPrice_1" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_1" value="空中客车320载客180人左右#320.jpg"> <input type="hidden" id="hid_lowflighttype_1" value="320"></td>
+								<td><span id="hid_cabintypename_1">经济舱</span>[<span id="hid_lowcabincode_1">Y</span>/<span id="hid_discount_1">10.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_1">1810</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_1">1930</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_1"><input type="hidden" id="hid_lowisspecial_1" value="1"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_1">6.5</span>%</font>(<font class="f48000" id="hid_zrateprice_1">117</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_1">1693</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;1&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_1" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_1" onclick="showallcabin(1,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">10:20</font> <span class="none" id="hid_arrivalTime_1">2014-11-10 10:20:00</span>&nbsp; <font class="font666"> <span id="endairportname_1">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_1">KMG</span> (<span id="hid_borderpointat_1">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:320</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：2</font> <a id="a_rules_1" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;1&#39;);" onclick="showrules(&#39;CA&#39;,&#39;Y&#39;,&#39;1&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+								<tr class="none" id="divallcabin_1_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_1_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_1_0">超级经济舱</span> [<span id="hid_lowcabincode_1_0">A</span>/<span id="hid_discount_1_0">25.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_1_0">4530</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_1_0">4650</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_1_0"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_1_0">0</span>%</font>(<font class="f48000" id="hid_zrateprice_1_0">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_1_0">4530</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;1&#39;,&#39;0&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_1_0" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_1_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：2</font> <a id="a_rules_1_0" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;1_0&#39;);" onclick="showrules(&#39;CA&#39;,&#39;A&#39;,&#39;1_0&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_1_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_1_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_1_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_1_1">头等舱</span> [<span id="hid_lowcabincode_1_1">F</span>/<span id="hid_discount_1_1">28.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_1_1">5070</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_1_1">5190</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_1_1"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_1_1">0</span>%</font>(<font class="f48000" id="hid_zrateprice_1_1">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_1_1">5070</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;1&#39;,&#39;1&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_1_1" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_1_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：6</font> <a id="a_rules_1_1" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;1_1&#39;);" onclick="showrules(&#39;CA&#39;,&#39;F&#39;,&#39;1_1&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_1_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_1">50</span>+￥<span id="hid_fuelFee_1">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时20分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_2">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">07:55</font> <span class="none" id="hid_departTime_2">2014-11-10 07:55:00</span>&nbsp; <font class="font666"> <span id="startairportname_2">首都国际机场</span> <span class="none" id="hiddepcitycode_2">PEK</span> (<span id="hid_offpointat_2">T2</span>)
+								</font></td>
+								<td><img src="MU.gif" width="18" height="18"> <span id="airCompanyName_2">东航</span> <span class="none" id="hid_lowaircompany_2">MU</span> <span id="hid_lowflightnumber_2">MU2035</span> <input type="hidden" id="hid_YPrice_2" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_2" value=""> <input type="hidden" id="hid_lowflighttype_2" value="73E"></td>
+								<td><span id="hid_cabintypename_2">商务舱</span>[<span id="hid_lowcabincode_2">J</span>/<span id="hid_discount_2">23.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_2">4160</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_2">4280</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_2"><img src="teshu.gif" width="52" height="21"><input type="hidden" id="hid_lowisspecial_2" value="2"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_2">9.8</span>%</font>(<font class="f48000" id="hid_zrateprice_2">407</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_2">3753</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;2&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_2" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_2" onclick="showallcabin(2,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">11:25</font> <span class="none" id="hid_arrivalTime_2">2014-11-10 11:25:00</span>&nbsp; <font class="font666"> <span id="endairportname_2">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_2">KMG</span> (<span id="hid_borderpointat_2">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:73E</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：4</font> <a id="a_rules_2" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;2&#39;);" onclick="showrules(&#39;MU&#39;,&#39;J&#39;,&#39;2&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_2">50</span>+￥<span id="hid_fuelFee_2">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时30分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_3">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">08:30</font> <span class="none" id="hid_departTime_3">2014-11-10 08:30:00</span>&nbsp; <font class="font666"> <span id="startairportname_3">首都国际机场</span> <span class="none" id="hiddepcitycode_3">PEK</span> (<span id="hid_offpointat_3">T1</span>)
+								</font></td>
+								<td><img src="HU.gif" width="18" height="18"> <span id="airCompanyName_3">海航</span> <span class="none" id="hid_lowaircompany_3">HU</span> <span id="hid_lowflightnumber_3">HU7165</span> <input type="hidden" id="hid_YPrice_3" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_3" value="空中客车A330-200载客数在256-412人左右#330.jpg"> <input type="hidden" id="hid_lowflighttype_3" value="330"></td>
+								<td><span id="hid_cabintypename_3">经济舱</span>[<span id="hid_lowcabincode_3">Y</span>/<span id="hid_discount_3">10.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_3">1810</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_3">1930</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_3"><input type="hidden" id="hid_lowisspecial_3" value="1"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_3">6.8</span>%</font>(<font class="f48000" id="hid_zrateprice_3">123</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_3">1687</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;3&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_3" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_3" onclick="showallcabin(3,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">11:55</font> <span class="none" id="hid_arrivalTime_3">2014-11-10 11:55:00</span>&nbsp; <font class="font666"> <span id="endairportname_3">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_3">KMG</span> (<span id="hid_borderpointat_3">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:330</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：2</font> <a id="a_rules_3" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;3&#39;);" onclick="showrules(&#39;HU&#39;,&#39;Y&#39;,&#39;3&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+								<tr class="none" id="divallcabin_3_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_3_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_3_0">头等舱</span> [<span id="hid_lowcabincode_3_0">F</span>/<span id="hid_discount_3_0">28.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_3_0">5070</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_3_0">5190</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_3_0"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_3_0">0</span>%</font>(<font class="f48000" id="hid_zrateprice_3_0">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_3_0">5070</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;3&#39;,&#39;0&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_3_0" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_3_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：1</font> <a id="a_rules_3_0" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;3_0&#39;);" onclick="showrules(&#39;HU&#39;,&#39;F&#39;,&#39;3_0&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_3_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_3">50</span>+￥<span id="hid_fuelFee_3">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时25分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_4">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">09:05</font> <span class="none" id="hid_departTime_4">2014-11-10 09:05:00</span>&nbsp; <font class="font666"> <span id="startairportname_4">首都国际机场</span> <span class="none" id="hiddepcitycode_4">PEK</span> (<span id="hid_offpointat_4">T2</span>)
+								</font></td>
+								<td><img src="CZ.gif" width="18" height="18"> <span id="airCompanyName_4">南航</span> <span class="none" id="hid_lowaircompany_4">CZ</span> <span id="hid_lowflightnumber_4">CZ3901</span> <input type="hidden" id="hid_YPrice_4" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_4" value="波音777-200载客281-440人左右#77A.jpg"> <input type="hidden" id="hid_lowflighttype_4" value="77A"></td>
+								<td><span id="hid_cabintypename_4">头等舱</span>[<span id="hid_lowcabincode_4">F</span>/<span id="hid_discount_4">28.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_4">5070</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_4">5190</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_4"><input type="hidden" id="hid_lowisspecial_4" value="1"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_4">9.8</span>%</font>(<font class="f48000" id="hid_zrateprice_4">496</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_4">4574</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;4&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_4" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_4" onclick="showallcabin(4,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">12:35</font> <span class="none" id="hid_arrivalTime_4">2014-11-10 12:35:00</span>&nbsp; <font class="font666"> <span id="endairportname_4">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_4">KMG</span> (<span id="hid_borderpointat_4">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:77A</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：5</font> <a id="a_rules_4" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;4&#39;);" onclick="showrules(&#39;CZ&#39;,&#39;F&#39;,&#39;4&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_4">50</span>+￥<span id="hid_fuelFee_4">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时30分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_5">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">09:10</font> <span class="none" id="hid_departTime_5">2014-11-10 09:10:00</span>&nbsp; <font class="font666"> <span id="startairportname_5">首都国际机场</span> <span class="none" id="hiddepcitycode_5">PEK</span> (<span id="hid_offpointat_5">T3</span>)
+								</font></td>
+								<td><img src="CA.gif" width="18" height="18"> <span id="airCompanyName_5">国航</span> <span class="none" id="hid_lowaircompany_5">CA</span> <span id="hid_lowflightnumber_5">CA1487</span> <input type="hidden" id="hid_YPrice_5" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_5" value="波音737-700,载客137人左右#73G.jpg"> <input type="hidden" id="hid_lowflighttype_5" value="73G"></td>
+								<td><span id="hid_cabintypename_5">超级经济舱</span>[<span id="hid_lowcabincode_5">A</span>/<span id="hid_discount_5">25.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_5">4530</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_5">4650</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_5"><input type="hidden" id="hid_lowisspecial_5" value="1"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_5">6.9</span>%</font>(<font class="f48000" id="hid_zrateprice_5">312</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_5">4218</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;5&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_5" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_5" onclick="showallcabin(5,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">14:20</font> <span class="none" id="hid_arrivalTime_5">2014-11-10 14:20:00</span>&nbsp; <font class="font666"> <span id="endairportname_5">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_5">KMG</span> (<span id="hid_borderpointat_5">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:73G</font> 
+										<a style="color: #008e35; margin-left: 10px; text-decoration: underline" href="javascript:void(0)" onmouseout="hidestopinfo(&#39;5&#39;);" onclick="showstopinfo(&#39;CA1487&#39;,&#39;10NOV&#39;,&#39;1&#39;,&#39;5&#39;);">经停</a>
+										<div id="stopinfodiv_5" class="box none" style="position: absolute;">
+											<table width="180" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; background: #fff; border: 2px solid #f0f0f0; line-height: 22px; text-align: center">
+												<tbody><tr>
+													<th scope="col" style="border: 1px solid #f0f0f0">经停地</th>
+													<th scope="col" style="border: 1px solid #f0f0f0">停留时间</th>
+												</tr>
+												<tr>
+													<td style="border: 1px solid #f0f0f0" id="stopinfodiv1_5"></td>
+													<td style="border: 1px solid #f0f0f0" id="stopinfodiv2_5"></td>
+												</tr>
+											</tbody></table>
+										</div>
+									</td>
+								<td><font style="width: 68px; display: block; float: left;">余票：1</font> <a id="a_rules_5" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;5&#39;);" onclick="showrules(&#39;CA&#39;,&#39;A&#39;,&#39;5&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+								<tr class="none" id="divallcabin_5_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_5_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_5_0">头等舱</span> [<span id="hid_lowcabincode_5_0">F</span>/<span id="hid_discount_5_0">28.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_5_0">5070</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_5_0">5190</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_5_0"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_5_0">0</span>%</font>(<font class="f48000" id="hid_zrateprice_5_0">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_5_0">5070</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;5&#39;,&#39;0&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_5_0" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_5_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：3</font> <a id="a_rules_5_0" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;5_0&#39;);" onclick="showrules(&#39;CA&#39;,&#39;F&#39;,&#39;5_0&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_5_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_5">50</span>+￥<span id="hid_fuelFee_5">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：5小时10分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_6">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">12:00</font> <span class="none" id="hid_departTime_6">2014-11-10 12:00:00</span>&nbsp; <font class="font666"> <span id="startairportname_6">首都国际机场</span> <span class="none" id="hiddepcitycode_6">PEK</span> (<span id="hid_offpointat_6">T3</span>)
+								</font></td>
+								<td><img src="CA.gif" width="18" height="18"> <span id="airCompanyName_6">国航</span> <span class="none" id="hid_lowaircompany_6">CA</span> <span id="hid_lowflightnumber_6">CA4172</span> <input type="hidden" id="hid_YPrice_6" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_6" value="空中客车320载客180人左右#320.jpg"> <input type="hidden" id="hid_lowflighttype_6" value="320"></td>
+								<td><span id="hid_cabintypename_6">头等舱</span>[<span id="hid_lowcabincode_6">F</span>/<span id="hid_discount_6">28.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_6">5070</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_6">5190</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_6"><input type="hidden" id="hid_lowisspecial_6" value="1"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_6">6.5</span>%</font>(<font class="f48000" id="hid_zrateprice_6">329</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_6">4741</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;6&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_6" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_6" onclick="showallcabin(6,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">15:30</font> <span class="none" id="hid_arrivalTime_6">2014-11-10 15:30:00</span>&nbsp; <font class="font666"> <span id="endairportname_6">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_6">KMG</span> (<span id="hid_borderpointat_6">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:320</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：4</font> <a id="a_rules_6" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;6&#39;);" onclick="showrules(&#39;CA&#39;,&#39;F&#39;,&#39;6&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_6">50</span>+￥<span id="hid_fuelFee_6">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时30分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_7">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">12:40</font> <span class="none" id="hid_departTime_7">2014-11-10 12:40:00</span>&nbsp; <font class="font666"> <span id="startairportname_7">首都国际机场</span> <span class="none" id="hiddepcitycode_7">PEK</span> (<span id="hid_offpointat_7">T2</span>)
+								</font></td>
+								<td><img src="MU.gif" width="18" height="18"> <span id="airCompanyName_7">东航</span> <span class="none" id="hid_lowaircompany_7">MU</span> <span id="hid_lowflightnumber_7">MU5714</span> <input type="hidden" id="hid_YPrice_7" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_7" value=""> <input type="hidden" id="hid_lowflighttype_7" value="33E"></td>
+								<td><span id="hid_cabintypename_7">头等舱</span>[<span id="hid_lowcabincode_7">F</span>/<span id="hid_discount_7">28.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_7">5070</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_7">5190</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_7"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_7"><img src="loadding.gif"></span>%</font>(<font class="f48000" id="hid_zrateprice_7">0</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_7">5070</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;7&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_7" style="margin-left: 30px;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_7" onclick="showallcabin(7,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">16:10</font> <span class="none" id="hid_arrivalTime_7">2014-11-10 16:10:00</span>&nbsp; <font class="font666"> <span id="endairportname_7">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_7">KMG</span> (<span id="hid_borderpointat_7">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:33E</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_7" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;7&#39;);" onclick="showrules(&#39;MU&#39;,&#39;F&#39;,&#39;7&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_7">50</span>+￥<span id="hid_fuelFee_7">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时30分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_8">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">15:15</font> <span class="none" id="hid_departTime_8">2014-11-10 15:15:00</span>&nbsp; <font class="font666"> <span id="startairportname_8">首都国际机场</span> <span class="none" id="hiddepcitycode_8">PEK</span> (<span id="hid_offpointat_8">T3</span>)
+								</font></td>
+								<td><img src="CA.gif" width="18" height="18"> <span id="airCompanyName_8">国航</span> <span class="none" id="hid_lowaircompany_8">CA</span> <span id="hid_lowflightnumber_8">CA4170</span> <input type="hidden" id="hid_YPrice_8" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_8" value="波音738系列载客在130-160左右#738.jpg"> <input type="hidden" id="hid_lowflighttype_8" value="738"></td>
+								<td><span id="hid_cabintypename_8">头等舱</span>[<span id="hid_lowcabincode_8">F</span>/<span id="hid_discount_8">28.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_8">5070</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_8">5190</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_8"><input type="hidden" id="hid_lowisspecial_8" value="1"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_8">6.5</span>%</font>(<font class="f48000" id="hid_zrateprice_8">329</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_8">4741</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;8&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_8" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_8" onclick="showallcabin(8,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">18:50</font> <span class="none" id="hid_arrivalTime_8">2014-11-10 18:50:00</span>&nbsp; <font class="font666"> <span id="endairportname_8">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_8">KMG</span> (<span id="hid_borderpointat_8">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:738</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：4</font> <a id="a_rules_8" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;8&#39;);" onclick="showrules(&#39;CA&#39;,&#39;F&#39;,&#39;8&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_8">50</span>+￥<span id="hid_fuelFee_8">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时35分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_9">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">15:25</font> <span class="none" id="hid_departTime_9">2014-11-10 15:25:00</span>&nbsp; <font class="font666"> <span id="startairportname_9">首都国际机场</span> <span class="none" id="hiddepcitycode_9">PEK</span> (<span id="hid_offpointat_9">T2</span>)
+								</font></td>
+								<td><img src="CZ.gif" width="18" height="18"> <span id="airCompanyName_9">南航</span> <span class="none" id="hid_lowaircompany_9">CZ</span> <span id="hid_lowflightnumber_9">CZ6159</span> <input type="hidden" id="hid_YPrice_9" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_9" value="波音777-200载客281-440人左右#77A.jpg"> <input type="hidden" id="hid_lowflighttype_9" value="77A"></td>
+								<td><span id="hid_cabintypename_9">头等舱</span>[<span id="hid_lowcabincode_9">F</span>/<span id="hid_discount_9">28.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_9">5070</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_9">5190</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_9"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_9"><img src="loadding.gif"></span>%</font>(<font class="f48000" id="hid_zrateprice_9">0</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_9">5070</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;9&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_9" style="margin-left: 30px;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_9" onclick="showallcabin(9,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">19:05</font> <span class="none" id="hid_arrivalTime_9">2014-11-10 19:05:00</span>&nbsp; <font class="font666"> <span id="endairportname_9">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_9">KMG</span> (<span id="hid_borderpointat_9">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:77A</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_9" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;9&#39;);" onclick="showrules(&#39;CZ&#39;,&#39;F&#39;,&#39;9&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_9">50</span>+￥<span id="hid_fuelFee_9">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时40分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_10">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">15:45</font> <span class="none" id="hid_departTime_10">2014-11-10 15:45:00</span>&nbsp; <font class="font666"> <span id="startairportname_10">首都国际机场</span> <span class="none" id="hiddepcitycode_10">PEK</span> (<span id="hid_offpointat_10">T1</span>)
+								</font></td>
+								<td><img src="HU.gif" width="18" height="18"> <span id="airCompanyName_10">海航</span> <span class="none" id="hid_lowaircompany_10">HU</span> <span id="hid_lowflightnumber_10">HU7111</span> <input type="hidden" id="hid_YPrice_10" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_10" value=""> <input type="hidden" id="hid_lowflighttype_10" value="787"></td>
+								<td style="color:red"><span id="hid_cabintypename_10">特价舱</span>[<span id="hid_lowcabincode_10">A</span>/<span id="hid_discount_10">10.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_10">1810</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_10">1930</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_10"><input type="hidden" id="hid_lowisspecial_10" value="1"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_10">1.8</span>%</font>(<font class="f48000" id="hid_zrateprice_10">32</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_10">1778</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;10&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_10" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_10" onclick="showallcabin(10,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">19:30</font> <span class="none" id="hid_arrivalTime_10">2014-11-10 19:30:00</span>&nbsp; <font class="font666"> <span id="endairportname_10">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_10">KMG</span> (<span id="hid_borderpointat_10">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:787</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_10" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;10&#39;);" onclick="showrules(&#39;HU&#39;,&#39;A&#39;,&#39;10&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+								<tr class="none" id="divallcabin_10_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_10_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td style="color:red"><span id="hid_cabintypename_10_0">特价舱</span> [<span id="hid_lowcabincode_10_0">Z</span>/<span id="hid_discount_10_0">14.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_10_0">2530</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_10_0">2650</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_10_0"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_10_0">0</span>%</font>(<font class="f48000" id="hid_zrateprice_10_0">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_10_0">2530</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;10&#39;,&#39;0&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_10_0" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_10_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_10_0" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;10_0&#39;);" onclick="showrules(&#39;HU&#39;,&#39;Z&#39;,&#39;10_0&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_10_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_10_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_10_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_10_1">头等舱</span> [<span id="hid_lowcabincode_10_1">F</span>/<span id="hid_discount_10_1">28.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_10_1">5070</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_10_1">5190</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_10_1"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_10_1">0</span>%</font>(<font class="f48000" id="hid_zrateprice_10_1">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_10_1">5070</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;10&#39;,&#39;1&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_10_1" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_10_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_10_1" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;10_1&#39;);" onclick="showrules(&#39;HU&#39;,&#39;F&#39;,&#39;10_1&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_10_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_10">50</span>+￥<span id="hid_fuelFee_10">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时45分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_11">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">16:20</font> <span class="none" id="hid_departTime_11">2014-11-10 16:20:00</span>&nbsp; <font class="font666"> <span id="startairportname_11">首都国际机场</span> <span class="none" id="hiddepcitycode_11">PEK</span> (<span id="hid_offpointat_11">T2</span>)
+								</font></td>
+								<td><img src="MU.gif" width="18" height="18"> <span id="airCompanyName_11">东航</span> <span class="none" id="hid_lowaircompany_11">MU</span> <span id="hid_lowflightnumber_11">MU5712</span> <input type="hidden" id="hid_YPrice_11" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_11" value="空中客车A330-300载客256-412人左右#333.jpg"> <input type="hidden" id="hid_lowflighttype_11" value="333"></td>
+								<td><span id="hid_cabintypename_11">经济舱</span>[<span id="hid_lowcabincode_11">Y</span>/<span id="hid_discount_11">10.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_11">1810</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_11">1930</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_11"><img src="teshu.gif" width="52" height="21"><input type="hidden" id="hid_lowisspecial_11" value="2"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_11">9.9</span>%</font>(<font class="f48000" id="hid_zrateprice_11">179</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_11">1631</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;11&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_11" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_11" onclick="showallcabin(11,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">19:45</font> <span class="none" id="hid_arrivalTime_11">2014-11-10 19:45:00</span>&nbsp; <font class="font666"> <span id="endairportname_11">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_11">KMG</span> (<span id="hid_borderpointat_11">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:333</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：2</font> <a id="a_rules_11" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;11&#39;);" onclick="showrules(&#39;MU&#39;,&#39;Y&#39;,&#39;11&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+								<tr class="none" id="divallcabin_11_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_11_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_11_0">头等舱</span> [<span id="hid_lowcabincode_11_0">F</span>/<span id="hid_discount_11_0">28.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_11_0">5070</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_11_0">5190</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_11_0"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_11_0">0</span>%</font>(<font class="f48000" id="hid_zrateprice_11_0">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_11_0">5070</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;11&#39;,&#39;0&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_11_0" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_11_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_11_0" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;11_0&#39;);" onclick="showrules(&#39;MU&#39;,&#39;F&#39;,&#39;11_0&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_11_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_11">50</span>+￥<span id="hid_fuelFee_11">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时25分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_12">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">16:20</font> <span class="none" id="hid_departTime_12">2014-11-10 16:20:00</span>&nbsp; <font class="font666"> <span id="startairportname_12">首都国际机场</span> <span class="none" id="hiddepcitycode_12">PEK</span> (<span id="hid_offpointat_12">T2</span>)
+								</font></td>
+								<td><img src="MU.gif" width="18" height="18"> <span id="airCompanyName_12">东航</span> <span class="none" id="hid_lowaircompany_12">MU</span> <span id="hid_lowflightnumber_12">MU5710</span> <input type="hidden" id="hid_YPrice_12" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_12" value="波音737系列载客在130-160左右#737.jpg"> <input type="hidden" id="hid_lowflighttype_12" value="737"></td>
+								<td><span id="hid_cabintypename_12">头等舱</span>[<span id="hid_lowcabincode_12">F</span>/<span id="hid_discount_12">28.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_12">5070</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_12">5190</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_12"><img src="teshu.gif" width="52" height="21"><input type="hidden" id="hid_lowisspecial_12" value="2"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_12">9.8</span>%</font>(<font class="f48000" id="hid_zrateprice_12">496</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_12">4574</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;12&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_12" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_12" onclick="showallcabin(12,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">21:10</font> <span class="none" id="hid_arrivalTime_12">2014-11-10 21:10:00</span>&nbsp; <font class="font666"> <span id="endairportname_12">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_12">KMG</span> (<span id="hid_borderpointat_12">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:737</font> 
+										<a style="color: #008e35; margin-left: 10px; text-decoration: underline" href="javascript:void(0)" onmouseout="hidestopinfo(&#39;12&#39;);" onclick="showstopinfo(&#39;MU5710&#39;,&#39;10NOV&#39;,&#39;1&#39;,&#39;12&#39;);">经停</a>
+										<div id="stopinfodiv_12" class="box none" style="position: absolute;">
+											<table width="180" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; background: #fff; border: 2px solid #f0f0f0; line-height: 22px; text-align: center">
+												<tbody><tr>
+													<th scope="col" style="border: 1px solid #f0f0f0">经停地</th>
+													<th scope="col" style="border: 1px solid #f0f0f0">停留时间</th>
+												</tr>
+												<tr>
+													<td style="border: 1px solid #f0f0f0" id="stopinfodiv1_12"></td>
+													<td style="border: 1px solid #f0f0f0" id="stopinfodiv2_12"></td>
+												</tr>
+											</tbody></table>
+										</div>
+									</td>
+								<td><font style="width: 68px; display: block; float: left;">余票：4</font> <a id="a_rules_12" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;12&#39;);" onclick="showrules(&#39;MU&#39;,&#39;F&#39;,&#39;12&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_12">50</span>+￥<span id="hid_fuelFee_12">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：4小时50分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_13">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">18:20</font> <span class="none" id="hid_departTime_13">2014-11-10 18:20:00</span>&nbsp; <font class="font666"> <span id="startairportname_13">首都国际机场</span> <span class="none" id="hiddepcitycode_13">PEK</span> (<span id="hid_offpointat_13">T2</span>)
+								</font></td>
+								<td><img src="MU.gif" width="18" height="18"> <span id="airCompanyName_13">东航</span> <span class="none" id="hid_lowaircompany_13">MU</span> <span id="hid_lowflightnumber_13">MU5706</span> <input type="hidden" id="hid_YPrice_13" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_13" value=""> <input type="hidden" id="hid_lowflighttype_13" value="73E"></td>
+								<td><span id="hid_cabintypename_13">经济舱</span>[<span id="hid_lowcabincode_13">Y</span>/<span id="hid_discount_13">10.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_13">1810</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_13">1930</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_13"><img src="teshu.gif" width="52" height="21"><input type="hidden" id="hid_lowisspecial_13" value="2"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_13">9.9</span>%</font>(<font class="f48000" id="hid_zrateprice_13">179</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_13">1631</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;13&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_13" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_13" onclick="showallcabin(13,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">21:45</font> <span class="none" id="hid_arrivalTime_13">2014-11-10 21:45:00</span>&nbsp; <font class="font666"> <span id="endairportname_13">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_13">KMG</span> (<span id="hid_borderpointat_13">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:73E</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_13" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;13&#39;);" onclick="showrules(&#39;MU&#39;,&#39;Y&#39;,&#39;13&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_13">50</span>+￥<span id="hid_fuelFee_13">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时25分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_14">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">19:50</font> <span class="none" id="hid_departTime_14">2014-11-10 19:50:00</span>&nbsp; <font class="font666"> <span id="startairportname_14">首都国际机场</span> <span class="none" id="hiddepcitycode_14">PEK</span> (<span id="hid_offpointat_14">T2</span>)
+								</font></td>
+								<td><img src="CZ.gif" width="18" height="18"> <span id="airCompanyName_14">南航</span> <span class="none" id="hid_lowaircompany_14">CZ</span> <span id="hid_lowflightnumber_14">CZ3997</span> <input type="hidden" id="hid_YPrice_14" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_14" value="空中客车A330-200载客数在256-412人左右#330.jpg"> <input type="hidden" id="hid_lowflighttype_14" value="330"></td>
+								<td><span id="hid_cabintypename_14">经济舱</span>[<span id="hid_lowcabincode_14">M</span>/<span id="hid_discount_14">8.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_14">1450</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_14">1570</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_14"><input type="hidden" id="hid_lowisspecial_14" value="1"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_14">9.8</span>%</font>(<font class="f48000" id="hid_zrateprice_14">142</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_14">1308</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;14&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_14" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_14" onclick="showallcabin(14,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">23:35</font> <span class="none" id="hid_arrivalTime_14">2014-11-10 23:35:00</span>&nbsp; <font class="font666"> <span id="endairportname_14">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_14">KMG</span> (<span id="hid_borderpointat_14">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:330</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_14" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;14&#39;);" onclick="showrules(&#39;CZ&#39;,&#39;M&#39;,&#39;14&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+								<tr class="none" id="divallcabin_14_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_14_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_14_0">经济舱</span> [<span id="hid_lowcabincode_14_0">B</span>/<span id="hid_discount_14_0">9.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_14_0">1630</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_14_0">1750</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_14_0"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_14_0">0</span>%</font>(<font class="f48000" id="hid_zrateprice_14_0">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_14_0">1630</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;14&#39;,&#39;0&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_14_0" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_14_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_14_0" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;14_0&#39;);" onclick="showrules(&#39;CZ&#39;,&#39;B&#39;,&#39;14_0&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_14_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_14_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_14_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_14_1">高端经济舱</span> [<span id="hid_lowcabincode_14_1">W</span>/<span id="hid_discount_14_1">10.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_14_1">1810</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_14_1">1930</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_14_1"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_14_1">0</span>%</font>(<font class="f48000" id="hid_zrateprice_14_1">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_14_1">1810</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;14&#39;,&#39;1&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_14_1" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_14_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_14_1" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;14_1&#39;);" onclick="showrules(&#39;CZ&#39;,&#39;W&#39;,&#39;14_1&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_14_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_14_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_14_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_14_2">经济舱</span> [<span id="hid_lowcabincode_14_2">Y</span>/<span id="hid_discount_14_2">10.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_14_2">1810</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_14_2">1930</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_14_2"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_14_2">0</span>%</font>(<font class="f48000" id="hid_zrateprice_14_2">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_14_2">1810</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;14&#39;,&#39;2&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_14_2" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_14_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_14_2" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;14_2&#39;);" onclick="showrules(&#39;CZ&#39;,&#39;Y&#39;,&#39;14_2&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_14_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_14_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_14_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_14_3">头等舱</span> [<span id="hid_lowcabincode_14_3">P</span>/<span id="hid_discount_14_3">22.9</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_14_3">4160</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_14_3">4280</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_14_3"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_14_3">0</span>%</font>(<font class="f48000" id="hid_zrateprice_14_3">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_14_3">4160</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;14&#39;,&#39;3&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_14_3" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_14_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：2</font> <a id="a_rules_14_3" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;14_3&#39;);" onclick="showrules(&#39;CZ&#39;,&#39;P&#39;,&#39;14_3&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_14_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_14_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_14_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_14_4">头等舱</span> [<span id="hid_lowcabincode_14_4">F</span>/<span id="hid_discount_14_4">28.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_14_4">5070</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_14_4">5190</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_14_4"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_14_4">0</span>%</font>(<font class="f48000" id="hid_zrateprice_14_4">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_14_4">5070</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;14&#39;,&#39;4&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_14_4" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_14_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_14_4" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;14_4&#39;);" onclick="showrules(&#39;CZ&#39;,&#39;F&#39;,&#39;14_4&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_14_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_14">50</span>+￥<span id="hid_fuelFee_14">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时45分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_15">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">20:20</font> <span class="none" id="hid_departTime_15">2014-11-10 20:20:00</span>&nbsp; <font class="font666"> <span id="startairportname_15">首都国际机场</span> <span class="none" id="hiddepcitycode_15">PEK</span> (<span id="hid_offpointat_15">T2</span>)
+								</font></td>
+								<td><img src="MU.gif" width="18" height="18"> <span id="airCompanyName_15">东航</span> <span class="none" id="hid_lowaircompany_15">MU</span> <span id="hid_lowflightnumber_15">MU5704</span> <input type="hidden" id="hid_YPrice_15" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_15" value="波音737系列载客在130-160左右#737.jpg"> <input type="hidden" id="hid_lowflighttype_15" value="737"></td>
+								<td><span id="hid_cabintypename_15">头等舱</span>[<span id="hid_lowcabincode_15">F</span>/<span id="hid_discount_15">28.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_15">5070</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_15">5190</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_15"><img src="teshu.gif" width="52" height="21"><input type="hidden" id="hid_lowisspecial_15" value="2"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_15">9.8</span>%</font>(<font class="f48000" id="hid_zrateprice_15">496</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_15">4574</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;15&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_15" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_15" onclick="showallcabin(15,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">01:35</font> <span class="none" id="hid_arrivalTime_15">2014-11-11 01:35:00</span>&nbsp; <font class="font666"> <span id="endairportname_15">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_15">KMG</span> (<span id="hid_borderpointat_15">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:737</font> 
+										<a style="color: #008e35; margin-left: 10px; text-decoration: underline" href="javascript:void(0)" onmouseout="hidestopinfo(&#39;15&#39;);" onclick="showstopinfo(&#39;MU5704&#39;,&#39;10NOV&#39;,&#39;1&#39;,&#39;15&#39;);">经停</a>
+										<div id="stopinfodiv_15" class="box none" style="position: absolute;">
+											<table width="180" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; background: #fff; border: 2px solid #f0f0f0; line-height: 22px; text-align: center">
+												<tbody><tr>
+													<th scope="col" style="border: 1px solid #f0f0f0">经停地</th>
+													<th scope="col" style="border: 1px solid #f0f0f0">停留时间</th>
+												</tr>
+												<tr>
+													<td style="border: 1px solid #f0f0f0" id="stopinfodiv1_15"></td>
+													<td style="border: 1px solid #f0f0f0" id="stopinfodiv2_15"></td>
+												</tr>
+											</tbody></table>
+										</div>
+									</td>
+								<td><font style="width: 68px; display: block; float: left;">余票：6</font> <a id="a_rules_15" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;15&#39;);" onclick="showrules(&#39;MU&#39;,&#39;F&#39;,&#39;15&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_15">50</span>+￥<span id="hid_fuelFee_15">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：5小时15分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_16">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">20:25</font> <span class="none" id="hid_departTime_16">2014-11-10 20:25:00</span>&nbsp; <font class="font666"> <span id="startairportname_16">首都国际机场</span> <span class="none" id="hiddepcitycode_16">PEK</span> (<span id="hid_offpointat_16">T2</span>)
+								</font></td>
+								<td><img src="MU.gif" width="18" height="18"> <span id="airCompanyName_16">东航</span> <span class="none" id="hid_lowaircompany_16">MU</span> <span id="hid_lowflightnumber_16">MU5708</span> <input type="hidden" id="hid_YPrice_16" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_16" value=""> <input type="hidden" id="hid_lowflighttype_16" value="73H"></td>
+								<td><span id="hid_cabintypename_16">经济舱</span>[<span id="hid_lowcabincode_16">E</span>/<span id="hid_discount_16">8.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_16">1450</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_16">1570</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_16"><input type="hidden" id="hid_lowisspecial_16" value="1"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_16">9.3</span>%</font>(<font class="f48000" id="hid_zrateprice_16">134</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_16">1316</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;16&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_16" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_16" onclick="showallcabin(16,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">23:50</font> <span class="none" id="hid_arrivalTime_16">2014-11-10 23:50:00</span>&nbsp; <font class="font666"> <span id="endairportname_16">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_16">KMG</span> (<span id="hid_borderpointat_16">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:73H</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：7</font> <a id="a_rules_16" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;16&#39;);" onclick="showrules(&#39;MU&#39;,&#39;E&#39;,&#39;16&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+								<tr class="none" id="divallcabin_16_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_16_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_16_0">经济舱</span> [<span id="hid_lowcabincode_16_0">M</span>/<span id="hid_discount_16_0">9.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_16_0">1630</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_16_0">1750</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_16_0"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_16_0">0</span>%</font>(<font class="f48000" id="hid_zrateprice_16_0">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_16_0">1630</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;16&#39;,&#39;0&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_16_0" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_16_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：8</font> <a id="a_rules_16_0" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;16_0&#39;);" onclick="showrules(&#39;MU&#39;,&#39;M&#39;,&#39;16_0&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_16_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_16_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_16_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_16_1">经济舱</span> [<span id="hid_lowcabincode_16_1">B</span>/<span id="hid_discount_16_1">9.9</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_16_1">1790</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_16_1">1910</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_16_1"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_16_1">0</span>%</font>(<font class="f48000" id="hid_zrateprice_16_1">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_16_1">1790</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;16&#39;,&#39;1&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_16_1" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_16_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：5</font> <a id="a_rules_16_1" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;16_1&#39;);" onclick="showrules(&#39;MU&#39;,&#39;B&#39;,&#39;16_1&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_16_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_16_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_16_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_16_2">经济舱</span> [<span id="hid_lowcabincode_16_2">Y</span>/<span id="hid_discount_16_2">10.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_16_2">1810</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_16_2">1930</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_16_2"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_16_2">0</span>%</font>(<font class="f48000" id="hid_zrateprice_16_2">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_16_2">1810</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;16&#39;,&#39;2&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_16_2" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_16_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_16_2" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;16_2&#39;);" onclick="showrules(&#39;MU&#39;,&#39;Y&#39;,&#39;16_2&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_16_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_16_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_16_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td style="color:red"><span id="hid_cabintypename_16_3">特价舱</span> [<span id="hid_lowcabincode_16_3">P</span>/<span id="hid_discount_16_3">10.9</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_16_3">1980</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_16_3">2100</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_16_3"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_16_3">0</span>%</font>(<font class="f48000" id="hid_zrateprice_16_3">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_16_3">1980</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;16&#39;,&#39;3&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_16_3" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_16_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：2</font> <a id="a_rules_16_3" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;16_3&#39;);" onclick="showrules(&#39;MU&#39;,&#39;P&#39;,&#39;16_3&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_16_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_16_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_16_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_16_4">头等舱</span> [<span id="hid_lowcabincode_16_4">F</span>/<span id="hid_discount_16_4">28.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_16_4">5070</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_16_4">5190</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_16_4"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_16_4">0</span>%</font>(<font class="f48000" id="hid_zrateprice_16_4">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_16_4">5070</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;16&#39;,&#39;4&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_16_4" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_16_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：4</font> <a id="a_rules_16_4" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;16_4&#39;);" onclick="showrules(&#39;MU&#39;,&#39;F&#39;,&#39;16_4&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_16_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_16">50</span>+￥<span id="hid_fuelFee_16">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时25分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_17">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">21:00</font> <span class="none" id="hid_departTime_17">2014-11-10 21:00:00</span>&nbsp; <font class="font666"> <span id="startairportname_17">首都国际机场</span> <span class="none" id="hiddepcitycode_17">PEK</span> (<span id="hid_offpointat_17">T1</span>)
+								</font></td>
+								<td><img src="HU.gif" width="18" height="18"> <span id="airCompanyName_17">海航</span> <span class="none" id="hid_lowaircompany_17">HU</span> <span id="hid_lowflightnumber_17">HU7637</span> <input type="hidden" id="hid_YPrice_17" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_17" value="波音738系列载客在130-160左右#738.jpg"> <input type="hidden" id="hid_lowflighttype_17" value="738"></td>
+								<td><span id="hid_cabintypename_17">经济舱</span>[<span id="hid_lowcabincode_17">K</span>/<span id="hid_discount_17">8.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_17">1450</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_17">1570</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_17"><input type="hidden" id="hid_lowisspecial_17" value="1"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_17">6.8</span>%</font>(<font class="f48000" id="hid_zrateprice_17">98</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_17">1352</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;17&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_17" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_17" onclick="showallcabin(17,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">00:15</font> <span class="none" id="hid_arrivalTime_17">2014-11-11 00:15:00</span>&nbsp; <font class="font666"> <span id="endairportname_17">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_17">KMG</span> (<span id="hid_borderpointat_17">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:738</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_17" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;17&#39;);" onclick="showrules(&#39;HU&#39;,&#39;K&#39;,&#39;17&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+								<tr class="none" id="divallcabin_17_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_17_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_17_0">经济舱</span> [<span id="hid_lowcabincode_17_0">H</span>/<span id="hid_discount_17_0">8.5</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_17_0">1540</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_17_0">1660</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_17_0"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_17_0">0</span>%</font>(<font class="f48000" id="hid_zrateprice_17_0">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_17_0">1540</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;17&#39;,&#39;0&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_17_0" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_17_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_17_0" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;17_0&#39;);" onclick="showrules(&#39;HU&#39;,&#39;H&#39;,&#39;17_0&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_17_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_17_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_17_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_17_1">经济舱</span> [<span id="hid_lowcabincode_17_1">B</span>/<span id="hid_discount_17_1">9.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_17_1">1630</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_17_1">1750</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_17_1"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_17_1">0</span>%</font>(<font class="f48000" id="hid_zrateprice_17_1">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_17_1">1630</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;17&#39;,&#39;1&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_17_1" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_17_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_17_1" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;17_1&#39;);" onclick="showrules(&#39;HU&#39;,&#39;B&#39;,&#39;17_1&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_17_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_17_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_17_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_17_2">经济舱</span> [<span id="hid_lowcabincode_17_2">Y</span>/<span id="hid_discount_17_2">10.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_17_2">1810</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_17_2">1930</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_17_2"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_17_2">0</span>%</font>(<font class="f48000" id="hid_zrateprice_17_2">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_17_2">1810</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;17&#39;,&#39;2&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_17_2" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_17_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_17_2" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;17_2&#39;);" onclick="showrules(&#39;HU&#39;,&#39;Y&#39;,&#39;17_2&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_17_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_17_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_17_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td style="color:red"><span id="hid_cabintypename_17_3">特价舱</span> [<span id="hid_lowcabincode_17_3">A</span>/<span id="hid_discount_17_3">10.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_17_3">1810</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_17_3">1930</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_17_3"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_17_3">0</span>%</font>(<font class="f48000" id="hid_zrateprice_17_3">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_17_3">1810</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;17&#39;,&#39;3&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_17_3" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_17_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：2</font> <a id="a_rules_17_3" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;17_3&#39;);" onclick="showrules(&#39;HU&#39;,&#39;A&#39;,&#39;17_3&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_17_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_17_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_17_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td style="color:red"><span id="hid_cabintypename_17_4">特价舱</span> [<span id="hid_lowcabincode_17_4">Z</span>/<span id="hid_discount_17_4">13.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_17_4">2350</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_17_4">2470</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_17_4"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_17_4">0</span>%</font>(<font class="f48000" id="hid_zrateprice_17_4">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_17_4">2350</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;17&#39;,&#39;4&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_17_4" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_17_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：4</font> <a id="a_rules_17_4" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;17_4&#39;);" onclick="showrules(&#39;HU&#39;,&#39;Z&#39;,&#39;17_4&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_17_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_17_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_17_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_17_5">头等舱</span> [<span id="hid_lowcabincode_17_5">F</span>/<span id="hid_discount_17_5">28.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_17_5">5070</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_17_5">5190</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_17_5"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_17_5">0</span>%</font>(<font class="f48000" id="hid_zrateprice_17_5">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_17_5">5070</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;17&#39;,&#39;5&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_17_5" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_17_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：8</font> <a id="a_rules_17_5" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;17_5&#39;);" onclick="showrules(&#39;HU&#39;,&#39;F&#39;,&#39;17_5&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_17_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_17">50</span>+￥<span id="hid_fuelFee_17">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时15分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_18">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">21:20</font> <span class="none" id="hid_departTime_18">2014-11-10 21:20:00</span>&nbsp; <font class="font666"> <span id="startairportname_18">首都国际机场</span> <span class="none" id="hiddepcitycode_18">PEK</span> (<span id="hid_offpointat_18">T3</span>)
+								</font></td>
+								<td><img src="CA.gif" width="18" height="18"> <span id="airCompanyName_18">国航</span> <span class="none" id="hid_lowaircompany_18">CA</span> <span id="hid_lowflightnumber_18">CA4174</span> <input type="hidden" id="hid_YPrice_18" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_18" value="空中客车320载客180人左右#320.jpg"> <input type="hidden" id="hid_lowflighttype_18" value="320"></td>
+								<td><span id="hid_cabintypename_18">经济舱</span>[<span id="hid_lowcabincode_18">H</span>/<span id="hid_discount_18">8.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_18">1450</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_18">1570</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_18"><input type="hidden" id="hid_lowisspecial_18" value="1"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_18">6.5</span>%</font>(<font class="f48000" id="hid_zrateprice_18">94</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_18">1356</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;18&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_18" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_18" onclick="showallcabin(18,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">00:50</font> <span class="none" id="hid_arrivalTime_18">2014-11-11 00:50:00</span>&nbsp; <font class="font666"> <span id="endairportname_18">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_18">KMG</span> (<span id="hid_borderpointat_18">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:320</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_18" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;18&#39;);" onclick="showrules(&#39;CA&#39;,&#39;H&#39;,&#39;18&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+								<tr class="none" id="divallcabin_18_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_18_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_18_0">经济舱</span> [<span id="hid_lowcabincode_18_0">M1</span>/<span id="hid_discount_18_0">8.5</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_18_0">1540</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_18_0">1660</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_18_0"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_18_0">0</span>%</font>(<font class="f48000" id="hid_zrateprice_18_0">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_18_0">1540</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;18&#39;,&#39;0&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_18_0" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_18_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_18_0" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;18_0&#39;);" onclick="showrules(&#39;CA&#39;,&#39;M1&#39;,&#39;18_0&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_18_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_18_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_18_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_18_1">经济舱</span> [<span id="hid_lowcabincode_18_1">B</span>/<span id="hid_discount_18_1">9.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_18_1">1630</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_18_1">1750</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_18_1"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_18_1">0</span>%</font>(<font class="f48000" id="hid_zrateprice_18_1">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_18_1">1630</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;18&#39;,&#39;1&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_18_1" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_18_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_18_1" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;18_1&#39;);" onclick="showrules(&#39;CA&#39;,&#39;B&#39;,&#39;18_1&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_18_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_18_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_18_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_18_2">经济舱</span> [<span id="hid_lowcabincode_18_2">Y</span>/<span id="hid_discount_18_2">10.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_18_2">1810</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_18_2">1930</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_18_2"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_18_2">0</span>%</font>(<font class="f48000" id="hid_zrateprice_18_2">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_18_2">1810</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;18&#39;,&#39;2&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_18_2" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_18_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_18_2" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;18_2&#39;);" onclick="showrules(&#39;CA&#39;,&#39;Y&#39;,&#39;18_2&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_18_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_18_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_18_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_18_3">超级经济舱</span> [<span id="hid_lowcabincode_18_3">A</span>/<span id="hid_discount_18_3">25.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_18_3">4530</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_18_3">4650</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_18_3"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_18_3">0</span>%</font>(<font class="f48000" id="hid_zrateprice_18_3">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_18_3">4530</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;18&#39;,&#39;3&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_18_3" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_18_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：2</font> <a id="a_rules_18_3" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;18_3&#39;);" onclick="showrules(&#39;CA&#39;,&#39;A&#39;,&#39;18_3&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_18_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_18_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_18_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_18_4">头等舱</span> [<span id="hid_lowcabincode_18_4">F</span>/<span id="hid_discount_18_4">28.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_18_4">5070</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_18_4">5190</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_18_4"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_18_4">0</span>%</font>(<font class="f48000" id="hid_zrateprice_18_4">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_18_4">5070</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;18&#39;,&#39;4&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_18_4" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_18_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：6</font> <a id="a_rules_18_4" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;18_4&#39;);" onclick="showrules(&#39;CA&#39;,&#39;F&#39;,&#39;18_4&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_18_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_18">50</span>+￥<span id="hid_fuelFee_18">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时30分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+						<tbody id="divlowprice_19">
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td><font class="timeOfColnum f48000">22:00</font> <span class="none" id="hid_departTime_19">2014-11-10 22:00:00</span>&nbsp; <font class="font666"> <span id="startairportname_19">首都国际机场</span> <span class="none" id="hiddepcitycode_19">PEK</span> (<span id="hid_offpointat_19">T2</span>)
+								</font></td>
+								<td><img src="MU.gif" width="18" height="18"> <span id="airCompanyName_19">东航</span> <span class="none" id="hid_lowaircompany_19">MU</span> <span id="hid_lowflightnumber_19">MU5720</span> <input type="hidden" id="hid_YPrice_19" value="1810.0"> <input type="hidden" id="hid_lowflightdesc_19" value=""> <input type="hidden" id="hid_lowflighttype_19" value="33E"></td>
+								<td><span id="hid_cabintypename_19">经济舱</span>[<span id="hid_lowcabincode_19">K</span>/<span id="hid_discount_19">7.0</span>折]</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_19">1270</span></font>元</td>
+								<td rowspan="2"><font class="ff0000">¥<span class="priceOfColnum" id="hid_lowparvalue_19">1390</span></font>元</td>
+								<td rowspan="2" class="zratecss" width="52" id="td_isspecial_19"><input type="hidden" id="hid_lowisspecial_19" value="1"></td>
+								<td rowspan="2" class="zratecss"><font class="f48000"><span class="zrateOfColnum" id="hid_zratevalue_19">9.3</span>%</font>(<font class="f48000" id="hid_zrateprice_19">118</font>元)</td>
+								<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_19">1152</span></font>元</td>
+								<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;19&#39;,&#39;&#39;,&#39;0&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_19" style="margin-left: 30px; display: inline;" class="pointer none">
+									<dl style="margin-left: 32px;">
+										<a id="linkshowcabin_19" onclick="showallcabin(19,0);" href="javascript:void(0)">所有舱位▼</a>
+									</dl></td>
+							</tr>
+							<tr>
+								<td><font class="f48000">01:30</font> <span class="none" id="hid_arrivalTime_19">2014-11-11 01:30:00</span>&nbsp; <font class="font666"> <span id="endairportname_19">昆明长水国际机场</span> <span class="none" id="hidarrcitycode_19">KMG</span> (<span id="hid_borderpointat_19">--</span>)
+								</font></td>
+								<td style="padding-left: 23px;"><font class="font666">机型:33E</font> </td>
+								<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_19" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;19&#39;);" onclick="showrules(&#39;MU&#39;,&#39;K&#39;,&#39;19&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+							</tr>
+							<tr>
+								<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+							</tr>
+							
+							
+							
+							
+							
+								<tr class="none" id="divallcabin_19_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_19_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_19_0">经济舱</span> [<span id="hid_lowcabincode_19_0">H</span>/<span id="hid_discount_19_0">7.5</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_0">1360</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_0">1480</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_19_0"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_19_0">0</span>%</font>(<font class="f48000" id="hid_zrateprice_19_0">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_19_0">1360</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;19&#39;,&#39;0&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_19_0" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_19_0" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;19_0&#39;);" onclick="showrules(&#39;MU&#39;,&#39;H&#39;,&#39;19_0&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_19_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_19_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_19_1">经济舱</span> [<span id="hid_lowcabincode_19_1">E</span>/<span id="hid_discount_19_1">8.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_1">1450</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_1">1570</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_19_1"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_19_1">0</span>%</font>(<font class="f48000" id="hid_zrateprice_19_1">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_19_1">1450</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;19&#39;,&#39;1&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_19_1" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_19_1" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;19_1&#39;);" onclick="showrules(&#39;MU&#39;,&#39;E&#39;,&#39;19_1&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_19_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_19_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_19_2">经济舱</span> [<span id="hid_lowcabincode_19_2">M</span>/<span id="hid_discount_19_2">9.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_2">1630</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_2">1750</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_19_2"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_19_2">0</span>%</font>(<font class="f48000" id="hid_zrateprice_19_2">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_19_2">1630</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;19&#39;,&#39;2&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_19_2" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_19_2" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;19_2&#39;);" onclick="showrules(&#39;MU&#39;,&#39;M&#39;,&#39;19_2&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_19_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_19_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_19_3">经济舱</span> [<span id="hid_lowcabincode_19_3">B</span>/<span id="hid_discount_19_3">9.9</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_3">1790</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_3">1910</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_19_3"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_19_3">0</span>%</font>(<font class="f48000" id="hid_zrateprice_19_3">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_19_3">1790</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;19&#39;,&#39;3&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_19_3" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_19_3" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;19_3&#39;);" onclick="showrules(&#39;MU&#39;,&#39;B&#39;,&#39;19_3&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_19_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_19_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_19_4">经济舱</span> [<span id="hid_lowcabincode_19_4">Y</span>/<span id="hid_discount_19_4">10.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_4">1810</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_4">1930</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_19_4"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_19_4">0</span>%</font>(<font class="f48000" id="hid_zrateprice_19_4">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_19_4">1810</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;19&#39;,&#39;4&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_19_4" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_19_4" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;19_4&#39;);" onclick="showrules(&#39;MU&#39;,&#39;Y&#39;,&#39;19_4&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_19_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_19_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td style="color:red"><span id="hid_cabintypename_19_5">特价舱</span> [<span id="hid_lowcabincode_19_5">P</span>/<span id="hid_discount_19_5">10.9</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_5">1980</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_5">2100</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_19_5"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_19_5">0</span>%</font>(<font class="f48000" id="hid_zrateprice_19_5">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_19_5">1980</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;19&#39;,&#39;5&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_19_5" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_19_5" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;19_5&#39;);" onclick="showrules(&#39;MU&#39;,&#39;P&#39;,&#39;19_5&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+								<tr class="none" id="divallcabin_19_1">
+									<td colspan="10" class="line_middle">&nbsp;</td>
+								</tr>
+								<tr class="none" id="divallcabin_19_2">
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td><span id="hid_cabintypename_19_6">头等舱</span> [<span id="hid_lowcabincode_19_6">F</span>/<span id="hid_discount_19_6">28.0</span>折]</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_6">5070</span></font>元</td>
+									<td rowspan="2"><font class="ff0000">¥<span id="hid_lowparvalue_19_6">5190</span></font>元</td>
+									<td rowspan="2" class="zratecss" width="52" id="td_isspecial_19_6"></td>
+									<td rowspan="2" class="zratecss"><font class="f48000"><span id="hid_zratevalue_19_6">0</span>%</font>(<font class="f48000" id="hid_zrateprice_19_6">0</font>元)</td>
+									<td rowspan="2" class="zratecss"><font class="ff0000">¥<span id="hid_lowprice_19_6">5070</span></font>元</td>
+									<td rowspan="2" width="120"><img onclick="tocreatorder(&#39;19&#39;,&#39;6&#39;,&#39;1&#39;)" src="input_yds.gif" width="55" height="20" id="tocreateorder_19_6" style="margin-left: 30px;" class="pointer none"></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_3">
+									<td>&nbsp;</td>
+									<td style="padding-left: 23px;">&nbsp;</td>
+									<td><font style="width: 68px; display: block; float: left;">余票：&gt;=9</font> <a id="a_rules_19_6" class="font3797f1" href="javascript:void(0)" onmouseout="hiderules(&#39;19_6&#39;);" onclick="showrules(&#39;MU&#39;,&#39;F&#39;,&#39;19_6&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;);">退改签</a></td>
+								</tr>
+								<tr class="none" id="divallcabin_19_4">
+									<td colspan="10" style="height: 8px; line-height: 8px;">&nbsp;</td>
+								</tr>
+							
+							
+							<tr>
+								<td colspan="10" class="ranyou">
+									<div class="">
+										<ul>
+											<li class="f" style="width: 145px;">机建+燃油：￥<span id="hid_airportFee_19">50</span>+￥<span id="hid_fuelFee_19">70</span></li>
+											<li class="f" style="width: 110px;"></li>
+											<li class="f" style="width: 160px;">飞行时间：3小时30分</li>
+										</ul>
+									</div>
+									<div class="c"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="10" class="line_over">&nbsp;</td>
+							</tr>
+						</tbody>
+					
+					
+
+					
+
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="none">
+		<form name="form2" id="form2">
+			<input type="hidden" name="s_travelflag" value="1" id="travelflag"> <input type="hidden" name="s_traveltype" value="1" id="traveltype"> <input type="hidden" name="s_depcityname" value="北京" id="hids_depcityname">
+			<input type="hidden" name="s_depcitycode" value="PEK" id="hids_depcitycode">
+			<input type="hidden" name="s_arrcityname" value="昆明" id="hids_arrcityname">
+			<input type="hidden" name="s_arrcitycode" value="KMG" id="hids_arrcitycode">
+			<input type="hidden" name="s_startdate" value="2014-11-10" id="hids_startdate">
+			<input type="hidden" name="s_backdate" value="" id="hids_backdate"> <input type="hidden" name="s_aircompanycode" value="" id="aircompanycode">
+			<input type="hidden" name="s_jasonsegmentinfo" value="" id="hidsegmentinfo"> <input type="hidden" name="s_jasonsegmentinfo1" value="" id="hidsegmentinfo1"> <input type="hidden" name="s_isshowzrate" value="0" id="s_isshowzrate">
+
+			<input type="hidden" name="s_depcitycode_lc" value="PEK" id="hiddepcitycodelc"> <input type="hidden" name="s_depcityname_lc" value="北京"> <input type="hidden" name="s_arrcitycode_lc" value="" id="hidarrcitycodelc"> <input type="hidden" name="s_arrcityname_lc" value=""> <input type="hidden" name="s_startdate_lc" value="" id="hids_startdate_lc">
+		</form>
+	</div>
+
+<script type="text/javascript" src="jquery-1.6.min.js"></script>
+<script type="text/javascript" src="jquery.blockUI.js"></script>
+<script type="text/javascript" src="jquery.poshytip.js"></script>
+<script type="text/javascript" src="jquery.elementsorter.js"></script>
+<script type="text/javascript" src="json2.js"></script>
+<script type="text/javascript" src="PublicJs.js"></script>
+<script type="text/javascript" src="WdatePicker.js"></script>
+<script type="text/javascript" src="popdg_div.js"></script>
+<script type="text/javascript" src="city.js"></script>
+<link href="tip.css" rel="stylesheet" type="text/css">
+<link href="http://www.cxslw.cn/js/city-control/citycontrol.css" rel="stylesheet">
+<link href="http://www.cxslw.cn/style/city.css" rel="stylesheet">
+<script type="text/javascript" src="list.js"></script>
+<script type="text/javascript" src="ticket.js"></script>
+<script type="text/javascript" language="javascript">
+var s_isshowzrate=0; 
+$(document).ready(function(){
+	if(s_isshowzrate==1){
+   		showzrate1(1);
+   	}
+	selectAircompany('ddlAirCom','');
+   	showLowFlightZrateList();
+   	showBackDate();
+   	//loadPriceweek();//每周最低价
+});
+</script>
+</body></html>

@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 区域
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Region createRegion(Region region) throws SQLException;
+	
+	/**
+	 * 删除 区域
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRegion(long id);
+	
+	
+	/**
+	 * 修改 区域
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRegion(Region region);
+
+		
+	/**
+	 * 修改 区域但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRegionIgnoreNull(Region region);
+		
+	
+	/**
+	 * 查找 区域
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRegion(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 区域
+	 * @param id
+	 * @return
+	 */
+	public Region findRegion(long id);
+	
+	/**
+	 * 查找 区域 by language
+	 * @param id
+	 * @return
+	 */
+	public Region findRegionbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 区域
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRegionForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找区域
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRegionBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 区域
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRegionBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRegionBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IRegionComponent regionComponent;
+	  
+ 	
+ 	public IRegionComponent getRegionComponent() {
+		return regionComponent;
+	}
+	public void setRegionComponent(IRegionComponent  regionComponent) {
+		this.regionComponent = regionComponent;
+	}
+	/**
+	 * 创建 区域
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Region createRegion(Region region) throws SQLException{
+	
+		return regionComponent.createRegion(region);
+	}
+	/**
+	 * 删除 区域
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRegion(long id){
+	
+		return regionComponent.deleteRegion(id);
+	}
+	
+	
+	/**
+	 * 修改 区域
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRegion(Region region){
+		return regionComponent.updateRegion(region);
+	
+	}
+
+		
+	/**
+	 * 修改 区域但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRegionIgnoreNull(Region region){
+			return regionComponent.updateRegionIgnoreNull(region);
+	
+	}
+	
+	/**
+	 * 查找 区域
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRegion(String where, String orderby,int limit,int offset){
+		return regionComponent.findAllRegion(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 区域
+	 * @param id
+	 * @return
+	 */
+	public Region findRegion(long id){
+		return regionComponent.findRegion(id);
+	}
+	
+	/**
+	 * 查找 区域
+	 * @param id
+	 * @return
+	 */
+	public Region findRegionbylanguage(long id,Integer language){
+		return regionComponent.findRegionbylanguage(id,language);
+	}
+	/** 
+	 * 查找 区域
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRegionForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return regionComponent.findAllRegion(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找区域
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRegionBySql(String sql,int limit,int offset){
+		return regionComponent.findAllRegion(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 区域
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRegionBySql(String sql){
+		return regionComponent.excuteRegionBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRegionBySql(String sql){
+		return regionComponent.countRegionBySql(sql);
+	}
+	
+	
+

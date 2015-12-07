@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Forderdelrec">
+  
+  <typeAlias alias="Forderdelrec" type="com.yf.system.base.forderdelrec.Forderdelrec"/>
+  
+
+  <resultMap id="resultForderdelrecMap" class="Forderdelrec">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="operateperson" column="C_OPERATEPERSON"/>
+  
+     <result property="operatetime" column="C_OPERATETIME"/>
+  
+     <result property="operatedesc" column="C_OPERATEDESC"/>
+  
+     <result property="operatestatus" column="C_OPERATESTATUS"/>
+  
+     <result property="nextstatus" column="C_NEXTSTATUS"/>
+   
+  </resultMap>
+  
+  <select id="findAllForderdelrec"  resultMap="resultForderdelrecMap"  parameterClass="java.util.Map">
+  
+    select * from T_FORDERDELREC
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllForderdelrecBySql"  resultMap="resultForderdelrecMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteForderdelrecBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countForderdelrecBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_FORDERDELREC
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findForderdelrec" parameterClass="long" resultClass="Forderdelrec">
+    select 
+    	ID as id,
+	  			C_ORDERID as orderid,
+	  			C_OPERATEPERSON as operateperson,
+	  			C_OPERATETIME as operatetime,
+	  			C_OPERATEDESC as operatedesc,
+	  			C_OPERATESTATUS as operatestatus,
+	  			C_NEXTSTATUS as nextstatus 
+     from T_FORDERDELREC
+    where ID = #id#
+  </select>
+   
+  <insert id="createForderdelrec" parameterClass="Forderdelrec">
+    insert into T_FORDERDELREC ( 
+    	ID,
+	  			C_ORDERID,
+	  			C_OPERATEPERSON,
+	  			C_OPERATETIME,
+	  			C_OPERATEDESC,
+	  			C_OPERATESTATUS,
+	  			C_NEXTSTATUS 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#orderid:DECIMAL#,
+						
+							#operateperson:DECIMAL#,
+						
+	  						#operatetime#,
+	  					
+	  						#operatedesc#,
+	  					
+							#operatestatus:DECIMAL#,
+						
+  							#nextstatus:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteForderdelrec" parameterClass="long">
+    delete from T_FORDERDELREC
+    where ID = #id#
+  </delete>
+	
+  <update id="updateForderdelrec" parameterClass="Forderdelrec">
+    update T_FORDERDELREC 
+    set 
+    	C_ORDERID = #orderid:DECIMAL#,
+						C_OPERATEPERSON = #operateperson:DECIMAL#,
+						C_OPERATETIME = #operatetime#,
+	  					C_OPERATEDESC = #operatedesc#,
+	  					C_OPERATESTATUS = #operatestatus:DECIMAL#,
+						C_NEXTSTATUS = #nextstatus:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

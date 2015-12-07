@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 车次信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Traininfo createTraininfo(Traininfo traininfo) throws SQLException;
+	
+	/**
+	 * 删除 车次信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTraininfo(long id);
+	
+	
+	/**
+	 * 修改 车次信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTraininfo(Traininfo traininfo);
+
+		
+	/**
+	 * 修改 车次信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTraininfoIgnoreNull(Traininfo traininfo);
+		
+	
+	/**
+	 * 查找 车次信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTraininfo(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 车次信息
+	 * @param id
+	 * @return
+	 */
+	public Traininfo findTraininfo(long id);
+	
+	
+	/** 
+	 * 查找 车次信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTraininfoForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找车次信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTraininfoBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 车次信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTraininfoBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTraininfoBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITraininfoComponent traininfoComponent;
+	  
+ 	
+ 	public ITraininfoComponent getTraininfoComponent() {
+		return traininfoComponent;
+	}
+	public void setTraininfoComponent(ITraininfoComponent  traininfoComponent) {
+		this.traininfoComponent = traininfoComponent;
+	}
+	/**
+	 * 创建 车次信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Traininfo createTraininfo(Traininfo traininfo) throws SQLException{
+	
+		return traininfoComponent.createTraininfo(traininfo);
+	}
+	/**
+	 * 删除 车次信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTraininfo(long id){
+	
+		return traininfoComponent.deleteTraininfo(id);
+	}
+	
+	
+	/**
+	 * 修改 车次信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTraininfo(Traininfo traininfo){
+		return traininfoComponent.updateTraininfo(traininfo);
+	
+	}
+
+		
+	/**
+	 * 修改 车次信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTraininfoIgnoreNull(Traininfo traininfo){
+			return traininfoComponent.updateTraininfoIgnoreNull(traininfo);
+	
+	}
+	
+	/**
+	 * 查找 车次信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTraininfo(String where, String orderby,int limit,int offset){
+		return traininfoComponent.findAllTraininfo(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 车次信息
+	 * @param id
+	 * @return
+	 */
+	public Traininfo findTraininfo(long id){
+		return traininfoComponent.findTraininfo(id);
+	}
+	
+	/** 
+	 * 查找 车次信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTraininfoForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return traininfoComponent.findAllTraininfo(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找车次信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTraininfoBySql(String sql,int limit,int offset){
+		return traininfoComponent.findAllTraininfo(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 车次信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTraininfoBySql(String sql){
+		return traininfoComponent.excuteTraininfoBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTraininfoBySql(String sql){
+		return traininfoComponent.countTraininfoBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,24 @@
+#*<link href="/cn_home/themedemo/skin/$!webwork.htmlEncode($parameters.themename)/css/base.css" rel="stylesheet" type="text/css" />
+<link href="/cn_home/themedemo/skin/$!webwork.htmlEncode($parameters.themename)/css/font.css" rel="stylesheet" type="text/css" />
+<link href="/cn_home/themedemo/skin/$!webwork.htmlEncode($parameters.themename)/css/index.css" rel="stylesheet" type="text/css" />
+#set($nametype=$!webwork.htmlEncode($parameters.name))
+nametype=$nametype
+$request
+*#
+
+<link href="/cn_home/themedemo/skin/$request.themename/css/base.css" rel="stylesheet" type="text/css" />
+<link href="/cn_home/themedemo/skin/$request.themename/css/font.css" rel="stylesheet" type="text/css" />
+<link href="/cn_home/themedemo/skin/$request.themename/css/index.css" rel="stylesheet" type="text/css" />
+
+#if($data.getRequest())  request***** #end
+#set($name=$!webwork.htmlEncode($parameters.name))
+name=$name
+#if($name=="black") jjjjjjj #end
+$webwork.request
+
+${data.Request}
+$webwork.htmlEncode($request.themename)
+
+paremeters=$parameters
+paremeters=$parameters.name
+request=$parameters.request

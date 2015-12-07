@@ -1,0 +1,1194 @@
+﻿package com.yf.website.web.action;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import com.ccservice.b2b2c.base.aircompany.Aircompany;
+import com.ccservice.b2b2c.base.charterorder.Charterorder;
+import com.ccservice.b2b2c.base.helpcenter.Helpcenter;
+import com.ccservice.b2b2c.base.helpcenterinfo.Helpcenterinfo;
+import com.ccservice.b2b2c.base.information.Information;
+import com.ccservice.b2b2c.base.informationinfo.Informationinfo;
+import com.ccservice.b2b2c.base.passenger.Passenger;
+import com.ccservice.b2b2c.base.planeservice.Planeservice;
+import com.ccservice.b2b2c.base.segmentinfo.Segmentinfo;
+import com.yf.website.web.server.Server;
+
+public class IndexAction extends B2b2cbackAction {
+	//帮助中心首页主推用
+	private List<Helpcenter> ListHelpcenterIndex;
+	private List<Information> ListInformationIndex;
+	//帮助信息LIST
+	public List<Helpcenterinfo> Listhelpcenterinfo;
+	//
+	private List<Helpcenter> ListHelpcenter;
+	private List<Helpcenterinfo> ListHelpcenterinfo;
+	private List<Informationinfo> ListInformationinfo;
+	private List<Information> ListInformation;
+	private List<Information> ListInformationtype;
+	private Information information;
+	private Informationinfo informationinfo;
+	private Helpcenterinfo helpcenterinfo = new Helpcenterinfo();
+	private Helpcenter helpcenter = new Helpcenter();
+	private Planeservice planeservice = new Planeservice();
+	private String forward;
+	private long HelpcenterID;//类型ID
+	private long HelpcenterinfoID;//信息ID
+	private long Helpid;
+	private long Informationid;
+	private String s_name;// 检索用
+	// 跳转用
+	private String forword;
+	// 包机服务时间
+	private String s_traveltime;
+	private String s_returntime;
+//判断是否是首页
+	
+	private long isindex=0;
+	// 3级栏目
+	private String onename;
+	private String twoname;
+	private String threename;
+	
+
+	// 首页加载信息
+	// 最新咨询
+	private List<Informationinfo> listZX;
+	// 包机服务
+	private List<Informationinfo> listBJ;
+	// 国内机票预订
+	private List<Informationinfo> listJPYD;
+	// 乘机常识
+	private List<Helpcenterinfo> listCJCS;
+	// 预订须知
+	private List<Helpcenterinfo> listYDXZ;
+
+	// 常见问题
+	private List<Helpcenterinfo> listCJWT;
+	//机票常识
+	
+	private List<Helpcenterinfo>  listCXBZ;
+	
+	// 热门推荐
+	private List<Helpcenterinfo> listRMTJ;
+	// 签证知识
+	private List<Helpcenterinfo> listQZ;
+
+	private List<Passenger>listpass;
+	
+	private List listlistpass = new ArrayList();
+	private Charterorder charterorder = new Charterorder();
+	private Segmentinfo segmentinfo = new Segmentinfo();
+	private Segmentinfo segmentinfo2 = new Segmentinfo();
+	//包机相关
+	//航空公司
+	private List<Aircompany> listAircompany;
+	private long s_type;//航班类型  1单程 2往返
+	private long s_usertype;//旅客类型  1内宾 2外宾
+	private String s_startime;//出发时间
+	private String s_endtime;//返程时间
+	private String s_companyname;//航空公司
+	private String s_flightcode;//航班号
+	private String s_stime;//最早时间
+	private String s_etime;//最晚时间
+	private String s_maxnum;//最大乘机人数
+	private String s_passtype;//乘机人类型  1成人  2儿童
+	
+	private String s_scity;//出发城市
+	private String s_ecity;//到达城市
+	
+	
+	private String c_idname;//乘机人姓名
+	private String c_idtype;//乘机人证件类型
+	private String c_idnumber;//乘机人证件号码
+	
+	private String s_username;//申请人姓名
+	private String s_tel;//申请人电话
+	private String s_qq;//申请人QQ
+	private String s_remarks;//申请备注
+	private long servicetype;//服务类型  1团队  2包机
+	
+	private int number;// 下标
+	
+	private int  type=0;//控制是否点击菜单用   0默认  1为点击菜单
+	
+	private String Address;//地图地址
+	//跳转到地图页面
+	public String  ToMap() throws Exception{
+	//	String address = new String(s_remarks.getBytes("ISO-8859-1"),"gb2312");
+		
+	//	s_remarks=java.net.URLDecoder.decode(s_remarks,"UTF-8"); 
+	/*System.out.println("Address="+Address);	
+	String address = new String(Address.getBytes("ISO-8859-1"),"UTF-8");
+	System.out.println("address=="+address);
+	Address=address;*/	
+	//	Address=address;
+		System.out.println("s_remarks=="+s_remarks);
+	
+		return "ToMap";
+	}
+	
+
+	public String  toService() throws Exception{
+		
+		
+		
+		
+		return "toService";
+	}
+	//添加包机申请--预览
+	public String yulan()throws Exception{
+		
+		
+		
+		String[] idnames = c_idname.split(",");
+		String[] idtypes = c_idtype.split(",");
+		String[] idnumbers = c_idnumber.split(",");
+		
+		
+		charterorder.setCreatetime(new Timestamp(System.currentTimeMillis()));
+		charterorder.setType(s_type);//
+		charterorder.setUsertype(s_usertype);
+		charterorder.setMaxnum(s_maxnum);
+		charterorder.setNum("");//实际人数
+		charterorder.setName(s_username);
+		charterorder.setQq(s_qq);
+		charterorder.setTel(s_tel);
+		charterorder.setRemarks(s_remarks);
+		charterorder.setStime(s_stime);
+		charterorder.setEtime(s_etime);
+		charterorder.setState(1l);//1新订单待审核  2审核通过待报价  3审核不通过  4已报价待回复  5报价过高  6报价满意 7
+		charterorder.setMemberid(getLoginUser().getId());
+		//charterorder=Server.getInstance().getAirService().createCharterorder(charterorder);
+		
+		for (int i = 0; i < idtypes.length; i++) {
+
+			if (idtypes[i] != null && !idtypes[i].toString().equals(" ")
+					&& idnumbers[i] != null&& !idnumbers[i].toString().equals(" ")
+					&& idnames[i] != null&& !idnames[i].toString().equals(" ")) {
+				
+				Passenger passenger = new Passenger();
+				passenger.setName(idnames[i].trim());
+				passenger.setIdtype(Integer.parseInt(idtypes[i].trim()));
+				passenger.setIdnumber(idnumbers[i].trim());
+				//passenger.setOrderid(charterorder.getId());
+				passenger.setLanguage(5);//默认查询的是1或者null  表示机票订单乘机人   5为包机订单乘机人
+				//Server.getInstance().getAirService().createPassenger(passenger);
+				//listpass.add(passenger);
+				listlistpass.add(passenger);
+			}
+		}
+		//单程
+		segmentinfo.setEndairport(s_ecity);
+		segmentinfo.setStartairport(s_scity);
+		segmentinfo.setFlightnumber(s_flightcode);
+		segmentinfo.setAircomapnycode(s_companyname);
+		segmentinfo.setDeparttime(dateToTimestamp(s_startime));
+		segmentinfo.setLanguage(5);//默认查询的是1或者null  表示机票订单乘机人   5为包机订单乘机人
+		//segmentinfo.setOrderid(charterorder.getId());
+		//Server.getInstance().getAirService().createSegmentinfo(segmentinfo);
+		if(s_type==2){//返程
+			
+			segmentinfo2.setEndairport(s_scity);
+			segmentinfo2.setStartairport(s_ecity);
+			segmentinfo2.setFlightnumber(s_flightcode);
+			segmentinfo2.setAircompanyname(s_companyname);
+			segmentinfo2.setDeparttime(dateToTimestamp(s_endtime));
+			segmentinfo2.setLanguage(5);//默认查询的是1或者null  表示机票订单乘机人   5为包机订单乘机人
+			//segmentinfo.setOrderid(charterorder.getId());
+			//Server.getInstance().getAirService().createSegmentinfo(segmentinfo);
+		}
+		/*String where=" where 1=1 and "+Passenger.COL_orderid+" ="+charterorder.getId()+" and "+Passenger.COL_language+" =5";
+		List<Passenger>list=Server.getInstance().getAirService().findAllPassenger(where, " ORDER BY ID  " , -1, 0);
+		
+		charterorder.setNum(list.size()+"");
+		charterorder.setMobile("C"+(charterorder.getId()+20000));
+		Server.getInstance().getAirService().updateCharterorderIgnoreNull(charterorder);
+	*/	
+	//	forword="login!tocharterlist.jspx";
+		return "toyulan";
+	}
+	
+	//添加包机申请
+	public String addCharter()throws Exception{
+		Charterorder charterorder = new Charterorder();
+		Segmentinfo segmentinfo = new Segmentinfo();
+		
+		
+		
+		System.out.println("servicetype==="+servicetype);
+		System.out.println("c_idname==="+c_idname);
+		System.out.println("c_idtype==="+c_idtype);
+		System.out.println("c_idnumber==="+c_idnumber);
+		String[] idnames = c_idname.split(",");
+		String[] idtypes = c_idtype.split(",");
+		String[] idnumbers = c_idnumber.split(",");
+		
+		
+		charterorder.setCreatetime(new Timestamp(System.currentTimeMillis()));
+		charterorder.setType(s_type);//
+		charterorder.setUsertype(s_usertype);
+		charterorder.setMaxnum(s_maxnum);
+		charterorder.setNum("");//实际人数
+		charterorder.setName(s_username);
+		charterorder.setQq(s_qq);
+		charterorder.setTel(s_tel);
+		charterorder.setRemarks(s_remarks);
+		charterorder.setStime(s_stime);
+		charterorder.setEtime(s_etime);
+		charterorder.setServicetype(servicetype);
+		charterorder.setState(1l);//1新订单待审核  2审核通过待报价  3审核不通过  4已报价待回复  5报价过高  6报价满意 7
+		charterorder.setMemberid(getLoginUser().getId());
+		charterorder=Server.getInstance().getAirService().createCharterorder(charterorder);
+		if(servicetype==1&&idtypes.length>0){
+		for (int i = 0; i < idtypes.length; i++) {
+
+			if (idtypes[i] != null && !idtypes[i].toString().equals(" ")
+					&& idnumbers[i] != null&& !idnumbers[i].toString().equals(" ")
+					&& idnames[i] != null&& !idnames[i].toString().equals(" ")) {
+				
+				Passenger passenger = new Passenger();
+				passenger.setName(idnames[i].trim());
+				passenger.setIdtype(Integer.parseInt(idtypes[i].trim()));
+				passenger.setIdnumber(idnumbers[i].trim());
+				passenger.setOrderid(charterorder.getId());
+				passenger.setLanguage(5);//默认查询的是1或者null  表示机票订单乘机人   5为包机订单乘机人
+				Server.getInstance().getAirService().createPassenger(passenger);
+			}
+		}
+		}
+		//单程
+		segmentinfo.setEndairport(s_ecity);
+		segmentinfo.setStartairport(s_scity);
+		segmentinfo.setFlightnumber(s_flightcode);
+		segmentinfo.setAircomapnycode(s_companyname);
+		segmentinfo.setDeparttime(dateToTimestamp(s_startime));
+		segmentinfo.setLanguage(5);//默认查询的是1或者null  表示机票订单乘机人   5为包机订单乘机人
+		segmentinfo.setOrderid(charterorder.getId());
+		Server.getInstance().getAirService().createSegmentinfo(segmentinfo);
+		if(s_type==2){//返程
+			
+			segmentinfo.setEndairport(s_scity);
+			segmentinfo.setStartairport(s_ecity);
+			segmentinfo.setFlightnumber(s_flightcode);
+			segmentinfo.setAircompanyname(s_companyname);
+			segmentinfo.setDeparttime(dateToTimestamp(s_endtime));
+			segmentinfo.setLanguage(5);//默认查询的是1或者null  表示机票订单乘机人   5为包机订单乘机人
+			segmentinfo.setOrderid(charterorder.getId());
+			Server.getInstance().getAirService().createSegmentinfo(segmentinfo);
+		}
+		String where=" where 1=1 and "+Passenger.COL_orderid+" ="+charterorder.getId()+" and "+Passenger.COL_language+" =5";
+		List<Passenger>list=Server.getInstance().getAirService().findAllPassenger(where, " ORDER BY ID  " , -1, 0);
+		
+		charterorder.setNum(list.size()+"");
+		//charterorder.setMobile("C"+(charterorder.getId()+20000));
+		charterorder.setOrdercode("C"+(charterorder.getId()+20000));
+		Server.getInstance().getAirService().updateCharterorderIgnoreNull(charterorder);
+		
+		forword="login!tocharterlist.jspx";
+		return "forword";
+	}
+	
+	public String toindex() throws Exception{
+		System.out.println("来到了首页");
+		String where = " where 1=1 and " + Informationinfo.COL_typeid
+				+ " in ( SELECT " + Information.COL_id + " FROM "
+				+ Information.TABLE + " where " + Information.COL_name
+				+ " ='最新咨询')";
+		listZX = Server.getInstance().getMemberService()
+				.findAllInformationinfo(where, " ORDER BY ID DESC ", 6, 0);
+		String whereBJ = " where 1=1 and " + Informationinfo.COL_typeid
+				+ " in ( SELECT " + Information.COL_id + " FROM "
+				+ Information.TABLE + " where " + Information.COL_name
+				+ " ='包机服务')";
+		listBJ = Server.getInstance().getMemberService()
+				.findAllInformationinfo(whereBJ, " ORDER BY ID DESC ", 2, 0);
+		String whereJPYD = " where 1=1 and " + Informationinfo.COL_typeid
+				+ " in ( SELECT " + Information.COL_id + " FROM "
+				+ Information.TABLE + " where " + Information.COL_name
+				+ " ='国内机票预订')";
+		listJPYD = Server.getInstance().getMemberService()
+				.findAllInformationinfo(whereJPYD, " ORDER BY ID DESC ", 10, 0);
+
+		String wherecjcs = " where 1=1 and " + Helpcenterinfo.COL_typeid
+				+ " in ( SELECT " + Helpcenter.COL_id + " FROM "
+				+ Helpcenter.TABLE + " where " + Helpcenter.COL_name
+				+ " ='乘机常识')";
+		listCJCS = Server.getInstance().getMemberService()
+				.findAllHelpcenterinfo(wherecjcs, " ORDER BY ID DESC ", 4, 0);
+
+		String whereydxz = " where 1=1 and " + Helpcenterinfo.COL_typeid
+				+ " in ( SELECT " + Helpcenter.COL_id + " FROM "
+				+ Helpcenter.TABLE + " where " + Helpcenter.COL_name
+				+ " ='预订须知')";
+		listYDXZ = Server.getInstance().getMemberService()
+				.findAllHelpcenterinfo(whereydxz, " ORDER BY ID DESC ", 4, 0);
+
+		String wherecjwt = " where 1=1 and " + Helpcenterinfo.COL_typeid
+				+ " in ( SELECT " + Helpcenter.COL_id + " FROM "
+				+ Helpcenter.TABLE + " where " + Helpcenter.COL_name
+				+ " ='常见问题')";
+		listCJWT = Server.getInstance().getMemberService()
+				.findAllHelpcenterinfo(wherecjwt, " ORDER BY ID DESC ", 7, 0);
+
+		String whereqz = " where 1=1 and " + Helpcenterinfo.COL_typeid
+				+ " in ( SELECT " + Helpcenter.COL_id + " FROM "
+				+ Helpcenter.TABLE + " where " + Helpcenter.COL_name
+				+ " ='签证知识')";
+		listQZ = Server.getInstance().getMemberService().findAllHelpcenterinfo(
+				whereqz, " ORDER BY ID DESC ", 2, 0);
+		
+		
+		String whereRMTJ = " where 1=1 and " + Informationinfo.COL_typeid
+		+ " in ( SELECT " + Information.COL_id + " FROM "
+		+ Information.TABLE + " where " + Information.COL_name
+		+ " ='热门推荐')";
+		listRMTJ = Server.getInstance().getMemberService()
+		.findAllInformationinfo(whereRMTJ, " ORDER BY ID DESC ", 3, 0);
+		
+		
+		String whereCXBZ = " where 1=1 and " + Helpcenterinfo.COL_typeid
+		+ " in ( SELECT " + Helpcenter.COL_id + " FROM "
+		+ Helpcenter.TABLE + " where " + Helpcenter.COL_name
+		+ " ='机票常识')";
+		listCXBZ = Server.getInstance().getMemberService().findAllHelpcenterinfo(
+				whereCXBZ, " ORDER BY ID DESC ", 2, 0);
+
+		String whereInfo =" where 1=1 and "+Helpcenterinfo.COL_typeid+" = ( SELECT "+Helpcenter.COL_id+" FROM "+Helpcenter.TABLE+" where "+Helpcenter.COL_name+" ='相关信息')";
+		Listhelpcenterinfo =Server.getInstance().getMemberService().findAllHelpcenterinfo(whereInfo, " ORDER BY ID DESC ", 8, 0);
+	
+		
+		//return "toindex"; //跳转到国祥首页
+		return "tostanderindex"; //跳转到标准首页
+
+	}
+
+	public String toplanserver() throws Exception {
+
+		System.out.println("来到了包机服务");
+		if(getLoginUser()==null){
+			
+			return "tologin";
+		}
+
+		//listAircompany=Server.getInstance().getTicketSearchService().getAircompanyCache();
+		String where=" where 1=1 and "+Aircompany.COL_isair+" =1";
+		listAircompany=Server.getInstance().getAirService().findAllAircompany(where, " ORDER BY ID DESC", -1, 0);
+		return "toplanserver";
+
+	}
+
+	public String tohelp() throws Exception {
+		isindex=1;
+		String whereHelp=" where 1=1 and "+Helpcenter.COL_isweb+" =1";
+		ListHelpcenterIndex=Server.getInstance().getMemberService().findAllHelpcenter(whereHelp, " ORDER BY ID DESC ", 3, 0);
+		
+		System.out.println("ListHelpcenterIndex=="+ListHelpcenterIndex);
+		
+		System.out.println("来到了帮助中心首页");
+		String where = " where 1=1 and " + Helpcenter.COL_state + " =1 and "
+				+ Helpcenter.COL_parentid + " =-1";
+		ListHelpcenter = Server.getInstance().getMemberService()
+				.findAllHelpcenter(where, " ORDER BY ID ", -1, 0);
+		if (ListHelpcenter.size() > 0) {
+			helpcenter = ListHelpcenter.get(0);
+			onename = "帮助中心";
+			twoname = Server.getInstance().getMemberService().findHelpcenter(
+					helpcenter.getId()).getName();
+
+			String whereh = " where 1=1 and " + Helpcenter.COL_parentid + " ="
+					+ helpcenter.getId();
+			List<Helpcenter> list = Server.getInstance().getMemberService()
+					.findAllHelpcenter(whereh, " ORDER BY ID ", -1, 0);
+			if (list.size() > 0) {
+				threename = list.get(0).getName();
+				HelpcenterID = list.get(0).getId();
+				String whereinfo = " where 1=1 and "
+						+ Helpcenterinfo.COL_typeid + " =" + HelpcenterID;
+				ListHelpcenterinfo = Server.getInstance().getMemberService()
+						.findAllHelpcenterinfo(whereinfo, " ORDER BY ID DESC ",
+								-1, 0);
+			}
+		}
+		return "tohelp";
+	}
+	//点击咨询菜单跳转用
+	public	String toInformationType(){
+		type=1;
+		String whereHelp=" where 1=1 and "+Information.COL_isweb+" =1";
+		ListHelpcenterIndex=Server.getInstance().getMemberService().findAllInformation(whereHelp, " ORDER BY ID DESC ", 3, 0);
+		
+		
+		String where = " where 1=1 and " + Information.COL_state + " =1 and "
+		+ Information.COL_parentid + " =-1";
+		ListInformation = Server.getInstance().getMemberService()
+				.findAllInformation(where, " ORDER BY ID ", -1, 0);
+		if (ListInformation.size() > 0) {
+			
+			onename = "资讯中心";
+			twoname = Server.getInstance().getMemberService().findInformation(
+					HelpcenterID).getName();
+		
+		
+		}
+		String wheretype = " where 1=1 and " + Information.COL_state + " =1 and "
+		+ Information.COL_parentid + " ="+HelpcenterID;
+		ListInformationtype=Server.getInstance().getMemberService()
+		.findAllInformation(wheretype, " ORDER BY ID ", -1, 0);
+		System.out.println("ListInformationtype=="+ListInformationtype.size());
+		Informationid=HelpcenterID;
+		
+		
+		return "toinformation";
+	}
+	public String toinformation() {
+		
+		isindex=1;
+		String whereHelp=" where 1=1 and "+Information.COL_isweb+" =1";
+		ListHelpcenterIndex=Server.getInstance().getMemberService().findAllInformation(whereHelp, " ORDER BY ID DESC ", 3, 0);
+		
+		
+		
+		System.out.println("来到了资讯中心首页");
+		String where = " where 1=1 and " + Information.COL_state + " =1 and "
+				+ Information.COL_parentid + " =-1";
+		ListInformation = Server.getInstance().getMemberService()
+				.findAllInformation(where, " ORDER BY ID ", -1, 0);
+		if (ListInformation.size() > 0) {
+			information = ListInformation.get(0);
+			onename = "资讯中心";
+			twoname = Server.getInstance().getMemberService().findInformation(
+					information.getId()).getName();
+
+			String whereh = " where 1=1 and " + Information.COL_parentid + " ="
+					+ information.getId();
+			List<Information> list = Server.getInstance().getMemberService()
+					.findAllInformation(whereh, " ORDER BY ID ", -1, 0);
+			if (list.size() > 0) {
+				threename = list.get(0).getName();
+			}
+			HelpcenterID = list.get(0).getId();
+
+			String whereinfo = " where 1=1 and " + Informationinfo.COL_typeid
+					+ " =" + HelpcenterID;
+			ListInformationinfo = Server.getInstance().getMemberService()
+					.findAllInformationinfo(whereinfo, " ORDER BY ID DESC ",
+							-1, 0);
+		}
+		return "toinformation";
+	}
+	//帮助中心首页,点击信息进入详细信息页面
+	public String tohelpinfoByInfoId() throws Exception {
+		helpcenterinfo=Server.getInstance().getMemberService().findHelpcenterinfo(HelpcenterinfoID);
+		
+		String wherehelp = " where 1=1 and " + Helpcenter.COL_state
+		+ " =1 and " + Helpcenter.COL_parentid + " =-1";
+ListHelpcenter = Server.getInstance().getMemberService()
+		.findAllHelpcenter(wherehelp, " ORDER BY ID ", -1, 0);
+HelpcenterID=helpcenterinfo.getTypeid();
+helpcenter = Server.getInstance().getMemberService().findHelpcenter(
+		helpcenterinfo.getTypeid());
+Helpid = helpcenter.getParentid();
+		
+onename = "帮助中心";
+twoname=Server.getInstance().getMemberService().findHelpcenter(helpcenter.getParentid()).getName();
+threename=helpcenter.getName();;	
+		return "tohelpinfoByInfoId";
+	}
+	//咨询中心首页,点击信息进入详细信息页面
+	public String toinformationinfoByInfoId() throws Exception {
+
+		informationinfo=Server.getInstance().getMemberService().findInformationinfo(HelpcenterinfoID);	
+		
+		String where = " where 1=1 and " + Information.COL_state + " =1 and "
+		+ Information.COL_parentid + " =-1";
+		ListInformation = Server.getInstance().getMemberService()
+				.findAllInformation(where, " ORDER BY ID ", -1, 0);
+
+
+//Informationid=informationinfo.getTypeid();
+information = Server.getInstance().getMemberService().findInformation(
+		informationinfo.getTypeid());
+Informationid = information.getParentid();
+		
+onename = "帮助中心";
+twoname=Server.getInstance().getMemberService().findInformation(information.getParentid()).getName();
+threename=information.getName();;	
+		return "toinformationinfoByInfoId";
+	}
+	
+	
+	public String toHelpInfo() throws Exception {
+		System.out.println("来到了帮助中心详细信息首页");
+		String wherehelp = " where 1=1 and " + Helpcenter.COL_state
+				+ " =1 and " + Helpcenter.COL_parentid + " =-1";
+		ListHelpcenter = Server.getInstance().getMemberService()
+				.findAllHelpcenter(wherehelp, " ORDER BY ID ", -1, 0);
+
+		helpcenter = Server.getInstance().getMemberService().findHelpcenter(
+				HelpcenterID);
+		String where = " where 1=1 and " + Helpcenterinfo.COL_typeid + " ="
+				+ HelpcenterID;
+		ListHelpcenterinfo = Server.getInstance().getMemberService()
+				.findAllHelpcenterinfo(where, " ORDER BY ID DESC ", -1, 0);
+		if (s_name != null && s_name.length() > 0) {
+
+			ListHelpcenterinfo = Server.getInstance().getMemberService()
+					.findAllHelpcenterinfo(
+							" WHERE 1=1 AND " + Helpcenterinfo.COL_name
+									+ " like '%" + s_name.trim() + "%' or "
+									+ Helpcenterinfo.COL_info + " like '%"
+									+ s_name.trim() + "%'",
+							" ORDER BY ID DESC ", -1, 0);
+		}
+		Helpid = helpcenter.getParentid();
+		for(int a=0;a<ListHelpcenterinfo.size();a++){
+			
+			if(HelpcenterinfoID==ListHelpcenterinfo.get(a).getId()){
+				
+				System.out.println("--"+a+"---");
+				number=a+1;
+			}
+			
+		}
+		
+		/*
+		 * HttpServletRequest request = ServletActionContext.getRequest();
+		 * HttpServletResponse response =ServletActionContext.getResponse();
+		 * request.setAttribute("Helpid", Helpid);
+		 */
+		onename = "帮助中心";
+		twoname = Server.getInstance().getMemberService().findHelpcenter(
+				helpcenter.getParentid()).getName();
+		threename = helpcenter.getName();
+		return "tohelp";
+	}
+
+	public String toInformationinfo() throws Exception {
+
+		System.out.println("来到了资讯中心详细信息首页");
+
+		String wherehelp = " where 1=1 and " + Information.COL_state
+				+ " =1 and " + Information.COL_parentid + " =-1";
+		ListInformation = Server.getInstance().getMemberService()
+				.findAllInformation(wherehelp, " ORDER BY ID ", -1, 0);
+
+		information = Server.getInstance().getMemberService().findInformation(
+				HelpcenterID);
+		String where = " where 1=1 and " + Informationinfo.COL_typeid + " ="
+				+ HelpcenterID;
+		ListInformationinfo = Server.getInstance().getMemberService()
+				.findAllInformationinfo(where, " ORDER BY ID DESC ", -1, 0);
+
+		if (s_name != null && s_name.length() > 0) {
+
+			ListInformationinfo = Server.getInstance().getMemberService()
+					.findAllInformationinfo(
+							" WHERE 1=1 AND " + Informationinfo.COL_name
+									+ " like '%" + s_name.trim() + "%' or "
+									+ Informationinfo.COL_info + " like '%"
+									+ s_name.trim() + "%'",
+							" ORDER BY ID DESC ", -1, 0);
+		}
+		Informationid = information.getParentid();
+		for(int a=0;a<ListInformationinfo.size();a++){
+			
+			if(HelpcenterinfoID==ListInformationinfo.get(a).getId()){
+				number=a+1;
+			}
+			
+		}
+		System.out.println(number);
+		/*
+		 * HttpServletRequest request = ServletActionContext.getRequest();
+		 * HttpServletResponse response =ServletActionContext.getResponse();
+		 * request.setAttribute("Helpid", Helpid);
+		 */
+		onename = "资讯中心";
+		twoname = Server.getInstance().getMemberService().findInformation(
+				information.getParentid()).getName();
+		threename = information.getName();
+		return "toinformation";
+	}
+
+	public String toleft() throws Exception {
+		System.out.println("来到了toleft==Helpid=" + Helpid);
+		String where = " where 1=1 and " + Helpcenter.COL_state + " =1 and "
+				+ Helpcenter.COL_parentid + " =-1";
+		ListHelpcenter = Server.getInstance().getMemberService()
+				.findAllHelpcenter(where, " ORDER BY ID ", -1, 0);
+		System.out.println("ListHelpcenter==" + ListHelpcenter.size());
+		return "forward";
+
+	}
+
+	public List<Helpcenter> GetHelpLastById(long id) throws Exception {
+		// System.out.println("来到了GetHelpLastById=="+id);
+		String where = " where 1=1 and " + Helpcenter.COL_state + " =1 AND "
+				+ Helpcenter.COL_parentid + " =" + id;
+		ListHelpcenter = Server.getInstance().getMemberService()
+				.findAllHelpcenter(where, " ORDER BY ID ", -1, 0);
+		// System.out.println("ListHelpcenter=="+ListHelpcenter.size());
+		
+		
+		return ListHelpcenter;
+	}
+	public List<Helpcenterinfo> GetHelpInfoById(long id,int len) throws Exception {
+		// System.out.println("来到了GetHelpLastById=="+id);
+		if(len==0){
+			
+			len=4;
+		}
+		String where = " where 1=1 and " + Helpcenterinfo.COL_state + " =1 AND "
+				+ Helpcenterinfo.COL_typeid + " =" + id;
+		List<Helpcenterinfo> listinfo = Server.getInstance().getMemberService()
+				.findAllHelpcenterinfo(where, " ORDER BY ID ", len, 0);
+		
+		return listinfo;
+	}
+
+	public List<Information> getInformationLastById(long id) throws Exception {
+		String where = " where 1=1 and " + Information.COL_state + " =1 and "
+				+ Information.COL_parentid + " =" + id;
+		ListInformation = Server.getInstance().getMemberService()
+				.findAllInformation(where, "ORDER BY ID", -1, 0);
+		return ListInformation;
+	}
+	public List<Informationinfo> GetInformInfoById(long id,int len) throws Exception {
+		if(len==0){
+					
+					len=4;
+				}
+		String where = " where 1=1 and " + Informationinfo.COL_state + " =1 and "
+				+ Informationinfo.COL_typeid + " =" + id;
+		List<Informationinfo> list = Server.getInstance().getMemberService()
+				.findAllInformationinfo(where, "ORDER BY ID", len, 0);
+		return list;
+	}
+	
+	public String AddPlanservice() throws Exception {
+		// Planeservice planeservice= new Planeservice();
+		planeservice.setCreatetime(new Timestamp(System.currentTimeMillis()));
+		// planeservice.setCreatetime(new
+		// Timestamp(System.currentTimeMillis()));
+		/*
+		 * if(getLoginUser()!=null){
+		 * planeservice.setMemberid(getLoginUser().getId()); }
+		 */
+		planeservice.setReturntime(s_returntime);
+		planeservice.setTraveltime(s_traveltime);
+		planeservice.setState(1l);
+		planeservice.setMemberid(61l);
+		Server.getInstance().getMemberService()
+				.createPlaneservice(planeservice);
+
+		return this.toplanserver();
+	}
+
+	@Override
+	public Object getModel() {
+		// TODO Auto-generated method stub
+		return planeservice;
+	}
+
+	public List<Helpcenter> getListHelpcenter() {
+		return ListHelpcenter;
+	}
+
+	public void setListHelpcenter(List<Helpcenter> listHelpcenter) {
+		ListHelpcenter = listHelpcenter;
+	}
+
+	public String getForward() {
+		return forward;
+	}
+
+	public void setForward(String forward) {
+		this.forward = forward;
+	}
+
+	public Helpcenterinfo getHelpcenterinfo() {
+		return helpcenterinfo;
+	}
+
+	public void setHelpcenterinfo(Helpcenterinfo helpcenterinfo) {
+		this.helpcenterinfo = helpcenterinfo;
+	}
+
+	public long getHelpcenterID() {
+		return HelpcenterID;
+	}
+
+	public void setHelpcenterID(long helpcenterID) {
+		HelpcenterID = helpcenterID;
+	}
+
+	public List<Helpcenterinfo> getListHelpcenterinfo() {
+		return ListHelpcenterinfo;
+	}
+
+	public void setListHelpcenterinfo(List<Helpcenterinfo> listHelpcenterinfo) {
+		ListHelpcenterinfo = listHelpcenterinfo;
+	}
+
+	public Helpcenter getHelpcenter() {
+		return helpcenter;
+	}
+
+	public void setHelpcenter(Helpcenter helpcenter) {
+		this.helpcenter = helpcenter;
+	}
+
+	public long getHelpid() {
+		return Helpid;
+	}
+
+	public void setHelpid(long helpid) {
+		Helpid = helpid;
+	}
+
+	public String getS_name() {
+		return s_name;
+	}
+
+	public void setS_name(String s_name) {
+		this.s_name = s_name;
+	}
+
+	public String getOnename() {
+		return onename;
+	}
+
+	public void setOnename(String onename) {
+		this.onename = onename;
+	}
+
+	public String getTwoname() {
+		return twoname;
+	}
+
+	public void setTwoname(String twoname) {
+		this.twoname = twoname;
+	}
+
+	public String getThreename() {
+		return threename;
+	}
+
+	public void setThreename(String threename) {
+		this.threename = threename;
+	}
+
+	public List<Information> getListInformation() {
+		return ListInformation;
+	}
+
+	public void setListInformation(List<Information> listInformation) {
+		ListInformation = listInformation;
+	}
+
+	public Information getInformation() {
+		return information;
+	}
+
+	public void setInformation(Information information) {
+		this.information = information;
+	}
+
+	public List<Informationinfo> getListInformationinfo() {
+		return ListInformationinfo;
+	}
+
+	public void setListInformationinfo(List<Informationinfo> listInformationinfo) {
+		ListInformationinfo = listInformationinfo;
+	}
+
+	public long getInformationid() {
+		return Informationid;
+	}
+
+	public void setInformationid(long informationid) {
+		Informationid = informationid;
+	}
+
+	public Planeservice getPlaneservice() {
+		return planeservice;
+	}
+
+	public void setPlaneservice(Planeservice planeservice) {
+		this.planeservice = planeservice;
+	}
+
+	public String getS_traveltime() {
+		return s_traveltime;
+	}
+
+	public void setS_traveltime(String s_traveltime) {
+		this.s_traveltime = s_traveltime;
+	}
+
+	public String getS_returntime() {
+		return s_returntime;
+	}
+
+	public void setS_returntime(String s_returntime) {
+		this.s_returntime = s_returntime;
+	}
+
+	public List<Informationinfo> getListZX() {
+		return listZX;
+	}
+
+	public void setListZX(List<Informationinfo> listZX) {
+		this.listZX = listZX;
+	}
+
+	public List<Informationinfo> getListBJ() {
+		return listBJ;
+	}
+
+	public void setListBJ(List<Informationinfo> listBJ) {
+		this.listBJ = listBJ;
+	}
+
+	public List<Informationinfo> getListJPYD() {
+		return listJPYD;
+	}
+
+	public void setListJPYD(List<Informationinfo> listJPYD) {
+		this.listJPYD = listJPYD;
+	}
+
+	public List<Helpcenterinfo> getListCJCS() {
+		return listCJCS;
+	}
+
+	public void setListCJCS(List<Helpcenterinfo> listCJCS) {
+		this.listCJCS = listCJCS;
+	}
+
+	public List<Helpcenterinfo> getListYDXZ() {
+		return listYDXZ;
+	}
+
+	public void setListYDXZ(List<Helpcenterinfo> listYDXZ) {
+		this.listYDXZ = listYDXZ;
+	}
+
+	public List<Helpcenterinfo> getListCJWT() {
+		return listCJWT;
+	}
+
+	public void setListCJWT(List<Helpcenterinfo> listCJWT) {
+		this.listCJWT = listCJWT;
+	}
+
+	public List<Helpcenterinfo> getListQZ() {
+		return listQZ;
+	}
+
+	public void setListQZ(List<Helpcenterinfo> listQZ) {
+		this.listQZ = listQZ;
+	}
+	public List<Aircompany> getListAircompany() {
+		return listAircompany;
+	}
+	public void setListAircompany(List<Aircompany> listAircompany) {
+		this.listAircompany = listAircompany;
+	}
+
+	public long getHelpcenterinfoID() {
+		return HelpcenterinfoID;
+	}
+
+	public void setHelpcenterinfoID(long helpcenterinfoID) {
+		HelpcenterinfoID = helpcenterinfoID;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public long getS_type() {
+		return s_type;
+	}
+
+	public void setS_type(long s_type) {
+		this.s_type = s_type;
+	}
+
+	public long getS_usertype() {
+		return s_usertype;
+	}
+
+	public void setS_usertype(long s_usertype) {
+		this.s_usertype = s_usertype;
+	}
+
+	public String getS_startime() {
+		return s_startime;
+	}
+
+	public void setS_startime(String s_startime) {
+		this.s_startime = s_startime;
+	}
+
+	public String getS_endtime() {
+		return s_endtime;
+	}
+
+	public void setS_endtime(String s_endtime) {
+		this.s_endtime = s_endtime;
+	}
+
+	public String getS_companyname() {
+		return s_companyname;
+	}
+
+	public void setS_companyname(String s_companyname) {
+		this.s_companyname = s_companyname;
+	}
+
+	public String getS_flightcode() {
+		return s_flightcode;
+	}
+
+	public void setS_flightcode(String s_flightcode) {
+		this.s_flightcode = s_flightcode;
+	}
+
+	public String getS_stime() {
+		return s_stime;
+	}
+
+	public void setS_stime(String s_stime) {
+		this.s_stime = s_stime;
+	}
+
+	public String getS_etime() {
+		return s_etime;
+	}
+
+	public void setS_etime(String s_etime) {
+		this.s_etime = s_etime;
+	}
+
+	public String getS_maxnum() {
+		return s_maxnum;
+	}
+
+	public void setS_maxnum(String s_maxnum) {
+		this.s_maxnum = s_maxnum;
+	}
+
+	public String getS_passtype() {
+		return s_passtype;
+	}
+
+	public void setS_passtype(String s_passtype) {
+		this.s_passtype = s_passtype;
+	}
+
+	public String getS_scity() {
+		return s_scity;
+	}
+
+	public void setS_scity(String s_scity) {
+		this.s_scity = s_scity;
+	}
+
+	public String getS_ecity() {
+		return s_ecity;
+	}
+
+	public void setS_ecity(String s_ecity) {
+		this.s_ecity = s_ecity;
+	}
+
+	public String getC_idname() {
+		return c_idname;
+	}
+
+	public void setC_idname(String c_idname) {
+		this.c_idname = c_idname;
+	}
+
+	public String getC_idtype() {
+		return c_idtype;
+	}
+
+	public void setC_idtype(String c_idtype) {
+		this.c_idtype = c_idtype;
+	}
+
+	public String getC_idnumber() {
+		return c_idnumber;
+	}
+
+	public void setC_idnumber(String c_idnumber) {
+		this.c_idnumber = c_idnumber;
+	}
+
+	public String getS_username() {
+		return s_username;
+	}
+
+	public void setS_username(String s_username) {
+		this.s_username = s_username;
+	}
+
+	public String getS_tel() {
+		return s_tel;
+	}
+
+	public void setS_tel(String s_tel) {
+		this.s_tel = s_tel;
+	}
+
+	public String getS_qq() {
+		return s_qq;
+	}
+
+	public void setS_qq(String s_qq) {
+		this.s_qq = s_qq;
+	}
+
+	public String getS_remarks() {
+		return s_remarks;
+	}
+
+	public void setS_remarks(String s_remarks) {
+		this.s_remarks = s_remarks;
+	}
+
+	public String getForword() {
+		return forword;
+	}
+
+	public void setForword(String forword) {
+		this.forword = forword;
+	}
+
+	public List<Passenger> getListpass() {
+		return listpass;
+	}
+
+	public void setListpass(List<Passenger> listpass) {
+		this.listpass = listpass;
+	}
+
+	public Charterorder getCharterorder() {
+		return charterorder;
+	}
+
+	public void setCharterorder(Charterorder charterorder) {
+		this.charterorder = charterorder;
+	}
+
+	public Segmentinfo getSegmentinfo() {
+		return segmentinfo;
+	}
+
+	public void setSegmentinfo(Segmentinfo segmentinfo) {
+		this.segmentinfo = segmentinfo;
+	}
+
+	public Segmentinfo getSegmentinfo2() {
+		return segmentinfo2;
+	}
+
+	public void setSegmentinfo2(Segmentinfo segmentinfo2) {
+		this.segmentinfo2 = segmentinfo2;
+	}
+
+	public List getListlistpass() {
+		return listlistpass;
+	}
+
+	public void setListlistpass(List listlistpass) {
+		this.listlistpass = listlistpass;
+	}
+	public int getType() {
+		return type;
+	}
+	public void setType(int type) {
+		this.type = type;
+	}
+	public List<Information> getListInformationtype() {
+		return ListInformationtype;
+	}
+	public void setListInformationtype(List<Information> listInformationtype) {
+		ListInformationtype = listInformationtype;
+	}
+	public List<Helpcenterinfo> getListRMTJ() {
+		return listRMTJ;
+	}
+	public void setListRMTJ(List<Helpcenterinfo> listRMTJ) {
+		this.listRMTJ = listRMTJ;
+	}
+	public List<Helpcenterinfo> getListCXBZ() {
+		return listCXBZ;
+	}
+	public void setListCXBZ(List<Helpcenterinfo> listCXBZ) {
+		this.listCXBZ = listCXBZ;
+	}
+	public long getIsindex() {
+		return isindex;
+	}
+	public void setIsindex(long isindex) {
+		this.isindex = isindex;
+	}
+	public List<Helpcenter> getListHelpcenterIndex() {
+		return ListHelpcenterIndex;
+	}
+	public void setListHelpcenterIndex(List<Helpcenter> listHelpcenterIndex) {
+		ListHelpcenterIndex = listHelpcenterIndex;
+	}
+	public List<Information> getListInformationIndex() {
+		return ListInformationIndex;
+	}
+	public void setListInformationIndex(List<Information> listInformationIndex) {
+		ListInformationIndex = listInformationIndex;
+	}
+	public Informationinfo getInformationinfo() {
+		return informationinfo;
+	}
+	public void setInformationinfo(Informationinfo informationinfo) {
+		this.informationinfo = informationinfo;
+	}
+
+	public String getAddress() {
+		return Address;
+	}
+
+	public void setAddress(String address) {
+		Address = address;
+	}
+
+
+	public long getServicetype() {
+		return servicetype;
+	}
+
+
+	public void setServicetype(long servicetype) {
+		this.servicetype = servicetype;
+	}
+
+
+	public List<Helpcenterinfo> getListhelpcenterinfo() {
+		return Listhelpcenterinfo;
+	}
+
+
+	public void setListhelpcenterinfo(List<Helpcenterinfo> listhelpcenterinfo) {
+		Listhelpcenterinfo = listhelpcenterinfo;
+	}
+
+}

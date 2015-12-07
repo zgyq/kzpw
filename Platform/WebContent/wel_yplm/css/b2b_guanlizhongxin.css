@@ -1,0 +1,49 @@
+body
+	{
+		color:#696969;font-family: "ËÎÌו";font-size: 12px; background: url("images/b2b_body.png") repeat;
+	}
+a
+	{
+		text-decoration:none; color:#696969;
+	}
+a:hover
+	{
+		text-decoration:underline;color: #E4393C;
+	}
+* 
+	{
+		margin: 0;
+		padding: 0;
+	}
+.clear
+	{
+		clear:both; float:none;
+	}
+.b2b_guanlizhongxin
+	{
+		width:90%;margin:0 auto;
+	}
+.b2b_guanlizhongxin_body
+	{
+		width:100%;margin:0 auto;
+	}
+.b2b_guanlizhongxin_body h2
+	{
+		width:80%;height:30px;font-size:13px;color:#696969;padding-left:10px;line-height:30px;border-bottom:1px dashed #696969;
+	}
+.b2b_guanlizhongxin_body ul
+	{
+		width:100%;height:auto;float:left;
+	}
+.b2b_guanlizhongxin_body  ul li
+	{
+		padding-left:30px;height:34px;line-height:34px;list-style-type:none
+	}
+.b2b_guanlizhongxin_body  ul li a
+	{
+		padding-left:30px;height:34px;line-height:34px;color:#2580c5;
+	}
+.b2b_guanlizhongxin_body  ul li span
+	{
+		color:#fe0814;
+	}	

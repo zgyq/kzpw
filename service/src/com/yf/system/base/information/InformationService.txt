@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 资讯中心
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Information createInformation(Information information) throws SQLException;
+	
+	/**
+	 * 删除 资讯中心
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteInformation(long id);
+	
+	
+	/**
+	 * 修改 资讯中心
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateInformation(Information information);
+
+		
+	/**
+	 * 修改 资讯中心但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateInformationIgnoreNull(Information information);
+		
+	
+	/**
+	 * 查找 资讯中心
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInformation(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 资讯中心
+	 * @param id
+	 * @return
+	 */
+	public Information findInformation(long id);
+	
+	
+	/** 
+	 * 查找 资讯中心
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllInformationForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找资讯中心
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInformationBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 资讯中心
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteInformationBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countInformationBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IInformationComponent informationComponent;
+	  
+ 	
+ 	public IInformationComponent getInformationComponent() {
+		return informationComponent;
+	}
+	public void setInformationComponent(IInformationComponent  informationComponent) {
+		this.informationComponent = informationComponent;
+	}
+	/**
+	 * 创建 资讯中心
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Information createInformation(Information information) throws SQLException{
+	
+		return informationComponent.createInformation(information);
+	}
+	/**
+	 * 删除 资讯中心
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteInformation(long id){
+	
+		return informationComponent.deleteInformation(id);
+	}
+	
+	
+	/**
+	 * 修改 资讯中心
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateInformation(Information information){
+		return informationComponent.updateInformation(information);
+	
+	}
+
+		
+	/**
+	 * 修改 资讯中心但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateInformationIgnoreNull(Information information){
+			return informationComponent.updateInformationIgnoreNull(information);
+	
+	}
+	
+	/**
+	 * 查找 资讯中心
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInformation(String where, String orderby,int limit,int offset){
+		return informationComponent.findAllInformation(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 资讯中心
+	 * @param id
+	 * @return
+	 */
+	public Information findInformation(long id){
+		return informationComponent.findInformation(id);
+	}
+	
+	/** 
+	 * 查找 资讯中心
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllInformationForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return informationComponent.findAllInformation(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找资讯中心
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllInformationBySql(String sql,int limit,int offset){
+		return informationComponent.findAllInformation(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 资讯中心
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteInformationBySql(String sql){
+		return informationComponent.excuteInformationBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countInformationBySql(String sql){
+		return informationComponent.countInformationBySql(sql);
+	}
+	
+	
+

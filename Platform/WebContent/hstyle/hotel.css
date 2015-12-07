@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#content{ width:950px; margin:0 auto; margin-top:3px;}
+
+#content .left{ width:260px; float:left;}
+#content .search{background:url(../images/bj_sea.gif) no-repeat; padding-left:11px; float:left;}
+#content .searchh{height:183px;}
+#content .searchh td{ padding-left:10px; line-height:23px;}
+#content .tijiao{width:88%; text-align:center; padding-top:10px; margin:0 auto;}
+#content .topx{background:url(../images/bj_ltop.gif); height:11px; line-height:11px;}
+
+
+#content .liansuo{ margin-top:5px; }
+#content .ls{ background:url(../images/bj_ls.gif) no-repeat; height:124px; width:247px; margin:0 auto;}
+#content .jieshao{line-height:15px; text-indent:2em; padding:3px 7px 3px 12px;}
+#content .box_ad{border:1px solid #CECFD0; padding:3px; width:82px; height:56px; margin-top:5px;}
+#content .gongju td{ padding:0;}
+
+
+
+
+#content .right{ width:680px; float:right; overflow:hidden}
+#content .ctiy{ margin:0 auto; width:237px;}
+#content .ctiy ul{}
+#content .ctiy ul li{ border:1px solid #CCCCCC; border-bottom:none; border-right:none; float:left; width:58px; height:22px; line-height:22px; background:url(../images/bj_ctiy.gif);  text-align:center; margin-top:0px; border-collapse:collapse}
+#content .ctiy_list{width:315px; background:#F4F4F4; height:162px; margin-left:10px; padding-left:5px; line-height:22px; padding-top:5px; display:inline}
+#content .ctiy_listr{width:316px; background:#F4F4F4; height:162px; margin-right:10px; padding-left:5px; line-height:22px; padding-top:5px;display:inline}
+#content .biaoti{width:223px; background:#E5E6E6; padding:0 5px 0 5px; float:left;}
+#content .tuijian{width:233px; margin:0 auto; background:#F4F4F4; margin-top:5px; padding:2px;}
+#content .ad{width:250px; margin:0 auto; padding-bottom:5px;}
+
+#content .seachhh{width:660px; line-height:24px; background:#D8EAF4; padding:0 10px 0 10px; float:left}
+#content .jiudian{margin-top:10px;}
+#content .kongfang{ height:30px; line-height:30px; background:url(../images/bj_wul.gif); padding-left:20px; margin-top:10px;}
+#content .kongfang a{}
+#content .kongfang a:hover{text-decoration: none;}
+#content .cuowei{background:url(../images/bj_cuowei.gif); line-height:26px; padding-left:20px; border-left:1px solid #cccccc; border-right:1px solid #cccccc; margin-top:1px;}

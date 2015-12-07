@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 航线仓位信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Airliencabin createAirliencabin(Airliencabin airliencabin) throws SQLException;
+	
+	/**
+	 * 删除 航线仓位信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAirliencabin(long id);
+	
+	
+	/**
+	 * 修改 航线仓位信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAirliencabin(Airliencabin airliencabin);
+
+		
+	/**
+	 * 修改 航线仓位信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAirliencabinIgnoreNull(Airliencabin airliencabin);
+		
+	
+	/**
+	 * 查找 航线仓位信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirliencabin(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 航线仓位信息
+	 * @param id
+	 * @return
+	 */
+	public Airliencabin findAirliencabin(long id);
+	
+	
+	/** 
+	 * 查找 航线仓位信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAirliencabinForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找航线仓位信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirliencabinBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 航线仓位信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAirliencabinBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAirliencabinBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IAirliencabinComponent airliencabinComponent;
+	  
+ 	
+ 	public IAirliencabinComponent getAirliencabinComponent() {
+		return airliencabinComponent;
+	}
+	public void setAirliencabinComponent(IAirliencabinComponent  airliencabinComponent) {
+		this.airliencabinComponent = airliencabinComponent;
+	}
+	/**
+	 * 创建 航线仓位信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Airliencabin createAirliencabin(Airliencabin airliencabin) throws SQLException{
+	
+		return airliencabinComponent.createAirliencabin(airliencabin);
+	}
+	/**
+	 * 删除 航线仓位信息
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAirliencabin(long id){
+	
+		return airliencabinComponent.deleteAirliencabin(id);
+	}
+	
+	
+	/**
+	 * 修改 航线仓位信息
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAirliencabin(Airliencabin airliencabin){
+		return airliencabinComponent.updateAirliencabin(airliencabin);
+	
+	}
+
+		
+	/**
+	 * 修改 航线仓位信息但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAirliencabinIgnoreNull(Airliencabin airliencabin){
+			return airliencabinComponent.updateAirliencabinIgnoreNull(airliencabin);
+	
+	}
+	
+	/**
+	 * 查找 航线仓位信息
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirliencabin(String where, String orderby,int limit,int offset){
+		return airliencabinComponent.findAllAirliencabin(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 航线仓位信息
+	 * @param id
+	 * @return
+	 */
+	public Airliencabin findAirliencabin(long id){
+		return airliencabinComponent.findAirliencabin(id);
+	}
+	
+	/** 
+	 * 查找 航线仓位信息
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAirliencabinForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return airliencabinComponent.findAllAirliencabin(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找航线仓位信息
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAirliencabinBySql(String sql,int limit,int offset){
+		return airliencabinComponent.findAllAirliencabin(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 航线仓位信息
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAirliencabinBySql(String sql){
+		return airliencabinComponent.excuteAirliencabinBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAirliencabinBySql(String sql){
+		return airliencabinComponent.countAirliencabinBySql(sql);
+	}
+	
+	
+

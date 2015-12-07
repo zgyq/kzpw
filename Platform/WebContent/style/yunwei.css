@@ -1,0 +1,39 @@
+/* CSS Document */
+.text{width:44px; background-position: -310px -50px; height:24px; border:none; line-height:24px; text-align:center;}
+.go{ width:37px; height:22px; background-position:-310px -100px; border:none; cursor:pointer; }
+.button{ background-position:0 -130px; width:63px; height:22px; border:none;cursor:pointer; text-align:center; margin-right: 5px; }
+.xuxian{height:106px; border-top:1px dashed #A6C1DF; width:98%; margin:0 auto; margin-top:3px;}
+.xuxian_2{border-top:1px dashed #A6C1DF; width:98%; margin:0 auto; }
+.xuxian_3{border-bottom:1px dashed #A6C1DF; width:98%; margin:0 auto; }
+.xuxian_1{ border-bottom:1px dashed #A6C1DF; width:98%; margin:0 auto; border-top:1px dashed #A6C1DF; height:134px; }
+.gaoji{text-align:center; line-height:36px;}
+.width_sel{ width:150px; border:1px solid #ABADB3; height:24px;}
+.width_text{ width:147px;}
+.text_150{ width:150px; height:24px; border:1px solid #ABADB3; line-height:24px; }
+.sel_150{ width:153px; border:1px solid #ABADB3; height:24px;}
+.tishi{ background-position:0 -160px; padding-left:15px; height:29px; max-width:300px;  margin-left:-32px; position:relative; text-align:center; overflow:hidden;}
+.tishi_n{border:1px solid #CC0000; height:27px; border-left:none; line-height:27px;}
+.piao{width:300px; margin:0 auto; position:absolute; top:-90px; left:30%; background:#FFFFFF;}
+.tian{ background-position:0 -200px;height:25px; padding-left:30px;}
+.balk{border-top:none; height:40px; text-align:center; padding-top:20px; background:#FFFFFF}
+.close{ display:block; float:right; width:20px; height:20px; cursor:pointer; }
+.tait{margin-top:20px; width:99%; height:24px; line-height:24px;}
+.mianbao{ width:7px; height:10px; background-position:-110px 0; display:block; overflow:hidden; float:left; margin:5px;}
+.jt_left{ background-position:-370px -50px; width:25px; height:22px; display:block; overflow:hidden; cursor:pointer;}
+.jt_right{ background-position:-370px -80px; width:25px; height:22px; display:block; overflow:hidden; cursor:pointer;}
+
+/*--------------运维----------------*/
+
+.button_lc{background-position:-310px -200px; width:71px; height:24px; border:none;cursor:pointer; text-align:center; line-height:24px; margin-right:3px;}
+.lite{background:#CCCCCC; height:24px; padding-left:12px; margin:0 auto; margin-left:10px; margin-right:10px;}
+.liteo{background:#CCCCCC; height:24px; padding-left:12px; margin:0 auto; margin-left:10px; margin-right:10px; margin-top:20px;}
+.liter{background:#CCCCCC; height:24px; padding-left:12px; margin:0 auto; margin-left:30px; margin-right:30px; margin-top:20px;}
+.text_360{ width:360px; height:24px; border:1px solid #ABADB3;  line-height:24px; text-align:center;}
+.lishi{border-top:none; line-height:24px;   text-indent:20px; background:#FFFFFF}
+.balk_1{border-top:none;    background:#FFFFFF; height:110px; padding-top:5px;}
+.neir{ line-height:30px; width:260px; margin:0 auto;}
+.qued{border-top:1px solid #BDD2E0; padding-top:10px; text-align:center;}
+.piao_1{width:300px; margin:0 auto; position:absolute; top:-225px; left:0; background:#FFFFFF;}
+
+/*--------------会员----------------*/
+

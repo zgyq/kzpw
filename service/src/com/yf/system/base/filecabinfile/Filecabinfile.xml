@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Filecabinfile">
+  
+  <typeAlias alias="Filecabinfile" type="com.yf.system.base.filecabinfile.Filecabinfile"/>
+  
+
+  <resultMap id="resultFilecabinfileMap" class="Filecabinfile">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="filecabindir" column="C_FILECABINDIR"/>
+  
+     <result property="descrition" column="C_DESCRITION"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="right" column="C_RIGHT"/>
+  
+     <result property="filepath" column="C_FILEPATH"/>
+  
+     <result property="filesize" column="C_FILESIZE"/>
+  
+     <result property="craeteid" column="C_CREATEID"/>
+   
+  </resultMap>
+  
+  <select id="findAllFilecabinfile"  resultMap="resultFilecabinfileMap"  parameterClass="java.util.Map">
+  
+    select * from C_FILECABINFILE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllFilecabinfileBySql"  resultMap="resultFilecabinfileMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteFilecabinfileBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countFilecabinfileBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from C_FILECABINFILE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findFilecabinfile" parameterClass="long" resultClass="Filecabinfile">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_FILECABINDIR as filecabindir,
+	  			C_DESCRITION as descrition,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_RIGHT as [right],
+	  			C_FILEPATH as filepath,
+	  			C_FILESIZE as filesize,
+	  			C_CREATEID as craeteid 
+     from C_FILECABINFILE
+    where ID = #id#
+  </select>
+   
+  <insert id="createFilecabinfile" parameterClass="Filecabinfile">
+    insert into C_FILECABINFILE ( 
+    	ID,
+	  			C_NAME,
+	  			C_FILECABINDIR,
+	  			C_DESCRITION,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_RIGHT,
+	  			C_FILEPATH,
+	  			C_FILESIZE,
+	  			C_CREATEID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+							#filecabindir:DECIMAL#,
+						
+	  						#descrition#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+	  						#right#,
+	  					
+	  						#filepath#,
+	  					
+							#filesize:DECIMAL#,
+						
+  							#craeteid:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteFilecabinfile" parameterClass="long">
+    delete from C_FILECABINFILE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateFilecabinfile" parameterClass="Filecabinfile">
+    update C_FILECABINFILE 
+    set 
+    	C_NAME = #name#,
+	  					C_FILECABINDIR = #filecabindir:DECIMAL#,
+						C_DESCRITION = #descrition#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_RIGHT = #right#,
+	  					C_FILEPATH = #filepath#,
+	  					C_FILESIZE = #filesize:DECIMAL#,
+						C_CREATEID = #craeteid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

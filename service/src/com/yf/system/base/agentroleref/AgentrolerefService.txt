@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 会员角色关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Agentroleref createAgentroleref(Agentroleref agentroleref) throws SQLException;
+	
+	/**
+	 * 删除 会员角色关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAgentroleref(long id);
+	
+	
+	/**
+	 * 修改 会员角色关联
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAgentroleref(Agentroleref agentroleref);
+
+		
+	/**
+	 * 修改 会员角色关联但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAgentrolerefIgnoreNull(Agentroleref agentroleref);
+		
+	
+	/**
+	 * 查找 会员角色关联
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAgentroleref(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 会员角色关联
+	 * @param id
+	 * @return
+	 */
+	public Agentroleref findAgentroleref(long id);
+	
+	
+	/** 
+	 * 查找 会员角色关联
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAgentrolerefForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找会员角色关联
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAgentrolerefBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 会员角色关联
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAgentrolerefBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAgentrolerefBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IAgentrolerefComponent agentrolerefComponent;
+	  
+ 	
+ 	public IAgentrolerefComponent getAgentrolerefComponent() {
+		return agentrolerefComponent;
+	}
+	public void setAgentrolerefComponent(IAgentrolerefComponent  agentrolerefComponent) {
+		this.agentrolerefComponent = agentrolerefComponent;
+	}
+	/**
+	 * 创建 会员角色关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Agentroleref createAgentroleref(Agentroleref agentroleref) throws SQLException{
+	
+		return agentrolerefComponent.createAgentroleref(agentroleref);
+	}
+	/**
+	 * 删除 会员角色关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAgentroleref(long id){
+	
+		return agentrolerefComponent.deleteAgentroleref(id);
+	}
+	
+	
+	/**
+	 * 修改 会员角色关联
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAgentroleref(Agentroleref agentroleref){
+		return agentrolerefComponent.updateAgentroleref(agentroleref);
+	
+	}
+
+		
+	/**
+	 * 修改 会员角色关联但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAgentrolerefIgnoreNull(Agentroleref agentroleref){
+			return agentrolerefComponent.updateAgentrolerefIgnoreNull(agentroleref);
+	
+	}
+	
+	/**
+	 * 查找 会员角色关联
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAgentroleref(String where, String orderby,int limit,int offset){
+		return agentrolerefComponent.findAllAgentroleref(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 会员角色关联
+	 * @param id
+	 * @return
+	 */
+	public Agentroleref findAgentroleref(long id){
+		return agentrolerefComponent.findAgentroleref(id);
+	}
+	
+	/** 
+	 * 查找 会员角色关联
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAgentrolerefForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return agentrolerefComponent.findAllAgentroleref(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找会员角色关联
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAgentrolerefBySql(String sql,int limit,int offset){
+		return agentrolerefComponent.findAllAgentroleref(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 会员角色关联
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAgentrolerefBySql(String sql){
+		return agentrolerefComponent.excuteAgentrolerefBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAgentrolerefBySql(String sql){
+		return agentrolerefComponent.countAgentrolerefBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+.search,.searchbot,.titlenew,.titleinfo,.current,.weektab,.weektabon,.shop,.yesterday,.tomorrow,.save,.insurance,.total,.novotes,.order,.allmorny,.del_people{ background:url(../images/base.png) no-repeat;}
+
+#main{width:1004px; margin:0 auto; margin-top:10px;}
+#main .titlenew{ height:34px; line-height:34px; padding-left:30px; background-position:0 -180px;}
+#left{ width:260px;}
+#left .search{ width:220px; height:31px; line-height:31px; background-position:0 -90px; padding-left:40px;}
+#left .searchlist{}
+#left .choose{height:38px; line-height:38px; padding-left:10px;  padding-left:30px;}
+#left .choose input{ height:38px; line-height:38px;}
+#left .searchall{ line-height:32px; height:32px;  padding-left:20px;}
+#left .but{ height:55px; padding-top:10px;  padding-left:20px; border-top:1px dashed #ccc; margin-top:10px;}
+#left .searchbot{ background-position:0 -300px; height:5px; line-height:5px; overflow:hidden}
+#left .titlenew{ height:34px; line-height:34px; padding-left:30px; background-position:0 -180px;}
+#left .content{ padding:10px 20px 10px 20px;}
+
+/*----------国内机票公用左侧样式------------*/
+
+#right{ width:733px;}
+#right .titleinfo{ width:198px; height:31px; line-height:31px; background-position:0 -130px; padding-left:25px;}
+#right .box_tell{ padding:10px 20px 10px 20px;}
+#right .adbox{ height:221px;*height:224px !important; *height:224px;}
+#right .flash{ height:218px;*height:219px !important; *height:219px;padding:20px 0 0 30px;}
+#right .city{ position:relative;}
+#right .city_ul{ position:absolute; top:26px;*top:28px!important; *top:28px; left:10px; background:#fff; line-height:19px; width:59px; padding-left:5px;}
+#right .tips{ margin:0 10px 0 10px; border-bottom:1px solid #e3e3e3;background:#fff;}
+#right .lowlist{ height:216px;}
+#right .lowmain{ width:33%; text-align:center; margin-top:13px;} 
+#right .lowcity{ line-height:30px;  width:90px;}
+#right .lowmorny{ width:50px; line-height:20px;}
+#right .lowmorny dd{ text-indent:0; list-style:none}
+
+/*-----机票首页样式-----*/
+.status,.statuscheck,.statusorder{ background:url(../images/status.png);}
+#list{width:733px;}
+#list .guild{ height:36px; line-height:36px;}
+#list .current{ background-position:0 -320px; width:40px; height:36px;}
+#list .status{ width:356px; height:36px;}
+#list .week{ padding:0 13px 0 13px}
+#list .week ul{}
+#list .week ul li{width:86px; height:49px; text-align:center; margin-right:15px; padding-top:3px; line-height:16px; display:inline}
+#list .weektab{ background-position:0 -230px;}
+#list .weektabon{ background-position:-100px -230px;}
+#list .over{ width:96%; margin:0 auto;}
+#list .overmorny{ line-height:38px;width:150px;}
+#list .range{width:96%; margin:0 auto; padding:5px; height:40px;}
+#list .airport{ float:left; width:160px; line-height:19px;}
+#list .model{width:110px;line-height:19px;}
+#list .fuel{line-height:38px;width:80px;}
+#list .meal{line-height:38px; width:90px; position:relative;}
+#list .btn{width:80px; padding:7px 0; text-align:center}
+#list .airlines{ width:23px;  margin-top:10px;height:20px;}
+#list .float{ position:absolute; top:26px; left:-60px; width:230px; line-height:20px;}
+#list .tips{ background-position:0 -80px; height:23px; line-height:23px;}
+#list .shop{ background-position:-280px -150px; padding-left:20px;}
+#list .yesterday{ background-position:-300px -130px; padding-left:17px;}
+#list .tomorrow{ background-position:-318px -130px; padding-right:17px;}
+#list .thedates{}
+#list .thedates a{ text-decoration:none}
+#list .morny{width:150px; line-height:19px; float: left;}
+#list .subnav{width:96%; margin:0 auto; background:#69f; margin-top:10px; text-align:center}
+#list .subnavone{ width:150px}
+#list .subnavtwo{width:160px}
+#list .subnavthree{width:110px}
+#list .subnavfour{width:80px}
+#list .subnavfive{width:90px}
+#list .subnavsex{width:80px}
+#list .listrange{width:96%; margin:0 auto; padding:5px; height:40px; background:#f9f9f9; margin-top:1px;}
+#list .mornyall{width:445px; line-height:38px;}
+#list .rangeall{width:96%; margin:0 auto; padding:5px; height:40px; background:#ffd075}
+/*-------------列表页面---------------*/
+#order{ width:733px;}
+#order .guild{ height:36px; line-height:36px;}
+#order .current{ background-position:-40px -320px; width:40px; height:36px;}
+#order .status{ width:356px; height:36px; background-position:0 -40px;}
+#order .statuscheck{ width:356px; height:36px; background-position:0 -80px;}
+#order .statusorder{ width:356px; height:36px; background-position:0 -120px;}
+#order .over{ width:96%; margin:0 auto;}
+#order .overmorny{ line-height:38px;width:150px;}
+#order .range{width:96%; margin:0 auto; padding:5px; height:40px;}
+#order .airport{width:160px; line-height:19px;}
+#order .airportover{ width:160px; line-height:19px;}
+#order .model{width:110px;line-height:19px;}
+#order .fuel{line-height:38px;width:80px;}
+#order .meal{line-height:38px; width:90px; position:relative;}
+#order .btn{width:80px; padding:7px 0; text-align:center}
+#order .airlines{ width:23px;  margin-top:10px;height:20px;} 
+#order .number{ width:96%; margin:0 auto; height:36px; line-height:36px;}
+#order .people{width:290px; position:absolute; top:30px; left:60px;}
+#order .del_people{ background-position:-330px -88px; padding-left:15px; margin-left:4px;}
+#order .save{ background-position:-360px -168px; padding-left:15px;}
+#order .insurance{ background-position:-360px -90px; padding-left:25px;}
+#order .informations{width:390px; position:absolute; top:24px; left:-1px; text-align:left; text-indent:2em;line-height:20px; z-index:999}
+#order .informations_title{ height:30px; line-height:30px;}
+#order .contact{ width:555px;}
+#order .contact table{ border-collapse:collapse;}
+#order .contact td{ border:1px solid #dadada; height:28px; line-height:28px;}
+#order .total{ width:151px; background-position:-200px -320px; height:126px;}
+#order .information_order{ width:98%; margin:0 auto;}
+#order .bnt{ height:50px; padding-top:15px; text-align:center}
+#order .ticket{width:390px; position:absolute; top:24px; left:-1px; text-align:left; text-indent:1em;line-height:26px;}
+#order .airportticket{width:390px; position:absolute; top:24px; left:65px; text-align:left; text-indent:1em;line-height:26px;}
+#order .visitticket{width:390px; position:absolute; top:24px; left:140px; text-align:left; text-indent:1em;line-height:26px;}
+#order .novotes{ height:40px; line-height:40px; padding-left:40px; background-position:-350px -210px;}
+#order .order{ background-position:-300px -250px; height:68px; padding-left:90px; margin:10px;}
+#order .allmorny{height:40px; line-height:40px; padding-left:30px; background-position:-360px -320px;}

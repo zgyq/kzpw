@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Hotellinkman">
+  
+  <typeAlias alias="Hotellinkman" type="com.yf.system.base.hotellinkman.Hotellinkman"/>
+  
+
+  <resultMap id="resultHotellinkmanMap" class="Hotellinkman">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="sex" column="C_SEX"/>
+  
+     <result property="duty" column="C_DUTY"/>
+  
+     <result property="tell" column="C_TELL"/>
+  
+     <result property="mobil" column="C_MOBIL"/>
+  
+     <result property="fax" column="C_FAX"/>
+  
+     <result property="hotelid" column="C_HOTELID"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllHotellinkman"  resultMap="resultHotellinkmanMap"  parameterClass="java.util.Map">
+  
+    select * from T_HOTELLINKMAN
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllHotellinkmanBySql"  resultMap="resultHotellinkmanMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteHotellinkmanBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countHotellinkmanBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_HOTELLINKMAN
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findHotellinkman" parameterClass="long" resultClass="Hotellinkman">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_SEX as sex,
+	  			C_DUTY as duty,
+	  			C_TELL as tell,
+	  			C_MOBIL as mobil,
+	  			C_FAX as fax,
+	  			C_HOTELID as hotelid,
+	  			C_CREATETIME as createtime,
+	  			C_CREATEUSER as createuser,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_STATE as state,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_HOTELLINKMAN
+    where ID = #id#
+  </select>
+   
+  <insert id="createHotellinkman" parameterClass="Hotellinkman">
+    insert into T_HOTELLINKMAN ( 
+    	ID,
+	  			C_NAME,
+	  			C_SEX,
+	  			C_DUTY,
+	  			C_TELL,
+	  			C_MOBIL,
+	  			C_FAX,
+	  			C_HOTELID,
+	  			C_CREATETIME,
+	  			C_CREATEUSER,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_STATE,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+							#sex:DECIMAL#,
+						
+	  						#duty#,
+	  					
+	  						#tell#,
+	  					
+	  						#mobil#,
+	  					
+	  						#fax#,
+	  					
+							#hotelid:DECIMAL#,
+						
+	  						#createtime#,
+	  					
+	  						#createuser#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#state:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteHotellinkman" parameterClass="long">
+    delete from T_HOTELLINKMAN
+    where ID = #id#
+  </delete>
+	
+  <update id="updateHotellinkman" parameterClass="Hotellinkman">
+    update T_HOTELLINKMAN 
+    set 
+    	C_NAME = #name#,
+	  					C_SEX = #sex:DECIMAL#,
+						C_DUTY = #duty#,
+	  					C_TELL = #tell#,
+	  					C_MOBIL = #mobil#,
+	  					C_FAX = #fax#,
+	  					C_HOTELID = #hotelid:DECIMAL#,
+						C_CREATETIME = #createtime#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_STATE = #state:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

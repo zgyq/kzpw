@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0px; padding:0px; list-style-type:none; text-decoration:none;}
+body {margin:0 auto; width:1002px;; font-size:12px; background: #fff;}
+input{ vertical-align:middle; font-size:12px;}
+img{}
+a{color:#000000;}
+a:hover {color:#FF0000;}
+
+.f{float:left;}
+.r{float:right;}
+.c{clear:both;}
+
+.box{border:1px solid #9e9e9e;}
+.button{ background:url(../images/chaxun.gif); width:67px; height:25px; border:none; font-size:12px; text-align:center;}
+
+.left{width:221px; float:left; margin-left:17px; display:inline; overflow:hidden;}
+.right{ width:727px; float:center; margin-right:17px;display:inline; overflow:hidden; }
+.kuang{ width:968px; margin-left:17px;}
+.bai{margin-top:10px; height:26px; overflow:hidden; 	background: url(../images/bj_bai.gif) repeat-x;}
+
+.mian{margin:7px 0px 0px 17px;}
+.jpyd{ border:1px solid #3a829b; border-bottom:none; }
+.jpyd-bt{background:url(../images/bj-hua.gif); height:28px; padding:2px 0px 0px 20px; }
+.jpyd-nr{border:4px solid #9BBFCB; border-bottom:none; padding:20px 0px 0px 20px;}
+.jpyd-nr ul{ }
+.jpyd-nr ul li{ height:24px;}
+.jpyd-di{background:url(../images/di.gif); height:6px;  width:410px; clear:both;}
+
+.tp{ float:left; margin-left:5px;}
+
+.dp-nr{ clear:both; text-indent:20px; padding-top:13px;}
+.dp-nr ul{}
+.dp-nr ul li{ height:23px;}
+
+
+.shanshi{ background:url(../images/bj-jd.gif); height:32px;}
+.shanshi ul{ margin:0; padding:0;}
+.shanshi ul li{ background:url(../images/bj_d.gif); width:66px;line-height:24px; float:left; text-align:center; margin-left:15px; margin-top:8px;}
+.shanshi ul li a{color:#f48000;}
+.shanshi ul li a:hover{ background: url(../images/bj_dd.gif);  width:66px;line-height:24px; float:left; text-align:center; color:#333333;}
+
+
+.mune{line-height:25px; padding:10px 0 10px 0;}
+.mune ul{}
+.mune ul li { width:90%; border-bottom:1px dashed #CCC; margin-left:5%;}
+
+.hangb{ border-top:1px solid #f48000; width:98%;  margin-left:1%; line-height:30px; margin-top:10px; padding-bottom:15px;}
+.hangb ul{ margin:0; padding:0;}
+.hangb ul li { float:left; text-align:center; }
+
+.hangd{width:98%; display:inline;border:1px solid #f48000; margin-left:1%;  margin-top:10px; margin-bottom:15px; padding-bottom:15px;}
+.hangd ul{ margin:0; padding:0; }
+.hangd ul li { float:left; text-align:center;}
+
+.hangl{text-align:left; padding-left:42px; line-height:20px; }
+.hangl ul{ margin:0; padding:0;}
+.hangl ul li{ list-style-type:disc; color:#999;}
+
+.xingqselect{width:95px;height:57px; margin-right:2px; margin-left:2px;float:left; text-align:center; background:#FFF; margin-top:10px;  border-top:4px solid #FB7B00; border-left:1px solid #FB7B00; border-right:1px solid #FB7B00; font-weight:bold; color:#FB7B00; }
+.xingq{ height:70px; border-bottom:1px solid #FB7B00; line-height:25px;}
+.xingqspan{ width:94px; height:53px; margin-top:15px; margin-right:2px; margin-left:2px; float:left; text-align:center; background:#FFFCEB; border:1px solid #999999; border-bottom:none; display: block;}    
+.xingq a:hover{ color:#FB7B00; background:#FFF;}
+
+
+.bottom{ padding-top:17px; float:left;  }
+.zi12{font-family:""; font-size:12px; color:#A80000;}
+.lan20{font-family:""; font-size:20px ; color:#0033FF; font-weight:bold;}
+.lan12{font-family:""; font-size:12px ; color:#0033FF; font-weight:bold;}
+.huang12{font-family:""; font-size:12px; color:#F48000;}
+.hong12_c{font-family:""; font-size:12px; color:#ff0000; font-weight:bold;}
+.huang14_c{font-family:""; font-size:14px; color:#F48000; font-weight:bold;}
+.hei14_c{font-family:""; font-size:14px; color:#000000; text-decoration:underline; font-weight:bold;}
+.hong12{font-family:""; font-size:12px; color:#FF0000;}
+.hei12{font-family:""; font-size:12px; color:#000000;}
+.hei12_c{font-family:""; font-size:12px; color:#000000; font-weight:bold;}
+.hui12{font-family:""; font-size:12px; color:#666666;}
+.hui12_c{ font-family:""; font-size:12px; color:#666666; font-weight:bold;}
+.huang12_c{font-family:""; font-size:12px; color:#3a829b; font-weight:bold;}
+.bai12{ font-family:""; font-size:12px; color:#ffffff; }
+.bai12_c{font-family:""; font-size:12px; color:#FFffff; font-weight:bold;}
+
+.hei14_b{font-family:"Dotum"; font-size:13px; color:#000000;font-weight:bold;}
+.hei14{font-family:""; font-size:13px; }
+.huang25_c{font-family:"Dotum"; font-size:22px; color:#F48000; font-weight:bold;}
+.lianxi { margin:10px 0 10px 0; padding:0;}
+.lianxi li { float:left; text-align:center; }
+
+
+.jpks ul li{padding:3px 0 0px 15px;}
+
+
+.djrxx {padding-left :30px;padding-top: 5px; }
+.djrxx ul{ }
+.djrxx ul li { float:left;}

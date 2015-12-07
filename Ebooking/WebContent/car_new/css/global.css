@@ -1,0 +1,168 @@
+/* 
+	Resets defualt browser settings
+	reset.css
+*/
+.anLiBanner{margin-top:10px;}
+#container {
+	width:316px;
+	height:382px;
+	margin:0 auto;
+	position:relative;
+	z-index:0;
+}
+
+#example {
+	width:316px;
+	height:342px;
+	position:relative;
+}
+
+#ribbon {
+	position:absolute;
+	top:-3px;
+	left:-15px;
+	z-index:500;
+}
+
+#frame {
+	position:absolute;
+	z-index:0;
+	width:739px;
+	height:341px;
+	top:-3px;
+	left:-80px;
+}
+
+/*
+	Slideshow
+*/
+
+#slides {
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:100;
+}
+
+/*
+	Slides container
+	Important:
+	Set the width of your slides container
+	Set to display none, prevents content flash
+*/
+
+.slides_container {
+	width:316px;
+	overflow:hidden;
+	position:relative;
+	display:none;
+	
+}
+.slides_container a{color:#616161;font-size:14px;}
+
+/*
+	Each slide
+	Important:
+	Set the width of your slides
+	If height not specified height will be set by the slide content
+	Set to display block
+*/
+
+.slides_container a {
+	width:316px;
+	height:342px;
+	display:block;
+	
+}
+
+.slides_container a img {
+	display:block;
+	padding-left:4px;
+}
+
+/*
+	Next/prev buttons
+*/
+
+#slides .next,#slides .prev {
+	position:absolute;
+	top:107px;
+	left:0px;
+	width:26px;
+	height:43px;
+	display:block;
+	z-index:101;
+}
+
+#slides .next {
+	left:564px;
+}
+
+/*
+	Pagination
+*/
+
+.pagination {
+	margin:12px auto 0;
+	width:100px;
+}
+
+.pagination li {
+	float:left;
+	margin:0 1px;
+	list-style:none;
+}
+
+.pagination li a {
+	display:block;
+	width:12px;
+	height:0;
+	padding-top:12px;
+	background-image:url(../images/pagination.png);
+	background-position:0 0;
+	float:left;
+	overflow:hidden;
+}
+
+.pagination li.current a {
+	background-position:0 -12px;
+}
+
+/*
+	Footer
+*/
+
+#footer {
+	text-align:center;
+	width:580px;
+	margin-top:9px;
+	padding:4.5px 0 18px;
+	border-top:1px solid #dfdfdf;
+}
+
+#footer p {
+	margin:4.5px 0;
+	font-size:1.0em;
+}
+.campusBanner_bg{ display:block; position:absolute;top:0px;left:0px; z-index:20;}
+
+/*
+	Anchors
+
+
+a:link,a:visited {
+	color:#599100;
+	text-decoration:none;
+}
+
+a:hover,a:active {
+	color:#599100;
+	text-decoration:underline;
+}*/
+.brandCenter{padding-left:20px;}
+.brandCenter p{width:auto;color:#4f5864;font-size:16px;line-height:40px;}
+.brandCenter #container{height:164px;width:241px;margin:0px;}
+.brandCenter #example{width:241px;height:164px;}
+.brandCenter .slides_container{width:241px;}
+.brandCenter .slides_container a{height:164px;}
+.brandCenter .activityRightTitle{margin-top:50px;}

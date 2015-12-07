@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Roomstateback">
+  
+  <typeAlias alias="Roomstateback" type="com.yf.system.base.roomstateback.Roomstateback"/>
+  
+
+  <resultMap id="resultRoomstatebackMap" class="Roomstateback">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="datenumber" column="C_DATENUMBER"/>
+  
+     <result property="hotelid" column="C_HOTELID"/>
+  
+     <result property="roomid" column="C_ROOMID"/>
+  
+     <result property="isvalid" column="C_ISVALID"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="confirmmethod" column="C_CONFIRMMETHOD"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="no31" column="C_NO31"/>
+  
+     <result property="no30" column="C_NO30"/>
+  
+     <result property="no29" column="C_NO29"/>
+  
+     <result property="no28" column="C_NO28"/>
+  
+     <result property="no27" column="C_NO27"/>
+  
+     <result property="no26" column="C_NO26"/>
+  
+     <result property="no25" column="C_NO25"/>
+  
+     <result property="no24" column="C_NO24"/>
+  
+     <result property="no23" column="C_NO23"/>
+  
+     <result property="no22" column="C_NO22"/>
+  
+     <result property="no21" column="C_NO21"/>
+  
+     <result property="no20" column="C_NO20"/>
+  
+     <result property="no19" column="C_NO19"/>
+  
+     <result property="no18" column="C_NO18"/>
+  
+     <result property="no17" column="C_NO17"/>
+  
+     <result property="no16" column="C_NO16"/>
+  
+     <result property="no15" column="C_NO15"/>
+  
+     <result property="no14" column="C_NO14"/>
+  
+     <result property="no13" column="C_NO13"/>
+  
+     <result property="no12" column="C_NO12"/>
+  
+     <result property="no11" column="C_NO11"/>
+  
+     <result property="no10" column="C_NO10"/>
+  
+     <result property="no9" column="C_NO9"/>
+  
+     <result property="no8" column="C_NO8"/>
+  
+     <result property="no7" column="C_NO7"/>
+  
+     <result property="no6" column="C_NO6"/>
+  
+     <result property="no5" column="C_NO5"/>
+  
+     <result property="no4" column="C_NO4"/>
+  
+     <result property="no3" column="C_NO3"/>
+  
+     <result property="no2" column="C_NO2"/>
+  
+     <result property="no1" column="C_NO1"/>
+  
+     <result property="back31" column="C_BACK31"/>
+  
+     <result property="back30" column="C_BACK30"/>
+  
+     <result property="back29" column="C_BACK29"/>
+  
+     <result property="back28" column="C_BACK28"/>
+  
+     <result property="back27" column="C_BACK27"/>
+  
+     <result property="back26" column="C_BACK26"/>
+  
+     <result property="back25" column="C_BACK25"/>
+  
+     <result property="back24" column="C_BACK24"/>
+  
+     <result property="back23" column="C_BACK23"/>
+  
+     <result property="back22" column="C_BACK22"/>
+  
+     <result property="back21" column="C_BACK21"/>
+  
+     <result property="back20" column="C_BACK20"/>
+  
+     <result property="back19" column="C_BACK19"/>
+  
+     <result property="back18" column="C_BACK18"/>
+  
+     <result property="back17" column="C_BACK17"/>
+  
+     <result property="back16" column="C_BACK16"/>
+  
+     <result property="back15" column="C_BACK15"/>
+  
+     <result property="back14" column="C_BACK14"/>
+  
+     <result property="back13" column="C_BACK13"/>
+  
+     <result property="back12" column="C_BACK12"/>
+  
+     <result property="back11" column="C_BACK11"/>
+  
+     <result property="back10" column="C_BACK10"/>
+  
+     <result property="back9" column="C_BACK9"/>
+  
+     <result property="back8" column="C_BACK8"/>
+  
+     <result property="back7" column="C_BACK7"/>
+  
+     <result property="back6" column="C_BACK6"/>
+  
+     <result property="back5" column="C_BACK5"/>
+  
+     <result property="back4" column="C_BACK4"/>
+  
+     <result property="back3" column="C_BACK3"/>
+  
+     <result property="back2" column="C_BACK2"/>
+  
+     <result property="back1" column="C_BACK1"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllRoomstateback"  resultMap="resultRoomstatebackMap"  parameterClass="java.util.Map">
+  
+    select * from T_ROOMSTATEBACK
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllRoomstatebackBySql"  resultMap="resultRoomstatebackMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteRoomstatebackBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countRoomstatebackBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_ROOMSTATEBACK
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findRoomstateback" parameterClass="long" resultClass="Roomstateback">
+    select 
+    	ID as id,
+	  			C_DATENUMBER as datenumber,
+	  			C_HOTELID as hotelid,
+	  			C_ROOMID as roomid,
+	  			C_ISVALID as isvalid,
+	  			C_DESCRIPTION as description,
+	  			C_STATE as state,
+	  			C_CONFIRMMETHOD as confirmmethod,
+	  			C_TYPE as type,
+	  			C_NO31 as no31,
+	  			C_NO30 as no30,
+	  			C_NO29 as no29,
+	  			C_NO28 as no28,
+	  			C_NO27 as no27,
+	  			C_NO26 as no26,
+	  			C_NO25 as no25,
+	  			C_NO24 as no24,
+	  			C_NO23 as no23,
+	  			C_NO22 as no22,
+	  			C_NO21 as no21,
+	  			C_NO20 as no20,
+	  			C_NO19 as no19,
+	  			C_NO18 as no18,
+	  			C_NO17 as no17,
+	  			C_NO16 as no16,
+	  			C_NO15 as no15,
+	  			C_NO14 as no14,
+	  			C_NO13 as no13,
+	  			C_NO12 as no12,
+	  			C_NO11 as no11,
+	  			C_NO10 as no10,
+	  			C_NO9 as no9,
+	  			C_NO8 as no8,
+	  			C_NO7 as no7,
+	  			C_NO6 as no6,
+	  			C_NO5 as no5,
+	  			C_NO4 as no4,
+	  			C_NO3 as no3,
+	  			C_NO2 as no2,
+	  			C_NO1 as no1,
+	  			C_BACK31 as back31,
+	  			C_BACK30 as back30,
+	  			C_BACK29 as back29,
+	  			C_BACK28 as back28,
+	  			C_BACK27 as back27,
+	  			C_BACK26 as back26,
+	  			C_BACK25 as back25,
+	  			C_BACK24 as back24,
+	  			C_BACK23 as back23,
+	  			C_BACK22 as back22,
+	  			C_BACK21 as back21,
+	  			C_BACK20 as back20,
+	  			C_BACK19 as back19,
+	  			C_BACK18 as back18,
+	  			C_BACK17 as back17,
+	  			C_BACK16 as back16,
+	  			C_BACK15 as back15,
+	  			C_BACK14 as back14,
+	  			C_BACK13 as back13,
+	  			C_BACK12 as back12,
+	  			C_BACK11 as back11,
+	  			C_BACK10 as back10,
+	  			C_BACK9 as back9,
+	  			C_BACK8 as back8,
+	  			C_BACK7 as back7,
+	  			C_BACK6 as back6,
+	  			C_BACK5 as back5,
+	  			C_BACK4 as back4,
+	  			C_BACK3 as back3,
+	  			C_BACK2 as back2,
+	  			C_BACK1 as back1,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_ROOMSTATEBACK
+    where ID = #id#
+  </select>
+   
+  <insert id="createRoomstateback" parameterClass="Roomstateback">
+    insert into T_ROOMSTATEBACK ( 
+    	ID,
+	  			C_DATENUMBER,
+	  			C_HOTELID,
+	  			C_ROOMID,
+	  			C_ISVALID,
+	  			C_DESCRIPTION,
+	  			C_STATE,
+	  			C_CONFIRMMETHOD,
+	  			C_TYPE,
+	  			C_NO31,
+	  			C_NO30,
+	  			C_NO29,
+	  			C_NO28,
+	  			C_NO27,
+	  			C_NO26,
+	  			C_NO25,
+	  			C_NO24,
+	  			C_NO23,
+	  			C_NO22,
+	  			C_NO21,
+	  			C_NO20,
+	  			C_NO19,
+	  			C_NO18,
+	  			C_NO17,
+	  			C_NO16,
+	  			C_NO15,
+	  			C_NO14,
+	  			C_NO13,
+	  			C_NO12,
+	  			C_NO11,
+	  			C_NO10,
+	  			C_NO9,
+	  			C_NO8,
+	  			C_NO7,
+	  			C_NO6,
+	  			C_NO5,
+	  			C_NO4,
+	  			C_NO3,
+	  			C_NO2,
+	  			C_NO1,
+	  			C_BACK31,
+	  			C_BACK30,
+	  			C_BACK29,
+	  			C_BACK28,
+	  			C_BACK27,
+	  			C_BACK26,
+	  			C_BACK25,
+	  			C_BACK24,
+	  			C_BACK23,
+	  			C_BACK22,
+	  			C_BACK21,
+	  			C_BACK20,
+	  			C_BACK19,
+	  			C_BACK18,
+	  			C_BACK17,
+	  			C_BACK16,
+	  			C_BACK15,
+	  			C_BACK14,
+	  			C_BACK13,
+	  			C_BACK12,
+	  			C_BACK11,
+	  			C_BACK10,
+	  			C_BACK9,
+	  			C_BACK8,
+	  			C_BACK7,
+	  			C_BACK6,
+	  			C_BACK5,
+	  			C_BACK4,
+	  			C_BACK3,
+	  			C_BACK2,
+	  			C_BACK1,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#datenumber#,
+	  					
+							#hotelid:DECIMAL#,
+						
+							#roomid:DECIMAL#,
+						
+	  						#isvalid#,
+	  					
+	  						#description#,
+	  					
+							#state:DECIMAL#,
+						
+							#confirmmethod:DECIMAL#,
+						
+							#type:DECIMAL#,
+						
+							#no31:DECIMAL#,
+						
+							#no30:DECIMAL#,
+						
+							#no29:DECIMAL#,
+						
+							#no28:DECIMAL#,
+						
+							#no27:DECIMAL#,
+						
+							#no26:DECIMAL#,
+						
+							#no25:DECIMAL#,
+						
+							#no24:DECIMAL#,
+						
+							#no23:DECIMAL#,
+						
+							#no22:DECIMAL#,
+						
+							#no21:DECIMAL#,
+						
+							#no20:DECIMAL#,
+						
+							#no19:DECIMAL#,
+						
+							#no18:DECIMAL#,
+						
+							#no17:DECIMAL#,
+						
+							#no16:DECIMAL#,
+						
+							#no15:DECIMAL#,
+						
+							#no14:DECIMAL#,
+						
+							#no13:DECIMAL#,
+						
+							#no12:DECIMAL#,
+						
+							#no11:DECIMAL#,
+						
+							#no10:DECIMAL#,
+						
+							#no9:DECIMAL#,
+						
+							#no8:DECIMAL#,
+						
+							#no7:DECIMAL#,
+						
+							#no6:DECIMAL#,
+						
+							#no5:DECIMAL#,
+						
+							#no4:DECIMAL#,
+						
+							#no3:DECIMAL#,
+						
+							#no2:DECIMAL#,
+						
+							#no1:DECIMAL#,
+						
+							#back31:DECIMAL#,
+						
+							#back30:DECIMAL#,
+						
+							#back29:DECIMAL#,
+						
+							#back28:DECIMAL#,
+						
+							#back27:DECIMAL#,
+						
+							#back26:DECIMAL#,
+						
+							#back25:DECIMAL#,
+						
+							#back24:DECIMAL#,
+						
+							#back23:DECIMAL#,
+						
+							#back22:DECIMAL#,
+						
+							#back21:DECIMAL#,
+						
+							#back20:DECIMAL#,
+						
+							#back19:DECIMAL#,
+						
+							#back18:DECIMAL#,
+						
+							#back17:DECIMAL#,
+						
+							#back16:DECIMAL#,
+						
+							#back15:DECIMAL#,
+						
+							#back14:DECIMAL#,
+						
+							#back13:DECIMAL#,
+						
+							#back12:DECIMAL#,
+						
+							#back11:DECIMAL#,
+						
+							#back10:DECIMAL#,
+						
+							#back9:DECIMAL#,
+						
+							#back8:DECIMAL#,
+						
+							#back7:DECIMAL#,
+						
+							#back6:DECIMAL#,
+						
+							#back5:DECIMAL#,
+						
+							#back4:DECIMAL#,
+						
+							#back3:DECIMAL#,
+						
+							#back2:DECIMAL#,
+						
+							#back1:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteRoomstateback" parameterClass="long">
+    delete from T_ROOMSTATEBACK
+    where ID = #id#
+  </delete>
+	
+  <update id="updateRoomstateback" parameterClass="Roomstateback">
+    update T_ROOMSTATEBACK 
+    set 
+    	C_DATENUMBER = #datenumber#,
+	  					C_HOTELID = #hotelid:DECIMAL#,
+						C_ROOMID = #roomid:DECIMAL#,
+						C_ISVALID = #isvalid#,
+	  					C_DESCRIPTION = #description#,
+	  					C_STATE = #state:DECIMAL#,
+						C_CONFIRMMETHOD = #confirmmethod:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+						C_NO31 = #no31:DECIMAL#,
+						C_NO30 = #no30:DECIMAL#,
+						C_NO29 = #no29:DECIMAL#,
+						C_NO28 = #no28:DECIMAL#,
+						C_NO27 = #no27:DECIMAL#,
+						C_NO26 = #no26:DECIMAL#,
+						C_NO25 = #no25:DECIMAL#,
+						C_NO24 = #no24:DECIMAL#,
+						C_NO23 = #no23:DECIMAL#,
+						C_NO22 = #no22:DECIMAL#,
+						C_NO21 = #no21:DECIMAL#,
+						C_NO20 = #no20:DECIMAL#,
+						C_NO19 = #no19:DECIMAL#,
+						C_NO18 = #no18:DECIMAL#,
+						C_NO17 = #no17:DECIMAL#,
+						C_NO16 = #no16:DECIMAL#,
+						C_NO15 = #no15:DECIMAL#,
+						C_NO14 = #no14:DECIMAL#,
+						C_NO13 = #no13:DECIMAL#,
+						C_NO12 = #no12:DECIMAL#,
+						C_NO11 = #no11:DECIMAL#,
+						C_NO10 = #no10:DECIMAL#,
+						C_NO9 = #no9:DECIMAL#,
+						C_NO8 = #no8:DECIMAL#,
+						C_NO7 = #no7:DECIMAL#,
+						C_NO6 = #no6:DECIMAL#,
+						C_NO5 = #no5:DECIMAL#,
+						C_NO4 = #no4:DECIMAL#,
+						C_NO3 = #no3:DECIMAL#,
+						C_NO2 = #no2:DECIMAL#,
+						C_NO1 = #no1:DECIMAL#,
+						C_BACK31 = #back31:DECIMAL#,
+						C_BACK30 = #back30:DECIMAL#,
+						C_BACK29 = #back29:DECIMAL#,
+						C_BACK28 = #back28:DECIMAL#,
+						C_BACK27 = #back27:DECIMAL#,
+						C_BACK26 = #back26:DECIMAL#,
+						C_BACK25 = #back25:DECIMAL#,
+						C_BACK24 = #back24:DECIMAL#,
+						C_BACK23 = #back23:DECIMAL#,
+						C_BACK22 = #back22:DECIMAL#,
+						C_BACK21 = #back21:DECIMAL#,
+						C_BACK20 = #back20:DECIMAL#,
+						C_BACK19 = #back19:DECIMAL#,
+						C_BACK18 = #back18:DECIMAL#,
+						C_BACK17 = #back17:DECIMAL#,
+						C_BACK16 = #back16:DECIMAL#,
+						C_BACK15 = #back15:DECIMAL#,
+						C_BACK14 = #back14:DECIMAL#,
+						C_BACK13 = #back13:DECIMAL#,
+						C_BACK12 = #back12:DECIMAL#,
+						C_BACK11 = #back11:DECIMAL#,
+						C_BACK10 = #back10:DECIMAL#,
+						C_BACK9 = #back9:DECIMAL#,
+						C_BACK8 = #back8:DECIMAL#,
+						C_BACK7 = #back7:DECIMAL#,
+						C_BACK6 = #back6:DECIMAL#,
+						C_BACK5 = #back5:DECIMAL#,
+						C_BACK4 = #back4:DECIMAL#,
+						C_BACK3 = #back3:DECIMAL#,
+						C_BACK2 = #back2:DECIMAL#,
+						C_BACK1 = #back1:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

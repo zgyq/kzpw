@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 广告表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Advertisement createAdvertisement(Advertisement advertisement) throws SQLException;
+	
+	/**
+	 * 删除 广告表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAdvertisement(long id);
+	
+	
+	/**
+	 * 修改 广告表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAdvertisement(Advertisement advertisement);
+
+		
+	/**
+	 * 修改 广告表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAdvertisementIgnoreNull(Advertisement advertisement);
+		
+	
+	/**
+	 * 查找 广告表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAdvertisement(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 广告表
+	 * @param id
+	 * @return
+	 */
+	public Advertisement findAdvertisement(long id);
+	
+	
+	/** 
+	 * 查找 广告表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAdvertisementForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找广告表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAdvertisementBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 广告表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAdvertisementBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAdvertisementBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IAdvertisementComponent advertisementComponent;
+	  
+ 	
+ 	public IAdvertisementComponent getAdvertisementComponent() {
+		return advertisementComponent;
+	}
+	public void setAdvertisementComponent(IAdvertisementComponent  advertisementComponent) {
+		this.advertisementComponent = advertisementComponent;
+	}
+	/**
+	 * 创建 广告表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Advertisement createAdvertisement(Advertisement advertisement) throws SQLException{
+	
+		return advertisementComponent.createAdvertisement(advertisement);
+	}
+	/**
+	 * 删除 广告表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteAdvertisement(long id){
+	
+		return advertisementComponent.deleteAdvertisement(id);
+	}
+	
+	
+	/**
+	 * 修改 广告表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateAdvertisement(Advertisement advertisement){
+		return advertisementComponent.updateAdvertisement(advertisement);
+	
+	}
+
+		
+	/**
+	 * 修改 广告表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateAdvertisementIgnoreNull(Advertisement advertisement){
+			return advertisementComponent.updateAdvertisementIgnoreNull(advertisement);
+	
+	}
+	
+	/**
+	 * 查找 广告表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAdvertisement(String where, String orderby,int limit,int offset){
+		return advertisementComponent.findAllAdvertisement(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 广告表
+	 * @param id
+	 * @return
+	 */
+	public Advertisement findAdvertisement(long id){
+		return advertisementComponent.findAdvertisement(id);
+	}
+	
+	/** 
+	 * 查找 广告表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllAdvertisementForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return advertisementComponent.findAllAdvertisement(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找广告表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllAdvertisementBySql(String sql,int limit,int offset){
+		return advertisementComponent.findAllAdvertisement(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 广告表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteAdvertisementBySql(String sql){
+		return advertisementComponent.excuteAdvertisementBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countAdvertisementBySql(String sql){
+		return advertisementComponent.countAdvertisementBySql(sql);
+	}
+	
+	
+

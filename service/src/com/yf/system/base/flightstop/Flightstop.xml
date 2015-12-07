@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Flightstop">
+  
+  <typeAlias alias="Flightstop" type="com.yf.system.base.flightstop.Flightstop"/>
+  
+
+  <resultMap id="resultFlightstopMap" class="Flightstop">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="sairportcode" column="C_SAIRPORTCODE"/>
+  
+     <result property="eairportcode" column="C_EAIRPORTCODE"/>
+  
+     <result property="flightnumber" column="C_FLIGHTNUMBER"/>
+  
+     <result property="stopnumber" column="C_STOPNUMBER"/>
+  
+     <result property="city" column="C_CITY"/>
+  
+     <result property="time" column="C_TIME"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="isenable" column="C_ISENABLE"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllFlightstop"  resultMap="resultFlightstopMap"  parameterClass="java.util.Map">
+  
+    select * from T_FLIGHTSTOP
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllFlightstopBySql"  resultMap="resultFlightstopMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteFlightstopBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countFlightstopBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_FLIGHTSTOP
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findFlightstop" parameterClass="long" resultClass="Flightstop">
+    select 
+    	ID as id,
+	  			C_SAIRPORTCODE as sairportcode,
+	  			C_EAIRPORTCODE as eairportcode,
+	  			C_FLIGHTNUMBER as flightnumber,
+	  			C_STOPNUMBER as stopnumber,
+	  			C_CITY as city,
+	  			C_TIME as time,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_ISENABLE as isenable,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_FLIGHTSTOP
+    where ID = #id#
+  </select>
+   
+  <insert id="createFlightstop" parameterClass="Flightstop">
+    insert into T_FLIGHTSTOP ( 
+    	ID,
+	  			C_SAIRPORTCODE,
+	  			C_EAIRPORTCODE,
+	  			C_FLIGHTNUMBER,
+	  			C_STOPNUMBER,
+	  			C_CITY,
+	  			C_TIME,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_ISENABLE,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#sairportcode#,
+	  					
+	  						#eairportcode#,
+	  					
+	  						#flightnumber#,
+	  					
+							#stopnumber:DECIMAL#,
+						
+	  						#city#,
+	  					
+	  						#time#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#isenable:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteFlightstop" parameterClass="long">
+    delete from T_FLIGHTSTOP
+    where ID = #id#
+  </delete>
+	
+  <update id="updateFlightstop" parameterClass="Flightstop">
+    update T_FLIGHTSTOP 
+    set 
+    	C_SAIRPORTCODE = #sairportcode#,
+	  					C_EAIRPORTCODE = #eairportcode#,
+	  					C_FLIGHTNUMBER = #flightnumber#,
+	  					C_STOPNUMBER = #stopnumber:DECIMAL#,
+						C_CITY = #city#,
+	  					C_TIME = #time#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_ISENABLE = #isenable:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

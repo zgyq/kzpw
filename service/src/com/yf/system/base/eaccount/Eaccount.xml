@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Eaccount">
+  
+  <typeAlias alias="Eaccount" type="com.yf.system.base.eaccount.Eaccount"/>
+  
+
+  <resultMap id="resultEaccountMap" class="Eaccount">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="edesc" column="C_EDESC"/>
+  
+     <result property="url" column="C_URL"/>
+  
+     <result property="nourl" column="C_NOURL"/>
+  
+     <result property="payurl" column="C_PAYURL"/>
+  
+     <result property="ispay" column="C_ISPAY"/>
+  
+     <result property="username" column="C_USERNAME"/>
+  
+     <result property="xiausername" column="C_XIAUSERNAME"/>
+  
+     <result property="key" column="C_KEY"/>
+  
+     <result property="password" column="C_PASSWORD"/>
+  
+     <result property="pwd" column="C_PWD"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+     
+     <result property="angentid" column="C_ANGENTID"/>
+   
+  </resultMap>
+  
+  <select id="findAllEaccount"  resultMap="resultEaccountMap"  parameterClass="java.util.Map">
+  
+    select * from T_EACCOUNT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllEaccountBySql"  resultMap="resultEaccountMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteEaccountBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countEaccountBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_EACCOUNT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findEaccount" parameterClass="long" resultClass="Eaccount">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_EDESC as edesc,
+	  			C_URL as url,
+	  			C_NOURL as nourl,
+	  			C_PAYURL as payurl,
+	  			C_ISPAY as ispay,
+	  			C_USERNAME as username,
+	  			C_XIAUSERNAME as xiausername,
+	  			C_KEY as [key],
+	  			C_PASSWORD as password,
+	  			C_PWD as pwd,
+	  			C_STATE as state,
+	  			C_CREATEUSER as createuser,
+	  			C_ANGENTID as angentid,
+	  			C_CREATETIME as createtime 
+     from T_EACCOUNT
+    where ID = #id#
+  </select>
+   
+  <insert id="createEaccount" parameterClass="Eaccount">
+    insert into T_EACCOUNT ( 
+    	ID,
+	  			C_NAME,
+	  			C_EDESC,
+	  			C_URL,
+	  			C_NOURL,
+	  			C_PAYURL,
+	  			C_ISPAY,
+	  			C_USERNAME,
+	  			C_XIAUSERNAME,
+	  			C_KEY,
+	  			C_PASSWORD,
+	  			C_PWD,
+	  			C_STATE,
+	  			C_CREATEUSER,
+	  			C_ANGENTID,
+	  			C_CREATETIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#edesc#,
+	  					
+	  						#url#,
+	  					
+	  						#nourl#,
+	  					
+	  						#payurl#,
+	  					
+	  						#ispay#,
+	  					
+	  						#username#,
+	  					
+	  						#xiausername#,
+	  					
+	  						#key#,
+	  					
+	  						#password#,
+	  					
+	  						#pwd#,
+	  					
+	  						#state#,
+	  					
+	  						#createuser#,
+	  						
+	  						#angentid#,
+	  					
+	  						#createtime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteEaccount" parameterClass="long">
+    delete from T_EACCOUNT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateEaccount" parameterClass="Eaccount">
+    update T_EACCOUNT 
+    set 
+    	C_NAME = #name#,
+	  					C_EDESC = #edesc#,
+	  					C_URL = #url#,
+	  					C_NOURL = #nourl#,
+	  					C_PAYURL = #payurl#,
+	  					C_ISPAY = #ispay#,
+	  					C_USERNAME = #username#,
+	  					C_XIAUSERNAME = #xiausername#,
+	  					C_KEY = #key#,
+	  					C_PASSWORD = #password#,
+	  					C_PWD = #pwd#,
+	  					C_STATE = #state#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_ANGENTID = #angentid#,
+	  					C_CREATETIME = #createtime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

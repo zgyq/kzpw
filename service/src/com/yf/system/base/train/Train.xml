@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Train">
+  
+  <typeAlias alias="Train" type="com.yf.system.base.train.Train"/>
+  
+
+  <resultMap id="resultTrainMap" class="Train">  
+     <result property="id" column="ID"/>
+     <result property="ordernumber" column="C_ORDERNUMBER"/>
+     <result property="orderstatus" column="C_ORDERSTATUS"/>
+     <!-- 
+      <result property="agentname" column="C_AGENTNAME"/>
+     <result property="orderstatusval" column="C_ORDERSTATUSVAL"/>
+     <result property="seattypeval" column="C_SEATTYPEVAL"/>
+      <result property="deliverytypeval" column="C_DELIVERYTYPEVAL"/>
+      <result property="paystatusval" column="C_PAYSTATUSVAL"/>
+      -->
+     <result property="deliverytypeval" column="C_DELIVERYTYPEVAL"/>
+     <result property="agentid" column="C_AGENTID"/>
+    
+    
+     <result property="createuid" column="C_CREATEUID"/>
+     <result property="memberid" column="C_MEMBERID"/>
+     <result property="createtime" column="C_CREATETIME"/>
+     <result property="traincode" column="C_TRAINCODE"/>
+     <result property="seattype"   column="C_SEATTYPE"/>
+     <result property="userid"   column="C_USERID"/>
+     <result property="suotime"   column="C_SUOTIME"/>
+     <result property="startdate" column="C_STARTDATE"/>
+     <result property="starttime" column="C_STARTTIME"/>
+     <result property="startcity" column="C_STARTCITY"/>
+     <result property="endcity" column="C_ENDCITY"/>
+     <result property="count" column="C_COUNT"/>
+     <result property="totalprice" column="C_TOTALPRICE"/>
+     <result property="contactname" column="C_CONTACTNAME"/>
+     <result property="contactmobile" column="C_CONTACTMOBILE"/>
+     <result property="deliveryadd" column="C_DELIVERYADD"/>
+     <result property="deliverytype" column="C_DELIVERYTYPE"/>
+     <result property="kddesc" column="C_KDDESC"/>
+     <result property="kdcode" column="C_KDCODE"/>
+     <result property="kdcomname" column="C_KDCOMNAME"/>
+     
+     <result property="post" column="C_POST"/>
+     <result property="paymethod" column="C_PAYMETHOD"/>
+     <result property="paystatus" column="C_PAYSTATUS"/>
+     
+     <result property="acceptseat" column="C_ACCEPTSEAT"/>
+     <result property="psprice" column="C_PSPRICE"/>
+     <result property="qptype" column="C_QPTYPE"/>
+     <result property="booktype" column="C_BOOKTYPE"/>
+     <result property="memo" column="C_MEMO"/>
+     <result property="cpxx" column="C_CPXX"/>
+   
+  </resultMap>
+  
+  <select id="findAllTrain"  resultMap="resultTrainMap"  parameterClass="java.util.Map">
+  select *  from T_TRAIN
+    <!-- select *
+    ,
+    (SELECT C_STATEVALUE FROM [T_ORDERSTATUS] WHERE C_STATEKEY=C_ORDERSTATUS AND C_STATETYPE=1) AS C_ORDERSTATUSVAL ,
+    (SELECT C_SEATVAL  FROM T_TRAINSEAT WHERE C_SEATKEY=C_SEATTYPE) AS C_SEATTYPEVAL, 
+    (SELECT C_PAYVAL FROM T_PAYSTATUS WHERE C_PAYKEY=C_PAYSTATUS) AS C_PAYSTATUSVAL,
+    (SELECT C_SENDVAL FROM T_SENDINFO WHERE C_SENDKEY=C_DELIVERYTYPE) AS C_DELIVERYTYPEVAL,
+    (SELECT C_AGENTCOMPANYNAME FROM T_CUSTOMERAGENT WHERE ID=C_AGENTID) AS C_AGENTNAME 
+    	
+    from T_TRAIN
+    -->
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTrainBySql"  resultMap="resultTrainMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTrainBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTrainBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRAIN
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTrain" parameterClass="long" resultClass="Train">
+    SELECT  ID AS id,
+		C_ORDERNUMBER AS ordernumber,
+		C_ORDERSTATUS AS orderstatus,
+		C_AGENTID  AS agentid,
+		C_CREATEUID AS  createuid,
+		C_MEMBERID AS  memberid,
+		C_CREATETIME AS createtime,
+		C_SUOTIME AS suotime,
+		C_USERID AS userid,
+		C_TRAINCODE AS traincode,
+		C_SEATTYPE AS seattype,
+		C_STARTDATE AS startdate,
+		C_STARTTIME AS starttime,
+		C_STARTCITY AS startcity,
+		C_ENDCITY AS endcity,
+		C_COUNT AS count,
+		C_TOTALPRICE AS totalprice,
+		C_CONTACTNAME AS contactname,
+		C_CONTACTMOBILE AS contactmobile,
+		C_DELIVERYADD AS deliveryadd,
+		C_POST AS post,
+		C_PSPRICE AS psprice,
+		C_QPTYPE AS qptype,
+		C_BOOKTYPE AS booktype,
+		C_DELIVERYTYPE AS deliverytype,
+		C_DELIVERYTYPEVAL AS deliverytypeval,
+		C_PAYMETHOD AS paymethod,
+		C_PAYSTATUS AS paystatus,
+		C_ACCEPTSEAT AS acceptseat,
+		C_KDCOMNAME AS kdcomname,
+		C_KDCODE AS kdcode,
+		C_KDDESC AS kddesc,
+		C_CPXX AS cpxx,
+		(SELECT C_STATEVALUE FROM [T_ORDERSTATUS] WHERE C_STATEKEY=C_ORDERSTATUS AND C_STATETYPE=1) AS orderstatusval,
+		(SELECT C_SEATVAL  FROM T_TRAINSEAT WHERE C_SEATKEY=C_SEATTYPE) AS seattypeval,
+        (SELECT C_PAYVAL FROM T_PAYSTATUS WHERE C_PAYKEY=C_PAYSTATUS) AS paystatusval,
+        <!-- (SELECT C_SENDVAL FROM T_SENDINFO WHERE C_SENDKEY=C_DELIVERYTYPE) AS deliverytypeval, -->
+        (SELECT C_AGENTCOMPANYNAME FROM T_CUSTOMERAGENT WHERE ID=C_AGENTID) AS C_AGENTNAME,
+		C_MEMO AS  memo
+     FROM T_TRAIN
+    WHERE ID = #id#
+  </select>
+   
+  <insert id="createTrain" parameterClass="Train">
+   <selectKey resultClass="long" type="pre" keyProperty="id">
+    SELECT ISNULL(MAX(ID),0)+1 AS VALUE FROM T_TRAIN
+    </selectKey>
+    insert into T_TRAIN ( 
+    	    ID,
+			C_ORDERNUMBER,
+			C_ORDERSTATUS,
+			C_AGENTID,
+			C_CREATEUID,
+			C_MEMBERID,
+			C_USERID,
+			C_SUOTIME,
+			C_CREATETIME,
+			C_TRAINCODE,
+			C_SEATTYPE,
+			C_STARTDATE,
+			C_STARTTIME,
+			C_STARTCITY,
+			C_ENDCITY,
+			C_COUNT,
+			C_PSPRICE,
+			C_QPTYPE,
+			C_BOOKTYPE,
+			C_TOTALPRICE,
+			C_CONTACTNAME,
+			C_CONTACTMOBILE,
+			C_DELIVERYADD,
+			C_POST,
+			C_DELIVERYTYPE,
+			C_DELIVERYTYPEVAL,
+			C_PAYMETHOD,
+			C_PAYSTATUS,
+			C_ACCEPTSEAT,
+			C_KDCOMNAME,
+			C_KDCODE,
+			C_KDDESC,
+			C_CPXX,
+			C_MEMO
+
+    )
+    values (
+        #id#,
+		#ordernumber#,
+		#orderstatus#,
+		#agentid#,
+		#createuid#,
+		#memberid#,
+		#userid#,
+		#suotime#,
+		#createtime#,
+		#traincode#,
+		#seattype#,
+		#startdate#,
+		#starttime#,
+		#startcity#,
+		#endcity#,
+		#count#,
+		#psprice#,
+		#qptype#,
+		#booktype#,
+		#totalprice#,
+		#contactname#,
+		#contactmobile#,
+		#deliveryadd#,
+		#post#,
+		#deliverytype#,
+		#deliverytypeval#,
+		#paymethod#,
+		#paystatus#,
+		#acceptseat#,
+		#kdcomname#,
+		#kdcode#,
+		#kddesc#,
+		#cpxx#,
+		#memo#
+    )
+  </insert>
+  
+  <delete id="deleteTrain" parameterClass="long">
+    delete from T_TRAIN
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTrain" parameterClass="Train">
+    update T_TRAIN 
+    set 
+		C_ORDERNUMBER = #ordernumber#,
+		C_ORDERSTATUS = #orderstatus#,
+		C_AGENTID  = #agentid#,
+		C_CREATEUID =  #createuid#,
+		C_MEMBERID =  #memberid#,
+		C_USERID =  #userid#,
+		C_SUOTIME =  #suotime#,
+		C_CREATETIME = #createtime#,
+		C_TRAINCODE = #traincode#,
+		C_SEATTYPE = #seattype#,
+		C_STARTDATE = #startdate#,
+		C_STARTTIME = #starttime#,
+		C_STARTCITY = #startcity#,
+		C_ENDCITY = #endcity#,
+		C_COUNT = #count#,
+		C_PSPRICE = #psprice#,
+		C_QPTYPE = #qptype#,
+		C_BOOKTYPE = #booktype#,
+		C_TOTALPRICE = #totalprice#,
+		C_CONTACTNAME = #contactname#,
+		C_CONTACTMOBILE = #contactmobile#,
+		C_DELIVERYADD = #deliveryadd#,
+		C_POST = #post#,
+		C_DELIVERYTYPE = #deliverytype#,
+		C_DELIVERYTYPEVAL = #deliverytypeval#,
+		C_PAYMETHOD = #paymethod#,
+		C_PAYSTATUS = #paystatus#,
+		C_ACCEPTSEAT = #acceptseat#,
+		C_KDCOMNAME = #kdcomname#,
+		C_KDCODE = #kdcode#,
+		C_KDDESC = #kddesc#,
+		C_CPXX = #cpxx#,
+		C_MEMO =  #memo#
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

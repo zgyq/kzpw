@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 特价机票信息（定期更新）
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Specialprice createSpecialprice(Specialprice specialprice) throws SQLException;
+	
+	/**
+	 * 删除 特价机票信息（定期更新）
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpecialprice(long id);
+	
+	
+	/**
+	 * 修改 特价机票信息（定期更新）
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpecialprice(Specialprice specialprice);
+
+		
+	/**
+	 * 修改 特价机票信息（定期更新）但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpecialpriceIgnoreNull(Specialprice specialprice);
+		
+	
+	/**
+	 * 查找 特价机票信息（定期更新）
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpecialprice(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 特价机票信息（定期更新）
+	 * @param id
+	 * @return
+	 */
+	public Specialprice findSpecialprice(long id);
+	
+	
+	/** 
+	 * 查找 特价机票信息（定期更新）
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpecialpriceForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找特价机票信息（定期更新）
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpecialpriceBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 特价机票信息（定期更新）
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpecialpriceBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpecialpriceBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ISpecialpriceComponent specialpriceComponent;
+	  
+ 	
+ 	public ISpecialpriceComponent getSpecialpriceComponent() {
+		return specialpriceComponent;
+	}
+	public void setSpecialpriceComponent(ISpecialpriceComponent  specialpriceComponent) {
+		this.specialpriceComponent = specialpriceComponent;
+	}
+	/**
+	 * 创建 特价机票信息（定期更新）
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Specialprice createSpecialprice(Specialprice specialprice) throws SQLException{
+	
+		return specialpriceComponent.createSpecialprice(specialprice);
+	}
+	/**
+	 * 删除 特价机票信息（定期更新）
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteSpecialprice(long id){
+	
+		return specialpriceComponent.deleteSpecialprice(id);
+	}
+	
+	
+	/**
+	 * 修改 特价机票信息（定期更新）
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateSpecialprice(Specialprice specialprice){
+		return specialpriceComponent.updateSpecialprice(specialprice);
+	
+	}
+
+		
+	/**
+	 * 修改 特价机票信息（定期更新）但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateSpecialpriceIgnoreNull(Specialprice specialprice){
+			return specialpriceComponent.updateSpecialpriceIgnoreNull(specialprice);
+	
+	}
+	
+	/**
+	 * 查找 特价机票信息（定期更新）
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpecialprice(String where, String orderby,int limit,int offset){
+		return specialpriceComponent.findAllSpecialprice(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 特价机票信息（定期更新）
+	 * @param id
+	 * @return
+	 */
+	public Specialprice findSpecialprice(long id){
+		return specialpriceComponent.findSpecialprice(id);
+	}
+	
+	/** 
+	 * 查找 特价机票信息（定期更新）
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllSpecialpriceForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return specialpriceComponent.findAllSpecialprice(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找特价机票信息（定期更新）
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllSpecialpriceBySql(String sql,int limit,int offset){
+		return specialpriceComponent.findAllSpecialprice(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 特价机票信息（定期更新）
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteSpecialpriceBySql(String sql){
+		return specialpriceComponent.excuteSpecialpriceBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countSpecialpriceBySql(String sql){
+		return specialpriceComponent.countSpecialpriceBySql(sql);
+	}
+	
+	
+

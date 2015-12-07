@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 酒店星级返利
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Hotelstart createHotelstart(Hotelstart hotelstart) throws SQLException;
+	
+	/**
+	 * 删除 酒店星级返利
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteHotelstart(long id);
+	
+	
+	/**
+	 * 修改 酒店星级返利
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateHotelstart(Hotelstart hotelstart);
+
+		
+	/**
+	 * 修改 酒店星级返利但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateHotelstartIgnoreNull(Hotelstart hotelstart);
+		
+	
+	/**
+	 * 查找 酒店星级返利
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelstart(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 酒店星级返利
+	 * @param id
+	 * @return
+	 */
+	public Hotelstart findHotelstart(long id);
+	
+	
+	/** 
+	 * 查找 酒店星级返利
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllHotelstartForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找酒店星级返利
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelstartBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 酒店星级返利
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteHotelstartBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countHotelstartBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IHotelstartComponent hotelstartComponent;
+	  
+ 	
+ 	public IHotelstartComponent getHotelstartComponent() {
+		return hotelstartComponent;
+	}
+	public void setHotelstartComponent(IHotelstartComponent  hotelstartComponent) {
+		this.hotelstartComponent = hotelstartComponent;
+	}
+	/**
+	 * 创建 酒店星级返利
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Hotelstart createHotelstart(Hotelstart hotelstart) throws SQLException{
+	
+		return hotelstartComponent.createHotelstart(hotelstart);
+	}
+	/**
+	 * 删除 酒店星级返利
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteHotelstart(long id){
+	
+		return hotelstartComponent.deleteHotelstart(id);
+	}
+	
+	
+	/**
+	 * 修改 酒店星级返利
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateHotelstart(Hotelstart hotelstart){
+		return hotelstartComponent.updateHotelstart(hotelstart);
+	
+	}
+
+		
+	/**
+	 * 修改 酒店星级返利但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateHotelstartIgnoreNull(Hotelstart hotelstart){
+			return hotelstartComponent.updateHotelstartIgnoreNull(hotelstart);
+	
+	}
+	
+	/**
+	 * 查找 酒店星级返利
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelstart(String where, String orderby,int limit,int offset){
+		return hotelstartComponent.findAllHotelstart(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 酒店星级返利
+	 * @param id
+	 * @return
+	 */
+	public Hotelstart findHotelstart(long id){
+		return hotelstartComponent.findHotelstart(id);
+	}
+	
+	/** 
+	 * 查找 酒店星级返利
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllHotelstartForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return hotelstartComponent.findAllHotelstart(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找酒店星级返利
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelstartBySql(String sql,int limit,int offset){
+		return hotelstartComponent.findAllHotelstart(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 酒店星级返利
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteHotelstartBySql(String sql){
+		return hotelstartComponent.excuteHotelstartBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countHotelstartBySql(String sql){
+		return hotelstartComponent.countHotelstartBySql(sql);
+	}
+	
+	
+

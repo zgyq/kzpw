@@ -1,0 +1,41 @@
+@charset "gb2312";
+/* CSS Document */
+body{margin:0px; padding:0px; font-size:12px; font-family:"ËÎÌו"; color:#36322f; font-size:12px; line-height:21px; background:#fff}
+a{color:#2577e3;}
+img{border:0px;}
+a:link {text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
+ul, p, dl, dt, dd, li, img, div, p, table {padding:0px; margin:0px;}
+li{list-style-position:outside; list-style-type:none;}
+h1, h2, h3, h4, h5{ padding:0px; margin:0px; font-weight:normal;}
+h2 { font-size:18px;}
+h5 { font-size:14px; line-height:21px;}
+.clearit { clear:both; width:0px; height:0px; overflow:hidden; zoom:1;}
+.space { height:10px; overflow:hidden;}
+img { vertical-align:top;}
+
+#awrap{ width:100%;}
+.order-deta-info{ margin:20px auto 0;padding:10px 10px 10px 40px; height:100%; overflow:auto;}
+.order-deta-info h1{ font-size:24px; color:#2577e3; font-weight:bold}
+.order-deta-info h2{ font-size:14px; color:#000;  font-weight:bold; margin:20px 0 10px 0}
+.order-deta-info h2 span{ display:inline-block; width:7px; height:20px; float:left; margin-right:5px;}
+.order-basic-info,.train-info,.passenger-info,.fare-info,.order-record,.message-record{ height:100%; overflow:auto; width:96%;}
+.order-deta-info table{border-right:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf; text-align:center}
+.order-deta-info tr{ height:30px;}
+.order-deta-info td{border-left:1px solid #dfdfdf;border-top:1px solid #dfdfdf;}
+.order-deta-info tr td.title{ width:10%; color:#000;}
+.order-deta-info tr td.cont{ width:15%; color:#7d7d7d}
+.order-deta-info tr td.orange{ color:#fb6b24; font-weight:bold}
+
+
+
+
+
+
+
+
+
+
+
+

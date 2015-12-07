@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Ympay">
+  
+  <typeAlias alias="Ympay" type="com.yf.system.base.ympay.Ympay"/>
+  
+
+  <resultMap id="resultYmpayMap" class="Ympay">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="ymuserid" column="C_YMUSERID"/>
+  
+     <result property="pwd" column="C_PWD"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="memnum" column="C_MEMNUM"/>
+  
+     <result property="back1" column="C_EBACK1"/>
+  
+     <result property="back2" column="C_EBACK2"/>
+  
+     <result property="back3" column="C_EBACK3"/>
+  
+     <result property="back4" column="C_EBACK4"/>
+   
+  </resultMap>
+  
+  <select id="findAllYmpay"  resultMap="resultYmpayMap"  parameterClass="java.util.Map">
+  
+    select * from T_YMPAY
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllYmpayBySql"  resultMap="resultYmpayMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteYmpayBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countYmpayBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_YMPAY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findYmpay" parameterClass="long" resultClass="Ympay">
+    select 
+    	ID as id,
+	  			C_YMUSERID as ymuserid,
+	  			C_PWD as pwd,
+	  			C_PRICE as price,
+	  			C_AGENTID as agentid,
+	  			C_STATE as state,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MEMNUM as memnum,
+	  			C_EBACK1 as back1,
+	  			C_EBACK2 as back2,
+	  			C_EBACK3 as back3,
+	  			C_EBACK4 as back4 
+     from T_YMPAY
+    where ID = #id#
+  </select>
+   
+  <insert id="createYmpay" parameterClass="Ympay">
+    insert into T_YMPAY ( 
+    	ID,
+	  			C_YMUSERID,
+	  			C_PWD,
+	  			C_PRICE,
+	  			C_AGENTID,
+	  			C_STATE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MEMNUM,
+	  			C_EBACK1,
+	  			C_EBACK2,
+	  			C_EBACK3,
+	  			C_EBACK4 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#ymuserid:DECIMAL#,
+						
+	  						#pwd#,
+	  					
+	  						#price#,
+	  					
+	  						#agentid#,
+	  					
+							#state:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+							#memnum:DECIMAL#,
+						
+	  						#back1#,
+	  					
+	  						#back2#,
+	  					
+	  						#back3#,
+	  					
+	  						#back4#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteYmpay" parameterClass="long">
+    delete from T_YMPAY
+    where ID = #id#
+  </delete>
+	
+  <update id="updateYmpay" parameterClass="Ympay">
+    update T_YMPAY 
+    set 
+    	C_YMUSERID = #ymuserid:DECIMAL#,
+						C_PWD = #pwd#,
+	  					C_PRICE = #price#,
+	  					C_AGENTID = #agentid#,
+	  					C_STATE = #state:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MEMNUM = #memnum:DECIMAL#,
+						C_EBACK1 = #back1#,
+	  					C_EBACK2 = #back2#,
+	  					C_EBACK3 = #back3#,
+	  					C_EBACK4 = #back4#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

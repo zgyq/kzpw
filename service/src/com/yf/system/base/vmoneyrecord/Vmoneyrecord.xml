@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Vmoneyrecord">
+  
+  <typeAlias alias="Vmoneyrecord" type="com.yf.system.base.vmoneyrecord.Vmoneyrecord"/>
+  
+
+  <resultMap id="resultVmoneyrecordMap" class="Vmoneyrecord">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="createuserid" column="C_CREATEUSERID"/>
+  
+     <result property="money" column="C_MONEY"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+     
+     <result property="memo" column="C_MEMO"/>
+     
+     <result property="ordernumber" column="C_ORDERNUMBER"/>
+     
+     <result property="type" column="C_TYPE"/>
+     
+     <result property="customeruserid" column="C_CUSTOMERUSERID"/>
+   
+  </resultMap>
+  
+  <select id="findAllVmoneyrecord"  resultMap="resultVmoneyrecordMap"  parameterClass="java.util.Map">
+  
+    select * from T_VMONEYRECORD
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllVmoneyrecordBySql"  resultMap="resultVmoneyrecordMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteVmoneyrecordBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countVmoneyrecordBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_VMONEYRECORD
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findVmoneyrecord" parameterClass="long" resultClass="Vmoneyrecord">
+    select 
+    	ID as id,
+	  			C_AGENTID as agentid,
+	  			C_CREATEUSERID as createuserid,
+	  			C_MONEY as money,
+	  			C_CREATETIME as createtime,
+	  			C_MEMO as memo,
+	  			C_ORDERNUMBER as ordernumber,
+	  			C_TYPE as type,
+	  			C_CUSTOMERUSERID as customeruserid
+     from T_VMONEYRECORD
+    where ID = #id#
+  </select>
+   
+  <insert id="createVmoneyrecord" parameterClass="Vmoneyrecord">
+    insert into T_VMONEYRECORD ( 
+    	ID,
+	  			C_AGENTID,
+	  			C_CREATEUSERID,
+	  			C_MONEY,
+	  			C_CREATETIME,
+	  			C_MEMO,
+	  			C_ORDERNUMBER,
+	  			C_TYPE,
+	  			C_CUSTOMERUSERID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#agentid#,
+	  					
+	  						#createuserid#,
+	  					
+							#money:DECIMAL#,
+						
+	  						#createtime#,
+	  						
+	  						#memo#,
+	  						
+	  						#ordernumber#,
+	  						
+	  						#type#,
+	  						
+	  						#customeruserid#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteVmoneyrecord" parameterClass="long">
+    delete from T_VMONEYRECORD
+    where ID = #id#
+  </delete>
+	
+  <update id="updateVmoneyrecord" parameterClass="Vmoneyrecord">
+    update T_VMONEYRECORD 
+    set 
+    	C_AGENTID = #agentid#,
+	  					C_CREATEUSERID = #createuserid#,
+	  					C_MONEY = #money:DECIMAL#,
+						C_CREATETIME = #createtime#,
+						C_MEMO=#memo#,
+						C_ORDERNUMBER=#ordernumber#,
+						C_TYPE=#type#,
+						C_CUSTOMERUSERID=#customeruserid#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

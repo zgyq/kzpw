@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 行程单号码
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Xcdnoinfo createXcdnoinfo(Xcdnoinfo xcdnoinfo) throws SQLException;
+	
+	/**
+	 * 删除 行程单号码
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteXcdnoinfo(long id);
+	
+	
+	/**
+	 * 修改 行程单号码
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateXcdnoinfo(Xcdnoinfo xcdnoinfo);
+
+		
+	/**
+	 * 修改 行程单号码但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateXcdnoinfoIgnoreNull(Xcdnoinfo xcdnoinfo);
+		
+	
+	/**
+	 * 查找 行程单号码
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllXcdnoinfo(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 行程单号码
+	 * @param id
+	 * @return
+	 */
+	public Xcdnoinfo findXcdnoinfo(long id);
+	
+	
+	/** 
+	 * 查找 行程单号码
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllXcdnoinfoForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找行程单号码
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllXcdnoinfoBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 行程单号码
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteXcdnoinfoBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countXcdnoinfoBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IXcdnoinfoComponent xcdnoinfoComponent;
+	  
+ 	
+ 	public IXcdnoinfoComponent getXcdnoinfoComponent() {
+		return xcdnoinfoComponent;
+	}
+	public void setXcdnoinfoComponent(IXcdnoinfoComponent  xcdnoinfoComponent) {
+		this.xcdnoinfoComponent = xcdnoinfoComponent;
+	}
+	/**
+	 * 创建 行程单号码
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Xcdnoinfo createXcdnoinfo(Xcdnoinfo xcdnoinfo) throws SQLException{
+	
+		return xcdnoinfoComponent.createXcdnoinfo(xcdnoinfo);
+	}
+	/**
+	 * 删除 行程单号码
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteXcdnoinfo(long id){
+	
+		return xcdnoinfoComponent.deleteXcdnoinfo(id);
+	}
+	
+	
+	/**
+	 * 修改 行程单号码
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateXcdnoinfo(Xcdnoinfo xcdnoinfo){
+		return xcdnoinfoComponent.updateXcdnoinfo(xcdnoinfo);
+	
+	}
+
+		
+	/**
+	 * 修改 行程单号码但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateXcdnoinfoIgnoreNull(Xcdnoinfo xcdnoinfo){
+			return xcdnoinfoComponent.updateXcdnoinfoIgnoreNull(xcdnoinfo);
+	
+	}
+	
+	/**
+	 * 查找 行程单号码
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllXcdnoinfo(String where, String orderby,int limit,int offset){
+		return xcdnoinfoComponent.findAllXcdnoinfo(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 行程单号码
+	 * @param id
+	 * @return
+	 */
+	public Xcdnoinfo findXcdnoinfo(long id){
+		return xcdnoinfoComponent.findXcdnoinfo(id);
+	}
+	
+	/** 
+	 * 查找 行程单号码
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllXcdnoinfoForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return xcdnoinfoComponent.findAllXcdnoinfo(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找行程单号码
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllXcdnoinfoBySql(String sql,int limit,int offset){
+		return xcdnoinfoComponent.findAllXcdnoinfo(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 行程单号码
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteXcdnoinfoBySql(String sql){
+		return xcdnoinfoComponent.excuteXcdnoinfoBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countXcdnoinfoBySql(String sql){
+		return xcdnoinfoComponent.countXcdnoinfoBySql(sql);
+	}
+	
+	
+

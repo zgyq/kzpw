@@ -1,0 +1,23 @@
+$(document).ready(function(e) {
+    $('.center_show_img').each(function(){
+		$(this).live('mouseover',function(){
+			$(this).parent().css({'width':'1270px','height':'242px'});
+			$(this).animate({width:'1270px',height:'242px'},'slow');
+			$(this).siblings('.layer').css({'left':'825px'});
+			$(this).siblings().children('p').eq(1).show();
+			$(this).siblings().children('img').eq(0).hide();
+			if($(this).siblings().attr('class')!='layer'){
+				$(this).siblings('.layer').css({'left':'125px'});
+			}
+		}).live('mouseout',function(){
+			$(this).parent().css({'width':'1000px','height':'157px'});
+			$(this).animate({width:'1000px',height:'157px'},'slow');
+			$(this).siblings('.layer').css({'left':'704px'});
+			$(this).siblings().children('p').eq(1).hide();
+			$(this).siblings().children('img').eq(0).show();
+			if($(this).siblings().attr('class')!='layer'){
+				$(this).siblings('.layer').css({'left':'0'});
+			}
+		});	
+	})
+});

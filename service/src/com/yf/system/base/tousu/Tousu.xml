@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Tousu">
+  
+  <typeAlias alias="Tousu" type="com.yf.system.base.tousu.Tousu"/>
+  
+
+  <resultMap id="resultTousuMap" class="Tousu">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="starttime" column="C_STARTTIME"/>
+  
+     <result property="hour" column="C_HOUR"/>
+  
+     <result property="minute" column="C_MINUTE"/>
+  
+     <result property="startcity" column="C_STARTCITY"/>
+  
+     <result property="endcity" column="C_ENDCITY"/>
+  
+     <result property="flightnumber" column="C_FLIGHTNUMBER"/>
+  
+     <result property="happentime" column="C_HAPPENTIME"/>
+  
+     <result property="username" column="C_USERNAME"/>
+  
+     <result property="sex" column="C_SEX"/>
+  
+     <result property="dainame" column="C_DAINAME"/>
+  
+     <result property="daimobile" column="C_DAIMOBILE"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="number" column="C_NUMBER"/>
+  
+     <result property="kahao" column="C_KAHAO"/>
+  
+     <result property="mobile" column="C_MOBILE"/>
+  
+     <result property="qitamobile" column="C_QITAMOBILE"/>
+  
+     <result property="youbian" column="C_YOUBIAN"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="fax" column="C_FAX"/>
+  
+     <result property="postbox" column="C_POSTBOX"/>
+  
+     <result property="units" column="C_UNITS"/>
+  
+     <result property="iftype" column="C_IFTYPE"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+  
+     <result property="yaoqiu" column="C_YAOQIU"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllTousu"  resultMap="resultTousuMap"  parameterClass="java.util.Map">
+  
+    select * from T_TOUSU
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTousuBySql"  resultMap="resultTousuMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTousuBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTousuBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TOUSU
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTousu" parameterClass="long" resultClass="Tousu">
+    select 
+    	ID as id,
+	  			C_STARTTIME as starttime,
+	  			C_HOUR as hour,
+	  			C_MINUTE as minute,
+	  			C_STARTCITY as startcity,
+	  			C_ENDCITY as endcity,
+	  			C_FLIGHTNUMBER as flightnumber,
+	  			C_HAPPENTIME as happentime,
+	  			C_USERNAME as username,
+	  			C_SEX as sex,
+	  			C_DAINAME as dainame,
+	  			C_DAIMOBILE as daimobile,
+	  			C_TYPE as type,
+	  			C_NUMBER as number,
+	  			C_KAHAO as kahao,
+	  			C_MOBILE as mobile,
+	  			C_QITAMOBILE as qitamobile,
+	  			C_YOUBIAN as youbian,
+	  			C_ADDRESS as address,
+	  			C_FAX as fax,
+	  			C_POSTBOX as postbox,
+	  			C_UNITS as units,
+	  			C_IFTYPE as iftype,
+	  			C_COMMENT as comment,
+	  			C_YAOQIU as yaoqiu,
+	  			C_CREATETIME as createtime 
+     from T_TOUSU
+    where ID = #id#
+  </select>
+   
+  <insert id="createTousu" parameterClass="Tousu">
+    insert into T_TOUSU ( 
+    	ID,
+	  			C_STARTTIME,
+	  			C_HOUR,
+	  			C_MINUTE,
+	  			C_STARTCITY,
+	  			C_ENDCITY,
+	  			C_FLIGHTNUMBER,
+	  			C_HAPPENTIME,
+	  			C_USERNAME,
+	  			C_SEX,
+	  			C_DAINAME,
+	  			C_DAIMOBILE,
+	  			C_TYPE,
+	  			C_NUMBER,
+	  			C_KAHAO,
+	  			C_MOBILE,
+	  			C_QITAMOBILE,
+	  			C_YOUBIAN,
+	  			C_ADDRESS,
+	  			C_FAX,
+	  			C_POSTBOX,
+	  			C_UNITS,
+	  			C_IFTYPE,
+	  			C_COMMENT,
+	  			C_YAOQIU,
+	  			C_CREATETIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#starttime#,
+	  					
+	  						#hour#,
+	  					
+	  						#minute#,
+	  					
+							#startcity:DECIMAL#,
+						
+							#endcity:DECIMAL#,
+						
+	  						#flightnumber#,
+	  					
+	  						#happentime#,
+	  					
+	  						#username#,
+	  					
+							#sex:DECIMAL#,
+						
+	  						#dainame#,
+	  					
+	  						#daimobile#,
+	  					
+							#type:DECIMAL#,
+						
+	  						#number#,
+	  					
+	  						#kahao#,
+	  					
+	  						#mobile#,
+	  					
+	  						#qitamobile#,
+	  					
+	  						#youbian#,
+	  					
+	  						#address#,
+	  					
+	  						#fax#,
+	  					
+	  						#postbox#,
+	  					
+	  						#units#,
+	  					
+							#iftype:DECIMAL#,
+						
+	  						#comment#,
+	  					
+	  						#yaoqiu#,
+	  					
+	  						#createtime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTousu" parameterClass="long">
+    delete from T_TOUSU
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTousu" parameterClass="Tousu">
+    update T_TOUSU 
+    set 
+    	C_STARTTIME = #starttime#,
+	  					C_HOUR = #hour#,
+	  					C_MINUTE = #minute#,
+	  					C_STARTCITY = #startcity:DECIMAL#,
+						C_ENDCITY = #endcity:DECIMAL#,
+						C_FLIGHTNUMBER = #flightnumber#,
+	  					C_HAPPENTIME = #happentime#,
+	  					C_USERNAME = #username#,
+	  					C_SEX = #sex:DECIMAL#,
+						C_DAINAME = #dainame#,
+	  					C_DAIMOBILE = #daimobile#,
+	  					C_TYPE = #type:DECIMAL#,
+						C_NUMBER = #number#,
+	  					C_KAHAO = #kahao#,
+	  					C_MOBILE = #mobile#,
+	  					C_QITAMOBILE = #qitamobile#,
+	  					C_YOUBIAN = #youbian#,
+	  					C_ADDRESS = #address#,
+	  					C_FAX = #fax#,
+	  					C_POSTBOX = #postbox#,
+	  					C_UNITS = #units#,
+	  					C_IFTYPE = #iftype:DECIMAL#,
+						C_COMMENT = #comment#,
+	  					C_YAOQIU = #yaoqiu#,
+	  					C_CREATETIME = #createtime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

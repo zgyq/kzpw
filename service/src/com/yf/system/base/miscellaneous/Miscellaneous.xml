@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Miscellaneous">
+  
+  <typeAlias alias="Miscellaneous" type="com.yf.system.base.miscellaneous.Miscellaneous"/>
+  
+
+  <resultMap id="resultMiscellaneousMap" class="Miscellaneous">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createid" column="C_CREATEID"/>
+  
+     <result property="groupuserid" column="C_GROUPUSERID"/>
+  
+     <result property="department" column="C_DEPARTMENT"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="price" column="C_PRICE"/>
+     
+      <result property="state" column="C_STATE"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+     
+     <result property="spenddate" column="C_SPENDDATE"/>
+     
+     <result property="yihai" column="C_YIHAI"/>
+     
+     <result property="haiqian" column="C_HAIQIAN"/>
+     
+     <result property="customerid" column="C_CUSTOMERID"/>
+     <result property="repaytime" column="C_REPAYTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllMiscellaneous"  resultMap="resultMiscellaneousMap"  parameterClass="java.util.Map">
+  
+    select * from T_MISCELLANEOUS
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllMiscellaneousBySql"  resultMap="resultMiscellaneousMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteMiscellaneousBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countMiscellaneousBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_MISCELLANEOUS
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findMiscellaneous" parameterClass="long" resultClass="Miscellaneous">
+    select 
+    	ID as id,
+	  			C_CREATETIME as createtime,
+	  			C_CREATEID as createid,
+	  			C_GROUPUSERID as groupuserid,
+	  			C_DEPARTMENT as department,
+	  			C_NAME as name,
+	  			C_STATE as state,
+	  			C_PRICE as price,
+	  			C_DESCRIPTION as description,
+	  			C_SPENDDATE as spenddate,
+	  			C_YIHAI as yihai,
+	  			C_HAIQIAN as haiqian,
+	  			C_CUSTOMERID as customerid,
+	  			C_REPAYTIME as repaytime
+     from T_MISCELLANEOUS
+    where ID = #id#
+  </select>
+   
+  <insert id="createMiscellaneous" parameterClass="Miscellaneous">
+    insert into T_MISCELLANEOUS ( 
+    	ID,
+	  			C_CREATETIME,
+	  			C_CREATEID,
+	  			C_GROUPUSERID,
+	  			C_DEPARTMENT,
+	  			C_NAME,
+	  			C_PRICE,
+	  			C_STATE,
+	  			C_DESCRIPTION,
+	  			C_SPENDDATE ,
+	  			C_YIHAI,
+	  			C_HAIQIAN,
+	  			C_CUSTOMERID,
+	  			C_REPAYTIME
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#createtime#,
+	  					
+							#createid:DECIMAL#,
+						
+							#groupuserid:DECIMAL#,
+						
+							#department:DECIMAL#,
+						
+	  						#name#,
+	  					
+							#price:DECIMAL#,
+							
+							#state:DECIMAL#,
+						
+	  						#description#,
+	  						
+	  						#spenddate#,
+	  						#yihai#,
+	  						#haiqian#,
+	  						#customerid#,
+	  						#repaytime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteMiscellaneous" parameterClass="long">
+    delete from T_MISCELLANEOUS
+    where ID = #id#
+  </delete>
+	
+  <update id="updateMiscellaneous" parameterClass="Miscellaneous">
+    update T_MISCELLANEOUS 
+    set 
+    	C_CREATETIME = #createtime#,
+	  					C_CREATEID = #createid:DECIMAL#,
+						C_GROUPUSERID = #groupuserid:DECIMAL#,
+						C_DEPARTMENT = #department:DECIMAL#,
+						C_NAME = #name#,
+						C_STATE = #state#,
+	  					C_PRICE = #price:DECIMAL#,
+						C_DESCRIPTION = #description#,
+						C_SPENDDATE=#spenddate#,
+						C_YIHAI=#yihai#,
+						C_HAIQIAN=#haiqian#,
+						C_CUSTOMERID=#customerid#,
+						C_REPAYTIME=#repaytime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

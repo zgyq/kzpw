@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Airflight">
+  
+  <typeAlias alias="Airflight" type="com.yf.system.base.airflight.Airflight"/>
+  
+
+  <resultMap id="resultAirflightMap" class="Airflight">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="aircompanycode" column="C_AIRCOMPANYCODE"/>
+  
+     <result property="flightnumber" column="C_FLIGHTNUMBER"/>
+  
+     <result property="sairportcode" column="C_SAIRPORTCODE"/>
+  
+     <result property="eairportcode" column="C_EAIRPORTCODE"/>
+  
+     <result property="isenable" column="C_ISENABLE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createusertime" column="C_CREATEUSERTIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllAirflight"  resultMap="resultAirflightMap"  parameterClass="java.util.Map">
+  
+    select * from T_AIRFLIGHT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllAirflightBySql"  resultMap="resultAirflightMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteAirflightBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countAirflightBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_AIRFLIGHT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findAirflight" parameterClass="long" resultClass="Airflight">
+    select 
+    	ID as id,
+	  			C_AIRCOMPANYCODE as aircompanycode,
+	  			C_FLIGHTNUMBER as flightnumber,
+	  			C_SAIRPORTCODE as sairportcode,
+	  			C_EAIRPORTCODE as eairportcode,
+	  			C_ISENABLE as isenable,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATEUSERTIME as createusertime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_AIRFLIGHT
+    where ID = #id#
+  </select>
+   
+  <insert id="createAirflight" parameterClass="Airflight">
+    insert into T_AIRFLIGHT ( 
+    	ID,
+	  			C_AIRCOMPANYCODE,
+	  			C_FLIGHTNUMBER,
+	  			C_SAIRPORTCODE,
+	  			C_EAIRPORTCODE,
+	  			C_ISENABLE,
+	  			C_CREATEUSER,
+	  			C_CREATEUSERTIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#aircompanycode#,
+	  					
+	  						#flightnumber#,
+	  					
+	  						#sairportcode#,
+	  					
+	  						#eairportcode#,
+	  					
+							#isenable:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createusertime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteAirflight" parameterClass="long">
+    delete from T_AIRFLIGHT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateAirflight" parameterClass="Airflight">
+    update T_AIRFLIGHT 
+    set 
+    	C_AIRCOMPANYCODE = #aircompanycode#,
+	  					C_FLIGHTNUMBER = #flightnumber#,
+	  					C_SAIRPORTCODE = #sairportcode#,
+	  					C_EAIRPORTCODE = #eairportcode#,
+	  					C_ISENABLE = #isenable:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATEUSERTIME = #createusertime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

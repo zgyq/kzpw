@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Integral">
+  
+  <typeAlias alias="Integral" type="com.yf.system.base.integral.Integral"/>
+  
+
+  <resultMap id="resultIntegralMap" class="Integral">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="agenttype" column="C_AGENTTYPE"/>
+  
+     <result property="aircoeft" column="C_AIRCOEFT"/>
+  
+     <result property="hotelcoeft" column="C_HOTELCOEFT"/>
+  
+     <result property="travelcoeft" column="C_TRAVELCOEFT"/>
+  
+     <result property="carrentalcoeft" column="C_CARRENTALCOEFT"/>
+  
+     <result property="rechargecoeft" column="C_RECHARGECOEFT"/>
+  
+     <result property="registerscore" column="C_REGISTERSCORE"/>
+  
+     <result property="punishscore" column="C_PUNISHSCORE"/>
+  
+     <result property="backorderscore" column="C_BACKORDERSCORE"/>
+  
+     <result property="weborderscore" column="C_WEBORDERSCORE"/>
+   
+  </resultMap>
+  
+  <select id="findAllIntegral"  resultMap="resultIntegralMap"  parameterClass="java.util.Map">
+  
+    select * from T_INTEGRAL
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllIntegralBySql"  resultMap="resultIntegralMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteIntegralBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countIntegralBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_INTEGRAL
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findIntegral" parameterClass="long" resultClass="Integral">
+    select 
+    	ID as id,
+	  			C_AGENTTYPE as agenttype,
+	  			C_AIRCOEFT as aircoeft,
+	  			C_HOTELCOEFT as hotelcoeft,
+	  			C_TRAVELCOEFT as travelcoeft,
+	  			C_CARRENTALCOEFT as carrentalcoeft,
+	  			C_RECHARGECOEFT as rechargecoeft,
+	  			C_REGISTERSCORE as registerscore,
+	  			C_PUNISHSCORE as punishscore,
+	  			C_BACKORDERSCORE as backorderscore,
+	  			C_WEBORDERSCORE as weborderscore 
+     from T_INTEGRAL
+    where ID = #id#
+  </select>
+   
+  <insert id="createIntegral" parameterClass="Integral">
+    insert into T_INTEGRAL ( 
+    	ID,
+	  			C_AGENTTYPE,
+	  			C_AIRCOEFT,
+	  			C_HOTELCOEFT,
+	  			C_TRAVELCOEFT,
+	  			C_CARRENTALCOEFT,
+	  			C_RECHARGECOEFT,
+	  			C_REGISTERSCORE,
+	  			C_PUNISHSCORE,
+	  			C_BACKORDERSCORE,
+	  			C_WEBORDERSCORE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#agenttype#,
+	  					
+							#aircoeft:DECIMAL#,
+						
+							#hotelcoeft:DECIMAL#,
+						
+							#travelcoeft:DECIMAL#,
+						
+							#carrentalcoeft:DECIMAL#,
+						
+							#rechargecoeft:DECIMAL#,
+						
+							#registerscore:DECIMAL#,
+						
+							#punishscore:DECIMAL#,
+						
+							#backorderscore:DECIMAL#,
+						
+  							#weborderscore:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteIntegral" parameterClass="long">
+    delete from T_INTEGRAL
+    where ID = #id#
+  </delete>
+	
+  <update id="updateIntegral" parameterClass="Integral">
+    update T_INTEGRAL 
+    set 
+    	C_AGENTTYPE = #agenttype#,
+	  					C_AIRCOEFT = #aircoeft:DECIMAL#,
+						C_HOTELCOEFT = #hotelcoeft:DECIMAL#,
+						C_TRAVELCOEFT = #travelcoeft:DECIMAL#,
+						C_CARRENTALCOEFT = #carrentalcoeft:DECIMAL#,
+						C_RECHARGECOEFT = #rechargecoeft:DECIMAL#,
+						C_REGISTERSCORE = #registerscore:DECIMAL#,
+						C_PUNISHSCORE = #punishscore:DECIMAL#,
+						C_BACKORDERSCORE = #backorderscore:DECIMAL#,
+						C_WEBORDERSCORE = #weborderscore:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

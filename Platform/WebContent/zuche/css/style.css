@@ -1,0 +1,148 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: "微软雅黑";
+}
+a{color:#2577e3;}
+img{border:0px;}
+a:link {text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
+ul, p, dl, dt, dd, li, img, div, p,table,tr,td{padding:0px; margin:0px;}
+li{list-style-position:outside; list-style-type:none;}
+h1, h2, h3, h4, h5{ padding:0px; margin:0px; font-weight:normal;}
+h2 { font-size:18px;}
+h5 { font-size:14px; line-height:21px;}
+.clearit { clear:both; width:0px; height:0px; overflow:hidden; zoom:1;}
+.space { height:10px; overflow:hidden;}
+img { vertical-align:top;}
+.top{
+    width: 800px;
+    height: 160px;
+    background: url("../img/top.png");
+    margin: 10px auto;
+}
+.mid{
+    border: 1px solid #dbe5eb;
+    width: 800px;
+    overflow: auto;
+    margin: 0px auto;
+    padding-bottom: 30px;
+}
+.we{
+    font-size: 20px;
+    display: block;
+    margin-top: 14px;
+    margin-left: 20px;
+    float: left;
+}
+.mtop{
+    width: 100%;
+    overflow: auto;
+}
+.vip{
+    display: block;
+    font-size: 14px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+.line{
+    width: 94%;
+    clear: both;
+    margin: 10px auto;
+    border-bottom: 1px solid #dbe5eb;
+}
+.neirong{
+    width: 100%;
+    overflow: auto;
+}
+.xing{
+    color: red;
+}
+.pc{
+    text-align: center;
+    margin: 20px auto;
+    overflow: auto;
+}
+.pc2{
+    margin-left: 244px;
+    overflow: auto;
+
+}
+.shurukuang{
+    width: 230px;
+    height: 25px;
+    color: #b9b9b9;
+    font-size: 12px;
+}
+.tb{
+    border: 1px solid #dbe5eb;
+    float: right;
+}
+.td{
+    background-color: #ebf7fd;
+    color: black;
+    border-right: 1px solid #b9b9b9;
+    margin: 0;
+    padding: 0;
+}
+.shurukuang2{
+    width: 100px;
+    height: 25px;
+    color: #b9b9b9;
+    font-size: 12px;
+    margin-left: 3px;
+}
+.yanzhen{
+    float: left;
+}
+.yanzhengma{
+    width: 68px;
+    height: 28px;
+    display: block;
+    background-color: #2577e3;
+    float: left;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.huan{
+    font-size: 12px;
+    float: left;
+    display: block;
+}
+.pc3{
+    font-size: 12px;
+    margin-left: 84px;
+
+}
+.tongguo{
+    font-weight: bold;
+}
+.pc4{
+    width: 100%;
+    overflow: auto;
+    margin: 10px auto;
+    text-align: center;
+}
+.wenben{
+    width: 310px;
+    height: 50px;
+    margin-bottom: 5px;
+}
+.read{
+    font-size: 14px;
+}
+.btn{
+    width: 200px;
+    border: 1px solid;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #2577e3;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}

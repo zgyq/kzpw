@@ -1,0 +1,82 @@
+﻿/* CSS Document */
+body{margin:0;padding:0;font-size:12px;font-family:"宋体";color:#666;}
+*{margin:0;padding:0;list-style:none;border:0;}
+#bg{width:728px; height:483px; background:url(images/xingcheng.jpg) no-repeat center center; position:relative;margin:0 auto;}
+#name1{position:absolute;left:57px;top:120px;width:150px;height:20px; line-height:20px;text-align:center;}
+#shenfenz{position:absolute;left:230px;top:120px;width:150px; height:20px; line-height:20px;text-align:center;}
+
+#qianzhu{position:absolute;left:400px;top:120px;width:260px; height:20px; line-height:20px;text-align:center;}
+
+#HELTMV{position:absolute;left:50px;top:165px;width:165px; height:50px; line-height:50px;text-align:center;}
+
+#mdd{position:absolute;left:55px;top:240px;width:155px; height:70px;line-height:22px;text-align:left;}
+
+#yunchengren{position:absolute;left:224px;top:240px;width:46px; height:70px; line-height:22px;text-align:center;word-break:break-all;}
+
+#hangbanhao{position:absolute;left:280px;top:240px;width:46px; height:70px; line-height:22px;text-align:center;word-break:break-all;}
+
+#dengji{position:absolute;left:334px;top:240px;width:46px; height:70px; line-height:22px;text-align:center;word-break:break-all;}
+
+#date1{position:absolute;left:388px;top:240px;width:46px; height:70px; line-height:22px;text-align:center;word-break:break-all;}
+
+#time{position:absolute;left:443px;top:240px;width:46px; height:70px; line-height:22px;text-align:center;word-break:break-all;}
+
+#kepiao{position:absolute;left:500px;top:240px;width:46px; height:70px; line-height:22px;text-align:center;word-break:break-all;}
+
+#jiezhirq{position:absolute;left:570px;top:240px;width:65px; height:70px; line-height:22px;text-align:center;word-break:break-all;}
+
+#xingli{position:absolute;left:653px;top:240px;width:30px; height:70px; line-height:20px;text-align:center;word-break:break-all;}
+
+#piaohao{position:absolute;left:50px;top:383px;width:165px; height:23px; line-height:23px;text-align:center;}
+
+#piaojia{position:absolute;left:225px;top:383px;width:100px; height:23px; line-height:23px;text-align:center;}
+
+#jianshef{position:absolute;left:335px;top:383px;width:100px; height:23px; line-height:23px;text-align:center;}
+
+#ranyf{position:absolute;left:444px;top:383px;width:100px; height:23px; line-height:23px;text-align:center;}
+
+#heji{position:absolute;left:570px;top:383px;width:100px; height:23px; line-height:23px;text-align:center;}
+
+#danwei{position:absolute;left:137px;top:412px;width:273px; height:23px; line-height:23px;text-align:center;}
+
+#date22{position:absolute;left:530px;top:412px;width:155px; height:23px; line-height:23px;text-align:center;}
+
+#mingcheng{position:absolute;left:460px;top:440px;width:226px; height:30px; line-height:30px;text-align:right;font-weight:bold;}
+
+.button5 {
+	width:83px;
+	height:27px;
+	line-height:26px;
+	text-align:center;
+	color:#fff;
+	font-size:14px;
+	cursor:hand;
+	border:0;
+	background: url(/images/btn/btn9.gif);
+}
+.button6 {
+	width:auto;
+	padding-left:10px;
+	padding-right:10px;
+	height:24px;
+	line-height:22px;
+	border:1px solid #CCCCCC;
+	text-align:center;
+	color:#666666;
+	font-size:12px;
+	cursor:hand;
+	background: url(/images/btn/btn4.gif);
+}
+.button6:focus {
+	width:auto;
+	padding-left:10px;
+	padding-right:10px;
+	height:24px;
+	line-height:22px;
+	border:1px solid #CCCCCC;
+	text-align:center;
+	color:#666666;
+	font-size:12px;
+	cursor:hand;
+	background: url(/images/btn/btn4.gif);
+}

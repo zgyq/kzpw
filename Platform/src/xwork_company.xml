@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="company" extends="default">
+	<action name="company" class="com.yf.system.back.action.CompanyAction">
+      <result name="add" type="dispatcher">
+        <param name="location">enterprise/companyadd.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">enterprise/companylist.jsp</param>
+      </result>
+      <result name="grant" type="dispatcher">
+        <param name="location">enterprise/grantlimit.jsp</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+	</package>
+</xwork>

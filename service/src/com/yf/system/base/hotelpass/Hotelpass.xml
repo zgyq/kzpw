@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Hotelpass">
+  
+  <typeAlias alias="Hotelpass" type="com.yf.system.base.hotelpass.Hotelpass"/>
+  
+
+  <resultMap id="resultHotelpassMap" class="Hotelpass">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="mobile" column="C_MOBILE"/>
+  
+     <result property="sex" column="C_SEX"/>
+  
+     <result property="createuserid" column="C_CREATEUSERID"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+   
+  </resultMap>
+  
+  <select id="findAllHotelpass"  resultMap="resultHotelpassMap"  parameterClass="java.util.Map">
+  
+    select * from T_HOTELPASS
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllHotelpassBySql"  resultMap="resultHotelpassMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteHotelpassBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countHotelpassBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_HOTELPASS
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findHotelpass" parameterClass="long" resultClass="Hotelpass">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_MOBILE as mobile,
+	  			C_SEX as sex,
+	  			C_CREATEUSERID as createuserid,
+	  			C_COMMENT as comment 
+     from T_HOTELPASS
+    where ID = #id#
+  </select>
+   
+  <insert id="createHotelpass" parameterClass="Hotelpass">
+    insert into T_HOTELPASS ( 
+    	ID,
+	  			C_NAME,
+	  			C_MOBILE,
+	  			C_SEX,
+	  			C_CREATEUSERID,
+	  			C_COMMENT 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#mobile#,
+	  					
+							#sex:DECIMAL#,
+						
+							#createuserid:DECIMAL#,
+						
+	  						#comment#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteHotelpass" parameterClass="long">
+    delete from T_HOTELPASS
+    where ID = #id#
+  </delete>
+	
+  <update id="updateHotelpass" parameterClass="Hotelpass">
+    update T_HOTELPASS 
+    set 
+    	C_NAME = #name#,
+	  					C_MOBILE = #mobile#,
+	  					C_SEX = #sex:DECIMAL#,
+						C_CREATEUSERID = #createuserid:DECIMAL#,
+						C_COMMENT = #comment#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

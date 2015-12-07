@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="car" extends="default">
+	<action name="cars" class="com.yf.system.back.action.CarsAction">
+      <result name="success" type="dispatcher">
+        <param name="location">cars/cars.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">cars/cars_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">cars/cars_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">cars.action</param>
+      </result>
+       <result name="car_new" type="dispatcher">
+        <param name="location">cars/carorder_new.jsp</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+<action name="carimages" class="com.yf.system.back.action.CarimagesAction">
+      <result name="success" type="dispatcher">
+        <param name="location">cars/carimages.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">cars/carimages_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">cars/carimages_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">carimages.action</param>
+      </result>
+      <interceptor-ref name="upload" />
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="carorder" class="com.yf.system.back.action.CarorderAction">
+      <result name="success" type="dispatcher">
+        <param name="location">cars/carorder.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">cars/carorder_edit.jsp</param>
+      </result>
+      <result name="info" type="dispatcher">
+        <param name="location">cars/carorder_info.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">cars/carorder_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">carorder.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    
+     <action name="carstore" class="com.yf.system.back.action.CarstoreAction">
+      <result name="success" type="dispatcher">
+        <param name="location">cars/carstore.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">cars/carstore_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">cars/carstore_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">carstore.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="carbrand" class="com.yf.system.back.action.CarbrandAction">
+      <result name="success" type="dispatcher">
+        <param name="location">cars/carbrand.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">cars/carbrand_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">cars/carbrand_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">carbrand.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+   <action name="carsregion" class="com.yf.system.back.action.CarsregionAction">
+      <result name="success" type="dispatcher">
+        <param name="location">cars/carsregion.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">cars/carsregion_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">cars/carsregion_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">carsregion.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="carinfo" class="com.yf.system.back.action.CarinfoAction">
+      <result name="success" type="dispatcher">
+        <param name="location">cars/carinfo.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">cars/carinfo_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">cars/carinfo_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">carinfo.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+      <action name="bookcar" class="com.yf.system.back.action.BookCarAction">
+      <result name="success" type="dispatcher">
+        <param name="location">bookcar/index.jsp</param>
+      </result>
+   	 <result name="carlist" type="dispatcher">
+        <param name="location">bookcar/carlist.jsp</param>
+      </result>
+       <result name="toindex" type="dispatcher">
+        <param name="location">zuche/index.jsp</param>
+      </result>
+      <result name="carinfo" type="dispatcher">
+        <param name="location">bookcar/bookcar.jsp</param>
+      </result>
+      <result name="tologin" type="dispatcher">
+	        <param name="location">login.jsp</param>
+	  </result>
+	  <result name="bookok" type="dispatcher">
+	        <param name="location">bookcar/carsuccess.jsp</param>
+	  </result>
+	  <result name="bookearr" type="dispatcher">
+	        <param name="location">bookcar/carearr.jsp</param>
+	  </result>
+	  <result name="bookfword" type="dispatcher">
+	        <param name="location">/${forword}</param>
+	  </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+	</package>
+</xwork>
+

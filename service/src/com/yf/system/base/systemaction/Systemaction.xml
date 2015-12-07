@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Systemaction">
+  
+  <typeAlias alias="Systemaction" type="com.yf.system.base.systemaction.Systemaction"/>
+  
+
+  <resultMap id="resultSystemactionMap" class="Systemaction">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="username" column="C_USERNAME"/>
+  
+     <result property="actionname" column="C_ACTIONNAME"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="para" column="C_PARA"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="ip" column="C_IP"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="lever" column="C_LEVER"/>
+  
+     <result property="type" column="C_TYPE"/>
+   
+  </resultMap>
+  
+  <select id="findAllSystemaction"  resultMap="resultSystemactionMap"  parameterClass="java.util.Map">
+  
+    select * from T_SYSTEMACTION
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSystemactionBySql"  resultMap="resultSystemactionMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSystemactionBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSystemactionBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SYSTEMACTION
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSystemaction" parameterClass="long" resultClass="Systemaction">
+    select 
+    	ID as id,
+	  			C_USERNAME as username,
+	  			C_ACTIONNAME as actionname,
+	  			C_CODE as code,
+	  			C_PARA as para,
+	  			C_CREATETIME as createtime,
+	  			C_IP as ip,
+	  			C_DESCRIPTION as description,
+	  			C_LEVER as lever,
+	  			C_TYPE as type 
+     from T_SYSTEMACTION
+    where ID = #id#
+  </select>
+   
+  <insert id="createSystemaction" parameterClass="Systemaction">
+    insert into T_SYSTEMACTION ( 
+    	ID,
+	  			C_USERNAME,
+	  			C_ACTIONNAME,
+	  			C_CODE,
+	  			C_PARA,
+	  			C_CREATETIME,
+	  			C_IP,
+	  			C_DESCRIPTION,
+	  			C_LEVER,
+	  			C_TYPE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#username#,
+	  					
+	  						#actionname#,
+	  					
+	  						#code#,
+	  					
+	  						#para#,
+	  					
+	  						#createtime#,
+	  					
+	  						#ip#,
+	  					
+	  						#description#,
+	  					
+							#lever:DECIMAL#,
+						
+  							#type:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSystemaction" parameterClass="long">
+    delete from T_SYSTEMACTION
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSystemaction" parameterClass="Systemaction">
+    update T_SYSTEMACTION 
+    set 
+    	C_USERNAME = #username#,
+	  					C_ACTIONNAME = #actionname#,
+	  					C_CODE = #code#,
+	  					C_PARA = #para#,
+	  					C_CREATETIME = #createtime#,
+	  					C_IP = #ip#,
+	  					C_DESCRIPTION = #description#,
+	  					C_LEVER = #lever:DECIMAL#,
+						C_TYPE = #type:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

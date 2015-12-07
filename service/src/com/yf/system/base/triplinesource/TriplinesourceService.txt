@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 旅游线路来源
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Triplinesource createTriplinesource(Triplinesource triplinesource) throws SQLException;
+	
+	/**
+	 * 删除 旅游线路来源
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTriplinesource(long id);
+	
+	
+	/**
+	 * 修改 旅游线路来源
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTriplinesource(Triplinesource triplinesource);
+
+		
+	/**
+	 * 修改 旅游线路来源但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTriplinesourceIgnoreNull(Triplinesource triplinesource);
+		
+	
+	/**
+	 * 查找 旅游线路来源
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriplinesource(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 旅游线路来源
+	 * @param id
+	 * @return
+	 */
+	public Triplinesource findTriplinesource(long id);
+	
+	/**
+	 * 查找 旅游线路来源 by language
+	 * @param id
+	 * @return
+	 */
+	public Triplinesource findTriplinesourcebylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 旅游线路来源
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTriplinesourceForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找旅游线路来源
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriplinesourceBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 旅游线路来源
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTriplinesourceBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTriplinesourceBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITriplinesourceComponent triplinesourceComponent;
+	  
+ 	
+ 	public ITriplinesourceComponent getTriplinesourceComponent() {
+		return triplinesourceComponent;
+	}
+	public void setTriplinesourceComponent(ITriplinesourceComponent  triplinesourceComponent) {
+		this.triplinesourceComponent = triplinesourceComponent;
+	}
+	/**
+	 * 创建 旅游线路来源
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Triplinesource createTriplinesource(Triplinesource triplinesource) throws SQLException{
+	
+		return triplinesourceComponent.createTriplinesource(triplinesource);
+	}
+	/**
+	 * 删除 旅游线路来源
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTriplinesource(long id){
+	
+		return triplinesourceComponent.deleteTriplinesource(id);
+	}
+	
+	
+	/**
+	 * 修改 旅游线路来源
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTriplinesource(Triplinesource triplinesource){
+		return triplinesourceComponent.updateTriplinesource(triplinesource);
+	
+	}
+
+		
+	/**
+	 * 修改 旅游线路来源但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTriplinesourceIgnoreNull(Triplinesource triplinesource){
+			return triplinesourceComponent.updateTriplinesourceIgnoreNull(triplinesource);
+	
+	}
+	
+	/**
+	 * 查找 旅游线路来源
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriplinesource(String where, String orderby,int limit,int offset){
+		return triplinesourceComponent.findAllTriplinesource(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 旅游线路来源
+	 * @param id
+	 * @return
+	 */
+	public Triplinesource findTriplinesource(long id){
+		return triplinesourceComponent.findTriplinesource(id);
+	}
+	
+	/**
+	 * 查找 旅游线路来源
+	 * @param id
+	 * @return
+	 */
+	public Triplinesource findTriplinesourcebylanguage(long id,Integer language){
+		return triplinesourceComponent.findTriplinesourcebylanguage(id,language);
+	}
+	/** 
+	 * 查找 旅游线路来源
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTriplinesourceForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return triplinesourceComponent.findAllTriplinesource(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找旅游线路来源
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriplinesourceBySql(String sql,int limit,int offset){
+		return triplinesourceComponent.findAllTriplinesource(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 旅游线路来源
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTriplinesourceBySql(String sql){
+		return triplinesourceComponent.excuteTriplinesourceBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTriplinesourceBySql(String sql){
+		return triplinesourceComponent.countTriplinesourceBySql(sql);
+	}
+	
+	
+

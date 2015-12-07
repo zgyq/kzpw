@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 模板
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Templet createTemplet(Templet templet) throws SQLException;
+	
+	/**
+	 * 删除 模板
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTemplet(long id);
+	
+	
+	/**
+	 * 修改 模板
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTemplet(Templet templet);
+
+		
+	/**
+	 * 修改 模板但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTempletIgnoreNull(Templet templet);
+		
+	
+	/**
+	 * 查找 模板
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTemplet(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 模板
+	 * @param id
+	 * @return
+	 */
+	public Templet findTemplet(long id);
+	
+	
+	/** 
+	 * 查找 模板
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTempletForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找模板
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTempletBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 模板
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTempletBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTempletBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITempletComponent templetComponent;
+	  
+ 	
+ 	public ITempletComponent getTempletComponent() {
+		return templetComponent;
+	}
+	public void setTempletComponent(ITempletComponent  templetComponent) {
+		this.templetComponent = templetComponent;
+	}
+	/**
+	 * 创建 模板
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Templet createTemplet(Templet templet) throws SQLException{
+	
+		return templetComponent.createTemplet(templet);
+	}
+	/**
+	 * 删除 模板
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTemplet(long id){
+	
+		return templetComponent.deleteTemplet(id);
+	}
+	
+	
+	/**
+	 * 修改 模板
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTemplet(Templet templet){
+		return templetComponent.updateTemplet(templet);
+	
+	}
+
+		
+	/**
+	 * 修改 模板但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTempletIgnoreNull(Templet templet){
+			return templetComponent.updateTempletIgnoreNull(templet);
+	
+	}
+	
+	/**
+	 * 查找 模板
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTemplet(String where, String orderby,int limit,int offset){
+		return templetComponent.findAllTemplet(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 模板
+	 * @param id
+	 * @return
+	 */
+	public Templet findTemplet(long id){
+		return templetComponent.findTemplet(id);
+	}
+	
+	/** 
+	 * 查找 模板
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTempletForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return templetComponent.findAllTemplet(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找模板
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTempletBySql(String sql,int limit,int offset){
+		return templetComponent.findAllTemplet(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 模板
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTempletBySql(String sql){
+		return templetComponent.excuteTempletBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTempletBySql(String sql){
+		return templetComponent.countTempletBySql(sql);
+	}
+	
+	
+

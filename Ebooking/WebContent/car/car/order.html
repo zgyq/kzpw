@@ -1,0 +1,560 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>上海世贸汽车销售服务有限公司</title>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/provinceandcity.js"></script>
+<link rel="stylesheet" type="text/css" href="style/base.css">
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<!--[if IE 6]>
+<script type="text/javascript" src="js/iepng.js"></script>
+<script type="text/javascript">
+   EvPNG.fix('div, ul, img, li, input, a, p, span');
+</script>
+<![endif]-->
+</head>
+
+<body>
+<!--头部开始-->
+<header>
+	<nav class="header_top">
+    	<p class="h_top_tel">销售热线<span>021-31169888*1</span></p>
+        <ul class="h_top_link"><li><a href="#">经销商介绍</a></li><li class="fast_link"><a href="#">快速链接</a></li></ul>
+    </nav>
+    <div class="logo">
+    	<a href="#"><img src="images/logo.png" width="117" height="60" /></a>
+        <h1>上海世贸汽车销售服务有限公司</h1>
+    </div>
+    <nav class="navigation">
+    	<a href="#">首页</a>
+        <a href="#">产品与配件</a>
+        <a href="#">尊享服务</a>
+        <a href="#">新闻及活动</a>
+        <a href="#">二手车</a>
+        <a href="#" class="cur br0">关于我们</a>
+    </nav>
+</header>
+<!--头部结束-->
+ <form action="TestCar.jsp" method="post" name="form1" id="form1">
+<div class="content" style="padding-bottom:40px;">
+	<div class="honour_enjoy_top">
+    	<a href="#">金融服务</a>
+        <a href="#">贵宾引荐 </a>
+        <a href="#">英式尊享</a>
+        <a href="#">道路救援</a>
+        <a href="#" class="cur">预约试驾</a>
+    </div>
+    <div class="order_banner"><img src="images/banner/banner3.jpg" /></div>
+    <div class="order_info">
+    	<p>捷豹中国在此承诺：您在网站上提供的个人信息不会出售给任何第三方。您的资讯可能被捷豹中国及经销商用作分析研究，提供您所需要的服务，以及新产品和服务的信息，以便改善我们的服务。(*为必填项)</p>
+        <p><span>捷豹贵宾专线：400-820-8955</span></p>
+    </div>
+    <div class="order_nav">
+    	<nav>
+        	<a href="#" class="cur">意向购车</a>
+            <a href="#">基本信息</a>
+            <a href="#">现有车辆信息</a>
+        </nav>
+    </div>
+    <div class="order_content">
+    	<div class="order1">
+        	<div class="order1_select clearfix">
+            	<label>申请试驾车型<span>*</span></label>
+                <select class="order_select1" onchange="ChangeCarCode(this.value);" name="CarType" id="CarType">
+                	<option value="XF">XF</option>
+                	<option value="XJ">XJ</option>
+                </select>
+                <div id="CarHtml"></div>
+                <!--
+                <select class="order_select2">
+                	<option>XF风华版2.0升涡轮增压</option>
+                </select>
+           		-->
+            </div>
+            <div class="order1_select clearfix">
+            	<label>预计购置新车的时间：</label>
+                <select class="order_select1" name="yujinian" id="yujinian">
+                	<option value="2013">2013年</option>
+                	<option value="2014">2014年</option>
+                	<option value="2015">2015年</option>
+                	<option value="2016">2016年</option>
+                	<option value="2017">2017年</option>
+                </select>
+                <select class="order_select1" name="yujiyue" id="yujiyue">
+                	<option value="01">1月</option>
+                  	<option value="02">2月</option>
+	                <option value="03">3月</option>
+	                <option value="04">4月</option>
+	                <option value="05">5月</option>
+	                <option value="06">6月</option>
+	                <option value="07">7月</option>
+                	<option value="08">8月</option>
+                	<option value="09">9月</option>
+                	<option value="10">10月</option>
+                	<option value="11">11月</option>
+                	<option value="12">12月</option>
+                </select>
+                <select class="order_select1" name="yujiri" id="yujiri">
+                	<option value="01">1日</option>
+                	<option value="02">2日</option>
+                	<option value="03">3日</option>
+                	<option value="04">4日</option>
+                	<option value="05">5日</option>
+                	<option value="06">6日</option>
+                	<option value="07">7日</option>
+                	<option value="08">8日</option>
+                	<option value="09">9日</option>
+                	<option value="10">10日</option>
+                	<option value="11">11日</option>
+                	<option value="12">12日</option>
+                	<option value="13">13日</option>
+                	<option value="14">14日</option>
+                	<option value="15">15日</option>
+                	<option value="16">16日</option>
+                	<option value="17">17日</option>
+                	<option value="18">18日</option>
+                	<option value="19">19日</option>
+                	<option value="20">20日</option>
+                	<option value="21">21日</option>
+                	<option value="22">22日</option>
+                	<option value="23">23日</option>
+                	<option value="24">24日</option>
+                	<option value="25">25日</option>
+                	<option value="26">26日</option>
+                	<option value="27">27日</option>
+                	<option value="28">28日</option>
+                	<option value="29">29日</option>
+                	<option value="30">30日</option>
+                	<option value="31">31日</option>
+                </select>
+            </div>
+            <div class="order1_select clearfix">
+            	<label>您的购车预算：<span>*</span></label>
+                <select class="order_select2" name="yusuan" id="yusuan">
+                	<option value="-1">－－请选择－－</option>
+                	<option value="50-99万">50-99万</option>
+                	<option value="100-149万">100-149万</option>
+                	<option value="150-199万">150-199万</option>
+                	<option value="200-259万">200-249万</option>
+                	<option value="250-299万">250-299万</option>
+                	<option value="300-349万">300-349万</option>
+                	<option value="350-399万">350-399万</option>
+                </select>
+            </div>
+        </div>
+        <div class="order2">
+        	<div class="order2_enter clearfix">
+            	<label>姓名<span>*</span></label><input type="text" name="NameTxt" value="请输入姓名" id="NameTxt" maxlength="20"/>
+            </div>
+            <div class="order2_enter clearfix">
+            	<label>称谓<span>*</span></label>
+            	<input class="nike" type="radio" id="men" name="PassSex" value="1" checked="checked" />
+            	<label class="nike_text">男士</label>
+            	<input class="nike" type="radio" id="women" name="PassSex" value="2" />
+            	<label class="nike_text">女士</label>
+            </div>
+            <div class="order2_enter clearfix">
+            	<label>手机<span>*</span></label><input type="text" value="11位有效手机号" name="Tel" id="Tel" maxlength="11"  />
+            </div>
+            <div class="order2_enter clearfix">
+            	<label>电子邮箱<span>*</span></label><input type="text" value="请输入有效邮箱地址,方便我们联系" name="MailTxt" id="MailTxt" maxlength="30" />
+            </div>
+            <div class="order2_enter clearfix">
+            	<label>您所在的省市<span>*</span></label>
+            	<select name="HidSen" class="order_select1"  id="selProvince"  onchange="getCity(this.options[this.selectedIndex].value)">
+				
+				</select>
+				
+				<select name="HidCity" id="selCity" class="order_select1">
+				<option selected value="-1">城市</option>
+				</select>
+				<input id="HidSen" value="" name="HidSen" type="hidden" />
+				<input id="HidCity" value="" name="HidCity" type="hidden" /> 
+            	<!--
+                <select class="order_select1">
+                	<option>省份</option>
+                </select>
+                <select class="order_select1">
+                	<option>城市</option>
+                </select>
+           		 -->
+            </div>
+        </div>
+        <div class="order3">
+        	<div class="order3_enter clearfix">
+            	<label>已拥有车<span>*</span></label>
+            	<input class="nike" type="radio" name="IsHaveCra" id="ishave" checked="checked" value="1" onclick="IsHaveCra('1');" />
+            	<label class="nike_text">是</label>
+            	<input class="nike" type="radio" name="IsHaveCra" id="isnothave" value="0" onclick="IsHaveCra('0');" />
+            	<label class="nike_text">否</label>
+            </div>
+            <div class="order3_enter clearfix" id="HaveCraTime">
+            	<label>购买时间<span>*</span></label>
+                <select class="order_select1" name="goumainian" id="goumainian">
+                	<option value="2008">2008年</option>
+                	<option value="2009">2009年</option>
+                	<option value="2010">2010年</option>
+                	<option value="2011">2011年</option>
+                	<option value="2012">2012年</option>
+                	<option value="2013">2013年</option>
+                </select>
+                <select class="order_select1" name="goumaiyue" id="goumaiyue">
+                	<option value="01">1月</option>
+                  	<option value="02">2月</option>
+	                <option value="03">3月</option>
+	                <option value="04">4月</option>
+	                <option value="05">5月</option>
+	                <option value="06">6月</option>
+	                <option value="07">7月</option>
+                	<option value="08">8月</option>
+                	<option value="09">9月</option>
+                	<option value="10">10月</option>
+                	<option value="11">11月</option>
+                	<option value="12">12月</option>
+                </select>
+                <select class="order_select1" name="goumairi"  id="goumairi">
+                	<option value="01">1日</option>
+                	<option value="02">2日</option>
+                	<option value="03">3日</option>
+                	<option value="04">4日</option>
+                	<option value="05">5日</option>
+                	<option value="06">6日</option>
+                	<option value="07">7日</option>
+                	<option value="08">8日</option>
+                	<option value="09">9日</option>
+                	<option value="10">10日</option>
+                	<option value="11">11日</option>
+                	<option value="12">12日</option>
+                	<option value="13">13日</option>
+                	<option value="14">14日</option>
+                	<option value="15">15日</option>
+                	<option value="16">16日</option>
+                	<option value="17">17日</option>
+                	<option value="18">18日</option>
+                	<option value="19">19日</option>
+                	<option value="20">20日</option>
+                	<option value="21">21日</option>
+                	<option value="22">22日</option>
+                	<option value="23">23日</option>
+                	<option value="24">24日</option>
+                	<option value="25">25日</option>
+                	<option value="26">26日</option>
+                	<option value="27">27日</option>
+                	<option value="28">28日</option>
+                	<option value="29">29日</option>
+                	<option value="30">30日</option>
+                	<option value="31">31日</option>
+                </select>
+			</div>
+			
+            <!--
+            <div class="order3_enter clearfix" id="HaveCraCode" style="display: none">
+            	<label>您目前的座驾是<span>*</span></label>
+                <select class="order_select3">
+                	<option value="-1">请选择品牌</option>
+                	<option value="奥迪">奥迪</option>
+                	<option value="奔驰">奔驰</option>
+                	<option value="宝马">宝马</option>
+                </select>
+                <select class="order_select3">
+                	<option value="-1">请选择车型</option>
+                	<option value="奥迪A1">奥迪A1</option>
+                	<option value="奥迪A2">奥迪A2</option>
+                	<option value="奥迪A3">奥迪A3</option>
+                	<option value="奥迪A4">奥迪A4</option>
+                </select>
+            </div>
+        -->
+        </div>
+        <div class="order4">
+        	<div class="order4_select clearfix">
+            	<input type="checkbox" id="dianziban"  checked="checked"  /><label>同意&nbsp;&nbsp;&nbsp;&nbsp;订阅电子版</label>
+            </div>
+            <div class="order4_select clearfix">
+                <input type="checkbox" id="shouce" checked="checked"  /><label>同意&nbsp;&nbsp;&nbsp;&nbsp;申请手册</label>
+            </div>
+            <p>我特此授权捷豹中国保留我的数据以便解答我的问题；我所提供的信息按照数据保护规 定进行保留。</p>
+            <p>我同意捷豹中国把我的数据用于营销、调查和统计目的，并允许捷豹中国根据我所提供的信息与我联系。</p>
+            <a href="javascript:FormSub();" id="FormSub">提交</a>
+        </div>
+    </div>
+</div>
+</form>
+<!--底部开始-->
+<footer>
+	<nav><a href="#" class="bl0">预约试驾</a><a href="#">联系我们</a><a href="#">隐私政策</a><a href="#">条件与条款</a><a href="#" class="br0">网站地图</a></nav>
+    <div class="line"></div>
+    <p class="name">上海世贸汽车销售服务有限公司</p>
+    <p>上海市普陀区红柳路235号近南大路口&nbsp;&nbsp;经销商电话：021-31169888*1&nbsp;&nbsp;电子邮箱：wanglei@shwta.c</p>
+    <p class="bei">沪ICP11001621</p>
+    <p>ICP record</p>
+</footer>
+<!--底部结束-->
+</body>
+</html>
+<script type="text/javascript">
+//表单提交
+function FormSub(){
+
+ 
+	    
+	    
+//判断是否选择了预算
+var yusuan=$("#yusuan").val();
+if(yusuan=='-1'){
+alert("请选择预算!");
+$("#yusuan").focus();//模拟点击 click  不行呀   哎!!!
+return;
+}
+//验证姓名
+var passname=$("#NameTxt").val();
+if(passname==''||passname=='请输入姓名'){
+alert("请输入姓名");
+$("#NameTxt").focus();
+return;
+}
+//验证手机号不能为空
+var passtel=$("#Tel").val();
+if(passtel==''||passtel=='11位有效手机号'){
+alert("请输入手机号");
+$("#Tel").focus();
+return;
+}
+//验证手机号格式
+if(!passtel.match(/^1[3|4|5|8][0-9]\d{4,8}$/)){ 
+   // $("#moileMsg").html("<font color='red'>手机号码格式不正确！请重新输入！</font>"); 
+    alert("手机格式有误");
+    $("#Tel").focus(); 
+    return; 
+ } 
+
+//验证邮箱不为空
+if($("#MailTxt").val()==""||$("#MailTxt").val()=='请输入有效邮箱地址,方便我们联系'){ 
+    //$("#confirmMsg").html("<font color='red'>邮箱地址不能为空！</font>"); 
+    alert("请输入邮箱地址");
+    $("#MailTxt").focus(); 
+    return; 
+} 
+//验证邮箱格式
+if(!$("#MailTxt").val().match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)){ 
+   // $("#confirmMsg").html("<font color='red'>邮箱格式不正确！请重新输入！</font>"); 
+   alert("邮箱格式错误");
+    $("#MailTxt").focus(); 
+    return; 
+   } 
+
+
+
+
+
+//取省值  ns_sen
+
+
+
+var selProvince=$("#selProvince").val();
+alert(selProvince);
+
+if(selProvince==''||selProvince=='-1'){
+alert("请选择省份");
+$("#selProvince").focus();
+return;
+}
+
+var selCity=$("#selCity").val();
+alert(selCity);
+if(selCity==''||selCity=='-1'){
+alert("请选择城市");
+$("#selCity").focus();
+return;
+}
+
+//开始性别
+var ismenorwomen= document.getElementById("men").checked;// 1男  2女
+var ismen="1";
+if(ishavecar==true){
+ismen="1";
+}else{
+ismen="2";
+}
+
+
+//开始判断是否拥有车
+var ishavecar= document.getElementById("ishave").checked;// 1拥有  0没有
+//alert(ishavecar);
+var ishave='0';
+if(ishavecar==true){//说明拥有car..需要验证里面内容
+
+var goumainian=$("#goumainian").val();
+var goumaiyue=$("#goumaiyue").val();
+var goumairi=$("#goumairi").val();
+ishave='1';
+}
+
+
+var dianziban = document.getElementById("dianziban").checked;
+if(dianziban==false){
+alert("必须同意订阅电子版!");
+  //document.getElementById("FormSub").disabled=true;
+  return;
+}else{
+  document.getElementById("FormSub").disabled=false;
+}
+var shouce = document.getElementById("shouce").checked;
+if(shouce==false){
+alert("必须同意申请手册!");
+return;
+  //document.getElementById("FormSub").disabled=true;
+}else{
+  document.getElementById("FormSub").disabled=false;
+}
+
+
+//所有都验证了..开始表单提交
+alert("开始提交");
+
+$.ajax({
+      type:"GET",
+      url:"TestCar.jsp",
+      data:{CarType:$("#CarType").val(),CarInfo:$("#CarInfo").val(),yujinian:$("#yujinian").val(),yujiyue:$("#yujiyue").val(),yujiri:$("#yujiri").val(),yusuan:yusuan,NameTxt:passname,PassSex:ismen,Tel:$("#Tel").val(),MailTxt:$("#MailTxt").val(),HidSen:selProvince,HidCity:selCity,IsHaveCra:ishave,goumainian:goumainian,goumaiyue:goumaiyue,goumairi:goumairi},
+      //beforeSend:function(){$("#AjaxHotelDiv").html("&nbsp;&nbsp;&nbsp;&nbsp;<img src='images/loadding.gif' border='0' />正在加载推荐酒店信息...");},             
+      success:function(data){
+      if(data){
+     	 //var data="{'status':1,'timestamp':1376466864}";
+		var dataObj=eval("("+data+")");//转换为json对象 
+	   //输出每个root子对象的名称和值 
+	    //alert("status:"+dataObj.status+",timestamp:"+dataObj.timestamp); 
+	    if(dataObj.status=='1'){
+	     alert("提交成功");
+	    }else{
+	      alert("提交失败");
+	    }
+      }
+      
+
+
+return;
+      
+            
+      }            
+      }); 
+
+
+//document.form1.submit();
+
+
+
+}
+
+
+//绑定姓名事件
+$("#NameTxt").focus(function(){
+var NameVal=$("#NameTxt").val();
+if(NameVal=='请输入姓名'){
+$("#NameTxt").val('');
+}
+})
+$("#NameTxt").blur(function(){
+var NameVal=$("#NameTxt").val();
+if(NameVal==''){
+$("#NameTxt").val('请输入姓名');
+}
+})
+
+//绑定邮箱事件
+$("#MailTxt").focus(function(){
+var MailVal=$("#MailTxt").val();
+if(MailVal=='请输入有效邮箱地址,方便我们联系'){
+$("#MailTxt").val('');
+}
+})
+$("#MailTxt").blur(function(){
+var MailVal=$("#MailTxt").val();
+if(MailVal==''){
+$("#MailTxt").val('请输入有效邮箱地址,方便我们联系');
+}
+})
+
+
+//绑定手机号事件
+$("#Tel").focus(function(){
+var TelVal=$("#Tel").val();
+if(TelVal=='11位有效手机号'){
+$("#Tel").val('');
+}
+})
+$("#Tel").blur(function(){
+var TelVal=$("#Tel").val();
+if(TelVal==''){
+$("#Tel").val('11位有效手机号');
+}
+})
+
+function IsHaveCra(code){
+if(code=='1'){
+//$("#HaveCraCode").show();
+$("#HaveCraTime").show();
+}else{
+//$("#HaveCraCode").hide();
+$("#HaveCraTime").hide();
+}
+}
+
+
+
+function ChangeCarCode(code){
+
+var carHTML="";
+
+carHTML+="<select name='CarInfo' class='order_select4' id='CarInfo'>";
+if(code=='XF'){
+//$("#XJDIV").hide();
+//$("#XFDIV").show();
+//$(".XJ").hide();
+//$(".XF").show();
+
+carHTML+="<option value='XF 2.0L i4 Ti 风华版'>XF 2.0L i4 Ti 风华版</option>";
+carHTML+="<option value='XF 2.0L i4 Ti 豪华版'>XF 2.0L i4 Ti 豪华版</option>";
+carHTML+="<option value='XF 2.0L i4 Ti 奢华版'>XF 2.0L i4 Ti 奢华版</option>";
+carHTML+="<option value='XF 3.0L V6 S/C 风华版'>XF 3.0L V6 S/C 风华版</option>";
+carHTML+="<option value='XF 3.0L V6 S/C 豪华版'>XF 3.0L V6 S/C 豪华版</option>";
+carHTML+="<option value='XF 3.0L V6 S/C 奢华版'>XF 3.0L V6 S/C 奢华版</option>";
+
+}
+if(code=='XJ'){
+//$("#XFDIV").hide();
+//$("#XJDIV").show();
+//$(".XF").hide();
+//$(".XJ").show();
+carHTML+="<option value='XJ 2.0L i4 Ti 典雅商务版'>XJ 2.0L i4 Ti 典雅商务版</option>";
+carHTML+="<option value='XJ 2.0L i4 Ti 全景商务版'>XJ 2.0L i4 Ti 全景商务版</option>";
+carHTML+="<option value='XJ 3.0L V6 S/C 全景商务版'>XJ 3.0L V6 S/C 全景商务版</option>";
+carHTML+="<option value='XJ 3.0L V6 S/C 旗舰商务版'>XJ 3.0L V6 S/C 旗舰商务版</option>";
+carHTML+="<option value='XJ 3.0L V6 S/C 旗舰商务版 四驱'>XJ 3.0L V6 S/C 旗舰商务版 四驱</option>";
+}
+carHTML+="</select>";
+
+//alert(carHTML);
+$("#CarHtml").html(carHTML);
+
+}
+ChangeCarCode("XF");//第一次加载
+getSheng();
+getCity();
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+

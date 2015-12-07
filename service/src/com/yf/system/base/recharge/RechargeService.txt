@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 手机充值
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Recharge createRecharge(Recharge recharge) throws SQLException;
+	
+	/**
+	 * 删除 手机充值
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRecharge(long id);
+	
+	
+	/**
+	 * 修改 手机充值
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRecharge(Recharge recharge);
+
+		
+	/**
+	 * 修改 手机充值但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRechargeIgnoreNull(Recharge recharge);
+		
+	
+	/**
+	 * 查找 手机充值
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRecharge(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 手机充值
+	 * @param id
+	 * @return
+	 */
+	public Recharge findRecharge(long id);
+	
+	
+	/** 
+	 * 查找 手机充值
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRechargeForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找手机充值
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRechargeBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 手机充值
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRechargeBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRechargeBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IRechargeComponent rechargeComponent;
+	  
+ 	
+ 	public IRechargeComponent getRechargeComponent() {
+		return rechargeComponent;
+	}
+	public void setRechargeComponent(IRechargeComponent  rechargeComponent) {
+		this.rechargeComponent = rechargeComponent;
+	}
+	/**
+	 * 创建 手机充值
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Recharge createRecharge(Recharge recharge) throws SQLException{
+	
+		return rechargeComponent.createRecharge(recharge);
+	}
+	/**
+	 * 删除 手机充值
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRecharge(long id){
+	
+		return rechargeComponent.deleteRecharge(id);
+	}
+	
+	
+	/**
+	 * 修改 手机充值
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRecharge(Recharge recharge){
+		return rechargeComponent.updateRecharge(recharge);
+	
+	}
+
+		
+	/**
+	 * 修改 手机充值但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRechargeIgnoreNull(Recharge recharge){
+			return rechargeComponent.updateRechargeIgnoreNull(recharge);
+	
+	}
+	
+	/**
+	 * 查找 手机充值
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRecharge(String where, String orderby,int limit,int offset){
+		return rechargeComponent.findAllRecharge(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 手机充值
+	 * @param id
+	 * @return
+	 */
+	public Recharge findRecharge(long id){
+		return rechargeComponent.findRecharge(id);
+	}
+	
+	/** 
+	 * 查找 手机充值
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRechargeForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return rechargeComponent.findAllRecharge(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找手机充值
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRechargeBySql(String sql,int limit,int offset){
+		return rechargeComponent.findAllRecharge(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 手机充值
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRechargeBySql(String sql){
+		return rechargeComponent.excuteRechargeBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRechargeBySql(String sql){
+		return rechargeComponent.countRechargeBySql(sql);
+	}
+	
+	
+

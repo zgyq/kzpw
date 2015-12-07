@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Planeservice">
+  
+  <typeAlias alias="Planeservice" type="com.yf.system.base.planeservice.Planeservice"/>
+  
+
+  <resultMap id="resultPlaneserviceMap" class="Planeservice">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="traveltime" column="C_TRAVELTIME"/>
+  
+     <result property="returntime" column="C_RETURNTIME"/>
+  
+     <result property="travelcity" column="C_TRAVELCITY"/>
+  
+     <result property="returncity" column="C_RETURNCITY"/>
+  
+     <result property="num" column="C_NUM"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="mobile" column="C_MOBILE"/>
+  
+     <result property="unitname" column="C_UNITNAME"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="zipcode" column="C_ZIPCODE"/>
+  
+     <result property="tel" column="C_TEL"/>
+  
+     <result property="fax" column="C_FAX"/>
+  
+     <result property="mailbox" column="C_MAILBOX"/>
+  
+     <result property="model" column="C_MODEL"/>
+  
+     <result property="remarks" column="C_REMARKS"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllPlaneservice"  resultMap="resultPlaneserviceMap"  parameterClass="java.util.Map">
+  
+    select * from T_PLANESERVICE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllPlaneserviceBySql"  resultMap="resultPlaneserviceMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excutePlaneserviceBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countPlaneserviceBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_PLANESERVICE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findPlaneservice" parameterClass="long" resultClass="Planeservice">
+    select 
+    	ID as id,
+	  			C_TRAVELTIME as traveltime,
+	  			C_RETURNTIME as returntime,
+	  			C_TRAVELCITY as travelcity,
+	  			C_RETURNCITY as returncity,
+	  			C_NUM as num,
+	  			C_NAME as name,
+	  			C_MOBILE as mobile,
+	  			C_UNITNAME as unitname,
+	  			C_ADDRESS as address,
+	  			C_ZIPCODE as zipcode,
+	  			C_TEL as tel,
+	  			C_FAX as fax,
+	  			C_MAILBOX as mailbox,
+	  			C_MODEL as model,
+	  			C_REMARKS as remarks,
+	  			C_CREATETIME as createtime,
+	  			C_MEMBERID as memberid,
+	  			C_STATE as state 
+     from T_PLANESERVICE
+    where ID = #id#
+  </select>
+   
+  <insert id="createPlaneservice" parameterClass="Planeservice">
+    insert into T_PLANESERVICE ( 
+    	ID,
+	  			C_TRAVELTIME,
+	  			C_RETURNTIME,
+	  			C_TRAVELCITY,
+	  			C_RETURNCITY,
+	  			C_NUM,
+	  			C_NAME,
+	  			C_MOBILE,
+	  			C_UNITNAME,
+	  			C_ADDRESS,
+	  			C_ZIPCODE,
+	  			C_TEL,
+	  			C_FAX,
+	  			C_MAILBOX,
+	  			C_MODEL,
+	  			C_REMARKS,
+	  			C_CREATETIME,
+	  			C_MEMBERID,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#traveltime#,
+	  					
+	  						#returntime#,
+	  					
+	  						#travelcity#,
+	  					
+	  						#returncity#,
+	  					
+	  						#num#,
+	  					
+	  						#name#,
+	  					
+	  						#mobile#,
+	  					
+	  						#unitname#,
+	  					
+	  						#address#,
+	  					
+	  						#zipcode#,
+	  					
+	  						#tel#,
+	  					
+	  						#fax#,
+	  					
+	  						#mailbox#,
+	  					
+	  						#model#,
+	  					
+	  						#remarks#,
+	  					
+	  						#createtime#,
+	  					
+							#memberid:DECIMAL#,
+						
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deletePlaneservice" parameterClass="long">
+    delete from T_PLANESERVICE
+    where ID = #id#
+  </delete>
+	
+  <update id="updatePlaneservice" parameterClass="Planeservice">
+    update T_PLANESERVICE 
+    set 
+    	C_TRAVELTIME = #traveltime#,
+	  					C_RETURNTIME = #returntime#,
+	  					C_TRAVELCITY = #travelcity#,
+	  					C_RETURNCITY = #returncity#,
+	  					C_NUM = #num#,
+	  					C_NAME = #name#,
+	  					C_MOBILE = #mobile#,
+	  					C_UNITNAME = #unitname#,
+	  					C_ADDRESS = #address#,
+	  					C_ZIPCODE = #zipcode#,
+	  					C_TEL = #tel#,
+	  					C_FAX = #fax#,
+	  					C_MAILBOX = #mailbox#,
+	  					C_MODEL = #model#,
+	  					C_REMARKS = #remarks#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MEMBERID = #memberid:DECIMAL#,
+						C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Insuruser">
+  
+  <typeAlias alias="Insuruser" type="com.yf.system.base.insuruser.Insuruser"/>
+  
+
+  <resultMap id="resultInsuruserMap" class="Insuruser">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="policyno" column="C_POLICYNO"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="sex" column="C_SEX"/>
+  
+     <result property="codetype" column="C_CODETYPE"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="mobile" column="C_MOBILE"/>
+  
+     <result property="birthday" column="C_BIRTHDAY"/>
+  
+     <result property="email" column="C_EMAIL"/>
+  
+     <result property="flyno" column="C_FLYNO"/>
+  
+     <result property="city" column="C_CITY"/>
+  
+     <result property="flytime" column="C_FLYTIME"/>
+  
+     <result property="begintime" column="C_BEGINTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllInsuruser"  resultMap="resultInsuruserMap"  parameterClass="java.util.Map">
+  
+    select * from T_INSURUSER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllInsuruserBySql"  resultMap="resultInsuruserMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteInsuruserBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countInsuruserBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_INSURUSER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findInsuruser" parameterClass="long" resultClass="Insuruser">
+    select 
+    	ID as id,
+	  			C_ORDERID as orderid,
+	  			C_POLICYNO as policyno,
+	  			C_NAME as name,
+	  			C_SEX as sex,
+	  			C_CODETYPE as codetype,
+	  			C_CODE as code,
+	  			C_MOBILE as mobile,
+	  			C_BIRTHDAY as birthday,
+	  			C_EMAIL as email,
+	  			C_FLYNO as flyno,
+	  			C_CITY as city,
+	  			C_FLYTIME as flytime,
+	  			C_BEGINTIME as begintime 
+     from T_INSURUSER
+    where ID = #id#
+  </select>
+   
+  <insert id="createInsuruser" parameterClass="Insuruser">
+    insert into T_INSURUSER ( 
+    	ID,
+	  			C_ORDERID,
+	  			C_POLICYNO,
+	  			C_NAME,
+	  			C_SEX,
+	  			C_CODETYPE,
+	  			C_CODE,
+	  			C_MOBILE,
+	  			C_BIRTHDAY,
+	  			C_EMAIL,
+	  			C_FLYNO,
+	  			C_CITY,
+	  			C_FLYTIME,
+	  			C_BEGINTIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#orderid:DECIMAL#,
+						
+	  						#policyno#,
+	  					
+	  						#name#,
+	  					
+							#sex:DECIMAL#,
+						
+							#codetype:DECIMAL#,
+						
+	  						#code#,
+	  					
+	  						#mobile#,
+	  					
+	  						#birthday#,
+	  					
+	  						#email#,
+	  					
+	  						#flyno#,
+	  					
+	  						#city#,
+	  					
+	  						#flytime#,
+	  					
+	  						#begintime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteInsuruser" parameterClass="long">
+    delete from T_INSURUSER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateInsuruser" parameterClass="Insuruser">
+    update T_INSURUSER 
+    set 
+    	C_ORDERID = #orderid:DECIMAL#,
+						C_POLICYNO = #policyno#,
+	  					C_NAME = #name#,
+	  					C_SEX = #sex:DECIMAL#,
+						C_CODETYPE = #codetype:DECIMAL#,
+						C_CODE = #code#,
+	  					C_MOBILE = #mobile#,
+	  					C_BIRTHDAY = #birthday#,
+	  					C_EMAIL = #email#,
+	  					C_FLYNO = #flyno#,
+	  					C_CITY = #city#,
+	  					C_FLYTIME = #flytime#,
+	  					C_BEGINTIME = #begintime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

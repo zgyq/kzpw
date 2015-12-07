@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Conferencehall">
+  
+  <typeAlias alias="Conferencehall" type="com.yf.system.base.conferencehall.Conferencehall"/>
+  
+
+  <resultMap id="resultConferencehallMap" class="Conferencehall">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="area" column="C_AREA"/>
+  
+     <result property="pepnum" column="C_PEPNUM"/>
+  
+     <result property="useof" column="C_USEOF"/>
+  
+     <result property="desc" column="C_DESC"/>
+  
+     <result property="hotelid" column="C_HOTELID"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+  
+     <result property="pic" column="C_PIC"/>
+   
+  </resultMap>
+  
+  <select id="findAllConferencehall"  resultMap="resultConferencehallMap"  parameterClass="java.util.Map">
+  
+    select * from T_CONFERENCEHALL
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllConferencehallBySql"  resultMap="resultConferencehallMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteConferencehallBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countConferencehallBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CONFERENCEHALL
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findConferencehall" parameterClass="long" resultClass="Conferencehall">
+    select 
+    	ID as id,
+	  			C_TYPE as type,
+	  			C_AREA as area,
+	  			C_PEPNUM as pepnum,
+	  			C_USEOF as useof,
+	  			C_DESC as [desc],
+	  			C_HOTELID as hotelid,
+	  			C_CREATETIME as createtime,
+	  			C_CREATEUSER as createuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language,
+	  			C_PIC as pic 
+     from T_CONFERENCEHALL
+    where ID = #id#
+  </select>
+   
+  <insert id="createConferencehall" parameterClass="Conferencehall">
+    insert into T_CONFERENCEHALL ( 
+    	ID,
+	  			C_TYPE,
+	  			C_AREA,
+	  			C_PEPNUM,
+	  			C_USEOF,
+	  			C_DESC,
+	  			C_HOTELID,
+	  			C_CREATETIME,
+	  			C_CREATEUSER,
+	  			C_MODIFYTIME,
+	  			C_MODIFYUSER,
+	  			C_UCODE,
+	  			C_LANGUAGE,
+	  			C_PIC 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#type#,
+	  					
+	  						#area#,
+	  					
+	  						#pepnum#,
+	  					
+	  						#useof#,
+	  					
+	  						#desc#,
+	  					
+							#hotelid:DECIMAL#,
+						
+	  						#createtime#,
+	  					
+	  						#createuser#,
+	  					
+	  						#modifytime#,
+	  					
+	  						#modifyuser#,
+	  					
+							#ucode:DECIMAL#,
+						
+							#language:DECIMAL#,
+						
+	  						#pic#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteConferencehall" parameterClass="long">
+    delete from T_CONFERENCEHALL
+    where ID = #id#
+  </delete>
+	
+  <update id="updateConferencehall" parameterClass="Conferencehall">
+    update T_CONFERENCEHALL 
+    set 
+    	C_TYPE = #type#,
+	  					C_AREA = #area#,
+	  					C_PEPNUM = #pepnum#,
+	  					C_USEOF = #useof#,
+	  					C_DESC = #desc#,
+	  					C_HOTELID = #hotelid:DECIMAL#,
+						C_CREATETIME = #createtime#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_PIC = #pic#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

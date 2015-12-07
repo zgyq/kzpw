@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Carorder">
+  
+  <typeAlias alias="Carorder" type="com.yf.system.base.carorder.Carorder"/>
+  
+
+  <resultMap id="resultCarorderMap" class="Carorder">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="carid" column="C_CARID"/>
+  
+     <result property="property" column="C_PROPERTY"/>
+  
+     <result property="carname" column="C_CARNAME"/>
+  
+     <result property="sdate" column="C_SDATE"/>
+  
+     <result property="enddate" column="C_ENDDATE"/>
+  
+     <result property="scityid" column="C_SCITYID"/>
+  
+     <result property="endcityid" column="C_ENDCITYID"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="pretime" column="C_PRETIME"/>
+  
+     <result property="manyday" column="C_MANYDAY"/>
+  
+     <result property="predesc" column="C_PREDESC"/>
+  
+     <result property="membername" column="C_MEMBERNAME"/>
+  
+     <result property="membermobile" column="C_MEMBERMOBILE"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="canclereason" column="C_CANCLEREASON"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="linkname" column="C_LINKNAME"/>
+  
+     <result property="linkmobile" column="C_LINKMOBILE"/>
+  
+     <result property="linkmail" column="C_LINKMAIL"/>
+  
+     <result property="linktell" column="C_LINKTELL"/>
+  
+     <result property="confirmmethod" column="C_CONFIRMMETHOD"/>
+  
+     <result property="specreq" column="C_SPECREQ"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="jprice" column="C_JPRICE"/>
+  
+     <result property="gps" column="C_GPS"/>
+  
+     <result property="insurancefee" column="C_INSURANCEFEE"/>
+  
+     <result property="servicefee" column="C_SERVICEFEE"/>
+  
+     <result property="preauthfee" column="C_PREAUTHFEE"/>
+  
+     <result property="gpsfee" column="C_GPSFEE"/>
+  
+     <result property="mile" column="C_MILE"/>
+  
+     <result property="pickupservicefee" column="C_PICKUPSERVICEFEE"/>
+  
+     <result property="dropoffservicefee" column="C_DROPOFFSERVICEFEE"/>
+  
+     <result property="ticketfee" column="C_TICKETFEE"/>
+  
+     <result property="carcode" column="C_CARCODE"/>
+  
+     <result property="orderfee" column="C_ORDERFEE"/>
+  
+     <result property="waicode" column="C_WAICODE"/>
+  
+     <result property="nuber" column="C_NUBER"/>
+     
+     <result property="bookuserid" column="C_BOOKUSERID"/>
+     
+     
+     <result property="scarstoreid" column="C_SCARSTOREID"/>
+     
+     <result property="ecarstoreid" column="C_ECARSTOREID"/>
+   
+  </resultMap>
+  
+  <select id="findAllCarorder"  resultMap="resultCarorderMap"  parameterClass="java.util.Map">
+  
+    select * from T_CARORDER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCarorderBySql"  resultMap="resultCarorderMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCarorderBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCarorderBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CARORDER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCarorder" parameterClass="long" resultClass="Carorder">
+    select 
+    	ID as id,
+	  			C_CARID as carid,
+	  			C_PROPERTY as property,
+	  			C_CARNAME as carname,
+	  			C_SDATE as sdate,
+	  			C_ENDDATE as enddate,
+	  			C_SCITYID as scityid,
+	  			C_ENDCITYID as endcityid,
+	  			C_PRICE as price,
+	  			C_PRETIME as pretime,
+	  			C_MANYDAY as manyday,
+	  			C_PREDESC as predesc,
+	  			C_MEMBERNAME as membername,
+	  			C_MEMBERMOBILE as membermobile,
+	  			C_MEMBERID as memberid,
+	  			C_CANCLEREASON as canclereason,
+	  			C_STATE as state,
+	  			C_LINKNAME as linkname,
+	  			C_LINKMOBILE as linkmobile,
+	  			C_LINKMAIL as linkmail,
+	  			C_LINKTELL as linktell,
+	  			C_CONFIRMMETHOD as confirmmethod,
+	  			C_SPECREQ as specreq,
+	  			C_CODE as code,
+	  			C_JPRICE as jprice,
+	  			C_GPS as gps,
+	  			C_INSURANCEFEE as insurancefee,
+	  			C_SERVICEFEE as servicefee,
+	  			C_PREAUTHFEE as preauthfee,
+	  			C_GPSFEE as gpsfee,
+	  			C_MILE as mile,
+	  			C_PICKUPSERVICEFEE as pickupservicefee,
+	  			C_DROPOFFSERVICEFEE as dropoffservicefee,
+	  			C_TICKETFEE as ticketfee,
+	  			C_CARCODE as carcode,
+	  			C_ORDERFEE as orderfee,
+	  			C_WAICODE as waicode,
+	  			C_BOOKUSERID as bookuserid,
+	  			C_SCARSTOREID as scarstoreid,
+	  			C_ECARSTOREID as ecarstoreid,
+	  			C_NUBER as nuber 
+     from T_CARORDER
+    where ID = #id#
+  </select>
+   
+  <insert id="createCarorder" parameterClass="Carorder">
+    insert into T_CARORDER ( 
+    	ID,
+	  			C_CARID,
+	  			C_PROPERTY,
+	  			C_CARNAME,
+	  			C_SDATE,
+	  			C_ENDDATE,
+	  			C_SCITYID,
+	  			C_ENDCITYID,
+	  			C_PRICE,
+	  			C_PRETIME,
+	  			C_MANYDAY,
+	  			C_PREDESC,
+	  			C_MEMBERNAME,
+	  			C_MEMBERMOBILE,
+	  			C_MEMBERID,
+	  			C_CANCLEREASON,
+	  			C_STATE,
+	  			C_LINKNAME,
+	  			C_LINKMOBILE,
+	  			C_LINKMAIL,
+	  			C_LINKTELL,
+	  			C_CONFIRMMETHOD,
+	  			C_SPECREQ,
+	  			C_CODE,
+	  			C_JPRICE,
+	  			C_GPS,
+	  			C_INSURANCEFEE,
+	  			C_SERVICEFEE,
+	  			C_PREAUTHFEE,
+	  			C_GPSFEE,
+	  			C_MILE,
+	  			C_PICKUPSERVICEFEE,
+	  			C_DROPOFFSERVICEFEE,
+	  			C_TICKETFEE,
+	  			C_CARCODE,
+	  			C_ORDERFEE,
+	  			C_WAICODE,
+	  			C_BOOKUSERID,
+	  			C_SCARSTOREID,
+	  			C_ECARSTOREID,
+	  			C_NUBER 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#carid:DECIMAL#,
+						
+	  						#property#,
+	  					
+	  						#carname#,
+	  					
+	  						#sdate#,
+	  					
+	  						#enddate#,
+	  					
+							#scityid:DECIMAL#,
+						
+							#endcityid:DECIMAL#,
+						
+	  						#price#,
+	  					
+	  						#pretime#,
+	  					
+							#manyday:DECIMAL#,
+						
+	  						#predesc#,
+	  					
+	  						#membername#,
+	  					
+	  						#membermobile#,
+	  					
+							#memberid:DECIMAL#,
+						
+							#canclereason:DECIMAL#,
+						
+							#state:DECIMAL#,
+						
+	  						#linkname#,
+	  					
+	  						#linkmobile#,
+	  					
+	  						#linkmail#,
+	  					
+	  						#linktell#,
+	  					
+							#confirmmethod:DECIMAL#,
+						
+	  						#specreq#,
+	  					
+	  						#code#,
+	  					
+	  						#jprice#,
+	  					
+	  						#gps#,
+	  					
+	  						#insurancefee#,
+	  					
+	  						#servicefee#,
+	  					
+	  						#preauthfee#,
+	  					
+	  						#gpsfee#,
+	  					
+	  						#mile#,
+	  					
+	  						#pickupservicefee#,
+	  					
+	  						#dropoffservicefee#,
+	  					
+	  						#ticketfee#,
+	  					
+	  						#carcode#,
+	  					
+	  						#orderfee#,
+	  					
+	  						#waicode#,
+	  						
+	  						#bookuserid#,
+	  						
+	  						#scarstoreid#,
+	  						
+	  						#ecarstoreid#,
+	  					
+	  						#nuber#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCarorder" parameterClass="long">
+    delete from T_CARORDER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCarorder" parameterClass="Carorder">
+    update T_CARORDER 
+    set 
+    	C_CARID = #carid:DECIMAL#,
+						C_PROPERTY = #property#,
+	  					C_CARNAME = #carname#,
+	  					C_SDATE = #sdate#,
+	  					C_ENDDATE = #enddate#,
+	  					C_SCITYID = #scityid:DECIMAL#,
+						C_ENDCITYID = #endcityid:DECIMAL#,
+						C_PRICE = #price#,
+	  					C_PRETIME = #pretime#,
+	  					C_MANYDAY = #manyday:DECIMAL#,
+						C_PREDESC = #predesc#,
+	  					C_MEMBERNAME = #membername#,
+	  					C_MEMBERMOBILE = #membermobile#,
+	  					C_MEMBERID = #memberid:DECIMAL#,
+						C_CANCLEREASON = #canclereason:DECIMAL#,
+						C_STATE = #state:DECIMAL#,
+						C_LINKNAME = #linkname#,
+	  					C_LINKMOBILE = #linkmobile#,
+	  					C_LINKMAIL = #linkmail#,
+	  					C_LINKTELL = #linktell#,
+	  					C_CONFIRMMETHOD = #confirmmethod:DECIMAL#,
+						C_SPECREQ = #specreq#,
+	  					C_CODE = #code#,
+	  					C_JPRICE = #jprice#,
+	  					C_GPS = #gps#,
+	  					C_INSURANCEFEE = #insurancefee#,
+	  					C_SERVICEFEE = #servicefee#,
+	  					C_PREAUTHFEE = #preauthfee#,
+	  					C_GPSFEE = #gpsfee#,
+	  					C_MILE = #mile#,
+	  					C_PICKUPSERVICEFEE = #pickupservicefee#,
+	  					C_DROPOFFSERVICEFEE = #dropoffservicefee#,
+	  					C_TICKETFEE = #ticketfee#,
+	  					C_CARCODE = #carcode#,
+	  					C_ORDERFEE = #orderfee#,
+	  					C_WAICODE = #waicode#,
+	  					C_BOOKUSERID = #bookuserid#,
+	  					C_SCARSTOREID = #scarstoreid#,
+	  					C_ECARSTOREID = #ecarstoreid#,
+	  					C_NUBER = #nuber#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Qqinfonew">
+  
+  <typeAlias alias="Qqinfonew" type="com.yf.system.base.qqinfonew.Qqinfonew"/>
+  
+
+  <resultMap id="resultQqinfonewMap" class="Qqinfonew">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="qqno" column="C_QQNO"/>
+  
+     <result property="typeid" column="C_TYPEID"/>
+  
+     <result property="userid" column="C_USERID"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllQqinfonew"  resultMap="resultQqinfonewMap"  parameterClass="java.util.Map">
+  
+    select * from T_QQINFONEW
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllQqinfonewBySql"  resultMap="resultQqinfonewMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteQqinfonewBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countQqinfonewBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_QQINFONEW
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findQqinfonew" parameterClass="long" resultClass="Qqinfonew">
+    select 
+    	ID as id,
+	  			C_QQNO as qqno,
+	  			C_TYPEID as typeid,
+	  			C_USERID as userid,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state 
+     from T_QQINFONEW
+    where ID = #id#
+  </select>
+   
+  <insert id="createQqinfonew" parameterClass="Qqinfonew">
+    insert into T_QQINFONEW ( 
+    	ID,
+	  			C_QQNO,
+	  			C_TYPEID,
+	  			C_USERID,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#qqno#,
+	  					
+							#typeid:DECIMAL#,
+						
+							#userid:DECIMAL#,
+						
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteQqinfonew" parameterClass="long">
+    delete from T_QQINFONEW
+    where ID = #id#
+  </delete>
+	
+  <update id="updateQqinfonew" parameterClass="Qqinfonew">
+    update T_QQINFONEW 
+    set 
+    	C_QQNO = #qqno#,
+	  					C_TYPEID = #typeid:DECIMAL#,
+						C_USERID = #userid:DECIMAL#,
+						C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+#header { min-width:1002px;}
+#header .top{ background:url(../images/bj_top.gif); height:62px;}
+#header .time{ margin-right:20px; height:30px; text-align:right; line-height:27px;}
+#header .nav{ height:32px; line-height:32px; float:right}
+#header .nav ul{}
+#header .nav ul li{ float:left; text-align:center; }
+#header .off{ background:url(../images/bj_navli.gif) no-repeat; width:92px; height:32px; line-height:32px; color:#ff9c00}
+#header .on{ background:url(../images/bj_navli.gif) no-repeat; width:92px; height:32px; line-height:32px; color:#fff;}
+#header .out{ width:30px;}
+#header .noti{background:#198bc9; padding:0 5px 0 5px;}
+#header .notice{ background:url(../images/bj_notice.gif);height:30px; line-height:30px;}
+#header .notice ul{}
+#header .notice ul li{ float:left;}
+
+/* Scroll */
+#screen { width:608px; margin-right:10px; display:inline; padding:0; float:right;background:url(../images/bj_nav.gif); height:32px; overflow:hidden}
+#screen ul { margin:0 auto; padding:0;}
+#screen li { float:left; list-style:none; border:0;}
+#screen .jq-ss-crop { margin:0; border:0; float:left; }
+#left, #right { display:block; text-decoration:none; width:17px;}
+#view { margin:0; padding:0; width:465px; border:0;  overflow:hidden; }
+#images{}
+#images li{ width:80px; text-align:left;  height:32px;background:url(../images/bj_navli.gif); float:left; line-height:32px; padding-left:13px;  overflow:hidden;}
+#images li a{ color:#fff;}
+
+.bottom{ background:url(../images/bj_bottom.gif);  height:24px; line-height:24px; padding-left:20px; color:#d3e3fe; font-size:12px;}

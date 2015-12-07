@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+  <package name="base" extends="default">
+    <action name="country" class="com.yf.system.back.action.CountryAction">
+      <result name="success" type="dispatcher">
+        <param name="location">interhotel/country.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">interhotel/country_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">interhotel/country_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">country.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="incity" class="com.yf.system.back.action.IncityAction">
+      <result name="success" type="dispatcher">
+        <param name="location">interhotel/incity.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">interhotel/incity_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">interhotel/incity_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">incity.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <!-- 酒店预订  -->
+		<action name="interhotelbook"
+			class="com.yf.system.back.action.InterHotelbookAction">
+			<result name="success" type="dispatcher">
+				<param name="location">interhotelbook/hotelindex.jsp</param>
+			</result>
+			<result name="hotellist" type="dispatcher">
+				<param name="location">interhotelbook/hotellist.jsp</param>
+			</result>
+			<result name="hotelinfo" type="dispatcher">
+				<param name="location">interhotelbook/hotelinfo.jsp</param>
+			</result>
+			<result name="tobook" type="dispatcher">
+				<param name="location">interhotelbook/bookhotel.jsp</param>
+			</result>
+			<result name="took" type="redirect">
+				<param name="location">/${forword}</param>
+			</result>
+			<result name="yudingok" type="dispatcher">
+				<param name="location">interhotelbook/hotelsuccess.jsp</param>
+			</result>
+			<result name="tologin" type="dispatcher">
+	        <param name="location">login.jsp</param>
+	        </result>
+			<interceptor-ref name="model-driven" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="validationStack" />
+		</action>
+  </package>
+</xwork>
+

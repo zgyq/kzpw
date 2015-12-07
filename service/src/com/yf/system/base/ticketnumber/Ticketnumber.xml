@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Ticketnumber">
+  
+  <typeAlias alias="Ticketnumber" type="com.yf.system.base.ticketnumber.Ticketnumber"/>
+  
+
+  <resultMap id="resultTicketnumberMap" class="Ticketnumber">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="tickettypeid" column="C_TICKETTYPEID"/>
+  
+     <result property="beginnumber" column="C_BEGINNUMBER"/>
+  
+     <result property="endnumber" column="C_ENDNUMBER"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+   
+  </resultMap>
+  
+  <select id="findAllTicketnumber"  resultMap="resultTicketnumberMap"  parameterClass="java.util.Map">
+  
+    select * from T_TICKETNUMBER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTicketnumberBySql"  resultMap="resultTicketnumberMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTicketnumberBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTicketnumberBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TICKETNUMBER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTicketnumber" parameterClass="long" resultClass="Ticketnumber">
+    select 
+    	ID as id,
+	  			C_TICKETTYPEID as tickettypeid,
+	  			C_BEGINNUMBER as beginnumber,
+	  			C_ENDNUMBER as endnumber,
+	  			C_DESCRIPTION as description 
+     from T_TICKETNUMBER
+    where ID = #id#
+  </select>
+   
+  <insert id="createTicketnumber" parameterClass="Ticketnumber">
+    insert into T_TICKETNUMBER ( 
+    	ID,
+	  			C_TICKETTYPEID,
+	  			C_BEGINNUMBER,
+	  			C_ENDNUMBER,
+	  			C_DESCRIPTION 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#tickettypeid:DECIMAL#,
+						
+	  						#beginnumber#,
+	  					
+	  						#endnumber#,
+	  					
+	  						#description#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTicketnumber" parameterClass="long">
+    delete from T_TICKETNUMBER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTicketnumber" parameterClass="Ticketnumber">
+    update T_TICKETNUMBER 
+    set 
+    	C_TICKETTYPEID = #tickettypeid:DECIMAL#,
+						C_BEGINNUMBER = #beginnumber#,
+	  					C_ENDNUMBER = #endnumber#,
+	  					C_DESCRIPTION = #description#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

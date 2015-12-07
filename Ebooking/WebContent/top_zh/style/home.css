@@ -1,0 +1,102 @@
+@CHARSET "UTF-8";
+#navbox #menunav{float:left;width:190px;height:40px;position:relative;z-index:1000;}
+#navbox #menunav .tit{width:190px;height:40px;background:#0072B1;}
+#navbox #menunav .tit .bt{padding-left:25px;line-height:40px;color:#FFF;}
+#navbox #menunav .newSubCon{width:190px;height:330px;position:absolute;top:40px;left:0;background:#C8E1EE;}
+
+#navbox #menunav .newSubCon .newMenuBlock{width:170px;height:40px;padding:0 10px;background:url(../images/menunavbg.gif) top left repeat-x;}
+#navbox #menunav .newSubCon .newMenuBlock:first-child{background:none;}
+#navbox #menunav .newSubCon .newMenuBlock:hover{background:#D8ECF8;}
+#navbox #menunav .newSubCon .newMenuBlock h3{position:relative;width:130px;height:38px;line-height:38px;font-size:14px;padding-left:40px;color:#000000;cursor:pointer;}
+
+#navbox #menunav .newSubCon .SubCon{width:730px;height:300px;padding:15px;position:absolute;top:0;left:190px;background:#F8F8F8;z-index:1001; display:none;}
+#navbox #menunav .newSubCon .SubCon .atag{font-size:14px;height:30px;display:inline-block;_display:inline; margin-right:10px;}
+
+#navbox #menunav .newSubCon .newMenuBlock s{position:absolute;top:2px;left:0;width:35px;height:30px;font-style:normal;display:inline-block;_display:inline;background:url(../images/pngico.png) no-repeat 0 0;}
+#navbox #menunav .newSubCon .newMenuBlock s.s1{background-position:0 0;}
+#navbox #menunav .newSubCon .newMenuBlock s.s2{background-position:0 -30px;}
+#navbox #menunav .newSubCon .newMenuBlock s.s3{background-position:0 -60px;}
+#navbox #menunav .newSubCon .newMenuBlock s.s4{background-position:0 -90px;}
+#navbox #menunav .newSubCon .newMenuBlock s.s5{background-position:0 -120px;}
+#navbox #menunav .newSubCon .newMenuBlock s.s6{background-position:0 -150px;}
+#navbox #menunav .newSubCon .newMenuBlock s.s7{background-position:0 -180px;}
+#navbox #menunav .newSubCon .newMenuBlock s.s8{background-position:0 -210px;}
+#navbox #menunav .newSubCon .newMenuBlock s.s9{background-position:0 -240px;}
+/*-----------------------------------------------------------------------------------*/
+#homefocus{height:330px;z-index:100; margin-bottom:15px;}
+#homefocus #focus{float:left;margin-left:190px;width:760px;height:330px;position:relative;z-index:101;overflow:hidden;}
+#homefocus #focus .imgpicchang{width:760px;height:330px;}
+/*----首页轮换图片-------*/
+#focus{float:left;width:760px;height:330px;overflow:hidden;position:relative;margin-left:190px;z-index:1200;}
+#focus ul {width:760px;height:330px;position:absolute;}
+#focus ul li {float:left;width:760px;height:330px;overflow:hidden;position:relative;}
+#focus ul li div {position:absolute;overflow:hidden;}
+#focus .imgfocus{width:760px;height:330px;}
+#focus .btnBg {position:absolute;width:760px;height:45px;left:0;bottom:0; background:#FFF;}
+#focus .btn {position:absolute;width:760px;height:25px;left:0;bottom:10px;padding-left:5px;text-align:center;}
+#focus .btn span {width:25px;height:25px;line-height:25px;font-size:14px;color:#666666;font-weight:bold;border:1px solid #DBDBDB;background:#FFF;text-align:center;margin-right:8px;cursor:pointer;display:inline-block;_display:inline;_zoom:1;}
+#focus .btn span.on {background:#2577E3;border:1px solid #1D6DD8;color:#FFFFFF;}
+/*--END--*/	
+
+
+
+
+
+#homefocus #companybox{float:right;width:220px;height:320px;padding:5px 10px;overflow:hidden;background:#F8F8F8;}
+#homefocus #companybox .txtbox{width:220px;height:150px;padding:5px 0;overflow:hidden;}
+
+#homefocus #companybox .tit{width:160px;height:30px;background:url(../images/pngtit.png) no-repeat 0 -30px; margin-bottom:10px;}
+#homefocus #companybox .tipbox{width:160px;height:80px;padding:0;}
+#homefocus #companybox .tipbox .tip{float:left;width:50px;height:30px;overflow:hidden;padding-top:38px;display:inline-block;_display:inline;background:url(../images/iconcomtips.png) no-repeat 0 0;}
+#homefocus #companybox .tipbox .tip.t1{background-position:0 0;}
+#homefocus #companybox .tipbox .tip.t2{background-position:-53px 0;}
+#homefocus #companybox .tipbox .tip.t3{background-position:-106px 0;}
+#homefocus #companybox .regbox{width:160px;height:50px;padding:0;}
+#homefocus #companybox .vbox{width:160px;height:200px;padding:0; overflow:hidden;}
+/*--------------Brand----------------------*/
+.brandbox{width:1190px;}
+.brandbox .tit{width:1000px;padding-left:190px;height:30px;background:url(../images/pngtit.png) no-repeat 0 0;}
+.brandbox .tit .bt{padding:0 10px 0 0;}
+.brandbox .brandlist{width:1176px;padding:9px 6px;border:1px solid #EEE;border-top:1px solid #E3E3E3;overflow:hidden;}
+.brandbox .ulbrand{width:1176px;}
+.brandbox .librand{float:left;width:150px;height:91px;padding:5px 9px;}
+.brandbox .librand .imgbrand{width:150px;height:91px;}
+
+
+
+
+/*-------------- product----------------------*/
+.tablebox{width:1190px;}
+.tablebox .tit{width:1190px;height:45px;line-height:45px;border-bottom:2px solid #2577E3;font-family:Microsoft YaHei;background:url(../images/pngnumber.png) top left no-repeat;}
+.tablebox .titbt{float:left;width:180px;padding-left:50px;font-size:22px;line-height:45px;}
+.tablebox .classlist{float:left;width:720px;font-size:16px;font-family:Microsoft YaHei;}
+.tablebox .classlist .atag{display:inline-block;_display:inline; margin-right:18px;}
+.tablebox .comtit{float:right;width:220px;font-size:16px;color:#888;}
+
+.tablebox .titcolor-1{border-bottom:2px solid #2577E3;background-position:0 0;}      .tablebox .titcolor-1 h2{color:#2577E3;}
+.tablebox .titcolor-2{border-bottom:2px solid #008000;background-position:0 -50px;}  .tablebox .titcolor-2 h2{color:#008000;}
+.tablebox .titcolor-3{border-bottom:2px solid #97B920;background-position:0 -100px;} .tablebox .titcolor-3 h2{color:#97B920;}
+.tablebox .titcolor-4{border-bottom:2px solid #FF3300;background-position:0 -150px;} .tablebox .titcolor-4 h2{color:#FF3300;}
+.tablebox .titcolor-5{border-bottom:2px solid #F75C4C;background-position:0 -200px;} .tablebox .titcolor-5 h2{color:#F75C4C;}
+
+.tablebox .t_box{float:left;width:220px;height:450px;background:#FAFAFA;overflow:hidden;}
+.tablebox .t_list{float:left;width:738px;height:449px;overflow:hidden;border-bottom:1px solid #E6E6E6;}
+.tablebox .t_company{float:right;width:220px;height:449px;padding-left:10px;border:1px solid #E6E6E6;border-top:0;overflow:hidden;}
+
+.tablebox .ulpro{width:730px;padding-left:5px;}
+.tablebox .lipro{float:left;width:220px;height:200px;padding:5px;border:1px solid #FFF;background:#FFF;margin:5px;position:relative;line-height:25px;}
+.tablebox .lipro:hover{padding:5px;border:1px solid #EEE;}
+.tablebox .lipro .imgpro{width:220px;height:150px;position:absolute;top:4px;left:4px;cursor:pointer;z-index:301;}
+.tablebox .lipro .protit{width:220px;height:25px;font-size:14px;position:absolute;top:155px;left:4px;overflow:hidden;cursor:pointer;display:inline-block;_display:inline;z-index:303;}
+.tablebox .lipro .proprice{width:220px;height:25px;position:absolute;top:180px;right:5px;color:#888;overflow:hidden;display:inline-block;_display:inline;z-index:303;}
+.tablebox .lipro .probg{width:220px;height:50px;position:absolute;top:130px;left:4px;overflow:hidden; background:#000;display:inline-block;_display:inline;filter:alpha(opacity=50);-moz-opacity:100;opacity:100;z-index:302;}
+
+.tablebox .ulcompany{width:210px;padding:5px;}
+.tablebox .licompany{width:200px;padding:5px 0;}
+.tablebox .licompany .imgcompany{width:200px;height:80px;}
+.tablebox .licompanyfile{width:220px;padding:0 0 0 15px;font-size:14px;}
+
+/*-------------- info file ----------------------*/
+.infobox{width:1190px;}
+.infobox .ulfile{width:1190px;}
+.infobox .lifile{float:left;width:287px;padding-left:10px;height:22px;line-height:22px; overflow:hidden;background:url(../images/pixfile.gif) no-repeat 0 -2px;}

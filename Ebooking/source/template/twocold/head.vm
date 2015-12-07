@@ -1,0 +1,152 @@
+#*<link href="/Platform/themedemo/skin/$!webwork.htmlEncode($parameters.themename)/css/base.css" rel="stylesheet" type="text/css" />
+<link href="/Platform/themedemo/skin/$!webwork.htmlEncode($parameters.themename)/css/font.css" rel="stylesheet" type="text/css" />
+<link href="/Platform/themedemo/skin/$!webwork.htmlEncode($parameters.themename)/css/index.css" rel="stylesheet" type="text/css" />
+#set($nametype=$!webwork.htmlEncode($parameters.name))
+nametype=$nametype
+$request
+*#
+
+<link href="css/css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/css/font.css" rel="stylesheet" type="text/css" />
+<link href="style/validationEngine.jquery.css" rel="stylesheet" type="text/css" title="no title" charset="utf-8" />
+<link href="style/tip-yellowsimple.css" rel="stylesheet" type="text/css" title="no title" charset="utf-8" />
+<script src="js/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="js/tip/tip.js" type="text/javascript"></script>
+<link href="css/css/tip.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery/jquery.poshytip.js" type="text/javascript"></script>
+<script src="js/citycontrol/jquery.blockUI.js" type="text/javascript"></script>
+<script src="js/citycontrol/PublicJs.js" type="text/javascript"></script>
+
+
+#set($name=$!webwork.htmlEncode($parameters.name))
+#if($name=="index") 
+<link href="css/css/index.css" rel="stylesheet" type="text/css" />
+<link href="css/css/citycontrol.css" rel="stylesheet" type="text/css" />
+#end
+#if($name=="login")
+<link href="css/css/login.css" rel="stylesheet" type="text/css" />
+#end
+#if($name=="help")
+<link href="css/css/help.css" rel="stylesheet" type="text/css" />
+#end
+
+#if($name=="point")
+<link href="css/css/login.css" rel="stylesheet" type="text/css" />
+<link href="css/css/airlines.css" rel="stylesheet" type="text/css" />
+#end
+
+#if($name=="air")
+<link href="css/css/ticket.css" rel="stylesheet" type="text/css" />
+<link href="css/css/airlines.css" rel="stylesheet" type="text/css" />
+<link href="css/css/citycontrol.css" rel="stylesheet" type="text/css" />
+#end
+
+
+#if($name=="inter")
+<link href="css/css/international.css" rel="stylesheet" type="text/css" />
+<link href="css/css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/css/font.css" rel="stylesheet" type="text/css" />
+<link href="css/css/airlines.css" rel="stylesheet" type="text/css" />
+<link href="css/css/citycontrol.css" rel="stylesheet" type="text/css" />
+#end
+
+#*首页国际机票JS*#
+#if($parameters.jsURL=="international")
+<script src="js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script src="js/international/dateformat.js" type="text/javascript"></script>
+<script src="js/international/aircity.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.dimensions.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.suggest.js" type="text/javascript"></script>
+<script src="js/international/Verification.js" type="text/javascript"></script>
+#end
+
+#*国际机票列表页JS*#
+#if($parameters.jsURL=="interlist")
+<script src="js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script src="js/international/dateformat.js" type="text/javascript"></script>
+<script src="js/international/aircity.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.dimensions.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.suggest.js" type="text/javascript"></script>
+<script src="js/international/Verification.js" type="text/javascript"></script>
+<script src="js/international/jquery.tablesorter.js" type="text/javascript"></script>
+#end
+
+#*国际机票订单页JS*#
+#if($parameters.jsURL=="interorder")
+<script src="js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script src="js/international/dateformat.js" type="text/javascript"></script>
+<script src="js/international/aircity.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.dimensions.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.suggest.js" type="text/javascript"></script>
+<script src="js/international/Verification.js" type="text/javascript"></script>
+<script src="js/international/order.js" type="text/javascript"></script>
+#end
+
+
+#*首页机票JS*#
+#if($parameters.jsURL=="citycontrol")
+<script src="js/citycontrol/aircity.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.dimensions.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.suggest.js" type="text/javascript"></script>
+<script src="js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script src="js/citycontrol/query.js" type="text/javascript"></script>
+<script src="js/citycontrol/interaircity.js" type="text/javascript"></script>
+<script src="js/citycontrol/index.js" type="text/javascript"></script>
+#end
+
+#*国内机票首页机票JS*#
+#if($parameters.jsURL=="ticketindex")
+<script src="js/citycontrol/aircity.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.dimensions.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.suggest.js" type="text/javascript"></script>
+<script src="js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script src="js/citycontrol/query.js" type="text/javascript"></script>
+<script src="js/citycontrol/falshchart.js" type="text/javascript"></script>
+#end
+
+
+#*国内机票列表页面机票JS*#
+#if($parameters.jsURL=="ticketlist")
+<script src="js/citycontrol/aircity.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.dimensions.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.suggest.js" type="text/javascript"></script>
+<script src="js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script src="js/ticket/jquery.elementsorter.js" type="text/javascript"></script>
+<script src="js/citycontrol/PublicJs.js" type="text/javascript"></script>
+<script src="js/jason/json2.js" type="text/javascript"></script>
+<script src="js/citycontrol/query.js" type="text/javascript"></script>
+<script src="js/ticket/list.js" type="text/javascript"></script>
+#end
+
+#*国内机票下单页机票JS*#
+#if($parameters.jsURL=="createorder")
+<script src="js/citycontrol/aircity.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.dimensions.js" type="text/javascript"></script>
+<script src="js/citycontrol/j.suggest.js" type="text/javascript"></script>
+<script src="js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script src="js/ticket/jquery.elementsorter.js" type="text/javascript"></script>
+<script src="js/citycontrol/PublicJs.js" type="text/javascript"></script>
+<script src="js/jason/json2.js" type="text/javascript"></script>
+<script src="js/jason/jquery.tmpl.js" type="text/javascript"></script>
+<script src="js/citycontrol/query.js" type="text/javascript"></script>
+
+#end
+
+
+#*会员中心JS*#
+#if($parameters.jsURL=="member")
+<script src="js/member/aircity.js" type="text/javascript"></script>
+<script src="js/member/j.dimensions.js" type="text/javascript"></script>
+<script src="js/member/j.suggest.js" type="text/javascript"></script>
+<script src="js/citycontrol/PublicJs.js" type="text/javascript"></script>
+<script src="js/jason/json2.js" type="text/javascript"></script>
+<script src="js/jason/jquery.tmpl.js" type="text/javascript"></script>
+<script src="js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+#end
+
+#*积分JS*#
+#if($parameters.jsURL=="memberpoint")
+
+#end
+
+

@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 短信接收表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Ymreceive createYmreceive(Ymreceive ymreceive) throws SQLException;
+	
+	/**
+	 * 删除 短信接收表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteYmreceive(long id);
+	
+	
+	/**
+	 * 修改 短信接收表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateYmreceive(Ymreceive ymreceive);
+
+		
+	/**
+	 * 修改 短信接收表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateYmreceiveIgnoreNull(Ymreceive ymreceive);
+		
+	
+	/**
+	 * 查找 短信接收表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllYmreceive(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 短信接收表
+	 * @param id
+	 * @return
+	 */
+	public Ymreceive findYmreceive(long id);
+	
+	
+	/** 
+	 * 查找 短信接收表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllYmreceiveForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找短信接收表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllYmreceiveBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 短信接收表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteYmreceiveBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countYmreceiveBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IYmreceiveComponent ymreceiveComponent;
+	  
+ 	
+ 	public IYmreceiveComponent getYmreceiveComponent() {
+		return ymreceiveComponent;
+	}
+	public void setYmreceiveComponent(IYmreceiveComponent  ymreceiveComponent) {
+		this.ymreceiveComponent = ymreceiveComponent;
+	}
+	/**
+	 * 创建 短信接收表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Ymreceive createYmreceive(Ymreceive ymreceive) throws SQLException{
+	
+		return ymreceiveComponent.createYmreceive(ymreceive);
+	}
+	/**
+	 * 删除 短信接收表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteYmreceive(long id){
+	
+		return ymreceiveComponent.deleteYmreceive(id);
+	}
+	
+	
+	/**
+	 * 修改 短信接收表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateYmreceive(Ymreceive ymreceive){
+		return ymreceiveComponent.updateYmreceive(ymreceive);
+	
+	}
+
+		
+	/**
+	 * 修改 短信接收表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateYmreceiveIgnoreNull(Ymreceive ymreceive){
+			return ymreceiveComponent.updateYmreceiveIgnoreNull(ymreceive);
+	
+	}
+	
+	/**
+	 * 查找 短信接收表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllYmreceive(String where, String orderby,int limit,int offset){
+		return ymreceiveComponent.findAllYmreceive(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 短信接收表
+	 * @param id
+	 * @return
+	 */
+	public Ymreceive findYmreceive(long id){
+		return ymreceiveComponent.findYmreceive(id);
+	}
+	
+	/** 
+	 * 查找 短信接收表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllYmreceiveForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return ymreceiveComponent.findAllYmreceive(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找短信接收表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllYmreceiveBySql(String sql,int limit,int offset){
+		return ymreceiveComponent.findAllYmreceive(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 短信接收表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteYmreceiveBySql(String sql){
+		return ymreceiveComponent.excuteYmreceiveBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countYmreceiveBySql(String sql){
+		return ymreceiveComponent.countYmreceiveBySql(sql);
+	}
+	
+	
+

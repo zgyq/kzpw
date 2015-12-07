@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Xcdorder">
+  
+  <typeAlias alias="Xcdorder" type="com.yf.system.base.xcdorder.Xcdorder"/>
+  
+
+  <resultMap id="resultXcdorderMap" class="Xcdorder">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="ticketno" column="C_TICKETNO"/>
+  
+     <result property="pnr" column="C_PNR"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="passid" column="C_PASSID"/>
+  
+     <result property="xcdinfoid" column="C_XCDINFOID"/>
+  
+     <result property="xcdinfo" column="C_XCDINFO"/>
+  
+     <result property="officecode" column="C_OFFICECODE"/>
+  
+     <result property="companyname" column="C_COMPANYNAME"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="userid" column="C_USERID"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllXcdorder"  resultMap="resultXcdorderMap"  parameterClass="java.util.Map">
+  
+    select * from T_XCDORDER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllXcdorderBySql"  resultMap="resultXcdorderMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteXcdorderBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countXcdorderBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_XCDORDER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findXcdorder" parameterClass="long" resultClass="Xcdorder">
+    select 
+    	ID as id,
+	  			C_TICKETNO as ticketno,
+	  			C_PNR as pnr,
+	  			C_ORDERID as orderid,
+	  			C_PASSID as passid,
+	  			C_XCDINFOID as xcdinfoid,
+	  			C_XCDINFO as xcdinfo,
+	  			C_OFFICECODE as officecode,
+	  			C_COMPANYNAME as companyname,
+	  			C_AGENTID as agentid,
+	  			C_USERID as userid,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_CREATETIME as createtime,
+	  			C_STATE as state 
+     from T_XCDORDER
+    where ID = #id#
+  </select>
+   
+  <insert id="createXcdorder" parameterClass="Xcdorder">
+    insert into T_XCDORDER ( 
+    	ID,
+	  			C_TICKETNO,
+	  			C_PNR,
+	  			C_ORDERID,
+	  			C_PASSID,
+	  			C_XCDINFOID,
+	  			C_XCDINFO,
+	  			C_OFFICECODE,
+	  			C_COMPANYNAME,
+	  			C_AGENTID,
+	  			C_USERID,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_CREATETIME,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#ticketno#,
+	  					
+	  						#pnr#,
+	  					
+							#orderid:DECIMAL#,
+						
+							#passid:DECIMAL#,
+						
+							#xcdinfoid:DECIMAL#,
+						
+	  						#xcdinfo#,
+	  					
+	  						#officecode#,
+	  					
+	  						#companyname#,
+	  					
+							#agentid:DECIMAL#,
+						
+							#userid:DECIMAL#,
+						
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+	  						#createtime#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteXcdorder" parameterClass="long">
+    delete from T_XCDORDER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateXcdorder" parameterClass="Xcdorder">
+    update T_XCDORDER 
+    set 
+    	C_TICKETNO = #ticketno#,
+	  					C_PNR = #pnr#,
+	  					C_ORDERID = #orderid:DECIMAL#,
+						C_PASSID = #passid:DECIMAL#,
+						C_XCDINFOID = #xcdinfoid:DECIMAL#,
+						C_XCDINFO = #xcdinfo#,
+	  					C_OFFICECODE = #officecode#,
+	  					C_COMPANYNAME = #companyname#,
+	  					C_AGENTID = #agentid:DECIMAL#,
+						C_USERID = #userid:DECIMAL#,
+						C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_CREATETIME = #createtime#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

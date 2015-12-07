@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Rgroupcustomers">
+  
+  <typeAlias alias="Rgroupcustomers" type="com.yf.system.base.rgroupcustomers.Rgroupcustomers"/>
+  
+
+  <resultMap id="resultRgroupcustomersMap" class="Rgroupcustomers">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="groupcusid" column="C_GROUPCUSID"/>
+  
+     <result property="groupname" column="C_GROUPNAME"/>
+  
+     <result property="money" column="C_MONEY"/>
+  
+     <result property="datetime" column="C_DATETIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllRgroupcustomers"  resultMap="resultRgroupcustomersMap"  parameterClass="java.util.Map">
+  
+    select * from T_RGROUPCUSTOMERS
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllRgroupcustomersBySql"  resultMap="resultRgroupcustomersMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteRgroupcustomersBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countRgroupcustomersBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_RGROUPCUSTOMERS
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findRgroupcustomers" parameterClass="long" resultClass="Rgroupcustomers">
+    select 
+    	ID as id,
+	  			C_GROUPCUSID as groupcusid,
+	  			C_GROUPNAME as groupname,
+	  			C_MONEY as money,
+	  			C_DATETIME as datetime 
+     from T_RGROUPCUSTOMERS
+    where ID = #id#
+  </select>
+   
+  <insert id="createRgroupcustomers" parameterClass="Rgroupcustomers">
+    insert into T_RGROUPCUSTOMERS ( 
+    	ID,
+	  			C_GROUPCUSID,
+	  			C_GROUPNAME,
+	  			C_MONEY,
+	  			C_DATETIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#groupcusid:DECIMAL#,
+						
+	  						#groupname#,
+	  					
+							#money:DECIMAL#,
+						
+	  						#datetime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteRgroupcustomers" parameterClass="long">
+    delete from T_RGROUPCUSTOMERS
+    where ID = #id#
+  </delete>
+	
+  <update id="updateRgroupcustomers" parameterClass="Rgroupcustomers">
+    update T_RGROUPCUSTOMERS 
+    set 
+    	C_GROUPCUSID = #groupcusid:DECIMAL#,
+						C_GROUPNAME = #groupname#,
+	  					C_MONEY = #money:DECIMAL#,
+						C_DATETIME = #datetime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

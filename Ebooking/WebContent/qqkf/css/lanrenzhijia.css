@@ -1,0 +1,84 @@
+/*Tang jiajun ’˚¿Ì */
+/*519290759@qq.com */
+
+.service {
+	top:130px;
+	right:0;
+	position:absolute;
+	font:12px/20px Arial, Verdana, Tahoma, "ÀŒÃÂ";
+}
+.service-open {
+	background:url(../images/service-open.png) no-repeat;
+	width:143px;
+}
+.service-close {
+	background:url(../images/service-open.png) no-repeat;
+	height:121px;
+	width:31px;
+	overflow:hidden;
+}
+.service-button {
+	background:url(../images/service-open.png) no-repeat;
+	width:34px;
+	height:121px;
+	float:left;
+	cursor:hand;
+}
+.service-inside {
+	width:103px;
+	height:500px;
+	float:right;
+}
+.service-inside dl {
+	padding:10px 0;
+}
+.service-inside dl dt {
+	text-align:center;
+	background:url(../images/dttitle.jpg) no-repeat;
+	height:18px;
+	line-height:18px;
+	width:100px;
+	margin-bottom:8px;
+	color:#fff;
+	margin-top:4px;
+}
+.service-inside dl dd {
+	background:url(../images/qq_online.gif) no-repeat 0px 4px;
+	height:27px;
+	line-height:27px;
+	text-indent:35px;
+	text-align:left;
+	width:100px;
+	margin-left:4px;
+}
+.service-inside dl dd.esp_1 a {
+	color:#f50;
+}
+.service-inside dl dd.esp_2 {
+	margin-left:4px;
+	color:#999;
+	background:none;
+	text-indent:0;
+	text-align:center;
+	height:20px;
+	line-height:20px;
+}
+.service-inside dl dd.esp_3 {
+	margin-left:4px;
+	color:#f50;
+	background:none;
+	text-indent:0;
+	text-align:center;
+	height:20px;
+	line-height:20px;
+}
+.service-inside dl dd.esp_4 {
+	margin-left:4px;
+	text-align:center;
+	color:#333;
+	background:none;
+	margin:0;
+	height:18px;
+	line-height:18px;
+	text-indent:0;
+}

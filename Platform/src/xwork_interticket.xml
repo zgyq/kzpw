@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+  <package name="interticket" extends="default">
+  
+    <action name="interticket" class="com.yf.system.back.action.InterticketAction">
+      <result name="index" type="dispatcher">
+        <param name="location">interticket_new/index.jsp</param>
+      </result>
+      <result name="ticketlist" type="dispatcher">
+        <param name="location">interticket_new/ticketlist.jsp</param>
+      </result>
+       <result name="ticketlist_ctrip" type="dispatcher">
+        <param name="location">interticket_new/ticketlist_ctrip.jsp</param>
+      </result>
+      <result name="createorder" type="dispatcher">
+        <param name="location">interticket_new/createorder.jsp</param>
+      </result>
+      <result name="forword" type="redirect">
+        <param name="location">/${forword}</param>
+      </result>
+      <result name="success" type="dispatcher">
+        <param name="location">interticket_new/success.jsp</param>
+      </result>
+      
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    
+    
+    <action name="fairport" class="com.yf.system.back.action.FairportAction">
+      <result name="success" type="dispatcher">
+        <param name="location">interticket/fairport.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">interticket/fairport_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">interticket/fairport_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">interticket/fairport.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="fairway" class="com.yf.system.back.action.FairwayAction">
+      <result name="success" type="dispatcher">
+        <param name="location">interticket/fairway.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">interticket/fairway_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">interticket/fairway_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">interticket/fairway.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="fcity" class="com.yf.system.back.action.FcityAction">
+      <result name="success" type="dispatcher">
+        <param name="location">interticket/fcity.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">interticket/fcity_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">interticket/fcity_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">interticket/fcity.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="fcountry" class="com.yf.system.back.action.FcountryAction">
+      <result name="success" type="dispatcher">
+        <param name="location">interticket/fcountry.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">interticket/fcountry_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">interticket/fcountry_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">interticket/fcountry.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="fdeliverassign" class="com.yf.system.back.action.FdeliverassignAction">
+      <result name="success" type="dispatcher">
+        <param name="location">interticket/fdeliverassign.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">interticket/fdeliverassign_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">interticket/fdeliverassign_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">interticket/fdeliverassign.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="fflight" class="com.yf.system.back.action.FflightAction">
+      <result name="success" type="dispatcher">
+        <param name="location">interticket/fflight.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">interticket/fflight_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">interticket/fflight_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">interticket/fflight.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="fguest" class="com.yf.system.back.action.FguestAction">
+      <result name="success" type="dispatcher">
+        <param name="location">interticket/fguest.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">interticket/fguest_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">interticket/fguest_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">interticket/fguest.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="forderdelrec" class="com.yf.system.back.action.ForderdelrecAction">
+      <result name="success" type="dispatcher">
+        <param name="location">interticket/forderdelrec.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">interticket/forderdelrec_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">interticket/forderdelrec_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">interticket/forderdelrec.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="forderinfo" class="com.yf.system.back.action.ForderinfoAction">
+      <result name="success" type="dispatcher">
+        <param name="location">interticket/forderinfo.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">interticket/forderinfo_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">interticket/forderinfo_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">interticket/forderinfo.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+    <action name="fsendticketcity" class="com.yf.system.back.action.FsendticketcityAction">
+      <result name="success" type="dispatcher">
+        <param name="location">interticket/fsendticketcity.jsp</param>
+      </result>
+      <result name="edit" type="dispatcher">
+        <param name="location">interticket/fsendticketcity_edit.jsp</param>
+      </result>
+      <result name="check" type="dispatcher">
+        <param name="location">interticket/fsendticketcity_check.jsp</param>
+      </result>
+      <result name="list" type="dispatcher">
+        <param name="location">interticket/fsendticketcity.action</param>
+      </result>
+      <interceptor-ref name="model-driven" />
+      <interceptor-ref name="params" />
+      <interceptor-ref name="validationStack" />
+    </action>
+  </package>
+</xwork>
+

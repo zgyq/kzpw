@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Cars">
+  
+  <typeAlias alias="Cars" type="com.yf.system.base.cars.Cars"/>
+  
+
+  <resultMap id="resultCarsMap" class="Cars">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="weekdayprice" column="C_WEEKDAYPRICE"/>
+  
+     <result property="Weekendprice" column="C_WEEKENDPRICE"/>
+  
+     <result property="holidayprice" column="C_HOLIDAYPRICE"/>
+  
+     <result property="holidayname" column="C_HOLIDAYNAME"/>
+  
+     <result property="insurancefee" column="C_INSURANCEFEE"/>
+  
+     <result property="servicefee" column="C_SERVICEFEE"/>
+  
+     <result property="preauthfee" column="C_PREAUTHFEE"/>
+  
+     <result property="extimefee" column="C_EXTIMEFWW"/>
+  
+     <result property="exmilefee" column="C_EXMILEFEE"/>
+  
+     <result property="mile" column="C_MILE"/>
+  
+     <result property="available" column="C_AVAILABLE"/>
+  
+     <result property="imgurl" column="C_IMGURL"/>
+  
+     <result property="maxpassenger" column="C_MAXPASSENGER"/>
+  
+     <result property="ppai" column="C_Ppai"/>
+  
+     <result property="cityid" column="C_CITYID"/>
+  
+     <result property="carstoreid" column="C_CARSTOREID"/>
+  
+     <result property="sort" column="C_SORT"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+   
+  </resultMap>
+  
+  <select id="findAllCars"  resultMap="resultCarsMap"  parameterClass="java.util.Map">
+  
+    select * from T_CARS
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCarsBySql"  resultMap="resultCarsMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCarsBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCarsBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CARS
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCars" parameterClass="long" resultClass="Cars">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_CODE as code,
+	  			C_DESCRIPTION as description,
+	  			C_WEEKDAYPRICE as weekdayprice,
+	  			C_WEEKENDPRICE as Weekendprice,
+	  			C_HOLIDAYPRICE as holidayprice,
+	  			C_HOLIDAYNAME as holidayname,
+	  			C_INSURANCEFEE as insurancefee,
+	  			C_SERVICEFEE as servicefee,
+	  			C_PREAUTHFEE as preauthfee,
+	  			C_EXTIMEFWW as extimefee,
+	  			C_EXMILEFEE as exmilefee,
+	  			C_MILE as mile,
+	  			C_AVAILABLE as available,
+	  			C_IMGURL as imgurl,
+	  			C_MAXPASSENGER as maxpassenger,
+	  			C_Ppai as ppai,
+	  			C_CITYID as cityid,
+	  			C_CARSTOREID as carstoreid,
+	  			C_SORT as sort,
+	  			C_CREATETIME as createtime,
+	  			C_CREATEUSER as createuser 
+     from T_CARS
+    where ID = #id#
+  </select>
+   
+  <insert id="createCars" parameterClass="Cars">
+    insert into T_CARS ( 
+    	ID,
+	  			C_NAME,
+	  			C_CODE,
+	  			C_DESCRIPTION,
+	  			C_WEEKDAYPRICE,
+	  			C_WEEKENDPRICE,
+	  			C_HOLIDAYPRICE,
+	  			C_HOLIDAYNAME,
+	  			C_INSURANCEFEE,
+	  			C_SERVICEFEE,
+	  			C_PREAUTHFEE,
+	  			C_EXTIMEFWW,
+	  			C_EXMILEFEE,
+	  			C_MILE,
+	  			C_AVAILABLE,
+	  			C_IMGURL,
+	  			C_MAXPASSENGER,
+	  			C_Ppai,
+	  			C_CITYID,
+	  			C_CARSTOREID,
+	  			C_SORT,
+	  			C_CREATETIME,
+	  			C_CREATEUSER 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#code#,
+	  					
+	  						#description#,
+	  					
+	  						#weekdayprice#,
+	  					
+	  						#Weekendprice#,
+	  					
+	  						#holidayprice#,
+	  					
+	  						#holidayname#,
+	  					
+	  						#insurancefee#,
+	  					
+	  						#servicefee#,
+	  					
+	  						#preauthfee#,
+	  					
+	  						#extimefee#,
+	  					
+	  						#exmilefee#,
+	  					
+	  						#mile#,
+	  					
+	  						#available#,
+	  					
+	  						#imgurl#,
+	  					
+	  						#maxpassenger#,
+	  					
+	  						#ppai#,
+	  					
+							#cityid:DECIMAL#,
+						
+							#carstoreid:DECIMAL#,
+						
+							#sort:DECIMAL#,
+						
+	  						#createtime#,
+	  					
+	  						#createuser#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCars" parameterClass="long">
+    delete from T_CARS
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCars" parameterClass="Cars">
+    update T_CARS 
+    set 
+    	C_NAME = #name#,
+	  					C_CODE = #code#,
+	  					C_DESCRIPTION = #description#,
+	  					C_WEEKDAYPRICE = #weekdayprice#,
+	  					C_WEEKENDPRICE = #Weekendprice#,
+	  					C_HOLIDAYPRICE = #holidayprice#,
+	  					C_HOLIDAYNAME = #holidayname#,
+	  					C_INSURANCEFEE = #insurancefee#,
+	  					C_SERVICEFEE = #servicefee#,
+	  					C_PREAUTHFEE = #preauthfee#,
+	  					C_EXTIMEFWW = #extimefee#,
+	  					C_EXMILEFEE = #exmilefee#,
+	  					C_MILE = #mile#,
+	  					C_AVAILABLE = #available#,
+	  					C_IMGURL = #imgurl#,
+	  					C_MAXPASSENGER = #maxpassenger#,
+	  					C_Ppai = #ppai#,
+	  					C_CITYID = #cityid:DECIMAL#,
+						C_CARSTOREID = #carstoreid:DECIMAL#,
+						C_SORT = #sort:DECIMAL#,
+						C_CREATETIME = #createtime#,
+	  					C_CREATEUSER = #createuser#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Travelskyreport">
+  
+  <typeAlias alias="Travelskyreport" type="com.yf.system.base.travelskyreport.Travelskyreport"/>
+  
+
+  <resultMap id="resultTravelskyreportMap" class="Travelskyreport">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="tktnumber" column="C_TKTNUMBER"/>
+  
+     <result property="origsest" column="C_ORIGSEST"/>
+  
+     <result property="ticketprice" column="C_TICKETPRICE"/>
+  
+     <result property="taxs" column="C_TAXS"/>
+  
+     <result property="comm" column="C_COMM"/>
+  
+     <result property="pnr" column="C_PNR"/>
+  
+     <result property="agent" column="C_AGENT"/>
+  
+     <result property="status" column="C_STATUS"/>
+     
+     <result property="createtime" column="C_CREATETIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllTravelskyreport"  resultMap="resultTravelskyreportMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRAVELSKYREPORT
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTravelskyreportBySql"  resultMap="resultTravelskyreportMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTravelskyreportBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTravelskyreportBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRAVELSKYREPORT
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTravelskyreport" parameterClass="long" resultClass="Travelskyreport">
+    select 
+    	ID as id,
+	  			C_TKTNUMBER as tktnumber,
+	  			C_ORIGSEST as origsest,
+	  			C_TICKETPRICE as ticketprice,
+	  			C_TAXS as taxs,
+	  			C_COMM as comm,
+	  			C_PNR as pnr,
+	  			C_AGENT as agent,
+	  			C_STATUS as status,
+	  			C_CREATETIME as createtime 
+     from T_TRAVELSKYREPORT
+    where ID = #id#
+  </select>
+   
+  <insert id="createTravelskyreport" parameterClass="Travelskyreport">
+    insert into T_TRAVELSKYREPORT ( 
+    	ID,
+	  			C_TKTNUMBER,
+	  			C_ORIGSEST,
+	  			C_TICKETPRICE,
+	  			C_TAXS,
+	  			C_COMM,
+	  			C_PNR,
+	  			C_AGENT,
+	  			C_STATUS 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#tktnumber#,
+	  					
+	  						#origsest#,
+	  					
+							#ticketprice:DECIMAL#,
+						
+							#taxs:DECIMAL#,
+						
+							#comm:DECIMAL#,
+						
+	  						#pnr#,
+	  					
+	  						#agent#,
+	  					
+  							#status:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTravelskyreport" parameterClass="long">
+    delete from T_TRAVELSKYREPORT
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTravelskyreport" parameterClass="Travelskyreport">
+    update T_TRAVELSKYREPORT 
+    set 
+    	C_TKTNUMBER = #tktnumber#,
+	  					C_ORIGSEST = #origsest#,
+	  					C_TICKETPRICE = #ticketprice:DECIMAL#,
+						C_TAXS = #taxs:DECIMAL#,
+						C_COMM = #comm:DECIMAL#,
+						C_PNR = #pnr#,
+	  					C_AGENT = #agent#,
+	  					C_STATUS = #status:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Liudianrefinfo">
+  
+  <typeAlias alias="Liudianrefinfo" type="com.yf.system.base.liudianrefinfo.Liudianrefinfo"/>
+  
+
+  <resultMap id="resultLiudianrefinfoMap" class="Liudianrefinfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="liudianrecid" column="C_LIUDIANRECID"/>
+  
+     <result property="typeid" column="C_TYPEID"/>
+   
+  </resultMap>
+  
+  <select id="findAllLiudianrefinfo"  resultMap="resultLiudianrefinfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_LIUDIANREFINFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllLiudianrefinfoBySql"  resultMap="resultLiudianrefinfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteLiudianrefinfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countLiudianrefinfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_LIUDIANREFINFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findLiudianrefinfo" parameterClass="long" resultClass="Liudianrefinfo">
+    select 
+    	ID as id,
+	  			C_AGENTID as agentid,
+	  			C_LIUDIANRECID as liudianrecid,
+	  			C_TYPEID as typeid 
+     from T_LIUDIANREFINFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createLiudianrefinfo" parameterClass="Liudianrefinfo">
+    insert into T_LIUDIANREFINFO ( 
+    	ID,
+	  			C_AGENTID,
+	  			C_LIUDIANRECID,
+	  			C_TYPEID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#agentid:DECIMAL#,
+						
+							#liudianrecid:DECIMAL#,
+						
+  							#typeid:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteLiudianrefinfo" parameterClass="long">
+    delete from T_LIUDIANREFINFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateLiudianrefinfo" parameterClass="Liudianrefinfo">
+    update T_LIUDIANREFINFO 
+    set 
+    	C_AGENTID = #agentid:DECIMAL#,
+						C_LIUDIANRECID = #liudianrecid:DECIMAL#,
+						C_TYPEID = #typeid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

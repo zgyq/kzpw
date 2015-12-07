@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+#main{width:1004px; margin:0 auto; margin-top:10px;}
+
+.searh-top,.one,.two,.three,.text_intersea,.bnt_intersea,.titlelogin,.loginbot,.ico_inter-information,.ico_interone,.inter-tips,.algin,.bnt-aglin,.algin-botm,.algin-more,.tips_go,.tips_back,.order,.ico_morney{ background:url(../images/international.png) no-repeat;}
+.text_intersea{ background-position:-80px -60px; border:none; width:148px; height:23px; line-height:23px;}
+.sel_intersea{ border:1px solid #ccc; width:148px; height:23px; line-height:23px;}
+.sel_intersea_algin{ border:1px solid #ccc; width:108px; height:23px; line-height:23px;}
+.bnt_intersea{ background-position:-240px -60px; width:100px; height:27px; line-height:27px; text-align:center; border:none; cursor:pointer;}
+.bnt-aglin{ background-position:-270px -90px; width:96px; height:28px; border:none;}
+#left{ width:730px; border:2px solid #91c8e5;}
+#left .searh-box{ padding:10px 30px 30px 125px;}
+#left .searh-top{ height:50px; line-height:50px; padding-left:90px;}
+#left .searh{ width:255px;}
+#left .one{ background-position:0 -60px; width:20px; height:20px;}
+#left .two{ background-position:-21px -60px; width:20px; height:20px;}
+#left .three{ background-position:-42px -60px; width:20px; height:20px;}
+
+#right{ width:260px;}
+#right .titlelogin{ background-position:0 -90px; width:220px; height:31px; line-height:31px; padding-left:40px;}
+#right .loginbot{background-position:0 -121px; height:5px; line-height:5px; overflow:hidden}
+#right .inter-information{ margin-left:25px;}
+#right .ico_inter-information{ background-position:-350px -60px; width:17px;}
+
+
+#list{ width:1004px; margin:0 auto;}
+#list .left{ width:734px;}
+#list .ico_interone{ background-position:-370px -60px; width:30px;}
+#list .inter-tips{ background-position:0 -130px; height:29px; line-height:29px; margin-left:5px; padding-left:38px;}
+#list .algin{ background-position:0 -165px; height:66px; margin-left:5px; padding:10px 0 0 30px;}
+#list .algin-more{background-position:0 -190px; height:30px; line-height:30px; margin-left:5px; padding-left:30px;}
+#list .algin-botm{ background-position:0 -241px; height:4px; line-height:4px; overflow:hidden; margin-left:5px;}
+#list .list{ width:700px; margin:0 auto; margin-top:10px;}
+#list .list table{ line-height:30px; text-align:center;}
+#list .list th{ background:#39F; font-size:14px; color:#fff}
+#list .list td{  border-top:1px solid #e3e3e3; line-height:36px;}
+#list .list_more{ padding:10px 10px 0 10px; line-height:20px;}
+#list .list_more th{ background:#ffaa13; font-size:12px; font-weight:100}
+#list .list_more td{ border-top:1px solid #e3e3e3; line-height:26px;}
+#list .list_more_right{ width:190px;}
+#list .list_more_right td{ line-height:18px;}
+
+#list .liston{ background:url(../images/bg.png) 0 6px repeat-x;}
+
+#list .tips_go{ background-position:0 -250px; height:23px; line-height:23px; padding-left:5px; margin-left:5px;}
+#list .tips_back{ background-position:0 -280px; height:23px; line-height:23px;padding-left:5px;margin-left:5px;}
+#list .bookinglistgo{text-align:center; }
+#list .bookinglistgo th{ background:#ffaa13; font-size:14px; color:#fff; line-height:28px;}
+#list .bookinglistgo td{  border-top:1px solid #e3e3e3; line-height:20px;}
+#list .bookinglist{text-align:center; }
+#list .bookinglist th{ background:#39F; font-size:14px; color:#fff; line-height:28px;}
+#list .bookinglist td{  border-top:1px solid #e3e3e3; line-height:20px;}
+#list .list_mu{width:16px; height:16px; background:#000; margin-top:10px; margin-right:5px; margin-left:25px;}  
+#list .mu{width:16px; height:16px; background:#000; margin-top:2px; margin-left:15px;}
+#list .tips_inter{ padding:10px 20px 10px 30px;}
+#list .number{ width:96%; margin:0 auto; height:36px; line-height:36px;}
+#list .people{width:290px; position:absolute; top:30px; left:60px;}
+#list .onepeople{ width:65px; float:left; display:block;white-space:nowrap;}
+#list .del_people{ background-position:-330px -88px; padding-left:15px; margin-left:4px;}
+#list .save{ background-position:-360px -168px; padding-left:15px;}
+#list .bnt{ height:50px; padding-top:15px; text-align:center}
+#list .check{text-align:center; }
+#list .check th{ background:#39F; font-size:14px; color:#fff; line-height:28px;}
+#list .check td{  border-top:1px solid #e3e3e3; line-height:28px;}
+#list .order{ background-position:-420px -60px; height:68px; padding-left:90px; margin:10px 10px 10px 20px;}
+#list .morney{ height:39px; line-height:39px; padding-left:10px;}
+#list .ico_morney{ background-position:-530px -60px; padding-left:10px; width:20px;}

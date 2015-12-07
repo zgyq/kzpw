@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Kweifabu">
+  
+  <typeAlias alias="Kweifabu" type="com.yf.system.base.kweifabu.Kweifabu"/>
+  
+
+  <resultMap id="resultKweifabuMap" class="Kweifabu">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="angenid" column="C_TYPEID"/>
+  
+     <result property="flighttype" column="C_FLIGHTTYPE"/>
+  
+     <result property="ca" column="C_CA"/>
+  
+     <result property="starttime" column="C_STARTTIME"/>
+  
+     <result property="startcity" column="C_STARTCITY"/>
+  
+     <result property="endcity" column="C_ENDCITY"/>
+  
+     <result property="flightnumber" column="C_FLIGHTNUMBER"/>
+  
+     <result property="cabincode" column="C_CABINCODE"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="nominalprice" column="C_NOMINALPRICE"/>
+  
+     <result property="discount" column="C_DISCOUNT"/>
+  
+     <result property="taxrate" column="C_TAXRATE"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+  
+     <result property="settlementprice" column="C_SETTLEMENTPRICE"/>
+  
+     <result property="policy" column="C_POLICY"/>
+  
+     <result property="usertype" column="C_USERTYPE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="status" column="C_STATUS"/>
+   
+  </resultMap>
+  
+  <select id="findAllKweifabu"  resultMap="resultKweifabuMap"  parameterClass="java.util.Map">
+  
+    select * from T_KWEIFABU
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllKweifabuBySql"  resultMap="resultKweifabuMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteKweifabuBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countKweifabuBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_KWEIFABU
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findKweifabu" parameterClass="long" resultClass="Kweifabu">
+    select 
+    	ID as id,
+	  			C_TYPEID as angenid,
+	  			C_FLIGHTTYPE as flighttype,
+	  			C_CA as ca,
+	  			C_STARTTIME as starttime,
+	  			C_STARTCITY as startcity,
+	  			C_ENDCITY as endcity,
+	  			C_FLIGHTNUMBER as flightnumber,
+	  			C_CABINCODE as cabincode,
+	  			C_CREATETIME as createtime,
+	  			C_NOMINALPRICE as nominalprice,
+	  			C_DISCOUNT as discount,
+	  			C_TAXRATE as taxrate,
+	  			C_COMMENT as comment,
+	  			C_SETTLEMENTPRICE as settlementprice,
+	  			C_POLICY as policy,
+	  			C_USERTYPE as usertype,
+	  			C_CREATEUSER as createuser,
+	  			C_STATUS as status 
+     from T_KWEIFABU
+    where ID = #id#
+  </select>
+   
+  <insert id="createKweifabu" parameterClass="Kweifabu">
+    insert into T_KWEIFABU ( 
+    	ID,
+	  			C_TYPEID,
+	  			C_FLIGHTTYPE,
+	  			C_CA,
+	  			C_STARTTIME,
+	  			C_STARTCITY,
+	  			C_ENDCITY,
+	  			C_FLIGHTNUMBER,
+	  			C_CABINCODE,
+	  			C_CREATETIME,
+	  			C_NOMINALPRICE,
+	  			C_DISCOUNT,
+	  			C_TAXRATE,
+	  			C_COMMENT,
+	  			C_SETTLEMENTPRICE,
+	  			C_POLICY,
+	  			C_USERTYPE,
+	  			C_CREATEUSER,
+	  			C_STATUS 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#angenid:DECIMAL#,
+						
+							#flighttype:DECIMAL#,
+						
+	  						#ca#,
+	  					
+	  						#starttime#,
+	  					
+	  						#startcity#,
+	  					
+	  						#endcity#,
+	  					
+	  						#flightnumber#,
+	  					
+	  						#cabincode#,
+	  					
+	  						#createtime#,
+	  					
+							#nominalprice:DECIMAL#,
+						
+	  						#discount#,
+	  					
+	  						#taxrate#,
+	  					
+	  						#comment#,
+	  					
+							#settlementprice:DECIMAL#,
+						
+							#policy:DECIMAL#,
+						
+							#usertype:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+  							#status:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteKweifabu" parameterClass="long">
+    delete from T_KWEIFABU
+    where ID = #id#
+  </delete>
+	
+  <update id="updateKweifabu" parameterClass="Kweifabu">
+    update T_KWEIFABU 
+    set 
+    	C_TYPEID = #angenid:DECIMAL#,
+						C_FLIGHTTYPE = #flighttype:DECIMAL#,
+						C_CA = #ca#,
+	  					C_STARTTIME = #starttime#,
+	  					C_STARTCITY = #startcity#,
+	  					C_ENDCITY = #endcity#,
+	  					C_FLIGHTNUMBER = #flightnumber#,
+	  					C_CABINCODE = #cabincode#,
+	  					C_CREATETIME = #createtime#,
+	  					C_NOMINALPRICE = #nominalprice:DECIMAL#,
+						C_DISCOUNT = #discount#,
+	  					C_TAXRATE = #taxrate#,
+	  					C_COMMENT = #comment#,
+	  					C_SETTLEMENTPRICE = #settlementprice:DECIMAL#,
+						C_POLICY = #policy:DECIMAL#,
+						C_USERTYPE = #usertype:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_STATUS = #status:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

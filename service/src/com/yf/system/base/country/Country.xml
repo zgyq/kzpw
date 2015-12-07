@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Country">
+  
+  <typeAlias alias="Country" type="com.yf.system.base.country.Country"/>
+  
+
+  <resultMap id="resultCountryMap" class="Country">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+     
+     <result property="zhname" column="C_ZHNAME"/>
+  
+     <result property="desc" column="C_DESC"/>
+  
+     <result property="code3" column="C_CODE3"/>
+  
+     <result property="code2" column="C_CODE2"/>
+  
+     <result property="fips" column="C_FIPS"/>
+  
+     <result property="un" column="C_UN"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="type" column="C_TYPE"/>
+   
+  </resultMap>
+  
+  <select id="findAllCountry"  resultMap="resultCountryMap"  parameterClass="java.util.Map">
+  
+    select * from T_COUNTRY
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCountryBySql"  resultMap="resultCountryMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCountryBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCountryBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_COUNTRY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCountry" parameterClass="long" resultClass="Country">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_ZHNAME as zhname,
+	  			C_DESC as [desc],
+	  			C_CODE3 as code3,
+	  			C_CODE2 as code2,
+	  			C_FIPS as fips,
+	  			C_UN as un,
+	  			C_CREATETIME as createtime,
+	  			C_TYPE as type 
+     from T_COUNTRY
+    where ID = #id#
+  </select>
+   
+  <insert id="createCountry" parameterClass="Country">
+    insert into T_COUNTRY ( 
+    	ID,
+	  			C_NAME,
+	  			C_ZHNAME,
+	  			C_DESC,
+	  			C_CODE3,
+	  			C_CODE2,
+	  			C_FIPS,
+	  			C_UN,
+	  			C_CREATETIME,
+	  			C_TYPE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  						
+	  						#zhname#,
+	  					
+	  						#desc#,
+	  					
+	  						#code3#,
+	  					
+	  						#code2#,
+	  					
+	  						#fips#,
+	  					
+	  						#un#,
+	  					
+	  						#createtime#,
+	  					
+  							#type:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCountry" parameterClass="long">
+    delete from T_COUNTRY
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCountry" parameterClass="Country">
+    update T_COUNTRY 
+    set 
+    	C_NAME = #name#,
+	  					C_DESC = #desc#,
+	  					C_ZHNAME = #zhname#,
+	  					C_CODE3 = #code3#,
+	  					C_CODE2 = #code2#,
+	  					C_FIPS = #fips#,
+	  					C_UN = #un#,
+	  					C_CREATETIME = #createtime#,
+	  					C_TYPE = #type:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

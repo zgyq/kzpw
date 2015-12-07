@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 帮助中心
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Helpcenter createHelpcenter(Helpcenter helpcenter) throws SQLException;
+	
+	/**
+	 * 删除 帮助中心
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteHelpcenter(long id);
+	
+	
+	/**
+	 * 修改 帮助中心
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateHelpcenter(Helpcenter helpcenter);
+
+		
+	/**
+	 * 修改 帮助中心但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateHelpcenterIgnoreNull(Helpcenter helpcenter);
+		
+	
+	/**
+	 * 查找 帮助中心
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHelpcenter(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 帮助中心
+	 * @param id
+	 * @return
+	 */
+	public Helpcenter findHelpcenter(long id);
+	
+	
+	/** 
+	 * 查找 帮助中心
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllHelpcenterForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找帮助中心
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHelpcenterBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 帮助中心
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteHelpcenterBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countHelpcenterBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IHelpcenterComponent helpcenterComponent;
+	  
+ 	
+ 	public IHelpcenterComponent getHelpcenterComponent() {
+		return helpcenterComponent;
+	}
+	public void setHelpcenterComponent(IHelpcenterComponent  helpcenterComponent) {
+		this.helpcenterComponent = helpcenterComponent;
+	}
+	/**
+	 * 创建 帮助中心
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Helpcenter createHelpcenter(Helpcenter helpcenter) throws SQLException{
+	
+		return helpcenterComponent.createHelpcenter(helpcenter);
+	}
+	/**
+	 * 删除 帮助中心
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteHelpcenter(long id){
+	
+		return helpcenterComponent.deleteHelpcenter(id);
+	}
+	
+	
+	/**
+	 * 修改 帮助中心
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateHelpcenter(Helpcenter helpcenter){
+		return helpcenterComponent.updateHelpcenter(helpcenter);
+	
+	}
+
+		
+	/**
+	 * 修改 帮助中心但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateHelpcenterIgnoreNull(Helpcenter helpcenter){
+			return helpcenterComponent.updateHelpcenterIgnoreNull(helpcenter);
+	
+	}
+	
+	/**
+	 * 查找 帮助中心
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHelpcenter(String where, String orderby,int limit,int offset){
+		return helpcenterComponent.findAllHelpcenter(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 帮助中心
+	 * @param id
+	 * @return
+	 */
+	public Helpcenter findHelpcenter(long id){
+		return helpcenterComponent.findHelpcenter(id);
+	}
+	
+	/** 
+	 * 查找 帮助中心
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllHelpcenterForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return helpcenterComponent.findAllHelpcenter(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找帮助中心
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHelpcenterBySql(String sql,int limit,int offset){
+		return helpcenterComponent.findAllHelpcenter(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 帮助中心
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteHelpcenterBySql(String sql){
+		return helpcenterComponent.excuteHelpcenterBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countHelpcenterBySql(String sql){
+		return helpcenterComponent.countHelpcenterBySql(sql);
+	}
+	
+	
+

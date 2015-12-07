@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/public.css" type="text/css" rel="stylesheet" />
+<link href="css/new.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/js_new/jquery.js"></script>
+<script type="text/javascript" src="js/js_new/jquery.scrollTo-min.js"></script>
+<script type="text/javascript" src="js/js_new/jquery.scrollShow.js"></script>
+<script type="text/javascript">
+jQuery(function( $ ){
+	//borrowed from jQuery easing plugin
+	//http://gsgd.co.uk/sandbox/jquery.easing.php
+	$.easing.backout = function(x, t, b, c, d) {
+		var s=1.70158;
+		return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+	};
+	$('#screen').scrollShow({
+		view:'#view',
+		content:'#images',
+		easing:'backout',
+		wrappers:'crop',
+		navigators:'a[id]',
+		navigationMode:'sr',
+		circular:true,
+		start:0
+	});
+});
+</script>
+</head>
+
+<body >
+<div id="header" lang="th">
+   <div class="top">
+     
+     <div class="f"><img src="imagess/logo.gif" width="337" height="61" align="${dns.companyname}商旅中心"  /></div>
+     <div class="r" style="text-align:right">
+     <div class="time font-039" ><img src="imagess/time.gif" width="27" height="30" align="absmiddle" />当前时间：2011年5月9日&nbsp;&nbsp;11：09</div>
+     <ul id="screen">
+          <li><img src="imagess/bj_topl.gif" width="42" height="32" /></li>
+          <li id="view">
+            <ul id="images">
+              <li><span><img src="imagess/ico_platform.gif" alt="picture" width="20" height="32" align="absmiddle"/>业务平台</span></li>
+              <li><span><img src="imagess/ico_platform.gif" alt="picture" width="20" height="32" align="absmiddle" /><a href="#">业务平台</a></span></li>
+              <li><span><img src="imagess/ico_platform.gif" alt="picture" width="20" height="32" align="absmiddle" /><a href="#">业务平台</a></span></li>
+              <li><span><img src="imagess/ico_platform.gif" alt="picture" width="20" height="32" align="absmiddle" /><a href="#">业务平台</a></span></li>
+              <li><span><img src="imagess/ico_platform.gif" alt="picture" width="20" height="32" align="absmiddle" /><a href="#">业务平台</a></span></li>
+              <li><span><img src="imagess/ico_platform.gif" alt="picture" width="20" height="32" align="absmiddle" /><a href="#">业务平台</a></span></li>
+            </ul>
+          </li>
+          <li><a id="left" href="#"><img src="imagess/arr_l.jpg" alt="picture" width="17" height="32" border="0" /></a></li>
+          <li><a id="right" href="#"><img src="imagess/arr_r.jpg" alt="picture" width="17" height="32" border="0" /></a></li>
+          <li><img src="imagess/bj_topr.gif" width="33" height="32" /></li>
+        <li class="out r"><img src="imagess/out.gif" width="34" height="32" alt="退出" title="退出" class="hand" /></li>
+        </ul>
+        <div class="c"></div>
+     </div>
+     <!--
+           
+       
+       <ul style="display:none" >
+        <li><img src="imagess/bj_topl.gif" width="42" height="32" /></li>
+        <li class="off"><img src="imagess/ico_platform.gif" width="22" height="32" align="absmiddle" />平台业务</li>
+        <li class="on"><img src="imagess/ico_people.gif" width="20" height="32" align="absmiddle" />采购管理</li>
+        <li class="on"><img src="imagess/ico_people.gif" width="20" height="32" align="absmiddle" />采购管理</li>
+        <li class="on"><img src="imagess/ico_people.gif" width="20" height="32" align="absmiddle" />采购管理</li>
+        <li class="on"><img src="imagess/ico_people.gif" width="20" height="32" align="absmiddle" />采购管理</li>
+        
+        <li><img src="imagess/ico_leri.gif" width="38" height="32" border="0" usemap="#Map" />
+          <map name="Map" id="Map">
+            <area shape="rect" coords="5,12,22,30" href="#" />
+            <area shape="rect" coords="22,5,37,21" href="#" />
+          </map>
+        </li>
+        <li><img src="imagess/bj_topr.gif" width="33" height="32" /></li>
+        <li class="out"><img src="imagess/out.gif" width="34" height="32" alt="退出" title="退出" class="hand" /></li>
+        </ul>
+      </div>
+     </div>-->
+     <div class="c"></div>
+     <div class="noti">
+         <div class="notice">
+           <ul>
+            <li><img src="imagess/notice_l.gif" width="10" height="30" /></li>
+            <li><a href="main/right.html" target="mainFrame"><img src="imagess/ico_index.gif" width="26" height="30"   />首页</a></li>
+            <li><img src="imagess/dividing-line.gif" width="17" height="30"  />系统管理员</li>
+            <li><img src="imagess/dividing-line.gif" width="17" height="30"  /></li>
+            <li><img src="imagess/ico_information.gif" width="26" height="30"   /></li>
+            <li>1条</li>
+            <li><img src="imagess/dividing-line.gif" width="17" height="30"  /></li>
+            <li><img src="imagess/ico_rebate.gif" width="24" height="30"   /></li>
+            <li>返点率(10%)</li>
+            <li><img src="imagess/dividing-line.gif" width="17" height="30" /></li>
+            <li><a href="#" class="font-f60">黑屏操作</a></li>
+            <li><img src="imagess/dividing-line.gif" width="17" height="30" /></li>
+            <li><a href="#">来电弹屏</a></li>
+            <li><img src="imagess/dividing-line.gif" width="17" height="30" /></li>
+            <li class="font-f60">公告：今日特价机票。1折起。先到先得，与构从速抓紧时间来抢吧。</li>
+            <li style="float:right"><img src="imagess/notice_r.gif" width="10" height="30" /></li>
+           </ul>
+         </div>
+     </div>
+   </div>
+   
+</div>
+
+</body>
+</html>

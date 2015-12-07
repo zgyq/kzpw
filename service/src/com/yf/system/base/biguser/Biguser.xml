@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Biguser">
+  
+  <typeAlias alias="Biguser" type="com.yf.system.base.biguser.Biguser"/>
+  
+
+  <resultMap id="resultBiguserMap" class="Biguser">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="agentid" column="C_AGENTID"/>
+  
+     <result property="creditprice" column="C_CREDITPRICE"/>
+  
+     <result property="yyongprice" column="C_YYONGPRICE"/>
+  
+     <result property="kyongprice" column="C_KYONGPRICE"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createuserid" column="C_CREATEUSERID"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+     
+     <result property="yeprice" column="C_YEPRICE"/>
+     <result property="debt" column="C_DEBT"/>
+     
+   
+  </resultMap>
+  
+  <select id="findAllBiguser"  resultMap="resultBiguserMap"  parameterClass="java.util.Map">
+  
+    select * from T_BIGUSER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllBiguserBySql"  resultMap="resultBiguserMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteBiguserBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countBiguserBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_BIGUSER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findBiguser" parameterClass="long" resultClass="Biguser">
+    select 
+    	ID as id,
+	  			C_AGENTID as agentid,
+	  			C_CREDITPRICE as creditprice,
+	  			C_YYONGPRICE as yyongprice,
+	  			C_KYONGPRICE as kyongprice,
+	  			C_CREATETIME as createtime,
+	  			C_CREATEUSERID as createuserid,
+	  			C_YEPRICE as yeprice,
+	  			C_COMMENT as comment,
+	  			C_DEBT as debt
+     from T_BIGUSER
+    where ID = #id#
+  </select>
+   
+  <insert id="createBiguser" parameterClass="Biguser">
+    insert into T_BIGUSER ( 
+    	ID,
+	  			C_AGENTID,
+	  			C_CREDITPRICE,
+	  			C_YYONGPRICE,
+	  			C_KYONGPRICE,
+	  			C_CREATETIME,
+	  			C_CREATEUSERID,
+	  			C_YEPRICE,
+	  			C_COMMENT,
+	  			C_DEBT
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#agentid:DECIMAL#,
+						
+							#creditprice:DECIMAL#,
+						
+							#yyongprice:DECIMAL#,
+						
+							#kyongprice:DECIMAL#,
+						
+	  						#createtime#,
+	  					
+							#createuserid:DECIMAL#,
+							
+							#yeprice:DECIMAL#,
+						
+	  						#comment#,
+	  						#debt#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteBiguser" parameterClass="long">
+    delete from T_BIGUSER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateBiguser" parameterClass="Biguser">
+    update T_BIGUSER 
+    set 
+    	C_AGENTID = #agentid:DECIMAL#,
+						C_CREDITPRICE = #creditprice:DECIMAL#,
+						C_YYONGPRICE = #yyongprice:DECIMAL#,
+						C_KYONGPRICE = #kyongprice:DECIMAL#,
+						C_CREATETIME = #createtime#,
+	  					C_CREATEUSERID = #createuserid:DECIMAL#,
+	  					C_YEPRICE = #yeprice:DECIMAL#,
+						C_COMMENT = #comment#,
+						C_DEBT =#debt#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

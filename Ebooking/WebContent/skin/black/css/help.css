@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+
+.helptitle,.why,.close,.open,.list,.searh,.searh_bnt,.wenhao,.ico_bollow,.ico_green,.ico{ background:url(../images/help.png) no-repeat;}
+
+#help{ width:1004px; margin:0 auto;}
+#help_left{ width:220px;}
+#help_left .helptitle{ background-position:0 -110px; height:34px; line-height:34px; padding-left:15px;}
+#help_left .why{ background-position:-230px -110px; padding-left:30px; line-height:34px; height:34px;}
+#help_left .close{ background-position:0 -190px; height:32px; line-height:32px; padding-left:45px; }
+#help_left .open{ background-position:0 -150px; height:32px; line-height:32px; padding-left:45px; }
+#help_left .openlist{ padding-top:10px;*padding-top:0px; padding-bottom:15px;}
+#help_left .list{ margin-left:35px; line-height:30px; height:30px; padding-left:15px; background-position:-270px -104px; }
+
+
+#help_right{ width:775px;}
+#help_right .searh{ height:85px; padding-top:20px; padding-left:40px;}
+#help_right .searh_text{ border:1px solid #d8d8d8; background:#fff; width:400px; padding-left:20px; line-height:28px; height:28px;}
+#help_right .searh_bnt{ background-position:-230px -160px; width:97px; height:30px; border:none; line-height:30px; cursor:pointer;}
+#help_right .searhtips{ line-height:38px;}
+#help_right .wenhao{ background-position:-340px -150px; padding-left:34px; height:40px;}
+#help_right .helpmain{width:754px; margin-left:7px;}
+#help_right .helpmap{width:734px; margin-left:7px; background:#fff; padding:20px 10px 20px 10px; line-height:42px;}
+#help_right .ico_bollow{ background-position:-270px -190px; padding-left:5px; }
+#help_right .ico_green{ background-position:-300px -190px; padding-left:5px; }
+#help_right .helpmainleft{width:48%; margin-left:10px; line-height:30px;}
+#help_right .helpmainright{width:48%; margin-right:10px; line-height:30px;}
+#help_right .helptips{ width:96%; margin:0 auto; line-height:30px; background:#fff;}
+#help_right .ico{ background-position:-340px -190px; padding-left:50px;}
+#help_right .mainol{ padding-left:50px; padding-top:15px; padding-bottom:15px;}
+#help_right .mainol li{ list-style:decimal}
+#help_right .mainol li dt{ background:#f4faff; padding:10px; line-height:22px;}
+#help_right .mainul{ padding-left:0px; padding-top:15px; padding-bottom:15px; padding-right:0px;}
+#help_right .mainsoy{ line-height:22px; text-indent:2em; padding-top:10px; padding-bottom:10px;}

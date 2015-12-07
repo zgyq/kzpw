@@ -1,0 +1,23 @@
+
+
+/*-------------------------------  -------------------------------*/
+
+/* Slideshow style */
+#zixunLunbo{ position:relative;height:292px;width:760px;}
+#slides{position:absolute;top:0px;left:0px;z-index:100;}
+.slides_container{width:760px;height:292px;overflow:hidden;position:relative;display:none;}
+#slides .slide{width:760px;height:292px;display:block;}
+/* Next/prev buttons */
+#slides .next,#slides .prev{position:absolute;bottom:0px;left:360px;width:31px;height:20px;display:block;z-index:101;}
+#slides .next{left:391px;width:32px;}
+/* Pagination */
+.pagination{margin:26px auto 0;width:100px; display:none;}
+.pagination li{float:left;margin:0 1px;list-style:none;}
+.pagination li a{display:block;width:12px;height:0;padding-top:12px;background-image:url(../images/pagination.png);background-position:0 0;float:left;overflow:hidden;}
+.pagination li.current a{background-position:0 -12px;}
+
+#zixunLunbo a.zixunLunboImg{ display:block;float:left;width:391px;height:272px;}
+#zixunLunbo .slide div{ float:right;width:329px;padding:10px 20px 0px 20px; background:#efeff1;height:262px; position:relative;}
+#zixunLunbo .slide div h1{ font-size:16px;color:#44403f;font-weight:normal;line-height:1.3;}
+#zixunLunbo .slide div p{margin:0px;padding:0px;line-height:1.7;font-size:12px;color:#716d6c;}
+.slides_container a.more{height:26px;line-height:26px;width:77px; text-align:center;right:20px;bottom:22px;}

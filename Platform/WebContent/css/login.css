@@ -1,0 +1,215 @@
+*{margin:0px; padding:0px; list-style-type:none;}
+.mydiv {
+
+line-height:20px;
+font-size: 12px;
+z-index:99;
+width:292px;
+height: 208px;
+left:50%;/*FF IE7*/
+top: 40%;/*FF IE7*/
+margin-left:-150px!important;
+margin-top:-60px!important;
+
+margin-top:0px;
+
+position:fixed!important;
+position:absolute;
+}
+.mydiv1 {
+background: url(../images/aa.gif); 
+line-height:20px;
+font-size: 12px;
+z-index:99;
+width:292px;
+height: 148px;
+
+left:50%;/*FF IE7*/
+top: 40%;/*FF IE7*/
+margin-left:-150px!important;
+margin-top:-60px!important;
+
+margin-top:0px;
+
+position:fixed!important;
+position:absolute;
+}
+.mydiv2 {
+background: url(../images/aa.gif); 
+line-height:20px;
+font-size: 12px;
+z-index:99;
+width:292px;
+
+
+left:50%;/*FF IE7*/
+top: 40%;/*FF IE7*/
+margin-left:-150px!important;
+margin-top:-60px!important;
+
+margin-top:0px;
+
+position:fixed!important;
+position:absolute;
+}
+.butt{background: url(../images/join.gif); width: 42px; height:20px; border: none; margin-right:40px;}
+.butt1{background: url(../images/zc.gif); width: 42px; height:20px; border: none;}
+.bg {
+background-color: #ccc;
+width: 100%;
+height: 100%;
+left:0;
+top:0;
+filter:alpha(opacity=50);
+opacity:0.5;
+z-index:1;
+
+position:fixed!important;
+position:absolute;
+
+}
+* {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+
+.butt55 {
+	background: url(../images/join.gif);
+	width: 42px;
+	height: 20px;
+	border: none;
+	margin-right: 20px;
+	
+}
+
+.butt155 {
+	background: url(../images/zc.gif);
+	width: 42px;
+	height: 20px;
+	border: none;
+}
+
+.bg {
+	background-color: #ccc;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	filter: alpha(opacity =   50);
+	opacity: 0.5;
+	z-index: 1;
+	position: fixed !important;
+	position: absolute;
+}
+
+.menu01 {
+	width: 292px;
+	
+	background: url(../images/menu01_bg.gif) left bottom repeat-x;
+}
+
+.menu0_more {
+	width: 290px;
+	background:#fff;
+	border: 1px solid #f48000;
+	border-top: none;
+	height: 218px;
+	text-indent: 45px;
+}
+
+.menu02and3 {
+	
+}
+
+.menu02 {
+	line-height: 28px;
+	padding-top: 10px;
+}
+
+.menu02 span {
+	padding: 0 9px;
+}
+
+.menu02 .off a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.menu02 .off a:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+
+.menu02 .on a {
+	color: #fff3bb;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.menu02 .on {
+	padding-bottom: 3px;
+}
+
+.menu02 .on a:hover {
+	color: #fff3bb;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.chax {
+	width: 412px;
+	height: 123px;
+	background: #FFFFFF;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
+.chax ul {
+	list-style: none;
+}
+
+.chax ul li {
+	list-style: none;
+	display: inline;
+}
+
+.nTab .TabContent .cha {
+	
+}
+
+.width {
+	width: 150px;
+	float: left;
+	margin-left: 35px;
+	display: inline;
+	list-style: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	list-style-type: none;
+}
+
+input {
+	vertical-align: middle;
+}
+
+.f {
+	float: left;
+}
+
+.input {
+	margin: 0 20px 0 35px;
+}
+
+.input1 {
+	margin: 0 15px 0 15px;
+}
+
+.hangb {
+	padding-left: 34px;
+}

@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 订单升舱表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Scang createScang(Scang scang) throws SQLException;
+	
+	/**
+	 * 删除 订单升舱表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteScang(long id);
+	
+	
+	/**
+	 * 修改 订单升舱表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateScang(Scang scang);
+
+		
+	/**
+	 * 修改 订单升舱表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateScangIgnoreNull(Scang scang);
+		
+	
+	/**
+	 * 查找 订单升舱表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllScang(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 订单升舱表
+	 * @param id
+	 * @return
+	 */
+	public Scang findScang(long id);
+	
+	
+	/** 
+	 * 查找 订单升舱表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllScangForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找订单升舱表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllScangBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 订单升舱表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteScangBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countScangBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IScangComponent scangComponent;
+	  
+ 	
+ 	public IScangComponent getScangComponent() {
+		return scangComponent;
+	}
+	public void setScangComponent(IScangComponent  scangComponent) {
+		this.scangComponent = scangComponent;
+	}
+	/**
+	 * 创建 订单升舱表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Scang createScang(Scang scang) throws SQLException{
+	
+		return scangComponent.createScang(scang);
+	}
+	/**
+	 * 删除 订单升舱表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteScang(long id){
+	
+		return scangComponent.deleteScang(id);
+	}
+	
+	
+	/**
+	 * 修改 订单升舱表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateScang(Scang scang){
+		return scangComponent.updateScang(scang);
+	
+	}
+
+		
+	/**
+	 * 修改 订单升舱表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateScangIgnoreNull(Scang scang){
+			return scangComponent.updateScangIgnoreNull(scang);
+	
+	}
+	
+	/**
+	 * 查找 订单升舱表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllScang(String where, String orderby,int limit,int offset){
+		return scangComponent.findAllScang(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 订单升舱表
+	 * @param id
+	 * @return
+	 */
+	public Scang findScang(long id){
+		return scangComponent.findScang(id);
+	}
+	
+	/** 
+	 * 查找 订单升舱表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllScangForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return scangComponent.findAllScang(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找订单升舱表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllScangBySql(String sql,int limit,int offset){
+		return scangComponent.findAllScang(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 订单升舱表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteScangBySql(String sql){
+		return scangComponent.excuteScangBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countScangBySql(String sql){
+		return scangComponent.countScangBySql(sql);
+	}
+	
+	
+

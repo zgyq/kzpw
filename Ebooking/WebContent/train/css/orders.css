@@ -1,0 +1,71 @@
+@charset "gb2312";
+/* CSS Document */
+body{margin:0px; padding:0px; font-size:12px; font-family:"宋体"; color:#36322f; font-size:12px; line-height:21px; background:#fff;}
+a{color:#2577e3;}
+img{border:0px;}
+a:link {text-decoration: none;}
+a:visited{text-decoration: none;}
+a:hover{text-decoration: underline;}
+ul, p, dl, dt, dd, li, img, div, p, table {padding:0px; margin:0px;}
+li{list-style-position:outside; list-style-type:none;}
+h1, h2, h3, h4, h5{ padding:0px; margin:0px; font-weight:normal;}
+h2 { font-size:18px;}
+h5 { font-size:14px; line-height:21px;}
+.clearit { clear:both; width:0px; height:0px; overflow:hidden; zoom:1;}
+.space { height:10px; overflow:hidden;}
+img { vertical-align:top;}
+
+
+/*下单页面样式*/
+.box{ margin:30px auto 0; width:91%; overflow:hidden}
+b{ color:#fd492a}
+.ticket-info{ height:100%; overflow:auto}
+.ticket-info h1{ background:#edecec; height:40px; font-size:16px; padding-left:20px; line-height:40px; margin:20px 0 20px 0}
+.ticket-info h1 span{ font-size:14px;}
+.basic-info-L{ float:left; width:21%; font-size:26px; font-weight:bold; text-align:center; margin-top:60px;}
+.basic-info-R{ float:right; width:70%; padding-bottom:10px;}
+.basic-info-R p{ font-size:22px; color:#2577e3; font-weight:bold; margin-top:20px}
+.basic-info-R .site{ margin-top:20px; font-size:12px; height:100%; overflow:auto}
+.basic-info-R .site b,.alter b{ float:left; display:inline-block; font-weight:normal; margin-right:10px; color:#36322f}
+.basic-info-R .site ul,.alter ul{ float:left}
+.basic-info-R .site li { height:30px}
+.basic-info-R .site li span{ color:#fd492a; font-weight:bold;}
+.alter { margin-top:10px; height:100%; overflow:auto}
+.alter ul li{ float:left; margin-right:20px;}
+.prompt-1{ margin-top:10px; color:#fd492a}
+.pass-info { height:100%; overflow:auto; background:#eff6fc; padding:20px 0; border-bottom:1px dotted #aad8ff}
+.pass-info p{ float:left; margin:10px 20px; }
+.pass-info h2{ font-size:14px; font-weight:bold; margin:0 0 10px 20px}
+.pass-info h2  span{ display:inline-block; font-size:12px; margin-left:20px; color:#5d5d5c; font-weight:normal}
+.add{ height:100%; overflow:auto; margin:20px 0;}
+.prompt-2{ margin:10px; color:#fd492a; float:left; widows:70%}
+.price-detail{ float:right; background:#fffaed; border:1px solid #f0e9d6; padding:10px 20px;width:30%}
+.add-btn{ text-align:right; margin:20px 0 0 0}
+.insu-info p{ float:left; width:25%; margin:15px 20px}
+.ticket-extract{ padding-left:20px}
+.ticket-extract li{ float:left; width:20%}
+.ticket-extract ul{ overflow: hidden}
+.ticket-extract-con{ margin:30px 0 10px}
+.own-info { float:left}
+.instruct{ float:right; width:30%; margin-left: 200px; border:1px dotted #aad8ff; background:#eff6fc; padding:5px 10px}
+.own{ overflow:hidden}
+.instruct p{ margin:5px 0}
+.own-info p{ margin:15px 0;}
+.instructs{ margin-left:50px; width:50%}
+.agree{ margin:30px 0; text-align:center; border-top:1px solid #cfcfcf; padding-top:30px}
+.submit{ text-align:center; margin:10px 0}
+.new-chose{ position:absolute; right:80px; top:56px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Trainstation">
+  
+  <typeAlias alias="Trainstation" type="com.yf.system.base.trainstation.Trainstation"/>
+  
+
+  <resultMap id="resultTrainstationMap" class="Trainstation">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="trainstation_id" column="C_TRAINSTATION_ID"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="city" column="C_CITY"/>
+  
+     <result property="name_cn" column="C_NAME_CN"/>
+  
+     <result property="name_py" column="C_NAME_PY"/>
+  
+     <result property="name_en" column="C_NAME_EN"/>
+  
+     <result property="nameall_cn" column="C_NAMEALL_CN"/>
+  
+     <result property="nameall_py" column="C_NAMEALL_PY"/>
+  
+     <result property="nameall_en" column="C_NAMEALL_EN"/>
+  
+     <result property="byname" column="C_BYNAME"/>
+  
+     <result property="statecode" column="C_STATECODE"/>
+  
+     <result property="admin_id" column="C_ADMIN_ID"/>
+  
+     <result property="admin_name" column="C_ADMIN_NAME"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="tel" column="C_TEL"/>
+  
+     <result property="lon" column="C_LON"/>
+  
+     <result property="lat" column="C_LAT"/>
+  
+     <result property="mem" column="C_MEM"/>
+  
+     <result property="back1" column="C_BACK1"/>
+  
+     <result property="back2" column="C_BACK2"/>
+  
+     <result property="back3" column="C_BACK3"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllTrainstation"  resultMap="resultTrainstationMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRAINSTATION
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTrainstationBySql"  resultMap="resultTrainstationMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTrainstationBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTrainstationBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRAINSTATION
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTrainstation" parameterClass="long" resultClass="Trainstation">
+    select 
+    	ID as id,
+	  			C_TRAINSTATION_ID as trainstation_id,
+	  			C_CODE as code,
+	  			C_CITY as city,
+	  			C_NAME_CN as name_cn,
+	  			C_NAME_PY as name_py,
+	  			C_NAME_EN as name_en,
+	  			C_NAMEALL_CN as nameall_cn,
+	  			C_NAMEALL_PY as nameall_py,
+	  			C_NAMEALL_EN as nameall_en,
+	  			C_BYNAME as byname,
+	  			C_STATECODE as statecode,
+	  			C_ADMIN_ID as admin_id,
+	  			C_ADMIN_NAME as admin_name,
+	  			C_ADDRESS as address,
+	  			C_TEL as tel,
+	  			C_LON as lon,
+	  			C_LAT as lat,
+	  			C_MEM as mem,
+	  			C_BACK1 as back1,
+	  			C_BACK2 as back2,
+	  			C_BACK3 as back3,
+	  			C_STATE as state 
+     from T_TRAINSTATION
+    where ID = #id#
+  </select>
+   
+  <insert id="createTrainstation" parameterClass="Trainstation">
+    insert into T_TRAINSTATION ( 
+    	ID,
+	  			C_TRAINSTATION_ID,
+	  			C_CODE,
+	  			C_CITY,
+	  			C_NAME_CN,
+	  			C_NAME_PY,
+	  			C_NAME_EN,
+	  			C_NAMEALL_CN,
+	  			C_NAMEALL_PY,
+	  			C_NAMEALL_EN,
+	  			C_BYNAME,
+	  			C_STATECODE,
+	  			C_ADMIN_ID,
+	  			C_ADMIN_NAME,
+	  			C_ADDRESS,
+	  			C_TEL,
+	  			C_LON,
+	  			C_LAT,
+	  			C_MEM,
+	  			C_BACK1,
+	  			C_BACK2,
+	  			C_BACK3,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#trainstation_id#,
+	  					
+	  						#code#,
+	  					
+	  						#city#,
+	  					
+	  						#name_cn#,
+	  					
+	  						#name_py#,
+	  					
+	  						#name_en#,
+	  					
+	  						#nameall_cn#,
+	  					
+	  						#nameall_py#,
+	  					
+	  						#nameall_en#,
+	  					
+	  						#byname#,
+	  					
+	  						#statecode#,
+	  					
+	  						#admin_id#,
+	  					
+	  						#admin_name#,
+	  					
+	  						#address#,
+	  					
+	  						#tel#,
+	  					
+	  						#lon#,
+	  					
+	  						#lat#,
+	  					
+	  						#mem#,
+	  					
+	  						#back1#,
+	  					
+	  						#back2#,
+	  					
+	  						#back3#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTrainstation" parameterClass="long">
+    delete from T_TRAINSTATION
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTrainstation" parameterClass="Trainstation">
+    update T_TRAINSTATION 
+    set 
+    	C_TRAINSTATION_ID = #trainstation_id#,
+	  					C_CODE = #code#,
+	  					C_CITY = #city#,
+	  					C_NAME_CN = #name_cn#,
+	  					C_NAME_PY = #name_py#,
+	  					C_NAME_EN = #name_en#,
+	  					C_NAMEALL_CN = #nameall_cn#,
+	  					C_NAMEALL_PY = #nameall_py#,
+	  					C_NAMEALL_EN = #nameall_en#,
+	  					C_BYNAME = #byname#,
+	  					C_STATECODE = #statecode#,
+	  					C_ADMIN_ID = #admin_id#,
+	  					C_ADMIN_NAME = #admin_name#,
+	  					C_ADDRESS = #address#,
+	  					C_TEL = #tel#,
+	  					C_LON = #lon#,
+	  					C_LAT = #lat#,
+	  					C_MEM = #mem#,
+	  					C_BACK1 = #back1#,
+	  					C_BACK2 = #back2#,
+	  					C_BACK3 = #back3#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

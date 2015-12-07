@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0;}
+c{ clear:both;}
+body{ background:url(../images/bj_in.gif) repeat-x;}
+#main{ width:964px; margin:0 auto;}
+#main .left{ float:left; padding-top: 2px;}
+#main .logo{width:944px; height:160px; background: url(../images/logo.gif); padding-top: 30px; padding-left: 20px;}
+#main .right{ background:url(../images/right11.gif) no-repeat; float:right; width:423px; height:234px;}
+.input{ width:156px; height:31px; background:url(../images/input.gif) no-repeat; font-size:16px; cursor:pointer; border:none; line-height:31px; padding-left:10px;}

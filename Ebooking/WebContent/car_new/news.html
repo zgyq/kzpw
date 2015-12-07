@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/init.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" href="css/globaltext.css">
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/sildeBanner.js"></script>
+<script type="text/javascript" src="js/RDfunction.js"></script>
+<script src="js/slides.min.jquery.js"></script>
+<script>
+	$(function(){
+	// Set starting slide to 1
+		var startSlide = 1;
+		// Get slide number if it exists
+		if (window.location.hash) {
+			startSlide = window.location.hash.replace('#','');
+		}
+		// Initialize Slides
+		$('#slides').slides({
+			preload: true,
+			preloadImage: 'img/loading.gif',
+			generatePagination: true,
+			play: 5000,
+			pause: 2500,
+			hoverPause: true,
+			// Get the starting slide
+			start: startSlide,
+			animationComplete: function(current){
+				// Set the slide number as a hash
+				//window.location.hash = '#' + current;
+			}
+		});
+	})
+</script>
+</head>
+
+<body>
+<div class="RDpublickheader">
+	<div class="RDheader">
+        <div class="RDcenter">
+            <div class="RDheaderLeft">
+            	<div>
+                    <span>北京</span>
+                        <ul>
+                            <li><a href="#">天津</a></li>
+                            <li><a href="#">上海</a></li>
+                            <li><a href="#">广州</a></li>
+                        </ul>
+                </div>
+            </div>
+            <ul class="RDheaderRight">
+            	<li class="yuyanChange">Language<div><a href="#">中文</a><a href="#">Language</a></div></li>
+                <li><a href="#">活动</a></li>
+                <li><a href="#">资讯</a></li>
+                <li><a href="#">投资者关系</a></li>
+                <li><a href="#">人才招聘</a></li>
+                <li><a href="#">企业与责任</a></li>
+                <li><input type="text" value="瑞风S5" class="searchText" /><input type="submit" value="" class="searchBtn" /></li>
+            </ul>
+        </div>
+    </div>
+    <!--logo RDnav-->
+    <div class="RDheader2">
+        <div class="RDcenter">
+            <a href="#" class="RDlogo"><img src="images/logo.png" width="214" height="28" alt="江淮汽车" /></a>
+            <ul class="RDnav">
+                <li class="RDnavFocus"><a href="#">品牌中心</a></li>
+                <li><a href="#">购车指南</a></li>
+                <li><a href="#">贴心服务</a></li>
+                <li><a href="#">JAC车友俱乐部</a></li>
+            </ul>
+            <div class="clearBox"></div>
+        </div>
+    </div>
+    <!--logo RDnav end-->
+</div>
+<!--你现在的位置-->
+<div class="currentLocation"><p class="RDcenter">你的位置：<a href="#">首页</a>><a href="#">投资者关系</a></p></div>
+<!--你现在的位置 end-->
+<!--xingxiangImages-->
+<div style=" background:rgb(232, 232, 232) url(images/zixun.jpg) no-repeat center;" class="xingxiangImages"></div>
+<!--xingxiangImages-->
+<!--fenleiMore-->
+<div class="fenleiMore">
+	<ul>
+    	<Li class="fenleiMoreFocus"><a href="#">最新资讯</a></Li>
+        <Li><a href="#">企业新闻</a></Li>
+        <Li><a href="#">媒体报告</a></Li>
+        <Li><a href="#">记着专区</a></Li>
+    </ul>
+</div>
+<!--fenleiMore-->
+<!--newsList-->
+<div class="RDcenter">
+	<div class="zixunLeft">
+        <!--咨询部分轮播-->
+        <div id="zixunLunbo">
+                <div id="slides">
+                    <div class="slides_container">
+                        <div class="slide">
+                        	<a class="zixunLunboImg" href="#"><img src="images/zixunImgBanner.jpg" height="272" width="391" /></a>
+                            <div>
+                                <h1>媒体报道媒体报道媒体报道媒体报道</h1>
+                                <p>媒体报道媒体报道媒体报道媒体报道媒体报道媒体报道媒体报道媒体报道媒体报道</p>
+                                <a href="#" class="more">了解更多</a>
+                            </div>
+                        </div>
+                        <div class="slide">
+                        	<a class="zixunLunboImg" href="#"><img src="images/zixunImgBanner.jpg" height="272" width="391" /></a>
+                            <div>
+                                <h1>22媒体报道媒体报道媒体报道媒体报道</h1>
+                                <p>媒体报道媒体报道媒体报道媒体报道媒体报道媒体报道媒体报道媒体报道媒体报道22</p>
+                                <a href="#" class="more">了解更多</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="prev"><img src="images/arrow-prev.png" width="31" height="20" alt="Arrow Prev"></a>
+                    <a href="#" class="next"><img src="images/arrow-next.png" width="32" height="20" alt="Arrow Next"></a>
+                </div>
+        </div>
+        <!--咨询部分轮播end-->
+        <p class="newsListTitle">企业新闻</p>
+        <ul class="newsList">
+            <Li><a href="#" class="newsListImg"><img src="images/newsListImg.jpg" height="88" width="120" /></a><div><p class="newsBiaoti">聚焦广州车展：项兴初与160家媒体面对面<span>[2014-01-14]</span></p><p>1月10日上午，中共中央政治局委员、国务院副总理马凯来到江淮汽车，专题考察调研新能源汽车产业发展情况。</p></div><div class="jacnewsFenxiang"><!-- ShareTo Button BEGIN -->
+<a class="shareto_button" href="http://shareto.com.cn/share.html"><img src="images/fenxiang.png" height="20" width="15" /></a>
+<script type="text/javascript" src="http://s.shareto.com.cn/js/shareto_button.js" charset="utf-8"></script>
+<!-- ShareTo Button END --></div></Li>
+            <Li><a href="#" class="newsListImg"><img src="images/newsListImg.jpg" height="88" width="120" /></a><div><p class="newsBiaoti">聚焦广州车展：项兴初与160家媒体面对面<span>[2014-01-14]</span></p><p>1月10日上午，中共中央政治局委员、国务院副总理马凯来到江淮汽车，专题考察调研新能源汽车产业发展情况。</p></div><div class="jacnewsFenxiang"><!-- ShareTo Button BEGIN -->
+<a class="shareto_button" href="http://shareto.com.cn/share.html"><img src="images/fenxiang.png" height="20" width="15" /></a>
+<script type="text/javascript" src="http://s.shareto.com.cn/js/shareto_button.js" charset="utf-8"></script>
+<!-- ShareTo Button END --></div></Li>
+            <Li><a href="#" class="newsListImg"><img src="images/newsListImg.jpg" height="88" width="120" /></a><div><p class="newsBiaoti">聚焦广州车展：项兴初与160家媒体面对面<span>[2014-01-14]</span></p><p>1月10日上午，中共中央政治局委员、国务院副总理马凯来到江淮汽车，专题考察调研新能源汽车产业发展情况。</p></div><div class="jacnewsFenxiang"><!-- ShareTo Button BEGIN -->
+<a class="shareto_button" href="http://shareto.com.cn/share.html"><img src="images/fenxiang.png" height="20" width="15" /></a>
+<script type="text/javascript" src="http://s.shareto.com.cn/js/shareto_button.js" charset="utf-8"></script>
+<!-- ShareTo Button END --></div></Li>
+            <Li><a href="#" class="newsListImg"><img src="images/newsListImg.jpg" height="88" width="120" /></a><div><p class="newsBiaoti">聚焦广州车展：项兴初与160家媒体面对面<span>[2014-01-14]</span></p><p>1月10日上午，中共中央政治局委员、国务院副总理马凯来到江淮汽车，专题考察调研新能源汽车产业发展情况。</p></div><div class="jacnewsFenxiang"><!-- ShareTo Button BEGIN -->
+<a class="shareto_button" href="http://shareto.com.cn/share.html"><img src="images/fenxiang.png" height="20" width="15" /></a>
+<script type="text/javascript" src="http://s.shareto.com.cn/js/shareto_button.js" charset="utf-8"></script>
+<!-- ShareTo Button END --></div></Li>
+            
+        </ul>
+        <p class="newsListMore"><a href="#">了解更多</a></p>
+    </div>
+    <div class="zixunRight">
+    	<!--媒体报道-->
+    	<div class="mediaReports">
+        	<p>媒体报道</p>
+            <ul>
+            	<li><a href="#">媒体报道1</a></li>
+                <li><a href="#">媒体报道2</a></li>
+                <li><a href="#">媒体报道3</a></li>
+            </ul>
+            <a href="#" class="more">了解更多</a>
+        </div>
+        <!--记者专区-->
+        <div class="reporterZone">
+        	<P>记者专区</P>
+            <a href="#"><img src="images/reporterZoneImg.jpg" height="178" width="266" /></a>
+        </div>
+        <!--活动-->
+        <ul class="activity">
+        	<li><a href="#"><img src="images/huodong1.jpg" height="90" width="266" /></a></li>
+            <li><a href="#"><img src="images/huodong2.jpg" height="90" width="266" /></a></li>
+            <li><a href="#" class="activityMore">更多活动</a></li>
+        </ul>
+    </div>
+    <div class="clearBox"></div>
+</div>
+<!--newsList end-->
+<!--RDfooter-->
+<div class="RDfooter">
+	<div class="RDfooter1">
+    	<div class="RDcenter">
+        	<a href="javascript:void(0);" class="yincangBtn"><img src="images/jia.png" height="16" width="25" /></a>
+            <div class="RDfooterFuWu">
+                <img src="images/julebu.png" height="45" width="175" />
+                <dl>
+                    <dt>24小时贵宾服务热线</dt>
+                    <dd>4008-889933　乘用车</dd>
+                    <dd>4008-009933　轻卡</dd>
+                    <dd>4008-003366　星锐</dd>
+                    <dd>4008-006633　重卡</dd>
+                    <dd>4000-277771　瑞铃</dd>
+                    <dd>4008-878576　瑞驰</dd>
+                </dl>
+            </div>
+            <dl>
+                <dt>品牌中心</dt>
+                <dd><a href="#">和悦</a></dd>
+                <dd><a href="#">帅铃</a></dd>
+                <dd><a href="#">骏铃</a></dd>
+                <dd><a href="#">好运</a></dd>
+                <dd><a href="#">格尔发</a></dd>
+                <dd><a href="#">锐捷特</a></dd>
+                <dd><a href="#">江淮底盘</a></dd>
+            </dl>
+            <dl>
+                <dt>购车指南</dt>
+                <dd><a href="#">个性化定制</a></dd>
+                <dd><a href="#">车型对比</a></dd>
+                <dd><a href="#">预约试驾</a></dd>
+                <dd><a href="#">价格试算</a></dd>
+                <dd><a href="#">购车流程</a></dd>
+                <dd><a href="#">金融服务</a></dd>
+                <dd><a href="#">贷款计算器</a></dd>
+                <dd><a href="#">查找经销商</a></dd>
+                <dd><a href="#">在线购车</a></dd>
+                <dd><a href="#">最新活动</a></dd>
+            </dl>
+            <dl>
+                <dt>贴心服务</dt>
+                <dd><a href="#">服务承诺</a></dd>
+                <dd><a href="#">服务网点</a></dd>
+                <dd><a href="#">配件供应</a></dd>
+                <dd><a href="#">在线咨询</a></dd>
+            </dl>
+            <dl>
+                <dt>活动</dt>
+                <dd><a href="#">品牌活动</a></dd>
+                <dd><a href="#">促销活动</a></dd>
+                <dd><a href="#">往期活动</a></dd>
+            </dl>
+            <dl>
+                <dt>资讯</dt>
+                <dd><a href="#">企业新闻</a></dd>
+                <dd><a href="#">媒体报道</a></dd>
+                <dd><a href="#">记者专区</a></dd>
+            </dl>
+            <dl>
+                <dt>投资者关系</dt>
+                <dd><a href="#">产销报告</a></dd>
+                <dd><a href="#">临时公告</a></dd>
+                <dd><a href="#">定期报告</a></dd>
+            </dl>
+              <dl>
+                <dt>人才招聘</dt>
+                <dd><a href="#">员工福利</a></dd>
+                <dd><a href="#">校园招聘</a></dd>
+                <dd><a href="#">社会招聘</a></dd>
+                <dd><a href="#">员工风采</a></dd>
+            </dl>
+              <dl>
+                <dt>企业与责任</dt>
+                <dd><a href="#">公司介绍</a></dd>
+                <dd><a href="#">领导风采</a></dd>
+                <dd><a href="#">发展历程</a></dd>
+                <dd><a href="#">新能源</a></dd>
+                <dd><a href="#">底盘科技</a></dd>
+                <dd><a href="#">动力总成</a></dd>
+                <dd><a href="#">社会责任</a></dd>
+            </dl>
+              <dl>
+                <dt>精彩下载</dt>
+                <dd><a href="#">江淮汽车TV</a></dd>
+                <dd><a href="#">精美壁纸</a></dd>
+            </dl>
+            <div class="clearBox"></div>
+        </div>
+    </div>
+    <div class="RDfooter2">
+    	<div class="RDcenter">
+        	<ul>
+            	<li><a href="#">版权信息</a>|</li>
+                <li><a href="#">使用说明</a>|</li>
+                <li><a href="#">联系我们</a>|</li>
+                <li><a href="#">网站地图</a>|</li>
+                <li><a href="#">合作伙伴专区</a></li>
+            </ul>
+            <p>江淮汽车2013版权所有 皖ICP备 05005596</p>
+        </div>
+    </div>
+</div>
+<!--RDfooter end-->
+
+<!--rightFloat-->
+<div class="rightFloat">
+    <a href="" class="gotoTop"><img src="images/goTop.jpg" height="33" width="88" /></a>
+    <p><a href="#cimuIframe" title="关闭" class="boxy">登录</a><a href="#registIframe" class="boxy" title="关闭">注册</a></p>
+    <ul>
+        <li><a href="#"><img src="images/8-1.png" height="38" width="38" /><img class="hoverImg" src="images/8.png" height="38" width="38" /><span>在线咨询</span></a></li>
+        <li><a href="#"><img src="images/7-1.png" height="38" width="38" /><img class="hoverImg" src="images/7.png" height="38" width="38" /><span>预约试驾</span></a></li>
+        <li><a href="#"><img src="images/6-1.png" height="38" width="38" /><img class="hoverImg" src="images/6.png" height="38" width="38" /><span>在线订车</span></a></li>
+        <li><a href="#"><img src="images/5-1.png" height="38" width="38" /><img class="hoverImg" src="images/5.png" height="38" width="38" /><span>预约维修</span></a></li>
+        <li><a href="#"><img src="images/4-1.png"  height="38" width="38" /><img class="hoverImg" src="images/4.png" height="38" width="38" /><span>经销商查询</span></a></li>
+        <li><a href="#"><img src="images/3-1.png" height="38" width="38" /><img class="hoverImg" src="images/3.png" height="38" width="38" /><span>服务商查询</span></a></li>
+        <li><a href="#"><img src="images/2-1.png" height="38" width="38" /><img class="hoverImg" src="images/2.png" height="38" width="38" /><span>关注微信</span></a></li>
+        <li><a href="#"><img src="images/1-1.png" height="38" width="38" /><img class="hoverImg" src="images/1.png" height="38" width="38" /><span>江淮微博</span></a></li>
+    </ul>
+</div>
+<!--rightFloat end-->
+</body>
+</html>

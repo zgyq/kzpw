@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>酒店首页</title>
+<link href="css/jiudian.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/hotels_2014_index.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/index.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+<div class="header">
+	<div class="top1 wrap">
+		<div class="logo"><a href="#"><img src="images/logo.jpg" height="120" /></a></div>
+		<div class="top_r">
+			<div class="hot_phone">400-8888-999</div>
+			<div class="t_link">
+				<a href="#" class="wap">手机版</a>|
+				<a href="#">收藏本站</a>|
+				<a href="#">在线客服</a>|
+				<a href="#">帮助</a>|
+				<a href="#">积分广场</a>|
+				<a href="#">礼品卡</a>|
+				<a href="#">English</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="nav">
+		<div class="wrap">
+			<div class="navmain">
+				<ul>
+					<li><a href="#" class="now">首页</a></li>
+					<li><a href="#">国内酒店</a></li>
+					<li><a href="#">预订机票</a></li>
+					<li><a href="#" class="now">火车票</a></li>
+				</ul>
+				<ul class="clear"></ul>
+			</div>
+			<div class="m_c">			
+				<a href="#" class="dbg">我的账户</a>
+				<a href="#">免费注册</a>
+				<a href="#" class="dbg">登陆</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<!--end header -->
+<div class="ban_jiudian">
+	<div class="wrap">
+		<div class="dinggou sidebar">
+			<div id="dvSearchRegion" class="search">
+                <h1>
+                    酒店预订</h1>
+                <div class="clear">
+                </div>
+                <ul> 
+                    <li class="mb10"><span class="title">
+                    目的地</span><input type="text" class="intxt"
+                        value="北京" maxlength="20" id="m_city" name="InCityName"
+                        cityid="0101" cityname="beijing" /></li>
+                        
+                    <li class="mb10"><span class="title">入住日期</span><input type="text" class="intxt checkin"
+                        method="txtEnterDate" onblurmethod="txtEnterDate" id="m_preDate" value="2014-07-03"
+                        maxlength="20" name="CheckInDate" /><span class="date" id="inDateWeek" method="txtEnterDate">明天</span></li>
+                    <li class="mb10"><span class="title">退房日期</span><input type="text" class="intxt checkout"
+                        method="txtOutDate" onblurmethod="txtOutDate" id="m_endDate" value="2014-07-04"
+                        maxlength="20" name="CheckOutDate" /><span class="date" id="outDateWeek" method="txtOutDate">后天</span></li>
+                    <li class="mb10"><span class="title">关键词</span><input type="text" class="intxt l_black"
+                        value="输入 位置 酒店名 或品牌" id="allInOne" method="allInOne" /></li>
+                    <li>
+                        <div class="pos_btn clx"><input type="button"  method="searchByMap" class="mapserchBut"><input type="button" id="m_search" method="m_search" class="allserchBut hotelserchBut"></div>
+                    </li>
+                </ul>
+                <div class="search_bottom">
+                </div>
+            </div>
+		</div>
+		<div class="banbox">
+		<img src="images/ban_jiudian.jpg" width="820" height="288" />
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<!--end banner -->
+<div class="contmain wrap">
+	<div class="jd_box1">
+		<div class="lbox">
+		<a href="#"><img src="images/ad_jd1.jpg" width="350" height="390" /></a>
+		</div>
+		<div class="rbox">
+			<!--SeasonHotCity Start-->
+			  <div id="divSeasonHotCity" class="clx">
+				<div class="hotCity" style="padding-bottom:10px;">
+				  <h2>当季热门城市</h2>
+				  <span id="moreseasoncity" class="more" datacheck="">更多城市>></span>
+				  <div class="cityBox"> <a href="yangzhou/" target="_blank"><img src="images/temp/hotel_index_yz.png" width="180" height="80" class="imgbg"></a> <a href="yangzhou/" target="_blank" class="link">扬州<span>(500家酒店)</span></a> </div>
+				  <div class="cityBox"> <a href="guilin/" target="_blank"><img src="images/temp/hotel_index_gl.jpg" width="180" height="80" class="imgbg"></a> <a href="guilin/" target="_blank" class="link">桂林<span>(977家酒店)</span></a> </div>
+				  <div class="cityBox"> <a href="xiamen/" target="_blank"><img src="images/temp/hotel_index_xm.png" width="180" height="80" class="imgbg"></a> <a href="xiamen/" target="_blank" class="link">厦门<span>(1490家酒店)</span></a> </div>
+				  <div class="cityBox"> <a href="lijiang/" target="_blank"><img src="images/temp/hotel_index_lj.jpg" width="180" height="80" class="imgbg"></a> <a href="lijiang/" target="_blank" class="link">丽江<span>(1973家酒店)</span></a> </div>
+				  <div class="cityBox"> <a href="sanya/" target="_blank"><img src="images/temp/hotel_index_sy.jpg" width="180" height="80" class="imgbg"></a> <a href="sanya/" target="_blank" class="link">三亚<span>(1143家酒店)</span></a> </div>
+				  <div class="cityBox"> <a href="dali" target="_blank"><img src="images/temp/hotel_index_dl.jpg" width="180" height="80" class="imgbg"></a> <a href="dali" target="_blank" class="link">大理<span>(1022家酒店)</span></a> </div>
+				  <div class="cityBox"> <a href="yangzhou/" target="_blank"><img src="images/temp/hotel_index_yz.png" width="180" height="80" class="imgbg"></a> <a href="yangzhou/" target="_blank" class="link">扬州<span>(500家酒店)</span></a> </div>
+				  <div class="cityBox"> <a href="guilin/" target="_blank"><img src="images/temp/hotel_index_gl.jpg" width="180" height="80" class="imgbg"></a> <a href="guilin/" target="_blank" class="link">桂林<span>(977家酒店)</span></a> </div>
+				  <div class="cityBox"> <a href="xiamen/" target="_blank"><img src="images/temp/hotel_index_xm.png" width="180" height="80" class="imgbg"></a> <a href="xiamen/" target="_blank" class="link">厦门<span>(1490家酒店)</span></a> </div>
+				  <div class="cityBox"> <a href="lijiang/" target="_blank"><img src="images/temp/hotel_index_lj.jpg" width="180" height="80" class="imgbg"></a> <a href="lijiang/" target="_blank" class="link">丽江<span>(1973家酒店)</span></a> </div>
+				  <div class="cityBox"> <a href="sanya/" target="_blank"><img src="images/temp/hotel_index_sy.jpg" width="180" height="80" class="imgbg"></a> <a href="sanya/" target="_blank" class="link">三亚<span>(1143家酒店)</span></a> </div>
+				  <div class="cityBox"> <a href="dali" target="_blank"><img src="images/temp/hotel_index_dl.jpg" width="180" height="80" class="imgbg"></a> <a href="dali" target="_blank" class="link">大理<span>(1022家酒店)</span></a> </div>
+				</div>
+			  </div>
+			  <!--SeasonHotCity End-->
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div class="jd_box2">
+		<div class="lbox">
+			<div class="whyus">
+			<h3>为什么选择途遇爱？</h3>
+			<dl>
+			  <dt><i></i>更多酒店</dt>
+			  <dd>可预订全球30万家酒店，不收预订费</dd>
+			  <dt><i></i>超值优惠</dt>
+			  <dd>订酒店返现金高达20%；万家酒店团购一折起；<br>
+				6千家预付酒店5折起；2千家酒店限时抢低折优惠；<br>
+				国际酒店在Expedia优惠价上再打九折</dd>
+			  <dt><i></i>卓越服务</dt>
+			  <dd>客户至上，连续6年中国最佳客服中心；<br>
+				7X24小时服务；到店无房最高赔付首晚房费</dd>
+			</dl>
+		  </div>
+		</div>
+		<div class="rbox">
+			<div class="title">
+				<div class="tit1">热门品牌</div>
+				<div class="tit2">专注品牌·享受精彩生活</div>
+				<div class="clear"></div>
+			</div>
+			<div class="cont">
+				<ul>
+					<li><a href="#"><img src="images/temp/jdpp1.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp2.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp3.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp4.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp1.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp2.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp3.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp4.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp1.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp2.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp3.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp4.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp1.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp2.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp3.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+					<li><a href="#"><img src="images/temp/jdpp4.jpg" width="74" height="54" /><span>热门品牌酒店</span></a></li>
+				</ul>
+				<ul class="clear"></ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	
+	<div class="jd_box3">
+		<div class="row3_tit">
+		  <h3>每月精选</h3>
+		  <ul id="month_tit_list" class="SwapTab">
+			<li class="row3_tit_tab">1月<br />
+			  <font>January</font></li>
+			<li>2月<br />
+			  <font>February</font></li>
+			<li>3月<br />
+			  <font>March</font></li>
+			<li>4月<br />
+			  <font>April</font></li>
+			<li>5月<br />
+			  <font>May</font></li>
+			<li>6月<br />
+			  <font>June</font></li>
+			<li>7月<br />
+			  <font>July</font></li>
+			<li>8月<br />
+			  <font>August</font></li>
+			<li>9月<br />
+			  <font>September</font></li>
+			<li>10月<br />
+			  <font>October</font></li>
+			<li>11月<br />
+			  <font>November</font></li>
+			<li>12月<br />
+			  <font>December</font></li>
+		  </ul>
+		</div>
+		
+		<div id="month_img_list" class="tab-content">
+		  <div class="row3_list">
+			<div class="row3_list_item"><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)"><img src="images/jiudian/0.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)">北海道</a></h3>
+				<span>Hokkaido480家酒店</span></div>
+			</div>
+			<div class="row3_list_item"><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)"><img src="images/jiudian/1.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)">赫尔辛基</a></h3>
+				<span>Helsinki104家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/shouer43844/" target="_blank" title="首尔(Seoul)"><img src="images/jiudian/2.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/shouer43844/" target="_blank" title="首尔(Seoul)">首尔</a></h3>
+				<span>Seoul801家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)"><img src="images/jiudian/3.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)">洛桑</a></h3>
+				<span>Lausanne45家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)"><img src="images/jiudian/4.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)">萨帕</a></h3>
+				<span>Sa Pa68家酒店</div>
+			</div>
+			<div class="row3_list_item row3_list_item2"><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)"><img src="images/jiudian/5.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)">新加坡</a></h3>
+				<span>Singapore356家酒店</div>
+			</div>
+		  </div>
+		  <div class="row3_list hidden">
+			<div class="row3_list_item"><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)"><img src="images/jiudian/00.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)">北海道</a></h3>
+				<span>Hokkaido480家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)"><img src="images/jiudian/11.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)">赫尔辛基</a></h3>
+				<span>Helsinki104家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/shouer43844/" target="_blank" title="首尔(Seoul)"><img src="images/jiudian/22.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/shouer43844/" target="_blank" title="首尔(Seoul)">首尔</a></h3>
+				<span>Seoul801家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)"><img src="images/jiudian/33.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)">洛桑</a></h3>
+				<span>Lausanne45家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)"><img src="images/jiudian/44.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)">萨帕</a></h3>
+				<span>Sa Pa68家酒店</div>
+			</div>
+			<div class="row3_list_item row3_list_item2"><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)"><img src="images/jiudian/55.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)">新加坡</a></h3>
+				<span>Singapore356家酒店</div>
+			</div>
+		  </div>
+		  
+		  <div class="row3_list hidden">
+			<div class="row3_list_item"><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)"><img src="images/jiudian/0.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)">北海道</a></h3>
+				<span>Hokkaido480家酒店</span></div>
+			</div>
+			<div class="row3_list_item"><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)"><img src="images/jiudian/1.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)">赫尔辛基</a></h3>
+				<span>Helsinki104家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/shouer43844/" target="_blank" title="首尔(Seoul)"><img src="images/jiudian/2.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/shouer43844/" target="_blank" title="首尔(Seoul)">首尔</a></h3>
+				<span>Seoul801家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)"><img src="images/jiudian/3.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)">洛桑</a></h3>
+				<span>Lausanne45家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)"><img src="images/jiudian/4.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)">萨帕</a></h3>
+				<span>Sa Pa68家酒店</div>
+			</div>
+			<div class="row3_list_item row3_list_item2"><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)"><img src="images/jiudian/5.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)">新加坡</a></h3>
+				<span>Singapore356家酒店</div>
+			</div>
+		  </div>
+		  <div class="row3_list hidden">
+			<div class="row3_list_item"><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)"><img src="images/jiudian/00.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)">北海道</a></h3>
+				<span>Hokkaido480家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)"><img src="images/jiudian/11.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)">赫尔辛基</a></h3>
+				<span>Helsinki104家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/shouer43844/" target="_blank" title="首尔(Seoul)"><img src="images/jiudian/22.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/shouer43844/" target="_blank" title="首尔(Seoul)">首尔</a></h3>
+				<span>Seoul801家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)"><img src="images/jiudian/33.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)">洛桑</a></h3>
+				<span>Lausanne45家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)"><img src="images/jiudian/44.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)">萨帕</a></h3>
+				<span>Sa Pa68家酒店</div>
+			</div>
+			<div class="row3_list_item row3_list_item2"><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)"><img src="images/jiudian/55.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)">新加坡</a></h3>
+				<span>Singapore356家酒店</div>
+			</div>
+		  </div>  
+		  
+		  <div class="row3_list hidden">
+			<div class="row3_list_item"><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)"><img src="images/jiudian/0.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)">北海道</a></h3>
+				<span>Hokkaido480家酒店</span></div>
+			</div>
+			<div class="row3_list_item"><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)"><img src="images/jiudian/1.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)">赫尔辛基</a></h3>
+				<span>Helsinki104家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/shouer43844/" target="_blank" title="首尔(Seoul)"><img src="images/jiudian/2.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/shouer43844/" target="_blank" title="首尔(Seoul)">首尔</a></h3>
+				<span>Seoul801家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)"><img src="images/jiudian/3.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)">洛桑</a></h3>
+				<span>Lausanne45家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)"><img src="images/jiudian/4.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)">萨帕</a></h3>
+				<span>Sa Pa68家酒店</div>
+			</div>
+			<div class="row3_list_item row3_list_item2"><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)"><img src="images/jiudian/5.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)">新加坡</a></h3>
+				<span>Singapore356家酒店</div>
+			</div>
+		  </div>
+		  <div class="row3_list hidden">
+			<div class="row3_list_item"><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)"><img src="images/jiudian/00.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)">北海道</a></h3>
+				<span>Hokkaido480家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)"><img src="images/jiudian/11.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)">赫尔辛基</a></h3>
+				<span>Helsinki104家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/shouer43844/" target="_blank" title="首尔(Seoul)"><img src="images/jiudian/22.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/shouer43844/" target="_blank" title="首尔(Seoul)">首尔</a></h3>
+				<span>Seoul801家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)"><img src="images/jiudian/33.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)">洛桑</a></h3>
+				<span>Lausanne45家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)"><img src="images/jiudian/44.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)">萨帕</a></h3>
+				<span>Sa Pa68家酒店</div>
+			</div>
+			<div class="row3_list_item row3_list_item2"><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)"><img src="images/jiudian/55.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)">新加坡</a></h3>
+				<span>Singapore356家酒店</div>
+			</div>
+		  </div> 
+		  
+		  <div class="row3_list hidden">
+			<div class="row3_list_item"><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)"><img src="images/jiudian/0.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)">北海道</a></h3>
+				<span>Hokkaido480家酒店</span></div>
+			</div>
+			<div class="row3_list_item"><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)"><img src="images/jiudian/1.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)">赫尔辛基</a></h3>
+				<span>Helsinki104家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/shouer43844/" target="_blank" title="首尔(Seoul)"><img src="images/jiudian/2.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/shouer43844/" target="_blank" title="首尔(Seoul)">首尔</a></h3>
+				<span>Seoul801家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)"><img src="images/jiudian/3.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)">洛桑</a></h3>
+				<span>Lausanne45家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)"><img src="images/jiudian/4.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)">萨帕</a></h3>
+				<span>Sa Pa68家酒店</div>
+			</div>
+			<div class="row3_list_item row3_list_item2"><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)"><img src="images/jiudian/5.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)">新加坡</a></h3>
+				<span>Singapore356家酒店</div>
+			</div>
+		  </div>
+		  <div class="row3_list hidden">
+			<div class="row3_list_item"><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)"><img src="images/jiudian/00.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)">北海道</a></h3>
+				<span>Hokkaido480家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)"><img src="images/jiudian/11.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)">赫尔辛基</a></h3>
+				<span>Helsinki104家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/shouer43844/" target="_blank" title="首尔(Seoul)"><img src="images/jiudian/22.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/shouer43844/" target="_blank" title="首尔(Seoul)">首尔</a></h3>
+				<span>Seoul801家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)"><img src="images/jiudian/33.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)">洛桑</a></h3>
+				<span>Lausanne45家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)"><img src="images/jiudian/44.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)">萨帕</a></h3>
+				<span>Sa Pa68家酒店</div>
+			</div>
+			<div class="row3_list_item row3_list_item2"><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)"><img src="images/jiudian/55.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)">新加坡</a></h3>
+				<span>Singapore356家酒店</div>
+			</div>
+		  </div> 
+		  
+		  <div class="row3_list hidden">
+			<div class="row3_list_item"><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)"><img src="images/jiudian/0.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)">北海道</a></h3>
+				<span>Hokkaido480家酒店</span></div>
+			</div>
+			<div class="row3_list_item"><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)"><img src="images/jiudian/1.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)">赫尔辛基</a></h3>
+				<span>Helsinki104家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/shouer43844/" target="_blank" title="首尔(Seoul)"><img src="images/jiudian/2.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/shouer43844/" target="_blank" title="首尔(Seoul)">首尔</a></h3>
+				<span>Seoul801家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)"><img src="images/jiudian/3.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)">洛桑</a></h3>
+				<span>Lausanne45家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)"><img src="images/jiudian/4.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)">萨帕</a></h3>
+				<span>Sa Pa68家酒店</div>
+			</div>
+			<div class="row3_list_item row3_list_item2"><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)"><img src="images/jiudian/5.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)">新加坡</a></h3>
+				<span>Singapore356家酒店</div>
+			</div>
+		  </div>
+		  <div class="row3_list hidden">
+			<div class="row3_list_item"><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)"><img src="images/jiudian/00.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)">北海道</a></h3>
+				<span>Hokkaido480家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)"><img src="images/jiudian/11.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)">赫尔辛基</a></h3>
+				<span>Helsinki104家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/shouer43844/" target="_blank" title="首尔(Seoul)"><img src="images/jiudian/22.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/shouer43844/" target="_blank" title="首尔(Seoul)">首尔</a></h3>
+				<span>Seoul801家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)"><img src="images/jiudian/33.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)">洛桑</a></h3>
+				<span>Lausanne45家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)"><img src="images/jiudian/44.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)">萨帕</a></h3>
+				<span>Sa Pa68家酒店</div>
+			</div>
+			<div class="row3_list_item row3_list_item2"><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)"><img src="images/jiudian/55.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)">新加坡</a></h3>
+				<span>Singapore356家酒店</div>
+			</div>
+		  </div> 
+		  
+		  <div class="row3_list hidden">
+			<div class="row3_list_item"><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)"><img src="images/jiudian/0.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)">北海道</a></h3>
+				<span>Hokkaido480家酒店</span></div>
+			</div>
+			<div class="row3_list_item"><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)"><img src="images/jiudian/1.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)">赫尔辛基</a></h3>
+				<span>Helsinki104家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/shouer43844/" target="_blank" title="首尔(Seoul)"><img src="images/jiudian/2.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/shouer43844/" target="_blank" title="首尔(Seoul)">首尔</a></h3>
+				<span>Seoul801家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)"><img src="images/jiudian/3.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)">洛桑</a></h3>
+				<span>Lausanne45家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)"><img src="images/jiudian/4.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)">萨帕</a></h3>
+				<span>Sa Pa68家酒店</div>
+			</div>
+			<div class="row3_list_item row3_list_item2"><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)"><img src="images/jiudian/5.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)">新加坡</a></h3>
+				<span>Singapore356家酒店</div>
+			</div>
+		  </div>
+		  <div class="row3_list hidden">
+			<div class="row3_list_item"><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)"><img src="images/jiudian/00.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/beihaidao1378/" target="_blank" title="北海道(Hokkaido)">北海道</a></h3>
+				<span>Hokkaido480家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)"><img src="images/jiudian/11.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/heerxinji38373/" target="_blank" title="赫尔辛基(Helsinki)">赫尔辛基</a></h3>
+				<span>Helsinki104家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/shouer43844/" target="_blank" title="首尔(Seoul)"><img src="images/jiudian/22.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/shouer43844/" target="_blank" title="首尔(Seoul)">首尔</a></h3>
+				<span>Seoul801家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)"><img src="images/jiudian/33.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/luosang16174/" target="_blank" title="洛桑(Lausanne)">洛桑</a></h3>
+				<span>Lausanne45家酒店</div>
+			</div>
+			<div class="row3_list_item"><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)"><img src="images/jiudian/44.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/sapa10104/" target="_blank" title="萨帕(Sa Pa)">萨帕</a></h3>
+				<span>Sa Pa68家酒店</div>
+			</div>
+			<div class="row3_list_item row3_list_item2"><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)"><img src="images/jiudian/55.jpg" width="200" height="200" /></a>
+			  <div>
+				<h3><a href="/xinjiapo60712/" target="_blank" title="新加坡(Singapore)">新加坡</a></h3>
+				<span>Singapore356家酒店</div>
+			</div>
+		  </div> 
+		  
+		  <script type="text/javascript"> 
+		//TAB切换
+		function SwapTab(name,title,content,Sub,cur){
+		  $(name+' '+title).click(function(){
+			  $(this).addClass(cur).siblings().removeClass(cur);
+			  $(content+" > "+Sub).eq($(name+' '+title).index(this)).show().siblings().hide();
+		  });
+		}
+		$(function(){
+			new SwapTab(".SwapTab","li",".tab-content","div","row3_tit_tab");//排行TAB
+		})
+		</script>
+		  
+		</div>
+		
+	</div>
+	
+	
+</div>
+<!--cont -->
+<div class="footer mt20">
+	<div class="foot1"><img src="images/btn1.png" width="1200" height="40" /></div>
+	<div class="foot_link wrap">
+		<a href="#">关于我们</a>
+		<a href="#">公司地图</a>
+		<a href="#">联系我们</a>
+		<a href="#">服务说明</a>
+		<a href="#">免费注册</a>
+		<a href="#">网站导航</a>
+		<a href="#">隐私条款</a>
+		<a href="#">支付方式</a>
+	</div>
+	<div class="foot2">
+		<ul>
+			<li>Copyright© 2014-2020, tuyui.com. All rights reserved.</li>
+		</ul>
+	</div>
+	<div class="foot3">
+		<a href="#"><img src="images/icp1.jpg" width="90" height="34" /></a>
+		<a href="#"><img src="images/icp2.jpg" width="90" height="34" /></a>
+		<a href="#"><img src="images/icp3.jpg" width="90" height="34" /></a>
+		<a href="#"><img src="images/icp4.jpg" width="90" height="34" /></a>
+	</div>
+</div>
+</body>
+</html>

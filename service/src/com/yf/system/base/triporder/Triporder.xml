@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Triporder">
+  
+  <typeAlias alias="Triporder" type="com.yf.system.base.triporder.Triporder"/>
+  
+
+  <resultMap id="resultTriporderMap" class="Triporder">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="triplineid" column="C_TRIPLINEID"/>
+  
+     <result property="pnum" column="C_PNUM"/>
+  
+     <result property="sump" column="C_SUMP"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="linkname" column="C_LINKNAME"/>
+  
+     <result property="linkmobile" column="C_LINKMOBILE"/>
+  
+     <result property="linkmail" column="C_LINKMAIL"/>
+  
+     <result property="linktell" column="C_LINKTELL"/>
+  
+     <result property="specreq" column="C_SPECREQ"/>
+  
+     <result property="statetime" column="C_STATETIME"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="lockuser" column="C_LOCKUSER"/>
+  
+     <result property="lockstate" column="C_LOCKSTATE"/>
+     
+     <result property="fanprice" column="C_FANPRICE"/>
+  
+     <result property="locktime" column="C_LOCKTIME"/>
+     
+     <result property="buyagentid" column="C_BUYAGENTID"/>
+   
+  </resultMap>
+  
+  <select id="findAllTriporder"  resultMap="resultTriporderMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRIPORDER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTriporderBySql"  resultMap="resultTriporderMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTriporderBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTriporderBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRIPORDER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTriporder" parameterClass="long" resultClass="Triporder">
+    select 
+    	ID as id,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_TRIPLINEID as triplineid,
+	  			C_PNUM as pnum,
+	  			C_SUMP as sump,
+	  			C_CODE as code,
+	  			C_STATE as state,
+	  			C_LINKNAME as linkname,
+	  			C_LINKMOBILE as linkmobile,
+	  			C_LINKMAIL as linkmail,
+	  			C_LINKTELL as linktell,
+	  			C_SPECREQ as specreq,
+	  			C_STATETIME as statetime,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language,
+	  			C_MEMBERID as memberid,
+	  			C_LOCKUSER as lockuser,
+	  			C_LOCKSTATE as lockstate,
+	  			C_FANPRICE as fanprice,
+	  			C_LOCKTIME as locktime,
+	  			C_BUYAGENTID as buyagentid
+     from T_TRIPORDER
+    where ID = #id#
+  </select>
+   
+  <insert id="createTriporder" parameterClass="Triporder">
+    insert into T_TRIPORDER ( 
+    	ID,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_TRIPLINEID,
+	  			C_PNUM,
+	  			C_SUMP,
+	  			C_CODE,
+	  			C_STATE,
+	  			C_LINKNAME,
+	  			C_LINKMOBILE,
+	  			C_LINKMAIL,
+	  			C_LINKTELL,
+	  			C_SPECREQ,
+	  			C_STATETIME,
+	  			C_UCODE,
+	  			C_LANGUAGE,
+	  			C_MEMBERID,
+	  			C_LOCKUSER,
+	  			C_LOCKSTATE,
+	  			C_FANPRICE,
+	  			C_LOCKTIME,
+	  			C_BUYAGENTID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#triplineid:DECIMAL#,
+						
+							#pnum:DECIMAL#,
+						
+							#sump:DECIMAL#,
+						
+	  						#code#,
+	  					
+							#state:DECIMAL#,
+						
+	  						#linkname#,
+	  					
+	  						#linkmobile#,
+	  					
+	  						#linkmail#,
+	  					
+	  						#linktell#,
+	  					
+	  						#specreq#,
+	  					
+	  						#statetime#,
+	  					
+							#ucode:DECIMAL#,
+						
+							#language:DECIMAL#,
+						
+							#memberid:DECIMAL#,
+						
+							#lockuser:DECIMAL#,
+						
+							#lockstate:DECIMAL#,
+							
+							#fanprice:DECIMAL#,
+						
+	  						#locktime#,
+	  						
+	  						#buyagentid#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTriporder" parameterClass="long">
+    delete from T_TRIPORDER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTriporder" parameterClass="Triporder">
+    update T_TRIPORDER 
+    set 
+    	C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_TRIPLINEID = #triplineid:DECIMAL#,
+						C_PNUM = #pnum:DECIMAL#,
+						C_SUMP = #sump:DECIMAL#,
+						C_CODE = #code#,
+	  					C_STATE = #state:DECIMAL#,
+						C_LINKNAME = #linkname#,
+	  					C_LINKMOBILE = #linkmobile#,
+	  					C_LINKMAIL = #linkmail#,
+	  					C_LINKTELL = #linktell#,
+	  					C_SPECREQ = #specreq#,
+	  					C_STATETIME = #statetime#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_MEMBERID = #memberid:DECIMAL#,
+						C_LOCKUSER = #lockuser:DECIMAL#,
+						C_LOCKSTATE = #lockstate:DECIMAL#,
+						C_FANPRICE = #fanprice:DECIMAL#,
+						C_LOCKTIME = #locktime#,
+						C_BUYAGENTID=#buyagentid:DECIMAL#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

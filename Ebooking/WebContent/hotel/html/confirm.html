@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>国祥商旅酒店预定系统</title>
+<link href="../skin/blue/css/base.css" rel="stylesheet" type="text/css" />
+<link href="../skin/blue/css/font.css" rel="stylesheet" type="text/css" />
+<link href="../skin/blue/css/hotel.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+ <div class="center"><iframe src="../top.html" scrolling="no" hspace="0" frameborder="0" width="1004" height="160"></iframe></div>
+ <!--includ top 直接替换掉整个DIV-->
+</div>  
+<!--top over-->
+<div id="hotel">
+      <div id="left" class="f">
+          <div class="search"><font class="black">国内机票搜索</font></div>
+          <form action="list.html" method="get">
+          <div class="box_sea searchlist">
+             <ul>
+           <li class="searchall mt10">入住城市：<input type="text" class="text_search"  /></li>
+           <li class="searchall">入住时间：<input type="text" class="text_search"  /></li>
+           <li class="searchall">离店时间：<input type="text" class="text_search"  /></li>
+           <li class="searchall">酒店星级：<select name="" class="sel_search"><option>-------所有星级-------</option></select></li>
+           <li class="searchall">价额范围：<input type="text" class="text_searchwf"  /><input type="text" class="text_searchwf"  /></li>
+              <li class="searchall">关&nbsp;&nbsp;键&nbsp;字：<input type="text" class="text_search" value="酒店名称/地址/地标"  /></li>
+              <li class="but">
+               <span class="f">全国<font class="f90">650个</font>城市，<br/><font class="f90">19000</font>余家酒店。</span>
+               <span class="r mr25"><input type="submit"  class="button_sea_ticket" value="立即搜索"  /></span>
+               <span class="c"></span>
+              </li>
+             </ul>
+          </div>
+          </form>
+          <div class="searchbot"></div>
+          <div class="mt7"><img src="../images/ad_260_60.jpg" width="260" height="60" title="地图上找酒店，精彩尽在于此。" /> </div>
+          <div class="mt7">
+             <div class="titlenew">
+                  <font class="black f">您最近浏览过的酒店</font>
+                  <div class="c"></div>  
+               </div>
+               <div class="box recently"><span class="f ico_recently">&nbsp;</span>您最近没有浏览过任何酒店。</div>
+                 <div class="box content" style="display:none">
+                 <ul class="box_botm_xu">
+                     <li>
+                         <span class="f number font_fff_09">1</span>
+                         <a href="#" class="f">北京如家快捷酒店</a>
+                         <font class="r font_f60_c">&yen;333</font>
+                         <div class="c"></div>
+                     </li>
+                     <li class="content_lh">
+                       <span class="f pf25">共<font class="f90">98条</font>评论</span>
+                       <span class="r pr20"><font class="f90">99%</font>满意度</span>
+                       <div class="c"></div>
+                     </li>
+                     <div class="nohave6 c">&nbsp;</div>
+                 </ul>
+                 <ul class="mt7 box_botm_xu">
+                     <li>
+                         <span class="f number font_fff_09">1</span>
+                         <a href="#" class="f">北京如家快捷酒店</a>
+                         <font class="r font_f60_c">&yen;333</font>
+                         <div class="c"></div>
+                     </li>
+                     <li class="content_lh">
+                       <span class="f pf25">共<font class="f90">98条</font>评论</span>
+                       <span class="r pr20"><font class="f90">99%</font>满意度</span>
+                       <div class="c"></div>
+                     </li>
+                     <div class="nohave6 c">&nbsp;</div>
+                 </ul>
+                 <ul class="mt7">
+                     <li>
+                         <span class="f number font_fff_09">1</span>
+                         <a href="#" class="f">北京如家快捷酒店</a>
+                         <font class="r font_f60_c">&yen;333</font>
+                         <div class="c"></div>
+                     </li>
+                     <li class="content_lh">
+                       <span class="f pf25">共<font class="f90">98条</font>评论</span>
+                       <span class="r pr20"><font class="f90">99%</font>满意度</span>
+                       <div class="c"></div>
+                     </li>
+                     <div class="nohave6 c">&nbsp;</div>
+                 </ul>
+                </div> 
+          </div>
+             
+           <div class="mt7"><img src="../images/ad_260_100.jpg" width="260" height="100" /></div>   
+      </div>
+ <div id="list" class="r">
+
+    <div>
+       <span class="f ico_hotel">&nbsp;</span><font class="f biger000">核对订单</font>
+       <span class="r status_four">&nbsp;</span>
+       <div class="c"></div>
+    </div>
+    <div class="c"></div>
+    <div class="mt7 ">     
+       <div class="">
+           <div class="f list_top_left">&nbsp;</div> 
+           <div class="f list_top list_bg">
+               <div class="f"><a href="#" class="c09f">北京大饭店</a></div>
+               <div class="r">入住日期：<input type="text" class="text_nameorder" /> 离店日期：<input type="text" class="text_nameorder" /><input type="button" value="修改" class="bnt_new fff hand"  /></div>
+               <div class="c"></div>
+           </div>
+           <div class="f list_top_right">&nbsp;</div> 
+           <div class="c"></div>
+       </div>
+       <div class="mt7 information list_table ">
+       <table width="710" border="1" cellspacing="0" cellpadding="0" class="box">
+          <tr>
+            <th class="hadow" width="20%" scope="col">房型</th>
+            <th class="hadow" width="15%" scope="col">入住时间</th>
+            <th class="hadow" width="15%" scope="col">离店时间</th>
+            <th class="hadow" width="15%" scope="col">早餐</th>
+            <th class="hadow" width="10%" scope="col">床型</th>
+            <th class="hadow" width="10%" scope="col">宽带</th>
+            <th class="hadow" scope="col">首日房价</th>
+          </tr> 
+          <tr>
+            <td class="floatall">
+                <span class="ico_room">&nbsp;</span><a href="#" class="l06c">高级双床房</a>
+                <div class="float_room msg" style="display:none;">
+                  <ul class="msgul">
+                  <li class=" pt5"><img src="../images/hotel.jpg" width="90" height="80" /></li>
+                  <li>高级双人床</li>
+                  </ul>
+                </div>    
+            </td>
+            <td class="f90">2011-11-19</td>
+            <td class="f90">2011-11-23</td>
+            <td>双早</td>
+            <td>大床</td>
+            <td>免费</td>
+            <td class="font-f60-16">&yen;300</td>
+          </tr>         
+        </table>
+       </div>
+       <div class="information booking_table">
+       <table width="710" border="1" cellspacing="0" cellpadding="0" class="box mt10">
+          <tr>
+            <th class="hadow" width="14.4%" scope="col">星期一</th>
+            <th class="hadow" width="14.4%" scope="col">星期二</th>
+            <th class="hadow" width="14.4%" scope="col">星期三</th>
+            <th class="hadow" width="14.4%" scope="col">星期四</th>
+            <th class="hadow" width="14.4%" scope="col">星期五</th>
+            <th class="hadow" width="14.4%" scope="col">星期六</th>
+            <th class="hadow" scope="col">星期日</th>
+          </tr> 
+          <tr>
+            <td align="center" class="font-f60-16">
+            &yen;300
+            <span class="time">11-12</span>
+            </td>
+            <td align="center" class="font-f60-16">&yen;300<span class="time">11-12</span></td>
+            <td align="center" class="font-f60-16">&yen;300<span class="time">11-12</span></td>
+            <td align="center" class="font-f60-16">&yen;300<span class="time">11-12</span></td>
+            <td align="center" class="font-f60-16">&yen;300<span class="time">11-12</span></td>
+            <td align="center" class="font-f60-16">&yen;300<span class="time">11-12</span></td>
+            <td align="center" class="font-f60-16">&yen;300<span class="time">11-12</span></td>
+          </tr>         
+        </table>
+       </div>
+       <div class="box mt10 total floatall">
+         <div class="total_main">房间数：<select class=" mr25"><option>5</option></select><font class="mf31">合计：</font><font  class="font-f60-16">&yen;300</font><font  class="c999">&nbsp;(到店付款)</font><font class="mf45">优惠：订酒店返现金</font><span class="ico_tipsed">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+         <div class="tips_total box">您入住酒店并结帐，在离店后60天内登录住哪网点评入住 酒店后，我们将会返还<font class="f90">60元</font>至您的住哪网帐户中。</div>
+         
+         </div>
+       </div>
+    </div>
+    <div class="mt7 box">
+       <div class="title"><span class="low black f">入住信息：</span><font class="f90">13521463333</font>，欢迎来到国祥商旅网预定酒店。</div>
+       <div class="mt20 check_one">
+       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="130" align="right">客人姓名：</td>
+            <td><font class="font-f60-16 mr25">陈星</font><font class="font-f60-16 mr25">陈星</font><font class="font-f60-16 mr25">陈星</font></td>
+          </tr>
+          <tr>
+            <td align="right">&nbsp;</td>
+            <td><font class="c999">每个房间只填写一个入住人姓名即可.</font><span class="ico_tipsed">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td align="right">联系手机：</td>
+            <td><font class="font-f60-16">13521463333</font><font class="c999 mf15">(用于接收订单确认短信。)</font></td>
+          </tr>
+          <tr>
+            <td align="right">Email：</td>
+            <td><font class="font-f60-16">app00000@163.com</font></td>
+          </tr>
+          <tr>
+            <td align="right">房价保留时间：</td>
+            <td><input name="" type="radio" value="" disabled="disabled" checked />18:00之前<input name="" disabled="disabled" type="radio" value=""  />18:00 至 06:00期间(<font class="f00">需要信用卡担保首晚房费118元</font>)</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+            <div class="check_tips">
+              <ul>
+              <li>· 房间保留至<font class="l06c">12月14日12:00</font>，如不能在<font class="l06c">12:00</font>前到酒店，请及时通知国祥商旅网或与酒店联系。</li>
+              <li>· 通常14点办理入住，早到可能需要等待。</li>
+              </ul>
+            </div></td>
+          </tr>
+        </table>
+       </div>
+       <div class="box_botm booking_line">&nbsp;</div>
+       <div>&nbsp;</div>
+       <div class="booking_bnt">
+        <input type="button" class="booking_bntton fff" value="提交订单"  />
+       </div>
+    </div>
+ </div>
+ <!--list over-->
+ <div class="c"></div>
+</div>
+ <iframe src="../footer.html" scrolling="no" hspace="0" frameborder="0" width="100%" height="126"></iframe>
+</body>
+</html>

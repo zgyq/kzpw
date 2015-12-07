@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Telephone">
+  
+  <typeAlias alias="Telephone" type="com.yf.system.base.telephone.Telephone"/>
+  
+
+  <resultMap id="resultTelephoneMap" class="Telephone">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="customeruserid" column="C_CUSTOMERUSERID"/>
+  
+     <result property="telnumber" column="C_TELNUMBER"/>
+  
+     <result property="teltype" column="C_TELTYPE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllTelephone"  resultMap="resultTelephoneMap"  parameterClass="java.util.Map">
+  
+    select * from T_TELEPHONE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTelephoneBySql"  resultMap="resultTelephoneMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTelephoneBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTelephoneBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TELEPHONE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTelephone" parameterClass="long" resultClass="Telephone">
+    select 
+    	ID as id,
+	  			C_CUSTOMERUSERID as customeruserid,
+	  			C_TELNUMBER as telnumber,
+	  			C_TELTYPE as teltype,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime 
+     from T_TELEPHONE
+    where ID = #id#
+  </select>
+   
+  <insert id="createTelephone" parameterClass="Telephone">
+    insert into T_TELEPHONE ( 
+    	ID,
+	  			C_CUSTOMERUSERID,
+	  			C_TELNUMBER,
+	  			C_TELTYPE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#customeruserid:DECIMAL#,
+						
+	  						#telnumber#,
+	  					
+							#teltype:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTelephone" parameterClass="long">
+    delete from T_TELEPHONE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTelephone" parameterClass="Telephone">
+    update T_TELEPHONE 
+    set 
+    	C_CUSTOMERUSERID = #customeruserid:DECIMAL#,
+						C_TELNUMBER = #telnumber#,
+	  					C_TELTYPE = #teltype:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

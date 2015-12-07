@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Optrecord">
+  
+  <typeAlias alias="Optrecord" type="com.yf.system.base.optrecord.Optrecord"/>
+  
+
+  <resultMap id="resultOptrecordMap" class="Optrecord">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="tablename" column="C_TABLENAME"/>
+  
+     <result property="column" column="C_COLUMN"/>
+  
+     <result property="oldvalue" column="C_OLDVALUE"/>
+  
+     <result property="newvalue" column="C_NEWVALUE"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="optid" column="C_OPTID"/>
+   
+  </resultMap>
+  
+  <select id="findAllOptrecord"  resultMap="resultOptrecordMap"  parameterClass="java.util.Map">
+  
+    select * from T_OPTRECORD
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllOptrecordBySql"  resultMap="resultOptrecordMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteOptrecordBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countOptrecordBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_OPTRECORD
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findOptrecord" parameterClass="long" resultClass="Optrecord">
+    select 
+    	ID as id,
+	  			C_TABLENAME as tablename,
+	  			C_COLUMN as column,
+	  			C_OLDVALUE as oldvalue,
+	  			C_NEWVALUE as newvalue,
+	  			C_DESCRIPTION as description,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_OPTID as optid 
+     from T_OPTRECORD
+    where ID = #id#
+  </select>
+   
+  <insert id="createOptrecord" parameterClass="Optrecord">
+    insert into T_OPTRECORD ( 
+    	ID,
+	  			C_TABLENAME,
+	  			C_COLUMN,
+	  			C_OLDVALUE,
+	  			C_NEWVALUE,
+	  			C_DESCRIPTION,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_OPTID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#tablename#,
+	  					
+	  						#column#,
+	  					
+	  						#oldvalue#,
+	  					
+	  						#newvalue#,
+	  					
+	  						#description#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+  							#optid:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteOptrecord" parameterClass="long">
+    delete from T_OPTRECORD
+    where ID = #id#
+  </delete>
+	
+  <update id="updateOptrecord" parameterClass="Optrecord">
+    update T_OPTRECORD 
+    set 
+    	C_TABLENAME = #tablename#,
+	  					C_COLUMN = #column#,
+	  					C_OLDVALUE = #oldvalue#,
+	  					C_NEWVALUE = #newvalue#,
+	  					C_DESCRIPTION = #description#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_OPTID = #optid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

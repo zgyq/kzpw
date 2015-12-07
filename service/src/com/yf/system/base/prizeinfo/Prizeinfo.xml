@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Prizeinfo">
+  
+  <typeAlias alias="Prizeinfo" type="com.yf.system.base.prizeinfo.Prizeinfo"/>
+  
+
+  <resultMap id="resultPrizeinfoMap" class="Prizeinfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="typeid" column="C_TYPEID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="imgurl" column="C_IMGURL"/>
+  
+     <result property="desc" column="C_DESC"/>
+  
+     <result property="scores" column="C_SCORES"/>
+  
+     <result property="index" column="C_INDEX"/>
+  
+     <result property="isenable" column="C_ISENABLE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllPrizeinfo"  resultMap="resultPrizeinfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_PRIZEINFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllPrizeinfoBySql"  resultMap="resultPrizeinfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excutePrizeinfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countPrizeinfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_PRIZEINFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findPrizeinfo" parameterClass="long" resultClass="Prizeinfo">
+    select 
+    	ID as id,
+	  			C_TYPEID as typeid,
+	  			C_NAME as name,
+	  			C_IMGURL as imgurl,
+	  			C_DESC as desc,
+	  			C_SCORES as scores,
+	  			C_INDEX as index,
+	  			C_ISENABLE as isenable,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime 
+     from T_PRIZEINFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createPrizeinfo" parameterClass="Prizeinfo">
+    insert into T_PRIZEINFO ( 
+    	ID,
+	  			C_TYPEID,
+	  			C_NAME,
+	  			C_IMGURL,
+	  			C_DESC,
+	  			C_SCORES,
+	  			C_INDEX,
+	  			C_ISENABLE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#typeid:DECIMAL#,
+						
+	  						#name#,
+	  					
+	  						#imgurl#,
+	  					
+	  						#desc#,
+	  					
+							#scores:DECIMAL#,
+						
+							#index:DECIMAL#,
+						
+							#isenable:DECIMAL#,
+						
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deletePrizeinfo" parameterClass="long">
+    delete from T_PRIZEINFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updatePrizeinfo" parameterClass="Prizeinfo">
+    update T_PRIZEINFO 
+    set 
+    	C_TYPEID = #typeid:DECIMAL#,
+						C_NAME = #name#,
+	  					C_IMGURL = #imgurl#,
+	  					C_DESC = #desc#,
+	  					C_SCORES = #scores:DECIMAL#,
+						C_INDEX = #index:DECIMAL#,
+						C_ISENABLE = #isenable:DECIMAL#,
+						C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

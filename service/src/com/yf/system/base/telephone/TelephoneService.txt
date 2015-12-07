@@ -1,0 +1,206 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 其他电话
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Telephone createTelephone(Telephone telephone) throws SQLException;
+	
+	/**
+	 * 删除 其他电话
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTelephone(long id);
+	
+	
+	/**
+	 * 修改 其他电话
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTelephone(Telephone telephone);
+
+		
+	/**
+	 * 修改 其他电话但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTelephoneIgnoreNull(Telephone telephone);
+		
+	
+	/**
+	 * 查找 其他电话
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTelephone(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 其他电话
+	 * @param id
+	 * @return
+	 */
+	public Telephone findTelephone(long id);
+	
+	
+	/** 
+	 * 查找 其他电话
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTelephoneForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找其他电话
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTelephoneBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 其他电话
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTelephoneBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTelephoneBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITelephoneComponent telephoneComponent;
+	  
+ 	
+ 	public ITelephoneComponent getTelephoneComponent() {
+		return telephoneComponent;
+	}
+	public void setTelephoneComponent(ITelephoneComponent  telephoneComponent) {
+		this.telephoneComponent = telephoneComponent;
+	}
+	/**
+	 * 创建 其他电话
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Telephone createTelephone(Telephone telephone) throws SQLException{
+	
+		return telephoneComponent.createTelephone(telephone);
+	}
+	/**
+	 * 删除 其他电话
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTelephone(long id){
+	
+		return telephoneComponent.deleteTelephone(id);
+	}
+	
+	
+	/**
+	 * 修改 其他电话
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTelephone(Telephone telephone){
+		return telephoneComponent.updateTelephone(telephone);
+	
+	}
+
+		
+	/**
+	 * 修改 其他电话但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTelephoneIgnoreNull(Telephone telephone){
+			return telephoneComponent.updateTelephoneIgnoreNull(telephone);
+	
+	}
+	
+	/**
+	 * 查找 其他电话
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTelephone(String where, String orderby,int limit,int offset){
+		return telephoneComponent.findAllTelephone(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 其他电话
+	 * @param id
+	 * @return
+	 */
+	public Telephone findTelephone(long id){
+		return telephoneComponent.findTelephone(id);
+	}
+	
+	/** 
+	 * 查找 其他电话
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTelephoneForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return telephoneComponent.findAllTelephone(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找其他电话
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTelephoneBySql(String sql,int limit,int offset){
+		return telephoneComponent.findAllTelephone(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 其他电话
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTelephoneBySql(String sql){
+		return telephoneComponent.excuteTelephoneBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTelephoneBySql(String sql){
+		return telephoneComponent.countTelephoneBySql(sql);
+	}
+	
+	
+

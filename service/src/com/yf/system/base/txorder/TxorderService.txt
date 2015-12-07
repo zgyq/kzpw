@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 TX订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Txorder createTxorder(Txorder txorder) throws SQLException;
+	
+	/**
+	 * 删除 TX订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTxorder(long id);
+	
+	
+	/**
+	 * 修改 TX订单
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTxorder(Txorder txorder);
+
+		
+	/**
+	 * 修改 TX订单但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTxorderIgnoreNull(Txorder txorder);
+		
+	
+	/**
+	 * 查找 TX订单
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTxorder(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 TX订单
+	 * @param id
+	 * @return
+	 */
+	public Txorder findTxorder(long id);
+	
+	
+	/** 
+	 * 查找 TX订单
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTxorderForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找TX订单
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTxorderBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql TX订单
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTxorderBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTxorderBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITxorderComponent txorderComponent;
+	  
+ 	
+ 	public ITxorderComponent getTxorderComponent() {
+		return txorderComponent;
+	}
+	public void setTxorderComponent(ITxorderComponent  txorderComponent) {
+		this.txorderComponent = txorderComponent;
+	}
+	/**
+	 * 创建 TX订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Txorder createTxorder(Txorder txorder) throws SQLException{
+	
+		return txorderComponent.createTxorder(txorder);
+	}
+	/**
+	 * 删除 TX订单
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTxorder(long id){
+	
+		return txorderComponent.deleteTxorder(id);
+	}
+	
+	
+	/**
+	 * 修改 TX订单
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTxorder(Txorder txorder){
+		return txorderComponent.updateTxorder(txorder);
+	
+	}
+
+		
+	/**
+	 * 修改 TX订单但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTxorderIgnoreNull(Txorder txorder){
+			return txorderComponent.updateTxorderIgnoreNull(txorder);
+	
+	}
+	
+	/**
+	 * 查找 TX订单
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTxorder(String where, String orderby,int limit,int offset){
+		return txorderComponent.findAllTxorder(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 TX订单
+	 * @param id
+	 * @return
+	 */
+	public Txorder findTxorder(long id){
+		return txorderComponent.findTxorder(id);
+	}
+	
+	/** 
+	 * 查找 TX订单
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTxorderForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return txorderComponent.findAllTxorder(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找TX订单
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTxorderBySql(String sql,int limit,int offset){
+		return txorderComponent.findAllTxorder(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql TX订单
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTxorderBySql(String sql){
+		return txorderComponent.excuteTxorderBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTxorderBySql(String sql){
+		return txorderComponent.countTxorderBySql(sql);
+	}
+	
+	
+

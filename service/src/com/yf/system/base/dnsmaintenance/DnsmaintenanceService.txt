@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 分销商DNSLOGO维护
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Dnsmaintenance createDnsmaintenance(Dnsmaintenance dnsmaintenance) throws SQLException;
+	
+	/**
+	 * 删除 分销商DNSLOGO维护
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteDnsmaintenance(long id);
+	
+	
+	/**
+	 * 修改 分销商DNSLOGO维护
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateDnsmaintenance(Dnsmaintenance dnsmaintenance);
+
+		
+	/**
+	 * 修改 分销商DNSLOGO维护但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateDnsmaintenanceIgnoreNull(Dnsmaintenance dnsmaintenance);
+		
+	
+	/**
+	 * 查找 分销商DNSLOGO维护
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllDnsmaintenance(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 分销商DNSLOGO维护
+	 * @param id
+	 * @return
+	 */
+	public Dnsmaintenance findDnsmaintenance(long id);
+	
+	
+	/** 
+	 * 查找 分销商DNSLOGO维护
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllDnsmaintenanceForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找分销商DNSLOGO维护
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllDnsmaintenanceBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 分销商DNSLOGO维护
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteDnsmaintenanceBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countDnsmaintenanceBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IDnsmaintenanceComponent dnsmaintenanceComponent;
+	  
+ 	
+ 	public IDnsmaintenanceComponent getDnsmaintenanceComponent() {
+		return dnsmaintenanceComponent;
+	}
+	public void setDnsmaintenanceComponent(IDnsmaintenanceComponent  dnsmaintenanceComponent) {
+		this.dnsmaintenanceComponent = dnsmaintenanceComponent;
+	}
+	/**
+	 * 创建 分销商DNSLOGO维护
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Dnsmaintenance createDnsmaintenance(Dnsmaintenance dnsmaintenance) throws SQLException{
+	
+		return dnsmaintenanceComponent.createDnsmaintenance(dnsmaintenance);
+	}
+	/**
+	 * 删除 分销商DNSLOGO维护
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteDnsmaintenance(long id){
+	
+		return dnsmaintenanceComponent.deleteDnsmaintenance(id);
+	}
+	
+	
+	/**
+	 * 修改 分销商DNSLOGO维护
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateDnsmaintenance(Dnsmaintenance dnsmaintenance){
+		return dnsmaintenanceComponent.updateDnsmaintenance(dnsmaintenance);
+	
+	}
+
+		
+	/**
+	 * 修改 分销商DNSLOGO维护但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateDnsmaintenanceIgnoreNull(Dnsmaintenance dnsmaintenance){
+			return dnsmaintenanceComponent.updateDnsmaintenanceIgnoreNull(dnsmaintenance);
+	
+	}
+	
+	/**
+	 * 查找 分销商DNSLOGO维护
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllDnsmaintenance(String where, String orderby,int limit,int offset){
+		return dnsmaintenanceComponent.findAllDnsmaintenance(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 分销商DNSLOGO维护
+	 * @param id
+	 * @return
+	 */
+	public Dnsmaintenance findDnsmaintenance(long id){
+		return dnsmaintenanceComponent.findDnsmaintenance(id);
+	}
+	
+	/** 
+	 * 查找 分销商DNSLOGO维护
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllDnsmaintenanceForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return dnsmaintenanceComponent.findAllDnsmaintenance(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找分销商DNSLOGO维护
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllDnsmaintenanceBySql(String sql,int limit,int offset){
+		return dnsmaintenanceComponent.findAllDnsmaintenance(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 分销商DNSLOGO维护
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteDnsmaintenanceBySql(String sql){
+		return dnsmaintenanceComponent.excuteDnsmaintenanceBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countDnsmaintenanceBySql(String sql){
+		return dnsmaintenanceComponent.countDnsmaintenanceBySql(sql);
+	}
+	
+	
+

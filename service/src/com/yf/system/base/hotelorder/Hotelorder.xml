@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Hotelorder">
+  
+  <typeAlias alias="Hotelorder" type="com.yf.system.base.hotelorder.Hotelorder"/>
+  
+
+  <resultMap id="resultHotelorderMap" class="Hotelorder">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="hotelid" column="C_HOTELID"/>
+  
+     <result property="orderid" column="C_ORDERID"/>
+  
+     <result property="property" column="C_PROPERTY"/>
+  
+     <result property="roomtypename" column="C_ROOMTYPENAME"/>
+  
+     <result property="roomid" column="C_ROOMID"/>
+  
+     <result property="comedate" column="C_COMEDATE"/>
+  
+     <result property="leavedate" column="C_LEAVEDATE"/>
+  
+     <result property="orderpeaple" column="C_ORDERPEAPLE"/>
+  
+     <result property="manyday" column="C_MANYDAY"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="predesc" column="C_PREDESC"/>
+  
+     <result property="pretime" column="C_PRETIME"/>
+  
+     <result property="membername" column="C_MEMBERNAME"/>
+  
+     <result property="membermobile" column="C_MEMBERMOBILE"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="version" column="C_VERSION"/>
+  
+     <result property="canclereason" column="C_CANCLEREASON"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="linkname" column="C_LINKNAME"/>
+  
+     <result property="linkmobile" column="C_LINKMOBILE"/>
+  
+     <result property="linkmail" column="C_LINKMAIL"/>
+  
+     <result property="linktell" column="C_LINKTELL"/>
+  
+     <result property="confirmmethod" column="C_CONFIRMMETHOD"/>
+  
+     <result property="reservstart" column="C_RESERVSTART"/>
+  
+     <result property="reservend" column="C_RESERVEND"/>
+  
+     <result property="specreq" column="C_SPECREQ"/>
+  
+     <result property="prerooms" column="C_PREROOMS"/>
+  
+     <result property="checkdesc" column="C_CHECKDESC"/>
+  
+     <result property="faxsendtime" column="C_FAXSENDTIME"/>
+  
+     <result property="code" column="C_CODE"/>
+  
+     <result property="resultvalue" column="C_RESULTVALUE"/>
+  
+     <result property="resultcode" column="C_RESULTCODE"/>
+  
+     <result property="systemuserid" column="C_SYSTEMUSERID"/>
+  
+     <result property="type" column="C_TYPE"/>
+     
+     <result property="paytype" column="C_PAYTYPE"/>
+  
+     <result property="checktype" column="C_CHECKTYPE"/>
+     
+     <result property="dayprice" column="C_DAYPRICE"/>
+     
+     <result property="ishotelpay" column="C_ISHOTELPAY"/>
+   
+     <result property="paystate" column="C_PAYSTATE"/>
+  
+     <result property="payment" column="C_PAYMENT"/>
+  
+     <result property="actualmount" column="C_ACTUALMOUNT"/>
+  
+     <result property="couponamount" column="C_COUPONAMOUNT"/>
+     
+      <result property="number" column="C_NUMBER"/>
+      
+       <result property="waicode" column="C_WAICODE"/>
+       
+        <result property="sex" column="C_SEX"/>
+        
+         <result property="danbao" column="C_DANBAO"/>
+         
+          <result property="baoliutime" column="C_BAOLIUTIME"/>
+          
+           <result property="shijitime" column="C_SHIJITIME"/>
+           
+           <result property="yestate" column="C_YESTATE"/>
+           
+            <result property="fanprice" column="C_FANPRICE"/>
+            
+            <result property="yufuprice" column="C_YUFUPRICE"/>
+            
+           <result property="xianfuprice" column="C_XIANFUPRICE"/>
+           
+            <result property="profits" column="C_PROFITS"/>
+            
+            <result property="createuserid" column="C_CREATEUSERID"/>
+            
+             <result property="pricecodeid" column="C_PRICECODEID"/>
+             
+            <result property="pricecodename" column="C_PRICECODENAME"/>
+            
+            <result property="pricecurrency" column="C_PRICECURRENCY"/>
+  
+     <result property="ordersource" column="C_ORDERSOURCE"/>
+  </resultMap>
+  
+  <select id="findAllHotelorder"  resultMap="resultHotelorderMap"  parameterClass="java.util.Map">
+  
+    select * from T_HOTELORDER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllHotelorderBySql"  resultMap="resultHotelorderMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteHotelorderBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countHotelorderBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_HOTELORDER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findHotelorder" parameterClass="long" resultClass="Hotelorder">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_HOTELID as hotelid,
+	  			C_ORDERID as orderid,
+	  			C_PROPERTY as property,
+	  			C_ROOMTYPENAME as roomtypename,
+	  			C_ROOMID as roomid,
+	  			C_COMEDATE as comedate,
+	  			C_LEAVEDATE as leavedate,
+	  			C_ORDERPEAPLE as orderpeaple,
+	  			C_MANYDAY as manyday,
+	  			C_PRICE as price,
+	  			C_PREDESC as predesc,
+	  			C_PRETIME as pretime,
+	  			C_MEMBERNAME as membername,
+	  			C_MEMBERMOBILE as membermobile,
+	  			C_MEMBERID as memberid,
+	  			C_VERSION as version,
+	  			C_CANCLEREASON as canclereason,
+	  			C_STATE as state,
+	  			C_YESTATE as yestate,
+	  			C_LINKNAME as linkname,
+	  			C_LINKMOBILE as linkmobile,
+	  			C_LINKMAIL as linkmail,
+	  			C_LINKTELL as linktell,
+	  			C_CONFIRMMETHOD as confirmmethod,
+	  			C_RESERVSTART as reservstart,
+	  			C_RESERVEND as reservend,
+	  			C_SPECREQ as specreq,
+	  			C_PREROOMS as prerooms,
+	  			C_CHECKDESC as checkdesc,
+	  			C_FAXSENDTIME as faxsendtime,
+	  			C_CODE as code,
+	  			C_RESULTVALUE as resultvalue,
+	  			C_RESULTCODE as resultcode,
+	  			C_SYSTEMUSERID as systemuserid,
+	  			C_TYPE as type,
+	  			C_PAYTYPE as paytype,
+	  			C_CHECKTYPE as checktype,
+	  			C_DAYPRICE as dayprice,
+	  			C_ISHOTELPAY as ishotelpay,
+	  			C_PAYSTATE as paystate,
+	  			C_PAYMENT as payment,
+	  			C_ACTUALMOUNT as actualmount,
+	  			C_COUPONAMOUNT as couponamount,
+	  			C_NUMBER as number,
+	  			C_SEX as sex,
+	  			C_WAICODE as waicode,
+	  			C_DANBAO as danbao,
+	  			C_BAOLIUTIME as baoliutime,
+	  			C_SHIJITIME as shijitime,
+	  			C_FANPRICE as fanprice,
+	  			C_YUFUPRICE as yufuprice,
+	  			C_XIANFUPRICE as xianfuprice,
+	  			C_PROFITS as profits,
+	  			C_CREATEUSERID as createuserid,
+	  			C_PRICECODEID as pricecodeid,
+	  			C_PRICECODENAME as pricecodename,
+	  			C_PRICECURRENCY as pricecurrency,
+	  			C_ORDERSOURCE as ordersource 
+     from T_HOTELORDER
+    where ID = #id#
+  </select>
+   
+  <insert id="createHotelorder" parameterClass="Hotelorder">
+    insert into T_HOTELORDER ( 
+    	ID,
+	  			C_NAME,
+	  			C_HOTELID,
+	  			C_ORDERID,
+	  			C_PROPERTY,
+	  			C_ROOMTYPENAME,
+	  			C_ROOMID,
+	  			C_COMEDATE,
+	  			C_LEAVEDATE,
+	  			C_ORDERPEAPLE,
+	  			C_MANYDAY,
+	  			C_PRICE,
+	  			C_PREDESC,
+	  			C_PRETIME,
+	  			C_MEMBERNAME,
+	  			C_MEMBERMOBILE,
+	  			C_MEMBERID,
+	  			C_VERSION,
+	  			C_CANCLEREASON,
+	  			C_STATE,
+	  			C_YESTATE,
+	  			C_LINKNAME,
+	  			C_LINKMOBILE,
+	  			C_LINKMAIL,
+	  			C_LINKTELL,
+	  			C_CONFIRMMETHOD,
+	  			C_RESERVSTART,
+	  			C_RESERVEND,
+	  			C_SPECREQ,
+	  			C_PREROOMS,
+	  			C_CHECKDESC,
+	  			C_FAXSENDTIME,
+	  			C_CODE,
+	  			C_RESULTVALUE,
+	  			C_RESULTCODE,
+	  			C_SYSTEMUSERID,
+	  			C_TYPE,
+	  			C_PAYTYPE,
+	  			C_CHECKTYPE,
+	  			C_DAYPRICE,
+	  			C_ISHOTELPAY,
+	  			C_PAYSTATE,
+	  			C_PAYMENT,
+	  			C_ACTUALMOUNT,
+	  			C_COUPONAMOUNT,
+	  			C_NUMBER,
+	  			C_SEX,
+	  			C_WAICODE,
+	  			C_DANBAO,
+	  			C_BAOLIUTIME,
+	  			C_SHIJITIME,
+	  			C_FANPRICE,
+	  			C_YUFUPRICE,
+	  			C_XIANFUPRICE,
+	  			C_PROFITS,
+	  			C_CREATEUSERID,
+	  			C_PRICECODEID,
+	  			C_PRICECODENAME,
+	  			C_PRICECURRENCY,
+	  			C_ORDERSOURCE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+							#hotelid:DECIMAL#,
+						
+	  						#orderid#,
+	  					
+	  						#property#,
+	  					
+	  						#roomtypename#,
+	  					
+							#roomid:DECIMAL#,
+						
+	  						#comedate#,
+	  					
+	  						#leavedate#,
+	  					
+							#orderpeaple:DECIMAL#,
+						
+							#manyday:DECIMAL#,
+						
+	  						#price#,
+	  					
+	  						#predesc#,
+	  					
+	  						#pretime#,
+	  					
+	  						#membername#,
+	  					
+	  						#membermobile#,
+	  					
+							#memberid:DECIMAL#,
+						
+							#version:DECIMAL#,
+						
+							#canclereason:DECIMAL#,
+						
+							#state:DECIMAL#,
+							
+							#yestate:DECIMAL#,
+						
+	  						#linkname#,
+	  					
+	  						#linkmobile#,
+	  					
+	  						#linkmail#,
+	  					
+	  						#linktell#,
+	  					
+							#confirmmethod:DECIMAL#,
+						
+	  						#reservstart#,
+	  					
+	  						#reservend#,
+	  					
+	  						#specreq#,
+	  					
+							#prerooms:DECIMAL#,
+						
+	  						#checkdesc#,
+	  					
+	  						#faxsendtime#,
+	  					
+	  						#code#,
+	  					
+	  						#resultvalue#,
+	  					
+							#resultcode:DECIMAL#,
+						
+							#systemuserid:DECIMAL#,
+						
+  							#type:DECIMAL#,
+	  					
+							#paytype:DECIMAL#,
+						
+  							#checktype:DECIMAL#,
+  							
+  							#dayprice#,
+  							
+  							#ishotelpay:DECIMAL#,
+						
+							#paystate:DECIMAL#,
+						
+							#payment:DECIMAL#,
+						
+							#actualmount:DECIMAL#,
+						
+							#couponamount:DECIMAL#,
+							
+							#number:DECIMAL#,
+							
+							#sex:DECIMAL#,
+							
+							#waicode:DECIMAL#,
+							
+							#danbao:DECIMAL#,
+							
+							#baoliutime:DECIMAL#,
+							
+							#shijitime:DECIMAL#,
+							
+							#fanprice:DECIMAL#,
+							
+							#yufuprice:DECIMAL#,
+							
+							#xianfuprice:DECIMAL#,
+							
+							#profits:DECIMAL#,
+							
+							#createuserid:DECIMAL#,
+							
+							#pricecodeid:DECIMAL#,
+							
+							#pricecodename:DECIMAL#,
+							
+							#pricecurrency:DECIMAL#,
+						
+  							#ordersource:DECIMAL#
+  							
+  							
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteHotelorder" parameterClass="long">
+    delete from T_HOTELORDER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateHotelorder" parameterClass="Hotelorder">
+    update T_HOTELORDER 
+    set 
+    	C_NAME = #name#,
+	  					C_HOTELID = #hotelid:DECIMAL#,
+						C_ORDERID = #orderid#,
+	  					C_PROPERTY = #property#,
+	  					C_ROOMTYPENAME = #roomtypename#,
+	  					C_ROOMID = #roomid:DECIMAL#,
+						C_COMEDATE = #comedate#,
+	  					C_LEAVEDATE = #leavedate#,
+	  					C_ORDERPEAPLE = #orderpeaple:DECIMAL#,
+						C_MANYDAY = #manyday:DECIMAL#,
+						C_PRICE = #price#,
+	  					C_PREDESC = #predesc#,
+	  					C_PRETIME = #pretime#,
+	  					C_MEMBERNAME = #membername#,
+	  					C_MEMBERMOBILE = #membermobile#,
+	  					C_MEMBERID = #memberid:DECIMAL#,
+						C_VERSION = #version:DECIMAL#,
+						C_CANCLEREASON = #canclereason:DECIMAL#,
+						C_STATE = #state:DECIMAL#,
+						C_YESTATE = #yestate:DECIMAL#,
+						C_LINKNAME = #linkname#,
+	  					C_LINKMOBILE = #linkmobile#,
+	  					C_LINKMAIL = #linkmail#,
+	  					C_LINKTELL = #linktell#,
+	  					C_CONFIRMMETHOD = #confirmmethod:DECIMAL#,
+						C_RESERVSTART = #reservstart#,
+	  					C_RESERVEND = #reservend#,
+	  					C_SPECREQ = #specreq#,
+	  					C_PREROOMS = #prerooms:DECIMAL#,
+						C_CHECKDESC = #checkdesc#,
+	  					C_FAXSENDTIME = #faxsendtime#,
+	  					C_CODE = #code#,
+	  					C_RESULTVALUE = #resultvalue#,
+	  					C_RESULTCODE = #resultcode:DECIMAL#,
+						C_SYSTEMUSERID = #systemuserid:DECIMAL#,
+						C_TYPE = #type:DECIMAL#,
+	  					C_PAYTYPE = #paytype:DECIMAL#,
+						C_CHECKTYPE = #checktype:DECIMAL#,
+						C_DAYPRICE = #dayprice#,
+						C_ISHOTELPAY = #ishotelpay:DECIMAL#,
+						C_PAYSTATE = #paystate:DECIMAL#,
+						C_PAYMENT = #payment:DECIMAL#,
+						C_ACTUALMOUNT = #actualmount:DECIMAL#,
+						C_COUPONAMOUNT = #couponamount:DECIMAL#,
+						C_NUMBER = #number:DECIMAL#,
+						C_SEX = #sex:DECIMAL#,
+						C_WAICODE = #waicode:DECIMAL#,
+						C_DANBAO = #danbao:DECIMAL#,
+						C_SHIJITIME = #shijitime:DECIMAL#,
+						C_BAOLIUTIME = #baoliutime:DECIMAL#,
+						C_FANPRICE = #fanprice:DECIMAL#,
+						C_YUFUPRICE = #yufuprice:DECIMAL#,
+						C_XIANFUPRICE = #xianfuprice:DECIMAL#,
+						C_PROFITS = #profits:DECIMAL#,
+						C_CREATEUSERID = #createuserid:DECIMAL#,
+						C_PRICECODEID = #pricecodeid:DECIMAL#,
+						C_PRICECODENAME = #pricecodename:DECIMAL#,
+						C_PRICECURRENCY = #pricecurrency:DECIMAL#,
+						C_ORDERSOURCE = #ordersource:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 模板
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Template createTemplate(Template template) throws SQLException;
+	
+	/**
+	 * 删除 模板
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTemplate(long id);
+	
+	
+	/**
+	 * 修改 模板
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTemplate(Template template);
+
+		
+	/**
+	 * 修改 模板但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTemplateIgnoreNull(Template template);
+		
+	
+	/**
+	 * 查找 模板
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTemplate(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 模板
+	 * @param id
+	 * @return
+	 */
+	public Template findTemplate(long id);
+	
+	/**
+	 * 查找 模板 by language
+	 * @param id
+	 * @return
+	 */
+	public Template findTemplatebylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 模板
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTemplateForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找模板
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTemplateBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 模板
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTemplateBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTemplateBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITemplateComponent templateComponent;
+	  
+ 	
+ 	public ITemplateComponent getTemplateComponent() {
+		return templateComponent;
+	}
+	public void setTemplateComponent(ITemplateComponent  templateComponent) {
+		this.templateComponent = templateComponent;
+	}
+	/**
+	 * 创建 模板
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Template createTemplate(Template template) throws SQLException{
+	
+		return templateComponent.createTemplate(template);
+	}
+	/**
+	 * 删除 模板
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTemplate(long id){
+	
+		return templateComponent.deleteTemplate(id);
+	}
+	
+	
+	/**
+	 * 修改 模板
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTemplate(Template template){
+		return templateComponent.updateTemplate(template);
+	
+	}
+
+		
+	/**
+	 * 修改 模板但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTemplateIgnoreNull(Template template){
+			return templateComponent.updateTemplateIgnoreNull(template);
+	
+	}
+	
+	/**
+	 * 查找 模板
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTemplate(String where, String orderby,int limit,int offset){
+		return templateComponent.findAllTemplate(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 模板
+	 * @param id
+	 * @return
+	 */
+	public Template findTemplate(long id){
+		return templateComponent.findTemplate(id);
+	}
+	
+	/**
+	 * 查找 模板
+	 * @param id
+	 * @return
+	 */
+	public Template findTemplatebylanguage(long id,Integer language){
+		return templateComponent.findTemplatebylanguage(id,language);
+	}
+	/** 
+	 * 查找 模板
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTemplateForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return templateComponent.findAllTemplate(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找模板
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTemplateBySql(String sql,int limit,int offset){
+		return templateComponent.findAllTemplate(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 模板
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTemplateBySql(String sql){
+		return templateComponent.excuteTemplateBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTemplateBySql(String sql){
+		return templateComponent.countTemplateBySql(sql);
+	}
+	
+	
+

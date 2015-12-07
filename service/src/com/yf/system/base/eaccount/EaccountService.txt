@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 外部账号
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Eaccount createEaccount(Eaccount eaccount) throws SQLException;
+	
+	/**
+	 * 删除 外部账号
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteEaccount(long id);
+	
+	
+	/**
+	 * 修改 外部账号
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateEaccount(Eaccount eaccount);
+
+		
+	/**
+	 * 修改 外部账号但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateEaccountIgnoreNull(Eaccount eaccount);
+		
+	
+	/**
+	 * 查找 外部账号
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllEaccount(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 外部账号
+	 * @param id
+	 * @return
+	 */
+	public Eaccount findEaccount(long id);
+	
+	
+	/** 
+	 * 查找 外部账号
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllEaccountForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找外部账号
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllEaccountBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 外部账号
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteEaccountBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countEaccountBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IEaccountComponent eaccountComponent;
+	  
+ 	
+ 	public IEaccountComponent getEaccountComponent() {
+		return eaccountComponent;
+	}
+	public void setEaccountComponent(IEaccountComponent  eaccountComponent) {
+		this.eaccountComponent = eaccountComponent;
+	}
+	/**
+	 * 创建 外部账号
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Eaccount createEaccount(Eaccount eaccount) throws SQLException{
+	
+		return eaccountComponent.createEaccount(eaccount);
+	}
+	/**
+	 * 删除 外部账号
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteEaccount(long id){
+	
+		return eaccountComponent.deleteEaccount(id);
+	}
+	
+	
+	/**
+	 * 修改 外部账号
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateEaccount(Eaccount eaccount){
+		return eaccountComponent.updateEaccount(eaccount);
+	
+	}
+
+		
+	/**
+	 * 修改 外部账号但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateEaccountIgnoreNull(Eaccount eaccount){
+			return eaccountComponent.updateEaccountIgnoreNull(eaccount);
+	
+	}
+	
+	/**
+	 * 查找 外部账号
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllEaccount(String where, String orderby,int limit,int offset){
+		return eaccountComponent.findAllEaccount(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 外部账号
+	 * @param id
+	 * @return
+	 */
+	public Eaccount findEaccount(long id){
+		return eaccountComponent.findEaccount(id);
+	}
+	
+	/** 
+	 * 查找 外部账号
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllEaccountForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return eaccountComponent.findAllEaccount(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找外部账号
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllEaccountBySql(String sql,int limit,int offset){
+		return eaccountComponent.findAllEaccount(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 外部账号
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteEaccountBySql(String sql){
+		return eaccountComponent.excuteEaccountBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countEaccountBySql(String sql){
+		return eaccountComponent.countEaccountBySql(sql);
+	}
+	
+	
+

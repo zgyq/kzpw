@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Hotelprice">
+  
+  <typeAlias alias="Hotelprice" type="com.yf.system.base.hotelprice.Hotelprice"/>
+  
+
+  <resultMap id="resultHotelpriceMap" class="Hotelprice">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="datenumber" column="C_DATENUMBER"/>
+  
+     <result property="hotelid" column="C_HOTELID"/>
+  
+     <result property="pricetype" column="C_PRICETYPE"/>
+  
+     <result property="deptprice" column="C_DEPTPRICE"/>
+  
+     <result property="endprice" column="C_ENDPRICE"/>
+  
+     <result property="roomid" column="C_ROOMID"/>
+  
+     <result property="isvalid" column="C_ISVALID"/>
+  
+     <result property="no1" column="C_NO1"/>
+  
+     <result property="no2" column="C_NO2"/>
+  
+     <result property="no3" column="C_NO3"/>
+  
+     <result property="no4" column="C_NO4"/>
+  
+     <result property="no5" column="C_NO5"/>
+  
+     <result property="no6" column="C_NO6"/>
+  
+     <result property="no7" column="C_NO7"/>
+  
+     <result property="no8" column="C_NO8"/>
+  
+     <result property="no9" column="C_NO9"/>
+  
+     <result property="no10" column="C_NO10"/>
+  
+     <result property="no11" column="C_NO11"/>
+  
+     <result property="no12" column="C_NO12"/>
+  
+     <result property="no13" column="C_NO13"/>
+  
+     <result property="no14" column="C_NO14"/>
+  
+     <result property="no15" column="C_NO15"/>
+  
+     <result property="no16" column="C_NO16"/>
+  
+     <result property="no17" column="C_NO17"/>
+  
+     <result property="no18" column="C_NO18"/>
+  
+     <result property="no19" column="C_NO19"/>
+  
+     <result property="no20" column="C_NO20"/>
+  
+     <result property="no21" column="C_NO21"/>
+  
+     <result property="no22" column="C_NO22"/>
+  
+     <result property="no23" column="C_NO23"/>
+  
+     <result property="no24" column="C_NO24"/>
+  
+     <result property="no25" column="C_NO25"/>
+  
+     <result property="no26" column="C_NO26"/>
+  
+     <result property="no27" column="C_NO27"/>
+  
+     <result property="no28" column="C_NO28"/>
+  
+     <result property="no29" column="C_NO29"/>
+  
+     <result property="no30" column="C_NO30"/>
+  
+     <result property="no31" column="C_NO31"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+     
+     <result property="rateplancode" column="C_RATEPLANCODE"/>
+     
+      <result property="rateplanname" column="C_RATEPLANNAME"/>
+      
+      <result property="moytype" column="C_MOYTYPE"/>
+   
+  </resultMap>
+  
+  <select id="findAllHotelprice"  resultMap="resultHotelpriceMap"  parameterClass="java.util.Map">
+  
+    select * from T_HOTELPRICE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllHotelpriceBySql"  resultMap="resultHotelpriceMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteHotelpriceBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countHotelpriceBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_HOTELPRICE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findHotelprice" parameterClass="long" resultClass="Hotelprice">
+    select 
+    	ID as id,
+	  			C_DATENUMBER as datenumber,
+	  			C_HOTELID as hotelid,
+	  			C_PRICETYPE as pricetype,
+	  			C_DEPTPRICE as deptprice,
+	  			C_ENDPRICE as endprice,
+	  			C_ROOMID as roomid,
+	  			C_ISVALID as isvalid,
+	  			C_NO1 as no1,
+	  			C_NO2 as no2,
+	  			C_NO3 as no3,
+	  			C_NO4 as no4,
+	  			C_NO5 as no5,
+	  			C_NO6 as no6,
+	  			C_NO7 as no7,
+	  			C_NO8 as no8,
+	  			C_NO9 as no9,
+	  			C_NO10 as no10,
+	  			C_NO11 as no11,
+	  			C_NO12 as no12,
+	  			C_NO13 as no13,
+	  			C_NO14 as no14,
+	  			C_NO15 as no15,
+	  			C_NO16 as no16,
+	  			C_NO17 as no17,
+	  			C_NO18 as no18,
+	  			C_NO19 as no19,
+	  			C_NO20 as no20,
+	  			C_NO21 as no21,
+	  			C_NO22 as no22,
+	  			C_NO23 as no23,
+	  			C_NO24 as no24,
+	  			C_NO25 as no25,
+	  			C_NO26 as no26,
+	  			C_NO27 as no27,
+	  			C_NO28 as no28,
+	  			C_NO29 as no29,
+	  			C_NO30 as no30,
+	  			C_NO31 as no31,
+	  			C_DESCRIPTION as description,
+	  			C_UCODE as ucode,
+	  			C_RATEPLANCODE as rateplancode,
+	  			C_RATEPLANNAME as rateplanname,
+	  			C_MOYTYPE as moytype,
+	  			C_LANGUAGE as language 
+     from T_HOTELPRICE
+    where ID = #id#
+  </select>
+   
+  <insert id="createHotelprice" parameterClass="Hotelprice">
+    insert into T_HOTELPRICE ( 
+    	ID,
+	  			C_DATENUMBER,
+	  			C_HOTELID,
+	  			C_PRICETYPE,
+	  			C_DEPTPRICE,
+	  			C_ENDPRICE,
+	  			C_ROOMID,
+	  			C_ISVALID,
+	  			C_NO1,
+	  			C_NO2,
+	  			C_NO3,
+	  			C_NO4,
+	  			C_NO5,
+	  			C_NO6,
+	  			C_NO7,
+	  			C_NO8,
+	  			C_NO9,
+	  			C_NO10,
+	  			C_NO11,
+	  			C_NO12,
+	  			C_NO13,
+	  			C_NO14,
+	  			C_NO15,
+	  			C_NO16,
+	  			C_NO17,
+	  			C_NO18,
+	  			C_NO19,
+	  			C_NO20,
+	  			C_NO21,
+	  			C_NO22,
+	  			C_NO23,
+	  			C_NO24,
+	  			C_NO25,
+	  			C_NO26,
+	  			C_NO27,
+	  			C_NO28,
+	  			C_NO29,
+	  			C_NO30,
+	  			C_NO31,
+	  			C_DESCRIPTION,
+	  			C_UCODE,
+	  			C_RATEPLANCODE,
+	  			C_RATEPLANNAME,
+	  			C_MOYTYPE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#datenumber#,
+	  					
+							#hotelid:DECIMAL#,
+						
+	  						#pricetype#,
+	  					
+	  						#deptprice#,
+	  					
+	  						#endprice#,
+	  					
+							#roomid:DECIMAL#,
+						
+	  						#isvalid#,
+	  					
+							#no1:DECIMAL#,
+						
+							#no2:DECIMAL#,
+						
+							#no3:DECIMAL#,
+						
+							#no4:DECIMAL#,
+						
+							#no5:DECIMAL#,
+						
+							#no6:DECIMAL#,
+						
+							#no7:DECIMAL#,
+						
+							#no8:DECIMAL#,
+						
+							#no9:DECIMAL#,
+						
+							#no10:DECIMAL#,
+						
+							#no11:DECIMAL#,
+						
+							#no12:DECIMAL#,
+						
+							#no13:DECIMAL#,
+						
+							#no14:DECIMAL#,
+						
+							#no15:DECIMAL#,
+						
+							#no16:DECIMAL#,
+						
+							#no17:DECIMAL#,
+						
+							#no18:DECIMAL#,
+						
+							#no19:DECIMAL#,
+						
+							#no20:DECIMAL#,
+						
+							#no21:DECIMAL#,
+						
+							#no22:DECIMAL#,
+						
+							#no23:DECIMAL#,
+						
+							#no24:DECIMAL#,
+						
+							#no25:DECIMAL#,
+						
+							#no26:DECIMAL#,
+						
+							#no27:DECIMAL#,
+						
+							#no28:DECIMAL#,
+						
+							#no29:DECIMAL#,
+						
+							#no30:DECIMAL#,
+						
+							#no31:DECIMAL#,
+						
+	  						#description#,
+	  					
+							#ucode:DECIMAL#,
+							
+							#rateplancode:DECIMAL#,
+							
+							#rateplanname:DECIMAL#,
+							
+							#moytype:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteHotelprice" parameterClass="long">
+    delete from T_HOTELPRICE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateHotelprice" parameterClass="Hotelprice">
+    update T_HOTELPRICE 
+    set 
+    	C_DATENUMBER = #datenumber#,
+	  					C_HOTELID = #hotelid:DECIMAL#,
+						C_PRICETYPE = #pricetype#,
+	  					C_DEPTPRICE = #deptprice#,
+	  					C_ENDPRICE = #endprice#,
+	  					C_ROOMID = #roomid:DECIMAL#,
+						C_ISVALID = #isvalid#,
+	  					C_NO1 = #no1:DECIMAL#,
+						C_NO2 = #no2:DECIMAL#,
+						C_NO3 = #no3:DECIMAL#,
+						C_NO4 = #no4:DECIMAL#,
+						C_NO5 = #no5:DECIMAL#,
+						C_NO6 = #no6:DECIMAL#,
+						C_NO7 = #no7:DECIMAL#,
+						C_NO8 = #no8:DECIMAL#,
+						C_NO9 = #no9:DECIMAL#,
+						C_NO10 = #no10:DECIMAL#,
+						C_NO11 = #no11:DECIMAL#,
+						C_NO12 = #no12:DECIMAL#,
+						C_NO13 = #no13:DECIMAL#,
+						C_NO14 = #no14:DECIMAL#,
+						C_NO15 = #no15:DECIMAL#,
+						C_NO16 = #no16:DECIMAL#,
+						C_NO17 = #no17:DECIMAL#,
+						C_NO18 = #no18:DECIMAL#,
+						C_NO19 = #no19:DECIMAL#,
+						C_NO20 = #no20:DECIMAL#,
+						C_NO21 = #no21:DECIMAL#,
+						C_NO22 = #no22:DECIMAL#,
+						C_NO23 = #no23:DECIMAL#,
+						C_NO24 = #no24:DECIMAL#,
+						C_NO25 = #no25:DECIMAL#,
+						C_NO26 = #no26:DECIMAL#,
+						C_NO27 = #no27:DECIMAL#,
+						C_NO28 = #no28:DECIMAL#,
+						C_NO29 = #no29:DECIMAL#,
+						C_NO30 = #no30:DECIMAL#,
+						C_NO31 = #no31:DECIMAL#,
+						C_DESCRIPTION = #description#,
+	  					C_UCODE = #ucode:DECIMAL#,
+	  					C_RATEPLANCODE = #rateplancode:DECIMAL#,
+	  					C_RATEPLANNAME = #rateplanname:DECIMAL#,
+	  					C_MOYTYPE = #moytype:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

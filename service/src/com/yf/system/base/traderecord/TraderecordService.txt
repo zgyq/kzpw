@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 交易记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Traderecord createTraderecord(Traderecord traderecord) throws SQLException;
+	
+	/**
+	 * 删除 交易记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTraderecord(long id);
+	
+	
+	/**
+	 * 修改 交易记录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTraderecord(Traderecord traderecord);
+
+		
+	/**
+	 * 修改 交易记录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTraderecordIgnoreNull(Traderecord traderecord);
+		
+	
+	/**
+	 * 查找 交易记录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTraderecord(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 交易记录
+	 * @param id
+	 * @return
+	 */
+	public Traderecord findTraderecord(long id);
+	
+	
+	/** 
+	 * 查找 交易记录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTraderecordForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找交易记录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTraderecordBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 交易记录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTraderecordBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTraderecordBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITraderecordComponent traderecordComponent;
+	  
+ 	
+ 	public ITraderecordComponent getTraderecordComponent() {
+		return traderecordComponent;
+	}
+	public void setTraderecordComponent(ITraderecordComponent  traderecordComponent) {
+		this.traderecordComponent = traderecordComponent;
+	}
+	/**
+	 * 创建 交易记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Traderecord createTraderecord(Traderecord traderecord) throws SQLException{
+	
+		return traderecordComponent.createTraderecord(traderecord);
+	}
+	/**
+	 * 删除 交易记录
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTraderecord(long id){
+	
+		return traderecordComponent.deleteTraderecord(id);
+	}
+	
+	
+	/**
+	 * 修改 交易记录
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTraderecord(Traderecord traderecord){
+		return traderecordComponent.updateTraderecord(traderecord);
+	
+	}
+
+		
+	/**
+	 * 修改 交易记录但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTraderecordIgnoreNull(Traderecord traderecord){
+			return traderecordComponent.updateTraderecordIgnoreNull(traderecord);
+	
+	}
+	
+	/**
+	 * 查找 交易记录
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTraderecord(String where, String orderby,int limit,int offset){
+		return traderecordComponent.findAllTraderecord(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 交易记录
+	 * @param id
+	 * @return
+	 */
+	public Traderecord findTraderecord(long id){
+		return traderecordComponent.findTraderecord(id);
+	}
+	
+	/** 
+	 * 查找 交易记录
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTraderecordForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return traderecordComponent.findAllTraderecord(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找交易记录
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTraderecordBySql(String sql,int limit,int offset){
+		return traderecordComponent.findAllTraderecord(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 交易记录
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTraderecordBySql(String sql){
+		return traderecordComponent.excuteTraderecordBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTraderecordBySql(String sql){
+		return traderecordComponent.countTraderecordBySql(sql);
+	}
+	
+	
+

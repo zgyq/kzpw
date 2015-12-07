@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 返佣记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Rebaterecord createRebaterecord(Rebaterecord rebaterecord) throws SQLException;
+	
+	/**
+	 * 删除 返佣记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRebaterecord(long id);
+	
+	
+	/**
+	 * 修改 返佣记录表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRebaterecord(Rebaterecord rebaterecord);
+
+		
+	/**
+	 * 修改 返佣记录表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRebaterecordIgnoreNull(Rebaterecord rebaterecord);
+		
+	
+	/**
+	 * 查找 返佣记录表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRebaterecord(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 返佣记录表
+	 * @param id
+	 * @return
+	 */
+	public Rebaterecord findRebaterecord(long id);
+	
+	
+	/** 
+	 * 查找 返佣记录表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRebaterecordForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找返佣记录表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRebaterecordBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 返佣记录表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRebaterecordBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRebaterecordBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IRebaterecordComponent rebaterecordComponent;
+	  
+ 	
+ 	public IRebaterecordComponent getRebaterecordComponent() {
+		return rebaterecordComponent;
+	}
+	public void setRebaterecordComponent(IRebaterecordComponent  rebaterecordComponent) {
+		this.rebaterecordComponent = rebaterecordComponent;
+	}
+	/**
+	 * 创建 返佣记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Rebaterecord createRebaterecord(Rebaterecord rebaterecord) throws SQLException{
+	
+		return rebaterecordComponent.createRebaterecord(rebaterecord);
+	}
+	/**
+	 * 删除 返佣记录表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRebaterecord(long id){
+	
+		return rebaterecordComponent.deleteRebaterecord(id);
+	}
+	
+	
+	/**
+	 * 修改 返佣记录表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRebaterecord(Rebaterecord rebaterecord){
+		return rebaterecordComponent.updateRebaterecord(rebaterecord);
+	
+	}
+
+		
+	/**
+	 * 修改 返佣记录表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRebaterecordIgnoreNull(Rebaterecord rebaterecord){
+			return rebaterecordComponent.updateRebaterecordIgnoreNull(rebaterecord);
+	
+	}
+	
+	/**
+	 * 查找 返佣记录表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRebaterecord(String where, String orderby,int limit,int offset){
+		return rebaterecordComponent.findAllRebaterecord(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 返佣记录表
+	 * @param id
+	 * @return
+	 */
+	public Rebaterecord findRebaterecord(long id){
+		return rebaterecordComponent.findRebaterecord(id);
+	}
+	
+	/** 
+	 * 查找 返佣记录表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRebaterecordForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return rebaterecordComponent.findAllRebaterecord(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找返佣记录表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRebaterecordBySql(String sql,int limit,int offset){
+		return rebaterecordComponent.findAllRebaterecord(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 返佣记录表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRebaterecordBySql(String sql){
+		return rebaterecordComponent.excuteRebaterecordBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRebaterecordBySql(String sql){
+		return rebaterecordComponent.countRebaterecordBySql(sql);
+	}
+	
+	
+

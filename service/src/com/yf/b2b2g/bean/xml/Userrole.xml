@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Userrole">
+
+	<typeAlias alias="Userrole" type="com.yf.b2b2g.bean.Userrole" />
+
+
+	<delete id="deleteUserroleByEmpid" parameterClass="long">
+		DELETE T_B2GUSERROLE WHERE C_EMPID=#value#
+	</delete>
+	
+	 <insert id="createUserrole" parameterClass="Userrole">
+	   INSERT INTO T_B2GUSERROLE(C_ROLEID,C_EMPID)
+	   VALUES(#roleid#,#empid#);
+	 </insert>
+
+
+
+
+</sqlMap>
+
+

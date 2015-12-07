@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Exchrecord">
+  
+  <typeAlias alias="Exchrecord" type="com.yf.system.base.exchrecord.Exchrecord"/>
+  
+
+  <resultMap id="resultExchrecordMap" class="Exchrecord">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="prizeid" column="C_PRIZEID"/>
+  
+     <result property="customerid" column="C_CUSTOMERID"/>
+  
+     <result property="contactname" column="C_CONTACTNAME"/>
+  
+     <result property="contactmobile" column="C_CONTACTMOBILE"/>
+  
+     <result property="contactadd" column="C_CONTACTADD"/>
+  
+     <result property="desc" column="C_DESC"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+   
+  </resultMap>
+  
+  <select id="findAllExchrecord"  resultMap="resultExchrecordMap"  parameterClass="java.util.Map">
+  
+    select * from T_EXCHRECORD
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllExchrecordBySql"  resultMap="resultExchrecordMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteExchrecordBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countExchrecordBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_EXCHRECORD
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findExchrecord" parameterClass="long" resultClass="Exchrecord">
+    select 
+    	ID as id,
+	  			C_PRIZEID as prizeid,
+	  			C_CUSTOMERID as customerid,
+	  			C_CONTACTNAME as contactname,
+	  			C_CONTACTMOBILE as contactmobile,
+	  			C_CONTACTADD as contactadd,
+	  			C_DESC as desc,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime 
+     from T_EXCHRECORD
+    where ID = #id#
+  </select>
+   
+  <insert id="createExchrecord" parameterClass="Exchrecord">
+    insert into T_EXCHRECORD ( 
+    	ID,
+	  			C_PRIZEID,
+	  			C_CUSTOMERID,
+	  			C_CONTACTNAME,
+	  			C_CONTACTMOBILE,
+	  			C_CONTACTADD,
+	  			C_DESC,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#prizeid:DECIMAL#,
+						
+							#customerid:DECIMAL#,
+						
+	  						#contactname#,
+	  					
+	  						#contactmobile#,
+	  					
+	  						#contactadd#,
+	  					
+	  						#desc#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteExchrecord" parameterClass="long">
+    delete from T_EXCHRECORD
+    where ID = #id#
+  </delete>
+	
+  <update id="updateExchrecord" parameterClass="Exchrecord">
+    update T_EXCHRECORD 
+    set 
+    	C_PRIZEID = #prizeid:DECIMAL#,
+						C_CUSTOMERID = #customerid:DECIMAL#,
+						C_CONTACTNAME = #contactname#,
+	  					C_CONTACTMOBILE = #contactmobile#,
+	  					C_CONTACTADD = #contactadd#,
+	  					C_DESC = #desc#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

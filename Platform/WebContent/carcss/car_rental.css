@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+
+#main{ }
+#main .left{ width:291px; }
+#main .nav{ background:url(../images/bj_sea.gif) no-repeat; height:37px;}
+#main .nav ul{ padding:9px 0 0 7px; }
+#main .nav ul li{ color:#3399ff;float:left; margin-right:5px; background:url(../images/bj_navd.gif) no-repeat; width:93px; height:28px; line-height:28px; text-align:center; font-weight:bold;}
+
+#main .sea_main{ background:url(../images/bj_sead.gif); height:247px;}
+#main .leixing{padding:0 5px 0 5px; width:270px;  margin:0 auto;}
+#main .xuan{ height:33px; padding-left:60px; padding-top:15px;  }
+#main .searh{padding-top:10px; line-height:18px; width:240px; margin:0 auto; }
+#main .hangban{ background:url(../images/bj_hangban.gif) no-repeat; height:48px; line-height:42px; padding-left:40px;}
+#main .hbdt{ line-height:27px; height:200px;}
+#main .xiaochangshi{ height:129px; background:url(../images/xiaochangshi.gif); line-height:30px;}
+#main .xiaochangshi ul{}
+#main .xiaochangshi ul li{ float:left; width:100px; padding-left:30px; }
+#main .xcs{ text-align:center}
+#main .ls{ background:url(../images/bj_ls.gif) no-repeat; height:124px; width:278px; margin:0 auto; margin-top:8px;}
+#main .box_ad{border:1px solid #CECFD0; padding:3px; width:82px; height:56px; margin-top:5px;}
+#main .jieshao{line-height:15px; text-indent:2em; padding:3px 7px 3px 12px;}
+#main .xiangx{margin-right:8px; margin-top:-13px;}
+
+#main .right{ width:691px; padding-top:8px; }
+#main .air_di{ background:url(../images/air_bj.gif);}
+#main .dijia{ background:url(../images/air_di.gif); height:37px;}
+#main .city{ margin-top:13px; padding-right:5px;}
+#main .city ul{}
+#main .city ul li{ width:55px; height:22px; line-height:22px; background:url(../images/bj_nav1.gif); text-align:center; float:left; margin-right:5px;} 
+#main .city ul li a{color:#0099FF; text-decoration:none}
+#main .ctiy_list{width:320px; height:170px; margin-left:10px; padding-left:5px; line-height:24px; padding-top:5px; display:inline; text-align:left}
+#main .ctiy_listr{width:330px;height:170px;  padding-left:5px; line-height:24px; padding-top:5px;display:inline;text-align:left}
+
+#main .chang{ background:url(../images/chang.gif) no-repeat; height:31px; line-height:31px; padding-left:32px;}
+#main .chang ul{}
+#main .chang ul li{ float:left;}
+#main .more{ width:300px; text-align:right}
+#main .widt{ width:120px;}
+#main .xx{ margin-top:8px;*margin-top:0!important;_margin-top:8px; }
+
+
+#list{}
+#list .left{ width:241px;}
+#list .seat{ height:37px;background:url(../images/bj_seaa.gif)}
+#list .seat ul{padding:9px 0 0 7px; }
+#list .seat ul li{ color:#3399ff;float:left; margin-right:5px; background:url(../images/bj_navd.gif) no-repeat; width:93px; height:28px; line-height:28px; text-align:center; font-weight:bold;} 
+#list .seab{ width:241px; height:235px; text-align:left; line-height:25px; color:#336699; background:url(../images/bj_seadd.gif) no-repeat; }
+#list .tehui{ background:url(../images/tehui_z.gif); text-align:left; padding:3px 20px 3px 10px;}
+#list .tehui ul{ line-height:22px;}
+#list .tehui ul li{ border-bottom:1px dashed #999999}
+#list .tehui ul li a{ color:#999999; text-decoration:none}
+#list .tehui ul li a:hover{ color:#36F;}
+#list .ml20{ margin-left:40px;}
+#list .hangban{ background:url(../images/bj_hangband.gif) no-repeat; height:48px; line-height:42px; padding-left:40px;}
+#list .hbdt{ line-height:27px; height:200px;}
+#list .hbdtt{ line-height:27px;}
+#list .hbdtt ul{}
+#list .hbdtt ul li{ padding:0 15px 0 20px; line-height:24px;}
+
+                     
+#list .right{ width:740px;overflow:hidden; margin-top:7px;}
+#list .no1{ line-height:20px; text-align:left}
+#list .wu{ background:url(../images/bj_wu.gif); border:1px solid #EEEEEE; height:23px; line-height:23px; margin-top:5px; padding-right:15px;}
+#list .wu a{color:#F60; text-decoration:underline}
+#list .list_t{ background:url(../images/bj_changd.gif); height:31px; line-height:31px; padding-right:20px; margin-top:8px; text-align:left; padding-left:45px;}
+#list .list{ background:url(../images/list_z.gif); padding-top:10px; width:738px;}
+#list .chelist{ width:718px; margin:0 auto; margin-top:10px; line-height:24px; }
+#list .chelist tbody{ text-align:center; font-weight:100;}
+#list .chelist th{ border:1px solid #ccc; text-align:center; line-height:30px; background:#F0F0F0;}
+#list .chelist td{ text-align:left; border-bottom:1px solid #ccc}
+#list .chelist img{ margin-right:8px;}
+#list .nei{}
+#list .nei td{ border-bottom:none;}
+#list .xunze{width:706px; margin:0 auto; padding:5px; line-height:24px; background: #E2EBFF}
+#list .xunze ul{}
+#list .xunze ul li{ float: left; display: inline; margin: 0 10px 0 10px;} 
+#list .xunze ul li a{text-decoration: underline;}
+#list .all{background: #195EFC; width:40px; line-height:18px; margin-top:3px; height:18px; text-align: center; color:#fff }
+
+
+#list .yuding{ background:url(../images/list_z.gif); line-height:28px; padding-top:5px;}
+#list .ddxx{ background:url(../images/bj_dd.gif); height:56px; line-height:28px; border:1px solid #EFEFEF; margin-top:5px;}
+#list .add{ padding-top:10px;}
+
+
+#list .zifei{border-bottom:none; margin:0 auto; line-height:24px; color:#999999}
+#list .zifei th{ background:url(../images/bj_che.gif) repeat-x; height:26px; line-height:26px; text-align:left; padding-left:15px;}
+/*#list .zifei td{ border:1px solid #DADADA }*/
+#list .xianming{ line-height:22px; margin:0 auto;}
+#list .next{height:70px; padding-top:55px; text-align:center;}
+#list .dui{ line-height:42px; padding:0px 0 0 150px; height:169px; text-align: left;}

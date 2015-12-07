@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Spotlineinfo">
+  
+  <typeAlias alias="Spotlineinfo" type="com.yf.system.base.spotlineinfo.Spotlineinfo"/>
+  
+
+  <resultMap id="resultSpotlineinfoMap" class="Spotlineinfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="spotlineid" column="C_SPOTLINEID"/>
+  
+     <result property="dday" column="C_DDAY"/>
+  
+     <result property="qujian" column="C_QUJIAN"/>
+  
+     <result property="zhusu" column="C_ZHUSU"/>
+  
+     <result property="canyin" column="C_CANYIN"/>
+  
+     <result property="beizhu" column="C_BEIZHU"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllSpotlineinfo"  resultMap="resultSpotlineinfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_SPOTLINEINFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSpotlineinfoBySql"  resultMap="resultSpotlineinfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSpotlineinfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSpotlineinfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SPOTLINEINFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSpotlineinfo" parameterClass="long" resultClass="Spotlineinfo">
+    select 
+    	ID as id,
+	  			C_SPOTLINEID as spotlineid,
+	  			C_DDAY as dday,
+	  			C_QUJIAN as qujian,
+	  			C_ZHUSU as zhusu,
+	  			C_CANYIN as canyin,
+	  			C_BEIZHU as beizhu,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_STATE as state 
+     from T_SPOTLINEINFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createSpotlineinfo" parameterClass="Spotlineinfo">
+    insert into T_SPOTLINEINFO ( 
+    	ID,
+	  			C_SPOTLINEID,
+	  			C_DDAY,
+	  			C_QUJIAN,
+	  			C_ZHUSU,
+	  			C_CANYIN,
+	  			C_BEIZHU,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#spotlineid#,
+	  					
+	  						#dday#,
+	  					
+	  						#qujian#,
+	  					
+	  						#zhusu#,
+	  					
+	  						#canyin#,
+	  					
+	  						#beizhu#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSpotlineinfo" parameterClass="long">
+    delete from T_SPOTLINEINFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSpotlineinfo" parameterClass="Spotlineinfo">
+    update T_SPOTLINEINFO 
+    set 
+    	C_SPOTLINEID = #spotlineid#,
+	  					C_DDAY = #dday#,
+	  					C_QUJIAN = #qujian#,
+	  					C_ZHUSU = #zhusu#,
+	  					C_CANYIN = #canyin#,
+	  					C_BEIZHU = #beizhu#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request>
+<AgentCode>test001</AgentCode>
+<Triptype>test001</Triptype>
+<Trips>
+<Trip>
+<FromCity>北京</FromCity>
+<ToCity>上海</ToCity>
+<Type>1</Type>
+<Date>2015-07-28</Date>
+<Time>08:00</Time>
+</Trip>
+<Trip>
+<FromCity>上海</FromCity>
+<ToCity>武汉</ToCity>
+<Type>2</Type>
+<Date>2015-08-202</Date>
+<Time>18:00</Time>
+</Trip>
+</Trips>
+</request>

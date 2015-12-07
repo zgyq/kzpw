@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+  
+  <bean id="companyManager" class="com.yf.system.base.company.CompanyManger" >
+  	<property name="dataSource">
+  		<ref bean="myDataSource" />
+  	</property>
+  	<property name="sqlMapClient">
+  		<ref bean="sqlMapClient" />
+  	</property>
+  </bean>
+  
+  
+ 
+  
+ 
+  <!-- 被保人信息表结束 -->
+   <bean id="companyService" class="com.yf.system.base.service.CompanyService" scope="singleton">
+  
+ 	<property name="companymanger" ref="companyManager"/>	
+   </bean>
+	
+	<bean name="/ICompanyService"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<property name="service" ref="companyService" />
+		<property name="serviceInterface"
+			value="com.yf.system.base.service.ICompanyService" />
+	</bean>
+	
+ 
+</beans>

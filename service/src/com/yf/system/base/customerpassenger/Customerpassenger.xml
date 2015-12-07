@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Customerpassenger">
+  
+  <typeAlias alias="Customerpassenger" type="com.yf.system.base.customerpassenger.Customerpassenger"/>
+  
+
+  <resultMap id="resultCustomerpassengerMap" class="Customerpassenger">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="username" column="C_USERNAME"/>
+  
+     <result property="memberemail" column="C_MEMBEREMAIL"/>
+  
+     <result property="mobile" column="C_MOBILE"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="type" column="C_TYPE"/>
+  
+     <result property="customeruserid" column="C_CUSTOMERUSERID"/>
+  
+     <result property="sortid" column="C_SORTID"/>
+  
+     <result property="address" column="C_ADDRESS"/>
+  
+     <result property="enname" column="C_Enname"/>
+  
+     <result property="entrytime" column="C_ENTRYTIME"/>
+  
+     <result property="livingcardtype" column="C_LIVINGCARDTYPE"/>
+  
+     <result property="livingcardnum" column="C_LIVINGCARDNUM"/>
+  
+     <result property="livingperiod" column="C_LIVINGPERIOD"/>
+  
+     <result property="worknumber" column="C_WORKNUMBER"/>
+  
+     <result property="workperiod" column="C_WORKPERIOD"/>
+  
+     <result property="chinaaddress" column="C_CHINAADDRESS"/>
+  
+     <result property="sex" column="C_SEX"/>
+     
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllCustomerpassenger"  resultMap="resultCustomerpassengerMap"  parameterClass="java.util.Map">
+  
+    select * from T_CUSTOMERPASSENGER
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCustomerpassengerBySql"  resultMap="resultCustomerpassengerMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCustomerpassengerBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCustomerpassengerBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CUSTOMERPASSENGER
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCustomerpassenger" parameterClass="long" resultClass="Customerpassenger">
+    select 
+    	ID as id,
+	  			C_USERNAME as username,
+	  			C_MEMBEREMAIL as memberemail,
+	  			C_MOBILE as mobile,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_TYPE as type,
+	  			C_CUSTOMERUSERID as customeruserid,
+	  			C_SORTID as sortid,
+	  			C_ADDRESS as address,
+	  			C_Enname as enname,
+	  			C_ENTRYTIME as entrytime,
+	  			C_LIVINGCARDTYPE as livingcardtype,
+	  			C_LIVINGCARDNUM as livingcardnum,
+	  			C_LIVINGPERIOD as livingperiod,
+	  			C_WORKNUMBER as worknumber,
+	  			C_WORKPERIOD as workperiod,
+	  			C_CHINAADDRESS as chinaaddress,
+	  			C_STATE as state,
+	  			C_SEX as sex 
+     from T_CUSTOMERPASSENGER
+    where ID = #id#
+  </select>
+   
+  <insert id="createCustomerpassenger" parameterClass="Customerpassenger">
+    insert into T_CUSTOMERPASSENGER ( 
+    	ID,
+	  			C_USERNAME,
+	  			C_MEMBEREMAIL,
+	  			C_MOBILE,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_TYPE,
+	  			C_CUSTOMERUSERID,
+	  			C_SORTID,
+	  			C_ADDRESS,
+	  			C_Enname,
+	  			C_ENTRYTIME,
+	  			C_LIVINGCARDTYPE,
+	  			C_LIVINGCARDNUM,
+	  			C_LIVINGPERIOD,
+	  			C_WORKNUMBER,
+	  			C_WORKPERIOD,
+	  			C_CHINAADDRESS,
+	  			C_STATE,
+	  			C_SEX 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#username#,
+	  					
+	  						#memberemail#,
+	  					
+	  						#mobile#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+							#type:DECIMAL#,
+						
+							#customeruserid:DECIMAL#,
+						
+							#sortid:DECIMAL#,
+						
+	  						#address#,
+	  					
+	  						#enname#,
+	  					
+	  						#entrytime#,
+	  					
+	  						#livingcardtype#,
+	  					
+	  						#livingcardnum#,
+	  					
+	  						#livingperiod#,
+	  					
+	  						#worknumber#,
+	  					
+	  						#workperiod#,
+	  					
+	  						#chinaaddress#,
+	  						
+	  						#state#,
+	  					
+	  						#sex#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCustomerpassenger" parameterClass="long">
+    delete from T_CUSTOMERPASSENGER
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCustomerpassenger" parameterClass="Customerpassenger">
+    update T_CUSTOMERPASSENGER 
+    set 
+    	C_USERNAME = #username#,
+	  					C_MEMBEREMAIL = #memberemail#,
+	  					C_MOBILE = #mobile#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_TYPE = #type:DECIMAL#,
+						C_CUSTOMERUSERID = #customeruserid:DECIMAL#,
+						C_SORTID = #sortid:DECIMAL#,
+						C_ADDRESS = #address#,
+	  					C_Enname = #enname#,
+	  					C_ENTRYTIME = #entrytime#,
+	  					C_LIVINGCARDTYPE = #livingcardtype#,
+	  					C_LIVINGCARDNUM = #livingcardnum#,
+	  					C_LIVINGPERIOD = #livingperiod#,
+	  					C_WORKNUMBER = #worknumber#,
+	  					C_WORKPERIOD = #workperiod#,
+	  					C_CHINAADDRESS = #chinaaddress#,
+	  					C_STATE = #state#,
+	  					C_SEX = #sex#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

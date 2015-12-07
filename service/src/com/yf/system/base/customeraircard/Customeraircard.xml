@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Customeraircard">
+  
+  <typeAlias alias="Customeraircard" type="com.yf.system.base.customeraircard.Customeraircard"/>
+  
+
+  <resultMap id="resultCustomeraircardMap" class="Customeraircard">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="aircardtype" column="C_AIRCARDTYPE"/>
+  
+     <result property="aircardnumber" column="C_AIRCARDNUMBER"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="refid" column="C_REFID"/>
+   
+  </resultMap>
+  
+  <select id="findAllCustomeraircard"  resultMap="resultCustomeraircardMap"  parameterClass="java.util.Map">
+  
+    select * from T_CUSTOMERAIRCARD
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllCustomeraircardBySql"  resultMap="resultCustomeraircardMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteCustomeraircardBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countCustomeraircardBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CUSTOMERAIRCARD
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findCustomeraircard" parameterClass="long" resultClass="Customeraircard">
+    select 
+    	ID as id,
+	  			C_AIRCARDTYPE as aircardtype,
+	  			C_AIRCARDNUMBER as aircardnumber,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_REFID as refid 
+     from T_CUSTOMERAIRCARD
+    where ID = #id#
+  </select>
+   
+  <insert id="createCustomeraircard" parameterClass="Customeraircard">
+    insert into T_CUSTOMERAIRCARD ( 
+    	ID,
+	  			C_AIRCARDTYPE,
+	  			C_AIRCARDNUMBER,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_REFID 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#aircardtype#,
+	  					
+	  						#aircardnumber#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+  							#refid:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteCustomeraircard" parameterClass="long">
+    delete from T_CUSTOMERAIRCARD
+    where ID = #id#
+  </delete>
+	
+  <update id="updateCustomeraircard" parameterClass="Customeraircard">
+    update T_CUSTOMERAIRCARD 
+    set 
+    	C_AIRCARDTYPE = #aircardtype#,
+	  					C_AIRCARDNUMBER = #aircardnumber#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_REFID = #refid:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

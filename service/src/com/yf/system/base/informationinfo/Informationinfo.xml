@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Informationinfo">
+  
+  <typeAlias alias="Informationinfo" type="com.yf.system.base.informationinfo.Informationinfo"/>
+  
+
+  <resultMap id="resultInformationinfoMap" class="Informationinfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="info" column="C_INFO"/>
+  
+     <result property="typeid" column="C_TYPEID"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="image" column="C_IMAGE"/>
+     
+     <result property="isweb" column="C_ISWEB"/>
+     
+     <result property="isanswer" column="C_ISANSWER"/>
+     
+   
+  </resultMap>
+  
+  <select id="findAllInformationinfo"  resultMap="resultInformationinfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_INFORMATIONINFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllInformationinfoBySql"  resultMap="resultInformationinfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteInformationinfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countInformationinfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_INFORMATIONINFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findInformationinfo" parameterClass="long" resultClass="Informationinfo">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_INFO as info,
+	  			C_TYPEID as typeid,
+	  			C_CREATETIME as createtime,
+	  			C_MEMBERID as memberid,
+	  			C_STATE as state,
+	  			C_ISANSWER as isanswer,
+	  			C_ISWEB as isweb,
+	  			C_IMAGE as image 
+     from T_INFORMATIONINFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createInformationinfo" parameterClass="Informationinfo">
+    insert into T_INFORMATIONINFO ( 
+    	ID,
+	  			C_NAME,
+	  			C_INFO,
+	  			C_TYPEID,
+	  			C_CREATETIME,
+	  			C_MEMBERID,
+	  			C_STATE,
+	  			C_ISANSWER,
+	  			C_ISWEB,
+	  			C_IMAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#info#,
+	  					
+							#typeid:DECIMAL#,
+						
+	  						#createtime#,
+	  					
+							#memberid:DECIMAL#,
+						
+							#state:DECIMAL#,
+							
+							#isanswer:DECIMAL#,
+							
+							#isweb:DECIMAL#,
+						
+	  						#image#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteInformationinfo" parameterClass="long">
+    delete from T_INFORMATIONINFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateInformationinfo" parameterClass="Informationinfo">
+    update T_INFORMATIONINFO 
+    set 
+    	C_NAME = #name#,
+	  					C_INFO = #info#,
+	  					C_TYPEID = #typeid:DECIMAL#,
+						C_CREATETIME = #createtime#,
+	  					C_MEMBERID = #memberid:DECIMAL#,
+						C_STATE = #state:DECIMAL#,
+						C_ISANSWER = #isanswer:DECIMAL#,
+						C_ISWEB = #isweb:DECIMAL#,
+						C_IMAGE = #image#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

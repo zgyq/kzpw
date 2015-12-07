@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Fsendticketcity">
+  
+  <typeAlias alias="Fsendticketcity" type="com.yf.system.base.fsendticketcity.Fsendticketcity"/>
+  
+
+  <resultMap id="resultFsendticketcityMap" class="Fsendticketcity">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="stcitycode" column="C_STCITYCODE"/>
+  
+     <result property="stcityname" column="C_STCITYNAME"/>
+  
+     <result property="stcitynameen" column="C_STCITYNAMEEN"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+   
+  </resultMap>
+  
+  <select id="findAllFsendticketcity"  resultMap="resultFsendticketcityMap"  parameterClass="java.util.Map">
+  
+    select * from T_FSENDTICKETCITY
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllFsendticketcityBySql"  resultMap="resultFsendticketcityMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteFsendticketcityBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countFsendticketcityBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_FSENDTICKETCITY
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findFsendticketcity" parameterClass="long" resultClass="Fsendticketcity">
+    select 
+    	ID as id,
+	  			C_STCITYCODE as stcitycode,
+	  			C_STCITYNAME as stcityname,
+	  			C_STCITYNAMEEN as stcitynameen,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language 
+     from T_FSENDTICKETCITY
+    where ID = #id#
+  </select>
+   
+  <insert id="createFsendticketcity" parameterClass="Fsendticketcity">
+    insert into T_FSENDTICKETCITY ( 
+    	ID,
+	  			C_STCITYCODE,
+	  			C_STCITYNAME,
+	  			C_STCITYNAMEEN,
+	  			C_UCODE,
+	  			C_LANGUAGE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#stcitycode#,
+	  					
+	  						#stcityname#,
+	  					
+	  						#stcitynameen#,
+	  					
+							#ucode:DECIMAL#,
+						
+  							#language:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteFsendticketcity" parameterClass="long">
+    delete from T_FSENDTICKETCITY
+    where ID = #id#
+  </delete>
+	
+  <update id="updateFsendticketcity" parameterClass="Fsendticketcity">
+    update T_FSENDTICKETCITY 
+    set 
+    	C_STCITYCODE = #stcitycode#,
+	  					C_STCITYNAME = #stcityname#,
+	  					C_STCITYNAMEEN = #stcitynameen#,
+	  					C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Hotelstar">
+  
+  <typeAlias alias="Hotelstar" type="com.yf.system.base.hotelstar.Hotelstar"/>
+  
+
+  <resultMap id="resultHotelstarMap" class="Hotelstar">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="starid" column="C_STARID"/>
+  
+     <result property="starname" column="C_STARNAME"/>
+  
+     <result property="val" column="C_VAL"/>
+  
+     <result property="createuserid" column="C_CREATEUSERID"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+   
+  </resultMap>
+  
+  <select id="findAllHotelstar"  resultMap="resultHotelstarMap"  parameterClass="java.util.Map">
+  
+    select * from T_HOTELSTAR
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllHotelstarBySql"  resultMap="resultHotelstarMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteHotelstarBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countHotelstarBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_HOTELSTAR
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findHotelstar" parameterClass="long" resultClass="Hotelstar">
+    select 
+    	ID as id,
+	  			C_STARID as starid,
+	  			C_STARNAME as starname,
+	  			C_VAL as val,
+	  			C_CREATEUSERID as createuserid,
+	  			C_COMMENT as comment 
+     from T_HOTELSTAR
+    where ID = #id#
+  </select>
+   
+  <insert id="createHotelstar" parameterClass="Hotelstar">
+    insert into T_HOTELSTAR ( 
+    	ID,
+	  			C_STARID,
+	  			C_STARNAME,
+	  			C_VAL,
+	  			C_CREATEUSERID,
+	  			C_COMMENT 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#starid#,
+	  					
+	  						#starname#,
+	  					
+							#val:DECIMAL#,
+						
+							#createuserid:DECIMAL#,
+						
+	  						#comment#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteHotelstar" parameterClass="long">
+    delete from T_HOTELSTAR
+    where ID = #id#
+  </delete>
+	
+  <update id="updateHotelstar" parameterClass="Hotelstar">
+    update T_HOTELSTAR 
+    set 
+    	C_STARID = #starid#,
+	  					C_STARNAME = #starname#,
+	  					C_VAL = #val:DECIMAL#,
+						C_CREATEUSERID = #createuserid:DECIMAL#,
+						C_COMMENT = #comment#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

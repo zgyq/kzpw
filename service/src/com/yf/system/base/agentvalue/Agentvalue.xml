@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Agentvalue">
+  
+  <typeAlias alias="Agentvalue" type="com.yf.system.base.agentvalue.Agentvalue"/>
+  
+
+  <resultMap id="resultAgentvalueMap" class="Agentvalue">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="angentid" column="C_ANGENTID"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="memberid" column="C_MEMBERID"/>
+  
+     <result property="rvalue" column="C_RVALUE"/>
+   
+  </resultMap>
+  
+  <select id="findAllAgentvalue"  resultMap="resultAgentvalueMap"  parameterClass="java.util.Map">
+  
+    select * from T_AGENTVALUE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllAgentvalueBySql"  resultMap="resultAgentvalueMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteAgentvalueBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countAgentvalueBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_AGENTVALUE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findAgentvalue" parameterClass="long" resultClass="Agentvalue">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_ANGENTID as angentid,
+	  			C_CREATETIME as createtime,
+	  			C_MEMBERID as memberid,
+	  			C_RVALUE as rvalue 
+     from T_AGENTVALUE
+    where ID = #id#
+  </select>
+   
+  <insert id="createAgentvalue" parameterClass="Agentvalue">
+    insert into T_AGENTVALUE ( 
+    	ID,
+	  			C_NAME,
+	  			C_ANGENTID,
+	  			C_CREATETIME,
+	  			C_MEMBERID,
+	  			C_RVALUE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+							#angentid:DECIMAL#,
+						
+	  						#createtime#,
+	  					
+							#memberid:DECIMAL#,
+						
+	  						#rvalue#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteAgentvalue" parameterClass="long">
+    delete from T_AGENTVALUE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateAgentvalue" parameterClass="Agentvalue">
+    update T_AGENTVALUE 
+    set 
+    	C_NAME = #name#,
+	  					C_ANGENTID = #angentid:DECIMAL#,
+						C_CREATETIME = #createtime#,
+	  					C_MEMBERID = #memberid:DECIMAL#,
+						C_RVALUE = #rvalue#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

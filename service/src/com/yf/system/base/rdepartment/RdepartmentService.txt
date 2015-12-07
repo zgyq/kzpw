@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 部门销售汇总表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Rdepartment createRdepartment(Rdepartment rdepartment) throws SQLException;
+	
+	/**
+	 * 删除 部门销售汇总表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRdepartment(long id);
+	
+	
+	/**
+	 * 修改 部门销售汇总表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRdepartment(Rdepartment rdepartment);
+
+		
+	/**
+	 * 修改 部门销售汇总表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRdepartmentIgnoreNull(Rdepartment rdepartment);
+		
+	
+	/**
+	 * 查找 部门销售汇总表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRdepartment(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 部门销售汇总表
+	 * @param id
+	 * @return
+	 */
+	public Rdepartment findRdepartment(long id);
+	
+	
+	/** 
+	 * 查找 部门销售汇总表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRdepartmentForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找部门销售汇总表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRdepartmentBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 部门销售汇总表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRdepartmentBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRdepartmentBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IRdepartmentComponent rdepartmentComponent;
+	  
+ 	
+ 	public IRdepartmentComponent getRdepartmentComponent() {
+		return rdepartmentComponent;
+	}
+	public void setRdepartmentComponent(IRdepartmentComponent  rdepartmentComponent) {
+		this.rdepartmentComponent = rdepartmentComponent;
+	}
+	/**
+	 * 创建 部门销售汇总表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Rdepartment createRdepartment(Rdepartment rdepartment) throws SQLException{
+	
+		return rdepartmentComponent.createRdepartment(rdepartment);
+	}
+	/**
+	 * 删除 部门销售汇总表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteRdepartment(long id){
+	
+		return rdepartmentComponent.deleteRdepartment(id);
+	}
+	
+	
+	/**
+	 * 修改 部门销售汇总表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateRdepartment(Rdepartment rdepartment){
+		return rdepartmentComponent.updateRdepartment(rdepartment);
+	
+	}
+
+		
+	/**
+	 * 修改 部门销售汇总表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateRdepartmentIgnoreNull(Rdepartment rdepartment){
+			return rdepartmentComponent.updateRdepartmentIgnoreNull(rdepartment);
+	
+	}
+	
+	/**
+	 * 查找 部门销售汇总表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRdepartment(String where, String orderby,int limit,int offset){
+		return rdepartmentComponent.findAllRdepartment(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 部门销售汇总表
+	 * @param id
+	 * @return
+	 */
+	public Rdepartment findRdepartment(long id){
+		return rdepartmentComponent.findRdepartment(id);
+	}
+	
+	/** 
+	 * 查找 部门销售汇总表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllRdepartmentForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return rdepartmentComponent.findAllRdepartment(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找部门销售汇总表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllRdepartmentBySql(String sql,int limit,int offset){
+		return rdepartmentComponent.findAllRdepartment(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 部门销售汇总表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteRdepartmentBySql(String sql){
+		return rdepartmentComponent.excuteRdepartmentBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countRdepartmentBySql(String sql){
+		return rdepartmentComponent.countRdepartmentBySql(sql);
+	}
+	
+	
+

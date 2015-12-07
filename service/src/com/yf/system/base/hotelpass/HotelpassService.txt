@@ -1,0 +1,206 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 酒店常用入住人表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Hotelpass createHotelpass(Hotelpass hotelpass) throws SQLException;
+	
+	/**
+	 * 删除 酒店常用入住人表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteHotelpass(long id);
+	
+	
+	/**
+	 * 修改 酒店常用入住人表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateHotelpass(Hotelpass hotelpass);
+
+		
+	/**
+	 * 修改 酒店常用入住人表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateHotelpassIgnoreNull(Hotelpass hotelpass);
+		
+	
+	/**
+	 * 查找 酒店常用入住人表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelpass(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 酒店常用入住人表
+	 * @param id
+	 * @return
+	 */
+	public Hotelpass findHotelpass(long id);
+	
+	
+	/** 
+	 * 查找 酒店常用入住人表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllHotelpassForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找酒店常用入住人表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelpassBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 酒店常用入住人表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteHotelpassBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countHotelpassBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private IHotelpassComponent hotelpassComponent;
+	  
+ 	
+ 	public IHotelpassComponent getHotelpassComponent() {
+		return hotelpassComponent;
+	}
+	public void setHotelpassComponent(IHotelpassComponent  hotelpassComponent) {
+		this.hotelpassComponent = hotelpassComponent;
+	}
+	/**
+	 * 创建 酒店常用入住人表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Hotelpass createHotelpass(Hotelpass hotelpass) throws SQLException{
+	
+		return hotelpassComponent.createHotelpass(hotelpass);
+	}
+	/**
+	 * 删除 酒店常用入住人表
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteHotelpass(long id){
+	
+		return hotelpassComponent.deleteHotelpass(id);
+	}
+	
+	
+	/**
+	 * 修改 酒店常用入住人表
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateHotelpass(Hotelpass hotelpass){
+		return hotelpassComponent.updateHotelpass(hotelpass);
+	
+	}
+
+		
+	/**
+	 * 修改 酒店常用入住人表但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateHotelpassIgnoreNull(Hotelpass hotelpass){
+			return hotelpassComponent.updateHotelpassIgnoreNull(hotelpass);
+	
+	}
+	
+	/**
+	 * 查找 酒店常用入住人表
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelpass(String where, String orderby,int limit,int offset){
+		return hotelpassComponent.findAllHotelpass(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 酒店常用入住人表
+	 * @param id
+	 * @return
+	 */
+	public Hotelpass findHotelpass(long id){
+		return hotelpassComponent.findHotelpass(id);
+	}
+	
+	/** 
+	 * 查找 酒店常用入住人表
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllHotelpassForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return hotelpassComponent.findAllHotelpass(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找酒店常用入住人表
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllHotelpassBySql(String sql,int limit,int offset){
+		return hotelpassComponent.findAllHotelpass(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 酒店常用入住人表
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteHotelpassBySql(String sql){
+		return hotelpassComponent.excuteHotelpassBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countHotelpassBySql(String sql){
+		return hotelpassComponent.countHotelpassBySql(sql);
+	}
+	
+	
+

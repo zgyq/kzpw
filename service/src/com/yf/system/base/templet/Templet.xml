@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Templet">
+  
+  <typeAlias alias="Templet" type="com.yf.system.base.templet.Templet"/>
+  
+
+  <resultMap id="resultTempletMap" class="Templet">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="templetname" column="C_TEMPLETNAME"/>
+  
+     <result property="templetmess" column="C_TEMPLETMESS"/>
+  
+     <result property="templettype" column="C_TEMPLETTYPE"/>
+  
+     <result property="templetyewu" column="C_TEMPLETYEWU"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createuserid" column="C_CREATEUSERID"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+   
+  </resultMap>
+  
+  <select id="findAllTemplet"  resultMap="resultTempletMap"  parameterClass="java.util.Map">
+  
+    select * from T_TEMPLET
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTempletBySql"  resultMap="resultTempletMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTempletBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTempletBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TEMPLET
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTemplet" parameterClass="long" resultClass="Templet">
+    select 
+    	ID as id,
+	  			C_TEMPLETNAME as templetname,
+	  			C_TEMPLETMESS as templetmess,
+	  			C_TEMPLETTYPE as templettype,
+	  			C_TEMPLETYEWU as templetyewu,
+	  			C_CREATETIME as createtime,
+	  			C_CREATEUSERID as createuserid,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3 
+     from T_TEMPLET
+    where ID = #id#
+  </select>
+   
+  <insert id="createTemplet" parameterClass="Templet">
+    insert into T_TEMPLET ( 
+    	ID,
+	  			C_TEMPLETNAME,
+	  			C_TEMPLETMESS,
+	  			C_TEMPLETTYPE,
+	  			C_TEMPLETYEWU,
+	  			C_CREATETIME,
+	  			C_CREATEUSERID,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#templetname#,
+	  					
+	  						#templetmess#,
+	  					
+	  						#templettype#,
+	  					
+	  						#templetyewu#,
+	  					
+	  						#createtime#,
+	  					
+							#createuserid:DECIMAL#,
+						
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTemplet" parameterClass="long">
+    delete from T_TEMPLET
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTemplet" parameterClass="Templet">
+    update T_TEMPLET 
+    set 
+    	C_TEMPLETNAME = #templetname#,
+	  					C_TEMPLETMESS = #templetmess#,
+	  					C_TEMPLETTYPE = #templettype#,
+	  					C_TEMPLETYEWU = #templetyewu#,
+	  					C_CREATETIME = #createtime#,
+	  					C_CREATEUSERID = #createuserid:DECIMAL#,
+						C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

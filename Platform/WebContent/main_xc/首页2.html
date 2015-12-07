@@ -1,0 +1,383 @@
+<!doctype html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="author" content="" />
+		<meta name="MSSmartTagsPreventParsing" content="true" />
+		<meta http-equiv="imagetoolbar" content="no" />
+		<meta name="robots" content="index, follow" />
+        <title>首页</title>
+			
+		<link rel="stylesheet" type="text/css" href="css/screen.css" />
+
+		<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cycle.all.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="js/jcarousellite_1.0.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready( function(){
+				$('.tel_in').mouseover(function(){
+					$('.tel_more').css('display','block');
+				});
+								
+				$('.tel_more').mouseover(function(){
+					$('.tel_more').css('display','block');
+					
+				});
+				
+				$('.tel_more').mouseout(function(){
+					$('.tel_more').css('display','none');
+				});
+				
+				$(".nav_list_in").jCarouselLite({
+					btnPrev: "#prev",
+					btnNext: "#next",
+					easing: "easeInOutExpo",
+					speed: 1000,
+					visible: 4.8,
+					scroll: 2,
+					circular: false
+				});
+				
+				$('.side_list>li').find('a:first').toggle(function(){
+					$(this).next('ul').slideDown();
+				}, function(){
+					$(this).next('ul').slideUp();
+				});
+				
+				$('.side_btn').click(function(){
+					$('.sidebar').toggle();
+				});
+				
+				$(".tab_title").tabs(".tab_cont");
+				
+			});
+		</script>
+	
+	</head> 
+
+<body>
+	<div id="header">
+		<div class="logo"><a href="#"><img src="images/logo.gif" alt=""></a></div>
+		<div class="header_title"><img src="images/header_title.gif" alt=""></div>
+		<div class="header_tel">
+			<span class="tel_in">客服电话：<i>400 649 8898</i></span>
+			<div class="tel_more">
+				<span>出票：<i>56258257</i></span>
+				<span>退改签：<i>56258257</i></span>
+				<span>行程单：<i>56258257</i></span>
+				<span>国际客服：<i>56258257</i></span>
+				<span>投诉建议：<i>56258257</i></span>			</div>
+			
+			<span class="hello">您好，欢迎你登陆</span>
+			<strong>李木子！</strong>
+			<a href="#">安全退出</a>
+		</div>
+	</div>
+	
+	<div class="nav">
+		<div class="nav_left">
+			<a href="#" class="a_return">返回首页</a>
+			<div class="nav_list">
+				<div class="nav_list_in">
+					<ul id="nav_items">
+						<li><a href="#">机票</a></li>
+						<li><a href="#">采购酒店</a></li>
+						<li><a href="#">市场拓展</a></li>
+						<li><a href="#">报表管理</a></li>
+						<li><a href="#">系统管理</a></li>
+						<li><a href="#">货物管理</a></li>
+						<li><a href="#">人事管理</a></li>
+						<li><a href="#">工资管理</a></li>
+					</ul>
+				</div>
+				<a href="#" id="prev">prev</a>
+				<a href="#" id="next">next</a>
+			</div>
+			<a href="#" class="nav_order">待处理订单<span>(3)</span></a>
+		</div>
+		
+		<div class="nav_blank"></div>
+		<div class="nav_more">
+			<a href="#" class="a2">在线客服</a>
+			<a href="#" class="a1">退改签规定</a>	
+		</div>
+	</div>
+	
+	<div id="content">
+		<div class="sidebar">
+			<ul class="side_list">
+				<li>
+					<a href="#" class="a1">机票采购</a>
+					<ul>
+						<li><a href="#">机票采购1</a></li>
+						<li><a href="#">机票采购2</a></li>
+						<li><a href="#">机票采购3</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="a2">机票采购管理</a>
+					<ul style="display:block;">
+						<li><a href="#">国内机票查询</a></li>
+						<li><a href="#">国际机票查询</a></li>
+						<li><a href="#">团队/包机申请</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="a3">机票订单管理</a>
+					<ul>
+						<li><a href="#">机票订单管理1</a></li>
+						<li><a href="#">机票订单管理2</a></li>
+						<li><a href="#">机票订单管理3</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="a4">退废票管理</a>
+					<ul>
+						<li><a href="#">退废票管理1</a></li>
+						<li><a href="#">退废票管理2</a></li>
+						<li><a href="#">退废票管理3</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="a5">配送收银订单</a>
+					<ul>
+						<li><a href="#">配送收银订单1</a></li>
+						<li><a href="#">配送收银订单2</a></li>
+						<li><a href="#">配送收银订单3</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="a6">常用工具</a>
+					<ul>
+						<li><a href="#">常用工具1</a></li>
+						<li><a href="#">常用工具2</a></li>
+						<li><a href="#">常用工具3</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="a7">帮助中心</a>
+					<ul>
+						<li><a href="#">帮助中心1</a></li>
+						<li><a href="#">帮助中心2</a></li>
+						<li><a href="#">帮助中心3</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="a8">投诉与建议</a>
+					<ul>
+						<li><a href="#">投诉与建议1</a></li>
+						<li><a href="#">投诉与建议2</a></li>
+						<li><a href="#">投诉与建议3</a></li>
+					</ul>
+				</li>				
+			</ul>
+			
+			<div class="side_bank">
+				<div class="bank_title">支付宝信息</div>
+				<ul>
+					<li><a href="#"><img src="images/bank1.gif" alt=""></a></li>
+					<li><a href="#"><img src="images/bank2.gif" alt=""></a></li>
+					<li><a href="#"><img src="images/bank3.gif" alt=""></a></li>
+				</ul>
+			</div>			
+		</div><!--end of sidebar-->
+		
+		<div class="side_btn"></div>
+		
+		
+		<div class="cont_main">
+			<div class="tab_box">
+				<ul class="tab_title">
+					<li><a href="#">机票查询</a></li>
+					<li><a href="#">PNR导入</a></li>
+					<li><a href="#">PNR文本导入</a></li>
+					<li><a href="#">客服中心</a></li>
+				</ul>
+				
+				<div class="tab_cont_box">
+				<div class="tab_cont tab_cont1">
+					<p>国内领先低价机票预订网站，提供四千多条国内国际航线特价机票，打折机票的价格查询！</p>
+					<form action="#" class="tab_form">
+					<fieldset>
+						<div class="form_radio">
+							<span>航程类型：</span><input type="radio" name="radio1"><label>单程</label><input type="radio" name="radio1"><label>往返</label>
+						</div>
+						<div class="form_search">
+							<div class="search_pane">
+								<label>出发城市</label>
+								<input type="text" value="北京">
+							</div>
+							<div class="search_pane">
+								<label>到达城市</label>
+								<input type="text" value="上海虹桥">
+							</div>
+							<div class="search_pane">
+								<label>出发日期</label>
+								<input type="text" value="2013-03-11" class="input_date">
+							</div>
+							<div class="search_pane">
+								<label>中转城市</label>
+								<input type="text" value="">
+							</div>
+							<div class="search_pane">
+								<label>航空公司</label>
+								<select>
+									<option>所有航空公司</option>
+									<option>公司一</option>
+									<option>公司二</option>
+								</select>
+							</div>
+							<div class="search_pane">
+								<label>返程日期</label>
+								<input type="text" value="2013-03-11" class="input_date">
+							</div>
+						</div>
+						<input type="submit" value="查询" class="btn1">
+						<input type="submit" value="柜台查询" class="btn2">
+					</fieldset>
+					</form>
+				</div>
+				
+				<div class="tab_cont tab_cont2">
+					<div class="form_radio2">
+						<input type="radio" name="radio2"><label>常规PNR导入</label>
+						<input type="radio" name="radio2"><label>团队PNR导入</label>
+						<span>（必须是已经K位成功的编码）</span>
+					</div>
+					<div class="import_row">
+						<label>PNR</label>
+						<input type="text" value="" class="input_import">
+						<input type="submit" value="导入" class="btn2">
+					</div>
+					
+					<div class="care_item">
+						<dl>
+							<dt>注意事项：</dt>
+							<dd>1、该PNR姓名组正确</dd>
+							<dd>2、航段组正确、舱位状况正确</dd>
+							<dd>3、每个乘客均有真实的SSR FOID 项输入</dd>
+							<dd>4、该PNR不能包含票价组项，如FC/FN/FP</dd>
+							<dd class="d_on">5、当儿童编码和成人编码一起导入时，格式为：“成人PNR|儿童PNR”</dd>
+						</dl>
+					</div>
+					
+					<a href="a_more">通过RT内容创建订单 -></a>
+				</div>
+				
+				<div class="tab_cont tab_cont3">
+					<div class="pnr_box"></div>
+					<div class="pnr_info">
+						<div class="pnr_info1">
+							<input type="submit" value="导入" class="pnr_btn">
+							<p>特别提示:请及时授权RMK TJ AUTH URC220</p>
+						</div>
+						<div class="pnr_info2">
+							<dl>
+								<dt>注意事项：</dt>
+								<dd>1、该PNR姓名组正确</dd>
+								<dd>2、航段组正确、舱位状况正确 </dd>
+								<dd>3、每个乘客均有真实的SSR FOID 项输入</dd>
+								<dd>4、该PNR不能包含票价组项，如FC/FN/FP</dd>
+								<dd class="d_on">5、请对我公司OFFICE:URC220授权</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+					
+				<div class="tab_cont tab_cont4">
+					<div class="service_info1">
+						<ul>
+							<li class="li_first"><span>24小时免费服务热线：</span><em>400-649-8898</em></li>
+							<li><span>催单服务：</span><em>400-649-8898请按（1）</em></li>
+							<li><span>保险单：</span><em>400-649-8898请按（6）</em></li>
+							<li><span>国际票：</span><em>400-649-8898请按（2）</em></li>
+							<li><span>技术支持：</span><em>400-649-8898请按（8）</em></li>
+							<li><span>退改签：</span><em>400-649-8898请按（3）</em></li>
+							<li><span>投诉建议：</span><em>400-649-8898请按（9）</em></li>
+							<li><span>行程单：</span><em>400-649-8898请按（5）</em></li>
+						</ul>
+					</div>
+					<div class="service_info2">
+						<p><span>催单服务</span>(周一至周日工作时间: 00:00-23:59 热线电话：400-649-8898)</p>
+						<a href="#" class="a_qq1"><img src="images/qq.gif" alt=""></a>
+						<a href="#" class="a_qq2"><img src="images/qq.gif" alt=""></a>
+					</div>
+					<div class="service_info2">
+						<p><span>退票处理</span>(周一至周日工作时间: 00:00-23:59 热线电话：400-649-8898)</p>
+						<a href="#" class="a_qq1"><img src="images/qq.gif" alt=""></a>
+						<a href="#" class="a_qq2"><img src="images/qq.gif" alt=""></a>
+					</div>
+				</div>
+				</div>
+				
+				
+			</div>
+			
+			<div class="cont_news">
+				<div class="cont_news_title"><span>行业动态</span><a href="#">更多></a></div>
+				<ul class="news_list">
+					<li><a href="#">心程旅行网改版成功啦！</a><em>2013-03-13</em></li>
+					<li><a href="#">心程旅行网十大品牌排名最新排行榜</a><em>2013-03-13</em></li>
+					<li><a href="#">心程旅行网改版成功啦！</a><em>2013-03-13</em></li>
+				</ul>
+			</div>
+		</div><!--end of cont_main-->
+		
+		<div class="side_right">
+			<h2>平台公告</h2>
+			<ul class="side_right_list">
+				<li><a href="#">心程旅行网改版成功啦！</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网十大品牌排名最新排行榜</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网改版成功啦！</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网十大品牌排名最新排行榜</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网改版成功啦！</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网十大品牌排名最新排行榜</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网改版成功啦！</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网十大品牌排名最新排行榜</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网改版成功啦！</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网十大品牌排名最新排行榜</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网改版成功啦！</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网十大品牌排名最新排行榜</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网改版成功啦！</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网十大品牌排名最新排行榜</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网改版成功啦！</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网十大品牌排名最新排行榜</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网改版成功啦！</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网十大品牌排名最新排行榜</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网改版成功啦！</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网改版成功啦！</a><em>2013-03-13</em></li>
+				<li><a href="#">心程旅行网十大品牌排名最新排行榜</a><em>2013-03-13</em></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<p>Copyright&copy; 2010-2015 All Rights Reserved   心程旅行网</p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+h1{margin:0;padding:20px 0;font-size:16px;}
+ol{padding-left:20px;line-height:130%;}
+#box{width:600px;text-align:left;margin:0 auto;padding-top:80px;}
+#suggest,#suggest2,#suggest3{width:125px;}
+.gray{color:#70bd20;}
+.ac_results {background:#faf7e7;border:1px solid #666;position: absolute;z-index: 10000;display: none;width:159px;}
+.ac_results ul{margin:0;padding:0;list-style:none;}
+.ac_results li a{white-space: nowrap;text-decoration:none;display:block;color:#000;padding:1px;width:154px;}
+.ac_results li{border:1px solid #fff;  width:155px;}
+.ac_over,.ac_results li a:hover {background:#eee5b4;padding:1px; width:154px;}
+.ac_results li a span{float:right;}
+.ac_result_tip{border-bottom:1px dashed #666; padding:3px 0 3px 3px;   width:153px;} 
+ 

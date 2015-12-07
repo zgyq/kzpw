@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Tripline">
+  
+  <typeAlias alias="Tripline" type="com.yf.system.base.tripline.Tripline"/>
+  
+
+  <resultMap id="resultTriplineMap" class="Tripline">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="createuser" column="C_CREATEUSER"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="modifyuser" column="C_MODIFYUSER"/>
+  
+     <result property="modifytime" column="C_MODIFYTIME"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="startprice" column="C_STARTPRICE"/>
+  
+     <result property="proprice" column="C_PROPRICE"/>
+  
+     <result property="predesc" column="C_PREDESC"/>
+  
+     <result property="cityid" column="C_CITYID"/>
+  
+     <result property="startrange" column="C_STARTRANGE"/>
+  
+     <result property="customeragentid" column="C_CUSTOMERAGENTID"/>
+  
+     <result property="startdate" column="C_STARTDATE"/>
+  
+     <result property="image" column="C_IMAGE"/>
+  
+     <result property="endcityid" column="C_ENDCITYID"/>
+  
+     <result property="ucode" column="C_UCODE"/>
+  
+     <result property="language" column="C_LANGUAGE"/>
+  
+     <result property="typeid" column="C_TYPEID"/>
+     
+     <result property="longname" column="C_LONGNAME"/>
+   
+  </resultMap>
+  
+  <select id="findAllTripline"  resultMap="resultTriplineMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRIPLINE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTriplineBySql"  resultMap="resultTriplineMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTriplineBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTriplineBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRIPLINE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTripline" parameterClass="long" resultClass="Tripline">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_CREATEUSER as createuser,
+	  			C_CREATETIME as createtime,
+	  			C_MODIFYUSER as modifyuser,
+	  			C_MODIFYTIME as modifytime,
+	  			C_DESCRIPTION as description,
+	  			C_PRICE as price,
+	  			C_STARTPRICE as startprice,
+	  			C_PROPRICE as proprice,
+	  			C_PREDESC as predesc,
+	  			C_CITYID as cityid,
+	  			C_STARTRANGE as startrange,
+	  			C_CUSTOMERAGENTID as customeragentid,
+	  			C_STARTDATE as startdate,
+	  			C_IMAGE as image,
+	  			C_ENDCITYID as endcityid,
+	  			C_UCODE as ucode,
+	  			C_LANGUAGE as language,
+	  			C_TYPEID as typeid,
+	  			C_LONGNAME as longname 
+     from T_TRIPLINE
+    where ID = #id#
+  </select>
+   
+  <insert id="createTripline" parameterClass="Tripline">
+    insert into T_TRIPLINE ( 
+    	ID,
+	  			C_NAME,
+	  			C_CREATEUSER,
+	  			C_CREATETIME,
+	  			C_MODIFYUSER,
+	  			C_MODIFYTIME,
+	  			C_DESCRIPTION,
+	  			C_PRICE,
+	  			C_STARTPRICE,
+	  			C_PROPRICE,
+	  			C_PREDESC,
+	  			C_CITYID,
+	  			C_STARTRANGE,
+	  			C_CUSTOMERAGENTID,
+	  			C_STARTDATE,
+	  			C_IMAGE,
+	  			C_ENDCITYID,
+	  			C_UCODE,
+	  			C_LANGUAGE,
+	  			C_TYPEID,
+	  			C_LONGNAME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#createuser#,
+	  					
+	  						#createtime#,
+	  					
+	  						#modifyuser#,
+	  					
+	  						#modifytime#,
+	  					
+	  						#description#,
+	  					
+							#price:DECIMAL#,
+						
+							#startprice:DECIMAL#,
+						
+							#proprice:DECIMAL#,
+						
+	  						#predesc#,
+	  					
+							#cityid:DECIMAL#,
+						
+	  						#startrange#,
+	  					
+							#customeragentid:DECIMAL#,
+						
+	  						#startdate#,
+	  					
+	  						#image#,
+	  					
+							#endcityid:DECIMAL#,
+						
+							#ucode:DECIMAL#,
+						
+							#language:DECIMAL#,
+						
+  							#typeid:DECIMAL#,
+  							
+  							#longname#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTripline" parameterClass="long">
+    delete from T_TRIPLINE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTripline" parameterClass="Tripline">
+    update T_TRIPLINE 
+    set 
+    	C_NAME = #name#,
+	  					C_CREATEUSER = #createuser#,
+	  					C_CREATETIME = #createtime#,
+	  					C_MODIFYUSER = #modifyuser#,
+	  					C_MODIFYTIME = #modifytime#,
+	  					C_DESCRIPTION = #description#,
+	  					C_PRICE = #price:DECIMAL#,
+						C_STARTPRICE = #startprice:DECIMAL#,
+						C_PROPRICE = #proprice:DECIMAL#,
+						C_PREDESC = #predesc#,
+	  					C_CITYID = #cityid:DECIMAL#,
+						C_STARTRANGE = #startrange#,
+	  					C_CUSTOMERAGENTID = #customeragentid:DECIMAL#,
+						C_STARTDATE = #startdate#,
+	  					C_IMAGE = #image#,
+	  					C_ENDCITYID = #endcityid:DECIMAL#,
+						C_UCODE = #ucode:DECIMAL#,
+						C_LANGUAGE = #language:DECIMAL#,
+						C_TYPEID = #typeid:DECIMAL#,
+						C_LONGNAME=#longname#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

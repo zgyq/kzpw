@@ -1,0 +1,220 @@
+﻿	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 行程景点关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Triprangescenicspot createTriprangescenicspot(Triprangescenicspot triprangescenicspot) throws SQLException;
+	
+	/**
+	 * 删除 行程景点关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTriprangescenicspot(long id);
+	
+	
+	/**
+	 * 修改 行程景点关联
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTriprangescenicspot(Triprangescenicspot triprangescenicspot);
+
+		
+	/**
+	 * 修改 行程景点关联但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTriprangescenicspotIgnoreNull(Triprangescenicspot triprangescenicspot);
+		
+	
+	/**
+	 * 查找 行程景点关联
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriprangescenicspot(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 行程景点关联
+	 * @param id
+	 * @return
+	 */
+	public Triprangescenicspot findTriprangescenicspot(long id);
+	
+	/**
+	 * 查找 行程景点关联 by language
+	 * @param id
+	 * @return
+	 */
+	public Triprangescenicspot findTriprangescenicspotbylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 行程景点关联
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTriprangescenicspotForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找行程景点关联
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriprangescenicspotBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 行程景点关联
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTriprangescenicspotBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTriprangescenicspotBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITriprangescenicspotComponent triprangescenicspotComponent;
+	  
+ 	
+ 	public ITriprangescenicspotComponent getTriprangescenicspotComponent() {
+		return triprangescenicspotComponent;
+	}
+	public void setTriprangescenicspotComponent(ITriprangescenicspotComponent  triprangescenicspotComponent) {
+		this.triprangescenicspotComponent = triprangescenicspotComponent;
+	}
+	/**
+	 * 创建 行程景点关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Triprangescenicspot createTriprangescenicspot(Triprangescenicspot triprangescenicspot) throws SQLException{
+	
+		return triprangescenicspotComponent.createTriprangescenicspot(triprangescenicspot);
+	}
+	/**
+	 * 删除 行程景点关联
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTriprangescenicspot(long id){
+	
+		return triprangescenicspotComponent.deleteTriprangescenicspot(id);
+	}
+	
+	
+	/**
+	 * 修改 行程景点关联
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTriprangescenicspot(Triprangescenicspot triprangescenicspot){
+		return triprangescenicspotComponent.updateTriprangescenicspot(triprangescenicspot);
+	
+	}
+
+		
+	/**
+	 * 修改 行程景点关联但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTriprangescenicspotIgnoreNull(Triprangescenicspot triprangescenicspot){
+			return triprangescenicspotComponent.updateTriprangescenicspotIgnoreNull(triprangescenicspot);
+	
+	}
+	
+	/**
+	 * 查找 行程景点关联
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriprangescenicspot(String where, String orderby,int limit,int offset){
+		return triprangescenicspotComponent.findAllTriprangescenicspot(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 行程景点关联
+	 * @param id
+	 * @return
+	 */
+	public Triprangescenicspot findTriprangescenicspot(long id){
+		return triprangescenicspotComponent.findTriprangescenicspot(id);
+	}
+	
+	/**
+	 * 查找 行程景点关联
+	 * @param id
+	 * @return
+	 */
+	public Triprangescenicspot findTriprangescenicspotbylanguage(long id,Integer language){
+		return triprangescenicspotComponent.findTriprangescenicspotbylanguage(id,language);
+	}
+	/** 
+	 * 查找 行程景点关联
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTriprangescenicspotForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return triprangescenicspotComponent.findAllTriprangescenicspot(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找行程景点关联
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTriprangescenicspotBySql(String sql,int limit,int offset){
+		return triprangescenicspotComponent.findAllTriprangescenicspot(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 行程景点关联
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTriprangescenicspotBySql(String sql){
+		return triprangescenicspotComponent.excuteTriprangescenicspotBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTriprangescenicspotBySql(String sql){
+		return triprangescenicspotComponent.countTriprangescenicspotBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,220 @@
+	
+  
+  
+   //粘贴到Service接口类
+ 	/**
+	 * 创建 票务温泉
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Tickctspa createTickctspa(Tickctspa tickctspa) throws SQLException;
+	
+	/**
+	 * 删除 票务温泉
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTickctspa(long id);
+	
+	
+	/**
+	 * 修改 票务温泉
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTickctspa(Tickctspa tickctspa);
+
+		
+	/**
+	 * 修改 票务温泉但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTickctspaIgnoreNull(Tickctspa tickctspa);
+		
+	
+	/**
+	 * 查找 票务温泉
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTickctspa(String where, String orderby,int limit,int offset);
+		
+	
+	/**
+	 * 查找 票务温泉
+	 * @param id
+	 * @return
+	 */
+	public Tickctspa findTickctspa(long id);
+	
+	/**
+	 * 查找 票务温泉 by language
+	 * @param id
+	 * @return
+	 */
+	public Tickctspa findTickctspabylanguage(long id ,Integer language);
+	
+	/** 
+	 * 查找 票务温泉
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTickctspaForPageinfo(String where, String orderby,PageInfo pageinfo);
+		
+	/** 
+	 * 根据Sql查找票务温泉
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTickctspaBySql(String sql,int limit,int offset);
+	
+	
+	/**
+	 * 执行Sql 票务温泉
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTickctspaBySql(String sql);
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTickctspaBySql(String sql);
+	
+	
+	//------------------------------------------------------------------------
+	//粘贴到Service实现类
+	
+	private ITickctspaComponent tickctspaComponent;
+	  
+ 	
+ 	public ITickctspaComponent getTickctspaComponent() {
+		return tickctspaComponent;
+	}
+	public void setTickctspaComponent(ITickctspaComponent  tickctspaComponent) {
+		this.tickctspaComponent = tickctspaComponent;
+	}
+	/**
+	 * 创建 票务温泉
+	 * @param id
+	 * @return deleted count 
+	 */
+	public Tickctspa createTickctspa(Tickctspa tickctspa) throws SQLException{
+	
+		return tickctspaComponent.createTickctspa(tickctspa);
+	}
+	/**
+	 * 删除 票务温泉
+	 * @param id
+	 * @return deleted count 
+	 */
+	public int deleteTickctspa(long id){
+	
+		return tickctspaComponent.deleteTickctspa(id);
+	}
+	
+	
+	/**
+	 * 修改 票务温泉
+	 * @param id
+	 * @return updated count 
+	 */
+	public int updateTickctspa(Tickctspa tickctspa){
+		return tickctspaComponent.updateTickctspa(tickctspa);
+	
+	}
+
+		
+	/**
+	 * 修改 票务温泉但忽略空值 
+	 * @param id
+	 * @return 
+	 */
+	public int updateTickctspaIgnoreNull(Tickctspa tickctspa){
+			return tickctspaComponent.updateTickctspaIgnoreNull(tickctspa);
+	
+	}
+	
+	/**
+	 * 查找 票务温泉
+	 * @param where
+	 * @param orderby
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTickctspa(String where, String orderby,int limit,int offset){
+		return tickctspaComponent.findAllTickctspa(where, orderby,limit,offset);
+	}
+		
+	
+	/**
+	 * 查找 票务温泉
+	 * @param id
+	 * @return
+	 */
+	public Tickctspa findTickctspa(long id){
+		return tickctspaComponent.findTickctspa(id);
+	}
+	
+	/**
+	 * 查找 票务温泉
+	 * @param id
+	 * @return
+	 */
+	public Tickctspa findTickctspabylanguage(long id,Integer language){
+		return tickctspaComponent.findTickctspabylanguage(id,language);
+	}
+	/** 
+	 * 查找 票务温泉
+	 * @param where
+	 * @param orderby
+	 * @param pageinfo
+	 * @return
+	 */
+	public List findAllTickctspaForPageinfo(String where, String orderby,PageInfo pageinfo){
+		return tickctspaComponent.findAllTickctspa(where, orderby,pageinfo);
+	}
+		
+	/** 
+	 * 根据Sql查找票务温泉
+	 * @param sql
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
+	public List findAllTickctspaBySql(String sql,int limit,int offset){
+		return tickctspaComponent.findAllTickctspa(sql,limit,offset);
+	}
+	
+	
+	/**
+	 * 执行Sql 票务温泉
+	 * @param sql 
+	 * @return updated count 
+	 */
+	public int excuteTickctspaBySql(String sql){
+		return tickctspaComponent.excuteTickctspaBySql(sql);
+	}
+	
+	/**
+	 * 执行Sql 
+	 * @param sql 
+	 * @return  count 
+	 */
+	public int countTickctspaBySql(String sql){
+		return tickctspaComponent.countTickctspaBySql(sql);
+	}
+	
+	
+

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Lowestprice">
+  
+  <typeAlias alias="Lowestprice" type="com.yf.system.base.lowestprice.Lowestprice"/>
+  
+
+  <resultMap id="resultLowestpriceMap" class="Lowestprice">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="fromcity" column="C_FROMCITY"/>
+  
+     <result property="tocity" column="C_TOCITY"/>
+  
+     <result property="aircompanyname" column="C_AIRCOMPANYNAME"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="discount" column="C_DISCOUNT"/>
+  
+     <result property="fromdate" column="C_FROMDATE"/>
+  
+     <result property="fromtime" column="C_FROMTIME"/>
+  
+     <result property="updatetime" column="C_UPDATETIME"/>
+     
+     <result property="scitycode" column="C_SCITYCODE"/>
+     
+     <result property="ecitycode" column="C_ECITYCODE"/>
+   
+  </resultMap>
+  
+  <select id="findAllLowestprice"  resultMap="resultLowestpriceMap"  parameterClass="java.util.Map">
+  
+    select * from T_LOWESTPRICE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllLowestpriceBySql"  resultMap="resultLowestpriceMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteLowestpriceBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countLowestpriceBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_LOWESTPRICE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findLowestprice" parameterClass="long" resultClass="Lowestprice">
+    select 
+    	ID as id,
+	  			C_FROMCITY as fromcity,
+	  			C_TOCITY as tocity,
+	  			C_AIRCOMPANYNAME as aircompanyname,
+	  			C_PRICE as price,
+	  			C_DISCOUNT as discount,
+	  			C_FROMDATE as fromdate,
+	  			C_FROMTIME as fromtime,
+	  			C_SCITYCODE as scitycode,
+	  			C_ECITYCODE as ecitycode,
+	  			C_UPDATETIME as updatetime 
+     from T_LOWESTPRICE
+    where ID = #id#
+  </select>
+   
+  <insert id="createLowestprice" parameterClass="Lowestprice">
+    insert into T_LOWESTPRICE ( 
+    	ID,
+	  			C_FROMCITY,
+	  			C_TOCITY,
+	  			C_AIRCOMPANYNAME,
+	  			C_PRICE,
+	  			C_DISCOUNT,
+	  			C_FROMDATE,
+	  			C_FROMTIME,
+	  			C_SCITYCODE,
+	  			C_ECITYCODE,
+	  			C_UPDATETIME 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#fromcity#,
+	  					
+	  						#tocity#,
+	  					
+	  						#aircompanyname#,
+	  					
+							#price:DECIMAL#,
+						
+	  						#discount#,
+	  					
+	  						#fromdate#,
+	  					
+	  						#fromtime#,
+	  						
+	  						#scitycode#,
+	  						
+	  						#ecitycode#,
+	  					
+	  						#updatetime#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteLowestprice" parameterClass="long">
+    delete from T_LOWESTPRICE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateLowestprice" parameterClass="Lowestprice">
+    update T_LOWESTPRICE 
+    set 
+    	C_FROMCITY = #fromcity#,
+	  					C_TOCITY = #tocity#,
+	  					C_AIRCOMPANYNAME = #aircompanyname#,
+	  					C_PRICE = #price:DECIMAL#,
+						C_DISCOUNT = #discount#,
+	  					C_FROMDATE = #fromdate#,
+	  					C_FROMTIME = #fromtime#,
+	  					C_SCITYCODE = #scitycode#,
+	  					C_ECITYCODE = #ecitycode#,
+	  					C_UPDATETIME = #updatetime#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

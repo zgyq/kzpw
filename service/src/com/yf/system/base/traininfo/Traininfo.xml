@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Traininfo">
+  
+  <typeAlias alias="Traininfo" type="com.yf.system.base.traininfo.Traininfo"/>
+  
+
+  <resultMap id="resultTraininfoMap" class="Traininfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="train_no" column="C_TRAIN_NO"/>
+  
+     <result property="from_id" column="C_FROM_ID"/>
+  
+     <result property="from_name" column="C_FROM_NAME"/>
+  
+     <result property="from_time" column="C_FROM_TIME"/>
+  
+     <result property="to_id" column="C_TO_ID"/>
+  
+     <result property="to_name" column="C_TO_NAME"/>
+  
+     <result property="to_time" column="C_TO_TIME"/>
+  
+     <result property="run_time" column="C_RUN_TIME"/>
+  
+     <result property="run_day" column="C_RUN_DAY"/>
+  
+     <result property="start_data" column="C_START_DATA"/>
+  
+     <result property="end_data" column="C_END_DATA"/>
+  
+     <result property="mem" column="C_MEM"/>
+  
+     <result property="back1" column="C_BACK1"/>
+  
+     <result property="back2" column="C_BACK2"/>
+  
+     <result property="back3" column="C_BACK3"/>
+  
+     <result property="back4" column="C_BACK4"/>
+  
+     <result property="back5" column="C_BACK5"/>
+  
+     <result property="back6" column="C_BACK6"/>
+  
+     <result property="back7" column="C_BACK7"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllTraininfo"  resultMap="resultTraininfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_TRAININFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllTraininfoBySql"  resultMap="resultTraininfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteTraininfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countTraininfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_TRAININFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findTraininfo" parameterClass="long" resultClass="Traininfo">
+    select 
+    	ID as id,
+	  			C_TRAIN_NO as train_no,
+	  			C_FROM_ID as from_id,
+	  			C_FROM_NAME as from_name,
+	  			C_FROM_TIME as from_time,
+	  			C_TO_ID as to_id,
+	  			C_TO_NAME as to_name,
+	  			C_TO_TIME as to_time,
+	  			C_RUN_TIME as run_time,
+	  			C_RUN_DAY as run_day,
+	  			C_START_DATA as start_data,
+	  			C_END_DATA as end_data,
+	  			C_MEM as mem,
+	  			C_BACK1 as back1,
+	  			C_BACK2 as back2,
+	  			C_BACK3 as back3,
+	  			C_BACK4 as back4,
+	  			C_BACK5 as back5,
+	  			C_BACK6 as back6,
+	  			C_BACK7 as back7,
+	  			C_STATE as state 
+     from T_TRAININFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createTraininfo" parameterClass="Traininfo">
+    insert into T_TRAININFO ( 
+    	ID,
+	  			C_TRAIN_NO,
+	  			C_FROM_ID,
+	  			C_FROM_NAME,
+	  			C_FROM_TIME,
+	  			C_TO_ID,
+	  			C_TO_NAME,
+	  			C_TO_TIME,
+	  			C_RUN_TIME,
+	  			C_RUN_DAY,
+	  			C_START_DATA,
+	  			C_END_DATA,
+	  			C_MEM,
+	  			C_BACK1,
+	  			C_BACK2,
+	  			C_BACK3,
+	  			C_BACK4,
+	  			C_BACK5,
+	  			C_BACK6,
+	  			C_BACK7,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#train_no#,
+	  					
+	  						#from_id#,
+	  					
+	  						#from_name#,
+	  					
+	  						#from_time#,
+	  					
+	  						#to_id#,
+	  					
+	  						#to_name#,
+	  					
+	  						#to_time#,
+	  					
+	  						#run_time#,
+	  					
+	  						#run_day#,
+	  					
+	  						#start_data#,
+	  					
+	  						#end_data#,
+	  					
+	  						#mem#,
+	  					
+	  						#back1#,
+	  					
+	  						#back2#,
+	  					
+	  						#back3#,
+	  					
+	  						#back4#,
+	  					
+	  						#back5#,
+	  					
+	  						#back6#,
+	  					
+	  						#back7#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteTraininfo" parameterClass="long">
+    delete from T_TRAININFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateTraininfo" parameterClass="Traininfo">
+    update T_TRAININFO 
+    set 
+    	C_TRAIN_NO = #train_no#,
+	  					C_FROM_ID = #from_id#,
+	  					C_FROM_NAME = #from_name#,
+	  					C_FROM_TIME = #from_time#,
+	  					C_TO_ID = #to_id#,
+	  					C_TO_NAME = #to_name#,
+	  					C_TO_TIME = #to_time#,
+	  					C_RUN_TIME = #run_time#,
+	  					C_RUN_DAY = #run_day#,
+	  					C_START_DATA = #start_data#,
+	  					C_END_DATA = #end_data#,
+	  					C_MEM = #mem#,
+	  					C_BACK1 = #back1#,
+	  					C_BACK2 = #back2#,
+	  					C_BACK3 = #back3#,
+	  					C_BACK4 = #back4#,
+	  					C_BACK5 = #back5#,
+	  					C_BACK6 = #back6#,
+	  					C_BACK7 = #back7#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

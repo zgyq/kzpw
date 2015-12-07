@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Biguserprice">
+  
+  <typeAlias alias="Biguserprice" type="com.yf.system.base.biguserprice.Biguserprice"/>
+  
+
+  <resultMap id="resultBiguserpriceMap" class="Biguserprice">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="angentid" column="C_ANGENTID"/>
+  
+     <result property="hkuanprice" column="C_HKUANPRICE"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createuserid" column="C_CREATEUSERID"/>
+  
+     <result property="comment" column="C_COMMENT"/>
+     <result property="repaytype" column="C_REPAYTYPE"/>
+     <result property="debt" column="C_DEBT"/>
+     <result property="deptid" column="C_DEPTID"/>
+   
+  </resultMap>
+  
+  <select id="findAllBiguserprice"  resultMap="resultBiguserpriceMap"  parameterClass="java.util.Map">
+  
+    select * from T_BIGUSERPRICE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllBiguserpriceBySql"  resultMap="resultBiguserpriceMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteBiguserpriceBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countBiguserpriceBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_BIGUSERPRICE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findBiguserprice" parameterClass="long" resultClass="Biguserprice">
+    select 
+    	ID as id,
+	  			C_ANGENTID as angentid,
+	  			C_HKUANPRICE as hkuanprice,
+	  			C_CREATETIME as createtime,
+	  			C_CREATEUSERID as createuserid,
+	  			C_COMMENT as comment ,
+	  			C_REPAYTYPE as repaytype,
+	  			C_DEBT as debt,
+	  			C_DEPTID as deptid
+     from T_BIGUSERPRICE
+    where ID = #id#
+  </select>
+   
+  <insert id="createBiguserprice" parameterClass="Biguserprice">
+    insert into T_BIGUSERPRICE ( 
+    	ID,
+	  			C_ANGENTID,
+	  			C_HKUANPRICE,
+	  			C_CREATETIME,
+	  			C_CREATEUSERID,
+	  			C_COMMENT ,
+	  			C_REPAYTYPE,
+	  			C_DEBT,
+	  			C_DEPTID
+    )
+    values (
+    	
+	  						#id#,
+	  					
+							#angentid:DECIMAL#,
+						
+							#hkuanprice:DECIMAL#,
+						
+	  						#createtime#,
+	  					
+							#createuserid:DECIMAL#,
+						
+	  						#comment#,
+	  						#repaytype#,
+	  						#debt#,
+	  						#deptid#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteBiguserprice" parameterClass="long">
+    delete from T_BIGUSERPRICE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateBiguserprice" parameterClass="Biguserprice">
+    update T_BIGUSERPRICE 
+    set 
+    	C_ANGENTID = #angentid:DECIMAL#,
+						C_HKUANPRICE = #hkuanprice:DECIMAL#,
+						C_CREATETIME = #createtime#,
+	  					C_CREATEUSERID = #createuserid:DECIMAL#,
+						C_COMMENT = #comment#,
+						C_REPAYTYPE=#repaytype#,
+						C_DEBT=#debt#,
+						C_DEPTID=#deptid#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

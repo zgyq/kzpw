@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Chaininfo">
+  
+  <typeAlias alias="Chaininfo" type="com.yf.system.base.chaininfo.Chaininfo"/>
+  
+
+  <resultMap id="resultChaininfoMap" class="Chaininfo">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="name" column="C_NAME"/>
+  
+     <result property="description" column="C_DESCRIPTION"/>
+  
+     <result property="imagepic" column="C_IMAGEPIC"/>
+  
+     <result property="total" column="C_TOTAL"/>
+  
+     <result property="sort" column="C_SORT"/>
+  
+     <result property="cityidstr" column="C_CITYIDSTR"/>
+  
+     <result property="imagepic2" column="C_IMAGEPIC2"/>
+   
+  </resultMap>
+  
+  <select id="findAllChaininfo"  resultMap="resultChaininfoMap"  parameterClass="java.util.Map">
+  
+    select * from T_CHAININFO
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllChaininfoBySql"  resultMap="resultChaininfoMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteChaininfoBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countChaininfoBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_CHAININFO
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findChaininfo" parameterClass="long" resultClass="Chaininfo">
+    select 
+    	ID as id,
+	  			C_NAME as name,
+	  			C_DESCRIPTION as description,
+	  			C_IMAGEPIC as imagepic,
+	  			C_TOTAL as total,
+	  			C_SORT as sort,
+	  			C_CITYIDSTR as cityidstr,
+	  			C_IMAGEPIC2 as imagepic2 
+     from T_CHAININFO
+    where ID = #id#
+  </select>
+   
+  <insert id="createChaininfo" parameterClass="Chaininfo">
+    insert into T_CHAININFO ( 
+    	ID,
+	  			C_NAME,
+	  			C_DESCRIPTION,
+	  			C_IMAGEPIC,
+	  			C_TOTAL,
+	  			C_SORT,
+	  			C_CITYIDSTR,
+	  			C_IMAGEPIC2 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#name#,
+	  					
+	  						#description#,
+	  					
+	  						#imagepic#,
+	  					
+							#total#,
+						
+							#sort:DECIMAL#,
+						
+	  						#cityidstr#,
+	  					
+	  						#imagepic2#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteChaininfo" parameterClass="long">
+    delete from T_CHAININFO
+    where ID = #id#
+  </delete>
+	
+  <update id="updateChaininfo" parameterClass="Chaininfo">
+    update T_CHAININFO 
+    set 
+    	C_NAME = #name#,
+	  					C_DESCRIPTION = #description#,
+	  					C_IMAGEPIC = #imagepic#,
+	  					C_TOTAL = #total#,
+						C_SORT = #sort:DECIMAL#,
+						C_CITYIDSTR = #cityidstr#,
+	  					C_IMAGEPIC2 = #imagepic2#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

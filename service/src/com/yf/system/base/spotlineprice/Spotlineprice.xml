@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Spotlineprice">
+  
+  <typeAlias alias="Spotlineprice" type="com.yf.system.base.spotlineprice.Spotlineprice"/>
+  
+
+  <resultMap id="resultSpotlinepriceMap" class="Spotlineprice">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="spotlineid" column="C_SPOTLINEID"/>
+  
+     <result property="ptype" column="C_PTYPE"/>
+  
+     <result property="lsprice" column="C_LSPRICE"/>
+  
+     <result property="price" column="C_PRICE"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+  
+     <result property="state" column="C_STATE"/>
+   
+  </resultMap>
+  
+  <select id="findAllSpotlineprice"  resultMap="resultSpotlinepriceMap"  parameterClass="java.util.Map">
+  
+    select * from T_SPOTLINEPRICE
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllSpotlinepriceBySql"  resultMap="resultSpotlinepriceMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteSpotlinepriceBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countSpotlinepriceBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_SPOTLINEPRICE
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findSpotlineprice" parameterClass="long" resultClass="Spotlineprice">
+    select 
+    	ID as id,
+	  			C_SPOTLINEID as spotlineid,
+	  			C_PTYPE as ptype,
+	  			C_LSPRICE as lsprice,
+	  			C_PRICE as price,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3,
+	  			C_STATE as state 
+     from T_SPOTLINEPRICE
+    where ID = #id#
+  </select>
+   
+  <insert id="createSpotlineprice" parameterClass="Spotlineprice">
+    insert into T_SPOTLINEPRICE ( 
+    	ID,
+	  			C_SPOTLINEID,
+	  			C_PTYPE,
+	  			C_LSPRICE,
+	  			C_PRICE,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3,
+	  			C_STATE 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#spotlineid#,
+	  					
+	  						#ptype#,
+	  					
+	  						#lsprice#,
+	  					
+	  						#price#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#,
+	  					
+  							#state:DECIMAL#
+  						 
+    
+    )
+  </insert>
+  
+  <delete id="deleteSpotlineprice" parameterClass="long">
+    delete from T_SPOTLINEPRICE
+    where ID = #id#
+  </delete>
+	
+  <update id="updateSpotlineprice" parameterClass="Spotlineprice">
+    update T_SPOTLINEPRICE 
+    set 
+    	C_SPOTLINEID = #spotlineid#,
+	  					C_PTYPE = #ptype#,
+	  					C_LSPRICE = #lsprice#,
+	  					C_PRICE = #price#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#,
+	  					C_STATE = #state:DECIMAL#
+  						 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 

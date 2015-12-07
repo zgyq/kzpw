@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Hotelstart">
+  
+  <typeAlias alias="Hotelstart" type="com.yf.system.base.hotelstart.Hotelstart"/>
+  
+
+  <resultMap id="resultHotelstartMap" class="Hotelstart">
+  
+     <result property="id" column="ID"/>
+  
+     <result property="hotestart" column="C_HOTESTART"/>
+  
+     <result property="startcode" column="C_STARTCODE"/>
+  
+     <result property="margin" column="C_MARGIN"/>
+  
+     <result property="dataprovideid" column="C_DATAPROVIDEID"/>
+  
+     <result property="createtime" column="C_CREATETIME"/>
+  
+     <result property="createmanid" column="C_CREATEMANID"/>
+  
+     <result property="state" column="C_STATE"/>
+  
+     <result property="remark" column="C_REMARK"/>
+  
+     <result property="param1" column="C_PARAM1"/>
+  
+     <result property="param2" column="C_PARAM2"/>
+  
+     <result property="param3" column="C_PARAM3"/>
+   
+  </resultMap>
+  
+  <select id="findAllHotelstart"  resultMap="resultHotelstartMap"  parameterClass="java.util.Map">
+  
+    select * from T_HOTELSTART
+    
+    <dynamic prepend="">
+		<isNotEmpty prepend="" property="where">
+			$where$
+		</isNotEmpty>
+	
+	</dynamic>
+     <dynamic prepend="">
+		<isNotEmpty prepend="" property="orderby">
+			$orderby$
+		</isNotEmpty>
+	
+	</dynamic>
+	
+  </select>
+  
+   <select id="findAllHotelstartBySql"  resultMap="resultHotelstartMap"  parameterClass="java.util.Map">  
+			$sql$
+   </select>
+   
+   
+   <update id="excuteHotelstartBySql"   parameterClass="java.util.Map">  
+			$sql$
+   </update>
+  
+   <select id="countHotelstartBySql"  resultClass="int"  parameterClass="java.util.Map">
+		
+		<dynamic prepend="">
+			<isEmpty prepend="" property="sql">
+				select count(*) from T_HOTELSTART
+			</isEmpty>
+			<isNotEmpty prepend="" property="sql">
+				$sql$
+			</isNotEmpty>
+		</dynamic>
+		
+	    <dynamic prepend="">
+			<isNotEmpty prepend="" property="where">
+				$where$
+			</isNotEmpty>
+		</dynamic>
+	   
+   </select>
+  
+  <select id="findHotelstart" parameterClass="long" resultClass="Hotelstart">
+    select 
+    	ID as id,
+	  			C_HOTESTART as hotestart,
+	  			C_STARTCODE as startcode,
+	  			C_MARGIN as margin,
+	  			C_DATAPROVIDEID as dataprovideid,
+	  			C_CREATETIME as createtime,
+	  			C_CREATEMANID as createmanid,
+	  			C_STATE as state,
+	  			C_REMARK as remark,
+	  			C_PARAM1 as param1,
+	  			C_PARAM2 as param2,
+	  			C_PARAM3 as param3 
+     from T_HOTELSTART
+    where ID = #id#
+  </select>
+   
+  <insert id="createHotelstart" parameterClass="Hotelstart">
+    insert into T_HOTELSTART ( 
+    	ID,
+	  			C_HOTESTART,
+	  			C_STARTCODE,
+	  			C_MARGIN,
+	  			C_DATAPROVIDEID,
+	  			C_CREATETIME,
+	  			C_CREATEMANID,
+	  			C_STATE,
+	  			C_REMARK,
+	  			C_PARAM1,
+	  			C_PARAM2,
+	  			C_PARAM3 
+    )
+    values (
+    	
+	  						#id#,
+	  					
+	  						#hotestart#,
+	  					
+	  						#startcode#,
+	  					
+	  						#margin#,
+	  					
+							#dataprovideid:DECIMAL#,
+						
+	  						#createtime#,
+	  					
+							#createmanid:DECIMAL#,
+						
+							#state:DECIMAL#,
+						
+	  						#remark#,
+	  					
+	  						#param1#,
+	  					
+	  						#param2#,
+	  					
+	  						#param3#
+	  					 
+    
+    )
+  </insert>
+  
+  <delete id="deleteHotelstart" parameterClass="long">
+    delete from T_HOTELSTART
+    where ID = #id#
+  </delete>
+	
+  <update id="updateHotelstart" parameterClass="Hotelstart">
+    update T_HOTELSTART 
+    set 
+    	C_HOTESTART = #hotestart#,
+	  					C_STARTCODE = #startcode#,
+	  					C_MARGIN = #margin#,
+	  					C_DATAPROVIDEID = #dataprovideid:DECIMAL#,
+						C_CREATETIME = #createtime#,
+	  					C_CREATEMANID = #createmanid:DECIMAL#,
+						C_STATE = #state:DECIMAL#,
+						C_REMARK = #remark#,
+	  					C_PARAM1 = #param1#,
+	  					C_PARAM2 = #param2#,
+	  					C_PARAM3 = #param3#
+	  					 
+    
+    where ID = #id#
+  </update>
+  
+ 
+</sqlMap>
+ 
+ 
